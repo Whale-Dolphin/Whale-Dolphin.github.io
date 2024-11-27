@@ -73,6 +73,9 @@
 		data-flex-basis=&#34;992px&#34;
 	
 &gt;&lt;/p&gt;
+&lt;h3 id=&#34;cidr规则&#34;&gt;CIDR规则
+&lt;/h3&gt;&lt;p&gt;由于本人经常在校内校外跑，一个个添加ip极其麻烦。折腾了一会才知道ip有通配符这个东西，遂添加关于CIDR规则的描述。CIDR就是类似于x.x.x.x/x的形式，前四位是模糊ip地址，只用填确定的地址的数字即可，不确定的用任意数字表示（一般是0），/后面表示前面多少位是固定的。&lt;/p&gt;
+&lt;p&gt;以我学校为例，我们学校教育网ip的ip段为115.156.0.0-115.157.127.255，写成CIDR格式即为115.156.0.0/15。&lt;/p&gt;
 &lt;h2 id=&#34;学校服务器frpc配置&#34;&gt;学校服务器（frpc）配置
 &lt;/h2&gt;&lt;h3 id=&#34;同样下载并解压frp&#34;&gt;同样下载并解压frp
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

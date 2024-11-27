@@ -325,6 +325,7 @@
         <li><a href="#配置frpsini">配置frps.ini</a></li>
         <li><a href="#启动frps">启动frps</a></li>
         <li><a href="#在ecs控制面板填入方向端口白名单">在ECS控制面板填入方向端口白名单</a></li>
+        <li><a href="#cidr规则">CIDR规则</a></li>
       </ol>
     </li>
     <li><a href="#学校服务器frpc配置">学校服务器（frpc）配置</a>
@@ -416,7 +417,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -491,6 +492,9 @@
 		data-flex-basis="992px"
 	
 ></p>
+<h3 id="cidr规则">CIDR规则
+</h3><p>由于本人经常在校内校外跑，一个个添加ip极其麻烦。折腾了一会才知道ip有通配符这个东西，遂添加关于CIDR规则的描述。CIDR就是类似于x.x.x.x/x的形式，前四位是模糊ip地址，只用填确定的地址的数字即可，不确定的用任意数字表示（一般是0），/后面表示前面多少位是固定的。</p>
+<p>以我学校为例，我们学校教育网ip的ip段为115.156.0.0-115.157.127.255，写成CIDR格式即为115.156.0.0/15。</p>
 <h2 id="学校服务器frpc配置">学校服务器（frpc）配置
 </h2><h3 id="同样下载并解压frp">同样下载并解压frp
 </h3><div class="highlight"><div class="chroma">
