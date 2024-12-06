@@ -643,7 +643,7 @@ $MIPS=\frac{Instruction Count}{Execution Time×10^6}=\frac{Clock Frequency}{CPI�
 </div>
 </div><h5 id="例题2-cpu性能计算"><strong>例题2: CPU性能计算</strong>
 </h5>$$
-⁍
+N=t\times f
 $$<ul>
 <li>N：时钟周期总数</li>
 <li>t：运行时间</li>
@@ -922,7 +922,7 @@ $$
 </div>
 </div><h4 id="浮点数">浮点数
 </h4>$$
-⁍
+V=(-1)^s \times M \times 2^E
 $$<p>其中：</p>
 <ul>
 <li>S：符号位（0正1负）</li>
@@ -1046,7 +1046,7 @@ $$<p>其中：</p>
 </div><h5 id="校验码数量">校验码数量
 </h5><p>对于k位数据，需要r位校验位，满足：</p>
 $$
-⁍
+2^r ≥ k + r + 1
 $$<h5 id="校验码负责校验的位置">校验码负责校验的位置
 </h5><p><strong>p1(位置1)</strong>: 检查二进制第1位为1的位置</p>
 <div class="highlight"><div class="chroma">
@@ -1682,8 +1682,6 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu15844050927207836269.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu9008794977240874968.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
-	
 	
 		class="gallery-image" 
 		data-flex-grow="167"
@@ -1691,56 +1689,66 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 	
 ></p>
 <h4 id="全加法器full-adder-fa">全加法器（Full Adder FA）
-</h4><p><img src="/image%201.png"
-	
-	
-	
+</h4><p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1.png"
+	width="976"
+	height="463"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu17551818972063236655.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu4995496302082295453.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="210"
+		data-flex-basis="505px"
 	
 ></p>
 <h4 id="串行进位全加法器">串行进位全加法器
-</h4><p><img src="/image%202.png"
-	
-	
-	
+</h4><p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2.png"
+	width="741"
+	height="1102"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu1242578662294364449.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu12164645366932175892.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="67"
+		data-flex-basis="161px"
 	
 ></p>
-<p><img src="/image%203.png"
-	
-	
-	
+<p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3.png"
+	width="1859"
+	height="610"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu10324162280861269571.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu7241800598238517919.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="304"
+		data-flex-basis="731px"
 	
 ></p>
 <h4 id="阵列乘法器">阵列乘法器
-</h4><p><img src="/image%204.png"
-	
-	
-	
+</h4><p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4.png"
+	width="959"
+	height="673"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu6571171111944349519.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu220821699072295745.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="142"
+		data-flex-basis="341px"
 	
 ></p>
-<p><img src="/image%205.png"
-	
-	
-	
+<p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5.png"
+	width="959"
+	height="671"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu15604721438665172519.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu6105849087648627725.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="142"
+		data-flex-basis="343px"
 	
 ></p>
 <h2 id="第四章-存储系统">第四章 存储系统
@@ -1819,14 +1827,16 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 </div><h3 id="半导体存储器">半导体存储器
 </h3><h4 id="sram">SRAM
 </h4><h5 id="基本存储单元结构">基本存储单元结构
-</h5><p><img src="/image%206.png"
-	
-	
-	
+</h5><p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6.png"
+	width="505"
+	height="513"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu16402436395228465765.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu11236518385331816806.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="98"
+		data-flex-basis="236px"
 	
 ></p>
 <p>SRAM 的基本存储单元是由六个晶体管构成的双稳态触发器，通常称为&quot;六管SRAM&quot;或&quot;6T SRAM&quot;。</p>
@@ -1892,14 +1902,16 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 <h4 id="dram">DRAM
 </h4><h5 id="基本存储单元结构-1">基本存储单元结构
 </h5><p>DRAM 的基本存储单元由一个晶体管和一个电容构成，通常称为&quot;1T1C&quot;结构：</p>
-<p><img src="/image%207.png"
-	
-	
-	
+<p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7.png"
+	width="456"
+	height="427"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu14304478671431942182.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu1254160810540629203.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="106"
+		data-flex-basis="256px"
 	
 ></p>
 <h5 id="工作原理-1">工作原理
@@ -2008,14 +2020,16 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 </div></li>
 <li>
 <p>时序图</p>
-<p><img src="/image%208.png"
-	
-	
-	
+<p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8.png"
+	width="1070"
+	height="479"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu6383915534628664181.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu7135989850919864805.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="223"
+		data-flex-basis="536px"
 	
 ></p>
 </li>
@@ -2107,14 +2121,16 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 </div></li>
 <li>
 <p>时序图</p>
-<p><img src="/image%209.png"
-	
-	
-	
+<p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9.png"
+	width="982"
+	height="441"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu12346651912707836322.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu9405375465799582639.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="222"
+		data-flex-basis="534px"
 	
 ></p>
 </li>
@@ -2224,14 +2240,16 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 </div></li>
 <li>
 <p>时序图</p>
-<p><img src="/image%2010.png"
-	
-	
-	
+<p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10.png"
+	width="979"
+	height="448"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu7810669416053690256.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu8544516001268165104.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="218"
+		data-flex-basis="524px"
 	
 ></p>
 </li>
@@ -2448,14 +2466,16 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">64K ÷ 16K = 4片芯片
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/image%2011.png"
-	
-	
-	
+</div><p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11.png"
+	width="470"
+	height="243"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu10869981017364357848.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu1269440692721593533.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="193"
+		data-flex-basis="464px"
 	
 ></p>
 </li>
@@ -2535,27 +2555,31 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 <ul>
 <li>
 <p>先用4片256K X 8位的存储体构成 256K X 32的存储体</p>
-<p><img src="/image%2012.png"
-	
-	
-	
+<p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12.png"
+	width="432"
+	height="328"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu13561722755967961109.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu9411654097025198026.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="316px"
 	
 ></p>
 </li>
 <li>
 <p>然后和字扩展一样</p>
-<p><img src="/image%2013.png"
-	
-	
-	
+<p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13.png"
+	width="894"
+	height="542"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu11376975969598399222.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu14559673786505275519.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="164"
+		data-flex-basis="395px"
 	
 ></p>
 </li>
@@ -3032,14 +3056,16 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 </div></li>
 </ul>
 <h5 id="性能比较">性能比较
-</h5><p><img src="/image%2014.png"
-	
-	
-	
+</h5><p><img src="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14.png"
+	width="2424"
+	height="956"
+	srcset="/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu2110060091895562747.png 480w, /p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu10366177331071096642.png 1024w"
 	loading="lazy"
 	
-		alt="image.png"
 	
+		class="gallery-image" 
+		data-flex-grow="253"
+		data-flex-basis="608px"
 	
 ></p>
 <h4 id="写策略">写策略
@@ -3059,15 +3085,15 @@ Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
 </h4><h5 id="命中率计算">命中率计算
 </h5><p>在一个程序执行期间，设$N_c$表示Cache完成存取的总次数，$N_m$表示主存完成存取的总次数，h定义为命中率，则有</p>
 $$
-⁍
+h=\frac{N_c}{N_c+N_m}
 $$<h5 id="平均访问时间计算">平均访问时间计算
 </h5><p>若$t_c$表示命中时的Cache访问时间，$t_m$表示未命中时的主存访问时间，$1-h$表示未命中率，则Cache/主存系统的平均访问时间$t_a$为</p>
 $$
-⁍
+t_a=h\cdot t_c+(1-h)t_m　         
 $$<h5 id="cache效率计算">Cache效率计算
 </h5><p>设$r=\frac{tm}{tc}$表示主存慢于Cache的倍率,e表示访问效率，则有:</p>
 $$
-⁍
+e = \frac{t_c}{t_a} = \frac{t_c}{ht_c + (1-h)t_m} = \frac{1}{r + (1-r)h} = \frac{1}{h + (1-h)r}
 $$
 </section>
 
@@ -3090,6 +3116,30 @@ $$
     </footer>
 
 
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
     
 </article>
 
