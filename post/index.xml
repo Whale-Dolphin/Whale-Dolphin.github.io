@@ -770,6 +770,2550 @@ FRR = (错误拒绝的真实声音样本数) / (总真实声音样本数)&lt;/li
 &lt;/div&gt;&lt;p&gt;这行代码中，由于.detach()操作会将向量从计算图中分离，所以要注意的是不能将quantized从计算图中分离从而导致梯度反向传播的时候传不回去。&lt;/p&gt;
 </description>
         </item>
+        <item>
+        <title>计算机组成原理复习</title>
+        <link>https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</guid>
+        <description>&lt;img src="https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover.png" alt="Featured image of post 计算机组成原理复习" /&gt;&lt;h2 id=&#34;第一章-计算机系统概论&#34;&gt;第一章 计算机系统概论
+&lt;/h2&gt;&lt;h3 id=&#34;计算机发展历程&#34;&gt;计算机发展历程
+&lt;/h3&gt;&lt;h4 id=&#34;计算机的四代发展&#34;&gt;计算机的四代发展
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;第一代(1945-1955)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;特征:电子管、插板式编程&lt;/li&gt;
+&lt;li&gt;编程方式:机器语言&lt;/li&gt;
+&lt;li&gt;主要用途:数值计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第二代(1955-1965)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;特征:晶体管、批处理系统&lt;/li&gt;
+&lt;li&gt;编程方式:汇编语言、FORTRAN&lt;/li&gt;
+&lt;li&gt;代表机型:IBM 7094&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第三代(1965-1980)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;特征:集成电路、多道程序、分时系统&lt;/li&gt;
+&lt;li&gt;编程方式:高级语言(BASIC、C)&lt;/li&gt;
+&lt;li&gt;技术创新:多道程序设计、分时处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第四代(1980-至今)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;特征:超大规模集成电路&lt;/li&gt;
+&lt;li&gt;发展方向:
+&lt;ul&gt;
+&lt;li&gt;个人计算机&lt;/li&gt;
+&lt;li&gt;并行计算&lt;/li&gt;
+&lt;li&gt;分布式系统&lt;/li&gt;
+&lt;li&gt;云计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;计算机系统的层次结构&#34;&gt;计算机系统的层次结构
+&lt;/h3&gt;&lt;h4 id=&#34;计算机系统的五个层次&#34;&gt;计算机系统的五个层次
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;高级语言层(M4)&lt;/li&gt;
+&lt;li&gt;汇编语言层(M3)&lt;/li&gt;
+&lt;li&gt;操作系统层(M2)&lt;/li&gt;
+&lt;li&gt;机器语言层(M1)&lt;/li&gt;
+&lt;li&gt;微程序层(M0)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;性能指标&#34;&gt;性能指标
+&lt;/h3&gt;&lt;h4 id=&#34;主要性能指标&#34;&gt;主要性能指标
+&lt;/h4&gt;&lt;h5 id=&#34;cpicycles-per-instruction&#34;&gt;&lt;strong&gt;CPI&lt;/strong&gt;(&lt;strong&gt;Cycles Per Instruction)&lt;/strong&gt;
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本公式 / Basic Formula&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;中文：&lt;code&gt;CPI = 总时钟周期数 / 总指令数&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;English: &lt;code&gt;CPI = Total Clock Cycles / Total Instructions&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;表示为数学公式 / Mathematical expression:
+$CPI=\frac{Clock Cycles}{Instruction Count}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加权平均公式 / Weighted Average Formula&lt;/p&gt;
+&lt;p&gt;当有多种类型的指令时 / When there are multiple instruction types:&lt;/p&gt;
+&lt;p&gt;$CPI=\sum_{i=1}^{n}(CPI_i×F_i)$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;mipsmillion-instructions-per-second&#34;&gt;&lt;strong&gt;MIPS(Million Instructions Per Second)&lt;/strong&gt;
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;基本公式 / Basic Formula&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$MIPS=\frac{指令数执行}{时间×10^6}=\frac{时钟频率}{CPI×10^6}$&lt;/p&gt;
+&lt;p&gt;英文表示 / In English:
+$MIPS=\frac{Instruction Count}{Execution Time×10^6}=\frac{Clock Frequency}{CPI×10^6}$&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;扩展公式 / Extended Formula&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当已知时钟频率（Hz）和CPI时：/ When clock frequency (Hz) and CPI are known:&lt;/p&gt;
+&lt;p&gt;$MIPS=\frac{Clock Frequency (Hz)}{CPI×10^6}$&lt;/p&gt;
+&lt;h4 id=&#34;重要例题分析&#34;&gt;重要例题分析
+&lt;/h4&gt;&lt;h5 id=&#34;例题1-cpi计算&#34;&gt;&lt;strong&gt;例题1: CPI计算&lt;/strong&gt;
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;问题:某程序的目标代码由4类指令组成:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 算术逻辑运算(60%, CPI=1)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 内存读写(18%, CPI=2)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 转移(12%, CPI=4)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 其它(10%, CPI=8)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;求该程序的平均CPI。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;解答:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CPI = 1×0.6 + 2×0.18 + 4×0.12 + 8×0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    = 0.6 + 0.36 + 0.48 + 0.8
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    = 2.24
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;例题2-cpu性能计算&#34;&gt;&lt;strong&gt;例题2: CPU性能计算&lt;/strong&gt;
+&lt;/h5&gt;$$
+⁍
+$$&lt;ul&gt;
+&lt;li&gt;N：时钟周期总数&lt;/li&gt;
+&lt;li&gt;t：运行时间&lt;/li&gt;
+&lt;li&gt;f：频率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;问题:程序P在机器A上运行需10s,机器A的时钟频率为400MHz。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;如果在机器B上运行只需6s,且B的时钟周期总数是A的1.2倍,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;求B的时钟频率是A的多少倍?
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;解答:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 计算A的时钟周期总数:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   时钟周期总数A = 10s × 400MHz = 4000M个
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 计算B的时钟频率:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   时钟频率B = (1.2 × 4000M) ÷ 6s = 800MHz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 比值 = 800MHz ÷ 400MHz = 2倍
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;例题3-mips计算&#34;&gt;&lt;strong&gt;例题3: MIPS计算&lt;/strong&gt;
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;问题：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;某计算机系统运行一个程序，CPU时钟频率2GHz，执行了5×10⁸条指令，平均CPI为2.5，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;程序总执行时间0.625秒。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;求：(1)该程序的MIPS值；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		(2)若CPU频率提高到2.5GHz，新的MIPS值是多少？
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;解：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(1) MIPS = 指令数/(执行时间×10⁶) = 5×10⁸/(0.625×10⁶) = 800
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(2) 新执行时间 = 原执行时间×(原频率/新频率) = 0.625×(2/2.5) = 0.5s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;新MIPS = 5×10⁸/(0.5×10⁶) = 1000
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;冯诺依曼计算机的基本特点&#34;&gt;冯·诺依曼计算机的基本特点
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;五大部件&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;运算器(ALU)&lt;/li&gt;
+&lt;li&gt;控制器(CU)&lt;/li&gt;
+&lt;li&gt;存储器(Memory)&lt;/li&gt;
+&lt;li&gt;输入设备(Input)&lt;/li&gt;
+&lt;li&gt;输出设备(Output)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;重要特征&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;计算机由五大部件组成&lt;/li&gt;
+&lt;li&gt;指令和数据以二进制表示&lt;/li&gt;
+&lt;li&gt;指令和数据存放在同一存储器中&lt;/li&gt;
+&lt;li&gt;指令由操作码和地址码组成&lt;/li&gt;
+&lt;li&gt;存储程序&lt;/li&gt;
+&lt;li&gt;按地址访问&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;第二章-计算机数据表示&#34;&gt;第二章 计算机数据表示
+&lt;/h2&gt;&lt;h3 id=&#34;数据表示基础&#34;&gt;数据表示基础
+&lt;/h3&gt;&lt;h4 id=&#34;为什么使用二进制&#34;&gt;为什么使用二进制
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;易于实现：只有0和1两种状态&lt;/li&gt;
+&lt;li&gt;抗干扰能力强&lt;/li&gt;
+&lt;li&gt;便于逻辑运算&lt;/li&gt;
+&lt;li&gt;硬件实现简单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;数据表示考虑因素&#34;&gt;数据表示考虑因素
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;数据类型（数值/非数值）&lt;/li&gt;
+&lt;li&gt;表示范围和精度&lt;/li&gt;
+&lt;li&gt;存储和处理代价&lt;/li&gt;
+&lt;li&gt;软件可移植性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;数值数据表示&#34;&gt;数值数据表示
+&lt;/h3&gt;&lt;h4 id=&#34;机器数的编码方式&#34;&gt;机器数的编码方式
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;原码&lt;/li&gt;
+&lt;li&gt;反码&lt;/li&gt;
+&lt;li&gt;补码&lt;/li&gt;
+&lt;li&gt;移码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;原码&#34;&gt;原码
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;最高位为符号位（0正1负）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其余位是数值的绝对值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;公式：&lt;/p&gt;
+$$
+    [X]_{\text{原}} = \begin{cases}
+    X, &amp; 0 \leq X &lt; 2^n \\
+    2^n - |X|, &amp; -2^n &lt; X \leq 0
+    \end{cases}
+    $$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;反码&#34;&gt;反码
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;正数的反码与原码相同&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;负数的反码是对原码除符号位外各位取反&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;公式：&lt;/p&gt;
+$$
+    [X]_{\text{反}} = \begin{cases}
+    X, &amp; 0 \leq X &lt; 2^n \\
+    2^{n+1}-1 + X, &amp; -2^n &lt; X \leq 0
+    \end{cases}
+    $$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;补码&#34;&gt;补码
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;正数的补码与原码相同&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;负数的补码是在反码的基础上末位加1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;公式：&lt;/p&gt;
+$$
+    [X]_{\text{补}} = \begin{cases}
+    X, &amp; 0 \leq X &lt; 2^n \\
+    2^{n+1} + X, &amp; -2^n &lt; X \leq 0
+    \end{cases}
+    $$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;移码&#34;&gt;移码
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;常用于表示浮点数的阶码&lt;/li&gt;
+&lt;li&gt;公式：&lt;code&gt;$[x]_移 = x + 2^{n-1}$&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;与补码的关系：符号位取反其余位不变&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;例题&#34;&gt;例题
+&lt;/h4&gt;&lt;h5 id=&#34;示例1将十进制数-52-转换为8位二进制机器码&#34;&gt;示例1：将十进制数 +52 转换为8位二进制机器码
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;原码
+&lt;ul&gt;
+&lt;li&gt;正数，符号位为0&lt;/li&gt;
+&lt;li&gt;52的二进制为110100&lt;/li&gt;
+&lt;li&gt;8位原码表示：&lt;code&gt;0110,1000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;反码
+&lt;ul&gt;
+&lt;li&gt;正数的反码等于原码&lt;/li&gt;
+&lt;li&gt;所以反码也是：&lt;code&gt;0110,1000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;补码
+&lt;ul&gt;
+&lt;li&gt;正数的补码等于原码&lt;/li&gt;
+&lt;li&gt;所以补码也是：&lt;code&gt;0110,1000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;示例2将十进制数--52-转换为8位二进制机器码&#34;&gt;示例2：将十进制数 -52 转换为8位二进制机器码
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;原码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;负数，符号位为1&lt;/li&gt;
+&lt;li&gt;|52|的二进制为110100&lt;/li&gt;
+&lt;li&gt;8位原码表示：&lt;code&gt;1110,1000&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;反码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;负数，符号位为1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数值位按位取反&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算过程&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;原码：1110,1000
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;数值位取反：1001,0111
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;补码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;负数，在反码基础上末位加1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算过程&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;反码：1001,0111
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;末位加1：1001,1000
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;转换口诀&#34;&gt;转换口诀
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;正数：原码 = 反码 = 补码&lt;/li&gt;
+&lt;li&gt;负数：
+&lt;ul&gt;
+&lt;li&gt;原码：符号位为1，其余为绝对值的二进制&lt;/li&gt;
+&lt;li&gt;反码：符号位为1，数值位按位取反&lt;/li&gt;
+&lt;li&gt;补码：反码末位加1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;整型和浮点型表示&#34;&gt;整型和浮点型表示
+&lt;/h3&gt;&lt;h4 id=&#34;整型&#34;&gt;整型
+&lt;/h4&gt;&lt;p&gt;整型在计算机中使用补码表示&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;类型      位数    范围
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;byte      8位    -128 到 127
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;short     16位   -32,768 到 32,767
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;int       32位   -2^31 到 2^31-1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;long      64位   -2^63 到 2^63-1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;浮点数&#34;&gt;浮点数
+&lt;/h4&gt;$$
+⁍
+$$&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;S：符号位（0正1负）&lt;/li&gt;
+&lt;li&gt;M：1.尾数（规范化的尾数）&lt;/li&gt;
+&lt;li&gt;E：指数值（减去偏置值的指数）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;例子存储float类型的12375&#34;&gt;&lt;strong&gt;例子：存储float类型的12.375&lt;/strong&gt;
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;转换为二进制：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;12 = 1100(二进制)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0.375 = 0.011(二进制)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;12.375 = 1100.011(二进制)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;规范化：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1100.011 = 1.100011 × 2^3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;存储格式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;符号位(S)：0（正数）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;指数位(E)：3 + 127(偏置) = 130 = 10000010
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;尾数位(M)：100011（不存储小数点前的1）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;最终存储：0 10000010 10001100000000000000000
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;字节序&#34;&gt;字节序
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;大端序(Big Endian)：高位字节存储在低地址&lt;/li&gt;
+&lt;li&gt;小端序(Little Endian)：低位字节存储在低地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;例如：整数 0x12345678
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;大端序：12 34 56 78
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;小端序：78 56 34 12
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;数据校验&#34;&gt;数据校验
+&lt;/h3&gt;&lt;h4 id=&#34;码距&#34;&gt;码距
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;码距是指两个等长编码之间不同位的个数&lt;/li&gt;
+&lt;li&gt;最小码距是指一个编码系统中任意两个合法编码之间的最小距离&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;例如：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;编码A：1 0 1 1 0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;编码B：1 1 1 0 0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;码距 = 2（第2位和第4位不同）
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;奇偶校验&#34;&gt;奇偶校验
+&lt;/h4&gt;&lt;h5 id=&#34;偶校验--even-parity&#34;&gt;&lt;strong&gt;偶校验 / Even Parity&lt;/strong&gt;
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;原理：确保数据位中&amp;quot;1&amp;quot;的总数（包括校验位）为偶数&lt;/li&gt;
+&lt;li&gt;校验位设置：如果数据位中&amp;quot;1&amp;quot;的个数为奇数，则校验位设为1；如果为偶数，则设为0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;奇校验--odd-parity&#34;&gt;&lt;strong&gt;奇校验 / Odd Parity&lt;/strong&gt;
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;原理：确保数据位中&amp;quot;1&amp;quot;的总数（包括校验位）为奇数&lt;/li&gt;
+&lt;li&gt;校验位设置：如果数据位中&amp;quot;1&amp;quot;的个数为偶数，则校验位设为1；如果为奇数，则设为0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;海明码&#34;&gt;海明码
+&lt;/h4&gt;&lt;h5 id=&#34;校验码位置&#34;&gt;校验码位置
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;校验位放在2的幂次位置上（1,2,4,8,&amp;hellip;）&lt;/li&gt;
+&lt;li&gt;数据位放在其他位置上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;位置：  1  2  3  4  5  6  7  8  9  10 11
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;类型：  p1 p2 d1 p3 d2 d3 d4 p4 d5 d6 d7
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(p=校验位, d=数据位)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;校验码数量&#34;&gt;校验码数量
+&lt;/h5&gt;&lt;p&gt;对于k位数据，需要r位校验位，满足：&lt;/p&gt;
+$$
+⁍
+$$&lt;h5 id=&#34;校验码负责校验的位置&#34;&gt;校验码负责校验的位置
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;p1(位置1)&lt;/strong&gt;: 检查二进制第1位为1的位置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;001(1), 011(3), 101(5), 111(7)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;p2(位置2)&lt;/strong&gt;: 检查二进制第2位为1的位置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;010(2), 011(3), 110(6), 111(7)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;p3(位置4):&lt;/strong&gt; 检查二进制第3位为1的位置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;100(4), 101(5), 110(6), 111(7)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;校验码的值&#34;&gt;校验码的值
+&lt;/h5&gt;&lt;p&gt;校验码就是在负责校验位置上的偶校验&lt;/p&gt;
+&lt;h5 id=&#34;对单个错误进行纠错&#34;&gt;对单个错误进行纠错
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;计算综合征&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;第一位综合征(s1)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;检查所有奇数位置的位&lt;/li&gt;
+&lt;li&gt;s1 = p1 ⊕ d1 ⊕ d2 ⊕ d4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第二位综合征(s2)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;检查位置2,3,6,7的位&lt;/li&gt;
+&lt;li&gt;s2 = p2 ⊕ d1 ⊕ d3 ⊕ d4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第三位综合征(s3)&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;检查位置4,5,6,7的位&lt;/li&gt;
+&lt;li&gt;s3 = p3 ⊕ d2 ⊕ d3 ⊕ d4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以此类推&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;综合征含义&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;综合征值(s3s2s1)  表示含义
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;000              无错误
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;001              位置1出错
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;010              位置2出错
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;011              位置3出错
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;100              位置4出错
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;101              位置5出错
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;110              位置6出错
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;111              位置7出错
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;以此类推&lt;/p&gt;
+&lt;h5 id=&#34;例题-海明码实例4位数据的74海明码&#34;&gt;&lt;strong&gt;例题 海明码实例：4位数据的(7,4)海明码&lt;/strong&gt;
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;原始数据&lt;/p&gt;
+&lt;p&gt;假设要传输的数据是：&lt;strong&gt;1011&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;生成海明码&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;确定位置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;位置：    1   2   3   4   5   6   7
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;用途：    p1  p2  d1  p3  d2  d3  d4
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;数据：    p1  p2  1   p3  0   1   1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         ^   ^   ^   ^   ^   ^   ^
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;二进制：  001 010 011 100 101 110 111
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计算校验位&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;计算p1&lt;/strong&gt;（检查1,3,5,7位）
+&lt;ul&gt;
+&lt;li&gt;p1 ⊕ d1 ⊕ d2 ⊕ d4 = 0&lt;/li&gt;
+&lt;li&gt;p1 ⊕ 1 ⊕ 0 ⊕ 1 = 0&lt;/li&gt;
+&lt;li&gt;p1 = 1 ⊕ 0 ⊕ 1 = 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算p2&lt;/strong&gt;（检查2,3,6,7位）
+&lt;ul&gt;
+&lt;li&gt;p2 ⊕ d1 ⊕ d3 ⊕ d4 = 0&lt;/li&gt;
+&lt;li&gt;p2 ⊕ 1 ⊕ 1 ⊕ 1 = 0&lt;/li&gt;
+&lt;li&gt;p2 = 1 ⊕ 1 ⊕ 1 = 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算p3&lt;/strong&gt;（检查4,5,6,7位）
+&lt;ul&gt;
+&lt;li&gt;p3 ⊕ d2 ⊕ d3 ⊕ d4 = 0&lt;/li&gt;
+&lt;li&gt;p3 ⊕ 0 ⊕ 1 ⊕ 1 = 0&lt;/li&gt;
+&lt;li&gt;p3 = 0 ⊕ 1 ⊕ 1 = 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最终海明码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;位置：    1   2   3   4   5   6   7
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;数据：    0   1   1   0   0   1   1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;完整的海明码是：&lt;strong&gt;0110011&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;错误检测示例&lt;/p&gt;
+&lt;p&gt;3.1 &lt;strong&gt;假设第5位发生错误&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;接收到的错误数据：&lt;strong&gt;0110111&lt;/strong&gt;（第5位从0变成了1）&lt;/p&gt;
+&lt;p&gt;3.2 &lt;strong&gt;计算综合征&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;计算s1&lt;/strong&gt;（检查1,3,5,7位）
+&lt;ul&gt;
+&lt;li&gt;0 ⊕ 1 ⊕ 1 ⊕ 1 = 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算s2&lt;/strong&gt;（检查2,3,6,7位）
+&lt;ul&gt;
+&lt;li&gt;1 ⊕ 1 ⊕ 1 ⊕ 1 = 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算s3&lt;/strong&gt;（检查4,5,6,7位）
+&lt;ul&gt;
+&lt;li&gt;0 ⊕ 1 ⊕ 1 ⊕ 1 = 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;3.3 &lt;strong&gt;错误定位&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;得到的综合征：&lt;strong&gt;101&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;对照综合征表：101 表示第5位出错&lt;/li&gt;
+&lt;li&gt;将第5位取反即可纠正错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;3.4 &lt;strong&gt;纠错结果&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;错误数据：  0   1   1   0   1   1   1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;纠正后：    0   1   1   0   0   1   1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;位置：      1   2   3   4   5   6   7
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;验证正确性&lt;/p&gt;
+&lt;p&gt;4.1 &lt;strong&gt;重新检验&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;计算三个校验方程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;s1 = 0 ⊕ 1 ⊕ 0 ⊕ 1 = 0&lt;/li&gt;
+&lt;li&gt;s2 = 1 ⊕ 1 ⊕ 1 ⊕ 1 = 0&lt;/li&gt;
+&lt;li&gt;s3 = 0 ⊕ 0 ⊕ 1 ⊕ 1 = 0&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所有校验方程结果都为0，说明纠错成功。&lt;/p&gt;
+&lt;p&gt;4.2 &lt;strong&gt;提取原始数据&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;取出数据位（第3,5,6,7位）：1011&lt;/li&gt;
+&lt;li&gt;与原始数据相同，验证成功&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;crc循环冗余校验&#34;&gt;CRC循环冗余校验
+&lt;/h4&gt;&lt;h5 id=&#34;校验流程&#34;&gt;校验流程
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;确定CRC位数（r）&lt;/p&gt;
+&lt;p&gt;应满足：$2^r&amp;gt;数据长度+r$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择合适的CRC标准&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;CRC-16&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;生成多项式：$&lt;em&gt;x^{16}+x^{15}+x^{2}+1&lt;/em&gt;$&lt;/li&gt;
+&lt;li&gt;广泛应用于USB、Modbus等协议&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CRC-32&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;生成多项式：$&lt;em&gt;x^{32}+x^{26}+x^{23}+x^{22}+x^{16}+x^{12}+x^{11}+x^{10}+x^{8}+x^7+x^5+x^4+x^2+x+1&lt;/em&gt;$&lt;/li&gt;
+&lt;li&gt;用于以太网、ZIP文件等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CRC-8&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;生成多项式：$&lt;em&gt;x^8+x^7+x^6+x^4+x^2+1&lt;/em&gt;$&lt;/li&gt;
+&lt;li&gt;用于简单的数据校验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CRC-4&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;生成多项式：$&lt;em&gt;x^3+x+1&lt;/em&gt;$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数据预处理&lt;/p&gt;
+&lt;p&gt;补零操作（补生成多项式度数-1个零），并接到原数据后面&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;求余数&lt;/p&gt;
+&lt;p&gt;用补完0的数除以生成多项式的二进制表示来求得余数，并将余数替换后面补的0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;判断是否正确&lt;/p&gt;
+&lt;p&gt;通过传入的数除以CRC方法对应的多项式来判断是否正确，余0表示正确&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;crc循环校验的优势和劣势&#34;&gt;CRC循环校验的优势和劣势
+&lt;/h5&gt;&lt;p&gt;优势&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;能够检测所有单比特错误&lt;/li&gt;
+&lt;li&gt;能够检测所有双比特错误&lt;/li&gt;
+&lt;li&gt;能够检测大多数突发错误&lt;/li&gt;
+&lt;li&gt;能检测所有奇数个数错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;劣势&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无法纠错&lt;/li&gt;
+&lt;li&gt;存在理论上的盲区&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;例题-crc计算&#34;&gt;例题 CRC计算
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;题目&lt;/strong&gt;：数据1100，生成多项式G(x)=1011，求CRC码。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;步骤&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;数据左移3位：1100000&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;模2除法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1100000÷1011
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1011
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-----
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1110
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1011
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-----
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1010
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1011
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-----
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0010 (余数)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CRC码：1100010&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;第三章-运算方法与运算器&#34;&gt;第三章 运算方法与运算器
+&lt;/h2&gt;&lt;h3 id=&#34;定点加减法运算&#34;&gt;定点加减法运算
+&lt;/h3&gt;&lt;h4 id=&#34;补码加法运算-addition-in-twos-complement&#34;&gt;补码加法运算 (Addition in Two&amp;rsquo;s Complement)
+&lt;/h4&gt;&lt;p&gt;补码的加法非常直接，直接按位相加，溢出位舍弃。
+Addition in two&amp;rsquo;s complement is straightforward - add bits directly and discard overflow.&lt;/p&gt;
+&lt;p&gt;例如 (Example)：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  5 的补码 (TC of 5):  0101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; -3 的补码 (TC of -3): 1101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; -------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 相加结果 (Sum):       0010 (= 2)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;补码减法运算-subtraction-in-twos-complement&#34;&gt;补码减法运算 (Subtraction in Two&amp;rsquo;s Complement)
+&lt;/h4&gt;&lt;p&gt;减法可以转换为加上负数的补码：A - B = A + (-B)
+Subtraction can be converted to adding the two&amp;rsquo;s complement of the negative number: A - B = A + (-B)&lt;/p&gt;
+&lt;p&gt;例如 (Example)：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5 - 3 = 5 + (-3)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  5 的补码 (TC of 5):  0101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; -3 的补码 (TC of -3): 1101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; -------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 结果 (Result):        0010 (= 2)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;溢出检测-overflow-detection&#34;&gt;溢出检测 (Overflow Detection)
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;正溢出 (Positive Overflow)&lt;/p&gt;
+&lt;p&gt;两个正数相加，结果变成负数
+When adding two positive numbers results in a negative number&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;负溢出 (Negative Overflow)&lt;/p&gt;
+&lt;p&gt;两个负数相加，结果变成正数
+When adding two negative numbers results in a positive number&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;检测方法-detection-methods&#34;&gt;检测方法 (Detection Methods)
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;符号位进位法 (Sign Bit Carry Method)&lt;/p&gt;
+&lt;p&gt;观察最高位的进位和最高位前一位的进位，如果不同则发生溢出
+Compare the carry into and out of the sign bit - if different, overflow occurred&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;符号位检查法 (Sign Bit Check Method)&lt;/p&gt;
+&lt;p&gt;检查两个操作数符号相同，但结果符号不同
+Check if operands have the same sign but result has different sign&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;补码的加减法示例-examples&#34;&gt;补码的加减法示例 (Examples)
+&lt;/h4&gt;&lt;p&gt;让我们看一个具体的8位补码计算示例：
+Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 计算 5 + (-3)：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   Calculate 5 + (-3):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   5:     00000101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   -3:    11111101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   ----------------
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   结果:   00000010 (= 2)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 计算 -5 - 3 = -5 + (-3)：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   Calculate -5 - 3 = -5 + (-3):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   -5:    11111011
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   -3:    11111101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   ----------------
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   结果:   11110110 (= -8)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;定点乘法运算&#34;&gt;定点乘法运算
+&lt;/h3&gt;&lt;h4 id=&#34;原码乘法运算&#34;&gt;原码乘法运算
+&lt;/h4&gt;&lt;p&gt;原码乘法运算和手算乘法的程序一样，都是各位相乘以后相加，不多做赘述&lt;/p&gt;
+&lt;h4 id=&#34;补码乘法运算booth算法&#34;&gt;补码乘法运算（Booth算法）
+&lt;/h4&gt;&lt;p&gt;补码乘法运算遵循以下法则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于乘数$x$被乘数$y$，分别求$[x]_补$、$[-x]_补$、$[y]_补$&lt;/li&gt;
+&lt;li&gt;初始化$A=0$，$Q=[y]&lt;em&gt;补$，$Q&lt;/em&gt;{-1}=0$&lt;/li&gt;
+&lt;li&gt;进行如下循环操作：
+&lt;ol&gt;
+&lt;li&gt;比较Q0和Q(-1)，根据结果进行操作：
+&lt;ul&gt;
+&lt;li&gt;若$Q_0Q_{-1}=00或11$，$AQQ_{-1}$右移&lt;/li&gt;
+&lt;li&gt;若$Q_0Q_{-1}=10$，$AQQ_{-1}$加$[-x]$后右移&lt;/li&gt;
+&lt;li&gt;若$Q_0Q_{-1}=01$，$AQQ_{-1}$加$[x]$后右移&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;操作次数等于&lt;strong&gt;乘数的数值位数&lt;/strong&gt;（不包括符号位）&lt;/li&gt;
+&lt;li&gt;最后将$A$和$Q$拼接起来&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;补码乘法小数位置确定&#34;&gt;补码乘法小数位置确定
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;两个n位小数相乘，结果为2n位小数&lt;/li&gt;
+&lt;li&gt;小数点应放在最高位之前&lt;/li&gt;
+&lt;li&gt;结果的精度是原始数精度的两倍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;定点除法运算&#34;&gt;定点除法运算
+&lt;/h3&gt;&lt;h4 id=&#34;原码除法运算&#34;&gt;原码除法运算
+&lt;/h4&gt;&lt;h5 id=&#34;恢复余数除法&#34;&gt;恢复余数除法
+&lt;/h5&gt;&lt;p&gt;感觉原码直接打竖式算就可以了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于被除数$x$和除数$y$，分别求$|x|$、$|x|_补$、$|y|_补$、$[-y]_补$&lt;/li&gt;
+&lt;li&gt;用$|x|_补+[-y]_补$，做如下判断
+&lt;ol&gt;
+&lt;li&gt;若结果为正，商1，左移&lt;/li&gt;
+&lt;li&gt;若结果为负，商0，$+[y]_补$，恢复后左移&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;重复上述操作直到商和机器码长度一致&lt;/li&gt;
+&lt;li&gt;最后的余数要乘以$2^{左移次数}$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;补码的除法运算&#34;&gt;补码的除法运算
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;符号位参与运算&lt;/li&gt;
+&lt;li&gt;被除数、除数、余数采用双符号位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;运算步骤&#34;&gt;运算步骤
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;对于被除数$x$和除数$y$，分别求$|x|$、$|y|_补$、$|-y|_补$&lt;/li&gt;
+&lt;li&gt;首先判被除数（$x_补$）与除数（$y_补$）是同号还是异号.如果是同号,就要减去（$y_补$）.如果是异号就要加上（$y_补$）.&lt;/li&gt;
+&lt;li&gt;算出的余数再与除数（$y_补$）进行比较:
+&lt;ul&gt;
+&lt;li&gt;如果是同号,商上1,向左移动一位,再减去（$y_补$）,加上（$[-y]_补$）&lt;/li&gt;
+&lt;li&gt;如果是异号,商上0,向左移动一位,再加上（$y_补$）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;循环操作第三步直到商的位数和机器码相同&lt;/li&gt;
+&lt;li&gt;补码除法的商最后一位固定设置为1&lt;/li&gt;
+&lt;li&gt;将余数乘以$2^{左移次数}$&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;浮点数加减法&#34;&gt;浮点数加减法
+&lt;/h3&gt;&lt;h4 id=&#34;运算步骤-1&#34;&gt;运算步骤
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;对阶 Alignment&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;将小指数的数向大指数对齐&lt;/li&gt;
+&lt;li&gt;小指数数的尾数右移，每右移一位，指数加1&lt;/li&gt;
+&lt;li&gt;直到两个数的指数相等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;尾数运算 Mantissa Operation&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;对阶后进行尾数的加减运算&lt;/li&gt;
+&lt;li&gt;注意保持正确的符号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;规格化 Normalization&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;调整结果使其满足规格化要求&lt;/li&gt;
+&lt;li&gt;通常要求尾数最高位为1&lt;/li&gt;
+&lt;li&gt;可能需要左移或右移尾数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;舍入 Rounding&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;根据舍入规则处理多余的位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;溢出检查 Overflow Check&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;检查结果是否超出表示范围&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;示例-examples&#34;&gt;示例 Examples
+&lt;/h4&gt;&lt;h5 id=&#34;例1基本加法-basic-addition&#34;&gt;&lt;strong&gt;例1：基本加法 Basic Addition&lt;/strong&gt;
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;计算：1.101×2² + 1.001×2¹
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 对阶：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   1.101×2² = 1.101×2²
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   1.001×2¹ = 0.1001×2²  (右移一位)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 尾数相加：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   1.101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   0.1001
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   -------
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   10.0011×2²
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 规格化：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   1.00011×2³
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. 舍入（假设4位精度）：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   1.000×2³
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;例2异号加法实质是减法subtraction&#34;&gt;&lt;strong&gt;例2：异号加法（实质是减法）Subtraction&lt;/strong&gt;
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;计算：1.110×2³ - 1.101×2²
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 对阶：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   1.110×2³ = 1.110×2³
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   1.101×2² = 0.110×2³  (右移一位)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 尾数相减：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   1.110
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   0.110
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   -------
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   1.000×2³
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;特殊情况-special-cases&#34;&gt;特殊情况 Special Cases
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;上溢 Overflow&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;当结果超过最大可表示范围时发生
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;例如：1.111×2¹²⁷ + 1.111×2¹²⁷
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;下溢 Underflow&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;当结果小于最小可表示范围时发生
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;例如：1.000×2⁻¹²⁶ ÷ 2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;精度损失 Precision Loss&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;当两个数量级相差很大时：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1.234×2²⁰ + 1.234×2⁻²⁰
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;小的数可能完全被忽略
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;运算方法与运算器&#34;&gt;运算方法与运算器
+&lt;/h3&gt;&lt;h4 id=&#34;半加法器half-adder-ha&#34;&gt;半加法器（Half Adder HA）
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image.png&#34;
+	width=&#34;758&#34;
+	height=&#34;453&#34;
+	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu15844050927207836269.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu9008794977240874968.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;167&#34;
+		data-flex-basis=&#34;401px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;全加法器full-adder-fa&#34;&gt;全加法器（Full Adder FA）
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%201.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;串行进位全加法器&#34;&gt;串行进位全加法器
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%202.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%203.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;阵列乘法器&#34;&gt;阵列乘法器
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%204.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%205.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;第四章-存储系统&#34;&gt;第四章 存储系统
+&lt;/h2&gt;&lt;h3 id=&#34;存储器基础概念&#34;&gt;存储器基础概念
+&lt;/h3&gt;&lt;h4 id=&#34;存储器分类&#34;&gt;存储器分类
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;按存储介质&lt;/strong&gt;：半导体、磁性材料、光、纸&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;按存取方式&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;随机存储器(RAM)：存取时间与物理位置无关&lt;/li&gt;
+&lt;li&gt;顺序存储器：存取时间与物理位置有关(磁盘/光盘/磁带)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;按读写方式&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;RAM (Random Access Memory)&lt;/li&gt;
+&lt;li&gt;ROM (Read Only Memory)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;按信息保存性&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;永久性(非易失性)：断电不丢失&lt;/li&gt;
+&lt;li&gt;非永久性(易失性)：断电丢失&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;主存技术指标&#34;&gt;主存技术指标
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;存储容量&lt;/strong&gt;：存储器所能存储的二进制信息位数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;存取速度&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;存取时间：启动存取操作到完成的时间&lt;/li&gt;
+&lt;li&gt;存储周期：连续两次存取操作的最短时间间隔&lt;/li&gt;
+&lt;li&gt;存储器带宽：单位时间内存取的信息位数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;大端小端模式&#34;&gt;大端小端模式
+&lt;/h3&gt;&lt;h4 id=&#34;概念&#34;&gt;概念
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;大端(big-endian)&lt;/strong&gt;：最高字节地址作为字地址&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;小端(little-endian)&lt;/strong&gt;：最低字节地址作为字地址&lt;/li&gt;
+&lt;li&gt;68000采用大端，Intel采用小端，ARM两者都支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;例题-1&#34;&gt;例题
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;例：int a = 0x12345678 在内存中的存放方式
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;大端模式：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0x4000: 0x12
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0x4001: 0x34
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0x4002: 0x56
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0x4003: 0x78
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;小端模式：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0x4000: 0x78
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0x4001: 0x56
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0x4002: 0x34
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0x4003: 0x12
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;半导体存储器&#34;&gt;半导体存储器
+&lt;/h3&gt;&lt;h4 id=&#34;sram&#34;&gt;SRAM
+&lt;/h4&gt;&lt;h5 id=&#34;基本存储单元结构&#34;&gt;基本存储单元结构
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%206.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;SRAM 的基本存储单元是由六个晶体管构成的双稳态触发器，通常称为&amp;quot;六管SRAM&amp;quot;或&amp;quot;6T SRAM&amp;quot;。&lt;/p&gt;
+&lt;p&gt;主要组成部分 (Main components)：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4个NMOS管和2个PMOS管&lt;/li&gt;
+&lt;li&gt;2个交叉耦合的反相器&lt;/li&gt;
+&lt;li&gt;2个访问晶体管（传输管）&lt;/li&gt;
+&lt;li&gt;1个位线对（BL和BLB）&lt;/li&gt;
+&lt;li&gt;1个字线（WL）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;工作原理&#34;&gt;工作原理
+&lt;/h5&gt;&lt;p&gt;SRAM的工作原理基于双稳态触发器的特性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;双稳态特性 (Bistable characteristic)&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;两个稳定状态：&amp;lsquo;0&amp;rsquo;和&#39;1&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;只要有电源供应，数据就能稳定保持&lt;/li&gt;
+&lt;li&gt;不需要周期性刷新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;反相器对 (Inverter pair)&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;两个反相器互连形成正反馈&lt;/li&gt;
+&lt;li&gt;一个节点为高电平时，另一个必为低电平&lt;/li&gt;
+&lt;li&gt;形成自锁回路&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;读写过程&#34;&gt;&lt;strong&gt;读写过程&lt;/strong&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;写操作 (Write Operation)：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;激活字线(WL)&lt;/li&gt;
+&lt;li&gt;在位线对(BL/BLB)上施加互补信号&lt;/li&gt;
+&lt;li&gt;通过访问晶体管强制改变存储节点电平&lt;/li&gt;
+&lt;li&gt;新数据被锁存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;读操作 (Read Operation)：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;预充电位线对至高电平&lt;/li&gt;
+&lt;li&gt;激活字线&lt;/li&gt;
+&lt;li&gt;存储单元将数据传递到位线对&lt;/li&gt;
+&lt;li&gt;感测放大器检测位线电压差&lt;/li&gt;
+&lt;li&gt;输出数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;sram不需要刷新的原因&#34;&gt;&lt;strong&gt;SRAM不需要刷新的原因&lt;/strong&gt;
+&lt;/h5&gt;&lt;p&gt;SRAM不需要刷新的特点源于其结构特性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;持续性供电 (Continuous Power)&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;只要有电源供应，数据就能稳定保持&lt;/li&gt;
+&lt;li&gt;交叉耦合的反相器持续维持状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;稳定性 (Stability)&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;正反馈结构保证数据稳定&lt;/li&gt;
+&lt;li&gt;不存在电荷泄漏问题&lt;/li&gt;
+&lt;li&gt;不像DRAM需要定期刷新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;dram&#34;&gt;DRAM
+&lt;/h4&gt;&lt;h5 id=&#34;基本存储单元结构-1&#34;&gt;基本存储单元结构
+&lt;/h5&gt;&lt;p&gt;DRAM 的基本存储单元由一个晶体管和一个电容构成，通常称为&amp;quot;1T1C&amp;quot;结构：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%207.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;工作原理-1&#34;&gt;工作原理
+&lt;/h5&gt;&lt;p&gt;一个晶体管一个电容&lt;/p&gt;
+&lt;p&gt;DRAM 的工作原理基于电荷存储：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据存储&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;1：电容充电（高电平）&lt;/li&gt;
+&lt;li&gt;0：电容放电（低电平）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;电荷泄漏&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;电容会随时间缓慢放电&lt;/li&gt;
+&lt;li&gt;需要定期刷新维持数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;读写过程-1&#34;&gt;读写过程
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;写操作 (Write Operation)：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;激活字线(WL)，打开访问晶体管&lt;/li&gt;
+&lt;li&gt;在位线(BL)上施加数据电平&lt;/li&gt;
+&lt;li&gt;电容充电或放电&lt;/li&gt;
+&lt;li&gt;关闭字线，数据被存储&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;读操作 (Read Operation)：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;位线预充电至中间电平&lt;/li&gt;
+&lt;li&gt;激活字线，打开访问晶体管&lt;/li&gt;
+&lt;li&gt;电荷共享导致位线电平变化&lt;/li&gt;
+&lt;li&gt;感测放大器检测并放大电平差&lt;/li&gt;
+&lt;li&gt;数据输出并回写（破坏性读出）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;刷新操作&#34;&gt;刷新操作
+&lt;/h5&gt;&lt;h6 id=&#34;刷新周期-refresh-cycle&#34;&gt;刷新周期 (Refresh Cycle)
+&lt;/h6&gt;&lt;ul&gt;
+&lt;li&gt;标准刷新周期：2ms&lt;/li&gt;
+&lt;li&gt;在2ms内必须完成所有存储单元的刷新&lt;/li&gt;
+&lt;li&gt;刷新间隔 = 刷新周期 ÷ 行数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;问：一个1024×1024的DRAM芯片，刷新周期为2ms，采用集中刷新方式，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;计算刷新时间占用的百分比，假设每次刷新操作耗时100ns。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;解：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 总行数 = 1024
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 2ms内需要刷新1024行
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 总刷新时间 = 1024 × 100ns = 102.4μs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. 占用百分比 = (102.4μs ÷ 2ms) × 100% = 5.12%
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h6 id=&#34;刷新方式&#34;&gt;刷新方式
+&lt;/h6&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;集中刷新 (Burst Refresh)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;工作原理&lt;/p&gt;
+&lt;p&gt;在固定的时间段内，连续对所有行进行刷新，期间停止所有正常的存储器访问操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;操作流程&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 进入刷新周期：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 停止响应所有存储器访问请求
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 将刷新计数器清零
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 连续刷新过程：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 选择当前行（由刷新计数器指定）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 执行刷新操作
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 刷新计数器+1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 重复直到所有行刷新完成
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 退出刷新周期：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 恢复正常的存储器访问
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;时序图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%208.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例题&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目&lt;/strong&gt;：
+某DRAM芯片容量为4M×8位，刷新周期要求为4ms，每次刷新操作需要100ns。该DRAM采用集中刷新方式，要求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;计算需要多少根地址线&lt;/li&gt;
+&lt;li&gt;计算总的刷新时间&lt;/li&gt;
+&lt;li&gt;计算在刷新期间的存储器利用率损失&lt;/li&gt;
+&lt;li&gt;如果CPU时钟周期为10ns，计算在一个刷新周期内损失的CPU周期数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;解答&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 地址线计算：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 总容量 = 4M×8位 = 4194304×8位
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 行地址需要：log₂(√4194304) = 11位
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 列地址需要：log₂(√4194304) = 11位
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 总地址线：11 + 11 = 22根
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 刷新时间计算：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 行数 = 2¹¹ = 2048行
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 总刷新时间 = 2048行 × 100ns = 204.8μs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 存储器利用率损失：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 刷新周期 = 4ms = 4000μs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 利用率损失 = (204.8μs ÷ 4000μs) × 100% = 5.12%
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. 损失的CPU周期：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 刷新时间 = 204.8μs = 204800ns
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 损失的CPU周期数 = 204800ns ÷ 10ns = 20480个周期
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分散刷新 (Distributed Refresh)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;工作原理&lt;/p&gt;
+&lt;p&gt;在每个存储器正常访问周期结束后，插入一次刷新操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;操作流程&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 执行正常的存储器访问操作
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 访问周期结束后：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 执行一次刷新操作（刷新一行）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 刷新计数器+1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 为下一行刷新做准备
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 开始下一个访问周期
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;时序图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%209.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例题&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目&lt;/strong&gt;：
+某DRAM芯片为16M×4位，刷新周期为2ms，采用分散刷新方式。存储器的读写周期为80ns，刷新操作需要100ns。请计算：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一个完整的存储器周期时间&lt;/li&gt;
+&lt;li&gt;实际的存储器带宽&lt;/li&gt;
+&lt;li&gt;如果改用集中刷新，两种方式的存储器利用率比较&lt;/li&gt;
+&lt;li&gt;刷新操作的频率&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;解答&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 存储器周期计算：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 行数 = √(16M) = 4096行
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 每个刷新周期内需要刷新次数 = 4096次
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 每次刷新间隔 = 2ms ÷ 4096 ≈ 488ns
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 完整周期 = 80ns(读写) + 100ns(刷新) = 180ns
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 实际带宽计算：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 理论周期时间 = 80ns
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 实际周期时间 = 180ns
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 理论带宽 = (4位 ÷ 80ns) = 50MB/s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 实际带宽 = (4位 ÷ 180ns) ≈ 22.22MB/s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 刷新方式比较：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   分散刷新：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 利用率 = 80ns ÷ 180ns ≈ 44.4%
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   集中刷新：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 总刷新时间 = 4096 × 100ns = 409.6μs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 利用率 = (2000μs - 409.6μs) ÷ 2000μs ≈ 79.52%
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. 刷新频率：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 每488ns进行一次刷新
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 刷新频率 = 1 ÷ 488ns ≈ 2.049MHz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;异步刷新 (Asynchronous Refresh)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;工作原理&lt;/p&gt;
+&lt;p&gt;将刷新周期分成多个时间片，每个时间片内完成部分行的刷新。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;操作流程&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 刷新周期分段：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 通常分为8个或16个时间片
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 每个时间片负责特定数量的行刷新
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 每个时间片内：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 连续刷新分配给该时间片的所有行
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 其他时间用于正常访问
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 时间片切换：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 完成当前时间片的刷新任务
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 等待下一个时间片
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;时序图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%2010.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;异步刷新例题&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;题目&lt;/strong&gt;：
+某DRAM容量为64M×8位，刷新周期4ms，采用异步刷新方式，将刷新周期分为8个时间片。每次刷新操作需要120ns，普通读写操作需要100ns。请计算：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;每个时间片的持续时间和需要刷新的行数&lt;/li&gt;
+&lt;li&gt;每个时间片内的存储器利用率&lt;/li&gt;
+&lt;li&gt;如果要求系统响应时间不超过1μs，判断是否满足要求&lt;/li&gt;
+&lt;li&gt;计算平均访问时间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;解答&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 时间片计算：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 总行数 = √64M = 8192行
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 每个时间片时长 = 4ms ÷ 8 = 500μs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 每个时间片需刷新行数 = 8192 ÷ 8 = 1024行
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 每个时间片的刷新时间 = 1024 × 120ns = 122.88μs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 存储器利用率：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 每个时间片可用时间 = 500μs - 122.88μs = 377.12μs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 单片利用率 = 377.12μs ÷ 500μs ≈ 75.424%
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 响应时间分析：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 最坏情况：刷新操作正在进行时收到访问请求
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 最大等待时间 = 1024行 × 120ns = 122.88μs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 122.88μs &amp;gt; 1μs，不满足要求
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. 平均访问时间：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 正常访问时间 = 100ns
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 刷新影响时间 = (122.88μs ÷ 500μs) × 100ns = 24.576ns
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   - 平均访问时间 = 100ns + 24.576ns = 124.576ns
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h6 id=&#34;三种方式的比较&#34;&gt;三种方式的比较
+&lt;/h6&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;特性&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;集中刷新&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;分散刷新&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;异步刷新&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;控制复杂度&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;简单&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;复杂&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;中等&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;存储器利用率&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;低&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;高&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;中等&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;实现难度&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;容易&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;困难&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;中等&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;刷新效率&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;高&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;低&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;中等&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;对系统影响&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;大&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;小&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;中等&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;主存与cpu的连接&#34;&gt;主存与CPU的连接
+&lt;/h3&gt;&lt;h4 id=&#34;存储器扩展&#34;&gt;存储器扩展
+&lt;/h4&gt;&lt;h5 id=&#34;位扩展-bit-extension&#34;&gt;&lt;strong&gt;位扩展 (Bit Extension)&lt;/strong&gt;
+&lt;/h5&gt;&lt;p&gt;当存储器的数据位宽不足以满足系统需求时，需要进行位扩展。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原理 (Principle)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将多个存储器芯片并联，增加数据位宽&lt;/li&gt;
+&lt;li&gt;所有芯片共用相同的地址线和控制线&lt;/li&gt;
+&lt;li&gt;每个芯片负责存储数据的不同位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例 (Example)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;将两个8位宽的存储器芯片组成16位宽的存储器：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;芯片1：存储D0-D7&lt;/li&gt;
+&lt;li&gt;芯片2：存储D8-D15&lt;/li&gt;
+&lt;li&gt;共用地址线A0-An&lt;/li&gt;
+&lt;li&gt;共用片选信号CS、读写控制信号R/W&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;字扩展-word-extension&#34;&gt;字扩展 (Word Extension)
+&lt;/h5&gt;&lt;p&gt;当存储器容量（字数）不足时，需要进行字扩展。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原理 (Principle)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将多个存储器芯片串联，增加存储容量&lt;/li&gt;
+&lt;li&gt;所有芯片共用数据线和控制线&lt;/li&gt;
+&lt;li&gt;通过片选信号选择不同的芯片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例 (Example)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;将两个1K×8位的存储器组成2K×8位的存储器：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用A10作为片选信号&lt;/li&gt;
+&lt;li&gt;A10=0选择芯片1（地址0-1023）&lt;/li&gt;
+&lt;li&gt;A10=1选择芯片2（地址1024-2047）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;字位同时扩展-word-bit-simultaneous-extension&#34;&gt;字位同时扩展 (Word-Bit Simultaneous Extension)
+&lt;/h5&gt;&lt;p&gt;当需要同时扩展数据位宽和存储容量时使用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原理 (Principle)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;结合位扩展和字扩展的方法&lt;/li&gt;
+&lt;li&gt;形成一个矩阵式的存储器阵列&lt;/li&gt;
+&lt;li&gt;需要同时考虑数据位的分配和片选逻辑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例 (Example)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;用4个1K×8位的存储器组成2K×16位的存储器：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;水平方向：位扩展（8位→16位）&lt;/li&gt;
+&lt;li&gt;垂直方向：字扩展（1K→2K）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;片选方式-chip-selection-methods&#34;&gt;&lt;strong&gt;片选方式 (Chip Selection Methods)&lt;/strong&gt;
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;线选法 (Linear Selection)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;线选法是最简单的片选方式，直接用一根选通线来选中一个存储芯片。每个存储芯片都有独立的片选信号线。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;电路简单，容易实现&lt;/li&gt;
+&lt;li&gt;选择速度快&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要的片选线数量多&lt;/li&gt;
+&lt;li&gt;当存储芯片数量增加时，占用的I/O端口也相应增加&lt;/li&gt;
+&lt;li&gt;扩展能力受限&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;全译码法 (Full Decoding)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;全译码法使用地址译码器将n位二进制地址译码成$2^n$个片选信号。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;片选线使用效率高&lt;/li&gt;
+&lt;li&gt;每个地址都对应唯一的存储芯片&lt;/li&gt;
+&lt;li&gt;地址空间利用率100%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;n根地址线可以选择$2^n$个存储芯片&lt;/li&gt;
+&lt;li&gt;需要使用译码器（如74138）&lt;/li&gt;
+&lt;li&gt;地址连续，没有空隙&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;部分译码法 (Partial Decoding)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;部分译码法只使用地址的部分位进行译码，一个片选信号可能对应多个地址。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;电路比全译码简单&lt;/li&gt;
+&lt;li&gt;需要的译码器更少&lt;/li&gt;
+&lt;li&gt;适合于地址空间不需要完全使用的场合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;地址空间有重复&lt;/li&gt;
+&lt;li&gt;存储器的编址不连续&lt;/li&gt;
+&lt;li&gt;地址空间利用率低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;例1（字扩展）：用16K&lt;em&gt;8位的芯片，去构造内存64K&lt;/em&gt;8，并要完成与CPU的对接，并求出每一个芯片在全局空间中的地址范围。&lt;/p&gt;
+&lt;p&gt;解答：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;需要的芯片数量：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;64K ÷ 16K = 4片芯片
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%2011.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;地址范围：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;总地址范围：0000H ~ FFFFH (64K = 2^16)&lt;/li&gt;
+&lt;li&gt;每片芯片负责16K地址空间&lt;/li&gt;
+&lt;li&gt;16K = 16384 = 4000H&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;地址分配表 / Address Allocation Table&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;芯片号/No.&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;地址范围 / Address Range&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;16进制值/Hex Value&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;A15&lt;/strong&gt;   &lt;strong&gt;A14&lt;/strong&gt;   &lt;strong&gt;A13~A0&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0       0       0000~3FFF&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;00000H ~ 03FFFH&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0       1       0000~3FFF&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;04000H ~ 07FFFH&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1       0       0000~3FFF&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;08000H ~ 0BFFFH&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;3&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;1       1        0000~3FFF&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;0C000H ~ 0FFFFH&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;解释说明 / Explanation&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;地址线分配 / Address Line Assignment&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;A15, A14：用于片选（选择哪个芯片）&lt;/li&gt;
+&lt;li&gt;A13~A0：用于芯片内部寻址（14位）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;片选逻辑 / Chip Selection Logic&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;芯片0：当A15=0, A14=0时选中&lt;/li&gt;
+&lt;li&gt;芯片1：当A15=0, A14=1时选中&lt;/li&gt;
+&lt;li&gt;芯片2：当A15=1, A14=0时选中&lt;/li&gt;
+&lt;li&gt;芯片3：当A15=1, A14=1时选中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;地址范围计算 / Address Range Calculation&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;每片芯片负责16K (4000H) 的地址空间&lt;/li&gt;
+&lt;li&gt;芯片0：0000H ~ 3FFFH&lt;/li&gt;
+&lt;li&gt;芯片1：4000H ~ 7FFFH&lt;/li&gt;
+&lt;li&gt;芯片2：8000H ~ BFFFH&lt;/li&gt;
+&lt;li&gt;芯片3：C000H ~ FFFFH&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例2（位扩展）：用256K ×8位的存储体构造 2M × 32位的存储器，并完成与CPU的连接&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;先用4片256K X 8位的存储体构成 256K X 32的存储体&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%2012.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后和字扩展一样&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%2013.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cache&#34;&gt;Cache
+&lt;/h3&gt;&lt;h4 id=&#34;工作原理--how-cache-works&#34;&gt;工作原理 / How Cache Works
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据存储&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;Cache将最常用的数据从主存复制到高速缓存中&lt;/li&gt;
+&lt;li&gt;按照块（Block）或行（Line）为单位进行存储&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;访问过程&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;CPU首先查找数据是否在Cache中（Cache命中）&lt;/li&gt;
+&lt;li&gt;如果命中（Hit），直接从Cache读取&lt;/li&gt;
+&lt;li&gt;如果未命中（Miss），从主存读取并放入Cache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;替换策略&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;当Cache满时，需要决定替换哪些数据&lt;/li&gt;
+&lt;li&gt;常见策略包括LRU（最近最少使用）、FIFO（先进先出）等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;局局部性原理--principle-of-locality&#34;&gt;局局部性原理 / Principle of Locality
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;时间局部性 / Temporal Locality&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定义：如果一个数据被访问，那么在近期它很可能再次被访问&lt;/li&gt;
+&lt;li&gt;例子：
+&lt;ul&gt;
+&lt;li&gt;循环中的变量&lt;/li&gt;
+&lt;li&gt;频繁调用的函数&lt;/li&gt;
+&lt;li&gt;计数器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// i具有很好的时间局部性
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;空间局部性 / Spatial Locality&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定义：如果一个数据被访问，那么它周围的数据很可能也会被访问&lt;/li&gt;
+&lt;li&gt;例子：
+&lt;ul&gt;
+&lt;li&gt;数组的连续访问&lt;/li&gt;
+&lt;li&gt;顺序执行的指令&lt;/li&gt;
+&lt;li&gt;结构体中的相邻成员&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 数组连续访问体现了空间局部性
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;局部性原理的重要性--importance-of-locality&#34;&gt;局部性原理的重要性 / Importance of Locality
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;性能优化&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;利用局部性原理可以提高Cache命中率&lt;/li&gt;
+&lt;li&gt;减少主存访问次数，提升系统性能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;程序设计&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;影响程序编写方式&lt;/li&gt;
+&lt;li&gt;引导更好的数据结构和算法选择&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;实际应用示例--practical-example&#34;&gt;实际应用示例 / Practical Example
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 体现良好局部性的代码
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 按行访问，具有好的空间局部性
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 较差局部性的代码
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 按列访问，空间局部性较差
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这个例子展示了如何通过合适的访问模式来利用空间局部性，提高程序性能。第一种方式（按行访问）能更好地利用Cache的特性，而第二种方式（按列访问）会导致更多的Cache未命中。&lt;/p&gt;
+&lt;h4 id=&#34;存储器映射方式-memory-mapping-methods&#34;&gt;存储器映射方式 Memory Mapping Methods
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;直接映射 (Direct Mapping)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;基本概念&lt;/p&gt;
+&lt;p&gt;直接映射是最简单的映射方式，主存中的每个块只能映射到Cache中的一个特定位置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;地址结构&lt;/p&gt;
+&lt;p&gt;主存地址分为三个字段：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标记(Tag)：用于识别是否是所需的块&lt;/li&gt;
+&lt;li&gt;组号/行号(Line)：确定Cache中的位置&lt;/li&gt;
+&lt;li&gt;块内地址(Block Offset)：确定块内的具体单元&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例题 Example&lt;/p&gt;
+&lt;p&gt;假设有一个存储系统具有以下参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主存容量：1024KB = 2^20 B&lt;/li&gt;
+&lt;li&gt;Cache容量：16KB = 2^14 B&lt;/li&gt;
+&lt;li&gt;块大小：64B = 2^6 B&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;解答：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;计算地址位数：
+&lt;ul&gt;
+&lt;li&gt;主存地址位数 = log2(1024×1024) = 20位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;计算各字段位数：
+&lt;ul&gt;
+&lt;li&gt;块内地址：log2(64) = 6位&lt;/li&gt;
+&lt;li&gt;Cache行数：16KB/64B = 256行，所以行号需要8位&lt;/li&gt;
+&lt;li&gt;标记位：20 - 8 - 6 = 6位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;地址格式：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|  标记(6位)  |  行号(8位)  |  块内地址(6位)  |
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;全相联映射 (Fully Associative Mapping)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;基本概念 Basic Concept&lt;/p&gt;
+&lt;p&gt;主存中的任何一块可以映射到Cache中的任何位置。需要并行对比所有Cache行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;地址结构 Address Structure&lt;/p&gt;
+&lt;p&gt;主存地址分为两个字段：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标记(Tag)&lt;/li&gt;
+&lt;li&gt;块内地址(Block Offset)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例题 Example&lt;/p&gt;
+&lt;p&gt;使用上述相同参数，求地址格式。&lt;/p&gt;
+&lt;p&gt;解答&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. 块内地址：同样是6位
+2. 标记位：
+    - 不需要行号字段
+    - 标记位 = 20 - 6 = 14位
+3. 地址格式：
+
+```
+|    标记(14位)    |  块内地址(6位)  |
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组相联映射 (Set Associative Mapping)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;基本概念 Basic Concept&lt;/p&gt;
+&lt;p&gt;是直接映射和全相联映射的折中方案。Cache分成若干组，每组包含n个行（n路组相联）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;地址结构 Address Structure&lt;/p&gt;
+&lt;p&gt;主存地址分为三个字段：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标记(Tag)&lt;/li&gt;
+&lt;li&gt;组号(Set)&lt;/li&gt;
+&lt;li&gt;块内地址(Block Offset)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例题 Example&lt;/p&gt;
+&lt;p&gt;假设采用4路组相联，其他参数同上。&lt;/p&gt;
+&lt;p&gt;解答：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. 计算组数：
+    - 总行数 = 256行
+    - 每组4行
+    - 组数 = 256/4 = 64组
+2. 计算各字段位数：
+    - 块内地址：6位
+    - 组号：log2(64) = 6位
+    - 标记位：20 - 6 - 6 = 8位
+3. 地址格式：
+
+```
+|  标记(8位)  |  组号(6位)  |  块内地址(6位)  |
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;性能比较-performance-comparison&#34;&gt;性能比较 Performance Comparison
+&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;命中率 Hit Rate&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;全相联 &amp;gt; 组相联 &amp;gt; 直接映射&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;硬件复杂度 Hardware Complexity&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;直接映射 &amp;lt; 组相联 &amp;lt; 全相联&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;查找速度 Search Speed&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;直接映射 &amp;gt; 组相联 &amp;gt; 全相联&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;综合例题-comprehensive-example&#34;&gt;综合例题 Comprehensive Example
+&lt;/h5&gt;&lt;p&gt;假设主存地址为32位，Cache大小为64KB，块大小为32B，采用8路组相联映射，求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;地址格式&lt;/li&gt;
+&lt;li&gt;Cache总行数&lt;/li&gt;
+&lt;li&gt;每组行数&lt;/li&gt;
+&lt;li&gt;组数&lt;/li&gt;
+&lt;li&gt;标记位、组号位、块内地址位的位数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;解答 Solution:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Cache总行数：
+&lt;ul&gt;
+&lt;li&gt;64KB/32B = 2048行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;每组行数：
+&lt;ul&gt;
+&lt;li&gt;8行（8路组相联）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;组数：
+&lt;ul&gt;
+&lt;li&gt;2048/8 = 256组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;地址位的分配：
+&lt;ul&gt;
+&lt;li&gt;块内地址：log2(32) = 5位&lt;/li&gt;
+&lt;li&gt;组号：log2(256) = 8位&lt;/li&gt;
+&lt;li&gt;标记：32 - 8 - 5 = 19位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;地址格式：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;|    标记(19位)    |  组号(8位)  |  块内地址(5位)  |
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;替换算法&#34;&gt;替换算法
+&lt;/h4&gt;&lt;h5 id=&#34;lru&#34;&gt;LRU
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;工作原理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;替换最长时间没有被访问的数据块&lt;/li&gt;
+&lt;li&gt;需要记录每个数据块的最后访问时间&lt;/li&gt;
+&lt;li&gt;基于程序的时间局部性原理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实现方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;计数器法：记录上次访问时间&lt;/li&gt;
+&lt;li&gt;栈实现：最近使用的放栈顶&lt;/li&gt;
+&lt;li&gt;链表实现：访问后移至表头&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例题&lt;/p&gt;
+&lt;p&gt;假设有一个容量为 3 的 Cache，访问序列为：1, 2, 3, 4, 1, 2, 5, 1, 2, 3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;初始状态&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;替换最久未使用的1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;替换最久未使用的2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;替换最久未使用的3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;替换最久未使用的4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;lfu&#34;&gt;LFU
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;工作原理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;替换访问次数最少的数据块&lt;/li&gt;
+&lt;li&gt;需要维护访问计数器&lt;/li&gt;
+&lt;li&gt;基于使用频率进行判断&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例题&lt;/p&gt;
+&lt;p&gt;假设有一个容量为 3 的 Cache，访问序列为：1, 1, 1, 2, 2, 3, 4, 1&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;初始状态&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;       &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;数字&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:计数&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;:1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;替换计数最小的3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;fifo&#34;&gt;FIFO
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;工作原理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;替换最早进入 Cache 的数据块&lt;/li&gt;
+&lt;li&gt;类似队列操作&lt;/li&gt;
+&lt;li&gt;实现简单，硬件开销小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例题&lt;/p&gt;
+&lt;p&gt;假设有一个容量为 3 的 Cache，访问序列为：1, 2, 3, 4, 2, 1, 5&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;初始状态&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;替换最早进入的1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;已存在&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;不变&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;替换最早进入的3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;替换最早进入的2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;随机替换&#34;&gt;随机替换
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;工作原理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;随机选择要替换的数据块&lt;/li&gt;
+&lt;li&gt;不需要维护任何历史信息&lt;/li&gt;
+&lt;li&gt;硬件实现最简单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;例题&lt;/p&gt;
+&lt;p&gt;假设有一个容量为 3 的 Cache，访问序列为：1, 2, 3, 4, 2, 1, 5&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;过程演示 (Process Demonstration)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;初始状态&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;随机替换了1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;访问&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;已存在&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;不变&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;随机替换了2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;进入&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;→&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;随机替换了3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;性能比较&#34;&gt;性能比较
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/image%2014.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;写策略&#34;&gt;写策略
+&lt;/h4&gt;&lt;h5 id=&#34;写直达法write-through&#34;&gt;写直达法(Write Through)
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;数据同时写入 Cache 和主存&lt;/li&gt;
+&lt;li&gt;每次写操作都要访问主存&lt;/li&gt;
+&lt;li&gt;Cache 和主存的数据始终保持一致&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;写回法write-back&#34;&gt;写回法(Write Back)
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;写操作只修改 Cache 中的数据&lt;/li&gt;
+&lt;li&gt;被修改的数据块被标记为&amp;quot;脏&amp;quot;(dirty)&lt;/li&gt;
+&lt;li&gt;当脏块被替换时，才写回主存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;性能计算&#34;&gt;性能计算
+&lt;/h4&gt;&lt;h5 id=&#34;命中率计算&#34;&gt;命中率计算
+&lt;/h5&gt;&lt;p&gt;在一个程序执行期间，设$N_c$表示Cache完成存取的总次数，$N_m$表示主存完成存取的总次数，h定义为命中率，则有&lt;/p&gt;
+$$
+⁍
+$$&lt;h5 id=&#34;平均访问时间计算&#34;&gt;平均访问时间计算
+&lt;/h5&gt;&lt;p&gt;若$t_c$表示命中时的Cache访问时间，$t_m$表示未命中时的主存访问时间，$1-h$表示未命中率，则Cache/主存系统的平均访问时间$t_a$为&lt;/p&gt;
+$$
+⁍
+$$&lt;h5 id=&#34;cache效率计算&#34;&gt;Cache效率计算
+&lt;/h5&gt;&lt;p&gt;设$r=\frac{tm}{tc}$表示主存慢于Cache的倍率,e表示访问效率，则有:&lt;/p&gt;
+$$
+⁍
+$$</description>
+        </item>
         
     </channel>
 </rss>
