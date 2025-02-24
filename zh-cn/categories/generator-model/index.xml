@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Generator Model on 鲸鲵的博客</title>
+        <link>https://whale-dolphin.github.io/zh-cn/categories/generator-model/</link>
+        <description>Recent content in Generator Model on 鲸鲵的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>鲸鲵 WhaleDolphin</copyright>
+        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://whale-dolphin.github.io/zh-cn/categories/generator-model/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Flow-base</title>
+        <link>https://whale-dolphin.github.io/zh-cn/p/flow-base/</link>
+        <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://whale-dolphin.github.io/zh-cn/p/flow-base/</guid>
+        <description>&lt;img src="https://whale-dolphin.github.io/zh-cn/p/flow-base/cover.jpg" alt="Featured image of post Flow-base" /&gt;&lt;p&gt;Flow 的核心思路是找到一个从简单先验分布映射到训练数据所在分布的函数，其结构如下图所示：&lt;/p&gt;
+&lt;p&gt;相对于 VAE 预设对象的密度分布是连续的所以把先验分布映射到一个简单的隐变量分布上，然后使用 decoder 从隐变量空间学习还原生成后验分布来说，flow 采用一个简单粗暴但在数学上极具美感的做法，它采用一个可逆的方法对先验分布进行学习，暴力的学习先验空间到简单分布的映射，之后用逆方法对其进行生成。个人感觉其相当于把 VAE 的 encoder 和 decoder 揉到一起去了，采用了可逆函数的特点简化了 encoder 和 decoder 对过程。&lt;/p&gt;
+&lt;h2 id=&#34;生成器&#34;&gt;生成器
+&lt;/h2&gt;&lt;p&gt;Flow 模型旨在学习一个可逆变换函数 G，该函数将一个简单的先验分布（通常是高斯分布）z 映射到数据分布 x：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/Untitled.png&#34;
+	width=&#34;2592&#34;
+	height=&#34;734&#34;
+	srcset=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/Untitled_hu4041690602462463661.png 480w, https://whale-dolphin.github.io/zh-cn/p/flow-base/Untitled_hu5653924000960274254.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Untitled&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;353&#34;
+		data-flex-basis=&#34;847px&#34;
+	
+&gt;&lt;/p&gt;
+$$
+x = G(z)
+$$&lt;p&gt;由于 G 是可逆的，我们可以得到逆变换：&lt;/p&gt;
+$$
+z = G⁻¹(x)
+$$&lt;p&gt;这种可逆性是 Flow 模型的关键，它允许我们直接计算数据 x 的概率密度：&lt;/p&gt;
+$$
+p(x)=\pi (z)\left|\det J_{G^{-1}} \right|
+$$&lt;p&gt;其中 $p(z)$ 是先验分布的概率密度，$J_{G^{-1}}$ 是逆变换 $G⁻¹$ 的雅可比矩阵。&lt;/p&gt;
+&lt;p&gt;flow 优化真实值在后验分布中的最大似然，公式如下：&lt;/p&gt;
+$$
+G^*=arg max \displaystyle\sum^m_{i=1}logP_G(x_i)
+$$&lt;h3 id=&#34;change-of-variable-theorem&#34;&gt;Change of variable Theorem
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image.png&#34;
+	width=&#34;611&#34;
+	height=&#34;480&#34;
+	srcset=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image_hu15129059530534207535.png 480w, https://whale-dolphin.github.io/zh-cn/p/flow-base/image_hu10274330537115529828.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;127&#34;
+		data-flex-basis=&#34;305px&#34;
+	
+&gt;&lt;/p&gt;
+$$
+p(x&#39;) = \pi(z&#39;) \left| \frac{dz}{dx} \right|
+$$&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image_1.png&#34;
+	width=&#34;1040&#34;
+	height=&#34;515&#34;
+	srcset=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image_1_hu5121271444659507395.png 480w, https://whale-dolphin.github.io/zh-cn/p/flow-base/image_1_hu17274553613240958745.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;201&#34;
+		data-flex-basis=&#34;484px&#34;
+	
+&gt;&lt;/p&gt;
+$$
+p(x&#39;) \left| \det \begin{bmatrix}    \Delta x_{11} &amp; \Delta x_{21} \\    \Delta x_{12} &amp; \Delta x_{22}\end{bmatrix} \right| = \pi(z&#39;) \Delta z_{1} \Delta z_{2}
+$$$$
+p(x&#39;)=\pi (z&#39;)\left|\det J_{f^{-1}} \right|
+$$&lt;h3 id=&#34;jabobian-矩阵&#34;&gt;Jabobian 矩阵
+&lt;/h3&gt;&lt;p&gt;Jacobian 矩阵是一个函数的所有一阶偏导数的矩阵。对于从$R^n$映射到$R^m$的函数，Jacobian 矩阵的维度是$m \times n$。&lt;/p&gt;
+&lt;p&gt;对于函数 $F: R^n \rightarrow R^m$，其中 $F(x) = [f_1(x), f_2(x), &amp;hellip;, f_m(x)]^T$，
+Jacobian 矩阵 J 表示为：&lt;/p&gt;
+$$
+J = \begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_1}{\partial x_2} &amp; \cdots &amp; \frac{\partial f_1}{\partial x_n} \\
+\frac{\partial f_2}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} &amp; \cdots &amp; \frac{\partial f_2}{\partial x_n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\frac{\partial f_m}{\partial x_1} &amp; \frac{\partial f_m}{\partial x_2} &amp; \cdots &amp; \frac{\partial f_m}{\partial x_n}
+\end{bmatrix}
+$$&lt;p&gt;&lt;strong&gt;几何意义&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;线性逼近：&lt;/strong&gt; 雅可比矩阵代表了函数 f 在给定点 x 的最佳线性逼近。也就是说，当 x 发生一个微小变化 Δx 时，f(x) 的变化 Δf 可以近似表示为：&lt;/li&gt;
+&lt;/ul&gt;
+$$
+Δf ≈ J Δx
+$$&lt;p&gt;这个公式类似于单变量微积分中的导数概念，雅可比矩阵相当于多变量函数的“导数”。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;局部变换：&lt;/strong&gt; 雅可比矩阵描述了函数 f 在 x 附近的局部变换。它反映了输入空间的微小变化如何在输出空间中被拉伸、压缩或旋转。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;体积变化：&lt;/strong&gt; 雅可比矩阵的行列式 $|det(J)|$ (当 $m = n$ 时，雅可比矩阵为方阵) 表示函数 $f$ 在 $x$ 附近对体积的改变程度。如果 $|det(J)| &amp;gt; 1$，则表示体积被放大；如果 $0 &amp;lt; |det(J)| &amp;lt; 1$，则表示体积被缩小；如果 $|det(J)| = 0$，则表示变换将输入空间映射到一个低维空间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;flow-base&#34;&gt;Flow-base
+&lt;/h2&gt;&lt;p&gt;最终的优化目标是$P_G(x_i)$，由上式可知：&lt;/p&gt;
+$$
+p(x)=\pi(\mathbb{G}^{-1}(x))\left|\det J_{\mathbb{G}^{-1}} \right|
+$$&lt;p&gt;两边取对数可得：&lt;/p&gt;
+$$
+\log p_{\mathbb{G}}(x) = \log \pi(\mathbb{G}^{-1}(x)) + \log |det(J_{\mathbb{G}^{-1}})|
+$$&lt;h2 id=&#34;coupling-layer&#34;&gt;Coupling Layer
+&lt;/h2&gt;&lt;p&gt;为了解决生成器可逆的问题，flow 采用了如下结构的生成器&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image_2.png&#34;
+	width=&#34;1016&#34;
+	height=&#34;641&#34;
+	srcset=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image_2_hu12292856015037145001.png 480w, https://whale-dolphin.github.io/zh-cn/p/flow-base/image_2_hu914350396899081388.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;158&#34;
+		data-flex-basis=&#34;380px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;其中，分别讲输出和输出分成两个部分，对于对于原函数计算，我们将第一个部分直接复制，然后通过两个神经网络得到$\beta$和$\gamma$，然后通过$x=z\cdot \beta + \gamma$计算$x$值。反函数的计算直接复制第一部分，第二个部分相减即可&lt;/p&gt;
+&lt;p&gt;解决了生成器的反函数问题，优化最大似然的目标就是找到生成器的 Jabobian 矩阵，生成器的 Jabobian 矩阵计算如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image_3.png&#34;
+	width=&#34;599&#34;
+	height=&#34;529&#34;
+	srcset=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image_3_hu15446716658341649903.png 480w, https://whale-dolphin.github.io/zh-cn/p/flow-base/image_3_hu3497145839778058816.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;113&#34;
+		data-flex-basis=&#34;271px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;对于第一个部分，易知其为单位矩阵，$z$的第二部分和第一部分无关，所以为零矩阵，此时整个函数的 Jabobian 矩阵只与右下角这一部分有关，右下角部分逐个求偏导就是$\beta$的值，故整个函数的 Jabobian 矩阵可写作如下形式：&lt;/p&gt;
+$$
+⁍
+$$&lt;h2 id=&#34;coupling-layer-stacking&#34;&gt;Coupling Layer-Stacking
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image_4.png&#34;
+	width=&#34;1033&#34;
+	height=&#34;605&#34;
+	srcset=&#34;https://whale-dolphin.github.io/zh-cn/p/flow-base/image_4_hu13241862251459167875.png 480w, https://whale-dolphin.github.io/zh-cn/p/flow-base/image_4_hu16162125395884357543.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;170&#34;
+		data-flex-basis=&#34;409px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;我们通常将多个 flow 模型堆叠起来进行使用，这会产生一个问题：每次只有二部分参与变换，所以我们采用 Coupling Layer-Stacking，也就是每次生成器会切换不同的部分进行变换。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

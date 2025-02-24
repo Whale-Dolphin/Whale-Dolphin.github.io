@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>计组 on 鲸鲵的博客</title>
-        <link>https://whale-dolphin.github.io/categories/%E8%AE%A1%E7%BB%84/</link>
+        <link>http://localhost:1313/categories/%E8%AE%A1%E7%BB%84/</link>
         <description>Recent content in 计组 on 鲸鲵的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>鲸鲵 WhaleDolphin</copyright>
-        <lastBuildDate>Fri, 06 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://whale-dolphin.github.io/categories/%E8%AE%A1%E7%BB%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 06 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E8%AE%A1%E7%BB%84/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>计算机组成原理复习</title>
-        <link>https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</link>
+        <link>http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</link>
         <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover.png" alt="Featured image of post 计算机组成原理复习" /&gt;&lt;h2 id=&#34;第一章-计算机系统概论&#34;&gt;第一章 计算机系统概论
+        <guid>http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</guid>
+        <description>&lt;img src="http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover.png" alt="Featured image of post 计算机组成原理复习" /&gt;&lt;h2 id=&#34;第一章-计算机系统概论&#34;&gt;第一章 计算机系统概论
 &lt;/h2&gt;&lt;h3 id=&#34;计算机发展历程&#34;&gt;计算机发展历程
 &lt;/h3&gt;&lt;h4 id=&#34;计算机的四代发展&#34;&gt;计算机的四代发展
 &lt;/h4&gt;&lt;ol&gt;
@@ -1157,10 +1157,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/ol&gt;
 &lt;h3 id=&#34;运算方法与运算器&#34;&gt;运算方法与运算器
 &lt;/h3&gt;&lt;h4 id=&#34;半加法器half-adder-ha&#34;&gt;半加法器（Half Adder HA）
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image.png&#34;
 	width=&#34;758&#34;
 	height=&#34;453&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu15844050927207836269.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu9008794977240874968.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu15844050927207836269.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu9008794977240874968.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1170,10 +1170,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;全加法器full-adder-fa&#34;&gt;全加法器（Full Adder FA）
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1.png&#34;
 	width=&#34;976&#34;
 	height=&#34;463&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu17551818972063236655.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu4995496302082295453.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu17551818972063236655.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu4995496302082295453.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1183,10 +1183,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;串行进位全加法器&#34;&gt;串行进位全加法器
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2.png&#34;
 	width=&#34;741&#34;
 	height=&#34;1102&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu1242578662294364449.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu12164645366932175892.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu1242578662294364449.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu12164645366932175892.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1195,10 +1195,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 		data-flex-basis=&#34;161px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3.png&#34;
 	width=&#34;1859&#34;
 	height=&#34;610&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu10324162280861269571.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu7241800598238517919.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu10324162280861269571.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu7241800598238517919.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1208,10 +1208,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;阵列乘法器&#34;&gt;阵列乘法器
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4.png&#34;
 	width=&#34;959&#34;
 	height=&#34;673&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu6571171111944349519.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu220821699072295745.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu6571171111944349519.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu220821699072295745.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1220,10 +1220,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 		data-flex-basis=&#34;341px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5.png&#34;
 	width=&#34;959&#34;
 	height=&#34;671&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu15604721438665172519.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu6105849087648627725.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu15604721438665172519.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu6105849087648627725.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1308,10 +1308,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;h3 id=&#34;半导体存储器&#34;&gt;半导体存储器
 &lt;/h3&gt;&lt;h4 id=&#34;sram&#34;&gt;SRAM
 &lt;/h4&gt;&lt;h5 id=&#34;基本存储单元结构&#34;&gt;基本存储单元结构
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6.png&#34;
 	width=&#34;505&#34;
 	height=&#34;513&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu16402436395228465765.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu11236518385331816806.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu16402436395228465765.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu11236518385331816806.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1383,10 +1383,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;h4 id=&#34;dram&#34;&gt;DRAM
 &lt;/h4&gt;&lt;h5 id=&#34;基本存储单元结构-1&#34;&gt;基本存储单元结构
 &lt;/h5&gt;&lt;p&gt;DRAM 的基本存储单元由一个晶体管和一个电容构成，通常称为&amp;quot;1T1C&amp;quot;结构：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7.png&#34;
 	width=&#34;456&#34;
 	height=&#34;427&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu14304478671431942182.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu1254160810540629203.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu14304478671431942182.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu1254160810540629203.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1501,10 +1501,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;时序图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8.png&#34;
 	width=&#34;1070&#34;
 	height=&#34;479&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu6383915534628664181.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu7135989850919864805.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu6383915534628664181.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu7135989850919864805.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1602,10 +1602,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;时序图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9.png&#34;
 	width=&#34;982&#34;
 	height=&#34;441&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu12346651912707836322.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu9405375465799582639.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu12346651912707836322.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu9405375465799582639.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1721,10 +1721,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;时序图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10.png&#34;
 	width=&#34;979&#34;
 	height=&#34;448&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu7810669416053690256.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu8544516001268165104.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu7810669416053690256.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu8544516001268165104.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1947,10 +1947,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;64K ÷ 16K = 4片芯片
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11.png&#34;
 	width=&#34;470&#34;
 	height=&#34;243&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu10869981017364357848.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu1269440692721593533.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu10869981017364357848.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu1269440692721593533.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2036,10 +2036,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;先用4片256K X 8位的存储体构成 256K X 32的存储体&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12.png&#34;
 	width=&#34;432&#34;
 	height=&#34;328&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu13561722755967961109.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu9411654097025198026.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu13561722755967961109.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu9411654097025198026.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2051,10 +2051,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;然后和字扩展一样&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13.png&#34;
 	width=&#34;894&#34;
 	height=&#34;542&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu11376975969598399222.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu14559673786505275519.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu11376975969598399222.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu14559673786505275519.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2537,10 +2537,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;性能比较&#34;&gt;性能比较
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14.png&#34;
 	width=&#34;2424&#34;
 	height=&#34;956&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu2110060091895562747.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu10366177331071096642.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu2110060091895562747.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu10366177331071096642.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>鲸鲵的博客</title>
-        <link>https://whale-dolphin.github.io/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on 鲸鲵的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>鲸鲵 WhaleDolphin</copyright>
-        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://whale-dolphin.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Flow-base</title>
-        <link>https://whale-dolphin.github.io/p/flow-base/</link>
+        <link>http://localhost:1313/p/flow-base/</link>
         <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/flow-base/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/flow-base/cover.jpg" alt="Featured image of post Flow-base" /&gt;&lt;p&gt;Flow 的核心思路是找到一个从简单先验分布映射到训练数据所在分布的函数，其结构如下图所示：&lt;/p&gt;
+        <guid>http://localhost:1313/p/flow-base/</guid>
+        <description>&lt;img src="http://localhost:1313/p/flow-base/cover.jpg" alt="Featured image of post Flow-base" /&gt;&lt;p&gt;Flow 的核心思路是找到一个从简单先验分布映射到训练数据所在分布的函数，其结构如下图所示：&lt;/p&gt;
 &lt;p&gt;相对于 VAE 预设对象的密度分布是连续的所以把先验分布映射到一个简单的隐变量分布上，然后使用 decoder 从隐变量空间学习还原生成后验分布来说，flow 采用一个简单粗暴但在数学上极具美感的做法，它采用一个可逆的方法对先验分布进行学习，暴力的学习先验空间到简单分布的映射，之后用逆方法对其进行生成。个人感觉其相当于把 VAE 的 encoder 和 decoder 揉到一起去了，采用了可逆函数的特点简化了 encoder 和 decoder 对过程。&lt;/p&gt;
 &lt;h2 id=&#34;生成器&#34;&gt;生成器
 &lt;/h2&gt;&lt;p&gt;Flow 模型旨在学习一个可逆变换函数 G，该函数将一个简单的先验分布（通常是高斯分布）z 映射到数据分布 x：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/Untitled.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/Untitled.png&#34;
 	width=&#34;2592&#34;
 	height=&#34;734&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/Untitled_hu4041690602462463661.png 480w, https://whale-dolphin.github.io/p/flow-base/Untitled_hu5653924000960274254.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/Untitled_hu4041690602462463661.png 480w, http://localhost:1313/p/flow-base/Untitled_hu5653924000960274254.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Untitled&#34;
@@ -44,10 +44,10 @@ $$&lt;p&gt;其中 $p(z)$ 是先验分布的概率密度，$J_{G^{-1}}$ 是逆变
 $$
 G^*=arg max \displaystyle\sum^m_{i=1}logP_G(x_i)
 $$&lt;h3 id=&#34;change-of-variable-theorem&#34;&gt;Change of variable Theorem
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image.png&#34;
 	width=&#34;611&#34;
 	height=&#34;480&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_hu15129059530534207535.png 480w, https://whale-dolphin.github.io/p/flow-base/image_hu10274330537115529828.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_hu15129059530534207535.png 480w, http://localhost:1313/p/flow-base/image_hu10274330537115529828.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -58,10 +58,10 @@ $$&lt;h3 id=&#34;change-of-variable-theorem&#34;&gt;Change of variable Theorem
 &gt;&lt;/p&gt;
 $$
 p(x&#39;) = \pi(z&#39;) \left| \frac{dz}{dx} \right|
-$$&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image_1.png&#34;
+$$&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image_1.png&#34;
 	width=&#34;1040&#34;
 	height=&#34;515&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_1_hu5121271444659507395.png 480w, https://whale-dolphin.github.io/p/flow-base/image_1_hu17274553613240958745.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_1_hu5121271444659507395.png 480w, http://localhost:1313/p/flow-base/image_1_hu17274553613240958745.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -105,10 +105,10 @@ $$
 \log p_{\mathbb{G}}(x) = \log \pi(\mathbb{G}^{-1}(x)) + \log |det(J_{\mathbb{G}^{-1}})|
 $$&lt;h2 id=&#34;coupling-layer&#34;&gt;Coupling Layer
 &lt;/h2&gt;&lt;p&gt;为了解决生成器可逆的问题，flow 采用了如下结构的生成器&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image_2.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image_2.png&#34;
 	width=&#34;1016&#34;
 	height=&#34;641&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_2_hu12292856015037145001.png 480w, https://whale-dolphin.github.io/p/flow-base/image_2_hu914350396899081388.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_2_hu12292856015037145001.png 480w, http://localhost:1313/p/flow-base/image_2_hu914350396899081388.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -119,10 +119,10 @@ $$&lt;h2 id=&#34;coupling-layer&#34;&gt;Coupling Layer
 &gt;&lt;/p&gt;
 &lt;p&gt;其中，分别讲输出和输出分成两个部分，对于对于原函数计算，我们将第一个部分直接复制，然后通过两个神经网络得到$\beta$和$\gamma$，然后通过$x=z\cdot \beta + \gamma$计算$x$值。反函数的计算直接复制第一部分，第二个部分相减即可&lt;/p&gt;
 &lt;p&gt;解决了生成器的反函数问题，优化最大似然的目标就是找到生成器的 Jabobian 矩阵，生成器的 Jabobian 矩阵计算如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image_3.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image_3.png&#34;
 	width=&#34;599&#34;
 	height=&#34;529&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_3_hu15446716658341649903.png 480w, https://whale-dolphin.github.io/p/flow-base/image_3_hu3497145839778058816.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_3_hu15446716658341649903.png 480w, http://localhost:1313/p/flow-base/image_3_hu3497145839778058816.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -135,10 +135,10 @@ $$&lt;h2 id=&#34;coupling-layer&#34;&gt;Coupling Layer
 $$
 ⁍
 $$&lt;h2 id=&#34;coupling-layer-stacking&#34;&gt;Coupling Layer-Stacking
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image_4.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image_4.png&#34;
 	width=&#34;1033&#34;
 	height=&#34;605&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_4_hu13241862251459167875.png 480w, https://whale-dolphin.github.io/p/flow-base/image_4_hu16162125395884357543.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_4_hu13241862251459167875.png 480w, http://localhost:1313/p/flow-base/image_4_hu16162125395884357543.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -152,11 +152,11 @@ $$&lt;h2 id=&#34;coupling-layer-stacking&#34;&gt;Coupling Layer-Stacking
         </item>
         <item>
         <title>计算机组成原理复习</title>
-        <link>https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</link>
+        <link>http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</link>
         <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover.png" alt="Featured image of post 计算机组成原理复习" /&gt;&lt;h2 id=&#34;第一章-计算机系统概论&#34;&gt;第一章 计算机系统概论
+        <guid>http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/</guid>
+        <description>&lt;img src="http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover.png" alt="Featured image of post 计算机组成原理复习" /&gt;&lt;h2 id=&#34;第一章-计算机系统概论&#34;&gt;第一章 计算机系统概论
 &lt;/h2&gt;&lt;h3 id=&#34;计算机发展历程&#34;&gt;计算机发展历程
 &lt;/h3&gt;&lt;h4 id=&#34;计算机的四代发展&#34;&gt;计算机的四代发展
 &lt;/h4&gt;&lt;ol&gt;
@@ -1300,10 +1300,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/ol&gt;
 &lt;h3 id=&#34;运算方法与运算器&#34;&gt;运算方法与运算器
 &lt;/h3&gt;&lt;h4 id=&#34;半加法器half-adder-ha&#34;&gt;半加法器（Half Adder HA）
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image.png&#34;
 	width=&#34;758&#34;
 	height=&#34;453&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu15844050927207836269.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu9008794977240874968.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu15844050927207836269.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu9008794977240874968.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1313,10 +1313,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;全加法器full-adder-fa&#34;&gt;全加法器（Full Adder FA）
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1.png&#34;
 	width=&#34;976&#34;
 	height=&#34;463&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu17551818972063236655.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu4995496302082295453.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu17551818972063236655.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu4995496302082295453.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1326,10 +1326,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;串行进位全加法器&#34;&gt;串行进位全加法器
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2.png&#34;
 	width=&#34;741&#34;
 	height=&#34;1102&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu1242578662294364449.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu12164645366932175892.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu1242578662294364449.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu12164645366932175892.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1338,10 +1338,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 		data-flex-basis=&#34;161px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3.png&#34;
 	width=&#34;1859&#34;
 	height=&#34;610&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu10324162280861269571.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu7241800598238517919.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu10324162280861269571.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu7241800598238517919.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1351,10 +1351,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;阵列乘法器&#34;&gt;阵列乘法器
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4.png&#34;
 	width=&#34;959&#34;
 	height=&#34;673&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu6571171111944349519.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu220821699072295745.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu6571171111944349519.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu220821699072295745.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1363,10 +1363,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 		data-flex-basis=&#34;341px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5.png&#34;
 	width=&#34;959&#34;
 	height=&#34;671&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu15604721438665172519.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu6105849087648627725.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu15604721438665172519.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu6105849087648627725.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1451,10 +1451,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;h3 id=&#34;半导体存储器&#34;&gt;半导体存储器
 &lt;/h3&gt;&lt;h4 id=&#34;sram&#34;&gt;SRAM
 &lt;/h4&gt;&lt;h5 id=&#34;基本存储单元结构&#34;&gt;基本存储单元结构
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6.png&#34;
 	width=&#34;505&#34;
 	height=&#34;513&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu16402436395228465765.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu11236518385331816806.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu16402436395228465765.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu11236518385331816806.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1526,10 +1526,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;h4 id=&#34;dram&#34;&gt;DRAM
 &lt;/h4&gt;&lt;h5 id=&#34;基本存储单元结构-1&#34;&gt;基本存储单元结构
 &lt;/h5&gt;&lt;p&gt;DRAM 的基本存储单元由一个晶体管和一个电容构成，通常称为&amp;quot;1T1C&amp;quot;结构：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7.png&#34;
 	width=&#34;456&#34;
 	height=&#34;427&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu14304478671431942182.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu1254160810540629203.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu14304478671431942182.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu1254160810540629203.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1644,10 +1644,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;时序图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8.png&#34;
 	width=&#34;1070&#34;
 	height=&#34;479&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu6383915534628664181.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu7135989850919864805.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu6383915534628664181.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu7135989850919864805.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1745,10 +1745,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;时序图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9.png&#34;
 	width=&#34;982&#34;
 	height=&#34;441&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu12346651912707836322.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu9405375465799582639.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu12346651912707836322.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu9405375465799582639.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1864,10 +1864,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;时序图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10.png&#34;
 	width=&#34;979&#34;
 	height=&#34;448&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu7810669416053690256.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu8544516001268165104.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu7810669416053690256.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu8544516001268165104.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2090,10 +2090,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;64K ÷ 16K = 4片芯片
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11.png&#34;
 	width=&#34;470&#34;
 	height=&#34;243&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu10869981017364357848.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu1269440692721593533.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu10869981017364357848.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu1269440692721593533.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2179,10 +2179,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;先用4片256K X 8位的存储体构成 256K X 32的存储体&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12.png&#34;
 	width=&#34;432&#34;
 	height=&#34;328&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu13561722755967961109.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu9411654097025198026.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu13561722755967961109.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu9411654097025198026.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2194,10 +2194,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;然后和字扩展一样&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13.png&#34;
 	width=&#34;894&#34;
 	height=&#34;542&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu11376975969598399222.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu14559673786505275519.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu11376975969598399222.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu14559673786505275519.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2680,10 +2680,10 @@ Let&amp;rsquo;s look at an 8-bit two&amp;rsquo;s complement calculation example:
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;性能比较&#34;&gt;性能比较
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14.png&#34;
 	width=&#34;2424&#34;
 	height=&#34;956&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu2110060091895562747.png 480w, https://whale-dolphin.github.io/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu10366177331071096642.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu2110060091895562747.png 480w, http://localhost:1313/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu10366177331071096642.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2722,11 +2722,11 @@ $$</description>
         </item>
         <item>
         <title>使用Frp内网穿透随时随地访问校内网机器</title>
-        <link>https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/</link>
+        <link>http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/</link>
         <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/cover.jpg" alt="Featured image of post 使用Frp内网穿透随时随地访问校内网机器" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言
+        <guid>http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/</guid>
+        <description>&lt;img src="http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/cover.jpg" alt="Featured image of post 使用Frp内网穿透随时随地访问校内网机器" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;实验室的机器（下称校内机）是强校内网环境，必须直接连上校园网才能访问和使用（甚至开了校内vpn也连不上）。为了在校外或者断网环境也能优雅的访问机器，我使用了frp内网穿透将内网机器映射到公网服务器上，以此链接内网机器。前排提示，理论上来说这是违规操作，所以请务必做好转发端口的防护以避免内网机器被频繁攻击。&lt;/p&gt;
 &lt;h2 id=&#34;准备&#34;&gt;准备
 &lt;/h2&gt;&lt;p&gt;你需要一个有公网ip的服务器（下称服务器），我用的是阿里云的ECS，2C2G，香港节点，带有一个静态ip。理论上来说动态ip也可以通过DDNS来解析服务并且更加安全，但是我懒得折腾，如果有读者跑通了请务必告诉我qwq。&lt;/p&gt;
@@ -2772,10 +2772,10 @@ $$</description>
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;在ecs控制面板填入方向端口白名单&#34;&gt;在ECS控制面板填入方向端口白名单
 &lt;/h3&gt;&lt;p&gt;我是用的是阿里云的ECS，其界面如下。需要手动在控制面板添加7000端口（frp服务端口）和6000（校内网机器指定的公网访问端口）的限制。其中7000端口的授权对象是校内机ip，6000端口建议只开放给自己常用的ip，如果连不上再加，防止潜在的攻击。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image.png&#34;
 	width=&#34;1907&#34;
 	height=&#34;461&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image_hu5289698652420669443.png 480w, https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image_hu6775498138647624616.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image_hu5289698652420669443.png 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image_hu6775498138647624616.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image.png&#34;
@@ -2899,18 +2899,18 @@ $$</description>
         </item>
         <item>
         <title>TTS Evaluation Targets</title>
-        <link>https://whale-dolphin.github.io/p/tts-evaluation-targets/</link>
+        <link>http://localhost:1313/p/tts-evaluation-targets/</link>
         <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/tts-evaluation-targets/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/tts-evaluation-targets/cover.jpg" alt="Featured image of post TTS Evaluation Targets" /&gt;&lt;h2 id=&#34;语音评估指标及工具&#34;&gt;语音评估指标及工具
+        <guid>http://localhost:1313/p/tts-evaluation-targets/</guid>
+        <description>&lt;img src="http://localhost:1313/p/tts-evaluation-targets/cover.jpg" alt="Featured image of post TTS Evaluation Targets" /&gt;&lt;h2 id=&#34;语音评估指标及工具&#34;&gt;语音评估指标及工具
 &lt;/h2&gt;&lt;h2 id=&#34;声音质量指标&#34;&gt;声音质量指标：
 &lt;/h2&gt;&lt;h3 id=&#34;mos-mean-opinion-score&#34;&gt;MOS (Mean Opinion Score)
 &lt;/h3&gt;&lt;p&gt;虽然这通常是主观评分，但也有自动MOS预测工具，如AutoMOS。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/tts-evaluation-targets/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/tts-evaluation-targets/image.png&#34;
 	width=&#34;568&#34;
 	height=&#34;394&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/tts-evaluation-targets/image_hu891468202885649987.png 480w, https://whale-dolphin.github.io/p/tts-evaluation-targets/image_hu16908096840782193633.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/tts-evaluation-targets/image_hu891468202885649987.png 480w, http://localhost:1313/p/tts-evaluation-targets/image_hu16908096840782193633.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image.png&#34;
@@ -3199,16 +3199,16 @@ FRR = (错误拒绝的真实声音样本数) / (总真实声音样本数)&lt;/li
         </item>
         <item>
         <title>Vector Quatinized</title>
-        <link>https://whale-dolphin.github.io/p/vector-quatinized/</link>
+        <link>http://localhost:1313/p/vector-quatinized/</link>
         <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/vector-quatinized/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/vector-quatinized/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Vector Quatinized" /&gt;&lt;h2 id=&#34;vq向量量化&#34;&gt;VQ(向量量化）
+        <guid>http://localhost:1313/p/vector-quatinized/</guid>
+        <description>&lt;img src="http://localhost:1313/p/vector-quatinized/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Vector Quatinized" /&gt;&lt;h2 id=&#34;vq向量量化&#34;&gt;VQ(向量量化）
 &lt;/h2&gt;&lt;p&gt;VQ是当前语音vocoder的常用技术，其相当于对连续空间表示进行类似聚类处理，让连续表示的信息汇聚到离散值当中，让codebook中的vector都带有确定的信息，方便后面decoder的重建。VQ的第一次提出在VQ-VAE这篇论文中。这篇论文详细的提出了VQ方法并指出VQ能够有效避免后验崩塌问题,确保码本中的每个向量都携带有用信息。此外,这种结构化的离散表示能够帮助decoder在训练过程中更好地重建和补充结构化信息。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/vector-quatinized/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/vector-quatinized/image.png&#34;
 	width=&#34;931&#34;
 	height=&#34;380&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/vector-quatinized/image_hu3074761259295839613.png 480w, https://whale-dolphin.github.io/p/vector-quatinized/image_hu12199941970548648562.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/vector-quatinized/image_hu3074761259295839613.png 480w, http://localhost:1313/p/vector-quatinized/image_hu12199941970548648562.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image.png&#34;
@@ -3452,10 +3452,10 @@ FRR = (错误拒绝的真实声音样本数) / (总真实声音样本数)&lt;/li
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;visualize_codebook&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/vector-quatinized/image1.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/vector-quatinized/image1.png&#34;
 	width=&#34;844&#34;
 	height=&#34;855&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/vector-quatinized/image1_hu15095605146698456771.png 480w, https://whale-dolphin.github.io/p/vector-quatinized/image1_hu12479223536628232365.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/vector-quatinized/image1_hu15095605146698456771.png 480w, http://localhost:1313/p/vector-quatinized/image1_hu12479223536628232365.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;聚类后的码本的降维可视化&#34;
@@ -3485,10 +3485,10 @@ FRR = (错误拒绝的真实声音样本数) / (总真实声音样本数)&lt;/li
         </item>
         <item>
         <title>关于</title>
-        <link>https://whale-dolphin.github.io/about/</link>
+        <link>http://localhost:1313/about/</link>
         <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/about/</guid>
+        <guid>http://localhost:1313/about/</guid>
         <description>&lt;p&gt;你好，陌生人，我叫鲸鲵，这个名字出自《洛神赋》，“鲸鲵涌而夹毂，水禽翔而为卫”。鲸和鲵分别指水中的雄性和雌性哺乳动物。其实我还给鲸鲵分别起了好听的名字，叫鲸落和鲵笙，于是我又分别给这两个小可爱待的地方起名叫“鲸落的鱼塘”和“鲵笙的海洋”。英文名就叫Whale Dolphin啦！全网同名，如果你看到以上名字，基本上都是我哦。&lt;/p&gt;
 &lt;p&gt;这份博客是写给自己的，如果你恰好看到了我博客的文章，又恰好对我感兴趣点进了这个页面，那么我们也许很有缘分。🥹&lt;/p&gt;
 &lt;p&gt;如题，我是一个二次元死宅程序员，喜欢唱歌，喜欢vsinger和vtuber，最喜欢的歌手是洛天依，天依的声音会带给我力量。目前的研究方向是语音合成，希望能做出CV级别的合成模型。梦想是做出和二次元世界一样的AI纸片人。&lt;/p&gt;
@@ -3497,26 +3497,26 @@ FRR = (错误拒绝的真实声音样本数) / (总真实声音样本数)&lt;/li
         </item>
         <item>
         <title>归档</title>
-        <link>https://whale-dolphin.github.io/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>搜索</title>
-        <link>https://whale-dolphin.github.io/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         <item>
         <title>友链</title>
-        <link>https://whale-dolphin.github.io/%E5%8F%8B%E9%93%BE/</link>
+        <link>http://localhost:1313/%E5%8F%8B%E9%93%BE/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/%E5%8F%8B%E9%93%BE/</guid>
+        <guid>http://localhost:1313/%E5%8F%8B%E9%93%BE/</guid>
         <description></description>
         </item>
         

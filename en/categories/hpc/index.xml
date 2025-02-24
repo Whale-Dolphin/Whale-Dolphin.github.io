@@ -6,10 +6,11 @@
         <description>Recent content in HPC on WhaleDolphin&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <copyright>鲸鲵 WhaleDolphin</copyright><atom:link href="https://whale-dolphin.github.io/en/categories/hpc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>鲸鲵 WhaleDolphin</copyright>
+        <lastBuildDate>Mon, 24 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://whale-dolphin.github.io/en/categories/hpc/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Slurm-Usage</title>
         <link>https://whale-dolphin.github.io/en/p/slurm-usage/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
         
         <guid>https://whale-dolphin.github.io/en/p/slurm-usage/</guid>
         <description>&lt;img src="https://whale-dolphin.github.io/en/p/slurm-usage/cover.en.png" alt="Featured image of post Slurm-Usage" /&gt;&lt;h2 id=&#34;slurm-usage&#34;&gt;Slurm Usage

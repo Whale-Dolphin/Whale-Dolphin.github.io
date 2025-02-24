@@ -1,26 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Categories on 演示站点</title>
-        <link>http://localhost:1313/zh-cn/categories/</link>
-        <description>Recent content in Categories on 演示站点</description>
+        <title>Categories on 鲸鲵的博客</title>
+        <link>https://whale-dolphin.github.io/zh-cn/categories/</link>
+        <description>Recent content in Categories on 鲸鲵的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>[©2024 WhaleDolphin&#39;s Blog](https://sonnycalcr.github.io/)</copyright>
-        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-cn/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Test</title>
-        <link>http://localhost:1313/zh-cn/categories/test/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        <copyright>鲸鲵 WhaleDolphin</copyright>
+        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://whale-dolphin.github.io/zh-cn/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI</title>
+        <link>https://whale-dolphin.github.io/zh-cn/categories/ai/</link>
+        <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/zh-cn/categories/test/</guid>
+        <guid>https://whale-dolphin.github.io/zh-cn/categories/ai/</guid>
         <description></description>
         </item>
         <item>
-        <title>测试</title>
-        <link>http://localhost:1313/zh-cn/categories/%E6%B5%8B%E8%AF%95/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        <title>Generator Model</title>
+        <link>https://whale-dolphin.github.io/zh-cn/categories/generator-model/</link>
+        <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/zh-cn/categories/%E6%B5%8B%E8%AF%95/</guid>
+        <guid>https://whale-dolphin.github.io/zh-cn/categories/generator-model/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>计组</title>
+        <link>https://whale-dolphin.github.io/zh-cn/categories/%E8%AE%A1%E7%BB%84/</link>
+        <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://whale-dolphin.github.io/zh-cn/categories/%E8%AE%A1%E7%BB%84/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Computer Network</title>
+        <link>https://whale-dolphin.github.io/zh-cn/categories/computer-network/</link>
+        <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://whale-dolphin.github.io/zh-cn/categories/computer-network/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Server</title>
+        <link>https://whale-dolphin.github.io/zh-cn/categories/server/</link>
+        <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://whale-dolphin.github.io/zh-cn/categories/server/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>TTS</title>
+        <link>https://whale-dolphin.github.io/zh-cn/categories/tts/</link>
+        <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://whale-dolphin.github.io/zh-cn/categories/tts/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vocoder</title>
+        <link>https://whale-dolphin.github.io/zh-cn/categories/vocoder/</link>
+        <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://whale-dolphin.github.io/zh-cn/categories/vocoder/</guid>
         <description></description>
         </item>
         

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Server on 鲸鲵的博客</title>
-        <link>https://whale-dolphin.github.io/categories/server/</link>
+        <link>http://localhost:1313/categories/server/</link>
         <description>Recent content in Server on 鲸鲵的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>鲸鲵 WhaleDolphin</copyright>
-        <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://whale-dolphin.github.io/categories/server/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/server/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用Frp内网穿透随时随地访问校内网机器</title>
-        <link>https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/</link>
+        <link>http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/</link>
         <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/cover.jpg" alt="Featured image of post 使用Frp内网穿透随时随地访问校内网机器" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言
+        <guid>http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/</guid>
+        <description>&lt;img src="http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/cover.jpg" alt="Featured image of post 使用Frp内网穿透随时随地访问校内网机器" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;实验室的机器（下称校内机）是强校内网环境，必须直接连上校园网才能访问和使用（甚至开了校内vpn也连不上）。为了在校外或者断网环境也能优雅的访问机器，我使用了frp内网穿透将内网机器映射到公网服务器上，以此链接内网机器。前排提示，理论上来说这是违规操作，所以请务必做好转发端口的防护以避免内网机器被频繁攻击。&lt;/p&gt;
 &lt;h2 id=&#34;准备&#34;&gt;准备
 &lt;/h2&gt;&lt;p&gt;你需要一个有公网ip的服务器（下称服务器），我用的是阿里云的ECS，2C2G，香港节点，带有一个静态ip。理论上来说动态ip也可以通过DDNS来解析服务并且更加安全，但是我懒得折腾，如果有读者跑通了请务必告诉我qwq。&lt;/p&gt;
@@ -59,10 +59,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;在ecs控制面板填入方向端口白名单&#34;&gt;在ECS控制面板填入方向端口白名单
 &lt;/h3&gt;&lt;p&gt;我是用的是阿里云的ECS，其界面如下。需要手动在控制面板添加7000端口（frp服务端口）和6000（校内网机器指定的公网访问端口）的限制。其中7000端口的授权对象是校内机ip，6000端口建议只开放给自己常用的ip，如果连不上再加，防止潜在的攻击。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image.png&#34;
 	width=&#34;1907&#34;
 	height=&#34;461&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image_hu5289698652420669443.png 480w, https://whale-dolphin.github.io/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image_hu6775498138647624616.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image_hu5289698652420669443.png 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E9%9A%8F%E6%97%B6%E9%9A%8F%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8/image_hu6775498138647624616.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image.png&#34;

@@ -3,11 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://whale-dolphin.github.io/en/</loc>
-    <lastmod>2024-09-26T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/"
+                href="https://whale-dolphin.github.io/zh-cn/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -15,12 +15,57 @@
                 href="https://whale-dolphin.github.io/en/"
                 />
   </url><url>
+    <loc>https://whale-dolphin.github.io/en/categories/ai/</loc>
+    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://whale-dolphin.github.io/zh-cn/categories/ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://whale-dolphin.github.io/en/categories/ai/"
+                />
+  </url><url>
+    <loc>https://whale-dolphin.github.io/en/categories/</loc>
+    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://whale-dolphin.github.io/zh-cn/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://whale-dolphin.github.io/en/categories/"
+                />
+  </url><url>
+    <loc>https://whale-dolphin.github.io/en/categories/hpc/</loc>
+    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://whale-dolphin.github.io/en/post/</loc>
+    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://whale-dolphin.github.io/zh-cn/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://whale-dolphin.github.io/en/post/"
+                />
+  </url><url>
+    <loc>https://whale-dolphin.github.io/en/p/slurm-usage/</loc>
+    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://whale-dolphin.github.io/en/about/</loc>
     <lastmod>2024-09-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/about/"
+                href="https://whale-dolphin.github.io/zh-cn/about/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -33,7 +78,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/page/"
+                href="https://whale-dolphin.github.io/zh-cn/page/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -46,7 +91,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/archives/"
+                href="https://whale-dolphin.github.io/zh-cn/archives/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -54,37 +99,11 @@
                 href="https://whale-dolphin.github.io/en/archives/"
                 />
   </url><url>
-    <loc>https://whale-dolphin.github.io/en/categories/ai/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/categories/ai/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://whale-dolphin.github.io/en/categories/ai/"
-                />
-  </url><url>
-    <loc>https://whale-dolphin.github.io/en/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://whale-dolphin.github.io/en/categories/"
-                />
-  </url><url>
-    <loc>https://whale-dolphin.github.io/en/categories/hpc/</loc>
-  </url><url>
     <loc>https://whale-dolphin.github.io/en/links/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/%E5%8F%8B%E9%93%BE/"
+                href="https://whale-dolphin.github.io/zh-cn/%E5%8F%8B%E9%93%BE/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -92,23 +111,11 @@
                 href="https://whale-dolphin.github.io/en/links/"
                 />
   </url><url>
-    <loc>https://whale-dolphin.github.io/en/post/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://whale-dolphin.github.io/en/post/"
-                />
-  </url><url>
     <loc>https://whale-dolphin.github.io/en/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/search/"
+                href="https://whale-dolphin.github.io/zh-cn/search/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -116,13 +123,11 @@
                 href="https://whale-dolphin.github.io/en/search/"
                 />
   </url><url>
-    <loc>https://whale-dolphin.github.io/en/p/slurm-usage/</loc>
-  </url><url>
     <loc>https://whale-dolphin.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://whale-dolphin.github.io/tags/"
+                href="https://whale-dolphin.github.io/zh-cn/tags/"
                 />
     <xhtml:link
                 rel="alternate"

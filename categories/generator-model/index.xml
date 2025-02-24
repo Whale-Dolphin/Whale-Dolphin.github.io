@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Generator Model on 鲸鲵的博客</title>
-        <link>https://whale-dolphin.github.io/categories/generator-model/</link>
+        <link>http://localhost:1313/categories/generator-model/</link>
         <description>Recent content in Generator Model on 鲸鲵的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>鲸鲵 WhaleDolphin</copyright>
-        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://whale-dolphin.github.io/categories/generator-model/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/generator-model/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Flow-base</title>
-        <link>https://whale-dolphin.github.io/p/flow-base/</link>
+        <link>http://localhost:1313/p/flow-base/</link>
         <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/flow-base/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/flow-base/cover.jpg" alt="Featured image of post Flow-base" /&gt;&lt;p&gt;Flow 的核心思路是找到一个从简单先验分布映射到训练数据所在分布的函数，其结构如下图所示：&lt;/p&gt;
+        <guid>http://localhost:1313/p/flow-base/</guid>
+        <description>&lt;img src="http://localhost:1313/p/flow-base/cover.jpg" alt="Featured image of post Flow-base" /&gt;&lt;p&gt;Flow 的核心思路是找到一个从简单先验分布映射到训练数据所在分布的函数，其结构如下图所示：&lt;/p&gt;
 &lt;p&gt;相对于 VAE 预设对象的密度分布是连续的所以把先验分布映射到一个简单的隐变量分布上，然后使用 decoder 从隐变量空间学习还原生成后验分布来说，flow 采用一个简单粗暴但在数学上极具美感的做法，它采用一个可逆的方法对先验分布进行学习，暴力的学习先验空间到简单分布的映射，之后用逆方法对其进行生成。个人感觉其相当于把 VAE 的 encoder 和 decoder 揉到一起去了，采用了可逆函数的特点简化了 encoder 和 decoder 对过程。&lt;/p&gt;
 &lt;h2 id=&#34;生成器&#34;&gt;生成器
 &lt;/h2&gt;&lt;p&gt;Flow 模型旨在学习一个可逆变换函数 G，该函数将一个简单的先验分布（通常是高斯分布）z 映射到数据分布 x：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/Untitled.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/Untitled.png&#34;
 	width=&#34;2592&#34;
 	height=&#34;734&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/Untitled_hu4041690602462463661.png 480w, https://whale-dolphin.github.io/p/flow-base/Untitled_hu5653924000960274254.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/Untitled_hu4041690602462463661.png 480w, http://localhost:1313/p/flow-base/Untitled_hu5653924000960274254.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Untitled&#34;
@@ -44,10 +44,10 @@ $$&lt;p&gt;其中 $p(z)$ 是先验分布的概率密度，$J_{G^{-1}}$ 是逆变
 $$
 G^*=arg max \displaystyle\sum^m_{i=1}logP_G(x_i)
 $$&lt;h3 id=&#34;change-of-variable-theorem&#34;&gt;Change of variable Theorem
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image.png&#34;
 	width=&#34;611&#34;
 	height=&#34;480&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_hu15129059530534207535.png 480w, https://whale-dolphin.github.io/p/flow-base/image_hu10274330537115529828.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_hu15129059530534207535.png 480w, http://localhost:1313/p/flow-base/image_hu10274330537115529828.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -58,10 +58,10 @@ $$&lt;h3 id=&#34;change-of-variable-theorem&#34;&gt;Change of variable Theorem
 &gt;&lt;/p&gt;
 $$
 p(x&#39;) = \pi(z&#39;) \left| \frac{dz}{dx} \right|
-$$&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image_1.png&#34;
+$$&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image_1.png&#34;
 	width=&#34;1040&#34;
 	height=&#34;515&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_1_hu5121271444659507395.png 480w, https://whale-dolphin.github.io/p/flow-base/image_1_hu17274553613240958745.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_1_hu5121271444659507395.png 480w, http://localhost:1313/p/flow-base/image_1_hu17274553613240958745.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -105,10 +105,10 @@ $$
 \log p_{\mathbb{G}}(x) = \log \pi(\mathbb{G}^{-1}(x)) + \log |det(J_{\mathbb{G}^{-1}})|
 $$&lt;h2 id=&#34;coupling-layer&#34;&gt;Coupling Layer
 &lt;/h2&gt;&lt;p&gt;为了解决生成器可逆的问题，flow 采用了如下结构的生成器&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image_2.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image_2.png&#34;
 	width=&#34;1016&#34;
 	height=&#34;641&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_2_hu12292856015037145001.png 480w, https://whale-dolphin.github.io/p/flow-base/image_2_hu914350396899081388.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_2_hu12292856015037145001.png 480w, http://localhost:1313/p/flow-base/image_2_hu914350396899081388.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -119,10 +119,10 @@ $$&lt;h2 id=&#34;coupling-layer&#34;&gt;Coupling Layer
 &gt;&lt;/p&gt;
 &lt;p&gt;其中，分别讲输出和输出分成两个部分，对于对于原函数计算，我们将第一个部分直接复制，然后通过两个神经网络得到$\beta$和$\gamma$，然后通过$x=z\cdot \beta + \gamma$计算$x$值。反函数的计算直接复制第一部分，第二个部分相减即可&lt;/p&gt;
 &lt;p&gt;解决了生成器的反函数问题，优化最大似然的目标就是找到生成器的 Jabobian 矩阵，生成器的 Jabobian 矩阵计算如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image_3.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image_3.png&#34;
 	width=&#34;599&#34;
 	height=&#34;529&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_3_hu15446716658341649903.png 480w, https://whale-dolphin.github.io/p/flow-base/image_3_hu3497145839778058816.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_3_hu15446716658341649903.png 480w, http://localhost:1313/p/flow-base/image_3_hu3497145839778058816.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -135,10 +135,10 @@ $$&lt;h2 id=&#34;coupling-layer&#34;&gt;Coupling Layer
 $$
 ⁍
 $$&lt;h2 id=&#34;coupling-layer-stacking&#34;&gt;Coupling Layer-Stacking
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/flow-base/image_4.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/flow-base/image_4.png&#34;
 	width=&#34;1033&#34;
 	height=&#34;605&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/flow-base/image_4_hu13241862251459167875.png 480w, https://whale-dolphin.github.io/p/flow-base/image_4_hu16162125395884357543.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/flow-base/image_4_hu13241862251459167875.png 480w, http://localhost:1313/p/flow-base/image_4_hu16162125395884357543.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

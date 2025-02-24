@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>TTS on 鲸鲵的博客</title>
-        <link>https://whale-dolphin.github.io/categories/tts/</link>
+        <link>http://localhost:1313/categories/tts/</link>
         <description>Recent content in TTS on 鲸鲵的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>鲸鲵 WhaleDolphin</copyright>
-        <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://whale-dolphin.github.io/categories/tts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/tts/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>TTS Evaluation Targets</title>
-        <link>https://whale-dolphin.github.io/p/tts-evaluation-targets/</link>
+        <link>http://localhost:1313/p/tts-evaluation-targets/</link>
         <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/tts-evaluation-targets/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/tts-evaluation-targets/cover.jpg" alt="Featured image of post TTS Evaluation Targets" /&gt;&lt;h2 id=&#34;语音评估指标及工具&#34;&gt;语音评估指标及工具
+        <guid>http://localhost:1313/p/tts-evaluation-targets/</guid>
+        <description>&lt;img src="http://localhost:1313/p/tts-evaluation-targets/cover.jpg" alt="Featured image of post TTS Evaluation Targets" /&gt;&lt;h2 id=&#34;语音评估指标及工具&#34;&gt;语音评估指标及工具
 &lt;/h2&gt;&lt;h2 id=&#34;声音质量指标&#34;&gt;声音质量指标：
 &lt;/h2&gt;&lt;h3 id=&#34;mos-mean-opinion-score&#34;&gt;MOS (Mean Opinion Score)
 &lt;/h3&gt;&lt;p&gt;虽然这通常是主观评分，但也有自动MOS预测工具，如AutoMOS。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/tts-evaluation-targets/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/tts-evaluation-targets/image.png&#34;
 	width=&#34;568&#34;
 	height=&#34;394&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/tts-evaluation-targets/image_hu891468202885649987.png 480w, https://whale-dolphin.github.io/p/tts-evaluation-targets/image_hu16908096840782193633.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/tts-evaluation-targets/image_hu891468202885649987.png 480w, http://localhost:1313/p/tts-evaluation-targets/image_hu16908096840782193633.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image.png&#34;
@@ -309,16 +309,16 @@ FRR = (错误拒绝的真实声音样本数) / (总真实声音样本数)&lt;/li
         </item>
         <item>
         <title>Vector Quatinized</title>
-        <link>https://whale-dolphin.github.io/p/vector-quatinized/</link>
+        <link>http://localhost:1313/p/vector-quatinized/</link>
         <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://whale-dolphin.github.io/p/vector-quatinized/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/p/vector-quatinized/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Vector Quatinized" /&gt;&lt;h2 id=&#34;vq向量量化&#34;&gt;VQ(向量量化）
+        <guid>http://localhost:1313/p/vector-quatinized/</guid>
+        <description>&lt;img src="http://localhost:1313/p/vector-quatinized/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Vector Quatinized" /&gt;&lt;h2 id=&#34;vq向量量化&#34;&gt;VQ(向量量化）
 &lt;/h2&gt;&lt;p&gt;VQ是当前语音vocoder的常用技术，其相当于对连续空间表示进行类似聚类处理，让连续表示的信息汇聚到离散值当中，让codebook中的vector都带有确定的信息，方便后面decoder的重建。VQ的第一次提出在VQ-VAE这篇论文中。这篇论文详细的提出了VQ方法并指出VQ能够有效避免后验崩塌问题,确保码本中的每个向量都携带有用信息。此外,这种结构化的离散表示能够帮助decoder在训练过程中更好地重建和补充结构化信息。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/vector-quatinized/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/vector-quatinized/image.png&#34;
 	width=&#34;931&#34;
 	height=&#34;380&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/vector-quatinized/image_hu3074761259295839613.png 480w, https://whale-dolphin.github.io/p/vector-quatinized/image_hu12199941970548648562.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/vector-quatinized/image_hu3074761259295839613.png 480w, http://localhost:1313/p/vector-quatinized/image_hu12199941970548648562.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image.png&#34;
@@ -562,10 +562,10 @@ FRR = (错误拒绝的真实声音样本数) / (总真实声音样本数)&lt;/li
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;visualize_codebook&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://whale-dolphin.github.io/p/vector-quatinized/image1.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/vector-quatinized/image1.png&#34;
 	width=&#34;844&#34;
 	height=&#34;855&#34;
-	srcset=&#34;https://whale-dolphin.github.io/p/vector-quatinized/image1_hu15095605146698456771.png 480w, https://whale-dolphin.github.io/p/vector-quatinized/image1_hu12479223536628232365.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/vector-quatinized/image1_hu15095605146698456771.png 480w, http://localhost:1313/p/vector-quatinized/image1_hu12479223536628232365.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;聚类后的码本的降维可视化&#34;

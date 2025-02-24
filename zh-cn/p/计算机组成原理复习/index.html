@@ -1,0 +1,3280 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="第一章 计算机系统概论 计算机发展历程 计算机的四代发展 第一代(1945-1955) 特征:电子管、插板式编程 编程方式:机器语言 主要用途:数值计算 第二代(1955-1965) 特征:晶体管、批处理系统 编程方式:汇编语言、FORTRAN 代表机型:IBM 7094 第三代(1965-1980) 特征:集成电路、多道程序、分时系统 编程方式:高级语言(BASIC、C) 技术创新:多道程序设计、分时处理 第四代(1980-至今) 特征:超大规模集成电路 发展方向: 个人计算机 并行计算 分布式系统 云计算 计算机系统的层次结构 计算机系统的五个层次 高级语言层(M4) 汇编语言层(M3) 操作系统层(M2) 机器语言层(M1) 微程序层(M0) 性能指标 主要性能指标 CPI(Cycles Per Instruction) 基本公式 / Basic Formula\n">
+<title>计算机组成原理复习</title>
+
+<link rel='canonical' href='https://whale-dolphin.github.io/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="计算机组成原理复习">
+<meta property='og:description' content="第一章 计算机系统概论 计算机发展历程 计算机的四代发展 第一代(1945-1955) 特征:电子管、插板式编程 编程方式:机器语言 主要用途:数值计算 第二代(1955-1965) 特征:晶体管、批处理系统 编程方式:汇编语言、FORTRAN 代表机型:IBM 7094 第三代(1965-1980) 特征:集成电路、多道程序、分时系统 编程方式:高级语言(BASIC、C) 技术创新:多道程序设计、分时处理 第四代(1980-至今) 特征:超大规模集成电路 发展方向: 个人计算机 并行计算 分布式系统 云计算 计算机系统的层次结构 计算机系统的五个层次 高级语言层(M4) 汇编语言层(M3) 操作系统层(M2) 机器语言层(M1) 微程序层(M0) 性能指标 主要性能指标 CPI(Cycles Per Instruction) 基本公式 / Basic Formula\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-06T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover.png' />
+<meta name="twitter:title" content="计算机组成原理复习">
+<meta name="twitter:description" content="第一章 计算机系统概论 计算机发展历程 计算机的四代发展 第一代(1945-1955) 特征:电子管、插板式编程 编程方式:机器语言 主要用途:数值计算 第二代(1955-1965) 特征:晶体管、批处理系统 编程方式:汇编语言、FORTRAN 代表机型:IBM 7094 第三代(1965-1980) 特征:集成电路、多道程序、分时系统 编程方式:高级语言(BASIC、C) 技术创新:多道程序设计、分时处理 第四代(1980-至今) 特征:超大规模集成电路 发展方向: 个人计算机 并行计算 分布式系统 云计算 计算机系统的层次结构 计算机系统的五个层次 高级语言层(M4) 汇编语言层(M3) 操作系统层(M2) 机器语言层(M1) 微程序层(M0) 性能指标 主要性能指标 CPI(Cycles Per Instruction) 基本公式 / Basic Formula\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover.png' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/zh-cn/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu6629476239591531280.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        target="_blank"
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://whale-dolphin.github.io/zh-cn/" selected>中文</option>
+                                
+                                    <option value="https://whale-dolphin.github.io/en/" >English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#第一章-计算机系统概论">第一章 计算机系统概论</a>
+      <ol>
+        <li><a href="#计算机发展历程">计算机发展历程</a>
+          <ol>
+            <li><a href="#计算机的四代发展">计算机的四代发展</a></li>
+          </ol>
+        </li>
+        <li><a href="#计算机系统的层次结构">计算机系统的层次结构</a>
+          <ol>
+            <li><a href="#计算机系统的五个层次">计算机系统的五个层次</a></li>
+          </ol>
+        </li>
+        <li><a href="#性能指标">性能指标</a>
+          <ol>
+            <li><a href="#主要性能指标">主要性能指标</a></li>
+            <li><a href="#重要例题分析">重要例题分析</a></li>
+          </ol>
+        </li>
+        <li><a href="#冯诺依曼计算机的基本特点">冯·诺依曼计算机的基本特点</a></li>
+      </ol>
+    </li>
+    <li><a href="#第二章-计算机数据表示">第二章 计算机数据表示</a>
+      <ol>
+        <li><a href="#数据表示基础">数据表示基础</a>
+          <ol>
+            <li><a href="#为什么使用二进制">为什么使用二进制</a></li>
+            <li><a href="#数据表示考虑因素">数据表示考虑因素</a></li>
+          </ol>
+        </li>
+        <li><a href="#数值数据表示">数值数据表示</a>
+          <ol>
+            <li><a href="#机器数的编码方式">机器数的编码方式</a></li>
+            <li><a href="#原码">原码</a></li>
+            <li><a href="#反码">反码</a></li>
+            <li><a href="#补码">补码</a></li>
+            <li><a href="#移码">移码</a></li>
+            <li><a href="#例题">例题</a></li>
+            <li><a href="#转换口诀">转换口诀</a></li>
+          </ol>
+        </li>
+        <li><a href="#整型和浮点型表示">整型和浮点型表示</a>
+          <ol>
+            <li><a href="#整型">整型</a></li>
+            <li><a href="#浮点数">浮点数</a></li>
+            <li><a href="#字节序">字节序</a></li>
+          </ol>
+        </li>
+        <li><a href="#数据校验">数据校验</a>
+          <ol>
+            <li><a href="#码距">码距</a></li>
+            <li><a href="#奇偶校验">奇偶校验</a></li>
+            <li><a href="#海明码">海明码</a></li>
+            <li><a href="#crc循环冗余校验">CRC循环冗余校验</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#第三章-运算方法与运算器">第三章 运算方法与运算器</a>
+      <ol>
+        <li><a href="#定点加减法运算">定点加减法运算</a>
+          <ol>
+            <li><a href="#补码加法运算-addition-in-twos-complement">补码加法运算 (Addition in Two&rsquo;s Complement)</a></li>
+            <li><a href="#补码减法运算-subtraction-in-twos-complement">补码减法运算 (Subtraction in Two&rsquo;s Complement)</a></li>
+            <li><a href="#溢出检测-overflow-detection">溢出检测 (Overflow Detection)</a></li>
+            <li><a href="#补码的加减法示例-examples">补码的加减法示例 (Examples)</a></li>
+          </ol>
+        </li>
+        <li><a href="#定点乘法运算">定点乘法运算</a>
+          <ol>
+            <li><a href="#原码乘法运算">原码乘法运算</a></li>
+            <li><a href="#补码乘法运算booth算法">补码乘法运算（Booth算法）</a></li>
+          </ol>
+        </li>
+        <li><a href="#定点除法运算">定点除法运算</a>
+          <ol>
+            <li><a href="#原码除法运算">原码除法运算</a></li>
+            <li><a href="#补码的除法运算">补码的除法运算</a></li>
+          </ol>
+        </li>
+        <li><a href="#浮点数加减法">浮点数加减法</a>
+          <ol>
+            <li><a href="#运算步骤-1">运算步骤</a></li>
+            <li><a href="#示例-examples">示例 Examples</a></li>
+            <li><a href="#特殊情况-special-cases">特殊情况 Special Cases</a></li>
+          </ol>
+        </li>
+        <li><a href="#运算方法与运算器">运算方法与运算器</a>
+          <ol>
+            <li><a href="#半加法器half-adder-ha">半加法器（Half Adder HA）</a></li>
+            <li><a href="#全加法器full-adder-fa">全加法器（Full Adder FA）</a></li>
+            <li><a href="#串行进位全加法器">串行进位全加法器</a></li>
+            <li><a href="#阵列乘法器">阵列乘法器</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#第四章-存储系统">第四章 存储系统</a>
+      <ol>
+        <li><a href="#存储器基础概念">存储器基础概念</a>
+          <ol>
+            <li><a href="#存储器分类">存储器分类</a></li>
+            <li><a href="#主存技术指标">主存技术指标</a></li>
+          </ol>
+        </li>
+        <li><a href="#大端小端模式">大端小端模式</a>
+          <ol>
+            <li><a href="#概念">概念</a></li>
+            <li><a href="#例题-1">例题</a></li>
+          </ol>
+        </li>
+        <li><a href="#半导体存储器">半导体存储器</a>
+          <ol>
+            <li><a href="#sram">SRAM</a></li>
+            <li><a href="#dram">DRAM</a></li>
+          </ol>
+        </li>
+        <li><a href="#主存与cpu的连接">主存与CPU的连接</a>
+          <ol>
+            <li><a href="#存储器扩展">存储器扩展</a></li>
+          </ol>
+        </li>
+        <li><a href="#cache">Cache</a>
+          <ol>
+            <li><a href="#工作原理--how-cache-works">工作原理 / How Cache Works</a></li>
+            <li><a href="#局局部性原理--principle-of-locality">局局部性原理 / Principle of Locality</a></li>
+            <li><a href="#存储器映射方式-memory-mapping-methods">存储器映射方式 Memory Mapping Methods</a></li>
+            <li><a href="#替换算法">替换算法</a></li>
+            <li><a href="#写策略">写策略</a></li>
+            <li><a href="#性能计算">性能计算</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/">
+                <img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover_hu17599235071561113572.png"
+                        srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover_hu17599235071561113572.png 800w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/cover_hu11044211248907828892.png 1600w"
+                        width="800" 
+                        height="1422" 
+                        loading="lazy"
+                        alt="Featured image of post 计算机组成原理复习" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/zh-cn/categories/%E8%AE%A1%E7%BB%84/" >
+                计组
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/">计算机组成原理复习</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 06, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 27 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="第一章-计算机系统概论">第一章 计算机系统概论
+</h2><h3 id="计算机发展历程">计算机发展历程
+</h3><h4 id="计算机的四代发展">计算机的四代发展
+</h4><ol>
+<li><strong>第一代(1945-1955)</strong>
+<ul>
+<li>特征:电子管、插板式编程</li>
+<li>编程方式:机器语言</li>
+<li>主要用途:数值计算</li>
+</ul>
+</li>
+<li><strong>第二代(1955-1965)</strong>
+<ul>
+<li>特征:晶体管、批处理系统</li>
+<li>编程方式:汇编语言、FORTRAN</li>
+<li>代表机型:IBM 7094</li>
+</ul>
+</li>
+<li><strong>第三代(1965-1980)</strong>
+<ul>
+<li>特征:集成电路、多道程序、分时系统</li>
+<li>编程方式:高级语言(BASIC、C)</li>
+<li>技术创新:多道程序设计、分时处理</li>
+</ul>
+</li>
+<li><strong>第四代(1980-至今)</strong>
+<ul>
+<li>特征:超大规模集成电路</li>
+<li>发展方向:
+<ul>
+<li>个人计算机</li>
+<li>并行计算</li>
+<li>分布式系统</li>
+<li>云计算</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="计算机系统的层次结构">计算机系统的层次结构
+</h3><h4 id="计算机系统的五个层次">计算机系统的五个层次
+</h4><ol>
+<li>高级语言层(M4)</li>
+<li>汇编语言层(M3)</li>
+<li>操作系统层(M2)</li>
+<li>机器语言层(M1)</li>
+<li>微程序层(M0)</li>
+</ol>
+<h3 id="性能指标">性能指标
+</h3><h4 id="主要性能指标">主要性能指标
+</h4><h5 id="cpicycles-per-instruction"><strong>CPI</strong>(<strong>Cycles Per Instruction)</strong>
+</h5><ol>
+<li>
+<p>基本公式 / Basic Formula</p>
+<ul>
+<li>中文：<code>CPI = 总时钟周期数 / 总指令数</code></li>
+<li>English: <code>CPI = Total Clock Cycles / Total Instructions</code></li>
+</ul>
+<p>表示为数学公式 / Mathematical expression:
+$CPI=\frac{Clock Cycles}{Instruction Count}$</p>
+</li>
+<li>
+<p>加权平均公式 / Weighted Average Formula</p>
+<p>当有多种类型的指令时 / When there are multiple instruction types:</p>
+<p>$CPI=\sum_{i=1}^{n}(CPI_i×F_i)$</p>
+</li>
+</ol>
+<h5 id="mipsmillion-instructions-per-second"><strong>MIPS(Million Instructions Per Second)</strong>
+</h5><ol>
+<li>基本公式 / Basic Formula</li>
+</ol>
+<p>$MIPS=\frac{指令数执行}{时间×10^6}=\frac{时钟频率}{CPI×10^6}$</p>
+<p>英文表示 / In English:
+$MIPS=\frac{Instruction Count}{Execution Time×10^6}=\frac{Clock Frequency}{CPI×10^6}$</p>
+<ol start="2">
+<li>扩展公式 / Extended Formula</li>
+</ol>
+<p>当已知时钟频率（Hz）和CPI时：/ When clock frequency (Hz) and CPI are known:</p>
+<p>$MIPS=\frac{Clock Frequency (Hz)}{CPI×10^6}$</p>
+<h4 id="重要例题分析">重要例题分析
+</h4><h5 id="例题1-cpi计算"><strong>例题1: CPI计算</strong>
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">问题:某程序的目标代码由4类指令组成:
+</span></span><span class="line"><span class="cl">- 算术逻辑运算(60%, CPI=1)
+</span></span><span class="line"><span class="cl">- 内存读写(18%, CPI=2)
+</span></span><span class="line"><span class="cl">- 转移(12%, CPI=4)
+</span></span><span class="line"><span class="cl">- 其它(10%, CPI=8)
+</span></span><span class="line"><span class="cl">求该程序的平均CPI。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">解答:
+</span></span><span class="line"><span class="cl">CPI = 1×0.6 + 2×0.18 + 4×0.12 + 8×0.1
+</span></span><span class="line"><span class="cl">    = 0.6 + 0.36 + 0.48 + 0.8
+</span></span><span class="line"><span class="cl">    = 2.24
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="例题2-cpu性能计算"><strong>例题2: CPU性能计算</strong>
+</h5>$$
+N=t\times f
+$$<ul>
+<li>N：时钟周期总数</li>
+<li>t：运行时间</li>
+<li>f：频率</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">问题:程序P在机器A上运行需10s,机器A的时钟频率为400MHz。
+</span></span><span class="line"><span class="cl">如果在机器B上运行只需6s,且B的时钟周期总数是A的1.2倍,
+</span></span><span class="line"><span class="cl">求B的时钟频率是A的多少倍?
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">解答:
+</span></span><span class="line"><span class="cl">1. 计算A的时钟周期总数:
+</span></span><span class="line"><span class="cl">   时钟周期总数A = 10s × 400MHz = 4000M个
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 计算B的时钟频率:
+</span></span><span class="line"><span class="cl">   时钟频率B = (1.2 × 4000M) ÷ 6s = 800MHz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 比值 = 800MHz ÷ 400MHz = 2倍
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="例题3-mips计算"><strong>例题3: MIPS计算</strong>
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">问题：
+</span></span><span class="line"><span class="cl">某计算机系统运行一个程序，CPU时钟频率2GHz，执行了5×10⁸条指令，平均CPI为2.5，
+</span></span><span class="line"><span class="cl">程序总执行时间0.625秒。
+</span></span><span class="line"><span class="cl">求：(1)该程序的MIPS值；
+</span></span><span class="line"><span class="cl">		(2)若CPU频率提高到2.5GHz，新的MIPS值是多少？
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">解：
+</span></span><span class="line"><span class="cl">(1) MIPS = 指令数/(执行时间×10⁶) = 5×10⁸/(0.625×10⁶) = 800
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">(2) 新执行时间 = 原执行时间×(原频率/新频率) = 0.625×(2/2.5) = 0.5s
+</span></span><span class="line"><span class="cl">新MIPS = 5×10⁸/(0.5×10⁶) = 1000
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="冯诺依曼计算机的基本特点">冯·诺依曼计算机的基本特点
+</h3><ol>
+<li><strong>五大部件</strong>
+<ul>
+<li>运算器(ALU)</li>
+<li>控制器(CU)</li>
+<li>存储器(Memory)</li>
+<li>输入设备(Input)</li>
+<li>输出设备(Output)</li>
+</ul>
+</li>
+<li><strong>重要特征</strong>
+<ul>
+<li>计算机由五大部件组成</li>
+<li>指令和数据以二进制表示</li>
+<li>指令和数据存放在同一存储器中</li>
+<li>指令由操作码和地址码组成</li>
+<li>存储程序</li>
+<li>按地址访问</li>
+</ul>
+</li>
+</ol>
+<h2 id="第二章-计算机数据表示">第二章 计算机数据表示
+</h2><h3 id="数据表示基础">数据表示基础
+</h3><h4 id="为什么使用二进制">为什么使用二进制
+</h4><ul>
+<li>易于实现：只有0和1两种状态</li>
+<li>抗干扰能力强</li>
+<li>便于逻辑运算</li>
+<li>硬件实现简单</li>
+</ul>
+<h4 id="数据表示考虑因素">数据表示考虑因素
+</h4><ul>
+<li>数据类型（数值/非数值）</li>
+<li>表示范围和精度</li>
+<li>存储和处理代价</li>
+<li>软件可移植性</li>
+</ul>
+<h3 id="数值数据表示">数值数据表示
+</h3><h4 id="机器数的编码方式">机器数的编码方式
+</h4><ol>
+<li>原码</li>
+<li>反码</li>
+<li>补码</li>
+<li>移码</li>
+</ol>
+<h4 id="原码">原码
+</h4><ul>
+<li>
+<p>最高位为符号位（0正1负）</p>
+</li>
+<li>
+<p>其余位是数值的绝对值</p>
+</li>
+<li>
+<p>公式：</p>
+$$
+    [X]_{\text{原}} = \begin{cases}
+    X, & 0 \leq X < 2^n \\
+    2^n - |X|, & -2^n < X \leq 0
+    \end{cases}
+    $$</li>
+</ul>
+<h4 id="反码">反码
+</h4><ul>
+<li>
+<p>正数的反码与原码相同</p>
+</li>
+<li>
+<p>负数的反码是对原码除符号位外各位取反</p>
+</li>
+<li>
+<p>公式：</p>
+$$
+    [X]_{\text{反}} = \begin{cases}
+    X, & 0 \leq X < 2^n \\
+    2^{n+1}-1 + X, & -2^n < X \leq 0
+    \end{cases}
+    $$</li>
+</ul>
+<h4 id="补码">补码
+</h4><ul>
+<li>
+<p>正数的补码与原码相同</p>
+</li>
+<li>
+<p>负数的补码是在反码的基础上末位加1</p>
+</li>
+<li>
+<p>公式：</p>
+$$
+    [X]_{\text{补}} = \begin{cases}
+    X, & 0 \leq X < 2^n \\
+    2^{n+1} + X, & -2^n < X \leq 0
+    \end{cases}
+    $$</li>
+</ul>
+<h4 id="移码">移码
+</h4><ul>
+<li>常用于表示浮点数的阶码</li>
+<li>公式：<code>$[x]_移 = x + 2^{n-1}$</code></li>
+<li>与补码的关系：符号位取反其余位不变</li>
+</ul>
+<h4 id="例题">例题
+</h4><h5 id="示例1将十进制数-52-转换为8位二进制机器码">示例1：将十进制数 +52 转换为8位二进制机器码
+</h5><ul>
+<li>原码
+<ul>
+<li>正数，符号位为0</li>
+<li>52的二进制为110100</li>
+<li>8位原码表示：<code>0110,1000</code></li>
+</ul>
+</li>
+<li>反码
+<ul>
+<li>正数的反码等于原码</li>
+<li>所以反码也是：<code>0110,1000</code></li>
+</ul>
+</li>
+<li>补码
+<ul>
+<li>正数的补码等于原码</li>
+<li>所以补码也是：<code>0110,1000</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="示例2将十进制数--52-转换为8位二进制机器码">示例2：将十进制数 -52 转换为8位二进制机器码
+</h5><ul>
+<li>
+<p>原码</p>
+<ul>
+<li>负数，符号位为1</li>
+<li>|52|的二进制为110100</li>
+<li>8位原码表示：<code>1110,1000</code></li>
+</ul>
+</li>
+<li>
+<p>反码</p>
+<ul>
+<li>
+<p>负数，符号位为1</p>
+</li>
+<li>
+<p>数值位按位取反</p>
+</li>
+<li>
+<p>计算过程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">原码：1110,1000
+</span></span><span class="line"><span class="cl">数值位取反：1001,0111
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>补码</p>
+<ul>
+<li>
+<p>负数，在反码基础上末位加1</p>
+</li>
+<li>
+<p>计算过程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">反码：1001,0111
+</span></span><span class="line"><span class="cl">末位加1：1001,1000
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+<h4 id="转换口诀">转换口诀
+</h4><ol>
+<li>正数：原码 = 反码 = 补码</li>
+<li>负数：
+<ul>
+<li>原码：符号位为1，其余为绝对值的二进制</li>
+<li>反码：符号位为1，数值位按位取反</li>
+<li>补码：反码末位加1</li>
+</ul>
+</li>
+</ol>
+<h3 id="整型和浮点型表示">整型和浮点型表示
+</h3><h4 id="整型">整型
+</h4><p>整型在计算机中使用补码表示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">类型      位数    范围
+</span></span><span class="line"><span class="cl">byte      8位    -128 到 127
+</span></span><span class="line"><span class="cl">short     16位   -32,768 到 32,767
+</span></span><span class="line"><span class="cl">int       32位   -2^31 到 2^31-1
+</span></span><span class="line"><span class="cl">long      64位   -2^63 到 2^63-1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="浮点数">浮点数
+</h4>$$
+V=(-1)^s \times M \times 2^E
+$$<p>其中：</p>
+<ul>
+<li>S：符号位（0正1负）</li>
+<li>M：1.尾数（规范化的尾数）</li>
+<li>E：指数值（减去偏置值的指数）</li>
+</ul>
+<h5 id="例子存储float类型的12375"><strong>例子：存储float类型的12.375</strong>
+</h5><ol>
+<li>
+<p>转换为二进制：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">12 = 1100(二进制)
+</span></span><span class="line"><span class="cl">0.375 = 0.011(二进制)
+</span></span><span class="line"><span class="cl">12.375 = 1100.011(二进制)
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>规范化：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1100.011 = 1.100011 × 2^3
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>存储格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">符号位(S)：0（正数）
+</span></span><span class="line"><span class="cl">指数位(E)：3 + 127(偏置) = 130 = 10000010
+</span></span><span class="line"><span class="cl">尾数位(M)：100011（不存储小数点前的1）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">最终存储：0 10000010 10001100000000000000000
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h4 id="字节序">字节序
+</h4><ul>
+<li>大端序(Big Endian)：高位字节存储在低地址</li>
+<li>小端序(Little Endian)：低位字节存储在低地址</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">例如：整数 0x12345678
+</span></span><span class="line"><span class="cl">大端序：12 34 56 78
+</span></span><span class="line"><span class="cl">小端序：78 56 34 12
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="数据校验">数据校验
+</h3><h4 id="码距">码距
+</h4><ul>
+<li>码距是指两个等长编码之间不同位的个数</li>
+<li>最小码距是指一个编码系统中任意两个合法编码之间的最小距离</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">例如：
+</span></span><span class="line"><span class="cl">编码A：1 0 1 1 0
+</span></span><span class="line"><span class="cl">编码B：1 1 1 0 0
+</span></span><span class="line"><span class="cl">码距 = 2（第2位和第4位不同）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="奇偶校验">奇偶校验
+</h4><h5 id="偶校验--even-parity"><strong>偶校验 / Even Parity</strong>
+</h5><ul>
+<li>原理：确保数据位中&quot;1&quot;的总数（包括校验位）为偶数</li>
+<li>校验位设置：如果数据位中&quot;1&quot;的个数为奇数，则校验位设为1；如果为偶数，则设为0</li>
+</ul>
+<h5 id="奇校验--odd-parity"><strong>奇校验 / Odd Parity</strong>
+</h5><ul>
+<li>原理：确保数据位中&quot;1&quot;的总数（包括校验位）为奇数</li>
+<li>校验位设置：如果数据位中&quot;1&quot;的个数为偶数，则校验位设为1；如果为奇数，则设为0</li>
+</ul>
+<h4 id="海明码">海明码
+</h4><h5 id="校验码位置">校验码位置
+</h5><ul>
+<li>校验位放在2的幂次位置上（1,2,4,8,&hellip;）</li>
+<li>数据位放在其他位置上</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">位置：  1  2  3  4  5  6  7  8  9  10 11
+</span></span><span class="line"><span class="cl">类型：  p1 p2 d1 p3 d2 d3 d4 p4 d5 d6 d7
+</span></span><span class="line"><span class="cl">(p=校验位, d=数据位)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="校验码数量">校验码数量
+</h5><p>对于k位数据，需要r位校验位，满足：</p>
+$$
+2^r ≥ k + r + 1
+$$<h5 id="校验码负责校验的位置">校验码负责校验的位置
+</h5><p><strong>p1(位置1)</strong>: 检查二进制第1位为1的位置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">001(1), 011(3), 101(5), 111(7)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>p2(位置2)</strong>: 检查二进制第2位为1的位置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">010(2), 011(3), 110(6), 111(7)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>p3(位置4):</strong> 检查二进制第3位为1的位置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">100(4), 101(5), 110(6), 111(7)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="校验码的值">校验码的值
+</h5><p>校验码就是在负责校验位置上的偶校验</p>
+<h5 id="对单个错误进行纠错">对单个错误进行纠错
+</h5><p><strong>计算综合征</strong></p>
+<ol>
+<li><strong>第一位综合征(s1)</strong>
+<ul>
+<li>检查所有奇数位置的位</li>
+<li>s1 = p1 ⊕ d1 ⊕ d2 ⊕ d4</li>
+</ul>
+</li>
+<li><strong>第二位综合征(s2)</strong>
+<ul>
+<li>检查位置2,3,6,7的位</li>
+<li>s2 = p2 ⊕ d1 ⊕ d3 ⊕ d4</li>
+</ul>
+</li>
+<li><strong>第三位综合征(s3)</strong>
+<ul>
+<li>检查位置4,5,6,7的位</li>
+<li>s3 = p3 ⊕ d2 ⊕ d3 ⊕ d4</li>
+</ul>
+</li>
+</ol>
+<p>以此类推</p>
+<p><strong>综合征含义</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">综合征值(s3s2s1)  表示含义
+</span></span><span class="line"><span class="cl">000              无错误
+</span></span><span class="line"><span class="cl">001              位置1出错
+</span></span><span class="line"><span class="cl">010              位置2出错
+</span></span><span class="line"><span class="cl">011              位置3出错
+</span></span><span class="line"><span class="cl">100              位置4出错
+</span></span><span class="line"><span class="cl">101              位置5出错
+</span></span><span class="line"><span class="cl">110              位置6出错
+</span></span><span class="line"><span class="cl">111              位置7出错
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以此类推</p>
+<h5 id="例题-海明码实例4位数据的74海明码"><strong>例题 海明码实例：4位数据的(7,4)海明码</strong>
+</h5><ol>
+<li>
+<p>原始数据</p>
+<p>假设要传输的数据是：<strong>1011</strong></p>
+</li>
+<li>
+<p>生成海明码</p>
+<ol>
+<li>
+<p>确定位置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">位置：    1   2   3   4   5   6   7
+</span></span><span class="line"><span class="cl">用途：    p1  p2  d1  p3  d2  d3  d4
+</span></span><span class="line"><span class="cl">数据：    p1  p2  1   p3  0   1   1
+</span></span><span class="line"><span class="cl">         ^   ^   ^   ^   ^   ^   ^
+</span></span><span class="line"><span class="cl">二进制：  001 010 011 100 101 110 111
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>计算校验位</p>
+<ol>
+<li><strong>计算p1</strong>（检查1,3,5,7位）
+<ul>
+<li>p1 ⊕ d1 ⊕ d2 ⊕ d4 = 0</li>
+<li>p1 ⊕ 1 ⊕ 0 ⊕ 1 = 0</li>
+<li>p1 = 1 ⊕ 0 ⊕ 1 = 0</li>
+</ul>
+</li>
+<li><strong>计算p2</strong>（检查2,3,6,7位）
+<ul>
+<li>p2 ⊕ d1 ⊕ d3 ⊕ d4 = 0</li>
+<li>p2 ⊕ 1 ⊕ 1 ⊕ 1 = 0</li>
+<li>p2 = 1 ⊕ 1 ⊕ 1 = 1</li>
+</ul>
+</li>
+<li><strong>计算p3</strong>（检查4,5,6,7位）
+<ul>
+<li>p3 ⊕ d2 ⊕ d3 ⊕ d4 = 0</li>
+<li>p3 ⊕ 0 ⊕ 1 ⊕ 1 = 0</li>
+<li>p3 = 0 ⊕ 1 ⊕ 1 = 0</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>最终海明码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">位置：    1   2   3   4   5   6   7
+</span></span><span class="line"><span class="cl">数据：    0   1   1   0   0   1   1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完整的海明码是：<strong>0110011</strong></p>
+</li>
+</ol>
+</li>
+<li>
+<p>错误检测示例</p>
+<p>3.1 <strong>假设第5位发生错误</strong></p>
+<p>接收到的错误数据：<strong>0110111</strong>（第5位从0变成了1）</p>
+<p>3.2 <strong>计算综合征</strong></p>
+<ol>
+<li><strong>计算s1</strong>（检查1,3,5,7位）
+<ul>
+<li>0 ⊕ 1 ⊕ 1 ⊕ 1 = 1</li>
+</ul>
+</li>
+<li><strong>计算s2</strong>（检查2,3,6,7位）
+<ul>
+<li>1 ⊕ 1 ⊕ 1 ⊕ 1 = 0</li>
+</ul>
+</li>
+<li><strong>计算s3</strong>（检查4,5,6,7位）
+<ul>
+<li>0 ⊕ 1 ⊕ 1 ⊕ 1 = 1</li>
+</ul>
+</li>
+</ol>
+<p>3.3 <strong>错误定位</strong></p>
+<ul>
+<li>得到的综合征：<strong>101</strong></li>
+<li>对照综合征表：101 表示第5位出错</li>
+<li>将第5位取反即可纠正错误</li>
+</ul>
+<p>3.4 <strong>纠错结果</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">错误数据：  0   1   1   0   1   1   1
+</span></span><span class="line"><span class="cl">纠正后：    0   1   1   0   0   1   1
+</span></span><span class="line"><span class="cl">位置：      1   2   3   4   5   6   7
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>验证正确性</p>
+<p>4.1 <strong>重新检验</strong></p>
+<p>计算三个校验方程：</p>
+<ol>
+<li>s1 = 0 ⊕ 1 ⊕ 0 ⊕ 1 = 0</li>
+<li>s2 = 1 ⊕ 1 ⊕ 1 ⊕ 1 = 0</li>
+<li>s3 = 0 ⊕ 0 ⊕ 1 ⊕ 1 = 0</li>
+</ol>
+<p>所有校验方程结果都为0，说明纠错成功。</p>
+<p>4.2 <strong>提取原始数据</strong></p>
+<ul>
+<li>取出数据位（第3,5,6,7位）：1011</li>
+<li>与原始数据相同，验证成功</li>
+</ul>
+</li>
+</ol>
+<h4 id="crc循环冗余校验">CRC循环冗余校验
+</h4><h5 id="校验流程">校验流程
+</h5><ol>
+<li>
+<p>确定CRC位数（r）</p>
+<p>应满足：$2^r&gt;数据长度+r$</p>
+</li>
+<li>
+<p>选择合适的CRC标准</p>
+<ol>
+<li><strong>CRC-16</strong>
+<ul>
+<li>生成多项式：$<em>x^{16}+x^{15}+x^{2}+1</em>$</li>
+<li>广泛应用于USB、Modbus等协议</li>
+</ul>
+</li>
+<li><strong>CRC-32</strong>
+<ul>
+<li>生成多项式：$<em>x^{32}+x^{26}+x^{23}+x^{22}+x^{16}+x^{12}+x^{11}+x^{10}+x^{8}+x^7+x^5+x^4+x^2+x+1</em>$</li>
+<li>用于以太网、ZIP文件等</li>
+</ul>
+</li>
+<li><strong>CRC-8</strong>
+<ul>
+<li>生成多项式：$<em>x^8+x^7+x^6+x^4+x^2+1</em>$</li>
+<li>用于简单的数据校验</li>
+</ul>
+</li>
+<li><strong>CRC-4</strong>
+<ul>
+<li>生成多项式：$<em>x^3+x+1</em>$</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>数据预处理</p>
+<p>补零操作（补生成多项式度数-1个零），并接到原数据后面</p>
+</li>
+<li>
+<p>求余数</p>
+<p>用补完0的数除以生成多项式的二进制表示来求得余数，并将余数替换后面补的0</p>
+</li>
+<li>
+<p>判断是否正确</p>
+<p>通过传入的数除以CRC方法对应的多项式来判断是否正确，余0表示正确</p>
+</li>
+</ol>
+<h5 id="crc循环校验的优势和劣势">CRC循环校验的优势和劣势
+</h5><p>优势</p>
+<ul>
+<li>能够检测所有单比特错误</li>
+<li>能够检测所有双比特错误</li>
+<li>能够检测大多数突发错误</li>
+<li>能检测所有奇数个数错误</li>
+</ul>
+<p>劣势</p>
+<ul>
+<li>无法纠错</li>
+<li>存在理论上的盲区</li>
+</ul>
+<h5 id="例题-crc计算">例题 CRC计算
+</h5><p><strong>题目</strong>：数据1100，生成多项式G(x)=1011，求CRC码。</p>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>
+<p>数据左移3位：1100000</p>
+</li>
+<li>
+<p>模2除法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1100000÷1011
+</span></span><span class="line"><span class="cl">1011
+</span></span><span class="line"><span class="cl">-----
+</span></span><span class="line"><span class="cl">1110
+</span></span><span class="line"><span class="cl">1011
+</span></span><span class="line"><span class="cl">-----
+</span></span><span class="line"><span class="cl">1010
+</span></span><span class="line"><span class="cl">1011
+</span></span><span class="line"><span class="cl">-----
+</span></span><span class="line"><span class="cl">0010 (余数)
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>CRC码：1100010</p>
+</li>
+</ol>
+<h2 id="第三章-运算方法与运算器">第三章 运算方法与运算器
+</h2><h3 id="定点加减法运算">定点加减法运算
+</h3><h4 id="补码加法运算-addition-in-twos-complement">补码加法运算 (Addition in Two&rsquo;s Complement)
+</h4><p>补码的加法非常直接，直接按位相加，溢出位舍弃。
+Addition in two&rsquo;s complement is straightforward - add bits directly and discard overflow.</p>
+<p>例如 (Example)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">  5 的补码 (TC of 5):  0101
+</span></span><span class="line"><span class="cl"> -3 的补码 (TC of -3): 1101
+</span></span><span class="line"><span class="cl"> -------------------------
+</span></span><span class="line"><span class="cl"> 相加结果 (Sum):       0010 (= 2)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="补码减法运算-subtraction-in-twos-complement">补码减法运算 (Subtraction in Two&rsquo;s Complement)
+</h4><p>减法可以转换为加上负数的补码：A - B = A + (-B)
+Subtraction can be converted to adding the two&rsquo;s complement of the negative number: A - B = A + (-B)</p>
+<p>例如 (Example)：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">5 - 3 = 5 + (-3)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  5 的补码 (TC of 5):  0101
+</span></span><span class="line"><span class="cl"> -3 的补码 (TC of -3): 1101
+</span></span><span class="line"><span class="cl"> -------------------------
+</span></span><span class="line"><span class="cl"> 结果 (Result):        0010 (= 2)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="溢出检测-overflow-detection">溢出检测 (Overflow Detection)
+</h4><ol>
+<li>
+<p>正溢出 (Positive Overflow)</p>
+<p>两个正数相加，结果变成负数
+When adding two positive numbers results in a negative number</p>
+</li>
+<li>
+<p>负溢出 (Negative Overflow)</p>
+<p>两个负数相加，结果变成正数
+When adding two negative numbers results in a positive number</p>
+</li>
+</ol>
+<h5 id="检测方法-detection-methods">检测方法 (Detection Methods)
+</h5><ol>
+<li>
+<p>符号位进位法 (Sign Bit Carry Method)</p>
+<p>观察最高位的进位和最高位前一位的进位，如果不同则发生溢出
+Compare the carry into and out of the sign bit - if different, overflow occurred</p>
+</li>
+<li>
+<p>符号位检查法 (Sign Bit Check Method)</p>
+<p>检查两个操作数符号相同，但结果符号不同
+Check if operands have the same sign but result has different sign</p>
+</li>
+</ol>
+<h4 id="补码的加减法示例-examples">补码的加减法示例 (Examples)
+</h4><p>让我们看一个具体的8位补码计算示例：
+Let&rsquo;s look at an 8-bit two&rsquo;s complement calculation example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 计算 5 + (-3)：
+</span></span><span class="line"><span class="cl">   Calculate 5 + (-3):
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   5:     00000101
+</span></span><span class="line"><span class="cl">   -3:    11111101
+</span></span><span class="line"><span class="cl">   ----------------
+</span></span><span class="line"><span class="cl">   结果:   00000010 (= 2)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 计算 -5 - 3 = -5 + (-3)：
+</span></span><span class="line"><span class="cl">   Calculate -5 - 3 = -5 + (-3):
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   -5:    11111011
+</span></span><span class="line"><span class="cl">   -3:    11111101
+</span></span><span class="line"><span class="cl">   ----------------
+</span></span><span class="line"><span class="cl">   结果:   11110110 (= -8)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="定点乘法运算">定点乘法运算
+</h3><h4 id="原码乘法运算">原码乘法运算
+</h4><p>原码乘法运算和手算乘法的程序一样，都是各位相乘以后相加，不多做赘述</p>
+<h4 id="补码乘法运算booth算法">补码乘法运算（Booth算法）
+</h4><p>补码乘法运算遵循以下法则：</p>
+<ol>
+<li>对于乘数$x$被乘数$y$，分别求$[x]_补$、$[-x]_补$、$[y]_补$</li>
+<li>初始化$A=0$，$Q=[y]<em>补$，$Q</em>{-1}=0$</li>
+<li>进行如下循环操作：
+<ol>
+<li>比较Q0和Q(-1)，根据结果进行操作：
+<ul>
+<li>若$Q_0Q_{-1}=00或11$，$AQQ_{-1}$右移</li>
+<li>若$Q_0Q_{-1}=10$，$AQQ_{-1}$加$[-x]$后右移</li>
+<li>若$Q_0Q_{-1}=01$，$AQQ_{-1}$加$[x]$后右移</li>
+</ul>
+</li>
+<li>操作次数等于<strong>乘数的数值位数</strong>（不包括符号位）</li>
+<li>最后将$A$和$Q$拼接起来</li>
+</ol>
+</li>
+</ol>
+<h5 id="补码乘法小数位置确定">补码乘法小数位置确定
+</h5><ul>
+<li>两个n位小数相乘，结果为2n位小数</li>
+<li>小数点应放在最高位之前</li>
+<li>结果的精度是原始数精度的两倍</li>
+</ul>
+<h3 id="定点除法运算">定点除法运算
+</h3><h4 id="原码除法运算">原码除法运算
+</h4><h5 id="恢复余数除法">恢复余数除法
+</h5><p>感觉原码直接打竖式算就可以了</p>
+<ol>
+<li>对于被除数$x$和除数$y$，分别求$|x|$、$|x|_补$、$|y|_补$、$[-y]_补$</li>
+<li>用$|x|_补+[-y]_补$，做如下判断
+<ol>
+<li>若结果为正，商1，左移</li>
+<li>若结果为负，商0，$+[y]_补$，恢复后左移</li>
+</ol>
+</li>
+<li>重复上述操作直到商和机器码长度一致</li>
+<li>最后的余数要乘以$2^{左移次数}$</li>
+</ol>
+<h4 id="补码的除法运算">补码的除法运算
+</h4><ul>
+<li>符号位参与运算</li>
+<li>被除数、除数、余数采用双符号位</li>
+</ul>
+<h5 id="运算步骤">运算步骤
+</h5><ol>
+<li>对于被除数$x$和除数$y$，分别求$|x|$、$|y|_补$、$|-y|_补$</li>
+<li>首先判被除数（$x_补$）与除数（$y_补$）是同号还是异号.如果是同号,就要减去（$y_补$）.如果是异号就要加上（$y_补$）.</li>
+<li>算出的余数再与除数（$y_补$）进行比较:
+<ul>
+<li>如果是同号,商上1,向左移动一位,再减去（$y_补$）,加上（$[-y]_补$）</li>
+<li>如果是异号,商上0,向左移动一位,再加上（$y_补$）</li>
+</ul>
+</li>
+<li>循环操作第三步直到商的位数和机器码相同</li>
+<li>补码除法的商最后一位固定设置为1</li>
+<li>将余数乘以$2^{左移次数}$</li>
+</ol>
+<h3 id="浮点数加减法">浮点数加减法
+</h3><h4 id="运算步骤-1">运算步骤
+</h4><ol>
+<li><strong>对阶 Alignment</strong>
+<ul>
+<li>将小指数的数向大指数对齐</li>
+<li>小指数数的尾数右移，每右移一位，指数加1</li>
+<li>直到两个数的指数相等</li>
+</ul>
+</li>
+<li><strong>尾数运算 Mantissa Operation</strong>
+<ul>
+<li>对阶后进行尾数的加减运算</li>
+<li>注意保持正确的符号</li>
+</ul>
+</li>
+<li><strong>规格化 Normalization</strong>
+<ul>
+<li>调整结果使其满足规格化要求</li>
+<li>通常要求尾数最高位为1</li>
+<li>可能需要左移或右移尾数</li>
+</ul>
+</li>
+<li><strong>舍入 Rounding</strong>
+<ul>
+<li>根据舍入规则处理多余的位</li>
+</ul>
+</li>
+<li><strong>溢出检查 Overflow Check</strong>
+<ul>
+<li>检查结果是否超出表示范围</li>
+</ul>
+</li>
+</ol>
+<h4 id="示例-examples">示例 Examples
+</h4><h5 id="例1基本加法-basic-addition"><strong>例1：基本加法 Basic Addition</strong>
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">计算：1.101×2² + 1.001×2¹
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1. 对阶：
+</span></span><span class="line"><span class="cl">   1.101×2² = 1.101×2²
+</span></span><span class="line"><span class="cl">   1.001×2¹ = 0.1001×2²  (右移一位)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 尾数相加：
+</span></span><span class="line"><span class="cl">   1.101
+</span></span><span class="line"><span class="cl">   0.1001
+</span></span><span class="line"><span class="cl">   -------
+</span></span><span class="line"><span class="cl">   10.0011×2²
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 规格化：
+</span></span><span class="line"><span class="cl">   1.00011×2³
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">4. 舍入（假设4位精度）：
+</span></span><span class="line"><span class="cl">   1.000×2³
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="例2异号加法实质是减法subtraction"><strong>例2：异号加法（实质是减法）Subtraction</strong>
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">计算：1.110×2³ - 1.101×2²
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1. 对阶：
+</span></span><span class="line"><span class="cl">   1.110×2³ = 1.110×2³
+</span></span><span class="line"><span class="cl">   1.101×2² = 0.110×2³  (右移一位)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 尾数相减：
+</span></span><span class="line"><span class="cl">   1.110
+</span></span><span class="line"><span class="cl">   0.110
+</span></span><span class="line"><span class="cl">   -------
+</span></span><span class="line"><span class="cl">   1.000×2³
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="特殊情况-special-cases">特殊情况 Special Cases
+</h4><ol>
+<li>
+<p><strong>上溢 Overflow</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">当结果超过最大可表示范围时发生
+</span></span><span class="line"><span class="cl">例如：1.111×2¹²⁷ + 1.111×2¹²⁷
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>下溢 Underflow</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">当结果小于最小可表示范围时发生
+</span></span><span class="line"><span class="cl">例如：1.000×2⁻¹²⁶ ÷ 2
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>精度损失 Precision Loss</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">当两个数量级相差很大时：
+</span></span><span class="line"><span class="cl">1.234×2²⁰ + 1.234×2⁻²⁰
+</span></span><span class="line"><span class="cl">小的数可能完全被忽略
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="运算方法与运算器">运算方法与运算器
+</h3><h4 id="半加法器half-adder-ha">半加法器（Half Adder HA）
+</h4><p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image.png"
+	width="758"
+	height="453"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu15844050927207836269.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_hu9008794977240874968.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="167"
+		data-flex-basis="401px"
+	
+></p>
+<h4 id="全加法器full-adder-fa">全加法器（Full Adder FA）
+</h4><p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1.png"
+	width="976"
+	height="463"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu17551818972063236655.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_1_hu4995496302082295453.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="210"
+		data-flex-basis="505px"
+	
+></p>
+<h4 id="串行进位全加法器">串行进位全加法器
+</h4><p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2.png"
+	width="741"
+	height="1102"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu1242578662294364449.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_2_hu12164645366932175892.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="67"
+		data-flex-basis="161px"
+	
+></p>
+<p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3.png"
+	width="1859"
+	height="610"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu10324162280861269571.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_3_hu7241800598238517919.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="304"
+		data-flex-basis="731px"
+	
+></p>
+<h4 id="阵列乘法器">阵列乘法器
+</h4><p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4.png"
+	width="959"
+	height="673"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu6571171111944349519.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_4_hu220821699072295745.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="142"
+		data-flex-basis="341px"
+	
+></p>
+<p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5.png"
+	width="959"
+	height="671"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu15604721438665172519.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_5_hu6105849087648627725.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="142"
+		data-flex-basis="343px"
+	
+></p>
+<h2 id="第四章-存储系统">第四章 存储系统
+</h2><h3 id="存储器基础概念">存储器基础概念
+</h3><h4 id="存储器分类">存储器分类
+</h4><ul>
+<li><strong>按存储介质</strong>：半导体、磁性材料、光、纸</li>
+<li><strong>按存取方式</strong>：
+<ul>
+<li>随机存储器(RAM)：存取时间与物理位置无关</li>
+<li>顺序存储器：存取时间与物理位置有关(磁盘/光盘/磁带)</li>
+</ul>
+</li>
+<li><strong>按读写方式</strong>：
+<ul>
+<li>RAM (Random Access Memory)</li>
+<li>ROM (Read Only Memory)</li>
+</ul>
+</li>
+<li><strong>按信息保存性</strong>：
+<ul>
+<li>永久性(非易失性)：断电不丢失</li>
+<li>非永久性(易失性)：断电丢失</li>
+</ul>
+</li>
+</ul>
+<h4 id="主存技术指标">主存技术指标
+</h4><ul>
+<li><strong>存储容量</strong>：存储器所能存储的二进制信息位数</li>
+<li><strong>存取速度</strong>：
+<ul>
+<li>存取时间：启动存取操作到完成的时间</li>
+<li>存储周期：连续两次存取操作的最短时间间隔</li>
+<li>存储器带宽：单位时间内存取的信息位数</li>
+</ul>
+</li>
+</ul>
+<h3 id="大端小端模式">大端小端模式
+</h3><h4 id="概念">概念
+</h4><ul>
+<li><strong>大端(big-endian)</strong>：最高字节地址作为字地址</li>
+<li><strong>小端(little-endian)</strong>：最低字节地址作为字地址</li>
+<li>68000采用大端，Intel采用小端，ARM两者都支持</li>
+</ul>
+<h4 id="例题-1">例题
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">例：int a = 0x12345678 在内存中的存放方式
+</span></span><span class="line"><span class="cl">大端模式：
+</span></span><span class="line"><span class="cl">0x4000: 0x12
+</span></span><span class="line"><span class="cl">0x4001: 0x34
+</span></span><span class="line"><span class="cl">0x4002: 0x56
+</span></span><span class="line"><span class="cl">0x4003: 0x78
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">小端模式：
+</span></span><span class="line"><span class="cl">0x4000: 0x78
+</span></span><span class="line"><span class="cl">0x4001: 0x56
+</span></span><span class="line"><span class="cl">0x4002: 0x34
+</span></span><span class="line"><span class="cl">0x4003: 0x12
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="半导体存储器">半导体存储器
+</h3><h4 id="sram">SRAM
+</h4><h5 id="基本存储单元结构">基本存储单元结构
+</h5><p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6.png"
+	width="505"
+	height="513"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu16402436395228465765.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_6_hu11236518385331816806.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="98"
+		data-flex-basis="236px"
+	
+></p>
+<p>SRAM 的基本存储单元是由六个晶体管构成的双稳态触发器，通常称为&quot;六管SRAM&quot;或&quot;6T SRAM&quot;。</p>
+<p>主要组成部分 (Main components)：</p>
+<ul>
+<li>4个NMOS管和2个PMOS管</li>
+<li>2个交叉耦合的反相器</li>
+<li>2个访问晶体管（传输管）</li>
+<li>1个位线对（BL和BLB）</li>
+<li>1个字线（WL）</li>
+</ul>
+<h5 id="工作原理">工作原理
+</h5><p>SRAM的工作原理基于双稳态触发器的特性：</p>
+<ol>
+<li><strong>双稳态特性 (Bistable characteristic)</strong>：
+<ul>
+<li>两个稳定状态：&lsquo;0&rsquo;和'1&rsquo;</li>
+<li>只要有电源供应，数据就能稳定保持</li>
+<li>不需要周期性刷新</li>
+</ul>
+</li>
+<li><strong>反相器对 (Inverter pair)</strong>：
+<ul>
+<li>两个反相器互连形成正反馈</li>
+<li>一个节点为高电平时，另一个必为低电平</li>
+<li>形成自锁回路</li>
+</ul>
+</li>
+</ol>
+<h5 id="读写过程"><strong>读写过程</strong>
+</h5><p><strong>写操作 (Write Operation)：</strong></p>
+<ol>
+<li>激活字线(WL)</li>
+<li>在位线对(BL/BLB)上施加互补信号</li>
+<li>通过访问晶体管强制改变存储节点电平</li>
+<li>新数据被锁存</li>
+</ol>
+<p><strong>读操作 (Read Operation)：</strong></p>
+<ol>
+<li>预充电位线对至高电平</li>
+<li>激活字线</li>
+<li>存储单元将数据传递到位线对</li>
+<li>感测放大器检测位线电压差</li>
+<li>输出数据</li>
+</ol>
+<h5 id="sram不需要刷新的原因"><strong>SRAM不需要刷新的原因</strong>
+</h5><p>SRAM不需要刷新的特点源于其结构特性：</p>
+<ol>
+<li><strong>持续性供电 (Continuous Power)</strong>：
+<ul>
+<li>只要有电源供应，数据就能稳定保持</li>
+<li>交叉耦合的反相器持续维持状态</li>
+</ul>
+</li>
+<li><strong>稳定性 (Stability)</strong>：
+<ul>
+<li>正反馈结构保证数据稳定</li>
+<li>不存在电荷泄漏问题</li>
+<li>不像DRAM需要定期刷新</li>
+</ul>
+</li>
+</ol>
+<h4 id="dram">DRAM
+</h4><h5 id="基本存储单元结构-1">基本存储单元结构
+</h5><p>DRAM 的基本存储单元由一个晶体管和一个电容构成，通常称为&quot;1T1C&quot;结构：</p>
+<p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7.png"
+	width="456"
+	height="427"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu14304478671431942182.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_7_hu1254160810540629203.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="106"
+		data-flex-basis="256px"
+	
+></p>
+<h5 id="工作原理-1">工作原理
+</h5><p>一个晶体管一个电容</p>
+<p>DRAM 的工作原理基于电荷存储：</p>
+<ol>
+<li><strong>数据存储</strong>：
+<ul>
+<li>1：电容充电（高电平）</li>
+<li>0：电容放电（低电平）</li>
+</ul>
+</li>
+<li><strong>电荷泄漏</strong>：
+<ul>
+<li>电容会随时间缓慢放电</li>
+<li>需要定期刷新维持数据</li>
+</ul>
+</li>
+</ol>
+<h5 id="读写过程-1">读写过程
+</h5><p><strong>写操作 (Write Operation)：</strong></p>
+<ol>
+<li>激活字线(WL)，打开访问晶体管</li>
+<li>在位线(BL)上施加数据电平</li>
+<li>电容充电或放电</li>
+<li>关闭字线，数据被存储</li>
+</ol>
+<p><strong>读操作 (Read Operation)：</strong></p>
+<ol>
+<li>位线预充电至中间电平</li>
+<li>激活字线，打开访问晶体管</li>
+<li>电荷共享导致位线电平变化</li>
+<li>感测放大器检测并放大电平差</li>
+<li>数据输出并回写（破坏性读出）</li>
+</ol>
+<h5 id="刷新操作">刷新操作
+</h5><h6 id="刷新周期-refresh-cycle">刷新周期 (Refresh Cycle)
+</h6><ul>
+<li>标准刷新周期：2ms</li>
+<li>在2ms内必须完成所有存储单元的刷新</li>
+<li>刷新间隔 = 刷新周期 ÷ 行数</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">问：一个1024×1024的DRAM芯片，刷新周期为2ms，采用集中刷新方式，
+</span></span><span class="line"><span class="cl">计算刷新时间占用的百分比，假设每次刷新操作耗时100ns。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">解：
+</span></span><span class="line"><span class="cl">1. 总行数 = 1024
+</span></span><span class="line"><span class="cl">2. 2ms内需要刷新1024行
+</span></span><span class="line"><span class="cl">3. 总刷新时间 = 1024 × 100ns = 102.4μs
+</span></span><span class="line"><span class="cl">4. 占用百分比 = (102.4μs ÷ 2ms) × 100% = 5.12%
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="刷新方式">刷新方式
+</h6><ol>
+<li>
+<p>集中刷新 (Burst Refresh)</p>
+<ul>
+<li>
+<p>工作原理</p>
+<p>在固定的时间段内，连续对所有行进行刷新，期间停止所有正常的存储器访问操作。</p>
+</li>
+<li>
+<p>操作流程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 进入刷新周期：
+</span></span><span class="line"><span class="cl">   - 停止响应所有存储器访问请求
+</span></span><span class="line"><span class="cl">   - 将刷新计数器清零
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 连续刷新过程：
+</span></span><span class="line"><span class="cl">   - 选择当前行（由刷新计数器指定）
+</span></span><span class="line"><span class="cl">   - 执行刷新操作
+</span></span><span class="line"><span class="cl">   - 刷新计数器+1
+</span></span><span class="line"><span class="cl">   - 重复直到所有行刷新完成
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 退出刷新周期：
+</span></span><span class="line"><span class="cl">   - 恢复正常的存储器访问
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>时序图</p>
+<p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8.png"
+	width="1070"
+	height="479"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu6383915534628664181.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_8_hu7135989850919864805.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="223"
+		data-flex-basis="536px"
+	
+></p>
+</li>
+<li>
+<p>例题</p>
+<p><strong>题目</strong>：
+某DRAM芯片容量为4M×8位，刷新周期要求为4ms，每次刷新操作需要100ns。该DRAM采用集中刷新方式，要求：</p>
+<ol>
+<li>计算需要多少根地址线</li>
+<li>计算总的刷新时间</li>
+<li>计算在刷新期间的存储器利用率损失</li>
+<li>如果CPU时钟周期为10ns，计算在一个刷新周期内损失的CPU周期数</li>
+</ol>
+<p><strong>解答</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 地址线计算：
+</span></span><span class="line"><span class="cl">   - 总容量 = 4M×8位 = 4194304×8位
+</span></span><span class="line"><span class="cl">   - 行地址需要：log₂(√4194304) = 11位
+</span></span><span class="line"><span class="cl">   - 列地址需要：log₂(√4194304) = 11位
+</span></span><span class="line"><span class="cl">   - 总地址线：11 + 11 = 22根
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 刷新时间计算：
+</span></span><span class="line"><span class="cl">   - 行数 = 2¹¹ = 2048行
+</span></span><span class="line"><span class="cl">   - 总刷新时间 = 2048行 × 100ns = 204.8μs
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 存储器利用率损失：
+</span></span><span class="line"><span class="cl">   - 刷新周期 = 4ms = 4000μs
+</span></span><span class="line"><span class="cl">   - 利用率损失 = (204.8μs ÷ 4000μs) × 100% = 5.12%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">4. 损失的CPU周期：
+</span></span><span class="line"><span class="cl">   - 刷新时间 = 204.8μs = 204800ns
+</span></span><span class="line"><span class="cl">   - 损失的CPU周期数 = 204800ns ÷ 10ns = 20480个周期
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>分散刷新 (Distributed Refresh)</p>
+<ul>
+<li>
+<p>工作原理</p>
+<p>在每个存储器正常访问周期结束后，插入一次刷新操作。</p>
+</li>
+<li>
+<p>操作流程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 执行正常的存储器访问操作
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 访问周期结束后：
+</span></span><span class="line"><span class="cl">   - 执行一次刷新操作（刷新一行）
+</span></span><span class="line"><span class="cl">   - 刷新计数器+1
+</span></span><span class="line"><span class="cl">   - 为下一行刷新做准备
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 开始下一个访问周期
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>时序图</p>
+<p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9.png"
+	width="982"
+	height="441"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu12346651912707836322.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_9_hu9405375465799582639.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="222"
+		data-flex-basis="534px"
+	
+></p>
+</li>
+<li>
+<p>例题</p>
+<p><strong>题目</strong>：
+某DRAM芯片为16M×4位，刷新周期为2ms，采用分散刷新方式。存储器的读写周期为80ns，刷新操作需要100ns。请计算：</p>
+<ol>
+<li>一个完整的存储器周期时间</li>
+<li>实际的存储器带宽</li>
+<li>如果改用集中刷新，两种方式的存储器利用率比较</li>
+<li>刷新操作的频率</li>
+</ol>
+<p><strong>解答</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 存储器周期计算：
+</span></span><span class="line"><span class="cl">   - 行数 = √(16M) = 4096行
+</span></span><span class="line"><span class="cl">   - 每个刷新周期内需要刷新次数 = 4096次
+</span></span><span class="line"><span class="cl">   - 每次刷新间隔 = 2ms ÷ 4096 ≈ 488ns
+</span></span><span class="line"><span class="cl">   - 完整周期 = 80ns(读写) + 100ns(刷新) = 180ns
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 实际带宽计算：
+</span></span><span class="line"><span class="cl">   - 理论周期时间 = 80ns
+</span></span><span class="line"><span class="cl">   - 实际周期时间 = 180ns
+</span></span><span class="line"><span class="cl">   - 理论带宽 = (4位 ÷ 80ns) = 50MB/s
+</span></span><span class="line"><span class="cl">   - 实际带宽 = (4位 ÷ 180ns) ≈ 22.22MB/s
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 刷新方式比较：
+</span></span><span class="line"><span class="cl">   分散刷新：
+</span></span><span class="line"><span class="cl">   - 利用率 = 80ns ÷ 180ns ≈ 44.4%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   集中刷新：
+</span></span><span class="line"><span class="cl">   - 总刷新时间 = 4096 × 100ns = 409.6μs
+</span></span><span class="line"><span class="cl">   - 利用率 = (2000μs - 409.6μs) ÷ 2000μs ≈ 79.52%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">4. 刷新频率：
+</span></span><span class="line"><span class="cl">   - 每488ns进行一次刷新
+</span></span><span class="line"><span class="cl">   - 刷新频率 = 1 ÷ 488ns ≈ 2.049MHz
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>异步刷新 (Asynchronous Refresh)</p>
+<ul>
+<li>
+<p>工作原理</p>
+<p>将刷新周期分成多个时间片，每个时间片内完成部分行的刷新。</p>
+</li>
+<li>
+<p>操作流程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 刷新周期分段：
+</span></span><span class="line"><span class="cl">   - 通常分为8个或16个时间片
+</span></span><span class="line"><span class="cl">   - 每个时间片负责特定数量的行刷新
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 每个时间片内：
+</span></span><span class="line"><span class="cl">   - 连续刷新分配给该时间片的所有行
+</span></span><span class="line"><span class="cl">   - 其他时间用于正常访问
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 时间片切换：
+</span></span><span class="line"><span class="cl">   - 完成当前时间片的刷新任务
+</span></span><span class="line"><span class="cl">   - 等待下一个时间片
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>时序图</p>
+<p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10.png"
+	width="979"
+	height="448"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu7810669416053690256.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_10_hu8544516001268165104.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="218"
+		data-flex-basis="524px"
+	
+></p>
+</li>
+<li>
+<p>异步刷新例题</p>
+<p><strong>题目</strong>：
+某DRAM容量为64M×8位，刷新周期4ms，采用异步刷新方式，将刷新周期分为8个时间片。每次刷新操作需要120ns，普通读写操作需要100ns。请计算：</p>
+<ol>
+<li>每个时间片的持续时间和需要刷新的行数</li>
+<li>每个时间片内的存储器利用率</li>
+<li>如果要求系统响应时间不超过1μs，判断是否满足要求</li>
+<li>计算平均访问时间</li>
+</ol>
+<p><strong>解答</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 时间片计算：
+</span></span><span class="line"><span class="cl">   - 总行数 = √64M = 8192行
+</span></span><span class="line"><span class="cl">   - 每个时间片时长 = 4ms ÷ 8 = 500μs
+</span></span><span class="line"><span class="cl">   - 每个时间片需刷新行数 = 8192 ÷ 8 = 1024行
+</span></span><span class="line"><span class="cl">   - 每个时间片的刷新时间 = 1024 × 120ns = 122.88μs
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2. 存储器利用率：
+</span></span><span class="line"><span class="cl">   - 每个时间片可用时间 = 500μs - 122.88μs = 377.12μs
+</span></span><span class="line"><span class="cl">   - 单片利用率 = 377.12μs ÷ 500μs ≈ 75.424%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3. 响应时间分析：
+</span></span><span class="line"><span class="cl">   - 最坏情况：刷新操作正在进行时收到访问请求
+</span></span><span class="line"><span class="cl">   - 最大等待时间 = 1024行 × 120ns = 122.88μs
+</span></span><span class="line"><span class="cl">   - 122.88μs &gt; 1μs，不满足要求
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">4. 平均访问时间：
+</span></span><span class="line"><span class="cl">   - 正常访问时间 = 100ns
+</span></span><span class="line"><span class="cl">   - 刷新影响时间 = (122.88μs ÷ 500μs) × 100ns = 24.576ns
+</span></span><span class="line"><span class="cl">   - 平均访问时间 = 100ns + 24.576ns = 124.576ns
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ol>
+<h6 id="三种方式的比较">三种方式的比较
+</h6><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">特性</th>
+          <th style="text-align: left">集中刷新</th>
+          <th style="text-align: left">分散刷新</th>
+          <th style="text-align: left">异步刷新</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">控制复杂度</td>
+          <td style="text-align: left">简单</td>
+          <td style="text-align: left">复杂</td>
+          <td style="text-align: left">中等</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">存储器利用率</td>
+          <td style="text-align: left">低</td>
+          <td style="text-align: left">高</td>
+          <td style="text-align: left">中等</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">实现难度</td>
+          <td style="text-align: left">容易</td>
+          <td style="text-align: left">困难</td>
+          <td style="text-align: left">中等</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">刷新效率</td>
+          <td style="text-align: left">高</td>
+          <td style="text-align: left">低</td>
+          <td style="text-align: left">中等</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">对系统影响</td>
+          <td style="text-align: left">大</td>
+          <td style="text-align: left">小</td>
+          <td style="text-align: left">中等</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="主存与cpu的连接">主存与CPU的连接
+</h3><h4 id="存储器扩展">存储器扩展
+</h4><h5 id="位扩展-bit-extension"><strong>位扩展 (Bit Extension)</strong>
+</h5><p>当存储器的数据位宽不足以满足系统需求时，需要进行位扩展。</p>
+<p><strong>原理 (Principle)</strong></p>
+<ul>
+<li>将多个存储器芯片并联，增加数据位宽</li>
+<li>所有芯片共用相同的地址线和控制线</li>
+<li>每个芯片负责存储数据的不同位</li>
+</ul>
+<p><strong>示例 (Example)</strong></p>
+<p>将两个8位宽的存储器芯片组成16位宽的存储器：</p>
+<ul>
+<li>芯片1：存储D0-D7</li>
+<li>芯片2：存储D8-D15</li>
+<li>共用地址线A0-An</li>
+<li>共用片选信号CS、读写控制信号R/W</li>
+</ul>
+<h5 id="字扩展-word-extension">字扩展 (Word Extension)
+</h5><p>当存储器容量（字数）不足时，需要进行字扩展。</p>
+<p><strong>原理 (Principle)</strong></p>
+<ul>
+<li>将多个存储器芯片串联，增加存储容量</li>
+<li>所有芯片共用数据线和控制线</li>
+<li>通过片选信号选择不同的芯片</li>
+</ul>
+<p><strong>示例 (Example)</strong></p>
+<p>将两个1K×8位的存储器组成2K×8位的存储器：</p>
+<ul>
+<li>使用A10作为片选信号</li>
+<li>A10=0选择芯片1（地址0-1023）</li>
+<li>A10=1选择芯片2（地址1024-2047）</li>
+</ul>
+<h5 id="字位同时扩展-word-bit-simultaneous-extension">字位同时扩展 (Word-Bit Simultaneous Extension)
+</h5><p>当需要同时扩展数据位宽和存储容量时使用。</p>
+<p><strong>原理 (Principle)</strong></p>
+<ul>
+<li>结合位扩展和字扩展的方法</li>
+<li>形成一个矩阵式的存储器阵列</li>
+<li>需要同时考虑数据位的分配和片选逻辑</li>
+</ul>
+<p><strong>示例 (Example)</strong></p>
+<p>用4个1K×8位的存储器组成2K×16位的存储器：</p>
+<ul>
+<li>水平方向：位扩展（8位→16位）</li>
+<li>垂直方向：字扩展（1K→2K）</li>
+</ul>
+<h5 id="片选方式-chip-selection-methods"><strong>片选方式 (Chip Selection Methods)</strong>
+</h5><ol>
+<li>
+<p><strong>线选法 (Linear Selection)</strong></p>
+<p>线选法是最简单的片选方式，直接用一根选通线来选中一个存储芯片。每个存储芯片都有独立的片选信号线。</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>电路简单，容易实现</li>
+<li>选择速度快</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>需要的片选线数量多</li>
+<li>当存储芯片数量增加时，占用的I/O端口也相应增加</li>
+<li>扩展能力受限</li>
+</ul>
+</li>
+<li>
+<p><strong>全译码法 (Full Decoding)</strong></p>
+<p>全译码法使用地址译码器将n位二进制地址译码成$2^n$个片选信号。</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>片选线使用效率高</li>
+<li>每个地址都对应唯一的存储芯片</li>
+<li>地址空间利用率100%</li>
+</ul>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>n根地址线可以选择$2^n$个存储芯片</li>
+<li>需要使用译码器（如74138）</li>
+<li>地址连续，没有空隙</li>
+</ul>
+</li>
+<li>
+<p><strong>部分译码法 (Partial Decoding)</strong></p>
+<p>部分译码法只使用地址的部分位进行译码，一个片选信号可能对应多个地址。</p>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>电路比全译码简单</li>
+<li>需要的译码器更少</li>
+<li>适合于地址空间不需要完全使用的场合</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>地址空间有重复</li>
+<li>存储器的编址不连续</li>
+<li>地址空间利用率低</li>
+</ul>
+</li>
+</ol>
+<p><strong>例题</strong></p>
+<p>例1（字扩展）：用16K<em>8位的芯片，去构造内存64K</em>8，并要完成与CPU的对接，并求出每一个芯片在全局空间中的地址范围。</p>
+<p>解答：</p>
+<ol>
+<li>
+<p>需要的芯片数量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">64K ÷ 16K = 4片芯片
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11.png"
+	width="470"
+	height="243"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu10869981017364357848.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_11_hu1269440692721593533.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="193"
+		data-flex-basis="464px"
+	
+></p>
+</li>
+<li>
+<p>地址范围：</p>
+<ul>
+<li>总地址范围：0000H ~ FFFFH (64K = 2^16)</li>
+<li>每片芯片负责16K地址空间</li>
+<li>16K = 16384 = 4000H</li>
+</ul>
+<p>地址分配表 / Address Allocation Table</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">芯片号/No.</th>
+          <th style="text-align: left">地址范围 / Address Range</th>
+          <th style="text-align: left">16进制值/Hex Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><strong>A15</strong>   <strong>A14</strong>   <strong>A13~A0</strong></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">0       0       0000~3FFF</td>
+          <td style="text-align: left">00000H ~ 03FFFH</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">0       1       0000~3FFF</td>
+          <td style="text-align: left">04000H ~ 07FFFH</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">1       0       0000~3FFF</td>
+          <td style="text-align: left">08000H ~ 0BFFFH</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">1       1        0000~3FFF</td>
+          <td style="text-align: left">0C000H ~ 0FFFFH</td>
+      </tr>
+  </tbody>
+</table></div>
+</li>
+</ol>
+<p>解释说明 / Explanation</p>
+<ol>
+<li><strong>地址线分配 / Address Line Assignment</strong>:
+<ul>
+<li>A15, A14：用于片选（选择哪个芯片）</li>
+<li>A13~A0：用于芯片内部寻址（14位）</li>
+</ul>
+</li>
+<li><strong>片选逻辑 / Chip Selection Logic</strong>:
+<ul>
+<li>芯片0：当A15=0, A14=0时选中</li>
+<li>芯片1：当A15=0, A14=1时选中</li>
+<li>芯片2：当A15=1, A14=0时选中</li>
+<li>芯片3：当A15=1, A14=1时选中</li>
+</ul>
+</li>
+<li><strong>地址范围计算 / Address Range Calculation</strong>:
+<ul>
+<li>每片芯片负责16K (4000H) 的地址空间</li>
+<li>芯片0：0000H ~ 3FFFH</li>
+<li>芯片1：4000H ~ 7FFFH</li>
+<li>芯片2：8000H ~ BFFFH</li>
+<li>芯片3：C000H ~ FFFFH</li>
+</ul>
+</li>
+</ol>
+<p>例2（位扩展）：用256K ×8位的存储体构造 2M × 32位的存储器，并完成与CPU的连接</p>
+<ul>
+<li>
+<p>先用4片256K X 8位的存储体构成 256K X 32的存储体</p>
+<p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12.png"
+	width="432"
+	height="328"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu13561722755967961109.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_12_hu9411654097025198026.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="316px"
+	
+></p>
+</li>
+<li>
+<p>然后和字扩展一样</p>
+<p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13.png"
+	width="894"
+	height="542"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu11376975969598399222.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_13_hu14559673786505275519.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="164"
+		data-flex-basis="395px"
+	
+></p>
+</li>
+</ul>
+<h3 id="cache">Cache
+</h3><h4 id="工作原理--how-cache-works">工作原理 / How Cache Works
+</h4><ol>
+<li><strong>数据存储</strong>：
+<ul>
+<li>Cache将最常用的数据从主存复制到高速缓存中</li>
+<li>按照块（Block）或行（Line）为单位进行存储</li>
+</ul>
+</li>
+<li><strong>访问过程</strong>：
+<ul>
+<li>CPU首先查找数据是否在Cache中（Cache命中）</li>
+<li>如果命中（Hit），直接从Cache读取</li>
+<li>如果未命中（Miss），从主存读取并放入Cache</li>
+</ul>
+</li>
+<li><strong>替换策略</strong>：
+<ul>
+<li>当Cache满时，需要决定替换哪些数据</li>
+<li>常见策略包括LRU（最近最少使用）、FIFO（先进先出）等</li>
+</ul>
+</li>
+</ol>
+<h4 id="局局部性原理--principle-of-locality">局局部性原理 / Principle of Locality
+</h4><ol>
+<li>
+<p>时间局部性 / Temporal Locality</p>
+<ul>
+<li>定义：如果一个数据被访问，那么在近期它很可能再次被访问</li>
+<li>例子：
+<ul>
+<li>循环中的变量</li>
+<li>频繁调用的函数</li>
+<li>计数器</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// i具有很好的时间局部性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">sum</span> <span class="o">+=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>空间局部性 / Spatial Locality</p>
+<ul>
+<li>定义：如果一个数据被访问，那么它周围的数据很可能也会被访问</li>
+<li>例子：
+<ul>
+<li>数组的连续访问</li>
+<li>顺序执行的指令</li>
+<li>结构体中的相邻成员</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">array</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>  <span class="c1">// 数组连续访问体现了空间局部性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h5 id="局部性原理的重要性--importance-of-locality">局部性原理的重要性 / Importance of Locality
+</h5><ol>
+<li><strong>性能优化</strong>：
+<ul>
+<li>利用局部性原理可以提高Cache命中率</li>
+<li>减少主存访问次数，提升系统性能</li>
+</ul>
+</li>
+<li><strong>程序设计</strong>：
+<ul>
+<li>影响程序编写方式</li>
+<li>引导更好的数据结构和算法选择</li>
+</ul>
+</li>
+</ol>
+<h5 id="实际应用示例--practical-example">实际应用示例 / Practical Example
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// 体现良好局部性的代码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// 按行访问，具有好的空间局部性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 较差局部性的代码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// 按列访问，空间局部性较差
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个例子展示了如何通过合适的访问模式来利用空间局部性，提高程序性能。第一种方式（按行访问）能更好地利用Cache的特性，而第二种方式（按列访问）会导致更多的Cache未命中。</p>
+<h4 id="存储器映射方式-memory-mapping-methods">存储器映射方式 Memory Mapping Methods
+</h4><ol>
+<li>
+<p>直接映射 (Direct Mapping)</p>
+<ul>
+<li>
+<p>基本概念</p>
+<p>直接映射是最简单的映射方式，主存中的每个块只能映射到Cache中的一个特定位置。</p>
+</li>
+<li>
+<p>地址结构</p>
+<p>主存地址分为三个字段：</p>
+<ul>
+<li>标记(Tag)：用于识别是否是所需的块</li>
+<li>组号/行号(Line)：确定Cache中的位置</li>
+<li>块内地址(Block Offset)：确定块内的具体单元</li>
+</ul>
+</li>
+<li>
+<p>例题 Example</p>
+<p>假设有一个存储系统具有以下参数：</p>
+<ul>
+<li>主存容量：1024KB = 2^20 B</li>
+<li>Cache容量：16KB = 2^14 B</li>
+<li>块大小：64B = 2^6 B</li>
+</ul>
+<p>解答：</p>
+<ol>
+<li>计算地址位数：
+<ul>
+<li>主存地址位数 = log2(1024×1024) = 20位</li>
+</ul>
+</li>
+<li>计算各字段位数：
+<ul>
+<li>块内地址：log2(64) = 6位</li>
+<li>Cache行数：16KB/64B = 256行，所以行号需要8位</li>
+<li>标记位：20 - 8 - 6 = 6位</li>
+</ul>
+</li>
+<li>地址格式：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">|  标记(6位)  |  行号(8位)  |  块内地址(6位)  |
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>全相联映射 (Fully Associative Mapping)</p>
+<ul>
+<li>
+<p>基本概念 Basic Concept</p>
+<p>主存中的任何一块可以映射到Cache中的任何位置。需要并行对比所有Cache行。</p>
+</li>
+<li>
+<p>地址结构 Address Structure</p>
+<p>主存地址分为两个字段：</p>
+<ul>
+<li>标记(Tag)</li>
+<li>块内地址(Block Offset)</li>
+</ul>
+</li>
+<li>
+<p>例题 Example</p>
+<p>使用上述相同参数，求地址格式。</p>
+<p>解答</p>
+<pre><code>1. 块内地址：同样是6位
+2. 标记位：
+    - 不需要行号字段
+    - 标记位 = 20 - 6 = 14位
+3. 地址格式：
+
+```
+|    标记(14位)    |  块内地址(6位)  |
+```
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>组相联映射 (Set Associative Mapping)</p>
+<ul>
+<li>
+<p>基本概念 Basic Concept</p>
+<p>是直接映射和全相联映射的折中方案。Cache分成若干组，每组包含n个行（n路组相联）。</p>
+</li>
+<li>
+<p>地址结构 Address Structure</p>
+<p>主存地址分为三个字段：</p>
+<ul>
+<li>标记(Tag)</li>
+<li>组号(Set)</li>
+<li>块内地址(Block Offset)</li>
+</ul>
+</li>
+<li>
+<p>例题 Example</p>
+<p>假设采用4路组相联，其他参数同上。</p>
+<p>解答：</p>
+<pre><code>1. 计算组数：
+    - 总行数 = 256行
+    - 每组4行
+    - 组数 = 256/4 = 64组
+2. 计算各字段位数：
+    - 块内地址：6位
+    - 组号：log2(64) = 6位
+    - 标记位：20 - 6 - 6 = 8位
+3. 地址格式：
+
+```
+|  标记(8位)  |  组号(6位)  |  块内地址(6位)  |
+```
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="性能比较-performance-comparison">性能比较 Performance Comparison
+</h5><ol>
+<li><strong>命中率 Hit Rate</strong>：
+<ul>
+<li>全相联 &gt; 组相联 &gt; 直接映射</li>
+</ul>
+</li>
+<li><strong>硬件复杂度 Hardware Complexity</strong>：
+<ul>
+<li>直接映射 &lt; 组相联 &lt; 全相联</li>
+</ul>
+</li>
+<li><strong>查找速度 Search Speed</strong>：
+<ul>
+<li>直接映射 &gt; 组相联 &gt; 全相联</li>
+</ul>
+</li>
+</ol>
+<h5 id="综合例题-comprehensive-example">综合例题 Comprehensive Example
+</h5><p>假设主存地址为32位，Cache大小为64KB，块大小为32B，采用8路组相联映射，求：</p>
+<ol>
+<li>地址格式</li>
+<li>Cache总行数</li>
+<li>每组行数</li>
+<li>组数</li>
+<li>标记位、组号位、块内地址位的位数</li>
+</ol>
+<p><strong>解答 Solution:</strong></p>
+<ol>
+<li>Cache总行数：
+<ul>
+<li>64KB/32B = 2048行</li>
+</ul>
+</li>
+<li>每组行数：
+<ul>
+<li>8行（8路组相联）</li>
+</ul>
+</li>
+<li>组数：
+<ul>
+<li>2048/8 = 256组</li>
+</ul>
+</li>
+<li>地址位的分配：
+<ul>
+<li>块内地址：log2(32) = 5位</li>
+<li>组号：log2(256) = 8位</li>
+<li>标记：32 - 8 - 5 = 19位</li>
+</ul>
+</li>
+<li>地址格式：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">|    标记(19位)    |  组号(8位)  |  块内地址(5位)  |
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="替换算法">替换算法
+</h4><h5 id="lru">LRU
+</h5><ul>
+<li>
+<p>工作原理</p>
+<ul>
+<li>替换最长时间没有被访问的数据块</li>
+<li>需要记录每个数据块的最后访问时间</li>
+<li>基于程序的时间局部性原理</li>
+</ul>
+</li>
+<li>
+<p>实现方式</p>
+<ul>
+<li>计数器法：记录上次访问时间</li>
+<li>栈实现：最近使用的放栈顶</li>
+<li>链表实现：访问后移至表头</li>
+</ul>
+</li>
+<li>
+<p>例题</p>
+<p>假设有一个容量为 3 的 Cache，访问序列为：1, 2, 3, 4, 1, 2, 5, 1, 2, 3</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nt">初始状态</span><span class="err">：</span><span class="o">[</span> <span class="o">][</span> <span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">1</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="o">][</span> <span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">2</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">2</span><span class="o">][</span><span class="nt">1</span><span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">3</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">3</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span><span class="nt">1</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">4</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">4</span><span class="o">][</span><span class="nt">3</span><span class="o">][</span><span class="nt">2</span><span class="o">]</span>    <span class="o">(</span><span class="nt">替换最久未使用的1</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">1</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="o">][</span><span class="nt">4</span><span class="o">][</span><span class="nt">3</span><span class="o">]</span>    <span class="o">(</span><span class="nt">替换最久未使用的2</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">2</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">2</span><span class="o">][</span><span class="nt">1</span><span class="o">][</span><span class="nt">4</span><span class="o">]</span>    <span class="o">(</span><span class="nt">替换最久未使用的3</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">5</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">5</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span><span class="nt">1</span><span class="o">]</span>    <span class="o">(</span><span class="nt">替换最久未使用的4</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h5 id="lfu">LFU
+</h5><ul>
+<li>
+<p>工作原理</p>
+<ul>
+<li>替换访问次数最少的数据块</li>
+<li>需要维护访问计数器</li>
+<li>基于使用频率进行判断</li>
+</ul>
+</li>
+<li>
+<p>例题</p>
+<p>假设有一个容量为 3 的 Cache，访问序列为：1, 1, 1, 2, 2, 3, 4, 1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nt">初始状态</span><span class="err">：</span><span class="o">[</span> <span class="o">][</span> <span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">1</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="nd">:1</span><span class="o">][</span> <span class="o">][</span> <span class="o">]</span>       <span class="o">(</span><span class="nt">数字</span><span class="nd">:计数</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">1</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="nd">:2</span><span class="o">][</span> <span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">1</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="nd">:3</span><span class="o">][</span> <span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">2</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="nd">:3</span><span class="o">][</span><span class="nt">2</span><span class="nd">:1</span><span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">2</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="nd">:3</span><span class="o">][</span><span class="nt">2</span><span class="nd">:2</span><span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">3</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="nd">:3</span><span class="o">][</span><span class="nt">2</span><span class="nd">:2</span><span class="o">][</span><span class="nt">3</span><span class="nd">:1</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">4</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="nd">:3</span><span class="o">][</span><span class="nt">2</span><span class="nd">:2</span><span class="o">][</span><span class="nt">4</span><span class="nd">:1</span><span class="o">]</span>  <span class="o">(</span><span class="nt">替换计数最小的3</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h5 id="fifo">FIFO
+</h5><ul>
+<li>
+<p>工作原理</p>
+<ul>
+<li>替换最早进入 Cache 的数据块</li>
+<li>类似队列操作</li>
+<li>实现简单，硬件开销小</li>
+</ul>
+</li>
+<li>
+<p>例题</p>
+<p>假设有一个容量为 3 的 Cache，访问序列为：1, 2, 3, 4, 2, 1, 5</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nt">初始状态</span><span class="err">：</span><span class="o">[</span> <span class="o">][</span> <span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">1</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="o">][</span> <span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">2</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">3</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span><span class="nt">3</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">4</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">4</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span><span class="nt">3</span><span class="o">]</span>    <span class="o">(</span><span class="nt">替换最早进入的1</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">2</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">4</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span><span class="nt">3</span><span class="o">]</span>    <span class="o">(</span><span class="nt">已存在</span><span class="err">，</span><span class="nt">不变</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">1</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">4</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span><span class="nt">1</span><span class="o">]</span>    <span class="o">(</span><span class="nt">替换最早进入的3</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">5</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">4</span><span class="o">][</span><span class="nt">5</span><span class="o">][</span><span class="nt">1</span><span class="o">]</span>    <span class="o">(</span><span class="nt">替换最早进入的2</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h5 id="随机替换">随机替换
+</h5><ul>
+<li>
+<p>工作原理</p>
+<ul>
+<li>随机选择要替换的数据块</li>
+<li>不需要维护任何历史信息</li>
+<li>硬件实现最简单</li>
+</ul>
+</li>
+<li>
+<p>例题</p>
+<p>假设有一个容量为 3 的 Cache，访问序列为：1, 2, 3, 4, 2, 1, 5</p>
+<ul>
+<li>过程演示 (Process Demonstration)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nt">初始状态</span><span class="err">：</span><span class="o">[</span> <span class="o">][</span> <span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">1</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="o">][</span> <span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">2</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">3</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">1</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span><span class="nt">3</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nt">4</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">4</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span><span class="nt">3</span><span class="o">]</span>    <span class="o">(</span><span class="nt">随机替换了1</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">2</span> <span class="nt">访问</span> <span class="err">→</span> <span class="o">[</span><span class="nt">4</span><span class="o">][</span><span class="nt">2</span><span class="o">][</span><span class="nt">3</span><span class="o">]</span>    <span class="o">(</span><span class="nt">已存在</span><span class="err">，</span><span class="nt">不变</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">1</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">4</span><span class="o">][</span><span class="nt">1</span><span class="o">][</span><span class="nt">3</span><span class="o">]</span>    <span class="o">(</span><span class="nt">随机替换了2</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nt">5</span> <span class="nt">进入</span> <span class="err">→</span> <span class="o">[</span><span class="nt">4</span><span class="o">][</span><span class="nt">1</span><span class="o">][</span><span class="nt">5</span><span class="o">]</span>    <span class="o">(</span><span class="nt">随机替换了3</span><span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h5 id="性能比较">性能比较
+</h5><p><img src="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14.png"
+	width="2424"
+	height="956"
+	srcset="/zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu2110060091895562747.png 480w, /zh-cn/p/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0/image_14_hu10366177331071096642.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="253"
+		data-flex-basis="608px"
+	
+></p>
+<h4 id="写策略">写策略
+</h4><h5 id="写直达法write-through">写直达法(Write Through)
+</h5><ul>
+<li>数据同时写入 Cache 和主存</li>
+<li>每次写操作都要访问主存</li>
+<li>Cache 和主存的数据始终保持一致</li>
+</ul>
+<h5 id="写回法write-back">写回法(Write Back)
+</h5><ul>
+<li>写操作只修改 Cache 中的数据</li>
+<li>被修改的数据块被标记为&quot;脏&quot;(dirty)</li>
+<li>当脏块被替换时，才写回主存</li>
+</ul>
+<h4 id="性能计算">性能计算
+</h4><h5 id="命中率计算">命中率计算
+</h5><p>在一个程序执行期间，设$N_c$表示Cache完成存取的总次数，$N_m$表示主存完成存取的总次数，h定义为命中率，则有</p>
+$$
+h=\frac{N_c}{N_c+N_m}
+$$<h5 id="平均访问时间计算">平均访问时间计算
+</h5><p>若$t_c$表示命中时的Cache访问时间，$t_m$表示未命中时的主存访问时间，$1-h$表示未命中率，则Cache/主存系统的平均访问时间$t_a$为</p>
+$$
+t_a=h\cdot t_c+(1-h)t_m　         
+$$<h5 id="cache效率计算">Cache效率计算
+</h5><p>设$r=\frac{tm}{tc}$表示主存慢于Cache的倍率,e表示访问效率，则有:</p>
+$$
+e = \frac{t_c}{t_a} = \frac{t_c}{ht_c + (1-h)t_m} = \frac{1}{r + (1-r)h} = \frac{1}{h + (1-h)r}
+$$
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
