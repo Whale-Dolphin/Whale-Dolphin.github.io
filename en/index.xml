@@ -77,7 +77,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://whale-dolphin.github.io/en/p/slurm-usage/</guid>
-        <description>&lt;img src="https://whale-dolphin.github.io/cover.jpg" alt="Featured image of post Slurm-Usage" /&gt;&lt;h2 id=&#34;slurm-usage&#34;&gt;Slurm Usage
+        <description>&lt;img src="https://whale-dolphin.github.io/en/p/slurm-usage/cover.en.png" alt="Featured image of post Slurm-Usage" /&gt;&lt;h2 id=&#34;slurm-usage&#34;&gt;Slurm Usage
 &lt;/h2&gt;&lt;p&gt;Slurm is a workload manager mainly used in HPC and GPU clusters. It ensures that resources are utilized to their maximum potential. I used to use Meituan’s intern workload manager based on Slurm. Now, I use PSC, which is equipped with full Slurm functionality. Therefore, I am writing this blog to summarize its usage.&lt;/p&gt;
 &lt;p&gt;There are following main commands in slurm:&lt;/p&gt;
 &lt;ul&gt;
