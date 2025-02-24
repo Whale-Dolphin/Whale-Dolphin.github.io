@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Slurm Usage Slurm is a workload manager mainly used in HPC and GPU clusters. It ensures that resources are utilized to their maximum potential. I used to use Meituan’s intern workload manager based on Slurm. Now, I use PSC, which is equipped with full Slurm functionality. Therefore, I am writing this blog to summarize its usage.\nThere are following main commands in slurm:\nJob Submission and Control Job Management Status Query Resource Management Job Submission and Control Commands The first category of commands deals with submitting and controlling jobs on the cluster.\n">
+<title>SLurm</title>
+
+<link rel='canonical' href='http://localhost:1313/en/p/slurm/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="SLurm">
+<meta property='og:description' content="Slurm Usage Slurm is a workload manager mainly used in HPC and GPU clusters. It ensures that resources are utilized to their maximum potential. I used to use Meituan’s intern workload manager based on Slurm. Now, I use PSC, which is equipped with full Slurm functionality. Therefore, I am writing this blog to summarize its usage.\nThere are following main commands in slurm:\nJob Submission and Control Job Management Status Query Resource Management Job Submission and Control Commands The first category of commands deals with submitting and controlling jobs on the cluster.\n">
+<meta property='og:url' content='http://localhost:1313/en/p/slurm/'>
+<meta property='og:site_name' content='WhaleDolphin&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-16T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/cover.jpg' />
+<meta name="twitter:title" content="SLurm">
+<meta name="twitter:description" content="Slurm Usage Slurm is a workload manager mainly used in HPC and GPU clusters. It ensures that resources are utilized to their maximum potential. I used to use Meituan’s intern workload manager based on Slurm. Now, I use PSC, which is equipped with full Slurm functionality. Therefore, I am writing this blog to summarize its usage.\nThere are following main commands in slurm:\nJob Submission and Control Job Management Status Query Resource Management Job Submission and Control Commands The first category of commands deals with submitting and controlling jobs on the cluster.\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/cover.jpg' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/en/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu6629476239591531280.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/en">WhaleDolphin&#39;s Blog</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        target="_blank"
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/en/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/en/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" >中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" selected>English</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#job-submission-and-control-commands">Job Submission and Control Commands</a>
+      <ol>
+        <li><a href="#sbatch">sbatch</a></li>
+        <li><a href="#srun">srun</a></li>
+        <li><a href="#salloc">salloc</a></li>
+        <li><a href="#example">Example</a></li>
+      </ol>
+    </li>
+    <li><a href="#job-management-commands">Job Management Commands</a>
+      <ol>
+        <li><a href="#scancel">scancel</a></li>
+        <li><a href="#scontrol">scontrol</a></li>
+      </ol>
+    </li>
+    <li><a href="#status-query-commands">Status Query Commands</a>
+      <ol>
+        <li><a href="#squeue">squeue</a></li>
+        <li><a href="#sinfo">sinfo</a></li>
+        <li><a href="#sacct">sacct</a></li>
+      </ol>
+    </li>
+    <li><a href="#resource-management-commands">Resource Management Commands</a>
+      <ol>
+        <li><a href="#sshare">sshare</a></li>
+        <li><a href="#sprio">sprio</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/en/p/slurm/">
+                
+                    <img src="/cover.jpg" loading="lazy" alt="Featured image of post SLurm" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/en/categories/ai/" >
+                AI
+            </a>
+        
+            <a href="/en/categories/generator-model/" >
+                Generator Model
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/en/p/slurm/">SLurm</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 16, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    10 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="slurm-usage">Slurm Usage
+</h1><p>Slurm is a workload manager mainly used in HPC and GPU clusters. It ensures that resources are utilized to their maximum potential. I used to use Meituan’s intern workload manager based on Slurm. Now, I use PSC, which is equipped with full Slurm functionality. Therefore, I am writing this blog to summarize its usage.</p>
+<p>There are following main commands in slurm:</p>
+<ul>
+<li>Job Submission and Control</li>
+<li>Job Management</li>
+<li>Status Query</li>
+<li>Resource Management</li>
+</ul>
+<h2 id="job-submission-and-control-commands">Job Submission and Control Commands
+</h2><p>The first category of commands deals with submitting and controlling jobs on the cluster.</p>
+<h3 id="sbatch">sbatch
+</h3><p>This is your primary tool for submitting batch jobs to the cluster. The command reads a script file containing resource requests and job steps.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Basic job submission</span>
+</span></span><span class="line"><span class="cl">sbatch job_script.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Submit with specific requirements</span>
+</span></span><span class="line"><span class="cl">sbatch --time<span class="o">=</span>2:00:00 --mem<span class="o">=</span>4G job_script.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># Job Identification</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">J</span><span class="p">,</span> <span class="o">--</span><span class="n">job</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="n">jobname</span>                 <span class="c1"># Name of the job</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">comment</span><span class="o">=</span><span class="n">string</span>                       <span class="c1"># Add comment to job</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">wckey</span><span class="o">=</span><span class="n">wckey</span>                         <span class="c1"># Specify wckey for job</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Resource Allocation</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">N</span><span class="p">,</span> <span class="o">--</span><span class="n">nodes</span><span class="o">=</span><span class="n">N</span>                         <span class="c1"># Number of nodes</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">ntasks</span><span class="o">=</span><span class="n">ntasks</span>                   <span class="c1"># Number of tasks</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="o">--</span><span class="n">cpus</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">task</span><span class="o">=</span><span class="n">ncpus</span>            <span class="c1"># CPUs per task</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">mem</span><span class="o">=</span><span class="n">MB</span>                              <span class="c1"># Total memory per node</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">mem</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">cpu</span><span class="o">=</span><span class="n">MB</span>                      <span class="c1"># Memory per CPU</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">gpus</span><span class="o">=</span><span class="n">n</span>                              <span class="c1"># Number of GPUs</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">gres</span><span class="o">=</span><span class="n">resource_spec</span>                  <span class="c1"># Generic resource requirements</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Time and Priority</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="o">--</span><span class="n">time</span><span class="o">=</span><span class="n">minutes</span>                    <span class="c1"># Time limit</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">deadline</span><span class="o">=</span><span class="n">timestamp</span>                  <span class="c1"># Job deadline</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">priority</span><span class="o">=</span><span class="n">value</span>                      <span class="c1"># Job priority (admin only)</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">H</span><span class="p">,</span> <span class="o">--</span><span class="n">hold</span>                           <span class="c1"># Submit job in held state</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Input/Output</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span><span class="o">=</span><span class="n">filename</span>                 <span class="c1"># Standard output file</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">e</span><span class="p">,</span> <span class="o">--</span><span class="n">error</span><span class="o">=</span><span class="n">filename</span>                  <span class="c1"># Standard error file</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">input</span><span class="o">=</span><span class="n">filename</span>                  <span class="c1"># Standard input file</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Partition and Constraints</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">--</span><span class="n">partition</span><span class="o">=</span><span class="n">partition</span>             <span class="c1"># Partition request</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">C</span><span class="p">,</span> <span class="o">--</span><span class="n">constraint</span><span class="o">=</span><span class="n">list</span>                 <span class="c1"># Node feature constraints</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">reservation</span><span class="o">=</span><span class="n">name</span>                    <span class="c1"># Resource reservation name</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Dependencies and Arrays</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="o">--</span><span class="n">dependency</span><span class="o">=</span><span class="n">dependency_list</span>      <span class="c1"># Job dependencies</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">array</span><span class="o">=</span><span class="n">array_spec</span>                    <span class="c1"># Job array indices</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Environment</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="k">export</span><span class="o">=</span><span class="n">env_vars</span>                     <span class="c1"># Export environment variables</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">chdir</span><span class="o">=</span><span class="n">directory</span>                     <span class="c1"># Working directory</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="srun">srun
+</h3><p>Use srun for running parallel jobs or interactive tasks. It&rsquo;s particularly useful for immediate execution.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Run a simple command across nodes</span>
+</span></span><span class="line"><span class="cl">srun hostname
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Launch a parallel program</span>
+</span></span><span class="line"><span class="cl">srun -n <span class="m">4</span> ./parallel_program
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Job Configuration
+</span></span><span class="line"><span class="cl">-N, --nodes=N                         # Number of nodes
+</span></span><span class="line"><span class="cl">-n, --ntasks=ntasks                   # Number of tasks
+</span></span><span class="line"><span class="cl">-c, --cpus-per-task=ncpus            # CPUs per task
+</span></span><span class="line"><span class="cl">-p, --partition=partition             # Partition request
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Resource Requirements
+</span></span><span class="line"><span class="cl">--mem=MB                              # Memory per node
+</span></span><span class="line"><span class="cl">--mem-per-cpu=MB                      # Memory per CPU
+</span></span><span class="line"><span class="cl">--gpus=n                              # Number of GPUs
+</span></span><span class="line"><span class="cl">--gres=resource_spec                  # Generic resource requirements
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Time Limits
+</span></span><span class="line"><span class="cl">-t, --time=minutes                    # Time limit
+</span></span><span class="line"><span class="cl">--immediate                           # Exit if resources not available
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Input/Output
+</span></span><span class="line"><span class="cl">-o, --output=filename                 # Standard output file
+</span></span><span class="line"><span class="cl">-e, --error=filename                  # Standard error file
+</span></span><span class="line"><span class="cl">-i, --input=filename                  # Standard input file
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Task Distribution
+</span></span><span class="line"><span class="cl">--ntasks-per-node=n                   # Tasks per node
+</span></span><span class="line"><span class="cl">--ntasks-per-socket=n                 # Tasks per socket
+</span></span><span class="line"><span class="cl">--distribution=arbitrary              # Task distribution method
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># MPI Options
+</span></span><span class="line"><span class="cl">--mpi=type                           # MPI implementation type
+</span></span><span class="line"><span class="cl">--cpu-bind=type                      # Bind tasks to CPUs
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="salloc">salloc
+</h3><p>When you need interactive access to compute resources, salloc is your go-to command.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Request an interactive session</span>
+</span></span><span class="line"><span class="cl">salloc --nodes<span class="o">=</span><span class="m">1</span> --time<span class="o">=</span>1:00:00
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Get a GPU-enabled session</span>
+</span></span><span class="line"><span class="cl">salloc --gpus<span class="o">=</span><span class="m">1</span> --time<span class="o">=</span>2:00:00
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># Resource Request</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">N</span><span class="p">,</span> <span class="o">--</span><span class="n">nodes</span><span class="o">=</span><span class="n">N</span>                         <span class="c1"># Number of nodes</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">ntasks</span><span class="o">=</span><span class="n">ntasks</span>                   <span class="c1"># Number of tasks</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">c</span><span class="p">,</span> <span class="o">--</span><span class="n">cpus</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">task</span><span class="o">=</span><span class="n">ncpus</span>            <span class="c1"># CPUs per task</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">mem</span><span class="o">=</span><span class="n">MB</span>                              <span class="c1"># Memory per node</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">mem</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">cpu</span><span class="o">=</span><span class="n">MB</span>                      <span class="c1"># Memory per CPU</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># GPU and Special Resources</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">gpus</span><span class="o">=</span><span class="n">n</span>                              <span class="c1"># Number of GPUs</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">gres</span><span class="o">=</span><span class="n">resource_spec</span>                  <span class="c1"># Generic resource requirements</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">C</span><span class="p">,</span> <span class="o">--</span><span class="n">constraint</span><span class="o">=</span><span class="n">list</span>                 <span class="c1"># Node feature constraints</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Time and Priority</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="o">--</span><span class="n">time</span><span class="o">=</span><span class="n">minutes</span>                    <span class="c1"># Time limit</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">immediate</span>                           <span class="c1"># Exit if resources not available</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">H</span><span class="p">,</span> <span class="o">--</span><span class="n">hold</span>                           <span class="c1"># Submit allocation in held state</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Partition and Reservation</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">--</span><span class="n">partition</span><span class="o">=</span><span class="n">partition</span>             <span class="c1"># Partition request</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">reservation</span><span class="o">=</span><span class="n">name</span>                    <span class="c1"># Resource reservation name</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Job Identification</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">J</span><span class="p">,</span> <span class="o">--</span><span class="n">job</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="n">jobname</span>               <span class="c1"># Name of job</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">comment</span><span class="o">=</span><span class="n">string</span>                     <span class="c1"># Add comment to allocation</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Environment</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="k">export</span><span class="o">=</span><span class="n">env_vars</span>                    <span class="c1"># Export environment variables</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">chdir</span><span class="o">=</span><span class="n">directory</span>                    <span class="c1"># Working directory</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="example">Example
+</h3><ul>
+<li>
+<p>Memory Specification</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Different ways to specify memory</span>
+</span></span><span class="line"><span class="cl">--mem<span class="o">=</span>4G                             <span class="c1"># 4 GB per node</span>
+</span></span><span class="line"><span class="cl">--mem-per-cpu<span class="o">=</span>1G                     <span class="c1"># 1 GB per CPU</span>
+</span></span><span class="line"><span class="cl">--mem<span class="o">=</span>4096MB                         <span class="c1"># Can use MB notation</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Time Specification</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Different time formats</span>
+</span></span><span class="line"><span class="cl">--time<span class="o">=</span>2:00:00                       <span class="c1"># Hours:Minutes:Seconds</span>
+</span></span><span class="line"><span class="cl">--time<span class="o">=</span><span class="m">120</span>                           <span class="c1"># Minutes</span>
+</span></span><span class="line"><span class="cl">--time<span class="o">=</span>2-00:00:00                    <span class="c1"># Days-Hours:Minutes:Seconds</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>GPU Requests</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Different ways to request GPUs</span>
+</span></span><span class="line"><span class="cl">--gpus<span class="o">=</span><span class="m">1</span>                             <span class="c1"># Request 1 GPU</span>
+</span></span><span class="line"><span class="cl">--gres<span class="o">=</span>gpu:1                         <span class="c1"># Alternative way to request 1 GPU</span>
+</span></span><span class="line"><span class="cl">--gres<span class="o">=</span>gpu:tesla:2                   <span class="c1"># Request 2 Tesla GPUs</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Job Dependencies</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Common dependency types</span>
+</span></span><span class="line"><span class="cl">--dependency<span class="o">=</span>after:123               <span class="c1"># Start after job 123 completes</span>
+</span></span><span class="line"><span class="cl">--dependency<span class="o">=</span>afterany:123            <span class="c1"># Start after job 123 ends (any state)</span>
+</span></span><span class="line"><span class="cl">--dependency<span class="o">=</span>afternotok:123         <span class="c1"># Start after job 123 fails</span>
+</span></span><span class="line"><span class="cl">--dependency<span class="o">=</span>singleton              <span class="c1"># Only one job runs at a time</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Paths must be absolute, or they may lead somewhere you cannot find.</li>
+<li>Carefully set the time, make sure they will not be killed due to time limited.</li>
+</ul>
+<h2 id="job-management-commands">Job Management Commands
+</h2><p>These commands help you manage existing jobs in the system.</p>
+<h3 id="scancel">scancel
+</h3><p>The command for terminating jobs:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bashCopy
+</span></span><span class="line"><span class="cl"><span class="c1"># Cancel a specific job</span>
+</span></span><span class="line"><span class="cl">scancel <span class="m">12345</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Cancel all jobs for a user</span>
+</span></span><span class="line"><span class="cl">scancel -u username
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Cancel jobs in a partition</span>
+</span></span><span class="line"><span class="cl">scancel -p partition_name
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># Job Identification</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">interactive</span>                    <span class="c1"># Require response before canceling</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">ctld</span>                              <span class="c1"># Send cancel request to slurmctld instead of directly</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">job_name</span>                 <span class="c1"># Cancel jobs with specified name</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">qos</span><span class="o">=</span><span class="n">qos_list</span>                      <span class="c1"># Cancel jobs with specified QOS</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">reservation</span><span class="o">=</span><span class="n">reservation_name</span>       <span class="c1"># Cancel jobs with specified reservation</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># User and Account Control</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">u</span><span class="p">,</span> <span class="o">--</span><span class="n">user</span><span class="o">=</span><span class="n">user_name</span>                <span class="c1"># Cancel jobs of specified user</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">A</span><span class="p">,</span> <span class="o">--</span><span class="n">account</span><span class="o">=</span><span class="n">account</span>               <span class="c1"># Cancel jobs of specified account</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">wckey</span><span class="o">=</span><span class="n">wckey</span>                       <span class="c1"># Cancel jobs with specified wckey</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Job State and Type</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="o">--</span><span class="n">state</span><span class="o">=</span><span class="n">states</span>                  <span class="c1"># Cancel jobs in specified state</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">full</span>                             <span class="c1"># Cancel full job allocation</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="n">hurry</span>                            <span class="c1"># Expedite job cancellation</span>
+</span></span><span class="line"><span class="cl"><span class="o">--</span><span class="k">signal</span><span class="o">=</span><span class="n">signal_number</span>             <span class="c1"># Send specified signal to jobs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Partition and Node</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">--</span><span class="n">partition</span><span class="o">=</span><span class="n">partition_names</span>     <span class="c1"># Cancel jobs in specified partitions</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="o">--</span><span class="n">nodelist</span><span class="o">=</span><span class="n">host_list</span>           <span class="c1"># Cancel jobs on specified nodes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Batch Script</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">b</span><span class="p">,</span> <span class="o">--</span><span class="n">batch</span>                        <span class="c1"># Cancel only batch jobs</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="n">full</span>                         <span class="c1"># Cancel entire job allocation</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="scontrol">scontrol
+</h3><p>A powerful tool for viewing and modifying job configurations:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># View job details</span>
+</span></span><span class="line"><span class="cl">scontrol show job <span class="m">12345</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Modify job parameters</span>
+</span></span><span class="line"><span class="cl">scontrol update <span class="nv">JobId</span><span class="o">=</span><span class="m">12345</span> <span class="nv">TimeLimit</span><span class="o">=</span>2:00:00
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Show Commands
+</span></span><span class="line"><span class="cl">show job                           # Show job information
+</span></span><span class="line"><span class="cl">show node                          # Show node information
+</span></span><span class="line"><span class="cl">show partition                     # Show partition information
+</span></span><span class="line"><span class="cl">show reservation                   # Show reservation information
+</span></span><span class="line"><span class="cl">show config                        # Show system configuration
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Update Commands
+</span></span><span class="line"><span class="cl">update job JobId=id                # Update job attributes
+</span></span><span class="line"><span class="cl">update node NodeName=name          # Update node attributes
+</span></span><span class="line"><span class="cl">update partition PartitionName=name # Update partition attributes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Job Control
+</span></span><span class="line"><span class="cl">hold JobId                         # Place hold on job
+</span></span><span class="line"><span class="cl">release JobId                      # Release hold on job
+</span></span><span class="line"><span class="cl">requeue JobId                      # Requeue a job
+</span></span><span class="line"><span class="cl">suspend JobId                      # Suspend a job
+</span></span><span class="line"><span class="cl">resume JobId                       # Resume a suspended job
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Other Controls
+</span></span><span class="line"><span class="cl">ping                              # Ping slurmctld daemon
+</span></span><span class="line"><span class="cl">reconfigure                       # Reconfigure slurmctld
+</span></span><span class="line"><span class="cl">takeover                         # Takeover from backup controller
+</span></span><span class="line"><span class="cl">shutdown                         # Shutdown slurm daemons
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="status-query-commands">Status Query Commands
+</h2><p>These commands provide information about the current state of jobs and the system.</p>
+<h3 id="squeue">squeue
+</h3><p>The primary command for viewing the job queue:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bashCopy
+</span></span><span class="line"><span class="cl"><span class="c1"># View all jobs</span>
+</span></span><span class="line"><span class="cl">squeue
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View user-specific jobs</span>
+</span></span><span class="line"><span class="cl">squeue -u username
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Custom format output</span>
+</span></span><span class="line"><span class="cl">squeue --format<span class="o">=</span><span class="s2">&#34;%.18i %.9P %.8j %.8u %.2t %.10M %.6D %R&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Output Format
+</span></span><span class="line"><span class="cl">-o, --format=format               # Specify custom output format
+</span></span><span class="line"><span class="cl">--sort=fields                     # Sort by specified fields
+</span></span><span class="line"><span class="cl">-l, --long                       # Long output format
+</span></span><span class="line"><span class="cl">-i, --iterate=seconds            # Repeatedly display at intervals
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Job Selection
+</span></span><span class="line"><span class="cl">-j, --jobs=job_id_list           # Show specific jobs
+</span></span><span class="line"><span class="cl">-u, --user=user_list             # Show user&#39;s jobs
+</span></span><span class="line"><span class="cl">-n, --name=name_list             # Show jobs with name
+</span></span><span class="line"><span class="cl">-w, --nodelist=node_list         # Show jobs on specific nodes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Partition and State
+</span></span><span class="line"><span class="cl">-p, --partition=partition_names   # Show jobs in partition
+</span></span><span class="line"><span class="cl">-t, --states=state_list          # Show jobs in state
+</span></span><span class="line"><span class="cl">--qos=qos_list                   # Show jobs with QOS
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Time and Priority
+</span></span><span class="line"><span class="cl">--start                          # Show expected start time
+</span></span><span class="line"><span class="cl">--priority                       # Display job priority
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Example</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Common format specifiers
+</span></span><span class="line"><span class="cl">%.18i                        # Job ID (18 characters)
+</span></span><span class="line"><span class="cl">%.9P                         # Partition (9 characters)
+</span></span><span class="line"><span class="cl">%.8j                         # Job name (8 characters)
+</span></span><span class="line"><span class="cl">%.8u                         # User name (8 characters)
+</span></span><span class="line"><span class="cl">%.2t                         # Job state (2 characters)
+</span></span><span class="line"><span class="cl">%.10M                        # Time limit (10 characters)
+</span></span><span class="line"><span class="cl">%.6D                         # Number of nodes (6 characters)
+</span></span><span class="line"><span class="cl">%R                          # Reason for waiting
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Example format string
+</span></span><span class="line"><span class="cl">squeue --format=&#34;%.18i %.9P %.8j %.8u %.2t %.10M %.6D %R&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="sinfo">sinfo
+</h3><p>Use this to check partition and node information:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># View partition information</span>
+</span></span><span class="line"><span class="cl">sinfo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Detailed node status</span>
+</span></span><span class="line"><span class="cl">sinfo -N
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Specific partition details</span>
+</span></span><span class="line"><span class="cl">sinfo -p partition_name
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Output Format
+</span></span><span class="line"><span class="cl">-o, --format=format              # Specify custom format
+</span></span><span class="line"><span class="cl">-l, --long                      # Display in long format
+</span></span><span class="line"><span class="cl">-N, --Node                      # Display node-oriented output
+</span></span><span class="line"><span class="cl">--summarize                     # Report summary information
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Node Selection
+</span></span><span class="line"><span class="cl">-n, --nodes=nodes               # Report on specific nodes
+</span></span><span class="line"><span class="cl">-p, --partition=partition       # Report on specific partition
+</span></span><span class="line"><span class="cl">-t, --states=states            # Report on nodes in specified state
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Display Options
+</span></span><span class="line"><span class="cl">-R, --responding               # Show only responding nodes
+</span></span><span class="line"><span class="cl">-d, --dead                    # Show only non-responding nodes
+</span></span><span class="line"><span class="cl">--hide                        # Do not display hidden partitions
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="sacct">sacct
+</h3><p>For accessing job history:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># View today&#39;s jobs</span>
+</span></span><span class="line"><span class="cl">sacct
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># View jobs since a specific date</span>
+</span></span><span class="line"><span class="cl">sacct --starttime<span class="o">=</span>2024-01-01
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Time Range
+</span></span><span class="line"><span class="cl">-S, --starttime=time           # Report start time
+</span></span><span class="line"><span class="cl">-E, --endtime=time            # Report end time
+</span></span><span class="line"><span class="cl">-A, --accounts=accounts       # Show jobs from specified accounts
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Output Control
+</span></span><span class="line"><span class="cl">-o, --format=format           # Specify output format
+</span></span><span class="line"><span class="cl">--units=unit                  # Display units (K,M,G,T,P)
+</span></span><span class="line"><span class="cl">-X, --allocations            # Only show allocation records
+</span></span><span class="line"><span class="cl">-p, --parsable               # Output in parsable format
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Job Selection
+</span></span><span class="line"><span class="cl">-j, --jobs=job_id_list        # Show specific jobs
+</span></span><span class="line"><span class="cl">-u, --user=user_list          # Show specific users
+</span></span><span class="line"><span class="cl">-s, --state=states           # Show jobs in specified states
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Common format specifiers
+</span></span><span class="line"><span class="cl">JobID                        # Job ID
+</span></span><span class="line"><span class="cl">JobName                      # Job name
+</span></span><span class="line"><span class="cl">State                        # Job state
+</span></span><span class="line"><span class="cl">ExitCode                     # Exit code
+</span></span><span class="line"><span class="cl">Submit                       # Submit time
+</span></span><span class="line"><span class="cl">Start                       # Start time
+</span></span><span class="line"><span class="cl">End                         # End time
+</span></span><span class="line"><span class="cl">Elapsed                     # Elapsed time
+</span></span><span class="line"><span class="cl">MaxRSS                      # Maximum memory used
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Example format string
+</span></span><span class="line"><span class="cl">sacct --format=&#34;JobID,JobName,State,ExitCode,Submit,Start,End,Elapsed,MaxRSS&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="resource-management-commands">Resource Management Commands
+</h2><p>These commands help monitor resource allocation and priorities.</p>
+<h3 id="sshare">sshare
+</h3><p>View fair-share scheduling information:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Basic share information</span>
+</span></span><span class="line"><span class="cl">sshare
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Detailed information</span>
+</span></span><span class="line"><span class="cl">sshare -
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Basic Options
+</span></span><span class="line"><span class="cl">-A, --accounts=names           # Show shares for specified accounts
+</span></span><span class="line"><span class="cl">-a, --all                     # Show all users, even those with no usage
+</span></span><span class="line"><span class="cl">-l, --long                    # Long listing format with more details
+</span></span><span class="line"><span class="cl">-p, --parsable               # Display in parsable format
+</span></span><span class="line"><span class="cl">-u, --users=user_names       # Show shares for specified users
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Output Format
+</span></span><span class="line"><span class="cl">-o, --format=format_string   # Format specification
+</span></span><span class="line"><span class="cl">--noheader                  # No header on output
+</span></span><span class="line"><span class="cl">--json                      # JSON output format
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Time Range
+</span></span><span class="line"><span class="cl">-s, --start=time            # Start time for statistics
+</span></span><span class="line"><span class="cl">-e, --end=time             # End time for statistics
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Example:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Examples
+</span></span><span class="line"><span class="cl">sshare -A myaccount                  # Show shares for specific account
+</span></span><span class="line"><span class="cl">sshare -u username -l               # Detailed share info for user
+</span></span><span class="line"><span class="cl">sshare -o &#34;Account,User,RawShares&#34;  # Custom format output
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="sprio">sprio
+</h3><p>Check job priorities:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># View job priorities</span>
+</span></span><span class="line"><span class="cl">sprio
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Detailed priority information</span>
+</span></span><span class="line"><span class="cl">sprio -l
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Job Selection
+</span></span><span class="line"><span class="cl">-j, --jobs=job_id           # Show priority for specific jobs
+</span></span><span class="line"><span class="cl">-u, --user=user_name        # Show priorities for specific user
+</span></span><span class="line"><span class="cl">-o, --format=format        # Specify output format
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Display Options
+</span></span><span class="line"><span class="cl">-l, --long                 # Long display format
+</span></span><span class="line"><span class="cl">-n, --noheader            # No header in output
+</span></span><span class="line"><span class="cl">--json                    # JSON output format
+</span></span><span class="line"><span class="cl">-w, --weights            # Show priority weights
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Example</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sprio -u username         # Show priorities for user&#39;s jobs
+</span></span><span class="line"><span class="cl">sprio -j 12345           # Show priority for specific job
+</span></span><span class="line"><span class="cl">sprio -l                 # Show detailed priority information
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2025 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

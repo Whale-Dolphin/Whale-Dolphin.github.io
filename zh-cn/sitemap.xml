@@ -17,6 +17,16 @@
   </url><url>
     <loc>https://whale-dolphin.github.io/categories/ai/</loc>
     <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://whale-dolphin.github.io/en/categories/ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://whale-dolphin.github.io/categories/ai/"
+                />
   </url><url>
     <loc>https://whale-dolphin.github.io/categories/</loc>
     <lastmod>2024-12-16T00:00:00+00:00</lastmod>
@@ -39,6 +49,16 @@
   </url><url>
     <loc>https://whale-dolphin.github.io/post/</loc>
     <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://whale-dolphin.github.io/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://whale-dolphin.github.io/post/"
+                />
   </url><url>
     <loc>https://whale-dolphin.github.io/categories/computer-network/</loc>
     <lastmod>2024-11-20T00:00:00+00:00</lastmod>
