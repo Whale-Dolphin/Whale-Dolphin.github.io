@@ -37,8 +37,27 @@
     <loc>https://whale-dolphin.github.io/zh-cn/categories/daily-report/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://whale-dolphin.github.io/zh-cn/tags/news/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://whale-dolphin.github.io/zh-cn/tags/paper/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://whale-dolphin.github.io/zh-cn/post/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://whale-dolphin.github.io/zh-cn/tags/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://whale-dolphin.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://whale-dolphin.github.io/zh-cn/tags/"
+                />
   </url><url>
     <loc>https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-03-19/</loc>
     <lastmod>2026-03-19T00:00:00+00:00</lastmod>
@@ -129,18 +148,6 @@
                 rel="alternate"
                 hreflang="en-us"
                 href="https://whale-dolphin.github.io/zh-cn/archives/"
-                />
-  </url><url>
-    <loc>https://whale-dolphin.github.io/zh-cn/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://whale-dolphin.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://whale-dolphin.github.io/zh-cn/tags/"
                 />
   </url><url>
     <loc>https://whale-dolphin.github.io/zh-cn/search/</loc>
