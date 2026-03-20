@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 21 篇论文 | Audio LLM: 14篇 | LLM Training: 1篇 | AI Agents: 6篇 来源: arXiv(21) | HuggingFace(参考) | Papers With Code(参考)\n⚠️ 注：由于 arXiv API、HuggingFace API 和 Papers With Code API 端点被网络代理阻断，本期日报数据通过 WebSearch 间接获取，可能未完全覆盖所有昨日提交论文。建议直接浏览 arXiv eess.AS、arXiv cs.CL 及 HuggingFace Daily Papers 2026-03-17 获取完整列表。\n">
+<title>AI Paper Daily | 2026-03-18</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-03-18/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="AI Paper Daily | 2026-03-18">
+<meta property='og:description' content="今日概览 共收录 21 篇论文 | Audio LLM: 14篇 | LLM Training: 1篇 | AI Agents: 6篇 来源: arXiv(21) | HuggingFace(参考) | Papers With Code(参考)\n⚠️ 注：由于 arXiv API、HuggingFace API 和 Papers With Code API 端点被网络代理阻断，本期日报数据通过 WebSearch 间接获取，可能未完全覆盖所有昨日提交论文。建议直接浏览 arXiv eess.AS、arXiv cs.CL 及 HuggingFace Daily Papers 2026-03-17 获取完整列表。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-03-18/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-18T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-03-18">
+<meta name="twitter:description" content="今日概览 共收录 21 篇论文 | Audio LLM: 14篇 | LLM Training: 1篇 | AI Agents: 6篇 来源: arXiv(21) | HuggingFace(参考) | Papers With Code(参考)\n⚠️ 注：由于 arXiv API、HuggingFace API 和 Papers With Code API 端点被网络代理阻断，本期日报数据通过 WebSearch 间接获取，可能未完全覆盖所有昨日提交论文。建议直接浏览 arXiv eess.AS、arXiv cs.CL 及 HuggingFace Daily Papers 2026-03-17 获取完整列表。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-03-18/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#resonate-reinforcing-text-to-audio-generation-via-online-feedback-from-large-audio-language-models">Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models</a></li>
+        <li><a href="#nudging-hidden-states-training-free-model-steering-for-chain-of-thought-reasoning-in-large-audio-language-models">Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models</a></li>
+        <li><a href="#llms-and-speech-integration-vs-combination">LLMs and Speech: Integration vs. Combination</a></li>
+        <li><a href="#resurfacing-paralinguistic-awareness-in-large-audio-language-models">Resurfacing Paralinguistic Awareness in Large Audio Language Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#llm-guided-reinforcement-learning-for-audio-visual-speech-enhancement">LLM-Guided Reinforcement Learning for Audio-Visual Speech Enhancement</a></li>
+        <li><a href="#uni-asr-unified-llm-based-architecture-for-non-streaming-and-streaming-automatic-speech-recognition">Uni-ASR: Unified LLM-Based Architecture for Non-Streaming and Streaming Automatic Speech Recognition</a></li>
+        <li><a href="#codecmos-accent-a-mos-benchmark-of-resynthesized-and-tts-speech-from-neural-codecs-across-english-accents">CodecMOS-Accent: A MOS Benchmark of Resynthesized and TTS Speech from Neural Codecs Across English Accents</a></li>
+        <li><a href="#speech-codec-probing-from-semantic-and-phonetic-perspectives">Speech Codec Probing from Semantic and Phonetic Perspectives</a></li>
+        <li><a href="#investigating-group-relative-policy-optimization-for-diffusion-transformer-based-text-to-audio-generation">Investigating Group Relative Policy Optimization for Diffusion Transformer based Text-to-Audio Generation</a></li>
+        <li><a href="#nv-bench-benchmark-of-nonverbal-vocalization-synthesis-for-expressive-text-to-speech-generation">NV-Bench: Benchmark of Nonverbal Vocalization Synthesis for Expressive Text-to-Speech Generation</a></li>
+        <li><a href="#self-speculative-decoding-for-llm-based-asr-with-ctc-encoder-drafts">Self-Speculative Decoding for LLM-based ASR with CTC Encoder Drafts</a></li>
+        <li><a href="#entropy-guided-grvq-for-ultra-low-bitrate-neural-speech-codec">Entropy-Guided GRVQ for Ultra-Low Bitrate Neural Speech Codec</a></li>
+        <li><a href="#can-llms-help-localize-fake-words-in-partially-fake-speech">Can LLMs Help Localize Fake Words in Partially Fake Speech?</a></li>
+        <li><a href="#silent-speech-interfaces-in-the-era-of-large-language-models-a-comprehensive-taxonomy-and-systematic-review">Silent Speech Interfaces in the Era of Large Language Models: A Comprehensive Taxonomy and Systematic Review</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#robust-post-training-for-generative-recommenders-why-exponential-reward-weighted-sft-outperforms-rlhf">Robust Post-Training for Generative Recommenders: Why Exponential Reward-Weighted SFT Outperforms RLHF</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#language-model-teams-as-distributed-systems">Language Model Teams as Distributed Systems</a></li>
+        <li><a href="#ai-planning-framework-for-llm-based-web-agents">AI Planning Framework for LLM-Based Web Agents</a></li>
+        <li><a href="#nerfify-a-multi-agent-framework-for-turning-nerf-papers-into-code">NERFIFY: A Multi-Agent Framework for Turning NeRF Papers into Code</a></li>
+        <li><a href="#agentic-hives-equilibrium-indeterminacy-and-endogenous-cycles-in-self-organizing-multi-agent-systems">Agentic Hives: Equilibrium, Indeterminacy, and Endogenous Cycles in Self-Organizing Multi-Agent Systems</a></li>
+        <li><a href="#exploring-plan-space-through-conversation-an-agentic-framework-for-llm-mediated-explanations-in-planning">Exploring Plan Space through Conversation: An Agentic Framework for LLM-Mediated Explanations in Planning</a></li>
+        <li><a href="#bioproagent-neuro-symbolic-grounding-for-constrained-scientific-planning">BioProAgent: Neuro-Symbolic Grounding for Constrained Scientific Planning</a></li>
+      </ol>
+    </li>
+    <li><a href="#-trending-补充非昨日但新发现">📈 Trending 补充（非昨日但新发现）</a>
+      <ol>
+        <li><a href="#ltx-2-open-source-audiovisual-diffusion-model">LTX-2: Open-Source Audiovisual Diffusion Model</a></li>
+        <li><a href="#cheers-unified-multimodal-model-for-visual-understanding-and-generation">Cheers: Unified Multimodal Model for Visual Understanding and Generation</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-03-18/">AI Paper Daily | 2026-03-18</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-03-18T00:00:00Z'>Mar 18, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#resonate-reinforcing-text-to-audio-generation-via-online-feedback-from-large-audio-language-models">Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models</a></li>
+        <li><a href="#nudging-hidden-states-training-free-model-steering-for-chain-of-thought-reasoning-in-large-audio-language-models">Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models</a></li>
+        <li><a href="#llms-and-speech-integration-vs-combination">LLMs and Speech: Integration vs. Combination</a></li>
+        <li><a href="#resurfacing-paralinguistic-awareness-in-large-audio-language-models">Resurfacing Paralinguistic Awareness in Large Audio Language Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#llm-guided-reinforcement-learning-for-audio-visual-speech-enhancement">LLM-Guided Reinforcement Learning for Audio-Visual Speech Enhancement</a></li>
+        <li><a href="#uni-asr-unified-llm-based-architecture-for-non-streaming-and-streaming-automatic-speech-recognition">Uni-ASR: Unified LLM-Based Architecture for Non-Streaming and Streaming Automatic Speech Recognition</a></li>
+        <li><a href="#codecmos-accent-a-mos-benchmark-of-resynthesized-and-tts-speech-from-neural-codecs-across-english-accents">CodecMOS-Accent: A MOS Benchmark of Resynthesized and TTS Speech from Neural Codecs Across English Accents</a></li>
+        <li><a href="#speech-codec-probing-from-semantic-and-phonetic-perspectives">Speech Codec Probing from Semantic and Phonetic Perspectives</a></li>
+        <li><a href="#investigating-group-relative-policy-optimization-for-diffusion-transformer-based-text-to-audio-generation">Investigating Group Relative Policy Optimization for Diffusion Transformer based Text-to-Audio Generation</a></li>
+        <li><a href="#nv-bench-benchmark-of-nonverbal-vocalization-synthesis-for-expressive-text-to-speech-generation">NV-Bench: Benchmark of Nonverbal Vocalization Synthesis for Expressive Text-to-Speech Generation</a></li>
+        <li><a href="#self-speculative-decoding-for-llm-based-asr-with-ctc-encoder-drafts">Self-Speculative Decoding for LLM-based ASR with CTC Encoder Drafts</a></li>
+        <li><a href="#entropy-guided-grvq-for-ultra-low-bitrate-neural-speech-codec">Entropy-Guided GRVQ for Ultra-Low Bitrate Neural Speech Codec</a></li>
+        <li><a href="#can-llms-help-localize-fake-words-in-partially-fake-speech">Can LLMs Help Localize Fake Words in Partially Fake Speech?</a></li>
+        <li><a href="#silent-speech-interfaces-in-the-era-of-large-language-models-a-comprehensive-taxonomy-and-systematic-review">Silent Speech Interfaces in the Era of Large Language Models: A Comprehensive Taxonomy and Systematic Review</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#robust-post-training-for-generative-recommenders-why-exponential-reward-weighted-sft-outperforms-rlhf">Robust Post-Training for Generative Recommenders: Why Exponential Reward-Weighted SFT Outperforms RLHF</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#language-model-teams-as-distributed-systems">Language Model Teams as Distributed Systems</a></li>
+        <li><a href="#ai-planning-framework-for-llm-based-web-agents">AI Planning Framework for LLM-Based Web Agents</a></li>
+        <li><a href="#nerfify-a-multi-agent-framework-for-turning-nerf-papers-into-code">NERFIFY: A Multi-Agent Framework for Turning NeRF Papers into Code</a></li>
+        <li><a href="#agentic-hives-equilibrium-indeterminacy-and-endogenous-cycles-in-self-organizing-multi-agent-systems">Agentic Hives: Equilibrium, Indeterminacy, and Endogenous Cycles in Self-Organizing Multi-Agent Systems</a></li>
+        <li><a href="#exploring-plan-space-through-conversation-an-agentic-framework-for-llm-mediated-explanations-in-planning">Exploring Plan Space through Conversation: An Agentic Framework for LLM-Mediated Explanations in Planning</a></li>
+        <li><a href="#bioproagent-neuro-symbolic-grounding-for-constrained-scientific-planning">BioProAgent: Neuro-Symbolic Grounding for Constrained Scientific Planning</a></li>
+      </ol>
+    </li>
+    <li><a href="#-trending-补充非昨日但新发现">📈 Trending 补充（非昨日但新发现）</a>
+      <ol>
+        <li><a href="#ltx-2-open-source-audiovisual-diffusion-model">LTX-2: Open-Source Audiovisual Diffusion Model</a></li>
+        <li><a href="#cheers-unified-multimodal-model-for-visual-understanding-and-generation">Cheers: Unified Multimodal Model for Visual Understanding and Generation</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 21 篇论文 | Audio LLM: 14篇 | LLM Training: 1篇 | AI Agents: 6篇
+来源: arXiv(21) | HuggingFace(参考) | Papers With Code(参考)</p>
+
+    <blockquote>
+        <p>⚠️ 注：由于 arXiv API、HuggingFace API 和 Papers With Code API 端点被网络代理阻断，本期日报数据通过 WebSearch 间接获取，可能未完全覆盖所有昨日提交论文。建议直接浏览 <a class="link" href="https://arxiv.org/list/eess.AS/recent"  target="_blank" rel="noopener"
+    >arXiv eess.AS</a>、<a class="link" href="https://arxiv.org/list/cs.CL/recent"  target="_blank" rel="noopener"
+    >arXiv cs.CL</a> 及 <a class="link" href="https://huggingface.co/papers/date/2026-03-17"  target="_blank" rel="noopener"
+    >HuggingFace Daily Papers 2026-03-17</a> 获取完整列表。</p>
+
+    </blockquote>
+<hr>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><h3 id="resonate-reinforcing-text-to-audio-generation-via-online-feedback-from-large-audio-language-models"><a class="link" href="https://arxiv.org/abs/2603.11661"  target="_blank" rel="noopener"
+    >Resonate: Reinforcing Text-to-Audio Generation via Online Feedback from Large Audio Language Models</a>
+</h3>
+    <blockquote>
+        <p>首次将在线 GRPO 强化学习引入 Text-to-Audio 生成，利用大型音频语言模型作为奖励信号，470M 参数即达到 SOTA</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xiquan Li et al.</li>
+<li><strong>来源</strong>: arXiv</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.11661"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://github.com/xiquan-li/Resonate"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>关键贡献</strong>: 提出将在线 Group Relative Policy Optimization (GRPO) 应用于 Flow Matching 音频模型的方法。引入大型音频语言模型 (LALM) 作为奖励函数，提供比 CLAP 更细粒度、更贴近人类感知的评分信号。仅用 470M 参数在 TTA-Bench 上同时在音频质量和语义对齐方面取得新 SOTA。</li>
+<li><strong>相关技术</strong>: GRPO, Flow Matching, LALM, DPO, Text-to-Audio</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>强化学习 (Reinforcement Learning, RL) 已成为增强大型语言模型 (Large Language Models, LLMs) 和视觉生成模型的有效范式。然而，其在文本到音频 (Text-to-Audio, TTA) 生成中的应用仍然很少被探索。先前的工作通常采用离线方法如直接偏好优化 (Direct Preference Optimization, DPO)，并利用对比语言-音频预训练 (Contrastive Language-Audio Pretraining, CLAP) 模型作为奖励函数。在本研究中，我们探索将在线群组相对策略优化 (Group Relative Policy Optimization, GRPO) 集成到 TTA 生成中。我们将该算法适配于基于 Flow Matching 的音频模型，并证明在线 RL 显著优于其离线对应方法。此外，我们引入了来自大型音频语言模型 (Large Audio Language Models, LALMs) 的奖励，这些模型可以提供更细粒度的评分信号，更好地与人类感知对齐。仅用 470M 参数，我们的最终模型 Resonate 在 TTA-Bench 上在音频质量和语义对齐方面均建立了新的 SOTA。</p>
+</details>
+<hr>
+<h3 id="nudging-hidden-states-training-free-model-steering-for-chain-of-thought-reasoning-in-large-audio-language-models"><a class="link" href="https://arxiv.org/abs/2603.14636"  target="_blank" rel="noopener"
+    >Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models</a>
+</h3>
+    <blockquote>
+        <p>无需训练即可提升大型音频语言模型推理能力，发现文本引导向量可跨模态迁移到语音推理</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Lok-Lam Ieong, Chia-Chien Chen, Chih-Kai Yang, Yu-Han Huang, An-Yu Cheng, Hung-yi Lee</li>
+<li><strong>来源</strong>: arXiv</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.14636"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>关键贡献</strong>: 首次系统研究推理时模型引导 (inference-time model steering) 在大型音频语言模型中的应用。提出三种利用不同信息源的引导策略，在四个 LALM 和四个基准上验证。最重要的发现是跨模态迁移现象：从少量文本样本中导出的引导向量 (steering vectors) 可以有效指导语音推理任务，展示了极高的数据效率。</li>
+<li><strong>相关技术</strong>: Chain-of-Thought, Steering Vectors, LALM, Cross-modal Transfer</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>链式思维 (Chain-of-Thought, CoT) 提示已被扩展到大型音频语言模型 (Large Audio-Language Models, LALMs) 以引发推理，但在不进行训练的情况下增强其有效性仍具挑战性。我们研究推理时模型引导 (inference-time model steering) 作为一种无需训练的方法来改进 LALM 推理，引入了三种利用多样信息源的策略，并在四个 LALM 和四个基准上对其进行评估。结果显示，相比 CoT 提示，准确率普遍提升最高达 4.4%。值得注意的是，我们发现了一种跨模态迁移 (cross-modal transfer) 现象，即从少量文本样本导出的引导向量 (steering vectors) 可以有效指导基于语音的推理，展示了极高的数据效率。</p>
+</details>
+<hr>
+<h3 id="llms-and-speech-integration-vs-combination"><a class="link" href="https://arxiv.org/abs/2603.15045"  target="_blank" rel="noopener"
+    >LLMs and Speech: Integration vs. Combination</a>
+</h3>
+    <blockquote>
+        <p>系统比较 Speech LLM 紧密集成 vs. 浅层融合两大范式，提供全面消融实验</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Robin Schmitt, Albert Zeyer, Mohammad Zeineldeen, Ralf Schlüter, Hermann Ney</li>
+<li><strong>来源</strong>: arXiv (Interspeech 2026 投稿)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.15045"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>关键贡献</strong>: 对利用预训练 LLM 进行 ASR 的两种范式进行了全面比较：声学模型与 LLM 的紧密集成 (&ldquo;speech LLM&rdquo;) vs. 传统浅层融合 (shallow fusion)。针对紧密集成方案，提供了关于标签单元、微调策略、LLM 规模和预训练数据、注意力接口、编码器降采样、文本提示和长度归一化的详细消融实验。此外研究了与 CTC 模型的联合识别以缓解 speech LLM 的幻觉问题。</li>
+<li><strong>相关技术</strong>: Speech LLM, Shallow Fusion, CTC, ASR, Hallucination Mitigation</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们研究如何最有效地利用预训练大型语言模型 (LLMs) 进行自动语音识别 (Automatic Speech Recognition, ASR)。具体而言，我们比较了声学模型 (Acoustic Model, AM) 与 LLM 的紧密集成（即 &ldquo;speech LLM&rdquo;）与通过浅层融合 (shallow fusion) 组合 AM 和 LLM 的传统方式。对于紧密集成，我们提供了关于不同标签单元、微调策略、LLM 规模和预训练数据、注意力接口、编码器降采样、文本提示和长度归一化的消融实验。此外，我们还研究了与 CTC 模型的联合识别以缓解 speech LLM 的幻觉问题，并提出了该联合识别的有效优化方案。</p>
+</details>
+<hr>
+<h3 id="resurfacing-paralinguistic-awareness-in-large-audio-language-models"><a class="link" href="https://arxiv.org/abs/2603.11947"  target="_blank" rel="noopener"
+    >Resurfacing Paralinguistic Awareness in Large Audio Language Models</a>
+</h3>
+    <blockquote>
+        <p>发现大型音频语言模型存在副语言感知层，提出选择性层微调方案超越全层微调</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: 未详</li>
+<li><strong>来源</strong>: arXiv</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.11947"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>关键贡献</strong>: 发现 LALM 在内容为中心的训练范式下忽视了副语言线索 (paralinguistic cues)。通过五种层级分析方法联合识别出副语言层和语义理解层。提出副语言增强微调协议 (PE-FT)，包括选择性层微调和辅助双级分类头，效果甚至超越全层微调策略。</li>
+<li><strong>相关技术</strong>: Paralinguistic, LALM, Layer-wise Analysis, Selective Fine-tuning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>大型音频语言模型 (Large Audio Language Models, LALMs) 已将人机交互扩展到语音模态，由于副语言线索 (paralinguistic cues) 隐含地指示了用户上下文，这引入了巨大的交互潜力。然而，建立在当前以内容为中心的范式之上，LALMs 通常忽略此类副语言线索，仅基于查询内容进行响应。为重新激活 LALMs 中的副语言感知，我们引入五种多样的层级分析方法，联合识别副语言层和语义理解层。基于这些洞察，我们提出副语言增强微调 (Paralinguistic-Enhanced Fine-Tuning, PE-FT) 协议，为 LALMs 赋予副语言感知能力，包括选择性层微调和辅助双级分类头。实验表明，PE-FT 协议高效且有效地重新激活了副语言感知，甚至超越了全层微调策略的性能。</p>
+</details>
+<hr>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><h3 id="llm-guided-reinforcement-learning-for-audio-visual-speech-enhancement"><a class="link" href="https://arxiv.org/abs/2603.13952"  target="_blank" rel="noopener"
+    >LLM-Guided Reinforcement Learning for Audio-Visual Speech Enhancement</a>
+</h3>
+    <blockquote>
+        <p>利用音频 LLM 生成自然语言描述作为 PPO 奖励信号，提升视听语音增强的感知质量</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.13952"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 提出基于强化学习的视听语音增强 (AVSE) 框架，使用 LLM 生成的可解释奖励模型。音频 LLM 生成增强语音的自然语言描述，经情感分析模型转换为 1-5 评分作为 PPO 奖励。在 AVSEC-4 数据集上的 PESQ、STOI 等指标均优于监督基线和 DNSMOS-based RL 基线。投稿至 Interspeech 2026。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>在现有的视听语音增强 (Audio-Visual Speech Enhancement, AVSE) 方法中，规模不变信噪比 (Scale-Invariant Signal-to-Noise Ratio, SI-SNR) 和均方误差 (Mean Squared Error, MSE) 等目标被广泛使用；然而，它们通常与感知质量的相关性较差，且为优化提供的可解释性有限。我们提出了一种基于强化学习的 AVSE 框架，配备基于大型语言模型 (LLM) 的可解释奖励模型。音频 LLM 生成增强语音的自然语言描述，然后由情感分析模型将其转换为 1-5 的评分，作为 PPO 奖励来微调预训练的 AVSE 模型。在第四届 COG-MHEAR AVSE 挑战赛 (AVSEC-4) 数据集上的实验表明，所提方法在 PESQ、STOI、神经质量指标和主观听力测试方面均优于监督基线和基于 DNSMOS 的 RL 基线。</p>
+</details>
+<hr>
+<h3 id="uni-asr-unified-llm-based-architecture-for-non-streaming-and-streaming-automatic-speech-recognition"><a class="link" href="https://arxiv.org/abs/2603.11123"  target="_blank" rel="noopener"
+    >Uni-ASR: Unified LLM-Based Architecture for Non-Streaming and Streaming Automatic Speech Recognition</a>
+</h3>
+    <blockquote>
+        <p>统一非流式和流式 ASR 的 LLM 架构，支持无缝切换两种识别模式</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.11123"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 提出 Uni-ASR，一个基于 LLM 的统一框架，同时支持非流式和流式语音识别。通过联合训练范式实现两种模式的无缝切换，无需任何架构修改。引入上下文感知训练范式和回退解码策略，在不增加延迟的情况下提升流式识别精度。投稿至 Interspeech 2026。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>尽管自动语音识别 (Automatic Speech Recognition, ASR) 系统与大型语言模型 (LLMs) 的深度集成显著提升了准确率，但此类系统在低延迟流式场景中的部署仍然具有挑战性。本文提出 Uni-ASR，一个基于 LLM 的统一框架，集成了非流式和流式语音识别能力。我们提出联合训练范式，使系统能够在两种识别模式之间无缝切换，无需任何架构修改。此外，我们引入上下文感知训练范式和协同设计的回退解码策略，可在不引入额外延迟的情况下增强流式识别精度。</p>
+</details>
+<hr>
+<h3 id="codecmos-accent-a-mos-benchmark-of-resynthesized-and-tts-speech-from-neural-codecs-across-english-accents"><a class="link" href="https://arxiv.org/abs/2603.14328"  target="_blank" rel="noopener"
+    >CodecMOS-Accent: A MOS Benchmark of Resynthesized and TTS Speech from Neural Codecs Across English Accents</a>
+</h3>
+    <blockquote>
+        <p>首个跨口音评估神经音频编解码器和 LLM-TTS 的 MOS 基准，涵盖 10 种口音</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.14328"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 发布 CodecMOS-Accent 数据集，专门评估神经音频编解码器 (NAC) 和基于 LLM 的 TTS 模型在非标准口音语音上的表现。包含 24 个系统的 4,000 个样本，覆盖 10 种英语口音的 32 位说话人，收集了 25 位听众的 19,600 条主观评注，涵盖自然度、说话人相似度和口音相似度三个维度。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们提出 CodecMOS-Accent 数据集，这是一个平均意见分 (Mean Opinion Score, MOS) 基准，旨在评估神经音频编解码器 (Neural Audio Codec, NAC) 模型以及基于其训练的大型语言模型 (LLM) 文本到语音 (Text-to-Speech, TTS) 模型，尤其是在口音语音等非标准语音上的表现。该数据集包含来自 24 个系统的 4,000 个编解码器重合成和 TTS 样本，涵盖 10 种口音的 32 位说话人，通过大规模主观测试从 25 位听众处收集了 19,600 条标注，涵盖三个维度：自然度、说话人相似度和口音相似度。</p>
+</details>
+<hr>
+<h3 id="speech-codec-probing-from-semantic-and-phonetic-perspectives"><a class="link" href="https://arxiv.org/abs/2603.10371"  target="_blank" rel="noopener"
+    >Speech Codec Probing from Semantic and Phonetic Perspectives</a>
+</h3>
+    <blockquote>
+        <p>系统分析语音 tokenizer 编码的语义与音素信息，揭示当前 tokenizer 主要捕获音素而非词汇语义</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.10371"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 语音 tokenizer 是将语音连接到多模态 LLM 系统的关键组件。本文系统分析了多个广泛使用的语音 tokenizer 所编码的信息，通过词级探测任务、逐层表征分析和 CKA 等跨模态对齐指标，解耦了语义和音素内容。结果表明，当前 tokenizer 主要捕获音素而非词汇语义结构，为下一代语音 tokenization 方法提供了设计启示。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>语音分词器 (speech tokenizers) 对于在多模态系统中将语音连接到大型语言模型 (LLMs) 至关重要。这些分词器预期应同时保留语义和声学信息，以服务于下游的理解和生成任务。然而，新的证据表明，语音表征中所称的&quot;语义&quot;与文本派生的语义并不一致：这种不匹配可能降低多模态 LLM 的性能。本文中，我们系统地分析了几种广泛使用的语音分词器所编码的信息，通过词级探测任务 (word-level probing tasks)、逐层表征分析 (layerwise representation analysis) 和 CKA 等跨模态对齐指标来解耦其语义和音素内容。我们的结果表明，当前分词器主要捕获音素而非词汇-语义结构，并据此提出了下一代语音分词方法设计的实践启示。</p>
+</details>
+<hr>
+<h3 id="investigating-group-relative-policy-optimization-for-diffusion-transformer-based-text-to-audio-generation"><a class="link" href="https://arxiv.org/abs/2603.01565"  target="_blank" rel="noopener"
+    >Investigating Group Relative Policy Optimization for Diffusion Transformer based Text-to-Audio Generation</a>
+</h3>
+    <blockquote>
+        <p>将 GRPO 强化学习应用于基于 DiT 的文本到音频生成，结合 LLM 生成精细标注</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.01565"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 在 Diffusion Transformer (DiT) 架构基础上，探索使用 GRPO 强化学习提升 T2A 生成质量。首先利用 LLM 生成高保真、细节丰富的音频标注以改善文本-音频语义对齐，然后应用 GRPO 微调 T2A 模型。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>文本到音频 (Text-to-Audio, T2A) 生成近年来取得了长足进步，但现有方法在准确渲染复杂文本提示（特别是涉及复杂音频效果的提示）和实现精确的文本-音频对齐方面仍面临挑战。虽然先前的方法已探索了数据增强、显式时序条件和强化学习，但整体合成质量仍受限。作者在基于 Diffusion Transformer (DiT) 的架构上实验强化学习以进一步提升 T2A 生成质量。其方法首先使用大型语言模型 (LLM) 生成高保真、细节丰富的音频标注，大幅改善了文本-音频语义对齐，特别是对于模糊或欠指定的提示，然后应用群组相对策略优化 (Group Relative Policy Optimization, GRPO) 来微调 T2A 模型。</p>
+</details>
+<hr>
+<h3 id="nv-bench-benchmark-of-nonverbal-vocalization-synthesis-for-expressive-text-to-speech-generation"><a class="link" href="https://arxiv.org/abs/2603.15352"  target="_blank" rel="noopener"
+    >NV-Bench: Benchmark of Nonverbal Vocalization Synthesis for Expressive Text-to-Speech Generation</a>
+</h3>
+    <blockquote>
+        <p>首个基于功能分类学的非语言发声合成基准，覆盖 14 种 NV 类别</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.15352"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 最近的 TTS 系统越来越多地集成非语言发声 (NVs)，但其评估缺乏标准化指标。NV-Bench 是首个基于功能分类学、将 NVs 视为交际行为的基准。包含 1,651 条多语言真实环境语料，匹配人类参考音频，平衡覆盖 14 种 NV 类别。引入双维评估协议：指令对齐度 (PCER 指标) 和声学保真度。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>尽管最近的文本到语音 (Text-to-Speech, TTS) 系统越来越多地集成非语言发声 (Nonverbal Vocalizations, NVs)，但它们的评估缺乏标准化指标和可靠的真值参考。为弥补这一差距，NV-Bench 是首个基于功能分类学的基准，将 NVs 视为交际行为而非声学伪迹。NV-Bench 包含 1,651 条多语言、真实环境中的语料，配对人类参考音频，平衡覆盖 14 种 NV 类别。该基准引入双维评估协议：(1) 指令对齐度，利用所提出的副语言字符错误率 (Paralinguistic Character Error Rate, PCER) 评估可控性；(2) 声学保真度，测量与真实录音的分布差距以评估声学逼真度。</p>
+</details>
+<hr>
+<h3 id="self-speculative-decoding-for-llm-based-asr-with-ctc-encoder-drafts"><a class="link" href="https://arxiv.org/abs/2603.11243"  target="_blank" rel="noopener"
+    >Self-Speculative Decoding for LLM-based ASR with CTC Encoder Drafts</a>
+</h3>
+    <blockquote>
+        <p>利用 CTC 编码器作为草稿模型加速 Speech LLM 推理 4.4 倍，同时降低 WER</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.11243"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 提出利用 CTC 编码器作为草稿模型的自推测解码方法，加速 speech-aware LLM 的自回归推理。三步流程：CTC 置信度高时直接接受；否则通过单次 LLM 前向传播验证；验证失败则从已接受前缀恢复 AR 解码。在 1B LLM + 440M CTC 编码器上取得 5.58% WER 的记录，推理速度提升 4.4 倍。来自 IBM Research。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>本文提出了针对语音感知 LLM 的自推测解码方法，利用 CTC 编码器作为草稿模型来加速自回归 (Auto-Regressive, AR) 推理并提升 ASR 精度。三步流程如下：(1) 如果 CTC 输出分布的帧熵低于阈值，则贪心 CTC 假设被接受为最终结果；(2) 否则，CTC 假设通过单次 LLM 前向传播使用基于 token 似然的宽松接受准则进行验证；(3) 如果验证失败，AR 解码从已接受的 CTC 前缀恢复。在九个语料库和五种语言上的实验表明，该方法可以同时加速解码并降低 WER。在 HuggingFace Open ASR 基准上使用 1B 参数 LLM 和 440M 参数 CTC 编码器，取得了 5.58% WER 的记录，并将逆实时因子提升了 4.4 倍，WER 仅相对增加 12%。</p>
+</details>
+<hr>
+<h3 id="entropy-guided-grvq-for-ultra-low-bitrate-neural-speech-codec"><a class="link" href="https://arxiv.org/abs/2603.01476"  target="_blank" rel="noopener"
+    >Entropy-Guided GRVQ for Ultra-Low Bitrate Neural Speech Codec</a>
+</h3>
+    <blockquote>
+        <p>面向超低比特率的熵引导分组残差向量量化语音编解码器</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.01476"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 神经音频编解码器对于重建高质量语音信号和为下游语音语言模型生成离散表征至关重要。本文提出基于熵引导的分组残差向量量化 (GRVQ) 方法，实现超低比特率神经语音编解码。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>神经音频编解码器 (Neural Audio Codec) 对于重建高质量语音信号以及为下游语音语言模型 (Speech Language Models) 生成离散表征至关重要。本文提出熵引导的分组残差向量量化 (Entropy-Guided Grouped Residual Vector Quantization, GRVQ) 方法，用于超低比特率的神经语音编解码。</p>
+</details>
+<hr>
+<h3 id="can-llms-help-localize-fake-words-in-partially-fake-speech"><a class="link" href="https://arxiv.org/abs/2603.11205"  target="_blank" rel="noopener"
+    >Can LLMs Help Localize Fake Words in Partially Fake Speech?</a>
+</h3>
+    <blockquote>
+        <p>探索利用 LLM 定位部分伪造语音中的假词，来自 JHU 和小米</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.11205"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 研究文本训练的 LLM 能否帮助定位部分伪造语音中被编辑的假词。构建 speech LLM 通过下一 token 预测执行假词定位。在 AV-Deepfake1M 和 PartialEdit 数据集上的实验显示，模型倾向于利用编辑风格模式作为定位线索，改善泛化性仍是开放问题。投稿至 Interspeech 2026。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>本文探索文本训练的大型语言模型 (LLM) 能否帮助定位部分伪造语音中的假词，即语音中只有特定词语被编辑的场景。我们构建了一个语音 LLM，通过下一 token 预测来执行假词定位。在 AV-Deepfake1M 和 PartialEdit 数据集上的实验和分析表明，模型经常利用从训练数据中学到的编辑风格模式，特别是词级极性替换，作为定位假词的线索。然而，避免过度依赖此类特定模式并提高对未见编辑风格的泛化能力仍然是一个开放问题。</p>
+</details>
+<hr>
+<h3 id="silent-speech-interfaces-in-the-era-of-large-language-models-a-comprehensive-taxonomy-and-systematic-review"><a class="link" href="https://arxiv.org/abs/2603.11877"  target="_blank" rel="noopener"
+    >Silent Speech Interfaces in the Era of Large Language Models: A Comprehensive Taxonomy and Systematic Review</a>
+</h3>
+    <blockquote>
+        <p>首次在 LLM 时代背景下系统综述静默语音接口技术</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.11877"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 提出从传统换能器分析到整体意图-执行分类学的转变。系统评估跨四个关键生理截取点的传感模态：神经振荡、神经肌肉激活、关节运动学和主动探测。分析了从启发式信号处理到潜在语义对齐 (Latent Semantic Alignment) 的范式转变。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>人机交互传统上依赖于声学通道，这种依赖引入了对环境噪声、隐私约束和生理语音障碍的系统性脆弱性。静默语音接口 (Silent Speech Interfaces, SSIs) 作为一种变革性范式出现，通过直接从神经-肌肉-关节连续体中解码语言意图来绕过声学阶段。本综述提供了 SSI 领域的高层次综合，从传统的以换能器为中心的分析过渡到整体的意图-执行分类学。作者系统评估了跨四个关键生理截取点的传感模态：神经振荡、神经肌肉激活、关节运动学（超声/磁力计）和通过声学或射频传感的普适主动探测。关键地，本综述分析了从启发式信号处理到潜在语义对齐 (Latent Semantic Alignment) 的当前范式转变。</p>
+</details>
+<hr>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="robust-post-training-for-generative-recommenders-why-exponential-reward-weighted-sft-outperforms-rlhf"><a class="link" href="https://arxiv.org/abs/2603.10279"  target="_blank" rel="noopener"
+    >Robust Post-Training for Generative Recommenders: Why Exponential Reward-Weighted SFT Outperforms RLHF</a>
+</h3>
+    <blockquote>
+        <p>理论证明指数奖励加权 SFT 在推荐系统后训练中优于 RLHF，免疫奖励黑客</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.10279"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 针对生成式推荐系统的后训练对齐问题，指出 RLHF 因噪声用户反馈导致奖励黑客、DPO 需要不可获得的成对偏好数据等局限。识别出指数奖励加权 SFT (w = exp(r/λ)) 的独特优势：直接优化观测奖励而无需学习奖励模型，天然免疫奖励黑客。证明了首个在噪声奖励下的策略改进保证，差距仅与目录大小呈对数关系增长。温度 λ 显式控制鲁棒性-改进权衡。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>本文研究通过后训练将生成式推荐系统与用户偏好对齐的问题。现有后训练方法存在局限：RLHF 方法因噪声用户反馈和不可靠的奖励模型而导致奖励黑客 (reward hacking)；离线 RL 替代方案需要不可获得的倾向分数 (propensity scores)；在线交互不可行。作者识别出指数奖励加权 SFT（权重 w = exp(r/λ)）独特适用于此场景，并提供了理论和实证基础来解释原因。通过直接优化观测奖励而无需查询学习的奖励模型，该方法免疫奖励黑客，不需要倾向分数，且完全离线。他们证明了首个在噪声奖励下的策略改进保证，表明差距仅与目录大小呈对数关系增长，并证明温度 λ 显式控制鲁棒性-改进权衡。在三个开源和一个专有数据集上的实验证实，指数奖励加权方法简单、可扩展，且始终优于基于 RLHF 的替代方案。</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="language-model-teams-as-distributed-systems"><a class="link" href="https://arxiv.org/abs/2603.12229"  target="_blank" rel="noopener"
+    >Language Model Teams as Distributed Systems</a>
+</h3>
+    <blockquote>
+        <p>提出用分布式系统理论分析 LLM 多智能体团队，发现经典分布式系统挑战在 LLM 团队中复现</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.12229"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 提出以分布式系统作为创建和评估 LLM 团队的原则性基础框架。发现 LLM 团队在预分配任务的简化设置中展现出类似经典分布式计算的扩展效率增益，而在自协调去中心化团队中，则面临一致性冲突、架构权衡、通信开销和落后者等经典分布式系统挑战。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>大型语言模型 (LLMs) 的能力日益增强，引发了对 LLM 团队的广泛兴趣。然而，尽管 LLM 团队在规模化部署中不断增加，我们仍缺乏一个有原则的框架来回答关键问题，例如团队何时有用、应使用多少智能体、结构如何影响性能，以及团队是否优于单个智能体。我们提出使用分布式系统作为创建和评估 LLM 团队的有原则基础，而非通过试错来设计和测试这些可能性。</p>
+</details>
+<hr>
+<h3 id="ai-planning-framework-for-llm-based-web-agents"><a class="link" href="https://arxiv.org/abs/2603.12710"  target="_blank" rel="noopener"
+    >AI Planning Framework for LLM-Based Web Agents</a>
+</h3>
+    <blockquote>
+        <p>将 Web Agent 架构映射到经典规划范式（BFS/Best-First/DFS），提供原则性故障诊断</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.12710"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 将 Web 任务形式化为顺序决策过程，引入将现代 agent 架构映射到传统规划范式的分类学：逐步 agent 对应 BFS、树搜索 agent 对应 Best-First 树搜索、完整规划 agent 对应 DFS。该框架允许对上下文漂移和不连贯任务分解等系统故障进行原则性诊断。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>开发用于 Web 任务的自主智能体是 AI 的核心挑战。虽然大型语言模型 (LLM) 智能体可以解释复杂的用户请求，但它们往往作为黑盒运行，难以诊断为何失败或如何规划。本文通过将 Web 任务形式化为顺序决策过程来弥补这一差距。作者引入了一种分类学，将现代智能体架构映射到传统规划范式：逐步 (Step-by-Step) 智能体对应广度优先搜索 (BFS)，树搜索 (Tree Search) 智能体对应最佳优先树搜索 (Best-First Tree Search)，完整规划 (Full-Plan-in-Advance) 智能体对应深度优先搜索 (DFS)。该框架允许对上下文漂移和不连贯任务分解等系统故障进行原则性诊断。</p>
+</details>
+<hr>
+<h3 id="nerfify-a-multi-agent-framework-for-turning-nerf-papers-into-code"><a class="link" href="https://arxiv.org/abs/2603.00805"  target="_blank" rel="noopener"
+    >NERFIFY: A Multi-Agent Framework for Turning NeRF Papers into Code</a>
+</h3>
+    <blockquote>
+        <p>多智能体框架自动将 NeRF 论文转化为可运行代码，被 CVPR 2026 接收</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.00805"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 多智能体框架可靠地将 NeRF 研究论文转换为可训练的 Nerfstudio 插件。创新点包括：上下文无关文法约束 LLM 合成、图思维代码合成以拓扑依赖顺序生成仓库、组合式引用恢复。被 CVPR 2026 接收。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>NERFIFY 是一个多智能体框架，可靠地将 NeRF 研究论文转换为可训练的 Nerfstudio 插件，与通用的论文到代码方法和 GPT-5 等前沿模型通常无法生成可运行代码形成对比。该论文通过以下创新实现领域特定的可执行性：上下文无关文法 (Context-free Grammar, CFG) 约束 LLM 合成；图思维 (Graph-of-Thought) 代码合成，由专门的多文件智能体以拓扑依赖顺序生成代码仓库；以及组合式引用恢复 (compositional citation recovery)，自动检索并集成参考图中的组件。已被 CVPR 2026 接收。</p>
+</details>
+<hr>
+<h3 id="agentic-hives-equilibrium-indeterminacy-and-endogenous-cycles-in-self-organizing-multi-agent-systems"><a class="link" href="https://arxiv.org/abs/2603.00130"  target="_blank" rel="noopener"
+    >Agentic Hives: Equilibrium, Indeterminacy, and Endogenous Cycles in Self-Organizing Multi-Agent Systems</a>
+</h3>
+    <blockquote>
+        <p>自组织多智能体系统中的均衡、不确定性和内生周期</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.00130"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 提出 Agentic Hive 框架，其中可变规模的自主微智能体群体经历出生、复制、专化和死亡的人口动态。智能体家族扮演生产部门的角色，算力和内存作为生产要素，编排器同时担任瓦尔拉斯拍卖师和全局工作空间。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>Agentic Hive 是一个框架，其中可变规模的自主微智能体——每个都配备沙盒执行环境和语言模型访问权限——经历人口动态：出生、复制、专化和死亡。智能体家族扮演生产部门的角色，计算和内存扮演生产要素的角色，编排器 (orchestrator) 同时担任瓦尔拉斯拍卖师 (Walrasian auctioneer) 和全局工作空间 (Global Workspace) 的双重角色。</p>
+</details>
+<hr>
+<h3 id="exploring-plan-space-through-conversation-an-agentic-framework-for-llm-mediated-explanations-in-planning"><a class="link" href="https://arxiv.org/abs/2603.02070"  target="_blank" rel="noopener"
+    >Exploring Plan Space through Conversation: An Agentic Framework for LLM-Mediated Explanations in Planning</a>
+</h3>
+    <blockquote>
+        <p>通过对话探索规划空间的多智能体 LLM 框架</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.02070"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: 提出与解释框架无关的多智能体 LLM 架构，支持用户和上下文相关的交互式解释。目标是促进迭代推理和引出过程，人类根据其偏好和专业知识引导 AI 规划器。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>本文提出一种多智能体大型语言模型 (LLM) 架构，该架构与解释框架无关，支持用户和上下文相关的交互式解释。目标是促进一个迭代推理和引出过程，其中人类的角色是根据其偏好和专业知识引导 AI 规划器，解释用于增进对潜在解决方案的理解并提升对系统的信任。</p>
+</details>
+<hr>
+<h3 id="bioproagent-neuro-symbolic-grounding-for-constrained-scientific-planning"><a class="link" href="https://arxiv.org/abs/2603.00876"  target="_blank" rel="noopener"
+    >BioProAgent: Neuro-Symbolic Grounding for Constrained Scientific Planning</a>
+</h3>
+    <blockquote>
+        <p>神经符号框架解决自主科学发现中的执行鸿沟</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.00876"  target="_blank" rel="noopener"
+    >arXiv</a></li>
+<li><strong>摘要</strong>: BioProAgent 是一个神经符号框架，通过将概率性 LLM 推理锚定在确定性有限状态机中，为不可逆的湿实验室环境强制执行&quot;设计-验证-纠正&quot;工作流。在扩展的 BioProBench 上达到 SOTA 性能，展示了传统智能体失败之处的自主自我纠正能力。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>BioProAgent 是一个神经符号框架，旨在解决自主科学发现中的关键执行鸿沟。通过将概率性 LLM 推理锚定在确定性有限状态机 (Finite State Machine) 中，BioProAgent 为不可逆的湿实验室环境强制执行&quot;设计-验证-纠正&quot; (Design-Verify-Rectify) 工作流。在扩展的 BioProBench 上的评估表明，BioProAgent 达到了最先进的性能，并展示了在传统智能体失败之处的稳健自主自我纠正能力。</p>
+</details>
+<hr>
+<h2 id="-trending-补充非昨日但新发现">📈 Trending 补充（非昨日但新发现）
+</h2><h3 id="ltx-2-open-source-audiovisual-diffusion-model"><a class="link" href="https://huggingface.co/papers/trending"  target="_blank" rel="noopener"
+    >LTX-2: Open-Source Audiovisual Diffusion Model</a>
+</h3>
+    <blockquote>
+        <p>开源视听扩散模型，双流 Transformer 架构实现视频和音频同步生成</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://huggingface.co/papers/trending"  target="_blank" rel="noopener"
+    >HuggingFace Trending</a></li>
+<li><strong>摘要</strong>: LTX-2 来自 MIT LAMM，是一个开源视听扩散模型，使用双流 Transformer 架构配合跨模态注意力和无分类器引导 (classifier-free guidance)，实现同步的视频和音频内容生成。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>（原文 abstract 未获取到）</p>
+</details>
+<hr>
+<h3 id="cheers-unified-multimodal-model-for-visual-understanding-and-generation"><a class="link" href="https://huggingface.co/papers/trending"  target="_blank" rel="noopener"
+    >Cheers: Unified Multimodal Model for Visual Understanding and Generation</a>
+</h3>
+    <blockquote>
+        <p>统一多模态模型，解耦视觉细节与语义表征</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://huggingface.co/papers/trending"  target="_blank" rel="noopener"
+    >HuggingFace Trending</a></li>
+<li><strong>摘要</strong>: Cheers 是一个统一的多模态模型，使用视觉分词器、基于 LLM 的 Transformer 和级联 flow matching 头来解耦视觉细节与语义表征，实现视觉理解和生成任务的高效联合优化。</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>（原文 abstract 未获取到）</p>
+</details>
+<hr>
+<p><em>Generated on 2026-03-18 | Sources: arXiv, HuggingFace, Papers With Code (via WebSearch)</em>
+<em>注：由于 API 端点被网络代理限制，本期日报通过 WebSearch 间接收集数据，可能遗漏部分论文。</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-news-2026-03-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI News Daily | 2026-03-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-03-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-03-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-news-2026-03-18/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI News Daily | 2026-03-18</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-news-2026-03-17/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI News Daily | 2026-03-17</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-03-17/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-03-17</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
