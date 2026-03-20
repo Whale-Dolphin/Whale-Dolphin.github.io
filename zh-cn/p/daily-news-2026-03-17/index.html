@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="📝 今日摘要 今天 AI 圈最重磅的消息是 Mistral Small 4 系列正式发布，119B 参数 MoE 架构（激活 6.5B），256k 上下文，Apache 2.0 开源，直接引爆 r/LocalLLaMA（567 upvotes）。这是 Mistral 首个面向代码和证明助手场景的专用模型 Leanstral，支持 Lean 4 形式化验证。\n">
+<title>AI News Daily | 2026-03-17</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-03-17/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="AI News Daily | 2026-03-17">
+<meta property='og:description' content="📝 今日摘要 今天 AI 圈最重磅的消息是 Mistral Small 4 系列正式发布，119B 参数 MoE 架构（激活 6.5B），256k 上下文，Apache 2.0 开源，直接引爆 r/LocalLLaMA（567 upvotes）。这是 Mistral 首个面向代码和证明助手场景的专用模型 Leanstral，支持 Lean 4 形式化验证。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-03-17/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-17T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI News Daily | 2026-03-17">
+<meta name="twitter:description" content="📝 今日摘要 今天 AI 圈最重磅的消息是 Mistral Small 4 系列正式发布，119B 参数 MoE 架构（激活 6.5B），256k 上下文，Apache 2.0 开源，直接引爆 r/LocalLLaMA（567 upvotes）。这是 Mistral 首个面向代码和证明助手场景的专用模型 Leanstral，支持 Lean 4 形式化验证。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-03-17/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-今日摘要">📝 今日摘要</a></li>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐">重点推荐</a>
+      <ol>
+        <li><a href="#mistral-small-4-系列发布leanstral-代码证明助手">Mistral Small 4 系列发布：Leanstral 代码证明助手</a></li>
+        <li><a href="#fastgraphrag用-pagerank-改进-rag-检索质量">FastGraphRAG：用 PageRank 改进 RAG 检索质量</a></li>
+        <li><a href="#mlx-tunemac-本地微调-llm-的-unsloth-替代方案">mlx-tune：Mac 本地微调 LLM 的 Unsloth 替代方案</a></li>
+        <li><a href="#transformer-内部信号预测生成正确性14540-条-trace-实证研究">Transformer 内部信号预测生成正确性：14,540 条 trace 实证研究</a></li>
+      </ol>
+    </li>
+    <li><a href="#-产品发布">🚀 产品发布</a>
+      <ol>
+        <li><a href="#claude-code-review">Claude Code Review</a></li>
+        <li><a href="#holotron-12b">Holotron-12B</a></li>
+        <li><a href="#uptrain--llm-响应质量评估工具">UpTrain – LLM 响应质量评估工具</a></li>
+        <li><a href="#aide--ai-native-ide">Aide – AI Native IDE</a></li>
+      </ol>
+    </li>
+    <li><a href="#-github-trending">🔥 GitHub Trending</a>
+      <ol>
+        <li><a href="#autogpt--182536">AutoGPT ⭐ 182,536</a></li>
+        <li><a href="#ollama--165357">Ollama ⭐ 165,357</a></li>
+        <li><a href="#huggingface-transformers--157980">HuggingFace Transformers ⭐ 157,980</a></li>
+        <li><a href="#promptschat--153055">Prompts.chat ⭐ 153,055</a></li>
+        <li><a href="#dify--133215">Dify ⭐ 133,215</a></li>
+        <li><a href="#langchain--129914">LangChain ⭐ 129,914</a></li>
+        <li><a href="#openhands--69284">OpenHands ⭐ 69,284</a></li>
+        <li><a href="#ray--41786">Ray ⭐ 41,786</a></li>
+        <li><a href="#lightrag--29487">LightRAG ⭐ 29,487</a></li>
+        <li><a href="#langgraph--26675">LangGraph ⭐ 26,675</a></li>
+        <li><a href="#haystack--24537">Haystack ⭐ 24,537</a></li>
+        <li><a href="#ai-agents-for-beginners--54249">AI Agents for Beginners ⭐ 54,249</a></li>
+        <li><a href="#flowise--50833">Flowise ⭐ 50,833</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-行业新闻">📰 AI 行业新闻</a>
+      <ol>
+        <li><a href="#nvidia-组建-nemotron-联盟推动开放前沿模型">NVIDIA 组建 Nemotron 联盟，推动开放前沿模型</a></li>
+        <li><a href="#arxiv-脱离康奈尔大学成立独立非营利组织">arXiv 脱离康奈尔大学，成立独立非营利组织</a></li>
+        <li><a href="#meta-coconut-的潜在推理本质独立复现研究">Meta COCONUT 的&quot;潜在推理&quot;本质：独立复现研究</a></li>
+        <li><a href="#llm-压缩研究不同模型退化模式差异显著">LLM 压缩研究：不同模型退化模式差异显著</a></li>
+        <li><a href="#layer-surgery-研究transformer-50-深度处存在危险区">Layer Surgery 研究：Transformer 50% 深度处存在&quot;危险区&quot;</a></li>
+      </ol>
+    </li>
+    <li><a href="#-社区热议-hn--reddit">💬 社区热议 (HN / Reddit)</a>
+      <ol>
+        <li><a href="#nemotron-3-4b-vs-qwen-35-4b-对比评测">Nemotron 3 4B vs Qwen 3.5 4B 对比评测</a></li>
+        <li><a href="#跨模型-latent-transfer-实现零-token-通信">跨模型 Latent Transfer 实现零 token 通信</a></li>
+        <li><a href="#本地-gpu-显存速度对比rtx-6000-vs-amd-w7800-x2">本地 GPU 显存速度对比：RTX 6000 vs AMD W7800 x2</a></li>
+        <li><a href="#mlx-社区现状讨论">MLX 社区现状讨论</a></li>
+        <li><a href="#ai-长对话上下文管理问题">AI 长对话上下文管理问题</a></li>
+        <li><a href="#vllm-动态专家缓存-pr">vLLM 动态专家缓存 PR</a></li>
+      </ol>
+    </li>
+    <li><a href="#-实用资源教程">🛠️ 实用资源/教程</a>
+      <ol>
+        <li><a href="#视觉化-ml-训练工具-mlforge">视觉化 ML 训练工具 MLForge</a></li>
+        <li><a href="#光学乐谱识别模型-clarity-omr">光学乐谱识别模型 Clarity-OMR</a></li>
+        <li><a href="#专业-mqm-标注机器翻译数据集">专业 MQM 标注机器翻译数据集</a></li>
+        <li><a href="#agent-确定性授权层-oxdeai">Agent 确定性授权层 OxDeAI</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-03-17/">AI News Daily | 2026-03-17</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-03-17T00:00:00Z'>Mar 17, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-今日摘要">📝 今日摘要</a></li>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐">重点推荐</a>
+      <ol>
+        <li><a href="#mistral-small-4-系列发布leanstral-代码证明助手">Mistral Small 4 系列发布：Leanstral 代码证明助手</a></li>
+        <li><a href="#fastgraphrag用-pagerank-改进-rag-检索质量">FastGraphRAG：用 PageRank 改进 RAG 检索质量</a></li>
+        <li><a href="#mlx-tunemac-本地微调-llm-的-unsloth-替代方案">mlx-tune：Mac 本地微调 LLM 的 Unsloth 替代方案</a></li>
+        <li><a href="#transformer-内部信号预测生成正确性14540-条-trace-实证研究">Transformer 内部信号预测生成正确性：14,540 条 trace 实证研究</a></li>
+      </ol>
+    </li>
+    <li><a href="#-产品发布">🚀 产品发布</a>
+      <ol>
+        <li><a href="#claude-code-review">Claude Code Review</a></li>
+        <li><a href="#holotron-12b">Holotron-12B</a></li>
+        <li><a href="#uptrain--llm-响应质量评估工具">UpTrain – LLM 响应质量评估工具</a></li>
+        <li><a href="#aide--ai-native-ide">Aide – AI Native IDE</a></li>
+      </ol>
+    </li>
+    <li><a href="#-github-trending">🔥 GitHub Trending</a>
+      <ol>
+        <li><a href="#autogpt--182536">AutoGPT ⭐ 182,536</a></li>
+        <li><a href="#ollama--165357">Ollama ⭐ 165,357</a></li>
+        <li><a href="#huggingface-transformers--157980">HuggingFace Transformers ⭐ 157,980</a></li>
+        <li><a href="#promptschat--153055">Prompts.chat ⭐ 153,055</a></li>
+        <li><a href="#dify--133215">Dify ⭐ 133,215</a></li>
+        <li><a href="#langchain--129914">LangChain ⭐ 129,914</a></li>
+        <li><a href="#openhands--69284">OpenHands ⭐ 69,284</a></li>
+        <li><a href="#ray--41786">Ray ⭐ 41,786</a></li>
+        <li><a href="#lightrag--29487">LightRAG ⭐ 29,487</a></li>
+        <li><a href="#langgraph--26675">LangGraph ⭐ 26,675</a></li>
+        <li><a href="#haystack--24537">Haystack ⭐ 24,537</a></li>
+        <li><a href="#ai-agents-for-beginners--54249">AI Agents for Beginners ⭐ 54,249</a></li>
+        <li><a href="#flowise--50833">Flowise ⭐ 50,833</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-行业新闻">📰 AI 行业新闻</a>
+      <ol>
+        <li><a href="#nvidia-组建-nemotron-联盟推动开放前沿模型">NVIDIA 组建 Nemotron 联盟，推动开放前沿模型</a></li>
+        <li><a href="#arxiv-脱离康奈尔大学成立独立非营利组织">arXiv 脱离康奈尔大学，成立独立非营利组织</a></li>
+        <li><a href="#meta-coconut-的潜在推理本质独立复现研究">Meta COCONUT 的&quot;潜在推理&quot;本质：独立复现研究</a></li>
+        <li><a href="#llm-压缩研究不同模型退化模式差异显著">LLM 压缩研究：不同模型退化模式差异显著</a></li>
+        <li><a href="#layer-surgery-研究transformer-50-深度处存在危险区">Layer Surgery 研究：Transformer 50% 深度处存在&quot;危险区&quot;</a></li>
+      </ol>
+    </li>
+    <li><a href="#-社区热议-hn--reddit">💬 社区热议 (HN / Reddit)</a>
+      <ol>
+        <li><a href="#nemotron-3-4b-vs-qwen-35-4b-对比评测">Nemotron 3 4B vs Qwen 3.5 4B 对比评测</a></li>
+        <li><a href="#跨模型-latent-transfer-实现零-token-通信">跨模型 Latent Transfer 实现零 token 通信</a></li>
+        <li><a href="#本地-gpu-显存速度对比rtx-6000-vs-amd-w7800-x2">本地 GPU 显存速度对比：RTX 6000 vs AMD W7800 x2</a></li>
+        <li><a href="#mlx-社区现状讨论">MLX 社区现状讨论</a></li>
+        <li><a href="#ai-长对话上下文管理问题">AI 长对话上下文管理问题</a></li>
+        <li><a href="#vllm-动态专家缓存-pr">vLLM 动态专家缓存 PR</a></li>
+      </ol>
+    </li>
+    <li><a href="#-实用资源教程">🛠️ 实用资源/教程</a>
+      <ol>
+        <li><a href="#视觉化-ml-训练工具-mlforge">视觉化 ML 训练工具 MLForge</a></li>
+        <li><a href="#光学乐谱识别模型-clarity-omr">光学乐谱识别模型 Clarity-OMR</a></li>
+        <li><a href="#专业-mqm-标注机器翻译数据集">专业 MQM 标注机器翻译数据集</a></li>
+        <li><a href="#agent-确定性授权层-oxdeai">Agent 确定性授权层 OxDeAI</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="-今日摘要">📝 今日摘要
+</h2><p>今天 AI 圈最重磅的消息是 <strong>Mistral Small 4 系列正式发布</strong>，119B 参数 MoE 架构（激活 6.5B），256k 上下文，Apache 2.0 开源，直接引爆 r/LocalLLaMA（567 upvotes）。这是 Mistral 首个面向代码和证明助手场景的专用模型 Leanstral，支持 Lean 4 形式化验证。</p>
+<p>开源社区方面，<strong>AutoGPT 突破 18 万星</strong>，持续领跑 autonomous agents 赛道；<strong>mlx-tune</strong> 项目让 Mac 用户能在本地微调 LLM（支持 SFT/DPO/GRPO），对 Apple Silicon 开发者是重大利好。RAG 方向出现新突破：<strong>FastGraphRAG</strong> 用 PageRank 改进检索质量，HN 457 热度证明社区关注度。</p>
+<p>研究层面有两篇值得注意的论文：一是关于 <strong>Meta COCONUT 的&quot;潜在推理&quot;本质</strong> 的独立复现研究，发现 curriculum 训练才是关键而非 recycled hidden states；二是 <strong>Transformer 内部信号预测生成正确性</strong> 的大规模实证研究（14,540 条 trace），早期窗口熵值可有效预测输出质量。</p>
+<p>整体趋势：Agent 工具链持续成熟（Dify、LangGraph、Flowise 均获高关注），本地部署生态繁荣（Ollama、vLLM、MLX 社区活跃），模型压缩和高效推理成为研究热点。</p>
+<hr>
+<h2 id="今日概览">今日概览
+</h2><p>共收录 <strong>38 条</strong> | 🚀 产品发布：<strong>4 条</strong> | 🔥 开源项目：<strong>18 个</strong> | 📰 行业动态：<strong>5 条</strong> | 💬 社区热议：<strong>11 条</strong>
+来源：Hacker News(5) | GitHub(18) | Reddit(13) | Product Hunt(2)</p>
+<hr>
+<h2 id="重点推荐">重点推荐
+</h2><h3 id="mistral-small-4-系列发布leanstral-代码证明助手">Mistral Small 4 系列发布：Leanstral 代码证明助手
+</h3>
+    <blockquote>
+        <p>Mistral 首个面向 Lean 4 形式化验证的开源代码 agent，119B 参数 MoE 架构</p>
+
+    </blockquote>
+<ul>
+<li><strong>来源</strong>: Reddit r/LocalLLaMA</li>
+<li><strong>链接</strong>: <a class="link" href="https://huggingface.co/mistralai/Leanstral-2603"  target="_blank" rel="noopener"
+    >HuggingFace</a> | <a class="link" href="https://mistral.ai/news/leanstral"  target="_blank" rel="noopener"
+    >官方博客</a></li>
+<li><strong>热度</strong>: 567 upvotes, 219 comments</li>
+<li><strong>关键信息</strong>: 采用 MoE 架构（128 experts，每 token 激活 4 个），256k 上下文长度，支持多模态输入。这是 Mistral Small 4 家族的首个成员，Apache 2.0 开源。Leanstral 专为证明工程场景设计，能处理复杂数学对象（如 perfectoid spaces）和 Rust 代码规范验证。</li>
+</ul>
+<h3 id="fastgraphrag用-pagerank-改进-rag-检索质量">FastGraphRAG：用 PageRank 改进 RAG 检索质量
+</h3>
+    <blockquote>
+        <p>将经典 PageRank 算法应用于知识图谱 RAG，显著提升检索准确性</p>
+
+    </blockquote>
+<ul>
+<li><strong>来源</strong>: Hacker News (Show HN)</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/circlemind-ai/fast-graphrag"  target="_blank" rel="noopener"
+    >GitHub</a> | <a class="link" href="https://news.ycombinator.com/item?id=42174829"  target="_blank" rel="noopener"
+    >HN 讨论</a></li>
+<li><strong>热度</strong>: 457 points, 119 comments</li>
+<li><strong>关键信息</strong>: 通过构建文档知识图谱并应用 PageRank 算法，解决传统 RAG 中检索质量不稳定的问题。相比向量相似度检索，GraphRAG 能更好地捕捉文档间的语义关联，适合长文档、多跳推理场景。</li>
+</ul>
+<h3 id="mlx-tunemac-本地微调-llm-的-unsloth-替代方案">mlx-tune：Mac 本地微调 LLM 的 Unsloth 替代方案
+</h3>
+    <blockquote>
+        <p>基于 Apple MLX 框架的本地微调库，支持 SFT/DPO/GRPO/KTO 等多种训练方式</p>
+
+    </blockquote>
+<ul>
+<li><strong>来源</strong>: Reddit r/LocalLLaMA / r/MachineLearning</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/ARahim3/mlx-tune"  target="_blank" rel="noopener"
+    >GitHub</a> | <a class="link" href="https://arahim3.github.io/mlx-tune/"  target="_blank" rel="noopener"
+    >文档</a></li>
+<li><strong>热度</strong>: 27 upvotes (r/LocalLLaMA), 12 upvotes (r/MachineLearning)</li>
+<li><strong>关键信息</strong>: 提供 Unsloth 兼容 API，同一训练脚本只需改 import 即可在 Mac/CUDA 间切换。支持 LoRA/QLoRA、15 种模型家族的 chat template、GGUF 导出。8GB 统一内存可运行 1B 4-bit 模型，16GB+ 推荐。是 Mac 开发者本地原型开发的理想工具。</li>
+</ul>
+<h3 id="transformer-内部信号预测生成正确性14540-条-trace-实证研究">Transformer 内部信号预测生成正确性：14,540 条 trace 实证研究
+</h3>
+    <blockquote>
+        <p>大规模研究发现早期生成 token 的熵值可有效预测输出是否正确</p>
+
+    </blockquote>
+<ul>
+<li><strong>来源</strong>: Reddit r/MachineLearning</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/Joe-b-20/CoreVital/tree/main/experiment"  target="_blank" rel="noopener"
+    >论文代码</a></li>
+<li><strong>热度</strong>: 1 upvote (新发布)</li>
+<li><strong>关键信息</strong>: 在 4 个模型（Llama-3.1-8B、Qwen-2.5-7B、Mistral-7B、Mixtral-8x7B）和 2 个基准（GSM8K、HumanEval）上收集 14,540 条生成 trace。发现前 10 个 token 的平均 surprisal 对 Mixtral/HumanEval 的预测 AUROC 达 0.80。按此信号排序候选输出，可将 HumanEval 通过率从 15% 提升至 50%。MoE 和 dense 模型的内部信号分布存在本质差异。</li>
+</ul>
+<hr>
+<h2 id="-产品发布">🚀 产品发布
+</h2><h3 id="claude-code-review">Claude Code Review
+</h3>
+    <blockquote>
+        <p>多 agent 代码审查工具，在 AI 生成代码早期捕获 bug</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://www.producthunt.com/products/claude"  target="_blank" rel="noopener"
+    >Product Hunt</a></li>
+<li><strong>热度</strong>: 540 votes</li>
+<li><strong>简介</strong>: 采用多 agent 协作方式进行代码审查，每个 agent 负责不同维度（安全性、性能、可读性等），在开发早期阶段识别 AI 生成代码中的潜在问题。适合依赖 AI 编程助手的团队。</li>
+</ul>
+<h3 id="holotron-12b">Holotron-12B
+</h3>
+    <blockquote>
+        <p>H Company 与 NVIDIA 合作开发的多模态 computer-use agent 模型</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://huggingface.co/Hcompany/Holotron-12B"  target="_blank" rel="noopener"
+    >HuggingFace</a> | <a class="link" href="https://hcompany.ai/holotron-12b"  target="_blank" rel="noopener"
+    >技术详解</a></li>
+<li><strong>热度</strong>: 20 upvotes</li>
+<li><strong>简介</strong>: 专为 computer-use agent 场景设计的高吞吐量开源多模态模型，性能与 Holo2/Qwen 相当但吞吐量提升 2 倍。适合需要视觉理解 + 工具调用的自动化任务。</li>
+</ul>
+<h3 id="uptrain--llm-响应质量评估工具">UpTrain – LLM 响应质量评估工具
+</h3>
+    <blockquote>
+        <p>开源工具，用于评估 LLM 输出的质量和一致性</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://demo.uptrain.ai/evals_demo/"  target="_blank" rel="noopener"
+    >Demo</a></li>
+<li><strong>热度</strong>: 12 points (HN)</li>
+<li><strong>简介</strong>: YC W23 项目，提供多种预定义评估指标（相关性、事实性、毒性等），支持自定义评估标准。适合需要监控 LLM 应用输出质量的生产环境。</li>
+</ul>
+<h3 id="aide--ai-native-ide">Aide – AI Native IDE
+</h3>
+    <blockquote>
+        <p>开源 AI 原生集成开发环境</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://aide.dev/"  target="_blank" rel="noopener"
+    >官网</a></li>
+<li><strong>热度</strong>: 253 points (HN)</li>
+<li><strong>简介</strong>: 将 AI 深度集成到 IDE 工作流中，支持代码生成、重构建议、错误解释等功能。开源项目，适合寻求 VSCode 替代方案的开发者。</li>
+</ul>
+<hr>
+<h2 id="-github-trending">🔥 GitHub Trending
+</h2><h3 id="autogpt--182536">AutoGPT ⭐ 182,536
+</h3>
+    <blockquote>
+        <p>面向所有人的 accessible AI 工具，提供 autonomous agents 构建能力</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: Python</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/Significant-Gravitas/AutoGPT"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: autonomous agents 赛道标杆项目，持续保持高活跃度。适合需要构建自主 AI 代理的场景。</li>
+</ul>
+<h3 id="ollama--165357">Ollama ⭐ 165,357
+</h3>
+    <blockquote>
+        <p>本地运行 LLM 的最简方案，支持 Kimi-K2.5、GLM-5、DeepSeek、Qwen、Gemma 等</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: Go</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/ollama/ollama"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: 本地部署 LLM 的首选工具，一键启动、模型丰富。适合隐私敏感或离线场景。</li>
+</ul>
+<h3 id="huggingface-transformers--157980">HuggingFace Transformers ⭐ 157,980
+</h3>
+    <blockquote>
+        <p>状态-of-the-art 机器学习模型的定义框架，支持文本、视觉、音频、多模态</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: Python</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/huggingface/transformers"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: ML/NLP 领域事实标准库，持续更新支持最新模型。每个 AI 开发者的必备工具。</li>
+</ul>
+<h3 id="promptschat--153055">Prompts.chat ⭐ 153,055
+</h3>
+    <blockquote>
+        <p>开源提示词分享平台，支持自部署</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: HTML/TypeScript</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/f/prompts.chat"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: 提示词工程资源库，支持组织私有部署。适合需要管理提示词资产的团队。</li>
+</ul>
+<h3 id="dify--133215">Dify ⭐ 133,215
+</h3>
+    <blockquote>
+        <p>生产级 agentic workflow 开发平台</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: TypeScript</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/langgenius/dify"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: 低代码/无代码 AI 应用开发平台，支持 RAG、agent 编排、工作流自动化。适合快速构建 AI 应用。</li>
+</ul>
+<h3 id="langchain--129914">LangChain ⭐ 129,914
+</h3>
+    <blockquote>
+        <p>Agent 工程平台</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: Python</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/langchain-ai/langchain"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: AI agent 开发的事实标准框架，生态丰富。适合需要构建复杂 agent 系统的场景。</li>
+</ul>
+<h3 id="openhands--69284">OpenHands ⭐ 69,284
+</h3>
+    <blockquote>
+        <p>AI 驱动的开发助手</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: Python</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/OpenHands/OpenHands"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: 开源的 AI 编程助手，支持代码生成、调试、重构。适合寻求 Cursor/Copilot 替代方案的用户。</li>
+</ul>
+<h3 id="ray--41786">Ray ⭐ 41,786
+</h3>
+    <blockquote>
+        <p>AI 计算引擎，加速 ML 工作负载</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: Python</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/ray-project/ray"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: 分布式计算框架，支持大规模模型训练和推理。适合需要扩展 ML 工作负载的团队。</li>
+</ul>
+<h3 id="lightrag--29487">LightRAG ⭐ 29,487
+</h3>
+    <blockquote>
+        <p>EMNLP2025 论文实现：简单快速的 RAG 方案</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: Python</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/HKUDS/LightRAG"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: 相比传统 RAG 更轻量高效，适合资源受限场景。</li>
+</ul>
+<h3 id="langgraph--26675">LangGraph ⭐ 26,675
+</h3>
+    <blockquote>
+        <p>用图结构构建 resilient language agents</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: Python</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/langchain-ai/langgraph"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: LangChain 官方 agent 编排工具，支持复杂 agent 工作流。适合需要多 agent 协作的场景。</li>
+</ul>
+<h3 id="haystack--24537">Haystack ⭐ 24,537
+</h3>
+    <blockquote>
+        <p>开源 AI 编排框架，用于构建生产级 LLM 应用</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: MDX</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/deepset-ai/haystack"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: 模块化 pipeline 设计，支持 RAG、semantic search、conversational systems。适合企业级 AI 应用开发。</li>
+</ul>
+<h3 id="ai-agents-for-beginners--54249">AI Agents for Beginners ⭐ 54,249
+</h3>
+    <blockquote>
+        <p>微软出品的 12 节 AI Agents 入门教程</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: Jupyter Notebook</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/microsoft/ai-agents-for-beginners"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: 系统性学习 AI agent 开发的免费资源，适合入门者。</li>
+</ul>
+<h3 id="flowise--50833">Flowise ⭐ 50,833
+</h3>
+    <blockquote>
+        <p>可视化构建 AI agents</p>
+
+    </blockquote>
+<ul>
+<li><strong>语言</strong>: TypeScript</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/FlowiseAI/Flowise"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>为什么值得关注</strong>: 低代码 AI 应用构建工具，拖拽式界面。适合非技术背景用户快速搭建 AI 工作流。</li>
+</ul>
+<hr>
+<h2 id="-ai-行业新闻">📰 AI 行业新闻
+</h2><h3 id="nvidia-组建-nemotron-联盟推动开放前沿模型">NVIDIA 组建 Nemotron 联盟，推动开放前沿模型
+</h3>
+    <blockquote>
+        <p>Black Forest Labs、Cursor、LangChain、Mistral AI、Perplexity 等加入</p>
+
+    </blockquote>
+<ul>
+<li><strong>来源</strong>: Reddit r/LocalLLaMA</li>
+<li><strong>链接</strong>: <a class="link" href="https://nvidianews.nvidia.com/news/nvidia-launches-nemotron-coalition-of-leading-global-ai-labs-to-advance-open-frontier-models"  target="_blank" rel="noopener"
+    >NVIDIA 新闻</a> | <a class="link" href="https://www.reddit.com/r/LocalLLaMA/comments/1rvlmzu/"  target="_blank" rel="noopener"
+    >Reddit 讨论</a></li>
+<li><strong>简介</strong>: NVIDIA 联合多家 AI 实验室共建开放前沿模型生态，各成员贡献专长：Black Forest Labs 负责多模态、Cursor 提供真实场景评估数据、LangChain 专注 agent 工具使用、Mistral 提供高效可定制模型等。</li>
+</ul>
+<h3 id="arxiv-脱离康奈尔大学成立独立非营利组织">arXiv 脱离康奈尔大学，成立独立非营利组织
+</h3>
+    <blockquote>
+        <p>聘请 CEO，年薪约 30 万美元</p>
+
+    </blockquote>
+<ul>
+<li><strong>来源</strong>: Reddit r/MachineLearning</li>
+<li><strong>链接</strong>: <a class="link" href="https://www.reddit.com/r/MachineLearning/comments/1rtjirw/"  target="_blank" rel="noopener"
+    >讨论</a></li>
+<li><strong>简介</strong>: 经过与康奈尔大学数十年的合作后，arXiv 在 Simons Foundation 支持下成为独立非营利组织。这一变化可能影响预印本出版生态。</li>
+</ul>
+<h3 id="meta-coconut-的潜在推理本质独立复现研究">Meta COCONUT 的&quot;潜在推理&quot;本质：独立复现研究
+</h3>
+    <blockquote>
+        <p>发现 curriculum 训练才是关键，recycled hidden states 对泛化无益</p>
+
+    </blockquote>
+<ul>
+<li><strong>来源</strong>: Reddit r/MachineLearning</li>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/bmarti44/research-pipeline/blob/main/papers/coconut_curriculum_dissection/manuscript/output/manuscript.pdf"  target="_blank" rel="noopener"
+    >论文</a> | <a class="link" href="https://github.com/bmarti44/research-pipeline/tree/main/papers/coconut_curriculum_dissection"  target="_blank" rel="noopener"
+    >代码</a></li>
+<li><strong>简介</strong>: 独立研究者对 Meta COCONUT 论文进行复现和扩展，发现&quot;pause-as-thought&quot;基线（固定 token 而非 recycled hidden states）在分布内表现相当，但在分布外泛化上 recycled content 反而有害。研究揭示了 sequential processing 对拓扑泛化的贡献。</li>
+</ul>
+<h3 id="llm-压缩研究不同模型退化模式差异显著">LLM 压缩研究：不同模型退化模式差异显著
+</h3>
+    <blockquote>
+        <p>Gemma 压缩性最佳，Llama 退化最快</p>
+
+    </blockquote>
+<ul>
+<li><strong>来源</strong>: Reddit r/LocalLLaMA</li>
+<li><strong>链接</strong>: <a class="link" href="https://www.reddit.com/r/LocalLLaMA/comments/1rw2tqs/"  target="_blank" rel="noopener"
+    >讨论</a> | <a class="link" href="https://huggingface.co/dystrio"  target="_blank" rel="noopener"
+    >模型</a></li>
+<li><strong>简介</strong>: 研究者对 6 个 LLM 进行 MLP 层压缩（非量化），发现不同模型压缩耐受性差异巨大：Gemma 2B 在 14% 压缩率下保持 92% 准确率，Llama 3.1 8B 仅 85%。MMLU 最先下降，TruthfulQA 几乎不变。输出为标准 dense HF checkpoints，可与量化叠加使用。</li>
+</ul>
+<h3 id="layer-surgery-研究transformer-50-深度处存在危险区">Layer Surgery 研究：Transformer 50% 深度处存在&quot;危险区&quot;
+</h3>
+    <blockquote>
+        <p>复制该区域层会破坏模型能力</p>
+
+    </blockquote>
+<ul>
+<li><strong>来源</strong>: Reddit r/LocalLLaMA</li>
+<li><strong>链接</strong>: <a class="link" href="https://www.reddit.com/r/LocalLLaMA/comments/1rvxmnh/"  target="_blank" rel="noopener"
+    >讨论</a></li>
+<li><strong>简介</strong>: 研究者对 6 种架构进行层复制实验，发现所有模型在 50-56% 深度处存在&quot;危险区&quot;——复制这些层会破坏注意力路由基础设施。最优复制位置因架构而异：dense 模型约 75% 深度，MoE 模型约 40% 深度。跨模型层移植完全失败。</li>
+</ul>
+<hr>
+<h2 id="-社区热议-hn--reddit">💬 社区热议 (HN / Reddit)
+</h2><h3 id="nemotron-3-4b-vs-qwen-35-4b-对比评测">Nemotron 3 4B vs Qwen 3.5 4B 对比评测
+</h3>
+    <blockquote>
+        <p>详细对比显示 Qwen 在推理、指令遵循、结构化输出上全面胜出</p>
+
+    </blockquote>
+<ul>
+<li><strong>讨论</strong>: <a class="link" href="https://www.reddit.com/r/LocalLLaMA/comments/1rvw9j8/"  target="_blank" rel="noopener"
+    >Reddit</a></li>
+<li><strong>评论数</strong>: 20</li>
+<li><strong>核心观点</strong>: 尽管 Nemotron 架构新颖支持更大上下文，但在数学推理、算法设计、模式压缩、UI 生成四项测试中全部失败。Qwen 3.5 4B 则全部通过。结论：架构 novelty 不等于实际能力提升。</li>
+</ul>
+<h3 id="跨模型-latent-transfer-实现零-token-通信">跨模型 Latent Transfer 实现零 token 通信
+</h3>
+    <blockquote>
+        <p>Agent 间通过 KV-cache 而非文本传递信息</p>
+
+    </blockquote>
+<ul>
+<li><strong>讨论</strong>: <a class="link" href="https://www.reddit.com/r/LocalLLaMA/comments/1rw7z93/"  target="_blank" rel="noopener"
+    >Reddit</a> | <a class="link" href="https://github.com/VectorArc/avp-python"  target="_blank" rel="noopener"
+    >GitHub</a> | <a class="link" href="https://colab.research.google.com/github/VectorArc/avp-python/blob/main/notebooks/avp_quick_start.ipynb"  target="_blank" rel="noopener"
+    >Colab</a></li>
+<li><strong>评论数</strong>: 0</li>
+<li><strong>核心观点</strong>: AVP (Agent Vector Passing) 项目实现 agent 间通过隐藏状态而非文本来通信。同模型场景下 HumanEval +14.1pp，速度提升 2-6x。跨模型通信（Qwen↔Llama）方向性明显：强模型→弱模型时 latent 占优，反之 text 更好。HotpotQA 等多跳任务效果差，latent 无法承载段落级事实。</li>
+</ul>
+<h3 id="本地-gpu-显存速度对比rtx-6000-vs-amd-w7800-x2">本地 GPU 显存速度对比：RTX 6000 vs AMD W7800 x2
+</h3>
+    <blockquote>
+        <p>显存带宽几乎线性决定 token 生成速度</p>
+
+    </blockquote>
+<ul>
+<li><strong>讨论</strong>: <a class="link" href="https://www.reddit.com/r/LocalLLaMA/comments/1rw1k8r/"  target="_blank" rel="noopener"
+    >Reddit</a></li>
+<li><strong>评论数</strong>: 13</li>
+<li><strong>核心观点</strong>: 实测显示 RTX 6000 (864GB/s) 与双 W7800 (1792GB/s) 的 token/s 比例与显存带宽比例几乎一致 (0.482 vs 0.492)。结论：大模型推理场景下显存速度是关键瓶颈。</li>
+</ul>
+<h3 id="mlx-社区现状讨论">MLX 社区现状讨论
+</h3>
+    <blockquote>
+        <p>用户担忧 MLX 社区活跃度下降</p>
+
+    </blockquote>
+<ul>
+<li><strong>讨论</strong>: <a class="link" href="https://www.reddit.com/r/LocalLLaMA/comments/1rvy3nk/"  target="_blank" rel="noopener"
+    >Reddit</a></li>
+<li><strong>评论数</strong>: 33</li>
+<li><strong>核心观点</strong>: 相比 GGUF 社区的活跃更新（模板修复、量化对比），MLX 社区维护不足：HuggingFace 集合仅包含 4 个最大模型，Discord 几乎无讨论。Mac 用户寻求替代方案。</li>
+</ul>
+<h3 id="ai-长对话上下文管理问题">AI 长对话上下文管理问题
+</h3>
+    <blockquote>
+        <p>用户寻求可持续的长周期 AI 交互方案</p>
+
+    </blockquote>
+<ul>
+<li><strong>讨论</strong>: <a class="link" href="https://www.reddit.com/r/artificial/comments/1rv79uz/"  target="_blank" rel="noopener"
+    >Reddit</a></li>
+<li><strong>评论数</strong>: 44</li>
+<li><strong>核心观点</strong>: 用户反馈长对话需要频繁压缩导致体验下降，新开对话又丢失历史。社区建议：使用外部记忆存储（向量数据库）、定期总结关键信息、采用 RAG 架构管理长期记忆。</li>
+</ul>
+<h3 id="vllm-动态专家缓存-pr">vLLM 动态专家缓存 PR
+</h3>
+    <blockquote>
+        <p>实现 16GB MoE 模型在 8GB 显存运行</p>
+
+    </blockquote>
+<ul>
+<li><strong>讨论</strong>: <a class="link" href="https://www.reddit.com/r/LocalLLaMA/comments/1rw4sly/"  target="_blank" rel="noopener"
+    >Reddit</a> | <a class="link" href="https://github.com/vllm-project/vllm/pull/37190"  target="_blank" rel="noopener"
+    >PR</a></li>
+<li><strong>评论数</strong>: 0</li>
+<li><strong>核心观点</strong>: 通过 LRU 缓存机制将部分专家保留在 RAM，按需加载到 VRAM。缓存未命中时在 CPU 计算同时重排专家，降低延迟。后续将支持 mxfp4 量化、磁盘流式加载、两级缓存。</li>
+</ul>
+<hr>
+<h2 id="-实用资源教程">🛠️ 实用资源/教程
+</h2><h3 id="视觉化-ml-训练工具-mlforge">视觉化 ML 训练工具 MLForge
+</h3>
+    <blockquote>
+        <p>无需代码，拖拽式构建机器学习 pipeline</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/zaina-ml/ml_forge"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>简介</strong>: 三标签设计：Data Prep（数据预处理）、Model（模型构建）、Training（训练监控）。支持自动形状推断、实时 loss 曲线、PyTorch 导出。适合 ML 初学者和快速原型开发。</li>
+</ul>
+<h3 id="光学乐谱识别模型-clarity-omr">光学乐谱识别模型 Clarity-OMR
+</h3>
+    <blockquote>
+        <p>将乐谱 PDF 转换为 MusicXML</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/clquwu/Clarity-OMR"  target="_blank" rel="noopener"
+    >GitHub</a> | <a class="link" href="https://huggingface.co/clquwu/Clarity-OMR"  target="_blank" rel="noopener"
+    >权重</a></li>
+<li><strong>简介</strong>: DaViT-Base 编码器 + Transformer 解码器，487 token 音乐词汇表。4 阶段 pipeline：YOLO 谱线检测 → DaViT+RoPE 识别 → Grammar FSA 约束束搜索 → MusicXML 导出。在古典钢琴曲上与 Audiveris 竞争力相当。</li>
+</ul>
+<h3 id="专业-mqm-标注机器翻译数据集">专业 MQM 标注机器翻译数据集
+</h3>
+    <blockquote>
+        <p>16 语言对，48 名专业语言学家标注</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://huggingface.co/datasets/alconost/mqm-translation-gold"  target="_blank" rel="noopener"
+    >HuggingFace</a></li>
+<li><strong>简介</strong>: 362 翻译片段，完整 MQM 错误标注（类别、严重性、跨度），多人标注用于 IAA 分析。Kendall&rsquo;s τ = 0.317，是 WMT 典型值的 2.6 倍。适合 MT 质量评估研究。</li>
+</ul>
+<h3 id="agent-确定性授权层-oxdeai">Agent 确定性授权层 OxDeAI
+</h3>
+    <blockquote>
+        <p>在 agent 执行真实操作前添加策略边界</p>
+
+    </blockquote>
+<ul>
+<li><strong>链接</strong>: <a class="link" href="https://github.com/AngeYobo/oxdeai"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li><strong>简介</strong>: 解决 agent 执行阶段的常见问题：API 滥用、重复副作用、递归工具循环、无界并发、超支等。流程：agent 提出结构化意图 → 策略引擎评估 → 签发签名授权 → 执行。设计原则：确定性评估、fail-closed、可回放抵抗、有界预算。</li>
+</ul>
+<hr>
+<p><em>Generated on 2026-03-17 22:47 CST | Sources: Hacker News, GitHub, Reddit, Product Hunt</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-news-2026-03-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI News Daily | 2026-03-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-03-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-03-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-03-17/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-03-17</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
