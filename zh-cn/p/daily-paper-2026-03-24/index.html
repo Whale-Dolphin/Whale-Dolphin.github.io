@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 自动抓取自 HuggingFace Daily Papers · 共收录 40 篇论文\n📊 本日概览 方向 论文数 🎵 Audio LLM 1 📚 LLM Training 21 🤖 AI Agents 3 🔍 其他值得关注 15 🎵 Audio LLM (1) 1. HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering arXiv: 2603.18558\nHuggingFace 热度: 0 upvotes\n摘要： Long-form video question answering requires reasoning over extended temporal contexts, making frame selection critical for large vision-language models (LVLMs) bound by finite context windows. Existing methods face a sharp trade-off: similarity-based selectors are fast but collapse compositional queries into a single dense vector, losing sub-event ordering and cross-modal bindings; agent-based methods recover this structure through iterative LVLM inference, but at prohibitive cost. We introduce HiMu, a training-free framework that bridges this gap. A single text-only LLM call decomposes the query into a hierarchical logic tree whose leaves are atomic predicates, each routed to a lightweight expert spanning vision (CLIP, open-vocabulary detection, OCR) and audio (ASR, CLAP). The resulting signals are normalized, temporally smoothed to align different modalities, and composed bottom-up through fuzzy-logic operators that enforce temporal sequencing and adjacency, producing a continuous satisfaction curve. Evaluations on Video-MME, LongVideoBench and HERBench-Lite show that HiMu advances the efficiency-accuracy Pareto front: at 16 frames with Qwen3-VL 8B it outperforms all competing selectors, and with GPT-4o it surpasses agentic systems operating at 32-512 frames while requiring roughly 10x fewer FLOPs.\n">
+<title>AI Paper Daily | 2026-03-24</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-03-24/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-03-24">
+<meta property='og:description' content=" 自动抓取自 HuggingFace Daily Papers · 共收录 40 篇论文\n📊 本日概览 方向 论文数 🎵 Audio LLM 1 📚 LLM Training 21 🤖 AI Agents 3 🔍 其他值得关注 15 🎵 Audio LLM (1) 1. HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering arXiv: 2603.18558\nHuggingFace 热度: 0 upvotes\n摘要： Long-form video question answering requires reasoning over extended temporal contexts, making frame selection critical for large vision-language models (LVLMs) bound by finite context windows. Existing methods face a sharp trade-off: similarity-based selectors are fast but collapse compositional queries into a single dense vector, losing sub-event ordering and cross-modal bindings; agent-based methods recover this structure through iterative LVLM inference, but at prohibitive cost. We introduce HiMu, a training-free framework that bridges this gap. A single text-only LLM call decomposes the query into a hierarchical logic tree whose leaves are atomic predicates, each routed to a lightweight expert spanning vision (CLIP, open-vocabulary detection, OCR) and audio (ASR, CLAP). The resulting signals are normalized, temporally smoothed to align different modalities, and composed bottom-up through fuzzy-logic operators that enforce temporal sequencing and adjacency, producing a continuous satisfaction curve. Evaluations on Video-MME, LongVideoBench and HERBench-Lite show that HiMu advances the efficiency-accuracy Pareto front: at 16 frames with Qwen3-VL 8B it outperforms all competing selectors, and with GPT-4o it surpasses agentic systems operating at 32-512 frames while requiring roughly 10x fewer FLOPs.\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-03-24/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-24T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-24T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-03-24">
+<meta name="twitter:description" content=" 自动抓取自 HuggingFace Daily Papers · 共收录 40 篇论文\n📊 本日概览 方向 论文数 🎵 Audio LLM 1 📚 LLM Training 21 🤖 AI Agents 3 🔍 其他值得关注 15 🎵 Audio LLM (1) 1. HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering arXiv: 2603.18558\nHuggingFace 热度: 0 upvotes\n摘要： Long-form video question answering requires reasoning over extended temporal contexts, making frame selection critical for large vision-language models (LVLMs) bound by finite context windows. Existing methods face a sharp trade-off: similarity-based selectors are fast but collapse compositional queries into a single dense vector, losing sub-event ordering and cross-modal bindings; agent-based methods recover this structure through iterative LVLM inference, but at prohibitive cost. We introduce HiMu, a training-free framework that bridges this gap. A single text-only LLM call decomposes the query into a hierarchical logic tree whose leaves are atomic predicates, each routed to a lightweight expert spanning vision (CLIP, open-vocabulary detection, OCR) and audio (ASR, CLAP). The resulting signals are normalized, temporally smoothed to align different modalities, and composed bottom-up through fuzzy-logic operators that enforce temporal sequencing and adjacency, producing a continuous satisfaction curve. Evaluations on Video-MME, LongVideoBench and HERBench-Lite show that HiMu advances the efficiency-accuracy Pareto front: at 16 frames with Qwen3-VL 8B it outperforms all competing selectors, and with GPT-4o it surpasses agentic systems operating at 32-512 frames while requiring roughly 10x fewer FLOPs.\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-03-24/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-本日概览">📊 本日概览</a></li>
+    <li><a href="#-audio-llm-1">🎵 Audio LLM (1)</a>
+      <ol>
+        <li><a href="#1-himu-hierarchical-multimodal-frame-selection-for-long-video-question-answering">1. HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training-21">📚 LLM Training (21)</a>
+      <ol>
+        <li><a href="#1-breaking-the-capability-ceiling-of-llm-post-training-by-reintroducing-markov-states">1. Breaking the Capability Ceiling of LLM Post-Training by Reintroducing Markov States</a></li>
+        <li><a href="#2-adaptive-layerwise-perturbation-unifying-off-policy-corrections-for-llm-rl">2. Adaptive Layerwise Perturbation: Unifying Off-Policy Corrections for LLM RL</a></li>
+        <li><a href="#3-reasoning-as-compression-unifying-budget-forcing-via-the-conditional-information-bottleneck">3. Reasoning as Compression: Unifying Budget Forcing via the Conditional Information Bottleneck</a></li>
+        <li><a href="#4-probing-cultural-signals-in-large-language-models-through-author-profiling">4. Probing Cultural Signals in Large Language Models through Author Profiling</a></li>
+        <li><a href="#5-s2n-bignum-bench-a-practical-benchmark-for-evaluating-low-level-code-reasoning-of-llms">5. s2n-bignum-bench: A practical benchmark for evaluating low-level code reasoning of LLMs</a></li>
+        <li><a href="#6-versatile-editing-of-video-content-actions-and-dynamics-without-training">6. Versatile Editing of Video Content, Actions, and Dynamics without Training</a></li>
+        <li><a href="#7-the-y-combinator-for-llms-solving-long-context-rot-with-λ-calculus">7. The Y-Combinator for LLMs: Solving Long-Context Rot with λ-Calculus</a></li>
+        <li><a href="#8-proactivebench-benchmarking-proactiveness-in-multimodal-large-language-models">8. ProactiveBench: Benchmarking Proactiveness in Multimodal Large Language Models</a></li>
+        <li><a href="#9-looprpt-reinforcement-pre-training-for-looped-language-models">9. LoopRPT: Reinforcement Pre-Training for Looped Language Models</a></li>
+        <li><a href="#10-cooperation-and-exploitation-in-llm-policy-synthesis-for-sequential-social-dilemmas">10. Cooperation and Exploitation in LLM Policy Synthesis for Sequential Social Dilemmas</a></li>
+        <li><a href="#11-agentds-technical-report-benchmarking-the-future-of-human-ai-collaboration-in-domain-specific-data-science">11. AgentDS Technical Report: Benchmarking the Future of Human-AI Collaboration in Domain-Specific Data Science</a></li>
+        <li><a href="#12-beaver-a-training-free-hierarchical-prompt-compression-method-via-structure-aware-page-selection">12. BEAVER: A Training-Free Hierarchical Prompt Compression Method via Structure-Aware Page Selection</a></li>
+        <li><a href="#13-astrolabe-steering-forward-process-reinforcement-learning-for-distilled-autoregressive-video-models">13. Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models</a></li>
+        <li><a href="#14-language-on-demand-knowledge-at-core-composing-llms-with-encoder-decoder-translation-models-for-extensible-multilinguality">14. Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality</a></li>
+        <li><a href="#15-lumosx-relate-any-identities-with-their-attributes-for-personalized-video-generation">15. LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents-3">🤖 AI Agents (3)</a>
+      <ol>
+        <li><a href="#1-relmxel-adaptive-rl-based-memory-controller-with-explainable-energy-and-latency-optimization">1. ReLMXEL: Adaptive RL-Based Memory Controller with Explainable Energy and Latency Optimization</a></li>
+        <li><a href="#2-human-ai-synergy-in-agentic-code-review">2. Human-AI Synergy in Agentic Code Review</a></li>
+        <li><a href="#3-worldagents-can-foundation-image-models-be-agents-for-3d-world-models">3. WorldAgents: Can Foundation Image Models be Agents for 3D World Models?</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注-15">🔍 其他值得关注 (15)</a>
+      <ol>
+        <li><a href="#1-from-masks-to-pixels-and-meaning-a-new-taxonomy-benchmark-and-metrics-for-vlm-image-tampering">1. From Masks to Pixels and Meaning: A New Taxonomy, Benchmark, and Metrics for VLM Image Tampering</a></li>
+        <li><a href="#2-automatic-detection-of-gen-ai-texts-a-comparative-framework-of-neural-models">2. Automatic detection of Gen-AI texts: A comparative framework of neural models</a></li>
+        <li><a href="#3-multiscale-switch-for-semi-supervised-and-contrastive-learning-in-medical-ultrasound-image-segmentation">3. Multiscale Switch for Semi-Supervised and Contrastive Learning in Medical Ultrasound Image Segmentation</a></li>
+        <li><a href="#4-reli3d-relightable-multi-view-3d-reconstruction-with-disentangled-illumination">4. ReLi3D: Relightable Multi-view 3D Reconstruction with Disentangled Illumination</a></li>
+        <li><a href="#5-droid-slam-in-the-wild">5. DROID-SLAM in the Wild</a></li>
+        <li><a href="#6-tapestry-from-geometry-to-appearance-via-consistent-turntable-videos">6. TAPESTRY: From Geometry to Appearance via Consistent Turntable Videos</a></li>
+        <li><a href="#7-terrascope-pixel-grounded-visual-reasoning-for-earth-observation">7. TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation</a></li>
+        <li><a href="#8-hopchain-multi-hop-data-synthesis-for-generalizable-vision-language-reasoning">8. HopChain: Multi-Hop Data Synthesis for Generalizable Vision-Language Reasoning</a></li>
+        <li><a href="#9-beyond-single-tokens-distilling-discrete-diffusion-models-via-discrete-mmd">9. Beyond Single Tokens: Distilling Discrete Diffusion Models via Discrete MMD</a></li>
+        <li><a href="#10-dreampartgen-semantically-grounded-part-level-3d-generation-via-collaborative-latent-denoising">10. DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising</a></li>
+      </ol>
+    </li>
+    <li><a href="#-附件">📁 附件</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-03-24/">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-24" height="687" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-03-24/cover.jpg" srcset="/zh-cn/p/daily-paper-2026-03-24/cover_hu_c476d54f9b8c9628.jpg 800w, /zh-cn/p/daily-paper-2026-03-24/cover.jpg 1200w" width="1200">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-03-24/">AI Paper Daily | 2026-03-24</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-03-24T00:00:00Z'>Mar 24, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-本日概览">📊 本日概览</a></li>
+    <li><a href="#-audio-llm-1">🎵 Audio LLM (1)</a>
+      <ol>
+        <li><a href="#1-himu-hierarchical-multimodal-frame-selection-for-long-video-question-answering">1. HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training-21">📚 LLM Training (21)</a>
+      <ol>
+        <li><a href="#1-breaking-the-capability-ceiling-of-llm-post-training-by-reintroducing-markov-states">1. Breaking the Capability Ceiling of LLM Post-Training by Reintroducing Markov States</a></li>
+        <li><a href="#2-adaptive-layerwise-perturbation-unifying-off-policy-corrections-for-llm-rl">2. Adaptive Layerwise Perturbation: Unifying Off-Policy Corrections for LLM RL</a></li>
+        <li><a href="#3-reasoning-as-compression-unifying-budget-forcing-via-the-conditional-information-bottleneck">3. Reasoning as Compression: Unifying Budget Forcing via the Conditional Information Bottleneck</a></li>
+        <li><a href="#4-probing-cultural-signals-in-large-language-models-through-author-profiling">4. Probing Cultural Signals in Large Language Models through Author Profiling</a></li>
+        <li><a href="#5-s2n-bignum-bench-a-practical-benchmark-for-evaluating-low-level-code-reasoning-of-llms">5. s2n-bignum-bench: A practical benchmark for evaluating low-level code reasoning of LLMs</a></li>
+        <li><a href="#6-versatile-editing-of-video-content-actions-and-dynamics-without-training">6. Versatile Editing of Video Content, Actions, and Dynamics without Training</a></li>
+        <li><a href="#7-the-y-combinator-for-llms-solving-long-context-rot-with-λ-calculus">7. The Y-Combinator for LLMs: Solving Long-Context Rot with λ-Calculus</a></li>
+        <li><a href="#8-proactivebench-benchmarking-proactiveness-in-multimodal-large-language-models">8. ProactiveBench: Benchmarking Proactiveness in Multimodal Large Language Models</a></li>
+        <li><a href="#9-looprpt-reinforcement-pre-training-for-looped-language-models">9. LoopRPT: Reinforcement Pre-Training for Looped Language Models</a></li>
+        <li><a href="#10-cooperation-and-exploitation-in-llm-policy-synthesis-for-sequential-social-dilemmas">10. Cooperation and Exploitation in LLM Policy Synthesis for Sequential Social Dilemmas</a></li>
+        <li><a href="#11-agentds-technical-report-benchmarking-the-future-of-human-ai-collaboration-in-domain-specific-data-science">11. AgentDS Technical Report: Benchmarking the Future of Human-AI Collaboration in Domain-Specific Data Science</a></li>
+        <li><a href="#12-beaver-a-training-free-hierarchical-prompt-compression-method-via-structure-aware-page-selection">12. BEAVER: A Training-Free Hierarchical Prompt Compression Method via Structure-Aware Page Selection</a></li>
+        <li><a href="#13-astrolabe-steering-forward-process-reinforcement-learning-for-distilled-autoregressive-video-models">13. Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models</a></li>
+        <li><a href="#14-language-on-demand-knowledge-at-core-composing-llms-with-encoder-decoder-translation-models-for-extensible-multilinguality">14. Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality</a></li>
+        <li><a href="#15-lumosx-relate-any-identities-with-their-attributes-for-personalized-video-generation">15. LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents-3">🤖 AI Agents (3)</a>
+      <ol>
+        <li><a href="#1-relmxel-adaptive-rl-based-memory-controller-with-explainable-energy-and-latency-optimization">1. ReLMXEL: Adaptive RL-Based Memory Controller with Explainable Energy and Latency Optimization</a></li>
+        <li><a href="#2-human-ai-synergy-in-agentic-code-review">2. Human-AI Synergy in Agentic Code Review</a></li>
+        <li><a href="#3-worldagents-can-foundation-image-models-be-agents-for-3d-world-models">3. WorldAgents: Can Foundation Image Models be Agents for 3D World Models?</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注-15">🔍 其他值得关注 (15)</a>
+      <ol>
+        <li><a href="#1-from-masks-to-pixels-and-meaning-a-new-taxonomy-benchmark-and-metrics-for-vlm-image-tampering">1. From Masks to Pixels and Meaning: A New Taxonomy, Benchmark, and Metrics for VLM Image Tampering</a></li>
+        <li><a href="#2-automatic-detection-of-gen-ai-texts-a-comparative-framework-of-neural-models">2. Automatic detection of Gen-AI texts: A comparative framework of neural models</a></li>
+        <li><a href="#3-multiscale-switch-for-semi-supervised-and-contrastive-learning-in-medical-ultrasound-image-segmentation">3. Multiscale Switch for Semi-Supervised and Contrastive Learning in Medical Ultrasound Image Segmentation</a></li>
+        <li><a href="#4-reli3d-relightable-multi-view-3d-reconstruction-with-disentangled-illumination">4. ReLi3D: Relightable Multi-view 3D Reconstruction with Disentangled Illumination</a></li>
+        <li><a href="#5-droid-slam-in-the-wild">5. DROID-SLAM in the Wild</a></li>
+        <li><a href="#6-tapestry-from-geometry-to-appearance-via-consistent-turntable-videos">6. TAPESTRY: From Geometry to Appearance via Consistent Turntable Videos</a></li>
+        <li><a href="#7-terrascope-pixel-grounded-visual-reasoning-for-earth-observation">7. TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation</a></li>
+        <li><a href="#8-hopchain-multi-hop-data-synthesis-for-generalizable-vision-language-reasoning">8. HopChain: Multi-Hop Data Synthesis for Generalizable Vision-Language Reasoning</a></li>
+        <li><a href="#9-beyond-single-tokens-distilling-discrete-diffusion-models-via-discrete-mmd">9. Beyond Single Tokens: Distilling Discrete Diffusion Models via Discrete MMD</a></li>
+        <li><a href="#10-dreampartgen-semantically-grounded-part-level-3d-generation-via-collaborative-latent-denoising">10. DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising</a></li>
+      </ol>
+    </li>
+    <li><a href="#-附件">📁 附件</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>自动抓取自 HuggingFace Daily Papers · 共收录 40 篇论文</p>
+
+    </blockquote>
+<hr>
+<h2 id="-本日概览">📊 本日概览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方向</th>
+          <th>论文数</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>🎵 Audio LLM</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>📚 LLM Training</td>
+          <td>21</td>
+      </tr>
+      <tr>
+          <td>🤖 AI Agents</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>🔍 其他值得关注</td>
+          <td>15</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-audio-llm-1">🎵 Audio LLM (1)
+</h2><h3 id="1-himu-hierarchical-multimodal-frame-selection-for-long-video-question-answering">1. HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.18558"  target="_blank" rel="noopener"
+    >2603.18558</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Long-form video question answering requires reasoning over extended temporal contexts, making frame selection critical for large vision-language models (LVLMs) bound by finite context windows. Existing methods face a sharp trade-off: similarity-based selectors are fast but collapse compositional queries into a single dense vector, losing sub-event ordering and cross-modal bindings; agent-based methods recover this structure through iterative LVLM inference, but at prohibitive cost. We introduce HiMu, a training-free framework that bridges this gap. A single text-only LLM call decomposes the query into a hierarchical logic tree whose leaves are atomic predicates, each routed to a lightweight expert spanning vision (CLIP, open-vocabulary detection, OCR) and audio (ASR, CLAP). The resulting signals are normalized, temporally smoothed to align different modalities, and composed bottom-up through fuzzy-logic operators that enforce temporal sequencing and adjacency, producing a continuous satisfaction curve. Evaluations on Video-MME, LongVideoBench and HERBench-Lite show that HiMu advances the efficiency-accuracy Pareto front: at 16 frames with Qwen3-VL 8B it outperforms all competing selectors, and with GPT-4o it surpasses agentic systems operating at 32-512 frames while requiring roughly 10x fewer FLOPs.</p>
+<hr>
+<h2 id="-llm-training-21">📚 LLM Training (21)
+</h2><h3 id="1-breaking-the-capability-ceiling-of-llm-post-training-by-reintroducing-markov-states">1. Breaking the Capability Ceiling of LLM Post-Training by Reintroducing Markov States
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19987"  target="_blank" rel="noopener"
+    >2603.19987</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Reinforcement learning (RL) has become a standard paradigm for post-training and aligning Large Language Models (LLMs), yet recent evidence suggests it faces a persistent &ldquo;capability ceiling&rdquo;: unlike classical RL systems that discover novel strategies, RL for LLMs often acts as a mere refiner of patterns already latent in pre-trained weights. In this work, we identify a fundamental structural bottleneck: while classical RL relies on compact, informative Markov states, current LLM post-training formulations are tethered to an ever-expanding history of actions.
+We revisit a classical principle long central to RL yet absent from LLM post-training: explicit Markov states. Theoretically, we provide rigorous guarantees demonstrating that leveraging estimated Markov states can significantly reduce sample complexity. Empirically, we show that introducing Markov states consistently breaks the performance boundaries of standard RL post-training across a suite of complex logic puzzles. Our findings suggest that moving beyond &ldquo;history-as-state&rdquo; modeling in favor of structured Markovian representations is essential for unlocking open-ended discovery and genuinely new reasoning capabilities in Generative AI.</p>
+<hr>
+<h3 id="2-adaptive-layerwise-perturbation-unifying-off-policy-corrections-for-llm-rl">2. Adaptive Layerwise Perturbation: Unifying Off-Policy Corrections for LLM RL
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19470"  target="_blank" rel="noopener"
+    >2603.19470</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Off-policy problems such as policy staleness and training-inference mismatch, has become a major bottleneck for training stability and further exploration for LLM RL. To enhance inference efficiency, the distribution gap between the inference and updated policy grows, leading to heavy-tailed importance ratios. Heavy-tailed ratios arise when the policy is locally sharp, which further inflates sharp gradients and can push updates outside the trust region. To address this, we propose Adaptive Layerwise Perturbation(ALP) by injecting small learnable perturbations into input hidden states of each layer during updates, which is used as the numerator of the importance ratio against the unchanged inference policy in the objective. Intuitively, by adding controlled noise to intermediate representations, ALP prevents the updated policy from deviating too sharply from the inference policy, and enlarges the policy family to cover the inference policy family with mismatch noises. Hence, the flattened distribution can naturally tighten the updated and inference policy gap and reduce the tail of importance ratios, thus maintaining training stability. This is further validated empirically. Experiments on single-turn math and multi-turn tool-integrated reasoning tasks show that ALP not only improves final performance, but also avoid blow up of importance ratio tail and KL spikes during iterative training, along with boosted exploration. Ablations show that representation-level perturbations across all layers are most effective, substantially outperforming partial-layer and logits-only variants.</p>
+<hr>
+<h3 id="3-reasoning-as-compression-unifying-budget-forcing-via-the-conditional-information-bottleneck">3. Reasoning as Compression: Unifying Budget Forcing via the Conditional Information Bottleneck
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.08462"  target="_blank" rel="noopener"
+    >2603.08462</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Chain-of-Thought (CoT) prompting improves LLM accuracy on complex tasks but often increases token usage and inference cost. Existing &ldquo;Budget Forcing&rdquo; methods reducing cost via fine-tuning with heuristic length penalties, suppress both essential reasoning and redundant filler. We recast efficient reasoning as a lossy compression problem under the Information Bottleneck (IB) principle, and identify a key theoretical gap when applying naive IB to transformers: attention violates the Markov property between prompt, reasoning trace, and response. To resolve this issue, we model CoT generation under the Conditional Information Bottleneck (CIB) principle, where the reasoning trace Z acts as a computational bridge that contains only the information about the response Y that is not directly accessible from the prompt X. This yields a general Reinforcement Learning objective: maximize task reward while compressing completions under a prior over reasoning traces, subsuming common heuristics (e.g., length penalties) as special cases (e.g., uniform priors). In contrast to naive token-counting-based approaches, we introduce a semantic prior that measures token cost by surprisal under a language model prior. Empirically, our CIB objective prunes cognitive bloat while preserving fluency and logic, improving accuracy at moderate compression and enabling aggressive compression with minimal accuracy drop.</p>
+<hr>
+<h3 id="4-probing-cultural-signals-in-large-language-models-through-author-profiling">4. Probing Cultural Signals in Large Language Models through Author Profiling
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.16749"  target="_blank" rel="noopener"
+    >2603.16749</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Large language models (LLMs) are increasingly deployed in applications with societal impact, raising concerns about the cultural biases they encode. We probe these representations by evaluating whether LLMs can perform author profiling from song lyrics in a zero-shot setting, inferring singers&rsquo; gender and ethnicity without task-specific fine-tuning. Across several open-source models evaluated on more than 10,000 lyrics, we find that LLMs achieve non-trivial profiling performance but demonstrate systematic cultural alignment: most models default toward North American ethnicity, while DeepSeek-1.5B aligns more strongly with Asian ethnicity. This finding emerges from both the models&rsquo; prediction distributions and an analysis of their generated rationales. To quantify these disparities, we introduce two fairness metrics, Modality Accuracy Divergence (MAD) and Recall Divergence (RD), and show that Ministral-8B displays the strongest ethnicity bias among the evaluated models, whereas Gemma-12B shows the most balanced behavior. Our code is available on GitHub (<a class="link" href="https://github.com/ValentinLafargue/CulturalProbingLLM%29"  target="_blank" rel="noopener"
+    >https://github.com/ValentinLafargue/CulturalProbingLLM)</a>.</p>
+<hr>
+<h3 id="5-s2n-bignum-bench-a-practical-benchmark-for-evaluating-low-level-code-reasoning-of-llms">5. s2n-bignum-bench: A practical benchmark for evaluating low-level code reasoning of LLMs
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.14628"  target="_blank" rel="noopener"
+    >2603.14628</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Neurosymbolic approaches leveraging Large Language Models (LLMs) with formal methods have recently achieved strong results on mathematics-oriented theorem-proving benchmarks. However, success on competition-style mathematics does not by itself demonstrate the ability to construct proofs about real-world implementations. We address this gap with a benchmark derived from an industrial cryptographic library whose assembly routines are already verified in HOL Light. s2n-bignum is a library used at AWS for providing fast assembly routines for cryptography, and its correctness is established by formal verification. The task of formally verifying this library has been a significant achievement for the Automated Reasoning Group. It involved two tasks: (1) precisely specifying the correct behavior of a program as a mathematical proposition, and (2) proving that the proposition is correct. In the case of s2n-bignum, both tasks were carried out by human experts. In s2n-bignum-bench, we provide the formal specification and ask the LLM to generate a proof script that is accepted by HOL Light within a fixed proof-check timeout. To our knowledge, s2n-bignum-bench is the first public benchmark focused on machine-checkable proof synthesis for industrial low-level cryptographic assembly routines in HOL Light. This benchmark provides a challenging and practically relevant testbed for evaluating LLM-based theorem proving beyond competition mathematics. The code to set up and use the benchmark is available here: <a class="link" href="https://github.com/kings-crown/s2n-bignum-bench%7bs2n-bignum-bench%7d"  target="_blank" rel="noopener"
+    >https://github.com/kings-crown/s2n-bignum-bench{s2n-bignum-bench}</a>.</p>
+<hr>
+<h3 id="6-versatile-editing-of-video-content-actions-and-dynamics-without-training">6. Versatile Editing of Video Content, Actions, and Dynamics without Training
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.17989"  target="_blank" rel="noopener"
+    >2603.17989</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Controlled video generation has seen drastic improvements in recent years. However, editing actions and dynamic events, or inserting contents that should affect the behaviors of other objects in real-world videos, remains a major challenge. Existing trained models struggle with complex edits, likely due to the difficulty of collecting relevant training data. Similarly, existing training-free methods are inherently restricted to structure- and motion-preserving edits and do not support modification of motion or interactions. Here, we introduce DynaEdit, a training-free editing method that unlocks versatile video editing capabilities with pretrained text-to-video flow models. Our method relies on the recently introduced inversion-free approach, which does not intervene in the model internals, and is thus model-agnostic. We show that naively attempting to adapt this approach to general unconstrained editing results in severe low-frequency misalignment and high-frequency jitter. We explain the sources for these phenomena and introduce novel mechanisms for overcoming them. Through extensive experiments, we show that DynaEdit achieves state-of-the-art results on complex text-based video editing tasks, including modifying actions, inserting objects that interact with the scene, and introducing global effects.</p>
+<hr>
+<h3 id="7-the-y-combinator-for-llms-solving-long-context-rot-with-λ-calculus">7. The Y-Combinator for LLMs: Solving Long-Context Rot with λ-Calculus
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.20105"  target="_blank" rel="noopener"
+    >2603.20105</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> LLMs are increasingly used as general-purpose reasoners, but long inputs remain bottlenecked by a fixed context window. Recursive Language Models (RLMs) address this by externalising the prompt and recursively solving subproblems. Yet existing RLMs depend on an open-ended read-eval-print loop (REPL) in which the model generates arbitrary control code, making execution difficult to verify, predict, and analyse.
+We introduce λ-RLM, a framework for long-context reasoning that replaces free-form recursive code generation with a typed functional runtime grounded in λ-calculus. It executes a compact library of pre-verified combinators and uses neural inference only on bounded leaf subproblems, turning recursive reasoning into a structured functional program with explicit control flow. We show that λ-RLM admits formal guarantees absent from standard RLMs, including termination, closed-form cost bounds, controlled accuracy scaling with recursion depth, and an optimal partition rule under a simple cost model. Empirically, across four long-context reasoning tasks and nine base models, λ-RLM outperforms standard RLM in 29 of 36 model-task comparisons, improves average accuracy by up to +21.9 points across model tiers, and reduces latency by up to 4.1x. These results show that typed symbolic control yields a more reliable and efficient foundation for long-context reasoning than open-ended recursive code generation. The complete implementation of λ-RLM, is open-sourced for the community at: <a class="link" href="https://github.com/lambda-calculus-LLM/lambda-RLM"  target="_blank" rel="noopener"
+    >https://github.com/lambda-calculus-LLM/lambda-RLM</a>.</p>
+<hr>
+<h3 id="8-proactivebench-benchmarking-proactiveness-in-multimodal-large-language-models">8. ProactiveBench: Benchmarking Proactiveness in Multimodal Large Language Models
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19466"  target="_blank" rel="noopener"
+    >2603.19466</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Effective collaboration begins with knowing when to ask for help. For example, when trying to identify an occluded object, a human would ask someone to remove the obstruction. Can MLLMs exhibit a similar &ldquo;proactive&rdquo; behavior by requesting simple user interventions? To investigate this, we introduce ProactiveBench, a benchmark built from seven repurposed datasets that tests proactiveness across different tasks such as recognizing occluded objects, enhancing image quality, and interpreting coarse sketches. We evaluate 22 MLLMs on ProactiveBench, showing that (i) they generally lack proactiveness; (ii) proactiveness does not correlate with model capacity; (iii) &ldquo;hinting&rdquo; at proactiveness yields only marginal gains. Surprisingly, we found that conversation histories and in-context learning introduce negative biases, hindering performance. Finally, we explore a simple fine-tuning strategy based on reinforcement learning: its results suggest that proactiveness can be learned, even generalizing to unseen scenarios. We publicly release ProactiveBench as a first step toward building proactive multimodal models.</p>
+<hr>
+<h3 id="9-looprpt-reinforcement-pre-training-for-looped-language-models">9. LoopRPT: Reinforcement Pre-Training for Looped Language Models
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19714"  target="_blank" rel="noopener"
+    >2603.19714</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Looped language models (LoopLMs) perform iterative latent computation to refine internal representations, offering a promising alternative to explicit chain-of-thought (CoT) reasoning. However, existing reinforcement learning (RL) paradigms primarily target output tokens, creating a structural mismatch with looped architectures whose reasoning unfolds implicitly. In this work, we propose LoopRPT, a reinforcement pre-training framework tailored for LoopLMs. By reframing next-token prediction as a next-token reasoning task, LoopRPT assigns reinforcement signals directly to latent steps using an EMA teacher reference and noisy latent rollouts. This formulation enables RL to directly shape intermediate representations, compressing effective reasoning into fewer iterations. We instantiate LoopRPT on the Ouro architecture across multiple model scales. Results demonstrate that LoopRPT consistently improves per-step representation quality, achieving Pareto dominance in accuracy-computation trade-offs. Notably, significant gains on hard tokens indicate that LoopRPT enhances early-stage reasoning rather than merely encouraging premature exits. Our findings highlight reinforcement pre-training as a principled paradigm for learning efficient latent reasoning in LoopLMs.</p>
+<hr>
+<h3 id="10-cooperation-and-exploitation-in-llm-policy-synthesis-for-sequential-social-dilemmas">10. Cooperation and Exploitation in LLM Policy Synthesis for Sequential Social Dilemmas
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19453"  target="_blank" rel="noopener"
+    >2603.19453</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> We study LLM policy synthesis: using a large language model to iteratively generate programmatic agent policies for multi-agent environments. Rather than training neural policies via reinforcement learning, our framework prompts an LLM to produce Python policy functions, evaluates them in self-play, and refines them using performance feedback across iterations. We investigate feedback engineering (the design of what evaluation information is shown to the LLM during refinement) comparing sparse feedback (scalar reward only) against dense feedback (reward plus social metrics: efficiency, equality, sustainability, peace). Across two canonical Sequential Social Dilemmas (Gathering and Cleanup) and two frontier LLMs (Claude Sonnet 4.6, Gemini 3.1 Pro), dense feedback consistently matches or exceeds sparse feedback on all metrics. The advantage is largest in the Cleanup public goods game, where providing social metrics helps the LLM calibrate the costly cleaning-harvesting tradeoff. Rather than triggering over-optimization of fairness, social metrics serve as a coordination signal that guides the LLM toward more effective cooperative strategies, including territory partitioning, adaptive role assignment, and the avoidance of wasteful aggression. We further perform an adversarial experiment to determine whether LLMs can reward hack these environments. We characterize five attack classes and discuss mitigations, highlighting an inherent tension in LLM policy synthesis between expressiveness and safety.
+Code at <a class="link" href="https://github.com/vicgalle/llm-policies-social-dilemmas"  target="_blank" rel="noopener"
+    >https://github.com/vicgalle/llm-policies-social-dilemmas</a>.</p>
+<hr>
+<h3 id="11-agentds-technical-report-benchmarking-the-future-of-human-ai-collaboration-in-domain-specific-data-science">11. AgentDS Technical Report: Benchmarking the Future of Human-AI Collaboration in Domain-Specific Data Science
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19005"  target="_blank" rel="noopener"
+    >2603.19005</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Data science plays a critical role in transforming complex data into actionable insights across numerous domains. Recent developments in large language models (LLMs) and artificial intelligence (AI) agents have significantly automated data science workflow. However, it remains unclear to what extent AI agents can match the performance of human experts on domain-specific data science tasks, and in which aspects human expertise continues to provide advantages. We introduce AgentDS, a benchmark and competition designed to evaluate both AI agents and human-AI collaboration performance in domain-specific data science. AgentDS consists of 17 challenges across six industries: commerce, food production, healthcare, insurance, manufacturing, and retail banking. We conducted an open competition involving 29 teams and 80 participants, enabling systematic comparison between human-AI collaborative approaches and AI-only baselines. Our results show that current AI agents struggle with domain-specific reasoning. AI-only baselines perform near or below the median of competition participants, while the strongest solutions arise from human-AI collaboration. These findings challenge the narrative of complete automation by AI and underscore the enduring importance of human expertise in data science, while illuminating directions for the next generation of AI. Visit the AgentDS website here: <a class="link" href="https://agentds.org/"  target="_blank" rel="noopener"
+    >https://agentds.org/</a> and open source datasets here: <a class="link" href="https://huggingface.co/datasets/lainmn/AgentDS"  target="_blank" rel="noopener"
+    >https://huggingface.co/datasets/lainmn/AgentDS</a> .</p>
+<hr>
+<h3 id="12-beaver-a-training-free-hierarchical-prompt-compression-method-via-structure-aware-page-selection">12. BEAVER: A Training-Free Hierarchical Prompt Compression Method via Structure-Aware Page Selection
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19635"  target="_blank" rel="noopener"
+    >2603.19635</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> The exponential expansion of context windows in LLMs has unlocked capabilities for long-document understanding but introduced severe bottlenecks in inference latency and information utilization. Existing compression methods often suffer from high training costs or semantic fragmentation due to aggressive token pruning. In this paper, we propose BEAVER, a novel training-free framework that shifts compression from linear token removal to structure-aware hierarchical selection. BEAVER maximizes hardware parallelism by mapping variable-length contexts into dense page-level tensors via dual-path pooling, and preserves discourse integrity through a hybrid planner combining semantic and lexical dual-branch selection with sentence smoothing. Extensive evaluations on four long-context benchmarks demonstrate that BEAVER achieves comparable performance to state-of-the-art (SOTA) methods like LongLLMLingua. Notably, on the RULER benchmark, BEAVER maintains high fidelity in multi-needle retrieval where baselines deteriorate. Regarding efficiency, BEAVER reduces latency by 26.4x on 128k contexts, offering a scalable solution for high-throughput applications. Our code is available at <a class="link" href="https://cslikai.cn/BEAVER/"  target="_blank" rel="noopener"
+    >https://cslikai.cn/BEAVER/</a>.</p>
+<hr>
+<h3 id="13-astrolabe-steering-forward-process-reinforcement-learning-for-distilled-autoregressive-video-models">13. Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.17051"  target="_blank" rel="noopener"
+    >2603.17051</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Distilled autoregressive (AR) video models enable efficient streaming generation but frequently misalign with human visual preferences. Existing reinforcement learning (RL) frameworks are not naturally suited to these architectures, typically requiring either expensive re-distillation or solver-coupled reverse-process optimization that introduces considerable memory and computational overhead. We present Astrolabe, an efficient online RL framework tailored for distilled AR models. To overcome existing bottlenecks, we introduce a forward-process RL formulation based on negative-aware fine-tuning. By contrasting positive and negative samples directly at inference endpoints, this approach establishes an implicit policy improvement direction without requiring reverse-process unrolling. To scale this alignment to long videos, we propose a streaming training scheme that generates sequences progressively via a rolling KV-cache, applying RL updates exclusively to local clip windows while conditioning on prior context to ensure long-range coherence. Finally, to mitigate reward hacking, we integrate a multi-reward objective stabilized by uncertainty-aware selective regularization and dynamic reference updates. Extensive experiments demonstrate that our method consistently enhances generation quality across multiple distilled AR video models, serving as a robust and scalable alignment solution.</p>
+<hr>
+<h3 id="14-language-on-demand-knowledge-at-core-composing-llms-with-encoder-decoder-translation-models-for-extensible-multilinguality">14. Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.17512"  target="_blank" rel="noopener"
+    >2603.17512</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Large language models (LLMs) exhibit strong general intelligence, yet their multilingual performance remains highly imbalanced. Although LLMs encode substantial cross-lingual knowledge in a unified semantic space, they often struggle to reliably interface this knowledge with low-resource or unseen languages. Fortunately, pretrained encoder-decoder translation models already possess balanced multilingual capability, suggesting a natural complement to LLMs. In this work, we propose XBridge, a compositional encoder-LLM-decoder architecture that offloads multilingual understanding and generation to external pretrained translation models, while preserving the LLM as an English-centric core for general knowledge processing. To address the resulting representation misalignment across models, we introduce lightweight cross-model mapping layers and an optimal transport-based alignment objective, enabling fine-grained semantic consistency for multilingual generation. Experiments on four LLMs across multilingual understanding, reasoning, summarization, and generation indicate that XBridge outperforms strong baselines, especially on low-resource and previously unseen languages, without retraining the LLM.</p>
+<hr>
+<h3 id="15-lumosx-relate-any-identities-with-their-attributes-for-personalized-video-generation">15. LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.20192"  target="_blank" rel="noopener"
+    >2603.20192</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Recent advances in diffusion models have significantly improved text-to-video generation, enabling personalized content creation with fine-grained control over both foreground and background elements. However, precise face-attribute alignment across subjects remains challenging, as existing methods lack explicit mechanisms to ensure intra-group consistency. Addressing this gap requires both explicit modeling strategies and face-attribute-aware data resources. We therefore propose LumosX, a framework that advances both data and model design. On the data side, a tailored collection pipeline orchestrates captions and visual cues from independent videos, while multimodal large language models (MLLMs) infer and assign subject-specific dependencies. These extracted relational priors impose a finer-grained structure that amplifies the expressive control of personalized video generation and enables the construction of a comprehensive benchmark. On the modeling side, Relational Self-Attention and Relational Cross-Attention intertwine position-aware embeddings with refined attention dynamics to inscribe explicit subject-attribute dependencies, enforcing disciplined intra-group cohesion and amplifying the separation between distinct subject clusters. Comprehensive evaluations on our benchmark demonstrate that LumosX achieves state-of-the-art performance in fine-grained, identity-consistent, and semantically aligned personalized multi-subject video generation. Code and models are available at <a class="link" href="https://jiazheng-xing.github.io/lumosx-home/"  target="_blank" rel="noopener"
+    >https://jiazheng-xing.github.io/lumosx-home/</a>.</p>
+<hr>
+<p><em>&hellip; 还有 6 篇 LLM Training 论文，详见 filtered_papers.json</em></p>
+<h2 id="-ai-agents-3">🤖 AI Agents (3)
+</h2><h3 id="1-relmxel-adaptive-rl-based-memory-controller-with-explainable-energy-and-latency-optimization">1. ReLMXEL: Adaptive RL-Based Memory Controller with Explainable Energy and Latency Optimization
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.17309"  target="_blank" rel="noopener"
+    >2603.17309</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Reducing latency and energy consumption is critical to improving the efficiency of memory systems in modern computing. This work introduces ReLMXEL (Reinforcement Learning for Memory Controller with Explainable Energy and Latency Optimization), a explainable multi-agent online reinforcement learning framework that dynamically optimizes memory controller parameters using reward decomposition. ReLMXEL operates within the memory controller, leveraging detailed memory behavior metrics to guide decision-making. Experimental evaluations across diverse workloads demonstrate consistent performance gains over baseline configurations, with refinements driven by workload-specific memory access behaviour. By incorporating explainability into the learning process, ReLMXEL not only enhances performance but also increases the transparency of control decisions, paving the way for more accountable and adaptive memory system designs.</p>
+<hr>
+<h3 id="2-human-ai-synergy-in-agentic-code-review">2. Human-AI Synergy in Agentic Code Review
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.15911"  target="_blank" rel="noopener"
+    >2603.15911</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Code review is a critical software engineering practice where developers review code changes before integration to ensure code quality, detect defects, and improve maintainability. In recent years, AI agents that can understand code context, plan review actions, and interact with development environments have been increasingly integrated into the code review process. However, there is limited empirical evidence to compare the effectiveness of AI agents and human reviewers in collaborative workflows. To address this gap, we conduct a large-scale empirical analysis of 278,790 code review conversations across 300 open-source GitHub projects. In our study, we aim to compare the feedback differences provided by human reviewers and AI agents. We investigate human-AI collaboration patterns in review conversations to understand how interaction shapes review outcomes. Moreover, we analyze the adoption of code suggestions provided by human reviewers and AI agents into the codebase and how adopted suggestions change code quality. We find that human reviewers provide additional feedback than AI agents, including understanding, testing, and knowledge transfer. Human reviewers exchange 11.8% more rounds when reviewing AI-generated code than human-written code. Moreover, code suggestions made by AI agents are adopted into the codebase at a significantly lower rate than suggestions proposed by human reviewers. Over half of unadopted suggestions from AI agents are either incorrect or addressed through alternative fixes by developers. When adopted, suggestions provided by AI agents produce significantly larger increases in code complexity and code size than suggestions provided by human reviewers. Our findings suggest that while AI agents can scale defect screening, human oversight remains critical for ensuring suggestion quality and providing contextual feedback that AI agents lack.</p>
+<hr>
+<h3 id="3-worldagents-can-foundation-image-models-be-agents-for-3d-world-models">3. WorldAgents: Can Foundation Image Models be Agents for 3D World Models?
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19708"  target="_blank" rel="noopener"
+    >2603.19708</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Given the remarkable ability of 2D foundation image models to generate high-fidelity outputs, we investigate a fundamental question: do 2D foundation image models inherently possess 3D world model capabilities? To answer this, we systematically evaluate multiple state-of-the-art image generation models and Vision-Language Models (VLMs) on the task of 3D world synthesis. To harness and benchmark their potential implicit 3D capability, we propose an agentic framing to facilitate 3D world generation. Our approach employs a multi-agent architecture: a VLM-based director that formulates prompts to guide image synthesis, a generator that synthesizes new image views, and a VLM-backed two-step verifier that evaluates and selectively curates generated frames from both 2D image and 3D reconstruction space. Crucially, we demonstrate that our agentic approach provides coherent and robust 3D reconstruction, producing output scenes that can be explored by rendering novel views. Through extensive experiments across various foundation models, we demonstrate that 2D models do indeed encapsulate a grasp of 3D worlds. By exploiting this understanding, our method successfully synthesizes expansive, realistic, and 3D-consistent worlds.</p>
+<hr>
+<h2 id="-其他值得关注-15">🔍 其他值得关注 (15)
+</h2><h3 id="1-from-masks-to-pixels-and-meaning-a-new-taxonomy-benchmark-and-metrics-for-vlm-image-tampering">1. From Masks to Pixels and Meaning: A New Taxonomy, Benchmark, and Metrics for VLM Image Tampering
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.20193"  target="_blank" rel="noopener"
+    >2603.20193</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Existing tampering detection benchmarks largely rely on object masks, which severely misalign with the true edit signal: many pixels inside a mask are untouched or only trivially modified, while subtle yet consequential edits outside the mask are treated as natural. We reformulate VLM image tampering from coarse region labels to a pixel-grounded, meaning and language-aware task. First, we introduce a taxonomy spanning edit primitives (replace/remove/splice/inpaint/attribute/colorization, etc.) and their semantic class of tampered object, linking low-level changes to high-level understanding. Second, we release a new benchmark with per-pixel tamper maps and paired category supervision to evaluate detection and classification within a unified protocol. Third, we propose a training framework and evaluation metrics that quantify pixel-level correctness with localization to assess confidence or prediction on true edit intensity, and further measure tamper meaning understanding via semantics-aware classification and natural language descriptions for the predicted regions. We also re-evaluate the existing strong segmentation/localization baselines on recent strong tamper detectors and reveal substantial over- and under-scoring using mask-only metrics, and expose failure modes on micro-edits and off-mask changes. Our framework advances the field from masks to pixels, meanings and language descriptions, establishing a rigorous standard for tamper localization, semantic classification and description. Code and benchmark data are available at <a class="link" href="https://github.com/VILA-Lab/PIXAR"  target="_blank" rel="noopener"
+    >https://github.com/VILA-Lab/PIXAR</a>.</p>
+<hr>
+<h3 id="2-automatic-detection-of-gen-ai-texts-a-comparative-framework-of-neural-models">2. Automatic detection of Gen-AI texts: A comparative framework of neural models
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.18750"  target="_blank" rel="noopener"
+    >2603.18750</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> The rapid proliferation of Large Language Models has significantly increased the difficulty of distinguishing between human-written and AI generated texts, raising critical issues across academic, editorial, and social domains. This paper investigates the problem of AI generated text detection through the design, implementation, and comparative evaluation of multiple machine learning based detectors. Four neural architectures are developed and analyzed: a Multilayer Perceptron, a one-dimensional Convolutional Neural Network, a MobileNet-based CNN, and a Transformer model. The proposed models are benchmarked against widely used online detectors, including ZeroGPT, GPTZero, QuillBot, Originality.AI, Sapling, IsGen, Rephrase, and Writer. Experiments are conducted on the COLING Multilingual Dataset, considering both English and Italian configurations, as well as on an original thematic dataset focused on Art and Mental Health. Results show that supervised detectors achieve more stable and robust performance than commercial tools across different languages and domains, highlighting key strengths and limitations of current detection strategies.</p>
+<hr>
+<h3 id="3-multiscale-switch-for-semi-supervised-and-contrastive-learning-in-medical-ultrasound-image-segmentation">3. Multiscale Switch for Semi-Supervised and Contrastive Learning in Medical Ultrasound Image Segmentation
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.18655"  target="_blank" rel="noopener"
+    >2603.18655</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Medical ultrasound image segmentation faces significant challenges due to limited labeled data and characteristic imaging artifacts including speckle noise and low-contrast boundaries. While semi-supervised learning (SSL) approaches have emerged to address data scarcity, existing methods suffer from suboptimal unlabeled data utilization and lack robust feature representation mechanisms. In this paper, we propose Switch, a novel SSL framework with two key innovations: (1) Multiscale Switch (MSS) strategy that employs hierarchical patch mixing to achieve uniform spatial coverage; (2) Frequency Domain Switch (FDS) with contrastive learning that performs amplitude switching in Fourier space for robust feature representations. Our framework integrates these components within a teacher-student architecture to effectively leverage both labeled and unlabeled data. Comprehensive evaluation across six diverse ultrasound datasets (lymph nodes, breast lesions, thyroid nodules, and prostate) demonstrates consistent superiority over state-of-the-art methods. At 5% labeling ratio, Switch achieves remarkable improvements: 80.04% Dice on LN-INT, 85.52% Dice on DDTI, and 83.48% Dice on Prostate datasets, with our semi-supervised approach even exceeding fully supervised baselines. The method maintains parameter efficiency (1.8M parameters) while delivering superior performance, validating its effectiveness for resource-constrained medical imaging applications. The source code is publicly available at <a class="link" href="https://github.com/jinggqu/Switch"  target="_blank" rel="noopener"
+    >https://github.com/jinggqu/Switch</a></p>
+<hr>
+<h3 id="4-reli3d-relightable-multi-view-3d-reconstruction-with-disentangled-illumination">4. ReLi3D: Relightable Multi-view 3D Reconstruction with Disentangled Illumination
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19753"  target="_blank" rel="noopener"
+    >2603.19753</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Reconstructing 3D assets from images has long required separate pipelines for geometry reconstruction, material estimation, and illumination recovery, each with distinct limitations and computational overhead. We present ReLi3D, the first unified end-to-end pipeline that simultaneously reconstructs complete 3D geometry, spatially-varying physically-based materials, and environment illumination from sparse multi-view images in under one second. Our key insight is that multi-view constraints can dramatically improve material and illumination disentanglement, a problem that remains fundamentally ill-posed for single-image methods. Key to our approach is the fusion of the multi-view input via a transformer cross-conditioning architecture, followed by a novel unified two-path prediction strategy. The first path predicts the object&rsquo;s structure and appearance, while the second path predicts the environment illumination from image background or object reflections. This, combined with a differentiable Monte Carlo multiple importance sampling renderer, creates an optimal illumination disentanglement training pipeline. In addition, with our mixed domain training protocol, which combines synthetic PBR datasets with real-world RGB captures, we establish generalizable results in geometry, material accuracy, and illumination quality. By unifying previously separate reconstruction tasks into a single feed-forward pass, we enable near-instantaneous generation of complete, relightable 3D assets. Project Page: <a class="link" href="https://reli3d.jdihlmann.com/"  target="_blank" rel="noopener"
+    >https://reli3d.jdihlmann.com/</a></p>
+<hr>
+<h3 id="5-droid-slam-in-the-wild">5. DROID-SLAM in the Wild
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19076"  target="_blank" rel="noopener"
+    >2603.19076</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> We present a robust, real-time RGB SLAM system that handles dynamic environments by leveraging differentiable Uncertainty-aware Bundle Adjustment. Traditional SLAM methods typically assume static scenes, leading to tracking failures in the presence of motion. Recent dynamic SLAM approaches attempt to address this challenge using predefined dynamic priors or uncertainty-aware mapping, but they remain limited when confronted with unknown dynamic objects or highly cluttered scenes where geometric mapping becomes unreliable. In contrast, our method estimates per-pixel uncertainty by exploiting multi-view visual feature inconsistency, enabling robust tracking and reconstruction even in real-world environments. The proposed system achieves state-of-the-art camera poses and scene geometry in cluttered dynamic scenarios while running in real time at around 10 FPS. Code and datasets are available at <a class="link" href="https://github.com/MoyangLi00/DROID-W.git"  target="_blank" rel="noopener"
+    >https://github.com/MoyangLi00/DROID-W.git</a>.</p>
+<hr>
+<h3 id="6-tapestry-from-geometry-to-appearance-via-consistent-turntable-videos">6. TAPESTRY: From Geometry to Appearance via Consistent Turntable Videos
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.17735"  target="_blank" rel="noopener"
+    >2603.17735</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Automatically generating photorealistic and self-consistent appearances for untextured 3D models is a critical challenge in digital content creation. The advancement of large-scale video generation models offers a natural approach: directly synthesizing 360-degree turntable videos (TTVs), which can serve not only as high-quality dynamic previews but also as an intermediate representation to drive texture synthesis and neural rendering. However, existing general-purpose video diffusion models struggle to maintain strict geometric consistency and appearance stability across the full range of views, making their outputs ill-suited for high-quality 3D reconstruction. To this end, we introduce TAPESTRY, a framework for generating high-fidelity TTVs conditioned on explicit 3D geometry. We reframe the 3D appearance generation task as a geometry-conditioned video diffusion problem: given a 3D mesh, we first render and encode multi-modal geometric features to constrain the video generation process with pixel-level precision, thereby enabling the creation of high-quality and consistent TTVs. Building upon this, we also design a method for downstream reconstruction tasks from the TTV input, featuring a multi-stage pipeline with 3D-Aware Inpainting. By rotating the model and performing a context-aware secondary generation, this pipeline effectively completes self-occluded regions to achieve full surface coverage. The videos generated by TAPESTRY are not only high-quality dynamic previews but also serve as a reliable, 3D-aware intermediate representation that can be seamlessly back-projected into UV textures or used to supervise neural rendering methods like 3DGS. This enables the automated creation of production-ready, complete 3D assets from untextured meshes. Experimental results demonstrate that our method outperforms existing approaches in both video consistency and final reconstruction quality.</p>
+<hr>
+<h3 id="7-terrascope-pixel-grounded-visual-reasoning-for-earth-observation">7. TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19039"  target="_blank" rel="noopener"
+    >2603.19039</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Vision-language models (VLMs) have shown promise in earth observation (EO), yet they struggle with tasks that require grounding complex spatial reasoning in precise pixel-level visual representations. To address this problem, we introduce TerraScope, a unified VLM that delivers pixel-grounded geospatial reasoning with two key capabilities: (1) modality-flexible reasoning: it handles single-modality inputs (optical or SAR) and adaptively fuses different modalities into the reasoning process when both are available; (2) multi-temporal reasoning: it integrates temporal sequences for change analysis across multiple time points. In addition, we curate Terra-CoT, a large-scale dataset containing 1 million samples with pixel-level masks embedded in reasoning chains across multiple sources. We also propose TerraScope-Bench, the first benchmark for pixel-grounded geospatial reasoning with six sub-tasks that evaluates both answer accuracy and mask quality to ensure authentic pixel-grounded reasoning. Experiments show that TerraScope significantly outperforms existing VLMs on pixel-grounded geospatial reasoning while providing interpretable visual evidence.</p>
+<hr>
+<h3 id="8-hopchain-multi-hop-data-synthesis-for-generalizable-vision-language-reasoning">8. HopChain: Multi-Hop Data Synthesis for Generalizable Vision-Language Reasoning
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.17024"  target="_blank" rel="noopener"
+    >2603.17024</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> VLMs show strong multimodal capabilities, but they still struggle with fine-grained vision-language reasoning. We find that long CoT reasoning exposes diverse failure modes, including perception, reasoning, knowledge, and hallucination errors, which can compound across intermediate steps. However, most existing vision-language data used for RLVR does not involve complex reasoning chains that rely on visual evidence throughout, leaving these weaknesses largely unexposed. We therefore propose HopChain, a scalable framework for synthesizing multi-hop vision-language reasoning data specifically for RLVR training of VLMs. Each synthesized multi-hop query forms a logically dependent chain of instance-grounded hops, where earlier hops establish the instances, sets, or conditions needed for later hops, while the final answer remains a specific, unambiguous number suitable for verifiable rewards. We add the multi-hop data synthesized by HopChain to the original RLVR data used to train Qwen3.5-35B-A3B and Qwen3.5-397B-A17B, and compare against RLVR on the original RLVR data alone across 24 benchmarks spanning STEM and Puzzle, General VQA, Text Recognition and Document Understanding, and Video Understanding. Although this multi-hop data is not synthesized to target any specific benchmark, adding it improves 20 out of 24 benchmarks on both models, indicating broad and generalizable gains. To demonstrate that full chained queries are important, we replace them with half-multi-hop or single-hop variants, reducing the 24-benchmark average accuracy by 5.3 and 7.0 points, respectively. Multi-hop training also strengthens long-CoT vision-language reasoning, with gains peaking at more than 50 accuracy points in the ultra-long-CoT regime. These experiments establish HopChain as an effective, scalable framework for synthesizing multi-hop data that improves generalizable vision-language reasoning.</p>
+<hr>
+<h3 id="9-beyond-single-tokens-distilling-discrete-diffusion-models-via-discrete-mmd">9. Beyond Single Tokens: Distilling Discrete Diffusion Models via Discrete MMD
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.20155"  target="_blank" rel="noopener"
+    >2603.20155</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> It is currently difficult to distill discrete diffusion models. In contrast, continuous diffusion literature has many distillation approaches methods that can reduce sampling steps to a handful.
+Our method, Discrete Moment Matching Distillation (D-MMD), leverages ideas that have been highly successful in the continuous domain. Whereas previous discrete distillation methods collapse, D-MMD maintains high quality and diversity (given sufficient sampling steps). This is demonstrated on both text and image datasets. Moreover, the newly distilled generators can outperform their teachers.</p>
+<hr>
+<h3 id="10-dreampartgen-semantically-grounded-part-level-3d-generation-via-collaborative-latent-denoising">10. DreamPartGen: Semantically Grounded Part-Level 3D Generation via Collaborative Latent Denoising
+</h3><p><strong>arXiv:</strong> <a class="link" href="https://arxiv.org/abs/2603.19216"  target="_blank" rel="noopener"
+    >2603.19216</a><br>
+<strong>HuggingFace 热度:</strong> 0 upvotes</p>
+<p><strong>摘要：</strong> Understanding and generating 3D objects as compositions of meaningful parts is fundamental to human perception and reasoning. However, most text-to-3D methods overlook the semantic and functional structure of parts. While recent part-aware approaches introduce decomposition, they remain largely geometry-focused, lacking semantic grounding and failing to model how parts align with textual descriptions or their inter-part relations. We propose DreamPartGen, a framework for semantically grounded, part-aware text-to-3D generation. DreamPartGen introduces Duplex Part Latents (DPLs) that jointly model each part&rsquo;s geometry and appearance, and Relational Semantic Latents (RSLs) that capture inter-part dependencies derived from language. A synchronized co-denoising process enforces mutual geometric and semantic consistency, enabling coherent, interpretable, and text-aligned 3D synthesis. Across multiple benchmarks, DreamPartGen delivers state-of-the-art performance in geometric fidelity and text-shape alignment.</p>
+<hr>
+<p><em>&hellip; 还有 5 篇其他论文，详见 filtered_papers.json</em></p>
+<hr>
+<h2 id="-附件">📁 附件
+</h2><ul>
+<li>完整数据：<code>filtered_papers.json</code></li>
+<li>去重记录：<code>~/.seen_papers.json</code></li>
+</ul>
+<hr>
+<p><em>日报由 daily-paper-digest skill 自动生成</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image source: <a class="link" href="https://www.pixiv.net/artworks/141295562"  target="_blank" rel="noopener"
+    >Pixiv</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-23/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-23" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-23/cover_hu_79755afe47ce823c.jpg" srcset="/zh-cn/p/daily-paper-2026-03-23/cover_hu_79755afe47ce823c.jpg 1x, /zh-cn/p/daily-paper-2026-03-23/cover_hu_ed00781293903e69.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #62586480 0%, #d7cbcbC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-23</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-22/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-22" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-22/cover_hu_e0916b25ed650bb8.jpg" srcset="/zh-cn/p/daily-paper-2026-03-22/cover_hu_e0916b25ed650bb8.jpg 1x, /zh-cn/p/daily-paper-2026-03-22/cover_hu_f41a2089b5122aa0.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #616dc480 0%, #beb8e3C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-22</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-21/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-21" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-21/cover_hu_7a925bf695769a71.jpg" srcset="/zh-cn/p/daily-paper-2026-03-21/cover_hu_7a925bf695769a71.jpg 1x, /zh-cn/p/daily-paper-2026-03-21/cover_hu_7124c774ccff53e5.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #b35b6380 0%, #eacacfC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-21</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-20/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-20" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-20/cover_hu_285f13334e4bc183.jpg" srcset="/zh-cn/p/daily-paper-2026-03-20/cover_hu_285f13334e4bc183.jpg 1x, /zh-cn/p/daily-paper-2026-03-20/cover_hu_e935f81b9e18c98f.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #c7c8d280 0%, #444e51C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-03-19/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-03-19</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
