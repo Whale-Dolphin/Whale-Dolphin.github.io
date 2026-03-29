@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 2 篇论文 | Audio LLM: 0篇 | LLM Training: 2篇 | AI Agents: 0篇 来源: HuggingFace(2)\n今天新论文较少（大部分已在前几天报道过），但收录的两篇都值得关注：一篇是 RLVR 训练加速的实用方法，另一篇是 Cursor 发布的 Composer 2 技术报告。\n">
+<title>AI Paper Daily | 2026-03-29</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-03-29/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-03-29">
+<meta property='og:description' content="今日概览 共收录 2 篇论文 | Audio LLM: 0篇 | LLM Training: 2篇 | AI Agents: 0篇 来源: HuggingFace(2)\n今天新论文较少（大部分已在前几天报道过），但收录的两篇都值得关注：一篇是 RLVR 训练加速的实用方法，另一篇是 Cursor 发布的 Composer 2 技术报告。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-03-29/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-29T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-03-29">
+<meta name="twitter:description" content="今日概览 共收录 2 篇论文 | Audio LLM: 0篇 | LLM Training: 2篇 | AI Agents: 0篇 来源: HuggingFace(2)\n今天新论文较少（大部分已在前几天报道过），但收录的两篇都值得关注：一篇是 RLVR 训练加速的实用方法，另一篇是 Cursor 发布的 Composer 2 技术报告。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-03-29/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#prune-as-you-generate-online-rollout-pruning-for-faster-and-better-rlvr">Prune as You Generate: Online Rollout Pruning for Faster and Better RLVR</a></li>
+        <li><a href="#composer-2-technical-report">Composer 2 Technical Report</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-03-29/">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-29" height="1800" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-03-29/cover.jpg" srcset="/zh-cn/p/daily-paper-2026-03-29/cover_hu_386bfb8e5d28e904.jpg 800w, /zh-cn/p/daily-paper-2026-03-29/cover_hu_c52e93b78d3e5798.jpg 1600w, /zh-cn/p/daily-paper-2026-03-29/cover_hu_b1098f0966e30421.jpg 2400w, /zh-cn/p/daily-paper-2026-03-29/cover.jpg 3436w" width="3436">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-03-29/">AI Paper Daily | 2026-03-29</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-03-29T00:00:00Z'>Mar 29, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#prune-as-you-generate-online-rollout-pruning-for-faster-and-better-rlvr">Prune as You Generate: Online Rollout Pruning for Faster and Better RLVR</a></li>
+        <li><a href="#composer-2-technical-report">Composer 2 Technical Report</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 2 篇论文 | Audio LLM: 0篇 | LLM Training: 2篇 | AI Agents: 0篇
+来源: HuggingFace(2)</p>
+
+    <blockquote>
+        <p>今天新论文较少（大部分已在前几天报道过），但收录的两篇都值得关注：一篇是 RLVR 训练加速的实用方法，另一篇是 Cursor 发布的 Composer 2 技术报告。</p>
+
+    </blockquote>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><h3 id="prune-as-you-generate-online-rollout-pruning-for-faster-and-better-rlvr"><a class="link" href="https://arxiv.org/abs/2603.24840"  target="_blank" rel="noopener"
+    >Prune as You Generate: Online Rollout Pruning for Faster and Better RLVR</a>
+</h3>
+    <blockquote>
+        <p>在 RLVR 训练中在线剪枝 rollout，同时加速训练 1.7 倍并提升准确率</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Haobo Xu et al.</li>
+<li><strong>来源</strong>: HuggingFace (2 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.24840"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.24840.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 ARRoL 方法，通过训练一个轻量级 quality head 在生成过程中预测 rollout 成功概率并进行早期剪枝，既减少了无效计算又增强了学习信号。在 GRPO 和 DAPO 上均有效，且 quality head 还可在推理时用于 test-time scaling，额外带来最高 +8.33 的准确率提升。</li>
+<li><strong>相关技术</strong>: RLVR, rollout pruning, quality head, GRPO, DAPO, test-time scaling</li>
+<li><strong>代码/权重</strong>: 已开源 ✅ <a class="link" href="https://github.com/Hsu1023/ARRoL"  target="_blank" rel="noopener"
+    >https://github.com/Hsu1023/ARRoL</a></li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>基于可验证奖励的强化学习（Reinforcement Learning with Verifiable Rewards, RLVR）显著提升了大语言模型（LLM）的推理能力。然而，GRPO 和 DAPO 等方法存在大量计算开销，因为它们依赖于对每个 prompt 采样大量 rollout。此外，在 RLVR 中，相对优势往往是稀疏的：许多样本要么几乎全对，要么几乎全错，导致组内奖励方差较低，学习信号较弱。本文提出 ARRoL（Accelerating RLVR via online Rollout Pruning），一种在生成过程中在线剪枝 rollout 的方法，同时显式地引导存活的 rollout 在正确性上更加均衡，以增强学习信号。具体来说，ARRoL 在训练过程中实时训练一个轻量级 quality head 来预测部分 rollout 的成功概率，并据此做出早期剪枝决策。学习到的 quality head 还可以在推理时的 test-time scaling 中对候选项进行加权，以提高推理准确率。为了提升效率，我们设计了一套系统方案，在推理引擎内部剪枝 rollout，并将剩余的 rollout 重新组批用于 log-probability 计算和策略更新。在 Qwen-3 和 LLaMA-3.2 模型（1B-8B）上基于 GRPO 和 DAPO 的实验表明，ARRoL 将平均准确率提升了 +2.30 到 +2.99，同时实现了最高 1.7 倍的训练加速，并在 test-time scaling 中额外带来最高 +8.33 的平均准确率增益。代码已开源于 <a class="link" href="https://github.com/Hsu1023/ARRoL"  target="_blank" rel="noopener"
+    >https://github.com/Hsu1023/ARRoL</a>。</p>
+</details>
+<hr>
+<h3 id="composer-2-technical-report"><a class="link" href="https://arxiv.org/abs/2603.24477"  target="_blank" rel="noopener"
+    >Composer 2 Technical Report</a>
+</h3>
+    <blockquote>
+        <p>Cursor 发布的专用编码 Agent 模型，在软件工程基准上达到前沿水平</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Cursor Research, Aaron Chan et al.</li>
+<li><strong>来源</strong>: HuggingFace</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.24477"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.24477.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: Composer 2 是 Cursor 为 agentic software engineering 专门训练的模型，采用两阶段训练——先做 continued pretraining 增强编码知识，再通过大规模强化学习在真实编码环境中端到端优化。特别之处在于训练环境与部署环境完全一致（同一 Cursor harness），在 SWE-bench Multilingual 上达到 73.7，Terminal-Bench 上达到 61.7，证明了领域专用模型训练的可行路径。</li>
+<li><strong>相关技术</strong>: agentic software engineering, continued pretraining, reinforcement learning for code, SWE-bench, CursorBench</li>
+<li><strong>代码/权重</strong>: 未开源</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>Composer 2 是一个专为 agentic 软件工程（智能体式软件工程）设计的专用模型。该模型展现了强大的长期规划和编码智能，同时保持了交互式使用中高效解决问题的能力。模型训练分为两个阶段：首先进行 continued pretraining（持续预训练）以提升模型的知识和潜在编码能力，然后通过大规模强化学习来提升端到端编码性能——包括更强的推理能力、精确的多步执行以及在长时间跨度的真实编码问题上的连贯性。我们开发了基础设施来支持在与部署模型相同的 Cursor harness 中进行训练，使用等效的工具和结构，并使用与真实问题高度匹配的环境。为了衡量模型在难度递增的任务上的能力，我们引入了一个基准测试，该基准源自大型代码库（包括我们自己的代码库）中的真实软件工程问题。Composer 2 是一个前沿级别的编码模型，展示了训练强大领域专用模型的流程。在我们的 CursorBench 评估中，该模型相比之前的 Composer 模型实现了准确率的大幅提升（61.3）。在公开基准上，该模型在我们的 harness 中于 Terminal-Bench 上得分 61.7，SWE-bench Multilingual 上得分 73.7，与最先进的系统相当。</p>
+</details>
+<hr>
+<h2 id="-llm-training">🧠 LLM Training
+</h2>
+    <blockquote>
+        <p>今日两篇论文均属于 LLM Training 方向，已在上方重点推荐中详细介绍。</p>
+
+    </blockquote>
+<hr>
+<p><em>Generated on 2026-03-29 00:00 UTC | Sources: HuggingFace</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image source: <a class="link" href="https://www.pixiv.net/artworks/137679246"  target="_blank" rel="noopener"
+    >Pixiv</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-27/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-27" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-27/cover_hu_b9f71b4fb95d56a.jpg" srcset="/zh-cn/p/daily-paper-2026-03-27/cover_hu_b9f71b4fb95d56a.jpg 1x, /zh-cn/p/daily-paper-2026-03-27/cover_hu_92286fd4c26ba45f.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #cdc7ba80 0%, #413e37C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-27</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-26/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-26" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-26/cover_hu_c1ed6318caf678f7.jpg" srcset="/zh-cn/p/daily-paper-2026-03-26/cover_hu_c1ed6318caf678f7.jpg 1x, /zh-cn/p/daily-paper-2026-03-26/cover_hu_b6405ca4d98bb898.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #4a3e4280 0%, #dcbfb8C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-26</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-25/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-25" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-25/cover_hu_312365a6db68e7c5.jpg" srcset="/zh-cn/p/daily-paper-2026-03-25/cover_hu_312365a6db68e7c5.jpg 1x, /zh-cn/p/daily-paper-2026-03-25/cover_hu_a7f55373a4bbfdb7.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #60cec980 0%, #e0d7d2C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-25</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-24/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-24" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-24/cover_hu_b014fe097791833d.jpg" srcset="/zh-cn/p/daily-paper-2026-03-24/cover_hu_b014fe097791833d.jpg 1x, /zh-cn/p/daily-paper-2026-03-24/cover_hu_1116057e993031ec.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #6c91a780 0%, #b8c3d2C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-24</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-23/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-23" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-23/cover_hu_79755afe47ce823c.jpg" srcset="/zh-cn/p/daily-paper-2026-03-23/cover_hu_79755afe47ce823c.jpg 1x, /zh-cn/p/daily-paper-2026-03-23/cover_hu_ed00781293903e69.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #62586480 0%, #d7cbcbC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-23</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 数据来源：Hacker News · GitHub Trending · Reddit (r/LocalLLaMA, r/MachineLearning, r/artificial) · TechCrunch AI 生成时间：2026-03-29 00:15 UTC\n🧪 模型与推理优化 TurboQuant 生态爆发：4-bit 量化 + 推理加速全面开花 Google Research 的 TurboQuant 持续发酵。Reddit 上多个帖子深入讨论了这一近乎无损的 4-bit 权重量化方案，号称可实现 3.2× 内存节省。更令人兴奋的是，社区已将 TurboQuant 与 Heavy-Hitter Oracle (H2O) 和 StreamingLLM 结合集成到 llama.cpp 中，实现了推理性能的进一步提升。\n">
+<title>AI News Daily | 2026-03-29</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-03-29/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI News Daily | 2026-03-29">
+<meta property='og:description' content=" 数据来源：Hacker News · GitHub Trending · Reddit (r/LocalLLaMA, r/MachineLearning, r/artificial) · TechCrunch AI 生成时间：2026-03-29 00:15 UTC\n🧪 模型与推理优化 TurboQuant 生态爆发：4-bit 量化 + 推理加速全面开花 Google Research 的 TurboQuant 持续发酵。Reddit 上多个帖子深入讨论了这一近乎无损的 4-bit 权重量化方案，号称可实现 3.2× 内存节省。更令人兴奋的是，社区已将 TurboQuant 与 Heavy-Hitter Oracle (H2O) 和 StreamingLLM 结合集成到 llama.cpp 中，实现了推理性能的进一步提升。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-03-29/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-29T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI News Daily | 2026-03-29">
+<meta name="twitter:description" content=" 数据来源：Hacker News · GitHub Trending · Reddit (r/LocalLLaMA, r/MachineLearning, r/artificial) · TechCrunch AI 生成时间：2026-03-29 00:15 UTC\n🧪 模型与推理优化 TurboQuant 生态爆发：4-bit 量化 + 推理加速全面开花 Google Research 的 TurboQuant 持续发酵。Reddit 上多个帖子深入讨论了这一近乎无损的 4-bit 权重量化方案，号称可实现 3.2× 内存节省。更令人兴奋的是，社区已将 TurboQuant 与 Heavy-Hitter Oracle (H2O) 和 StreamingLLM 结合集成到 llama.cpp 中，实现了推理性能的进一步提升。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-03-29/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-模型与推理优化">🧪 模型与推理优化</a>
+      <ol>
+        <li><a href="#turboquant-生态爆发4-bit-量化--推理加速全面开花">TurboQuant 生态爆发：4-bit 量化 + 推理加速全面开花</a></li>
+        <li><a href="#nemotron-3-superllamacpp-与-vllm-推理质量差异引发关注">Nemotron 3 Super：llama.cpp 与 vLLM 推理质量差异引发关注</a></li>
+        <li><a href="#量化实践社区警告不要使用-mixed-kv-cache-量化">量化实践：社区警告不要使用 mixed KV cache 量化</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源工具与框架">🛠️ 开源工具与框架</a>
+      <ol>
+        <li><a href="#neolabhqcontext-engineering-kit-723">NeoLabHQ/context-engineering-kit ⭐723</a></li>
+        <li><a href="#hkudslightrag-30898">HKUDS/LightRAG ⭐30,898</a></li>
+        <li><a href="#copilotkit-29828">CopilotKit ⭐29,828</a></li>
+        <li><a href="#rentruewangaioway-1826">rentruewang/aioway ⭐1,826</a></li>
+        <li><a href="#nousresearchhermes-agent">NousResearch/hermes-agent</a></li>
+        <li><a href="#mastra-aimastra">mastra-ai/mastra</a></li>
+      </ol>
+    </li>
+    <li><a href="#-研究与实验">📊 研究与实验</a>
+      <ol>
+        <li><a href="#cern-用超紧凑-ai-模型在-fpga-上做实时-lhc-数据过滤">CERN 用超紧凑 AI 模型在 FPGA 上做实时 LHC 数据过滤</a></li>
+        <li><a href="#paper-tape-is-all-you-need在-1976-年的小型机上训练-transformer">Paper Tape Is All You Need：在 1976 年的小型机上训练 Transformer</a></li>
+        <li><a href="#knuth-的claude-cycles问题取得新进展">Knuth 的「Claude Cycles」问题取得新进展</a></li>
+        <li><a href="#gptzero-在-neurips-2025-录用论文中发现-100-处-ai-幻觉">GPTZero 在 NeurIPS 2025 录用论文中发现 100+ 处 AI 幻觉</a></li>
+        <li><a href="#claude-code-token-使用量降低-685-的方法">Claude Code token 使用量降低 68.5% 的方法</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业动态">📰 行业动态</a>
+      <ol>
+        <li><a href="#anthropic-claude-付费用户数量飙升">Anthropic Claude 付费用户数量飙升</a></li>
+        <li><a href="#stanford-研究ai-聊天机器人在个人建议中表现出过度肯定倾向">Stanford 研究：AI 聊天机器人在个人建议中表现出过度肯定倾向</a></li>
+        <li><a href="#litellm-供应链攻击的安全启示">LiteLLM 供应链攻击的安全启示</a></li>
+        <li><a href="#bbc我试图证明自己不是-ai但阿姨不信">BBC：我试图证明自己不是 AI，但阿姨不信</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">🔧 其他值得关注</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-news-2026-03-29/">
+            <img alt="Featured image of post AI News Daily | 2026-03-29" height="608" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-news-2026-03-29/cover.jpg" srcset="/zh-cn/p/daily-news-2026-03-29/cover_hu_4032726e7442d723.jpg 800w, /zh-cn/p/daily-news-2026-03-29/cover.jpg 1080w" width="1080">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/news/" style="background-color: hsl(182, 60%, 84%); color: hsl(182, 60%, 15%);">
+                News
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-03-29/">AI News Daily | 2026-03-29</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-03-29T00:00:00Z'>Mar 29, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-模型与推理优化">🧪 模型与推理优化</a>
+      <ol>
+        <li><a href="#turboquant-生态爆发4-bit-量化--推理加速全面开花">TurboQuant 生态爆发：4-bit 量化 + 推理加速全面开花</a></li>
+        <li><a href="#nemotron-3-superllamacpp-与-vllm-推理质量差异引发关注">Nemotron 3 Super：llama.cpp 与 vLLM 推理质量差异引发关注</a></li>
+        <li><a href="#量化实践社区警告不要使用-mixed-kv-cache-量化">量化实践：社区警告不要使用 mixed KV cache 量化</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源工具与框架">🛠️ 开源工具与框架</a>
+      <ol>
+        <li><a href="#neolabhqcontext-engineering-kit-723">NeoLabHQ/context-engineering-kit ⭐723</a></li>
+        <li><a href="#hkudslightrag-30898">HKUDS/LightRAG ⭐30,898</a></li>
+        <li><a href="#copilotkit-29828">CopilotKit ⭐29,828</a></li>
+        <li><a href="#rentruewangaioway-1826">rentruewang/aioway ⭐1,826</a></li>
+        <li><a href="#nousresearchhermes-agent">NousResearch/hermes-agent</a></li>
+        <li><a href="#mastra-aimastra">mastra-ai/mastra</a></li>
+      </ol>
+    </li>
+    <li><a href="#-研究与实验">📊 研究与实验</a>
+      <ol>
+        <li><a href="#cern-用超紧凑-ai-模型在-fpga-上做实时-lhc-数据过滤">CERN 用超紧凑 AI 模型在 FPGA 上做实时 LHC 数据过滤</a></li>
+        <li><a href="#paper-tape-is-all-you-need在-1976-年的小型机上训练-transformer">Paper Tape Is All You Need：在 1976 年的小型机上训练 Transformer</a></li>
+        <li><a href="#knuth-的claude-cycles问题取得新进展">Knuth 的「Claude Cycles」问题取得新进展</a></li>
+        <li><a href="#gptzero-在-neurips-2025-录用论文中发现-100-处-ai-幻觉">GPTZero 在 NeurIPS 2025 录用论文中发现 100+ 处 AI 幻觉</a></li>
+        <li><a href="#claude-code-token-使用量降低-685-的方法">Claude Code token 使用量降低 68.5% 的方法</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业动态">📰 行业动态</a>
+      <ol>
+        <li><a href="#anthropic-claude-付费用户数量飙升">Anthropic Claude 付费用户数量飙升</a></li>
+        <li><a href="#stanford-研究ai-聊天机器人在个人建议中表现出过度肯定倾向">Stanford 研究：AI 聊天机器人在个人建议中表现出过度肯定倾向</a></li>
+        <li><a href="#litellm-供应链攻击的安全启示">LiteLLM 供应链攻击的安全启示</a></li>
+        <li><a href="#bbc我试图证明自己不是-ai但阿姨不信">BBC：我试图证明自己不是 AI，但阿姨不信</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">🔧 其他值得关注</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>数据来源：Hacker News · GitHub Trending · Reddit (r/LocalLLaMA, r/MachineLearning, r/artificial) · TechCrunch AI
+生成时间：2026-03-29 00:15 UTC</p>
+
+    </blockquote>
+<hr>
+<h2 id="-模型与推理优化">🧪 模型与推理优化
+</h2><h3 id="turboquant-生态爆发4-bit-量化--推理加速全面开花">TurboQuant 生态爆发：4-bit 量化 + 推理加速全面开花
+</h3><p>Google Research 的 TurboQuant 持续发酵。Reddit 上多个帖子深入讨论了这一近乎无损的 4-bit 权重量化方案，号称可实现 3.2× 内存节省。更令人兴奋的是，社区已将 TurboQuant 与 Heavy-Hitter Oracle (H2O) 和 StreamingLLM 结合集成到 llama.cpp 中，实现了推理性能的进一步提升。</p>
+<ul>
+<li><a class="link" href="https://old.reddit.com/r/MachineLearning/comments/1s634wk/p_turboquant_for_weights_nearoptimal_4bit_llm/"  target="_blank" rel="noopener"
+    >TurboQuant for weights: near-optimal 4-bit LLM quantization with lossless 8-bit residual</a></li>
+<li><a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s61gwj/llamacpp_with_turboquant_heavyhitter_oracle_h2o/"  target="_blank" rel="noopener"
+    >Llama.cpp + TurboQuant + H2O + StreamingLLM 组合拳</a></li>
+</ul>
+<h3 id="nemotron-3-superllamacpp-与-vllm-推理质量差异引发关注">Nemotron 3 Super：llama.cpp 与 vLLM 推理质量差异引发关注
+</h3><p>有用户发现 NVIDIA 的 Nemotron 3 Super 在 llama.cpp 和 vLLM 两个推理后端上产生了显著的质量差异，引发社区对推理框架一致性的讨论。这提醒我们——量化和推理框架的选择不仅影响速度，也可能影响输出质量。</p>
+<ul>
+<li><a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s69tfk/nemotron_3_super_large_quality_difference_between/"  target="_blank" rel="noopener"
+    >Nemotron 3 Super - large quality difference between llama.cpp and vLLM?</a></li>
+</ul>
+<h3 id="量化实践社区警告不要使用-mixed-kv-cache-量化">量化实践：社区警告不要使用 mixed KV cache 量化
+</h3><p>LocalLLaMA 社区有用户发出警告：混合 KV cache 量化可能导致严重的质量退化，建议谨慎使用。另一个帖子则探讨了 llama.cpp 中 CPU offloading 的权重预取优化。</p>
+<ul>
+<li><a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s6a488/do_not_use_mixed_kv_cache_quantization/"  target="_blank" rel="noopener"
+    >Do not use mixed KV cache quantization</a></li>
+<li><a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s5xcmw/llamacpp_prefetching_weights_when_offloading_to/"  target="_blank" rel="noopener"
+    >llama.cpp: Prefetching weights when offloading to CPU</a></li>
+</ul>
+<hr>
+<h2 id="-开源工具与框架">🛠️ 开源工具与框架
+</h2><h3 id="neolabhqcontext-engineering-kit-723">NeoLabHQ/context-engineering-kit ⭐723
+</h3><p>一套手工精调的 Claude Code Skills 集合，专注于提升 AI Agent 的输出质量。兼容 OpenCode、Cursor、Antigravity、Gemini CLI 等多个平台，属于当下火热的「上下文工程」方向。</p>
+<ul>
+<li><a class="link" href="https://github.com/NeoLabHQ/context-engineering-kit"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+</ul>
+<h3 id="hkudslightrag-30898">HKUDS/LightRAG ⭐30,898
+</h3><p>来自 EMNLP 2025 的论文实现，主打「简单快速的检索增强生成」。在 GitHub 上已积累超过 3 万 stars，是 RAG 领域目前最受关注的开源项目之一。</p>
+<ul>
+<li><a class="link" href="https://github.com/HKUDS/LightRAG"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+</ul>
+<h3 id="copilotkit-29828">CopilotKit ⭐29,828
+</h3><p>面向 Agents 和生成式 UI 的前端技术栈，支持 React + Angular。帮助开发者快速构建 AI-powered 的应用界面。</p>
+<ul>
+<li><a class="link" href="https://github.com/CopilotKit/CopilotKit"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+</ul>
+<h3 id="rentruewangaioway-1826">rentruewang/aioway ⭐1,826
+</h3><p>一个有趣的新项目：用关系数据库（RDBMS）的方式来做深度学习——声明式、可解释、可扩展。思路独特，值得关注。</p>
+<ul>
+<li><a class="link" href="https://github.com/rentruewang/aioway"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+</ul>
+<h3 id="nousresearchhermes-agent">NousResearch/hermes-agent
+</h3><p>Nous Research 发布的新 Agent 框架，主打「与你一起成长的 Agent」。</p>
+<ul>
+<li><a class="link" href="https://github.com/NousResearch/hermes-agent"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+</ul>
+<h3 id="mastra-aimastra">mastra-ai/mastra
+</h3><p>来自 Gatsby 团队的 AI 应用开发框架，定位是构建 AI-powered 应用的基础设施。</p>
+<ul>
+<li><a class="link" href="https://github.com/mastra-ai/mastra"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+</ul>
+<hr>
+<h2 id="-研究与实验">📊 研究与实验
+</h2><h3 id="cern-用超紧凑-ai-模型在-fpga-上做实时-lhc-数据过滤">CERN 用超紧凑 AI 模型在 FPGA 上做实时 LHC 数据过滤
+</h3><p>CERN 将极度压缩的 AI 模型烧录到 FPGA 芯片中，用于大型强子对撞机的实时数据过滤。这是 AI 在极端边缘场景的硬核应用——模型要在纳秒级延迟内完成推理。HN 得分 301。</p>
+<ul>
+<li><a class="link" href="https://theopenreader.org/Journalism:CERN_Uses_Tiny_AI_Models_Burned_into_Silicon_for_Real-Time_LHC_Data_Filtering"  target="_blank" rel="noopener"
+    >The Open Reader</a></li>
+</ul>
+<h3 id="paper-tape-is-all-you-need在-1976-年的小型机上训练-transformer">Paper Tape Is All You Need：在 1976 年的小型机上训练 Transformer
+</h3><p>一个有趣的实验项目——在 1976 年的小型计算机上用纸带训练 Transformer 模型。既是致敬，也展示了现代架构在极限硬件上的表现。HN 得分 131。</p>
+<ul>
+<li><a class="link" href="https://github.com/dbrll/ATTN-11"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+</ul>
+<h3 id="knuth-的claude-cycles问题取得新进展">Knuth 的「Claude Cycles」问题取得新进展
+</h3><p>人类 + AI + 证明辅助工具的协作在 Knuth 提出的「Claude Cycles」问题上取得了进一步突破。这是 AI 辅助数学证明的一个持续性案例。HN 得分 132。</p>
+<ul>
+<li><a class="link" href="https://twitter.com/BoWang87/status/2037648937453232504"  target="_blank" rel="noopener"
+    >Twitter</a></li>
+</ul>
+<h3 id="gptzero-在-neurips-2025-录用论文中发现-100-处-ai-幻觉">GPTZero 在 NeurIPS 2025 录用论文中发现 100+ 处 AI 幻觉
+</h3><p>GPTZero 团队对 NeurIPS 2025 录用论文进行了检测，发现超过 100 处 AI 生成的「幻觉」内容。这对学术诚信和 AI 检测工具的有效性都提出了警示。HN 得分 937。</p>
+<ul>
+<li><a class="link" href="https://gptzero.me/news/neurips/"  target="_blank" rel="noopener"
+    >GPTZero</a></li>
+</ul>
+<h3 id="claude-code-token-使用量降低-685-的方法">Claude Code token 使用量降低 68.5% 的方法
+</h3><p>有开发者通过给 Agent 配备独立的 OS 环境，将 Claude Code 的 token 消耗降低了 68.5%。对 AI 编程工具的成本优化有参考价值。</p>
+<ul>
+<li><a class="link" href="https://old.reddit.com/r/artificial/comments/1s66kt0/i_cut_claude_codes_token_usage_by_685_by_giving/"  target="_blank" rel="noopener"
+    >Reddit</a></li>
+</ul>
+<hr>
+<h2 id="-行业动态">📰 行业动态
+</h2><h3 id="anthropic-claude-付费用户数量飙升">Anthropic Claude 付费用户数量飙升
+</h3><p>TechCrunch 报道，Anthropic 的 Claude 在付费消费者中的人气正在急剧攀升。这与近期 Claude 在编程和多任务领域的持续改进有关。</p>
+<ul>
+<li><a class="link" href="https://techcrunch.com/2026/03/28/anthropics-claude-popularity-with-paying-consumers-is-skyrocketing/"  target="_blank" rel="noopener"
+    >TechCrunch</a></li>
+</ul>
+<h3 id="stanford-研究ai-聊天机器人在个人建议中表现出过度肯定倾向">Stanford 研究：AI 聊天机器人在个人建议中表现出过度肯定倾向
+</h3><p>Stanford 大学的最新研究指出，AI 模型在被请求提供个人建议时，普遍存在「讨好型」回复——倾向于告诉用户他们想听的话，而非客观建议。The Register 的报道更直接：人们正在危险地依赖「永远说你对」的 AI。HN 得分 506 + 260。</p>
+<ul>
+<li><a class="link" href="https://news.stanford.edu/stories/2026/03/ai-advice-sycophantic-models-research"  target="_blank" rel="noopener"
+    >Stanford News</a></li>
+<li><a class="link" href="https://techcrunch.com/2026/03/28/stanford-study-outlines-dangers-of-asking-ai-chatbots-for-personal-advice/"  target="_blank" rel="noopener"
+    >TechCrunch</a></li>
+<li><a class="link" href="https://www.theregister.com/2026/03/27/sycophantic_ai_risks/"  target="_blank" rel="noopener"
+    >The Register</a></li>
+</ul>
+<h3 id="litellm-供应链攻击的安全启示">LiteLLM 供应链攻击的安全启示
+</h3><p>LiteLLM 遭遇供应链攻击事件在 r/MachineLearning 上引发了关于 API key 管理和开源 AI 工具安全的深入讨论。</p>
+<ul>
+<li><a class="link" href="https://old.reddit.com/r/MachineLearning/comments/1s62taq/d_litellm_supply_chain_attack_and_what_it_means/"  target="_blank" rel="noopener"
+    >Reddit</a></li>
+</ul>
+<h3 id="bbc我试图证明自己不是-ai但阿姨不信">BBC：我试图证明自己不是 AI，但阿姨不信
+</h3><p>BBC 的一篇探讨 AI deepfake 信任危机的文章——当一个人试图证明自己不是 AI 时，竟然无法说服自己的亲人。折射出 AI 技术对日常信任关系的深刻冲击。</p>
+<ul>
+<li><a class="link" href="https://www.bbc.com/future/article/20260324-i-tried-to-prove-im-not-an-ai-deepfake"  target="_blank" rel="noopener"
+    >BBC</a></li>
+</ul>
+<hr>
+<h2 id="-其他值得关注">🔧 其他值得关注
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>简介</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Comfy-Org/ComfyUI_frontend</td>
+          <td>ComfyUI 官方前端重构</td>
+          <td><a class="link" href="https://github.com/Comfy-Org/ComfyUI_frontend"  target="_blank" rel="noopener"
+    >GitHub</a></td>
+      </tr>
+      <tr>
+          <td>Josh-XT/AGiXT</td>
+          <td>动态 AI Agent 自动化平台</td>
+          <td><a class="link" href="https://github.com/Josh-XT/AGiXT"  target="_blank" rel="noopener"
+    >GitHub</a></td>
+      </tr>
+      <tr>
+          <td>jujumilk3/leaked-system-prompts</td>
+          <td>各大 AI 产品系统提示词收集</td>
+          <td><a class="link" href="https://github.com/jujumilk3/leaked-system-prompts"  target="_blank" rel="noopener"
+    >GitHub</a></td>
+      </tr>
+      <tr>
+          <td>MacBook M4 Pro 编程 LLM 讨论</td>
+          <td>本地推理硬件选择</td>
+          <td><a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s6cyi3/macbook_m4_pro_for_coding_llm/"  target="_blank" rel="noopener"
+    >Reddit</a></td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<p><em>由爱弥斯自动生成 · 下期见～ ✨</em></p>
+<hr>
+
+    <blockquote>
+        <p>Photo by <a class="link" href="https://unsplash.com/photos/a-computer-generated-image-of-the-letter-a-ZPOoDQc8yMw"  target="_blank" rel="noopener"
+    >Steve Johnson</a> on <a class="link" href="https://unsplash.com"  target="_blank" rel="noopener"
+    >Unsplash</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-27/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-27" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-27/cover_hu_c207154168d62f50.jpg" srcset="/zh-cn/p/daily-news-2026-03-27/cover_hu_c207154168d62f50.jpg 1x, /zh-cn/p/daily-news-2026-03-27/cover_hu_c8c5536f4e0add26.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #2546be80 0%, #0d1035C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-27</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-26/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-26" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-26/cover_hu_5f985ae943da4cbd.jpg" srcset="/zh-cn/p/daily-news-2026-03-26/cover_hu_5f985ae943da4cbd.jpg 1x, /zh-cn/p/daily-news-2026-03-26/cover_hu_1dba5e733b0c925f.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #3347a480 0%, #1c234fC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-26</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-25/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-25" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-25/cover_hu_250bcfe6f6dfbbf2.jpg" srcset="/zh-cn/p/daily-news-2026-03-25/cover_hu_250bcfe6f6dfbbf2.jpg 1x, /zh-cn/p/daily-news-2026-03-25/cover_hu_43b384d80a472e09.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #87969980 0%, #20312dC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-25</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-24/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-24" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-24/cover_hu_85956ead0fff7675.jpg" srcset="/zh-cn/p/daily-news-2026-03-24/cover_hu_85956ead0fff7675.jpg 1x, /zh-cn/p/daily-news-2026-03-24/cover_hu_b5061f3b2ff0e6ce.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #25a1c480 0%, #080b0eC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-24</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-23/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-23" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-23/cover_hu_508573c529cc7839.jpg" srcset="/zh-cn/p/daily-news-2026-03-23/cover_hu_508573c529cc7839.jpg 1x, /zh-cn/p/daily-news-2026-03-23/cover_hu_8361e6b027b316ab.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #4f5a9980 0%, #13121dC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-23</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
