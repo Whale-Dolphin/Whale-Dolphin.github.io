@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 数据来源：Hacker News · GitHub Trending · Reddit (r/LocalLLaMA, r/MachineLearning, r/artificial) · TechCrunch AI 生成时间：2026-03-30 00:30 UTC\n📰 行业要闻 Sora 关停：AI 视频的现实性检验时刻 来源： TechCrunch AI 摘要： OpenAI 正式关停 Sora AI 视频生成应用，此前迪士尼版权诉讼是关键导火索。TechCrunch 评论认为这可能是整个 AI 视频赛道的现实检验——技术能力和法律/商业可行性之间的鸿沟比想象中更大。这对 Runway、Pika 等竞品也敲响了警钟。 Nicolas Carlini 称 Claude 是比他更好的安全研究员 来源： Reddit r/artificial 摘要： Google DeepMind 安全研究员 Nicolas Carlini（Google Scholar 引用 6.72 万次）公开表示 Claude 在安全研究能力上已超越自己，声称该 AI 通过利用智能合约漏洞赚取了 370 万美元，并在 Linux 和 Ghost 中发现了漏洞。这一声明在社区引发了关于 AI 自主安全研究能力边界的激烈讨论。 ChatGPT 在输入前强制 Cloudflare 读取 React 状态 来源： Hacker News（297 分） 摘要： 安全研究者逆向发现 ChatGPT 在允许用户输入前，会通过 Cloudflare 的反爬机制读取应用的 React 状态数据。该文详细解析了这一加密程序的工作原理，引发了关于 AI 产品隐私边界和前端安全的讨论。 🔧 开源与工具 ZINC — 用 Zig 写的 LLM 推理引擎，$550 AMD GPU 跑 35B 模型 来源： Reddit r/LocalLLaMA 摘要： 全新的 LLM 推理引擎 ZINC，使用 Zig 语言从零编写，核心卖点是在 $550 的 AMD GPU 上即可运行 35B 参数模型。Zig 的低级别控制和零开销抽象在推理性能优化上展现了独特优势，为 AMD 用户提供了 NVIDIA 之外的选择。 Superset — AI Agent 时代的代码编辑器 来源： GitHub Trending ⭐8.2k 摘要： 允许在本地机器上同时运行多个 Claude Code、Codex 等 AI 编码代理的代码编辑器。定位是 &ldquo;AI Agent 时代的 IDE&rdquo;，支持并行运行多个代理实例协同完成复杂项目。 Chitu（赤兔）— 清华出品的高性能 LLM 推理框架 来源： GitHub Trending ⭐4.3k 摘要： 清华大学 PACMAN 实验室开源的大语言模型推理框架，聚焦效率、灵活性和可用性。在大批量推理和多模型调度场景下具有独特优势。 SpiceAI — Rust 编写的 SQL 查询 + LLM 推理加速引擎 来源： GitHub Trending ⭐2.9k 摘要： 可移植的加速 SQL 查询、搜索和 LLM 推理引擎，用 Rust 编写，专为数据驱动的 AI 应用和 Agent 设计。将数据查询和 AI 推理统一在一个运行时中。 WeClone — 从聊天记录创建数字分身 来源： GitHub Trending ⭐124 摘要： 一站式解决方案：用微信等聊天记录微调大语言模型，让模型拥有 &ldquo;那味儿&rdquo;，并绑定到聊天机器人实现数字分身。支持 LoRA 微调，从导出数据到部署一条龙。 Miasma — 用无限毒坑困住 AI 爬虫 来源： Hacker News（277 分） 摘要： 开源工具，通过生成无限的虚假页面来困住 AI 网页爬虫，让其陷入永无止境的 &ldquo;毒数据坑&rdquo;。对内容创作者来说是一种防御性工具，但也引发了关于 AI 训练数据战争升级的讨论。 Lat.md — 用 Markdown 构建代码库知识图谱 来源： Hacker News（82 分） 摘要： Agent Lattice 项目，用 Markdown 文件为代码库构建知识图谱，让 AI 代理更好地理解和导航大型代码库。定位是 AI 辅助开发时的 &ldquo;代码地图&rdquo;。 🔬 技术与研究 llama.cpp MOE GEMV 内核优化（batch size &gt; 1） 来源： Reddit r/LocalLLaMA 摘要： NVIDIA 工程师 gaugarg-nv 向 llama.cpp 提交了针对 Mixture-of-Experts 架构的 GEMV 内核优化 PR，支持 batch size &gt; 1 的场景。这对运行 Mixtral、DeepSeek 等 MoE 模型的本地用户是实质性性能提升。 TurboQuant 能为本地推理和移动端带来什么？ 来源： Reddit r/LocalLLaMA 摘要： 社区深入讨论 Google 的 TurboQuant 压缩算法（近最优 4-bit LLM 量化）对本地推理生态的实际影响。核心问题：能否在移动端运行更大模型？与现有 GGUF 量化方案如何互补？目前来看，集成到 llama.cpp 仍需时间。 Voxtral TTS 实现语音克隆的缺失拼图 来源： Reddit r/LocalLLaMA 摘要： Mistral 近期开源了 Voxtral 语音生成模型，社区已找到启用语音克隆功能所需的关键缺失组件。开源 TTS 声音克隆的门槛正在快速降低。 Inference Engines — Token 在 Transformer 层中旅程的可视化深度解析 来源： Reddit r/LocalLLaMA 摘要： 精美的交互式可视化项目，展示一个 token 如何穿过 Transformer 的各个层级。对理解 LLM 推理过程的教育价值很高。 如果 AI 需要的不是更多内存，而是更好的数学？ 来源： Hacker News（162 分） 摘要： 文章探讨了一个有趣的方向：与其不断增加硬件资源（更多 GPU 显存、更大集群），不如从数学基础上重新思考 AI 的计算范式。作者认为更优雅的数学抽象可能比暴力堆硬件更有效。 LiteLLM 和 Telnyx 供应链零日漏洞被语义分析捕获 来源： Hacker News 摘要： 安全研究者通过语义分析方法发现了 LiteLLM 和 Telnyx Python 包的供应链攻击零日漏洞。这是继上周 LiteLLM 供应链事件后的持续跟进，凸显了 AI 基础设施供应链安全的脆弱性。 🗣️ 社区热议 Claude Code 每 10 分钟对项目仓库执行 git reset &ndash;hard 来源： Hacker News（110 分） 摘要： 有用户报告 Claude Code 在某些情况下会每隔 10 分钟自动执行 git reset --hard origin/main，导致本地未提交的更改全部丢失。这一 bug 引起了社区对 AI 编码工具安全性的严肃讨论——当你把代码库的控制权交给 AI 时，风险边界在哪里？ M4 Max vs M5 Max 本地 LLM 推理性能对比 来源： Reddit r/LocalLLaMA 摘要： Apple M5 Max 已上市，社区第一时间跑了本地 LLM 推理基准测试与 M4 Max 对比。对考虑升级硬件的本地推理用户是重要参考。 RAG 在受监管行业部署的实战教训 来源： Reddit r/LocalLLaMA 摘要： 来自实际生产环境的经验分享：在金融、医疗等受监管行业部署 RAG 系统时踩过的坑和总结的教训。涉及合规性、数据隔离、幻觉控制等关键问题。 LLM 基准测试：捕捉 LLM 违反物理定律的场景 来源： Reddit r/MachineLearning 摘要： 研究者构建了专门检测 LLM 是否违反基本物理定律的基准测试。结果表明即使是最先进的模型在物理推理上仍有显著盲区，对 LLM 在科学领域的可靠性提出了质疑。 📊 今日数据概览 指标 数值 原始抓取 264 条 去重后（已报道） 151 条 最终收录 19 条 丢弃原因 旧闻/非 AI 相关/低质量问答帖/已知项目日常更新 下期预告：持续关注 TurboQuant 在 llama.cpp 的集成进展、Sora 关停后 AI 视频赛道的连锁反应、以及 M5 Max 的完整推理基准测试。\n">
+<title>AI News Daily | 2026-03-30</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-03-30/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI News Daily | 2026-03-30">
+<meta property='og:description' content=" 数据来源：Hacker News · GitHub Trending · Reddit (r/LocalLLaMA, r/MachineLearning, r/artificial) · TechCrunch AI 生成时间：2026-03-30 00:30 UTC\n📰 行业要闻 Sora 关停：AI 视频的现实性检验时刻 来源： TechCrunch AI 摘要： OpenAI 正式关停 Sora AI 视频生成应用，此前迪士尼版权诉讼是关键导火索。TechCrunch 评论认为这可能是整个 AI 视频赛道的现实检验——技术能力和法律/商业可行性之间的鸿沟比想象中更大。这对 Runway、Pika 等竞品也敲响了警钟。 Nicolas Carlini 称 Claude 是比他更好的安全研究员 来源： Reddit r/artificial 摘要： Google DeepMind 安全研究员 Nicolas Carlini（Google Scholar 引用 6.72 万次）公开表示 Claude 在安全研究能力上已超越自己，声称该 AI 通过利用智能合约漏洞赚取了 370 万美元，并在 Linux 和 Ghost 中发现了漏洞。这一声明在社区引发了关于 AI 自主安全研究能力边界的激烈讨论。 ChatGPT 在输入前强制 Cloudflare 读取 React 状态 来源： Hacker News（297 分） 摘要： 安全研究者逆向发现 ChatGPT 在允许用户输入前，会通过 Cloudflare 的反爬机制读取应用的 React 状态数据。该文详细解析了这一加密程序的工作原理，引发了关于 AI 产品隐私边界和前端安全的讨论。 🔧 开源与工具 ZINC — 用 Zig 写的 LLM 推理引擎，$550 AMD GPU 跑 35B 模型 来源： Reddit r/LocalLLaMA 摘要： 全新的 LLM 推理引擎 ZINC，使用 Zig 语言从零编写，核心卖点是在 $550 的 AMD GPU 上即可运行 35B 参数模型。Zig 的低级别控制和零开销抽象在推理性能优化上展现了独特优势，为 AMD 用户提供了 NVIDIA 之外的选择。 Superset — AI Agent 时代的代码编辑器 来源： GitHub Trending ⭐8.2k 摘要： 允许在本地机器上同时运行多个 Claude Code、Codex 等 AI 编码代理的代码编辑器。定位是 &ldquo;AI Agent 时代的 IDE&rdquo;，支持并行运行多个代理实例协同完成复杂项目。 Chitu（赤兔）— 清华出品的高性能 LLM 推理框架 来源： GitHub Trending ⭐4.3k 摘要： 清华大学 PACMAN 实验室开源的大语言模型推理框架，聚焦效率、灵活性和可用性。在大批量推理和多模型调度场景下具有独特优势。 SpiceAI — Rust 编写的 SQL 查询 + LLM 推理加速引擎 来源： GitHub Trending ⭐2.9k 摘要： 可移植的加速 SQL 查询、搜索和 LLM 推理引擎，用 Rust 编写，专为数据驱动的 AI 应用和 Agent 设计。将数据查询和 AI 推理统一在一个运行时中。 WeClone — 从聊天记录创建数字分身 来源： GitHub Trending ⭐124 摘要： 一站式解决方案：用微信等聊天记录微调大语言模型，让模型拥有 &ldquo;那味儿&rdquo;，并绑定到聊天机器人实现数字分身。支持 LoRA 微调，从导出数据到部署一条龙。 Miasma — 用无限毒坑困住 AI 爬虫 来源： Hacker News（277 分） 摘要： 开源工具，通过生成无限的虚假页面来困住 AI 网页爬虫，让其陷入永无止境的 &ldquo;毒数据坑&rdquo;。对内容创作者来说是一种防御性工具，但也引发了关于 AI 训练数据战争升级的讨论。 Lat.md — 用 Markdown 构建代码库知识图谱 来源： Hacker News（82 分） 摘要： Agent Lattice 项目，用 Markdown 文件为代码库构建知识图谱，让 AI 代理更好地理解和导航大型代码库。定位是 AI 辅助开发时的 &ldquo;代码地图&rdquo;。 🔬 技术与研究 llama.cpp MOE GEMV 内核优化（batch size &gt; 1） 来源： Reddit r/LocalLLaMA 摘要： NVIDIA 工程师 gaugarg-nv 向 llama.cpp 提交了针对 Mixture-of-Experts 架构的 GEMV 内核优化 PR，支持 batch size &gt; 1 的场景。这对运行 Mixtral、DeepSeek 等 MoE 模型的本地用户是实质性性能提升。 TurboQuant 能为本地推理和移动端带来什么？ 来源： Reddit r/LocalLLaMA 摘要： 社区深入讨论 Google 的 TurboQuant 压缩算法（近最优 4-bit LLM 量化）对本地推理生态的实际影响。核心问题：能否在移动端运行更大模型？与现有 GGUF 量化方案如何互补？目前来看，集成到 llama.cpp 仍需时间。 Voxtral TTS 实现语音克隆的缺失拼图 来源： Reddit r/LocalLLaMA 摘要： Mistral 近期开源了 Voxtral 语音生成模型，社区已找到启用语音克隆功能所需的关键缺失组件。开源 TTS 声音克隆的门槛正在快速降低。 Inference Engines — Token 在 Transformer 层中旅程的可视化深度解析 来源： Reddit r/LocalLLaMA 摘要： 精美的交互式可视化项目，展示一个 token 如何穿过 Transformer 的各个层级。对理解 LLM 推理过程的教育价值很高。 如果 AI 需要的不是更多内存，而是更好的数学？ 来源： Hacker News（162 分） 摘要： 文章探讨了一个有趣的方向：与其不断增加硬件资源（更多 GPU 显存、更大集群），不如从数学基础上重新思考 AI 的计算范式。作者认为更优雅的数学抽象可能比暴力堆硬件更有效。 LiteLLM 和 Telnyx 供应链零日漏洞被语义分析捕获 来源： Hacker News 摘要： 安全研究者通过语义分析方法发现了 LiteLLM 和 Telnyx Python 包的供应链攻击零日漏洞。这是继上周 LiteLLM 供应链事件后的持续跟进，凸显了 AI 基础设施供应链安全的脆弱性。 🗣️ 社区热议 Claude Code 每 10 分钟对项目仓库执行 git reset &ndash;hard 来源： Hacker News（110 分） 摘要： 有用户报告 Claude Code 在某些情况下会每隔 10 分钟自动执行 git reset --hard origin/main，导致本地未提交的更改全部丢失。这一 bug 引起了社区对 AI 编码工具安全性的严肃讨论——当你把代码库的控制权交给 AI 时，风险边界在哪里？ M4 Max vs M5 Max 本地 LLM 推理性能对比 来源： Reddit r/LocalLLaMA 摘要： Apple M5 Max 已上市，社区第一时间跑了本地 LLM 推理基准测试与 M4 Max 对比。对考虑升级硬件的本地推理用户是重要参考。 RAG 在受监管行业部署的实战教训 来源： Reddit r/LocalLLaMA 摘要： 来自实际生产环境的经验分享：在金融、医疗等受监管行业部署 RAG 系统时踩过的坑和总结的教训。涉及合规性、数据隔离、幻觉控制等关键问题。 LLM 基准测试：捕捉 LLM 违反物理定律的场景 来源： Reddit r/MachineLearning 摘要： 研究者构建了专门检测 LLM 是否违反基本物理定律的基准测试。结果表明即使是最先进的模型在物理推理上仍有显著盲区，对 LLM 在科学领域的可靠性提出了质疑。 📊 今日数据概览 指标 数值 原始抓取 264 条 去重后（已报道） 151 条 最终收录 19 条 丢弃原因 旧闻/非 AI 相关/低质量问答帖/已知项目日常更新 下期预告：持续关注 TurboQuant 在 llama.cpp 的集成进展、Sora 关停后 AI 视频赛道的连锁反应、以及 M5 Max 的完整推理基准测试。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-03-30/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-30T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-30T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI News Daily | 2026-03-30">
+<meta name="twitter:description" content=" 数据来源：Hacker News · GitHub Trending · Reddit (r/LocalLLaMA, r/MachineLearning, r/artificial) · TechCrunch AI 生成时间：2026-03-30 00:30 UTC\n📰 行业要闻 Sora 关停：AI 视频的现实性检验时刻 来源： TechCrunch AI 摘要： OpenAI 正式关停 Sora AI 视频生成应用，此前迪士尼版权诉讼是关键导火索。TechCrunch 评论认为这可能是整个 AI 视频赛道的现实检验——技术能力和法律/商业可行性之间的鸿沟比想象中更大。这对 Runway、Pika 等竞品也敲响了警钟。 Nicolas Carlini 称 Claude 是比他更好的安全研究员 来源： Reddit r/artificial 摘要： Google DeepMind 安全研究员 Nicolas Carlini（Google Scholar 引用 6.72 万次）公开表示 Claude 在安全研究能力上已超越自己，声称该 AI 通过利用智能合约漏洞赚取了 370 万美元，并在 Linux 和 Ghost 中发现了漏洞。这一声明在社区引发了关于 AI 自主安全研究能力边界的激烈讨论。 ChatGPT 在输入前强制 Cloudflare 读取 React 状态 来源： Hacker News（297 分） 摘要： 安全研究者逆向发现 ChatGPT 在允许用户输入前，会通过 Cloudflare 的反爬机制读取应用的 React 状态数据。该文详细解析了这一加密程序的工作原理，引发了关于 AI 产品隐私边界和前端安全的讨论。 🔧 开源与工具 ZINC — 用 Zig 写的 LLM 推理引擎，$550 AMD GPU 跑 35B 模型 来源： Reddit r/LocalLLaMA 摘要： 全新的 LLM 推理引擎 ZINC，使用 Zig 语言从零编写，核心卖点是在 $550 的 AMD GPU 上即可运行 35B 参数模型。Zig 的低级别控制和零开销抽象在推理性能优化上展现了独特优势，为 AMD 用户提供了 NVIDIA 之外的选择。 Superset — AI Agent 时代的代码编辑器 来源： GitHub Trending ⭐8.2k 摘要： 允许在本地机器上同时运行多个 Claude Code、Codex 等 AI 编码代理的代码编辑器。定位是 &ldquo;AI Agent 时代的 IDE&rdquo;，支持并行运行多个代理实例协同完成复杂项目。 Chitu（赤兔）— 清华出品的高性能 LLM 推理框架 来源： GitHub Trending ⭐4.3k 摘要： 清华大学 PACMAN 实验室开源的大语言模型推理框架，聚焦效率、灵活性和可用性。在大批量推理和多模型调度场景下具有独特优势。 SpiceAI — Rust 编写的 SQL 查询 + LLM 推理加速引擎 来源： GitHub Trending ⭐2.9k 摘要： 可移植的加速 SQL 查询、搜索和 LLM 推理引擎，用 Rust 编写，专为数据驱动的 AI 应用和 Agent 设计。将数据查询和 AI 推理统一在一个运行时中。 WeClone — 从聊天记录创建数字分身 来源： GitHub Trending ⭐124 摘要： 一站式解决方案：用微信等聊天记录微调大语言模型，让模型拥有 &ldquo;那味儿&rdquo;，并绑定到聊天机器人实现数字分身。支持 LoRA 微调，从导出数据到部署一条龙。 Miasma — 用无限毒坑困住 AI 爬虫 来源： Hacker News（277 分） 摘要： 开源工具，通过生成无限的虚假页面来困住 AI 网页爬虫，让其陷入永无止境的 &ldquo;毒数据坑&rdquo;。对内容创作者来说是一种防御性工具，但也引发了关于 AI 训练数据战争升级的讨论。 Lat.md — 用 Markdown 构建代码库知识图谱 来源： Hacker News（82 分） 摘要： Agent Lattice 项目，用 Markdown 文件为代码库构建知识图谱，让 AI 代理更好地理解和导航大型代码库。定位是 AI 辅助开发时的 &ldquo;代码地图&rdquo;。 🔬 技术与研究 llama.cpp MOE GEMV 内核优化（batch size &gt; 1） 来源： Reddit r/LocalLLaMA 摘要： NVIDIA 工程师 gaugarg-nv 向 llama.cpp 提交了针对 Mixture-of-Experts 架构的 GEMV 内核优化 PR，支持 batch size &gt; 1 的场景。这对运行 Mixtral、DeepSeek 等 MoE 模型的本地用户是实质性性能提升。 TurboQuant 能为本地推理和移动端带来什么？ 来源： Reddit r/LocalLLaMA 摘要： 社区深入讨论 Google 的 TurboQuant 压缩算法（近最优 4-bit LLM 量化）对本地推理生态的实际影响。核心问题：能否在移动端运行更大模型？与现有 GGUF 量化方案如何互补？目前来看，集成到 llama.cpp 仍需时间。 Voxtral TTS 实现语音克隆的缺失拼图 来源： Reddit r/LocalLLaMA 摘要： Mistral 近期开源了 Voxtral 语音生成模型，社区已找到启用语音克隆功能所需的关键缺失组件。开源 TTS 声音克隆的门槛正在快速降低。 Inference Engines — Token 在 Transformer 层中旅程的可视化深度解析 来源： Reddit r/LocalLLaMA 摘要： 精美的交互式可视化项目，展示一个 token 如何穿过 Transformer 的各个层级。对理解 LLM 推理过程的教育价值很高。 如果 AI 需要的不是更多内存，而是更好的数学？ 来源： Hacker News（162 分） 摘要： 文章探讨了一个有趣的方向：与其不断增加硬件资源（更多 GPU 显存、更大集群），不如从数学基础上重新思考 AI 的计算范式。作者认为更优雅的数学抽象可能比暴力堆硬件更有效。 LiteLLM 和 Telnyx 供应链零日漏洞被语义分析捕获 来源： Hacker News 摘要： 安全研究者通过语义分析方法发现了 LiteLLM 和 Telnyx Python 包的供应链攻击零日漏洞。这是继上周 LiteLLM 供应链事件后的持续跟进，凸显了 AI 基础设施供应链安全的脆弱性。 🗣️ 社区热议 Claude Code 每 10 分钟对项目仓库执行 git reset &ndash;hard 来源： Hacker News（110 分） 摘要： 有用户报告 Claude Code 在某些情况下会每隔 10 分钟自动执行 git reset --hard origin/main，导致本地未提交的更改全部丢失。这一 bug 引起了社区对 AI 编码工具安全性的严肃讨论——当你把代码库的控制权交给 AI 时，风险边界在哪里？ M4 Max vs M5 Max 本地 LLM 推理性能对比 来源： Reddit r/LocalLLaMA 摘要： Apple M5 Max 已上市，社区第一时间跑了本地 LLM 推理基准测试与 M4 Max 对比。对考虑升级硬件的本地推理用户是重要参考。 RAG 在受监管行业部署的实战教训 来源： Reddit r/LocalLLaMA 摘要： 来自实际生产环境的经验分享：在金融、医疗等受监管行业部署 RAG 系统时踩过的坑和总结的教训。涉及合规性、数据隔离、幻觉控制等关键问题。 LLM 基准测试：捕捉 LLM 违反物理定律的场景 来源： Reddit r/MachineLearning 摘要： 研究者构建了专门检测 LLM 是否违反基本物理定律的基准测试。结果表明即使是最先进的模型在物理推理上仍有显著盲区，对 LLM 在科学领域的可靠性提出了质疑。 📊 今日数据概览 指标 数值 原始抓取 264 条 去重后（已报道） 151 条 最终收录 19 条 丢弃原因 旧闻/非 AI 相关/低质量问答帖/已知项目日常更新 下期预告：持续关注 TurboQuant 在 llama.cpp 的集成进展、Sora 关停后 AI 视频赛道的连锁反应、以及 M5 Max 的完整推理基准测试。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-03-30/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-行业要闻">📰 行业要闻</a>
+      <ol>
+        <li><a href="#sora-关停ai-视频的现实性检验时刻">Sora 关停：AI 视频的现实性检验时刻</a></li>
+        <li><a href="#nicolas-carlini-称-claude-是比他更好的安全研究员">Nicolas Carlini 称 Claude 是比他更好的安全研究员</a></li>
+        <li><a href="#chatgpt-在输入前强制-cloudflare-读取-react-状态">ChatGPT 在输入前强制 Cloudflare 读取 React 状态</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源与工具">🔧 开源与工具</a>
+      <ol>
+        <li><a href="#zinc--用-zig-写的-llm-推理引擎550-amd-gpu-跑-35b-模型">ZINC — 用 Zig 写的 LLM 推理引擎，$550 AMD GPU 跑 35B 模型</a></li>
+        <li><a href="#superset--ai-agent-时代的代码编辑器">Superset — AI Agent 时代的代码编辑器</a></li>
+        <li><a href="#chitu赤兔-清华出品的高性能-llm-推理框架">Chitu（赤兔）— 清华出品的高性能 LLM 推理框架</a></li>
+        <li><a href="#spiceai--rust-编写的-sql-查询--llm-推理加速引擎">SpiceAI — Rust 编写的 SQL 查询 + LLM 推理加速引擎</a></li>
+        <li><a href="#weclone--从聊天记录创建数字分身">WeClone — 从聊天记录创建数字分身</a></li>
+        <li><a href="#miasma--用无限毒坑困住-ai-爬虫">Miasma — 用无限毒坑困住 AI 爬虫</a></li>
+        <li><a href="#latmd--用-markdown-构建代码库知识图谱">Lat.md — 用 Markdown 构建代码库知识图谱</a></li>
+      </ol>
+    </li>
+    <li><a href="#-技术与研究">🔬 技术与研究</a>
+      <ol>
+        <li><a href="#llamacpp-moe-gemv-内核优化batch-size--1">llama.cpp MOE GEMV 内核优化（batch size &gt; 1）</a></li>
+        <li><a href="#turboquant-能为本地推理和移动端带来什么">TurboQuant 能为本地推理和移动端带来什么？</a></li>
+        <li><a href="#voxtral-tts-实现语音克隆的缺失拼图">Voxtral TTS 实现语音克隆的缺失拼图</a></li>
+        <li><a href="#inference-engines--token-在-transformer-层中旅程的可视化深度解析">Inference Engines — Token 在 Transformer 层中旅程的可视化深度解析</a></li>
+        <li><a href="#如果-ai-需要的不是更多内存而是更好的数学">如果 AI 需要的不是更多内存，而是更好的数学？</a></li>
+        <li><a href="#litellm-和-telnyx-供应链零日漏洞被语义分析捕获">LiteLLM 和 Telnyx 供应链零日漏洞被语义分析捕获</a></li>
+      </ol>
+    </li>
+    <li><a href="#-社区热议">🗣️ 社区热议</a>
+      <ol>
+        <li><a href="#claude-code-每-10-分钟对项目仓库执行-git-reset-hard">Claude Code 每 10 分钟对项目仓库执行 git reset &ndash;hard</a></li>
+        <li><a href="#m4-max-vs-m5-max-本地-llm-推理性能对比">M4 Max vs M5 Max 本地 LLM 推理性能对比</a></li>
+        <li><a href="#rag-在受监管行业部署的实战教训">RAG 在受监管行业部署的实战教训</a></li>
+        <li><a href="#llm-基准测试捕捉-llm-违反物理定律的场景">LLM 基准测试：捕捉 LLM 违反物理定律的场景</a></li>
+      </ol>
+    </li>
+    <li><a href="#-今日数据概览">📊 今日数据概览</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-news-2026-03-30/">
+            <img alt="Featured image of post AI News Daily | 2026-03-30" height="720" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-news-2026-03-30/cover.jpg" srcset="/zh-cn/p/daily-news-2026-03-30/cover_hu_8543da428719e6b5.jpg 800w, /zh-cn/p/daily-news-2026-03-30/cover.jpg 1080w" width="1080">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/news/" style="background-color: hsl(182, 60%, 84%); color: hsl(182, 60%, 15%);">
+                News
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-03-30/">AI News Daily | 2026-03-30</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-03-30T00:00:00Z'>Mar 30, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-行业要闻">📰 行业要闻</a>
+      <ol>
+        <li><a href="#sora-关停ai-视频的现实性检验时刻">Sora 关停：AI 视频的现实性检验时刻</a></li>
+        <li><a href="#nicolas-carlini-称-claude-是比他更好的安全研究员">Nicolas Carlini 称 Claude 是比他更好的安全研究员</a></li>
+        <li><a href="#chatgpt-在输入前强制-cloudflare-读取-react-状态">ChatGPT 在输入前强制 Cloudflare 读取 React 状态</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源与工具">🔧 开源与工具</a>
+      <ol>
+        <li><a href="#zinc--用-zig-写的-llm-推理引擎550-amd-gpu-跑-35b-模型">ZINC — 用 Zig 写的 LLM 推理引擎，$550 AMD GPU 跑 35B 模型</a></li>
+        <li><a href="#superset--ai-agent-时代的代码编辑器">Superset — AI Agent 时代的代码编辑器</a></li>
+        <li><a href="#chitu赤兔-清华出品的高性能-llm-推理框架">Chitu（赤兔）— 清华出品的高性能 LLM 推理框架</a></li>
+        <li><a href="#spiceai--rust-编写的-sql-查询--llm-推理加速引擎">SpiceAI — Rust 编写的 SQL 查询 + LLM 推理加速引擎</a></li>
+        <li><a href="#weclone--从聊天记录创建数字分身">WeClone — 从聊天记录创建数字分身</a></li>
+        <li><a href="#miasma--用无限毒坑困住-ai-爬虫">Miasma — 用无限毒坑困住 AI 爬虫</a></li>
+        <li><a href="#latmd--用-markdown-构建代码库知识图谱">Lat.md — 用 Markdown 构建代码库知识图谱</a></li>
+      </ol>
+    </li>
+    <li><a href="#-技术与研究">🔬 技术与研究</a>
+      <ol>
+        <li><a href="#llamacpp-moe-gemv-内核优化batch-size--1">llama.cpp MOE GEMV 内核优化（batch size &gt; 1）</a></li>
+        <li><a href="#turboquant-能为本地推理和移动端带来什么">TurboQuant 能为本地推理和移动端带来什么？</a></li>
+        <li><a href="#voxtral-tts-实现语音克隆的缺失拼图">Voxtral TTS 实现语音克隆的缺失拼图</a></li>
+        <li><a href="#inference-engines--token-在-transformer-层中旅程的可视化深度解析">Inference Engines — Token 在 Transformer 层中旅程的可视化深度解析</a></li>
+        <li><a href="#如果-ai-需要的不是更多内存而是更好的数学">如果 AI 需要的不是更多内存，而是更好的数学？</a></li>
+        <li><a href="#litellm-和-telnyx-供应链零日漏洞被语义分析捕获">LiteLLM 和 Telnyx 供应链零日漏洞被语义分析捕获</a></li>
+      </ol>
+    </li>
+    <li><a href="#-社区热议">🗣️ 社区热议</a>
+      <ol>
+        <li><a href="#claude-code-每-10-分钟对项目仓库执行-git-reset-hard">Claude Code 每 10 分钟对项目仓库执行 git reset &ndash;hard</a></li>
+        <li><a href="#m4-max-vs-m5-max-本地-llm-推理性能对比">M4 Max vs M5 Max 本地 LLM 推理性能对比</a></li>
+        <li><a href="#rag-在受监管行业部署的实战教训">RAG 在受监管行业部署的实战教训</a></li>
+        <li><a href="#llm-基准测试捕捉-llm-违反物理定律的场景">LLM 基准测试：捕捉 LLM 违反物理定律的场景</a></li>
+      </ol>
+    </li>
+    <li><a href="#-今日数据概览">📊 今日数据概览</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>数据来源：Hacker News · GitHub Trending · Reddit (r/LocalLLaMA, r/MachineLearning, r/artificial) · TechCrunch AI
+生成时间：2026-03-30 00:30 UTC</p>
+
+    </blockquote>
+<hr>
+<h2 id="-行业要闻">📰 行业要闻
+</h2><h3 id="sora-关停ai-视频的现实性检验时刻">Sora 关停：AI 视频的现实性检验时刻
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://techcrunch.com/2026/03/29/soras-shutdown-could-be-a-reality-check-moment-for-ai-video/"  target="_blank" rel="noopener"
+    >TechCrunch AI</a></li>
+<li><strong>摘要：</strong> OpenAI 正式关停 Sora AI 视频生成应用，此前迪士尼版权诉讼是关键导火索。TechCrunch 评论认为这可能是整个 AI 视频赛道的现实检验——技术能力和法律/商业可行性之间的鸿沟比想象中更大。这对 Runway、Pika 等竞品也敲响了警钟。</li>
+</ul>
+<h3 id="nicolas-carlini-称-claude-是比他更好的安全研究员">Nicolas Carlini 称 Claude 是比他更好的安全研究员
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://old.reddit.com/r/artificial/comments/1s738xf/nicolas_carlini_672k_citations_on_google_scholar/"  target="_blank" rel="noopener"
+    >Reddit r/artificial</a></li>
+<li><strong>摘要：</strong> Google DeepMind 安全研究员 Nicolas Carlini（Google Scholar 引用 6.72 万次）公开表示 Claude 在安全研究能力上已超越自己，声称该 AI 通过利用智能合约漏洞赚取了 370 万美元，并在 Linux 和 Ghost 中发现了漏洞。这一声明在社区引发了关于 AI 自主安全研究能力边界的激烈讨论。</li>
+</ul>
+<h3 id="chatgpt-在输入前强制-cloudflare-读取-react-状态">ChatGPT 在输入前强制 Cloudflare 读取 React 状态
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://www.buchodi.com/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state-i-decrypted-the-program-that-does-it/"  target="_blank" rel="noopener"
+    >Hacker News（297 分）</a></li>
+<li><strong>摘要：</strong> 安全研究者逆向发现 ChatGPT 在允许用户输入前，会通过 Cloudflare 的反爬机制读取应用的 React 状态数据。该文详细解析了这一加密程序的工作原理，引发了关于 AI 产品隐私边界和前端安全的讨论。</li>
+</ul>
+<hr>
+<h2 id="-开源与工具">🔧 开源与工具
+</h2><h3 id="zinc--用-zig-写的-llm-推理引擎550-amd-gpu-跑-35b-模型">ZINC — 用 Zig 写的 LLM 推理引擎，$550 AMD GPU 跑 35B 模型
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s79w6u/zinc_llm_inference_engine_written_in_zig_running/"  target="_blank" rel="noopener"
+    >Reddit r/LocalLLaMA</a></li>
+<li><strong>摘要：</strong> 全新的 LLM 推理引擎 ZINC，使用 Zig 语言从零编写，核心卖点是在 $550 的 AMD GPU 上即可运行 35B 参数模型。Zig 的低级别控制和零开销抽象在推理性能优化上展现了独特优势，为 AMD 用户提供了 NVIDIA 之外的选择。</li>
+</ul>
+<h3 id="superset--ai-agent-时代的代码编辑器">Superset — AI Agent 时代的代码编辑器
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://github.com/superset-sh/superset"  target="_blank" rel="noopener"
+    >GitHub Trending ⭐8.2k</a></li>
+<li><strong>摘要：</strong> 允许在本地机器上同时运行多个 Claude Code、Codex 等 AI 编码代理的代码编辑器。定位是 &ldquo;AI Agent 时代的 IDE&rdquo;，支持并行运行多个代理实例协同完成复杂项目。</li>
+</ul>
+<h3 id="chitu赤兔-清华出品的高性能-llm-推理框架">Chitu（赤兔）— 清华出品的高性能 LLM 推理框架
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://github.com/thu-pacman/chitu"  target="_blank" rel="noopener"
+    >GitHub Trending ⭐4.3k</a></li>
+<li><strong>摘要：</strong> 清华大学 PACMAN 实验室开源的大语言模型推理框架，聚焦效率、灵活性和可用性。在大批量推理和多模型调度场景下具有独特优势。</li>
+</ul>
+<h3 id="spiceai--rust-编写的-sql-查询--llm-推理加速引擎">SpiceAI — Rust 编写的 SQL 查询 + LLM 推理加速引擎
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://github.com/spiceai/spiceai"  target="_blank" rel="noopener"
+    >GitHub Trending ⭐2.9k</a></li>
+<li><strong>摘要：</strong> 可移植的加速 SQL 查询、搜索和 LLM 推理引擎，用 Rust 编写，专为数据驱动的 AI 应用和 Agent 设计。将数据查询和 AI 推理统一在一个运行时中。</li>
+</ul>
+<h3 id="weclone--从聊天记录创建数字分身">WeClone — 从聊天记录创建数字分身
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://github.com/ooyinet/WeClone"  target="_blank" rel="noopener"
+    >GitHub Trending ⭐124</a></li>
+<li><strong>摘要：</strong> 一站式解决方案：用微信等聊天记录微调大语言模型，让模型拥有 &ldquo;那味儿&rdquo;，并绑定到聊天机器人实现数字分身。支持 LoRA 微调，从导出数据到部署一条龙。</li>
+</ul>
+<h3 id="miasma--用无限毒坑困住-ai-爬虫">Miasma — 用无限毒坑困住 AI 爬虫
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://github.com/austin-weeks/miasma"  target="_blank" rel="noopener"
+    >Hacker News（277 分）</a></li>
+<li><strong>摘要：</strong> 开源工具，通过生成无限的虚假页面来困住 AI 网页爬虫，让其陷入永无止境的 &ldquo;毒数据坑&rdquo;。对内容创作者来说是一种防御性工具，但也引发了关于 AI 训练数据战争升级的讨论。</li>
+</ul>
+<h3 id="latmd--用-markdown-构建代码库知识图谱">Lat.md — 用 Markdown 构建代码库知识图谱
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://github.com/1st1/lat.md"  target="_blank" rel="noopener"
+    >Hacker News（82 分）</a></li>
+<li><strong>摘要：</strong> Agent Lattice 项目，用 Markdown 文件为代码库构建知识图谱，让 AI 代理更好地理解和导航大型代码库。定位是 AI 辅助开发时的 &ldquo;代码地图&rdquo;。</li>
+</ul>
+<hr>
+<h2 id="-技术与研究">🔬 技术与研究
+</h2><h3 id="llamacpp-moe-gemv-内核优化batch-size--1">llama.cpp MOE GEMV 内核优化（batch size &gt; 1）
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s71d3f/optimize_moe_gemv_kernel_for_bs_1_by_gaugargnv/"  target="_blank" rel="noopener"
+    >Reddit r/LocalLLaMA</a></li>
+<li><strong>摘要：</strong> NVIDIA 工程师 gaugarg-nv 向 llama.cpp 提交了针对 Mixture-of-Experts 架构的 GEMV 内核优化 PR，支持 batch size &gt; 1 的场景。这对运行 Mixtral、DeepSeek 等 MoE 模型的本地用户是实质性性能提升。</li>
+</ul>
+<h3 id="turboquant-能为本地推理和移动端带来什么">TurboQuant 能为本地推理和移动端带来什么？
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s76bjg/what_will_googles_turboquant_actually_change_for/"  target="_blank" rel="noopener"
+    >Reddit r/LocalLLaMA</a></li>
+<li><strong>摘要：</strong> 社区深入讨论 Google 的 TurboQuant 压缩算法（近最优 4-bit LLM 量化）对本地推理生态的实际影响。核心问题：能否在移动端运行更大模型？与现有 GGUF 量化方案如何互补？目前来看，集成到 llama.cpp 仍需时间。</li>
+</ul>
+<h3 id="voxtral-tts-实现语音克隆的缺失拼图">Voxtral TTS 实现语音克隆的缺失拼图
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s6rmoi/the_missing_piece_of_voxtral_tts_to_enable_voice/"  target="_blank" rel="noopener"
+    >Reddit r/LocalLLaMA</a></li>
+<li><strong>摘要：</strong> Mistral 近期开源了 Voxtral 语音生成模型，社区已找到启用语音克隆功能所需的关键缺失组件。开源 TTS 声音克隆的门槛正在快速降低。</li>
+</ul>
+<h3 id="inference-engines--token-在-transformer-层中旅程的可视化深度解析">Inference Engines — Token 在 Transformer 层中旅程的可视化深度解析
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s6t275/inference_engines_a_visual_deep_dive_into_the/"  target="_blank" rel="noopener"
+    >Reddit r/LocalLLaMA</a></li>
+<li><strong>摘要：</strong> 精美的交互式可视化项目，展示一个 token 如何穿过 Transformer 的各个层级。对理解 LLM 推理过程的教育价值很高。</li>
+</ul>
+<h3 id="如果-ai-需要的不是更多内存而是更好的数学">如果 AI 需要的不是更多内存，而是更好的数学？
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://adlrocha.substack.com/p/adlrocha-what-if-ai-doesnt-need-more"  target="_blank" rel="noopener"
+    >Hacker News（162 分）</a></li>
+<li><strong>摘要：</strong> 文章探讨了一个有趣的方向：与其不断增加硬件资源（更多 GPU 显存、更大集群），不如从数学基础上重新思考 AI 的计算范式。作者认为更优雅的数学抽象可能比暴力堆硬件更有效。</li>
+</ul>
+<h3 id="litellm-和-telnyx-供应链零日漏洞被语义分析捕获">LiteLLM 和 Telnyx 供应链零日漏洞被语义分析捕获
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://point-wild.github.io/who-touched-my-packages/"  target="_blank" rel="noopener"
+    >Hacker News</a></li>
+<li><strong>摘要：</strong> 安全研究者通过语义分析方法发现了 LiteLLM 和 Telnyx Python 包的供应链攻击零日漏洞。这是继上周 LiteLLM 供应链事件后的持续跟进，凸显了 AI 基础设施供应链安全的脆弱性。</li>
+</ul>
+<hr>
+<h2 id="-社区热议">🗣️ 社区热议
+</h2><h3 id="claude-code-每-10-分钟对项目仓库执行-git-reset-hard">Claude Code 每 10 分钟对项目仓库执行 git reset &ndash;hard
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://github.com/anthropics/claude-code/issues/40710"  target="_blank" rel="noopener"
+    >Hacker News（110 分）</a></li>
+<li><strong>摘要：</strong> 有用户报告 Claude Code 在某些情况下会每隔 10 分钟自动执行 <code>git reset --hard origin/main</code>，导致本地未提交的更改全部丢失。这一 bug 引起了社区对 AI 编码工具安全性的严肃讨论——当你把代码库的控制权交给 AI 时，风险边界在哪里？</li>
+</ul>
+<h3 id="m4-max-vs-m5-max-本地-llm-推理性能对比">M4 Max vs M5 Max 本地 LLM 推理性能对比
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s771lm/local_llm_inference_on_m4_max_vs_m5_max/"  target="_blank" rel="noopener"
+    >Reddit r/LocalLLaMA</a></li>
+<li><strong>摘要：</strong> Apple M5 Max 已上市，社区第一时间跑了本地 LLM 推理基准测试与 M4 Max 对比。对考虑升级硬件的本地推理用户是重要参考。</li>
+</ul>
+<h3 id="rag-在受监管行业部署的实战教训">RAG 在受监管行业部署的实战教训
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1s6oiuq/lessons_from_deploying_rag_bots_for_regulated/"  target="_blank" rel="noopener"
+    >Reddit r/LocalLLaMA</a></li>
+<li><strong>摘要：</strong> 来自实际生产环境的经验分享：在金融、医疗等受监管行业部署 RAG 系统时踩过的坑和总结的教训。涉及合规性、数据隔离、幻觉控制等关键问题。</li>
+</ul>
+<h3 id="llm-基准测试捕捉-llm-违反物理定律的场景">LLM 基准测试：捕捉 LLM 违反物理定律的场景
+</h3><ul>
+<li><strong>来源：</strong> <a class="link" href="https://old.reddit.com/r/MachineLearning/comments/1s6keh0/r_i_built_a_benchmark_that_catches_llms_breaking/"  target="_blank" rel="noopener"
+    >Reddit r/MachineLearning</a></li>
+<li><strong>摘要：</strong> 研究者构建了专门检测 LLM 是否违反基本物理定律的基准测试。结果表明即使是最先进的模型在物理推理上仍有显著盲区，对 LLM 在科学领域的可靠性提出了质疑。</li>
+</ul>
+<hr>
+<h2 id="-今日数据概览">📊 今日数据概览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>指标</th>
+          <th>数值</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>原始抓取</td>
+          <td>264 条</td>
+      </tr>
+      <tr>
+          <td>去重后（已报道）</td>
+          <td>151 条</td>
+      </tr>
+      <tr>
+          <td>最终收录</td>
+          <td>19 条</td>
+      </tr>
+      <tr>
+          <td>丢弃原因</td>
+          <td>旧闻/非 AI 相关/低质量问答帖/已知项目日常更新</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<p><em>下期预告：持续关注 TurboQuant 在 llama.cpp 的集成进展、Sora 关停后 AI 视频赛道的连锁反应、以及 M5 Max 的完整推理基准测试。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Photo by <a class="link" href="https://unsplash.com/photos/led-signage-YaXDaszuQac"  target="_blank" rel="noopener"
+    >Alfred Kenneally</a> on <a class="link" href="https://unsplash.com"  target="_blank" rel="noopener"
+    >Unsplash</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-29/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-29" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-29/cover_hu_fa4a46f0a64848e7.jpg" srcset="/zh-cn/p/daily-news-2026-03-29/cover_hu_fa4a46f0a64848e7.jpg 1x, /zh-cn/p/daily-news-2026-03-29/cover_hu_a0eb9e71d6881e57.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #20255980 0%, #4355acC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-29</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-27/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-27" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-27/cover_hu_c207154168d62f50.jpg" srcset="/zh-cn/p/daily-news-2026-03-27/cover_hu_c207154168d62f50.jpg 1x, /zh-cn/p/daily-news-2026-03-27/cover_hu_c8c5536f4e0add26.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #2546be80 0%, #0d1035C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-27</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-26/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-26" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-26/cover_hu_5f985ae943da4cbd.jpg" srcset="/zh-cn/p/daily-news-2026-03-26/cover_hu_5f985ae943da4cbd.jpg 1x, /zh-cn/p/daily-news-2026-03-26/cover_hu_1dba5e733b0c925f.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #3347a480 0%, #1c234fC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-26</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-25/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-25" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-25/cover_hu_250bcfe6f6dfbbf2.jpg" srcset="/zh-cn/p/daily-news-2026-03-25/cover_hu_250bcfe6f6dfbbf2.jpg 1x, /zh-cn/p/daily-news-2026-03-25/cover_hu_43b384d80a472e09.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #87969980 0%, #20312dC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-25</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-03-24/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-03-24" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-03-24/cover_hu_85956ead0fff7675.jpg" srcset="/zh-cn/p/daily-news-2026-03-24/cover_hu_85956ead0fff7675.jpg 1x, /zh-cn/p/daily-news-2026-03-24/cover_hu_b5061f3b2ff0e6ce.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #25a1c480 0%, #080b0eC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-03-24</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
