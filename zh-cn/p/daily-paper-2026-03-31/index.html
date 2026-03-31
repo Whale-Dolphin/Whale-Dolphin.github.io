@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 6 篇论文 | Audio LLM: 0篇 | LLM Training: 2篇 | AI Agents: 2篇 | 通用热门: 1篇 | 其他值得关注: 1篇 来源: HuggingFace(6)\n今天新论文不多（arXiv API 限速，主要靠 HuggingFace），但质量不错。两篇 Agent 论文都很有意思——一篇让 VLM 在 3D Slicer 里做医学影像诊断，另一篇从 trajectory 里自动蒸馏可复用 skill。视频生成方向也有亮点，PackForcing 用 5 秒短视频训练就能生成 2 分钟长视频。\n">
+<title>AI Paper Daily | 2026-03-31</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-03-31/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-03-31">
+<meta property='og:description' content="今日概览 共收录 6 篇论文 | Audio LLM: 0篇 | LLM Training: 2篇 | AI Agents: 2篇 | 通用热门: 1篇 | 其他值得关注: 1篇 来源: HuggingFace(6)\n今天新论文不多（arXiv API 限速，主要靠 HuggingFace），但质量不错。两篇 Agent 论文都很有意思——一篇让 VLM 在 3D Slicer 里做医学影像诊断，另一篇从 trajectory 里自动蒸馏可复用 skill。视频生成方向也有亮点，PackForcing 用 5 秒短视频训练就能生成 2 分钟长视频。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-03-31/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-03-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-31T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-03-31">
+<meta name="twitter:description" content="今日概览 共收录 6 篇论文 | Audio LLM: 0篇 | LLM Training: 2篇 | AI Agents: 2篇 | 通用热门: 1篇 | 其他值得关注: 1篇 来源: HuggingFace(6)\n今天新论文不多（arXiv API 限速，主要靠 HuggingFace），但质量不错。两篇 Agent 论文都很有意思——一篇让 VLM 在 3D Slicer 里做医学影像诊断，另一篇从 trajectory 里自动蒸馏可复用 skill。视频生成方向也有亮点，PackForcing 用 5 秒短视频训练就能生成 2 分钟长视频。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-03-31/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#out-of-sight-but-not-out-of-mind-hybrid-memory-for-dynamic-video-world-models">Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models</a></li>
+        <li><a href="#trace2skill-distill-trajectory-local-lessons-into-transferable-agent-skills">Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#medopenclaw-auditable-medical-imaging-agents-reasoning-over-uncurated-full-studies">MedOpenClaw: Auditable Medical Imaging Agents Reasoning over Uncurated Full Studies</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#learning-to-commit-generating-organic-pull-requests-via-online-repository-memory">Learning to Commit: Generating Organic Pull Requests via Online Repository Memory</a></li>
+        <li><a href="#handvqa-diagnosing-and-improving-fine-grained-spatial-reasoning-about-hands-in-vision-language-models">HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#-通用热门">📌 通用热门</a>
+      <ol>
+        <li><a href="#packforcing-short-video-training-suffices-for-long-video-sampling-and-long-context-inference">PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-03-31/">AI Paper Daily | 2026-03-31</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-03-31T00:00:00Z'>Mar 31, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#out-of-sight-but-not-out-of-mind-hybrid-memory-for-dynamic-video-world-models">Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models</a></li>
+        <li><a href="#trace2skill-distill-trajectory-local-lessons-into-transferable-agent-skills">Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#medopenclaw-auditable-medical-imaging-agents-reasoning-over-uncurated-full-studies">MedOpenClaw: Auditable Medical Imaging Agents Reasoning over Uncurated Full Studies</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#learning-to-commit-generating-organic-pull-requests-via-online-repository-memory">Learning to Commit: Generating Organic Pull Requests via Online Repository Memory</a></li>
+        <li><a href="#handvqa-diagnosing-and-improving-fine-grained-spatial-reasoning-about-hands-in-vision-language-models">HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#-通用热门">📌 通用热门</a>
+      <ol>
+        <li><a href="#packforcing-short-video-training-suffices-for-long-video-sampling-and-long-context-inference">PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 6 篇论文 | Audio LLM: 0篇 | LLM Training: 2篇 | AI Agents: 2篇 | 通用热门: 1篇 | 其他值得关注: 1篇
+来源: HuggingFace(6)</p>
+
+    <blockquote>
+        <p>今天新论文不多（arXiv API 限速，主要靠 HuggingFace），但质量不错。两篇 Agent 论文都很有意思——一篇让 VLM 在 3D Slicer 里做医学影像诊断，另一篇从 trajectory 里自动蒸馏可复用 skill。视频生成方向也有亮点，PackForcing 用 5 秒短视频训练就能生成 2 分钟长视频。</p>
+
+    </blockquote>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><h3 id="out-of-sight-but-not-out-of-mind-hybrid-memory-for-dynamic-video-world-models"><a class="link" href="https://arxiv.org/abs/2603.25716"  target="_blank" rel="noopener"
+    >Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models</a>
+</h3>
+    <blockquote>
+        <p>提出混合记忆机制，让视频世界模型能记住「离开画面」的动态物体并在重新出现时保持一致性</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Kaijin Chen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (133 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.25716"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.25716.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 现有视频世界模型把环境当静态画布，动态主体离开画面再出现时会冻结、扭曲或消失。本文提出 HyDRA 架构，将记忆压缩为 token 并通过时空相关性驱动的检索机制，选择性关注运动线索，有效保持隐藏主体的身份和运动连续性。同时构建了首个专门评估混合记忆的大规模数据集 HM-World（59K 高质量片段）。</li>
+<li><strong>相关技术</strong>: video world model, hybrid memory architecture, spatiotemporal retrieval, KV-cache token compression, exit-entry event modeling</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视频世界模型在模拟物理世界方面展现了巨大潜力，但现有的记忆机制主要将环境视为静态画布。当动态主体隐藏在视野之外并稍后重新出现时，当前方法常常力不从心，导致主体冻结、扭曲或消失。为解决这一问题，我们引入了混合记忆（Hybrid Memory），这是一种新范式，要求模型同时充当静态背景的精确档案管理者和动态主体的警觉追踪者，确保在视野外的时间间隔内保持运动连续性。为促进这一方向的研究，我们构建了 HM-World，这是首个专门用于混合记忆的大规模视频数据集。它包含 59K 高保真视频片段，具有解耦的摄像机和主体轨迹，涵盖 17 个多样化场景、49 个不同主体，以及精心设计的退出-进入事件，以严格评估混合一致性。此外，我们提出了 HyDRA，一种专门的记忆架构，将记忆压缩为 token 并利用时空相关性驱动的检索机制。通过选择性地关注相关运动线索，HyDRA 有效地保持了隐藏主体的身份和运动。在 HM-World 上的大量实验表明，我们的方法在动态主体一致性和整体生成质量方面都显著优于最先进的方法。</p>
+</details>
+<hr>
+<h3 id="trace2skill-distill-trajectory-local-lessons-into-transferable-agent-skills"><a class="link" href="https://arxiv.org/abs/2603.25158"  target="_blank" rel="noopener"
+    >Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills</a>
+</h3>
+    <blockquote>
+        <p>从 Agent 执行轨迹中自动蒸馏可迁移的 skill，Qwen3.5-35B 蒸馏的 skill 能让 122B 模型提升 57.65 个百分点</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Jingwei Ni et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (33 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.25158"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.25158.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 手动编写 Agent skill 不可扩展，自动生成的又容易过拟合单条轨迹。Trace2Skill 模仿人类专家的方式：先派并行子 Agent 分析大量执行轨迹，提取局部经验，再通过归纳推理层级合并为统一、无冲突的 skill 目录。关键发现是蒸馏出的 skill 具有强迁移性——小模型蒸馏的 skill 能显著提升大模型性能，且无需参数更新或外部检索模块。</li>
+<li><strong>相关技术</strong>: trajectory distillation, hierarchical inductive reasoning, skill transfer across LLM scales, parallel sub-agent analysis, declarative skill directory</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>为大语言模型（LLM）Agent 配备领域特定技能对于处理复杂任务至关重要。然而，手动编写造成了严重的可扩展性瓶颈。相反，自动化技能生成往往产生脆弱或碎片化的结果，因为它要么依赖浅层参数化知识，要么顺序地过拟合于不可泛化的轨迹局部经验。为克服这一问题，我们引入了 Trace2Skill，一个模仿人类专家编写技能方式的框架：在提炼为单一综合指南之前，全面分析广泛的执行经验。Trace2Skill 不是对单条轨迹进行顺序反应，而是派遣并行的子 Agent 舰队分析多样化的执行池。它提取轨迹特定的经验教训，并通过归纳推理将其层级化地合并为统一的、无冲突的技能目录。Trace2Skill 支持深化现有人写技能和从零创建新技能。在电子表格、视觉问答和数学推理等具有挑战性的领域的实验表明，Trace2Skill 显著优于强基线，包括 Anthropic 的官方 xlsx 技能。关键的是，这种轨迹驱动的进化不仅仅是记忆任务实例或模型特定的怪癖：进化后的技能可跨 LLM 规模迁移并泛化到分布外设置。例如，Qwen3.5-35B 在自身轨迹上进化的技能在 WikiTableQuestions 上使 Qwen3.5-122B Agent 提升了高达 57.65 个绝对百分点。最终，我们的结果证明，复杂的 Agent 经验可以被封装为高度可迁移的声明式技能——无需参数更新，无需外部检索模块，且仅使用小至 35B 参数的开源模型。</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="medopenclaw-auditable-medical-imaging-agents-reasoning-over-uncurated-full-studies"><a class="link" href="https://arxiv.org/abs/2603.24649"  target="_blank" rel="noopener"
+    >MedOpenClaw: Auditable Medical Imaging Agents Reasoning over Uncurated Full Studies</a>
+</h3>
+    <blockquote>
+        <p>让 VLM 在 3D Slicer 中动态导航完整医学影像，而非仅看预选 2D 图片</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Weixiang Shen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (21 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.24649"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.24649.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 当前医学 VLM 评估过度简化临床现实——只用预选的 2D 图像。真正的临床 Agent 需要主动在多序列 3D 影像中导航收集证据。MedOpenClaw 提供了一个可审计的运行时，让 VLM 在 3D Slicer 等标准医学工具中动态操作。有趣的发现：Gemini 3.1 Pro 和 GPT-5.4 能成功导航基本任务，但给它们专业辅助工具后性能反而下降——因为缺乏精确的空间定位能力。</li>
+<li><strong>相关技术</strong>: medical imaging agent, 3D Slicer integration, multi-sequence brain MRI, spatial grounding, auditable agentic runtime</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>目前，在医学影像任务中评估视觉语言模型（VLM）过度简化了临床现实，依赖于需要大量人工劳动来策划的预选 2D 图像。这种设置忽略了真实世界诊断的核心挑战：真正的临床 Agent 必须主动在多序列或多模态的完整 3D 体积中导航，收集证据并最终支持最终决策。为解决这一问题，我们提出 MEDOPENCLAW，一个可审计的运行时，旨在让 VLM 在标准医学工具或查看器（如 3D Slicer）中动态操作。在此运行时之上，我们引入了 MEDFLOWBENCH，一个涵盖多序列脑部 MRI 和肺部 CT/PET 的全研究医学影像基准。它系统地评估医学 Agent 能力，包括仅查看器、工具使用和开放方法三个赛道。初步结果揭示了一个关键洞察：虽然最先进的 LLM/VLM（如 Gemini 3.1 Pro 和 GPT-5.4）能够成功导航查看器以解决基本的研究级任务，但当获得专业辅助工具访问权限时，其性能却矛盾地下降了，原因是缺乏精确的空间定位能力。通过弥合静态图像感知和交互式临床工作流之间的差距，MEDOPENCLAW 和 MEDFLOWBENCH 为开发可审计的全研究医学影像 Agent 建立了可重复的基础。</p>
+</details>
+<hr>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="learning-to-commit-generating-organic-pull-requests-via-online-repository-memory"><a class="link" href="https://arxiv.org/abs/2603.26664"  target="_blank" rel="noopener"
+    >Learning to Commit: Generating Organic Pull Requests via Online Repository Memory</a>
+</h3>
+    <blockquote>
+        <p>通过在线仓库记忆让代码 Agent 生成符合项目风格和约定的「有机」PR</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Mo Li et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (2 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.26664"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.26664.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: LLM 代码 Agent 在基准上表现好，但生成的 PR 常被真实维护者拒绝——不是功能不对，而是不够「有机」：忽视项目约定、重复已有内部 API、违反隐式架构约束。本文提出 Online Repository Memory 框架，Agent 对历史 commit 进行监督对比反思，将差距蒸馏为持续增长的 skill 集合（编码风格、内部 API 用法、架构不变量），从而生成扎根于项目自身演化的代码变更。</li>
+<li><strong>相关技术</strong>: organic pull request generation, online repository memory, supervised contrastive reflection, code style distillation, commit pattern learning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>基于大语言模型（LLM）的代码 Agent 在受控基准上取得了令人印象深刻的结果，但生成的拉取请求经常被真实维护者拒绝。根本原因不是功能不正确，而是缺乏有机性（organicity）：生成的代码忽视项目特定的约定，重复内部 API 已提供的功能，并违反多年开发积累的隐式架构约束。仅仅将 Agent 暴露于最新的仓库快照是不够的：快照揭示了代码库的最终状态，但没有揭示达到该状态的仓库特定变更模式。我们引入了 Learning to Commit，一个通过在线仓库记忆弥合这一差距的框架。给定一个具有严格时间分割的仓库，Agent 对早期提交执行监督对比反思：它盲目地尝试解决每个历史问题，将其预测与标准差异进行比较，并将差距蒸馏为持续增长的技能集——捕获编码风格、内部 API 使用和架构不变量的可重用模式。当新的 PR 描述到达时，Agent 以这些积累的技能为条件进行生成，产生扎根于项目自身演化而非通用预训练先验的变更。评估在真正未来的、已合并的拉取请求上进行，这些请求在技能构建阶段不可能被看到，并跨越多个维度，包括功能正确性、代码风格一致性、内部 API 重用率和修改区域合理性。在具有丰富提交历史的专家维护仓库上的实验表明，在线仓库记忆有效地提高了留出未来任务的有机性分数。</p>
+</details>
+<hr>
+<h3 id="handvqa-diagnosing-and-improving-fine-grained-spatial-reasoning-about-hands-in-vision-language-models"><a class="link" href="https://arxiv.org/abs/2603.26362"  target="_blank" rel="noopener"
+    >HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models</a>
+</h3>
+    <blockquote>
+        <p>160 万道手部关节空间推理题，暴露 VLM 在精细空间理解上的系统性缺陷</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: MD Khalequzzaman Chowdhury Sayem et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.26362"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.26362.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 构建了基于 3D 手部数据集（FreiHAND、InterHand2.6M、FPHA）的大规模诊断基准，包含超过 160 万道控制变量的选择题，探测手部关节间的角度、距离和相对位置关系。发现现有 VLM 存在系统性缺陷：幻觉手指部位、错误的几何解释、泛化能力差。通过 LoRA 微调学到的 3D 空间知识可零样本迁移，在手势识别和手物交互任务上分别提升 10.33% 和 2.63%。</li>
+<li><strong>相关技术</strong>: hand pose understanding, fine-grained spatial VQA, 3D-grounded LoRA fine-tuning, joint angle/distance reasoning, zero-shot transfer</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>理解人手的精细关节运动在高风险场景中至关重要，如机器人辅助手术、芯片制造和基于 AR/VR 的人机交互。尽管在通用视觉语言基准上达到了接近人类的性能，当前的视觉语言模型（VLM）在精细空间推理方面仍有困难，特别是在解释复杂且多关节的手部姿态方面。我们引入 HandVQA，一个大规模诊断基准，旨在通过视觉问答评估 VLM 对详细手部解剖结构的理解。基于高质量 3D 手部数据集（FreiHAND、InterHand2.6M、FPHA）构建，我们的基准包含超过 160 万道控制变量的选择题，探测手部关节间的空间关系，如角度、距离和相对位置。我们在基础和微调设置下评估了几个最先进的 VLM（LLaVA、DeepSeek 和 Qwen-VL），通过 LoRA 进行轻量级微调。我们的发现揭示了当前模型的系统性局限，包括幻觉手指部位、不正确的几何解释和较差的泛化能力。HandVQA 不仅暴露了这些关键的推理差距，还提供了一条经过验证的改进路径。我们证明，从我们的基准中学到的 3D 空间知识可以在零样本设置中迁移，显著提高了模型在新的下游任务上的准确率，如手势识别（+10.33%）和手物交互（+2.63%）。</p>
+</details>
+<hr>
+<h2 id="-通用热门">📌 通用热门
+</h2><h3 id="packforcing-short-video-training-suffices-for-long-video-sampling-and-long-context-inference"><a class="link" href="https://arxiv.org/abs/2603.25730"  target="_blank" rel="noopener"
+    >PackForcing: Short Video Training Suffices for Long Video Sampling and Long Context Inference</a>
+</h3>
+    <blockquote>
+        <p>用 5 秒短视频训练就能生成 2 分钟长视频，单张 H200 搞定</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xiaofeng Mao et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (38 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.25730"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.25730.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 自回归视频扩散模型受限于线性增长的 KV-cache、时间重复和复合误差。PackForcing 提出三分区 KV-cache 策略：Sink token（保持早期锚帧全分辨率）、Mid token（32 倍 token 压缩，融合 3D 卷积和低分辨率 VAE 重编码）、Recent token（全分辨率保持局部时间一致性）。加上动态 top-k 上下文选择和连续时间 RoPE 调整，实现 4GB 固定 KV-cache 生成 832×480 分辨率、16FPS 的 2 分钟连贯视频，时间外推倍数达 24 倍。</li>
+<li><strong>相关技术</strong>: three-partition KV-cache, temporal RoPE adjustment, 3D convolution compression, autoregressive video diffusion, short-to-long extrapolation</li>
+<li><strong>代码/权重</strong>: 已开源 ✅ (<a class="link" href="https://github.com/ShandaAI/PackForcing"  target="_blank" rel="noopener"
+    >https://github.com/ShandaAI/PackForcing</a>)</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>自回归视频扩散模型已展示出显著进展，但仍受限于难以处理的线性 KV-cache 增长、时间重复和长视频生成中的复合误差。为应对这些挑战，我们提出 PackForcing，一个通过新颖的三分区 KV-cache 策略高效管理生成历史的统一框架。具体而言，我们将历史上下文分为三种不同类型：(1) Sink token，以全分辨率保留早期锚帧以维持全局语义；(2) Mid token，通过融合渐进式 3D 卷积和低分辨率 VAE 重编码的双分支网络实现大规模时空压缩（32 倍 token 缩减）；(3) Recent token，保持全分辨率以确保局部时间一致性。为在不牺牲质量的情况下严格限制内存占用，我们引入了针对 mid token 的动态 top-k 上下文选择机制，配合连续时间 RoPE 调整（Temporal RoPE Adjustment），以可忽略的开销无缝重新对齐由丢弃 token 引起的位置间隙。得益于这种有原则的层级化上下文压缩，PackForcing 可以在单张 H200 GPU 上生成连贯的 2 分钟、832×480、16 FPS 视频。它实现了仅 4GB 的有界 KV-cache，并实现了惊人的 24 倍时间外推（5 秒到 120 秒），可以零样本运行或仅在 5 秒片段上训练。在 VBench 上的大量结果展示了最先进的时间一致性（26.07）和动态程度（56.25），证明短视频监督足以实现高质量的长视频合成。https://github.com/ShandaAI/PackForcing</p>
+</details>
+<hr>
+<p><em>Generated on 2026-03-31 00:00 UTC | Sources: HuggingFace</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-03-30/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-03-30</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-29/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-29" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-29/cover_hu_c403f9daecc08da8.jpg" srcset="/zh-cn/p/daily-paper-2026-03-29/cover_hu_c403f9daecc08da8.jpg 1x, /zh-cn/p/daily-paper-2026-03-29/cover_hu_7272cb145f5a1ec9.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #5e676f80 0%, #bdc4d8C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-29</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-27/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-27" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-27/cover_hu_b9f71b4fb95d56a.jpg" srcset="/zh-cn/p/daily-paper-2026-03-27/cover_hu_b9f71b4fb95d56a.jpg 1x, /zh-cn/p/daily-paper-2026-03-27/cover_hu_92286fd4c26ba45f.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #cdc7ba80 0%, #413e37C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-27</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-26/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-26" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-26/cover_hu_c1ed6318caf678f7.jpg" srcset="/zh-cn/p/daily-paper-2026-03-26/cover_hu_c1ed6318caf678f7.jpg 1x, /zh-cn/p/daily-paper-2026-03-26/cover_hu_b6405ca4d98bb898.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #4a3e4280 0%, #dcbfb8C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-26</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-25/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-25" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-25/cover_hu_312365a6db68e7c5.jpg" srcset="/zh-cn/p/daily-paper-2026-03-25/cover_hu_312365a6db68e7c5.jpg 1x, /zh-cn/p/daily-paper-2026-03-25/cover_hu_a7f55373a4bbfdb7.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #60cec980 0%, #e0d7d2C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-25</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
