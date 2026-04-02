@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 10 篇论文 | Audio LLM: 1篇 | LLM Training: 4篇 | AI Agents: 5篇 来源: HuggingFace(10)\n重点推荐 ⭐ CARLA-Air: Fly Drones Inside a CARLA World &ndash; A Unified Infrastructure for Air-Ground Embodied Intelligence 将 CARLA 驾驶仿真器与 AirSim 无人机仿真统一为单进程空地协同仿真平台\n">
+<title>AI Paper Daily | 2026-04-02</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-04-02/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-04-02">
+<meta property='og:description' content="今日概览 共收录 10 篇论文 | Audio LLM: 1篇 | LLM Training: 4篇 | AI Agents: 5篇 来源: HuggingFace(10)\n重点推荐 ⭐ CARLA-Air: Fly Drones Inside a CARLA World &ndash; A Unified Infrastructure for Air-Ground Embodied Intelligence 将 CARLA 驾驶仿真器与 AirSim 无人机仿真统一为单进程空地协同仿真平台\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-04-02/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-02T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-04-02">
+<meta name="twitter:description" content="今日概览 共收录 10 篇论文 | Audio LLM: 1篇 | LLM Training: 4篇 | AI Agents: 5篇 来源: HuggingFace(10)\n重点推荐 ⭐ CARLA-Air: Fly Drones Inside a CARLA World &ndash; A Unified Infrastructure for Air-Ground Embodied Intelligence 将 CARLA 驾驶仿真器与 AirSim 无人机仿真统一为单进程空地协同仿真平台\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-04-02/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#carla-air-fly-drones-inside-a-carla-world">CARLA-Air: Fly Drones Inside a CARLA World – A Unified Infrastructure for Air-Ground Embodied Intelligence</a></li>
+        <li><a href="#cutclaw-agentic-hours-long-video-editing-via-music-synchronization">CutClaw: Agentic Hours-Long Video Editing via Music Synchronization</a></li>
+        <li><a href="#unify-agent-a-unified-multimodal-agent-for-world-grounded-image-synthesis">Unify-Agent: A Unified Multimodal Agent for World-Grounded Image Synthesis</a></li>
+        <li><a href="#think-anywhere-in-code-generation">Think Anywhere in Code Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#cutclaw-agentic-hours-long-video-editing-via-music-synchronization-1">CutClaw: Agentic Hours-Long Video Editing via Music Synchronization</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#think-anywhere-in-code-generation-1">Think Anywhere in Code Generation</a></li>
+        <li><a href="#flowpie-test-time-scientific-idea-evolution-with-flow-guided-literature-exploration">FlowPIE: Test-Time Scientific Idea Evolution with Flow-Guided Literature Exploration</a></li>
+        <li><a href="#prism-a-multi-view-multi-capability-retail-video-dataset-for-embodied-vision-language-models">PRISM: A Multi-View Multi-Capability Retail Video Dataset for Embodied Vision-Language Models</a></li>
+        <li><a href="#mmface-dit-a-dual-stream-diffusion-transformer-for-high-fidelity-multimodal-face-generation">MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#unify-agent-a-unified-multimodal-agent-for-world-grounded-image-synthesis-1">Unify-Agent: A Unified Multimodal Agent for World-Grounded Image Synthesis</a></li>
+        <li><a href="#atp-bench-towards-agentic-tool-planning-for-mllm-interleaved-generation">ATP-Bench: Towards Agentic Tool Planning for MLLM Interleaved Generation</a></li>
+        <li><a href="#aec-bench-a-multimodal-benchmark-for-agentic-systems-in-architecture-engineering-and-construction">AEC-Bench: A Multimodal Benchmark for Agentic Systems in Architecture, Engineering, and Construction</a></li>
+        <li><a href="#meta-harness-end-to-end-optimization-of-model-harnesses">Meta-Harness: End-to-End Optimization of Model Harnesses</a></li>
+        <li><a href="#carla-air-fly-drones-inside-a-carla-world-1">CARLA-Air: Fly Drones Inside a CARLA World – A Unified Infrastructure for Air-Ground Embodied Intelligence</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-04-02/">AI Paper Daily | 2026-04-02</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-04-02T00:00:00Z'>Apr 02, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#carla-air-fly-drones-inside-a-carla-world">CARLA-Air: Fly Drones Inside a CARLA World – A Unified Infrastructure for Air-Ground Embodied Intelligence</a></li>
+        <li><a href="#cutclaw-agentic-hours-long-video-editing-via-music-synchronization">CutClaw: Agentic Hours-Long Video Editing via Music Synchronization</a></li>
+        <li><a href="#unify-agent-a-unified-multimodal-agent-for-world-grounded-image-synthesis">Unify-Agent: A Unified Multimodal Agent for World-Grounded Image Synthesis</a></li>
+        <li><a href="#think-anywhere-in-code-generation">Think Anywhere in Code Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#cutclaw-agentic-hours-long-video-editing-via-music-synchronization-1">CutClaw: Agentic Hours-Long Video Editing via Music Synchronization</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#think-anywhere-in-code-generation-1">Think Anywhere in Code Generation</a></li>
+        <li><a href="#flowpie-test-time-scientific-idea-evolution-with-flow-guided-literature-exploration">FlowPIE: Test-Time Scientific Idea Evolution with Flow-Guided Literature Exploration</a></li>
+        <li><a href="#prism-a-multi-view-multi-capability-retail-video-dataset-for-embodied-vision-language-models">PRISM: A Multi-View Multi-Capability Retail Video Dataset for Embodied Vision-Language Models</a></li>
+        <li><a href="#mmface-dit-a-dual-stream-diffusion-transformer-for-high-fidelity-multimodal-face-generation">MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#unify-agent-a-unified-multimodal-agent-for-world-grounded-image-synthesis-1">Unify-Agent: A Unified Multimodal Agent for World-Grounded Image Synthesis</a></li>
+        <li><a href="#atp-bench-towards-agentic-tool-planning-for-mllm-interleaved-generation">ATP-Bench: Towards Agentic Tool Planning for MLLM Interleaved Generation</a></li>
+        <li><a href="#aec-bench-a-multimodal-benchmark-for-agentic-systems-in-architecture-engineering-and-construction">AEC-Bench: A Multimodal Benchmark for Agentic Systems in Architecture, Engineering, and Construction</a></li>
+        <li><a href="#meta-harness-end-to-end-optimization-of-model-harnesses">Meta-Harness: End-to-End Optimization of Model Harnesses</a></li>
+        <li><a href="#carla-air-fly-drones-inside-a-carla-world-1">CARLA-Air: Fly Drones Inside a CARLA World – A Unified Infrastructure for Air-Ground Embodied Intelligence</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 10 篇论文 | Audio LLM: 1篇 | LLM Training: 4篇 | AI Agents: 5篇
+来源: HuggingFace(10)</p>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><h3 id="carla-air-fly-drones-inside-a-carla-world"><a class="link" href="https://arxiv.org/abs/2603.28032"  target="_blank" rel="noopener"
+    >CARLA-Air: Fly Drones Inside a CARLA World &ndash; A Unified Infrastructure for Air-Ground Embodied Intelligence</a>
+</h3>
+    <blockquote>
+        <p>将 CARLA 驾驶仿真器与 AirSim 无人机仿真统一为单进程空地协同仿真平台</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Tianle Zeng et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (228 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.28032"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.28032.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 在单个 Unreal Engine 进程中统一了高保真城市驾驶和物理精确的多旋翼飞行仿真，解决了现有开源平台空地仿真割裂的问题。平台支持空地协同、具身导航、视觉-语言动作、多模态感知等工作负载，并继承了已归档的 AirSim 的航空能力使其持续演进。</li>
+<li><strong>相关技术</strong>: air-ground co-simulation, Unreal Engine, multirotor dynamics, ROS 2, embodied navigation</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>低空经济、具身智能和空地协同系统的融合催生了对仿真基础设施的日益增长的需求，这种基础设施需要能够在单一物理一致的环境中联合建模空中和地面智能体。现有的开源平台仍然是领域隔离的：驾驶仿真器缺乏空中动力学，而多旋翼仿真器缺乏逼真的地面场景。基于桥接的联合仿真引入了同步开销，无法保证严格的时空一致性。</p>
+<p>我们提出了 CARLA-Air，一个开源基础设施，在单个 Unreal Engine 进程中统一了高保真城市驾驶和物理精确的多旋翼飞行。该平台保留了 CARLA 和 AirSim 的原生 Python API 和 ROS 2 接口，实现了零修改的代码复用。在共享的物理时钟和渲染管线中，CARLA-Air 提供了具有规则合规交通、社会感知行人和气动一致的无人机动力学的照片级真实环境，在每个时钟周期同步捕获所有平台上多达 18 种传感器模态。该平台支持代表性的空地具身智能工作负载，涵盖协同、具身导航和视觉-语言动作、多模态感知和数据集构建，以及基于强化学习的策略训练。可扩展的资产管线允许将自定义机器人平台集成到共享世界中。通过继承 AirSim 的空中能力——其上游开发已被归档——CARLA-Air 确保这个被广泛采用的飞行栈在现代基础设施中继续发展。</p>
+<p>已发布预编译二进制文件和完整源代码：https://github.com/louiszengCN/CarlaAir</p>
+</details>
+<hr>
+<h3 id="cutclaw-agentic-hours-long-video-editing-via-music-synchronization"><a class="link" href="https://arxiv.org/abs/2603.29664"  target="_blank" rel="noopener"
+    >CutClaw: Agentic Hours-Long Video Editing via Music Synchronization</a>
+</h3>
+    <blockquote>
+        <p>多智能体框架自动将数小时原始素材剪辑为音乐同步的短视频</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Shifang Zhao et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (28 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.29664"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.29664.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出了一个自主多智能体框架，利用多个多模态语言模型（MLLMs）作为智能体系统，将数小时的原始素材编辑为音乐同步的短视频。采用层级多模态分解捕获视觉和音频素材的细粒度细节和全局结构，通过 Playwriter Agent 编排叙事流、Editor 和 Reviewer Agent 协同优化最终剪辑。</li>
+<li><strong>相关技术</strong>: multi-agent video editing, music synchronization, hierarchical multimodal decomposition, MLLM agents, narrative orchestration</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>在当前社交媒体中，将视频内容与音频对齐进行编辑构成了一种数字化的人类艺术创作。然而，手动视频编辑的耗时和重复性长期以来一直是电影制作人和专业内容创作者面临的挑战。在本文中，我们介绍了 CutClaw，一个自主多智能体框架，旨在利用多个多模态语言模型（MLLMs）作为智能体系统，将数小时的原始素材编辑为有意义的短视频。它生成具有同步音乐、遵循指令且视觉吸引力强的视频。具体来说，我们的方法首先采用层级多模态分解，捕获视觉和音频素材中的细粒度细节和全局结构。然后，为确保叙事一致性，Playwriter Agent 编排整个叙事流程并构建长期叙事结构，将视觉场景锚定到音乐转换点。最后，为构建短编辑视频，Editor 和 Reviewer Agent 基于严格的美学和语义标准协同优化最终剪辑，选择细粒度的视觉内容。我们进行了详细实验，证明 CutClaw 在生成高质量、节奏对齐的视频方面显著优于最先进的基线方法。代码可在 <a class="link" href="https://github.com/GVCLab/CutClaw"  target="_blank" rel="noopener"
+    >https://github.com/GVCLab/CutClaw</a> 获取。</p>
+</details>
+<hr>
+<h3 id="unify-agent-a-unified-multimodal-agent-for-world-grounded-image-synthesis"><a class="link" href="https://arxiv.org/abs/2603.29620"  target="_blank" rel="noopener"
+    >Unify-Agent: A Unified Multimodal Agent for World-Grounded Image Synthesis</a>
+</h3>
+    <blockquote>
+        <p>将图像生成重构为智能体流水线，通过检索真实世界知识增强长尾概念生成</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Shuang Chen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (33 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.29620"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.29620.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 将图像生成重构为包含提示理解、多模态证据搜索、接地重描述和最终合成的智能体流水线，解决了统一多模态模型在长尾和知识密集概念上的生成难题。构建了 143K 高质量智能体轨迹数据集，并提出 FactIP 基准涵盖 12 类文化显著和长尾事实概念。</li>
+<li><strong>相关技术</strong>: world-grounded image synthesis, agentic generation pipeline, multimodal evidence retrieval, long-tail factual concepts, unified multimodal model</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>统一多模态模型为理解多样且复杂的现实世界知识并生成高质量图像提供了自然且有前景的架构。然而，它们仍然主要依赖冻结的参数化知识，这使得它们在涉及长尾和知识密集概念的真实世界图像生成中表现不佳。受智能体在真实世界任务中广泛成功的启发，我们探索了智能体建模来解决这一局限性。具体而言，我们提出了 Unify-Agent，一个用于世界接地图像合成的统一多模态智能体，它将图像生成重构为由提示理解、多模态证据搜索、接地重描述和最终合成组成的智能体流水线。为训练我们的模型，我们构建了定制的多模态数据管线，并策划了 143K 高质量的世界接地图像合成智能体轨迹，实现了对完整智能体生成过程的有效监督。我们进一步引入了 FactIP，一个涵盖 12 类文化显著和长尾事实概念的基准，明确要求外部知识接地。大量实验表明，我们提出的 Unify-Agent 在多样的基准和真实世界生成任务中大幅超越其基础统一模型，同时接近最强闭源模型的世界知识能力。作为基于智能体建模的世界接地图像合成的早期探索，我们的工作突出了紧密耦合推理、搜索和生成对于可靠的开放世界智能体图像合成的价值。</p>
+</details>
+<hr>
+<h3 id="think-anywhere-in-code-generation"><a class="link" href="https://arxiv.org/abs/2603.29957"  target="_blank" rel="noopener"
+    >Think Anywhere in Code Generation</a>
+</h3>
+    <blockquote>
+        <p>让 LLM 在代码生成过程中任意位置按需触发推理，而非仅在开头思考</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xue Jiang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (12 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.29957"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.29957.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 Think-Anywhere 机制，使 LLM 能在代码生成过程中任意 token 位置按需调用推理，克服了传统&quot;先想后答&quot;模式在代码实现中复杂度逐步暴露时的不足。通过冷启动训练学习推理模式，再用基于结果的 RL 奖励驱动模型自主探索何时何地触发推理，在 LeetCode、LiveCodeBench 等基准上达到 SOTA。</li>
+<li><strong>相关技术</strong>: on-demand reasoning, code generation, reinforcement learning, high-entropy position, cold-start training</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>近期推理型大语言模型（LLMs）的进展主要依赖于前置思考，即在最终答案之前进行推理。然而，这种方法在代码生成中存在关键局限性，因为前置思考往往不够充分——问题的全部复杂性只有在代码实现过程中才会逐步显现。此外，它无法在代码生成过程中难度显著变化的各个阶段自适应地分配推理努力。在本文中，我们提出 Think-Anywhere，一种新颖的推理机制，使 LLM 能在代码生成过程中任意 token 位置按需调用思考。我们通过冷启动训练首先教会 LLM 模仿推理模式，然后利用基于结果的强化学习奖励驱动模型自主探索何时何地调用推理。在四个主流代码生成基准（LeetCode、LiveCodeBench、HumanEval 和 MBPP）上的大量实验表明，Think-Anywhere 在现有推理方法和近期后训练方法之上达到了最先进的性能，同时展现了跨多种 LLM 的一致泛化能力。我们的分析进一步揭示，Think-Anywhere 使模型能在高熵位置自适应地调用推理，提供了增强的可解释性。</p>
+</details>
+<hr>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><h3 id="cutclaw-agentic-hours-long-video-editing-via-music-synchronization-1"><a class="link" href="https://arxiv.org/abs/2603.29664"  target="_blank" rel="noopener"
+    >CutClaw: Agentic Hours-Long Video Editing via Music Synchronization</a>
+</h3><p>（见重点推荐）</p>
+<hr>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="think-anywhere-in-code-generation-1"><a class="link" href="https://arxiv.org/abs/2603.29957"  target="_blank" rel="noopener"
+    >Think Anywhere in Code Generation</a>
+</h3><p>（见重点推荐）</p>
+<hr>
+<h3 id="flowpie-test-time-scientific-idea-evolution-with-flow-guided-literature-exploration"><a class="link" href="https://arxiv.org/abs/2603.29557"  target="_blank" rel="noopener"
+    >FlowPIE: Test-Time Scientific Idea Evolution with Flow-Guided Literature Exploration</a>
+</h3>
+    <blockquote>
+        <p>将文献探索与想法生成建模为协同演化过程，利用 GFlowNet 引导的 MCTS 实现测试时科学创意进化</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Qiyao Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (11 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.29557"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.29557.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 FlowPIE 框架，将文献探索和想法生成视为协同演化过程而非静态的&quot;检索后生成&quot;。使用受 GFlowNets 启发的流引导蒙特卡罗树搜索（MCTS）扩展文献轨迹，通过基于 LLM 的生成奖励模型（GRM）评估想法质量并引导自适应检索，再通过选择、交叉和变异进行测试时想法进化，有效缓解了过度依赖参数知识和静态文献导致的信息茧房。</li>
+<li><strong>相关技术</strong>: GFlowNet-guided MCTS, scientific idea generation, test-time evolution, generative reward model, literature trajectory expansion</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>科学创意生成（SIG）对于 AI 驱动的自主研究至关重要，然而现有方法通常受限于静态的&quot;检索后生成&quot;范式，导致创意同质化且发散性不足。在本工作中，我们提出 FlowPIE，一个紧密耦合的检索-生成框架，将文献探索和创意生成视为协同演化的过程。FlowPIE 通过受 GFlowNets 启发的流引导蒙特卡罗树搜索（MCTS）扩展文献轨迹，使用基于 LLM 的生成奖励模型（GRM）评估当前创意质量作为监督信号，引导自适应检索并构建多样化、高质量的初始种群。基于该种群，FlowPIE 将创意生成建模为测试时创意进化过程，应用选择、交叉和变异操作，结合隔离岛范式和基于 GRM 的适应度计算，融入跨领域知识。它有效缓解了过度依赖参数知识和静态文献导致的信息茧房。大量评估表明，FlowPIE 与强 LLM 基础和智能体基础框架相比，始终产生更高新颖性、可行性和多样性的创意，同时支持测试时的奖励缩放。</p>
+</details>
+<hr>
+<h3 id="prism-a-multi-view-multi-capability-retail-video-dataset-for-embodied-vision-language-models"><a class="link" href="https://arxiv.org/abs/2603.29281"  target="_blank" rel="noopener"
+    >PRISM: A Multi-View Multi-Capability Retail Video Dataset for Embodied Vision-Language Models</a>
+</h3>
+    <blockquote>
+        <p>面向零售场景具身 VLM 的 270K 样本多视角视频微调数据集</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Amirreza Rouhi et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.29281"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.29281.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 构建了一个 270K 样本的多视角视频监督微调语料库，基于空间知识、时间/物理知识和具身动作知识的三维知识本体。涵盖 20+ 能力探针，覆盖自我中心、外部中心和 360° 视角，横跨五个超市场景。微调后在所有探针上将错误率降低 66.6%，具身动作理解准确率提升 36.4%。</li>
+<li><strong>相关技术</strong>: embodied VLM, multi-view video SFT, retail environment, spatial-temporal knowledge ontology, egocentric perception</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>最先进的物理 AI 模型的通用视觉理解与结构化真实世界部署环境的专业感知需求之间存在关键差距。我们提出 PRISM，一个面向真实世界零售环境中具身视觉-语言模型（VLMs）的 270K 样本多视角视频监督微调（SFT）语料库。PRISM 源于一个简单的观察——物理 AI 系统失败不是因为视觉识别不好，而是因为它们对空间、物理动态和具身动作的理解不够充分，无法在世界中可靠运行。为此，PRISM 基于一个涵盖空间知识、时间和物理知识以及具身动作知识的新颖三维知识本体。它覆盖了四个评估维度（具身推理、常识、空间感知和直觉物理）的 20+ 能力探针。据我们所知，PRISM 是第一个在单一真实世界部署领域中实例化所有三个知识维度的数据集。该语料库从五个超市场景中捕获自我中心、外部中心和 360° 视角的数据，包含开放式、思维链和多项选择监督。以 4 fps 计算，PRISM 跨越约 1180 万个视频帧和约 7.3 亿个 token，使其跻身最大的领域特定视频 SFT 语料库之列。在 PRISM 上微调将所有 20+ 探针的错误率比预训练基线降低了 66.6%，在具身动作理解方面准确率提升了 36.4%。我们的结果表明，本体结构化的领域特定 SFT 可以有意义地增强面向真实世界场景的具身 VLM。PRISM 数据集和更多细节可在 <a class="link" href="https://dreamvu.ai/prism"  target="_blank" rel="noopener"
+    >https://dreamvu.ai/prism</a> 获取。</p>
+</details>
+<hr>
+<h3 id="mmface-dit-a-dual-stream-diffusion-transformer-for-high-fidelity-multimodal-face-generation"><a class="link" href="https://arxiv.org/abs/2603.29029"  target="_blank" rel="noopener"
+    >MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation</a>
+</h3>
+    <blockquote>
+        <p>双流 Diffusion Transformer 统一文本和空间先验实现高保真可控人脸生成</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Bharath Krishnamurthy et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (5 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.29029"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.29029.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出统一的双流 Diffusion Transformer 架构，通过共享旋转位置编码（RoPE）注意力机制并行处理空间（mask/sketch）和语义（文本）token 并深度融合，防止模态主导并确保空间-语义一致性。新颖的 Modality Embedder 使单一模型能动态适应不同空间条件而无需重训练。在视觉保真度和提示对齐方面比六个 SOTA 方法提升 40%。</li>
+<li><strong>相关技术</strong>: dual-stream diffusion transformer, RoPE attention, multimodal face generation, spatial-semantic fusion, modality embedder</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>近期多模态人脸生成模型通过使用分割掩码、素描或边缘图等空间先验来增强基于文本的条件，解决了文本到图像扩散模型的空间控制局限性。这种多模态融合实现了与高层语义意图和低层结构布局对齐的可控合成。然而，大多数现有方法通常通过附加辅助控制模块或拼接独立的单模态网络来扩展预训练的文本到图像管线。这些临时设计继承了架构约束，重复参数，并且在模态冲突或潜在空间不匹配时常常失败，限制了它们在语义和空间域之间进行协同融合的能力。我们引入 MMFace-DiT，一种为协同多模态人脸合成设计的统一双流 Diffusion Transformer。其核心创新在于双流 Transformer 块，并行处理空间（mask/sketch）和语义（文本）token，通过共享的旋转位置编码（RoPE）注意力机制进行深度融合。这种设计防止了模态主导，确保对文本和结构先验的强附着，为可控人脸生成实现了前所未有的空间-语义一致性。此外，新颖的 Modality Embedder 使单一内聚模型能动态适应不同的空间条件而无需重训练。MMFace-DiT 在视觉保真度和提示对齐方面比六个最先进的多模态人脸生成模型提升了 40%，为端到端可控生成建模建立了灵活的新范式。代码和数据集可在我们的项目页面获取：https://vcbsl.github.io/MMFace-DiT/</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="unify-agent-a-unified-multimodal-agent-for-world-grounded-image-synthesis-1"><a class="link" href="https://arxiv.org/abs/2603.29620"  target="_blank" rel="noopener"
+    >Unify-Agent: A Unified Multimodal Agent for World-Grounded Image Synthesis</a>
+</h3><p>（见重点推荐）</p>
+<hr>
+<h3 id="atp-bench-towards-agentic-tool-planning-for-mllm-interleaved-generation"><a class="link" href="https://arxiv.org/abs/2603.29902"  target="_blank" rel="noopener"
+    >ATP-Bench: Towards Agentic Tool Planning for MLLM Interleaved Generation</a>
+</h3>
+    <blockquote>
+        <p>评估 MLLM 在交错文图生成中自主决定何时、何处调用哪个工具的智能体规划能力</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yinuo Liu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.29902"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.29902.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 ATP-Bench 基准，包含 7,702 个 QA 对（含 1,592 个 VQA 对），覆盖 8 个类别和 25 种视觉关键意图，系统评估 MLLM 的智能体工具规划能力。提出多智能体 MLLM-as-a-Judge（MAM）评估系统，无需参考答案即可评估工具调用精度、遗漏的工具使用机会和整体响应质量。对 10 个 SOTA MLLM 的实验揭示了模型在连贯交错规划和工具使用行为上的显著不足。</li>
+<li><strong>相关技术</strong>: agentic tool planning, interleaved text-image generation, MLLM-as-a-Judge, tool-call precision, visual-critical intent</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>交错的文本和图像生成代表了多模态大语言模型（MLLMs）的重要前沿，提供了一种更直观的方式来传达复杂信息。当前范式依赖于图像生成或检索增强，但它们通常将两者视为互斥的路径，未能统一事实性与创造性。我们认为该领域的下一个里程碑是智能体工具规划（Agentic Tool Planning），即模型作为中央控制器，自主决定何时、何处以及调用哪些工具来为视觉关键查询生成交错响应。为系统评估该范式，我们引入 ATP-Bench，一个包含 7,702 个 QA 对（含 1,592 个 VQA 对）的新基准，覆盖 8 个类别和 25 种视觉关键意图，具有人工验证的查询和标准答案。此外，为了独立于端到端执行和变化的工具后端来评估智能体规划，我们提出多智能体 MLLM-as-a-Judge（MAM）系统。MAM 评估工具调用精度、识别遗漏的工具使用机会，并在不需要参考答案的情况下评估整体响应质量。我们对 10 个最先进 MLLM 的大量实验揭示，模型在连贯的交错规划方面存在困难，并在工具使用行为上表现出显著差异，突出了改进的巨大空间，并为推进交错生成提供了可操作的指导。数据集和代码可在 <a class="link" href="https://github.com/Qwen-Applications/ATP-Bench"  target="_blank" rel="noopener"
+    >https://github.com/Qwen-Applications/ATP-Bench</a> 获取。</p>
+</details>
+<hr>
+<h3 id="aec-bench-a-multimodal-benchmark-for-agentic-systems-in-architecture-engineering-and-construction"><a class="link" href="https://arxiv.org/abs/2603.29199"  target="_blank" rel="noopener"
+    >AEC-Bench: A Multimodal Benchmark for Agentic Systems in Architecture, Engineering, and Construction</a>
+</h3>
+    <blockquote>
+        <p>面向建筑工程领域智能体系统的多模态基准，覆盖图纸理解、跨图推理和项目级协调</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Harsh Mankodiya et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.29199"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.29199.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 发布了面向建筑、工程和施工（AEC）领域的多模态基准，涵盖图纸理解、跨图纸推理和施工项目级协调任务。通过基准识别出了在不同基础模型中一致提升性能的工具和 harness 设计技术（如 Claude Code 和 Codex），为领域特定智能体评估提供了标准化框架。</li>
+<li><strong>相关技术</strong>: AEC domain benchmark, cross-sheet reasoning, construction coordination, agent harness design, multimodal drawing understanding</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>AEC-Bench 是一个用于评估智能体系统在建筑、工程和施工（AEC）领域真实世界任务上表现的多模态基准。该基准涵盖需要图纸理解、跨图纸推理和施工项目级协调的任务。本报告描述了基准动机、数据集分类、评估协议，以及跨多个领域特定基础模型 harness 的基线结果。我们使用 AEC-Bench 识别出了在不同基础模型各自的基础 harness 中一致提升性能的工具和 harness 设计技术，如 Claude Code 和 Codex。我们在 Apache 2 许可下公开发布基准数据集、智能体 harness 和评估代码，以实现完全可复现性：https://github.com/nomic-ai/aec-bench</p>
+</details>
+<hr>
+<h3 id="meta-harness-end-to-end-optimization-of-model-harnesses"><a class="link" href="https://arxiv.org/abs/2603.28052"  target="_blank" rel="noopener"
+    >Meta-Harness: End-to-End Optimization of Model Harnesses</a>
+</h3>
+    <blockquote>
+        <p>自动搜索优化 LLM 应用的 harness 代码，在文本分类、数学推理和编程任务上超越手工设计</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yoonho Lee et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (2 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2603.28052"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2603.28052.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: LLM 系统的性能不仅取决于模型权重，还取决于其 harness（决定存储、检索和呈现信息的代码）。Meta-Harness 引入外循环系统搜索 LLM 应用的 harness 代码，使用智能体提议者访问源代码、分数和执行轨迹。在在线文本分类上比 SOTA 上下文管理系统提升 7.7 分且使用 4 倍更少的上下文 token；在 200 道 IMO 级别问题上平均提升 4.7 分。</li>
+<li><strong>相关技术</strong>: harness code optimization, outer-loop search, agentic proposer, context management, execution trace analysis</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>大语言模型（LLM）系统的性能不仅取决于模型权重，还取决于其 harness：决定存储、检索和向模型呈现什么信息的代码。然而 harness 仍然主要由人工设计，现有的文本优化器与此场景匹配度不高，因为它们过度压缩反馈信息。我们引入 Meta-Harness，一个外循环系统，用于搜索 LLM 应用的 harness 代码。它使用一个智能体提议者，通过文件系统访问所有先前候选方案的源代码、分数和执行轨迹。在在线文本分类上，Meta-Harness 比最先进的上下文管理系统提升了 7.7 分，同时使用 4 倍更少的上下文 token。在检索增强数学推理上，单个发现的 harness 在 200 道 IMO 级别问题上平均提升了 4.7 分（跨五个保留模型）。在智能体编程上，发现的 harness 在 TerminalBench-2 上超越了最佳手工设计的基线。总之，这些结果表明，对先前经验的更丰富访问可以实现自动化的 harness 工程。</p>
+</details>
+<hr>
+<h3 id="carla-air-fly-drones-inside-a-carla-world-1"><a class="link" href="https://arxiv.org/abs/2603.28032"  target="_blank" rel="noopener"
+    >CARLA-Air: Fly Drones Inside a CARLA World &ndash; A Unified Infrastructure for Air-Ground Embodied Intelligence</a>
+</h3><p>（见重点推荐）</p>
+<hr>
+<p><em>Generated on 2026-04-02 00:00 UTC | Sources: HuggingFace</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-01/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-01</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-03-31/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-03-31</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-03-30/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-03-30</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-29/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-29" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-29/cover_hu_c403f9daecc08da8.jpg" srcset="/zh-cn/p/daily-paper-2026-03-29/cover_hu_c403f9daecc08da8.jpg 1x, /zh-cn/p/daily-paper-2026-03-29/cover_hu_7272cb145f5a1ec9.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #5e676f80 0%, #bdc4d8C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-29</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-03-27/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-03-27" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-03-27/cover_hu_b9f71b4fb95d56a.jpg" srcset="/zh-cn/p/daily-paper-2026-03-27/cover_hu_b9f71b4fb95d56a.jpg 1x, /zh-cn/p/daily-paper-2026-03-27/cover_hu_92286fd4c26ba45f.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #cdc7ba80 0%, #413e37C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-03-27</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
