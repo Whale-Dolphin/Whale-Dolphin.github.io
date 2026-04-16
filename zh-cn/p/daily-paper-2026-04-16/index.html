@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 30 篇论文 | Audio LLM: 6篇 | LLM Training: 14篇 | AI Agents: 7篇 | 其他值得关注: 3篇 来源: HuggingFace(30)\n重点推荐 ⭐ Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA 首个 NVFP4 预训练 + LatentMoE + MTP 推理加速，120B 参数仅激活 12B，支持 1M 上下文\n">
+<title>AI Paper Daily | 2026-04-16</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-04-16/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-04-16">
+<meta property='og:description' content="今日概览 共收录 30 篇论文 | Audio LLM: 6篇 | LLM Training: 14篇 | AI Agents: 7篇 | 其他值得关注: 3篇 来源: HuggingFace(30)\n重点推荐 ⭐ Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA 首个 NVFP4 预训练 + LatentMoE + MTP 推理加速，120B 参数仅激活 12B，支持 1M 上下文\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-04-16/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-16T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-04-16">
+<meta name="twitter:description" content="今日概览 共收录 30 篇论文 | Audio LLM: 6篇 | LLM Training: 14篇 | AI Agents: 7篇 | 其他值得关注: 3篇 来源: HuggingFace(30)\n重点推荐 ⭐ Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA 首个 NVFP4 预训练 + LatentMoE + MTP 推理加速，120B 参数仅激活 12B，支持 1M 上下文\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-04-16/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#nemotron-3-super-open-efficient-mixture-of-experts-hybrid-mamba-transformer-model-for-agentic-reasoning">Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning</a></li>
+        <li><a href="#knowrl-boosting-llm-reasoning-via-reinforcement-learning-with-minimal-sufficient-knowledge-guidance">KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance</a></li>
+        <li><a href="#omnishow-unifying-multimodal-conditions-for-human-object-interaction-video-generation">OmniShow: Unifying Multimodal Conditions for Human-Object Interaction Video Generation</a></li>
+        <li><a href="#lightning-opd-efficient-post-training-for-large-reasoning-models-with-offline-on-policy-distillation">Lightning OPD: Efficient Post-Training for Large Reasoning Models with Offline On-Policy Distillation</a></li>
+      </ol>
+    </li>
+    <li><a href="#llm-training">LLM Training</a></li>
+    <li><a href="#ai-agents">AI Agents</a></li>
+    <li><a href="#audio-llm">Audio LLM</a></li>
+    <li><a href="#其他值得关注">其他值得关注</a></li>
+    <li><a href="#交叉趋势观察-">交叉趋势观察 🔍</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-04-16/">AI Paper Daily | 2026-04-16</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-04-16T00:00:00Z'>Apr 16, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#nemotron-3-super-open-efficient-mixture-of-experts-hybrid-mamba-transformer-model-for-agentic-reasoning">Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning</a></li>
+        <li><a href="#knowrl-boosting-llm-reasoning-via-reinforcement-learning-with-minimal-sufficient-knowledge-guidance">KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance</a></li>
+        <li><a href="#omnishow-unifying-multimodal-conditions-for-human-object-interaction-video-generation">OmniShow: Unifying Multimodal Conditions for Human-Object Interaction Video Generation</a></li>
+        <li><a href="#lightning-opd-efficient-post-training-for-large-reasoning-models-with-offline-on-policy-distillation">Lightning OPD: Efficient Post-Training for Large Reasoning Models with Offline On-Policy Distillation</a></li>
+      </ol>
+    </li>
+    <li><a href="#llm-training">LLM Training</a></li>
+    <li><a href="#ai-agents">AI Agents</a></li>
+    <li><a href="#audio-llm">Audio LLM</a></li>
+    <li><a href="#其他值得关注">其他值得关注</a></li>
+    <li><a href="#交叉趋势观察-">交叉趋势观察 🔍</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 30 篇论文 | Audio LLM: 6篇 | LLM Training: 14篇 | AI Agents: 7篇 | 其他值得关注: 3篇
+来源: HuggingFace(30)</p>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><h3 id="nemotron-3-super-open-efficient-mixture-of-experts-hybrid-mamba-transformer-model-for-agentic-reasoning"><a class="link" href="https://arxiv.org/abs/2604.12374"  target="_blank" rel="noopener"
+    >Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning</a>
+</h3>
+    <blockquote>
+        <p>NVIDIA 首个 NVFP4 预训练 + LatentMoE + MTP 推理加速，120B 参数仅激活 12B，支持 1M 上下文</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: NVIDIA et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (16 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.12374"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.12374.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 首个 NVFP4 预训练的大模型，引入 LatentMoE 架构同时优化 FLOP 和参数效率，MTP 层实现原生推测解码。相比 GPT-OSS-120B 和 Qwen3.5-122B 推理吞吐量分别提升 2.2x 和 7.5x</li>
+<li><strong>相关技术</strong>: Mixture-of-Experts, Mamba-Transformer hybrid, speculative decoding, NVFP4 quantization</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>本文介绍 Nemotron 3 Super，一个 1200 亿参数（激活 120 亿）的混合 Mamba-Attention MoE 模型。这是 Nemotron 3 系列中首个采用 NVFP4 预训练、利用 LatentMoE 新架构同时优化精度/FLOP 和精度/参数效率、并集成 MTP 层实现原生推测解码推理加速的模型。我们在 25 万亿 token 上预训练后进行 SFT + RL 后训练。最终模型支持最长 1M 上下文，在通用基准上达到可比精度，同时推理吞吐量相较 GPT-OSS-120B 和 Qwen3.5-122B 分别提升 2.2x 和 7.5x。模型、数据集和量化检查点均在 HuggingFace 开源。</p>
+</details>
+<hr>
+<h3 id="knowrl-boosting-llm-reasoning-via-reinforcement-learning-with-minimal-sufficient-knowledge-guidance"><a class="link" href="https://arxiv.org/abs/2604.12627"  target="_blank" rel="noopener"
+    >KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance</a>
+</h3>
+    <blockquote>
+        <p>知识点最小充分子集引导 RL 训练，1.5B 模型无提示达 70.08，加提示 74.16，1.5B 级 SOTA</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Linhao Yu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (82 upvotes) 🔥</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.12627"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.12627.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 将提示设计建模为最小充分引导问题，通过约束子集搜索（CSS）构建紧凑的知识点子集。发现剪枝交互悖论——去掉单个 KP 有帮助但去掉多个可能有害。KnowRL-Nemotron-1.5B 在 8 个推理基准上全面超越强 RL 和提示基线</li>
+<li><strong>相关技术</strong>: RLVR, knowledge-guided RL, hint design, pruning interaction paradox</li>
+<li><strong>代码</strong>: <a class="link" href="https://github.com/Hasuer/KnowRL"  target="_blank" rel="noopener"
+    >https://github.com/Hasuer/KnowRL</a></li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>RLVR 提升了大语言模型的推理能力，但在困难问题上受限于严重的奖励稀疏性。近期基于提示的 RL 方法通过注入部分解或抽象模板缓解稀疏性，但通常通过增加更多 token 来扩展引导，带来冗余、不一致和额外训练开销。我们提出 KnowRL，将提示设计视为最小充分引导问题。在 RL 训练中，KnowRL 将引导分解为原子知识点（KP），并使用约束子集搜索（CSS）构建紧凑的、感知交互的子集。我们进一步发现剪枝交互悖论——移除一个 KP 可能有帮助，但移除多个这样的 KP 却可能有害——并在该依赖结构下显式优化鲁棒子集筛选。KnowRL-Nemotron-1.5B 在无 KP 提示推理时达到 70.08 平均准确率，已超过 Nemotron-1.5B +9.63 分；使用选定 KP 后提升至 74.16，在该规模上达到新 SOTA。</p>
+</details>
+<hr>
+<h3 id="omnishow-unifying-multimodal-conditions-for-human-object-interaction-video-generation"><a class="link" href="https://arxiv.org/abs/2604.11804"  target="_blank" rel="noopener"
+    >OmniShow: Unifying Multimodal Conditions for Human-Object Interaction Video Generation</a>
+</h3>
+    <blockquote>
+        <p>首个统一文本、参考图、音频、姿态多模态条件的人生成交互视频框架</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Donghao Zhou et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (63 upvotes) 🔥</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.11804"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.11804.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出统一多模态条件的 HOI 视频生成框架，通过 Unified Channel-wise Conditioning 和 Gated Local-Context Attention 解决可控性与质量权衡，Decoupled-Then-Joint 训练策略利用异构数据集，并建立 HOIVG-Bench 评测基准</li>
+<li><strong>相关技术</strong>: human-object interaction, multimodal conditioning, audio-visual synchronization, model merging</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>本研究聚焦人生成交互视频生成（HOIVG），旨在基于文本、参考图像、音频和姿态条件合成高质量的人-物交互视频。现有方法无法同时支持所有条件。我们提出 OmniShow 端到端框架，引入统一通道条件实现高效图像和姿态注入，门控局部上下文注意力确保精确音视频同步，以及先解耦后联合训练策略利用异构子任务数据集。此外建立 HOIVG-Bench 评测基准。实验表明 OmniShow 在各种多模态条件设置下均达到整体 SOTA。</p>
+</details>
+<hr>
+<h3 id="lightning-opd-efficient-post-training-for-large-reasoning-models-with-offline-on-policy-distillation"><a class="link" href="https://arxiv.org/abs/2604.13010"  target="_blank" rel="noopener"
+    >Lightning OPD: Efficient Post-Training for Large Reasoning Models with Offline On-Policy Distillation</a>
+</h3>
+    <blockquote>
+        <p>无需教师服务器的离线策略蒸馏，Qwen3-8B 30 GPU 时训到 AIME 69.9%，比标准 OPD 快 4x</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yecheng Wu, Song Han, Hai Cai</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.13010"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.13010.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 发现教师一致性（teacher consistency）是 OPD 成功的关键条件——违反该条件会引入不可约梯度偏差。提出 Lightning OPD，通过预计算教师 log-prob 实现完全离线的策略蒸馏，消除对教师服务器的需求，同时与标准 OPD 共享相同最优解</li>
+<li><strong>相关技术</strong>: on-policy distillation, teacher consistency, offline RL, speculative decoding</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>策略蒸馏（OPD）已成为大模型后训练的高效范式，但标准 OPD 需要训练期间持续运行教师推理服务器。本文研究离线策略蒸馏，发现自然方法（在 SFT 滚动上预计算教师 log-prob）无法可靠匹配标准 OPD 性能。我们识别出此前被忽视的关键条件——教师一致性：SFT 和 OPD 必须使用同一教师模型。违反此条件会引入不可约梯度偏差。基于此，Lightning OPD 在 SFT 滚动上预计算教师 log-prob 来强制教师一致性，完全消除教师服务器需求。从 Qwen3-8B-Base 出发，仅 30 GPU 时即达 AIME 2024 69.9%，较标准 OPD 加速 4.0x。</p>
+</details>
+<hr>
+<h2 id="llm-training">LLM Training
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>论文</th>
+          <th>一句话</th>
+          <th>热度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.10966"  target="_blank" rel="noopener"
+    >You Only Judge Once: Multi-response Reward Modeling in a Single Forward Pass</a></td>
+          <td>单次前向传播评分多候选响应的判别式多模态奖励模型，N 倍加速 + 新基准 MR²Bench</td>
+          <td>6⬆</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.13029"  target="_blank" rel="noopener"
+    >Visual Preference Optimization with Rubric Rewards</a></td>
+          <td>基于实例化评分量表的 rDPO 框架，macro avg 从 81.14→82.69，超越结果过滤基线</td>
+          <td>1⬆</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11784"  target="_blank" rel="noopener"
+    >ClawGUI: A Unified Framework for Training, Evaluating, and Deploying GUI Agents</a></td>
+          <td>首个开源 GUI Agent RL 基础设施 + 标准化评测 + 多平台部署，ClawGUI-2B 超 MAI-UI-2B 6%</td>
+          <td>120⬆🔥</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11753"  target="_blank" rel="noopener"
+    >Agentic Aggregation for Parallel Scaling of Long-Horizon Agentic Tasks</a></td>
+          <td>AggAgent 将并行轨迹视为环境进行智能聚合，深研任务最高 +10.3%，聚合成本仅等于一次滚动</td>
+          <td>13⬆</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11035"  target="_blank" rel="noopener"
+    >Introspective Diffusion Language Models</a></td>
+          <td>首个匹配同规模 AR 模型质量的 DLM，AIME-24 69.6，吞吐量为先前 SOTA DLM 的 3x</td>
+          <td>19⬆</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.12163"  target="_blank" rel="noopener"
+    >Nucleus-Image: Sparse MoE for Image Generation</a></td>
+          <td>17B 总参/2B 激活的稀疏 MoE 扩散模型，GenEval/DPG-Bench 匹配或超越更大模型，首个完全开源 MoE 扩散</td>
+          <td>4⬆</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.13016"  target="_blank" rel="noopener"
+    >Rethinking On-Policy Distillation of Large Language Models</a></td>
+          <td>系统研究 OPD 动力学，发现思考模式兼容性和教师新能力是成功两条件，97-99% 概率质量集中于少量共享 token</td>
+          <td>58⬆🔥</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.12946"  target="_blank" rel="noopener"
+    >Parcae: Scaling Laws For Stable Looped Language Models</a></td>
+          <td>稳定循环架构，通过负对角参数化约束注入参数谱范数，1.3B 参数下相对质量达 2x Transformer 的 87.5%</td>
+          <td>2⬆</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11805"  target="_blank" rel="noopener"
+    >Solving Physics Olympiad via Reinforcement Learning on Physics Simulators</a></td>
+          <td>用物理模拟器生成合成数据训练 LLM 物理推理，IPhO 提升 5-10 个百分点，零样本 sim-to-real 迁移</td>
+          <td>15⬆</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11547"  target="_blank" rel="noopener"
+    >Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis</a></td>
+          <td>MedSSR：罕见病知识合成 + 半监督 RL，不依赖昂贵的推理链蒸馏，罕见病任务最高 +5.93%</td>
+          <td>4⬆</td>
+      </tr>
+  </tbody>
+</table></div>
+<details>
+<summary>📄 各论文详情</summary>
+<p><strong>You Only Judge Once (2604.10966)</strong>
+提出判别式多模态奖励模型，将多候选响应拼接后单次前向传播评分，通过交叉熵实现直接比较推理。在 6 个多模态奖励基准上达到 SOTA，超过更大的生成式和判别式模型。同时构建 MR²Bench-Image 和 MR²Bench-Video 两个新基准。用于 GRPO RL 训练时显著提升开放生成质量。</p>
+<p><strong>Visual Preference Optimization with Rubric Rewards (2604.13029)</strong>
+rDPO 框架为每个图像-指令对构建实例化评分量表（rubric），离线构建指令-量表池并在策略数据构建时复用。量表过滤将 macro average 从 81.14 提升至 82.69（结果过滤反而降至 75.82），在综合基准上达 61.01，大幅超越风格约束基线 52.36。</p>
+<p><strong>ClawGUI (2604.11784)</strong>
+首个开源 GUI Agent 全栈框架：ClawGUI-RL 支持虚拟环境和物理设备的并行 RL 训练（集成 GiGPO + PRM）；ClawGUI-Eval 在 6 基准 11+ 模型上实现 95.8% 基线复现率；ClawGUI-Agent 通过 12+ 聊天平台部署到 Android/HarmonyOS/iOS。ClawGUI-2B 在 MobileWorld GUI-Only 上超 MAI-UI-2B 6%。</p>
+<p><strong>AggAgent (2604.11753)</strong>
+提出智能体聚合方法 AggAgent，将并行轨迹视为环境，配备轻量工具按需检索和综合信息。在 6 基准 3 模型族（GLM-4.7、Qwen3.5、MiniMax-M2.5）上超越所有聚合方法，深研任务最高 +10.3%，聚合成本仅一次智能体滚动。</p>
+<p><strong>Introspective Diffusion Language Models (2604.11035)</strong>
+发现扩散语言模型落后于 AR 的根本原因是内省一致性缺失——AR 模型接受自己生成的 token 而 DLM 不接受。提出 I-DLM，通过内省步进解码（ISD）在单次前向传播中同时验证和推进。首个匹配同规模 AR 质量的 DLM，AIME-24 69.6，吞吐量为先前 SOTA DLM 的约 3x。</p>
+<p><strong>Nucleus-Image (2604.12163)</strong>
+稀疏 MoE 扩散 Transformer，17B 总参/2B 激活，64 路由专家 + Expert-Choice Routing。排除文本 token 骨干、联合注意力跨时间步共享 KV，解耦路由设计分离时间步感知专家分配和条件计算。1.5B 训练对渐进分辨率课程，无需 RL/DPO/人类偏好调优即达顶级质量。</p>
+<p><strong>Rethinking OPD (2604.13016)</strong>
+系统研究策略蒸馏动力学，发现两个成功条件：师生思考模式兼容、教师提供学生未见的新能力。弱到强反向蒸馏验证同族 1.5B/7B 教师与学生分布不可区分。成功 OPD 中 97-99% 概率质量集中于少量共享高概率 token。提出离线冷启动和教师对齐提示选择恢复失败 OPD。</p>
+<p><strong>Parcae (2604.12946)</strong>
+将循环架构建模为残差流上的非线性时变动力系统，发现不稳定性源于注入参数大谱范数。提出负对角参数化约束谱范数的稳定循环架构 Parcae，验证困惑度降低 6.3%。推导训练/测试时循环缩放定律，1.3B 参数下 CORE/Core-Extended 提升 2.99/1.18，相对质量达 2x Transformer 的 87.5%。</p>
+<p><strong>Physics Olympiad via RL (2604.11805)</strong>
+用物理模拟器生成随机场景和合成 QA 对，通过 RL 训练 LLM 物理推理。模型在 IPhO 问题零样本迁移提升 5-10 个百分点，证明模拟器可作为可扩展数据生成器突破互联网 QA 数据限制。</p>
+<p><strong>MedSSR (2604.11547)</strong>
+利用罕见病知识合成分布可控推理问题，用策略模型自身生成伪标签。两阶段训练：自监督 RL（伪标签合成数据）→ 监督 RL（人工标注真实数据）。在 Qwen 和 Llama 上 10 个医学基准全面超越现有方法，罕见病任务最高 +5.93%。</p>
+</details>
+<hr>
+<h2 id="ai-agents">AI Agents
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>论文</th>
+          <th>一句话</th>
+          <th>热度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.12890"  target="_blank" rel="noopener"
+    >LMM-Searcher: Towards Long-horizon Agentic Multimodal Search</a></td>
+          <td>基于文件系统的视觉表示机制，支持 100 轮搜索的长期多模态深搜智能体</td>
+          <td>15⬆</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11201"  target="_blank" rel="noopener"
+    >CocoaBench: Evaluating Unified Digital Agents in the Wild</a></td>
+          <td>统一数字智能体基准，融合视觉/搜索/编码，最佳系统仅 45.1% 成功率</td>
+          <td>32⬆</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.13018"  target="_blank" rel="noopener"
+    >AiScientist: Toward Autonomous Long-Horizon Engineering for ML Research</a></td>
+          <td>文件即总线 + 层次编排的自主 ML 研究系统，PaperBench +10.54，MLE-Bench Lite 81.82%</td>
+          <td>22⬆</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11544"  target="_blank" rel="noopener"
+    >RoMem: Time is Not a Label - Continuous Phase Rotation for Temporal KG and Agentic Memory</a></td>
+          <td>连续相位旋转知识图谱模块，过期事实自然失相，时序推理 MRR 2-3x 提升</td>
+          <td>1⬆</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.12626"  target="_blank" rel="noopener"
+    >Habitat-GS: High-Fidelity Navigation Simulator with Dynamic Gaussian Splatting</a></td>
+          <td>3DGS 场景 + 高斯人形化身，兼具真实渲染与导航障碍，具身智能模拟新范式</td>
+          <td>12⬆</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.20640"  target="_blank" rel="noopener"
+    >DAR: Diversity-Aware Message Retention for Multi-Agent Debate</a></td>
+          <td>保留最大分歧子集的多智能体辩论框架，随 agent 数量增长优势更明显</td>
+          <td>2⬆</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.10866"  target="_blank" rel="noopener"
+    >OccuBench: Evaluating AI Agents on Real-World Professional Tasks via Language World Models</a></td>
+          <td>100 个真实职业场景跨行业评测，隐式故障比显式错误更难检测，GPT-5.2 推理努力 +27.5 分</td>
+          <td>3⬆</td>
+      </tr>
+  </tbody>
+</table></div>
+<details>
+<summary>📄 各论文详情</summary>
+<p><strong>LMM-Searcher (2604.12890)</strong>
+提出文件化视觉表示机制，将视觉资产卸载到外部文件系统并映射为轻量文本标识符（UID），缓解上下文爆炸同时保留多模态信息。配备按需视觉加载工具实现渐进式主动感知。合成 12K 高质量轨迹微调 Qwen3-VL-Thinking-30A3B，在 MM-BrowseComp 和 MMSearch-Plus 上达到开源 SOTA，成功扩展到 100 轮搜索。</p>
+<p><strong>CocoaBench (2604.11201)</strong>
+人类设计的长视野任务基准，要求灵活组合视觉、搜索和编码能力。仅通过指令和自动评估函数指定，跨不同智能体基础设施可靠评测。最佳系统仅 45.1% 成功率，推理规划、工具使用和视觉定位仍有巨大改进空间。</p>
+<p><strong>AiScientist (2604.13018)</strong>
+长视野 ML 研究工程系统，结合层次编排与权限范围的文件即总线工作空间：顶层编排器通过简洁摘要和工作空间映射维持阶段级控制，专业智能体基于持久工件而非对话交接重新对齐。在 PaperBench 上平均 +10.54，MLE-Bench Lite 达 81.82%。移除文件即总线协议后 PaperBench 降 6.41 分、MLE-Bench Lite 降 31.82 分。</p>
+<p><strong>RoMem (2604.11544)</strong>
+预训练语义速度门将关系文本嵌入映射为波动性评分，演化关系（如&quot;总统&quot;）快旋转、持久关系（如&quot;出生地&quot;）稳定。结合连续相位旋转，过时事实在复向量空间中自然失相，时序正确事实无需删除即可超越矛盾。时序 KG 完成达 ICEWS05-15 SOTA (72.6 MRR)，智能体记忆 MRR/准确率 2-3x 提升。</p>
+<p><strong>Habitat-GS (2604.12626)</strong>
+基于 Habitat-Sim 扩展，集成 3DGS 渲染和可驱动高斯人形化身。每个化身同时作为真实视觉实体和有效导航障碍。3DGS 场景训练的智能体跨域泛化更强，混合域训练最有效。系统可扩展至不同场景复杂度和化身数量。</p>
+<p><strong>DAR (2603.20640)</strong>
+多智能体辩论框架，每轮选择与多数投票最大分歧的响应子集广播。基于索引的保留机制不修改原始消息。随智能体数量增长优势更明显，噪声累积最严重时效果最显著。</p>
+<p><strong>OccuBench (2604.10866)</strong>
+覆盖 10 个行业类别 65 个专业领域 100 个真实职业场景，通过语言世界模型模拟领域环境。隐式故障（截断数据、缺失字段）比显式错误和混合故障更难检测。GPT-5.2 从最小到最大推理努力提升 27.5 分。强智能体不一定是强环境模拟器。</p>
+</details>
+<hr>
+<h2 id="audio-llm">Audio LLM
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>论文</th>
+          <th>一句话</th>
+          <th>热度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11102"  target="_blank" rel="noopener"
+    >OmniScript: Audio-Visual Script Generation for Long-Form Cinematic Video</a></td>
+          <td>8B 全能模态模型做长视频→剧本层次化生成，比肩 Gemini 3-Pro</td>
+          <td>0⬆</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.10905"  target="_blank" rel="noopener"
+    >Audio Flamingo Next: Next-Gen Open Audio-Language Models for Speech, Sound, and Music</a></td>
+          <td>覆盖语音/环境声/音乐的全能音频语言模型，支持 30 分钟长音频 + 时序 CoT</td>
+          <td>24⬆</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.13023"  target="_blank" rel="noopener"
+    >SpotSound: Fine-Grained Temporal Grounding for Large Audio-Language Models</a></td>
+          <td>音频事件时序定位模型 + Needle-in-a-Haystack 基准，抑制幻觉时间戳</td>
+          <td>0⬆</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11096"  target="_blank" rel="noopener"
+    >CSLM: Efficient Training for Cross-lingual Speech Language Models</a></td>
+          <td>跨语言语音 LLM 高效训练，语音-文本交错链式模态生成，无需海量语音数据</td>
+          <td>0⬆</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11120"  target="_blank" rel="noopener"
+    >Persona Non Grata: Safety Evaluation for Persona-Imbued LLMs</a></td>
+          <td>人格注入的安全评估不完整：提示和激活引导暴露不同漏洞，亲社会人格悖论</td>
+          <td>1⬆</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td><em>(OmniShow 已在重点推荐中)</em></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<details>
+<summary>📄 各论文详情</summary>
+<p><strong>OmniScript (2604.11102)</strong>
+提出视频到剧本（V2S）新任务：将长视频按场景生成包含角色动作、对话、表情和音频提示的层次化剧本。构建首个标注基准和时序感知层次评估框架。OmniScript 8B 全能模态模型通过 CoT SFT + RL 时序分段奖励渐进训练，在时序定位和多字段语义准确率上显著超越更大开源模型，比肩 Gemini 3-Pro。</p>
+<p><strong>Audio Flamingo Next (2604.10905)</strong>
+Audio Flamingo 系列最强版本：更强音频语言基座、超 100 万小时大规模数据构建策略、支持最长 30 分钟音频输入、时序音频思维链（Temporal Audio CoT）将推理步骤锚定到时间戳。20 个基准上超越同规模开源模型，部分超越更大闭源模型。开源 AF-Next-Instruct/Think/Captioner 三变体。</p>
+<p><strong>SpotSound (2604.13023)</strong>
+针对音频语言模型时序定位不可靠的问题，提出新训练目标抑制不存在事件的幻觉时间戳。构建 SpotSound-Bench 基准，目标事件仅占片段约 10%，模拟真实&quot;大海捞针&quot;场景。在时序定位基准上达 SOTA，同时保持通用音频语言任务性能。</p>
+<p><strong>CSLM (2604.11096)</strong>
+基于离散语音 token 的跨语言语音 LLM 高效训练方法。通过持续预训练实现跨模态和跨语言对齐，语音-文本交错链式模态生成增强细粒度模态对齐并降低延迟。无需海量语音数据即可扩展到更多语言。</p>
+<p><strong>Persona Non Grata (2604.11120)</strong>
+发现人格注入的安全评估使用单一方法不完整：提示和激活引导暴露架构依赖的不同漏洞。亲社会人格悖论——Llama-3.1-8B 上高尽责性+高宜人性在提示下最安全，但激活引导后 ASR 达 0.818。推理模型仍达 15-18% 提示 ASR。</p>
+</details>
+<hr>
+<h2 id="其他值得关注">其他值得关注
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>论文</th>
+          <th>一句话</th>
+          <th>热度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.10949"  target="_blank" rel="noopener"
+    >Pseudo-Unification: Entropy Probing Reveals Divergent Information Patterns in UMMs</a></td>
+          <td>统一多模态模型的&quot;伪统一&quot;现象：视觉和语言遵循不同熵轨迹，文本高熵创造力 vs 图像低熵保真度</td>
+          <td>38⬆</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.11004"  target="_blank" rel="noopener"
+    >Panoptic Pairwise Distortion Graph</a></td>
+          <td>全景配对失真图：将图像对评估从全图推进到区域级结构化拓扑，MLLM 在区域级退化理解上失败</td>
+          <td>1⬆</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><a class="link" href="https://arxiv.org/abs/2604.10937"  target="_blank" rel="noopener"
+    >CMedTEB &amp; CARE: Benchmarking Chinese Medical Retrieval via Asymmetric Encoders</a></td>
+          <td>中文医学文本嵌入基准 + 非对称检索器（轻量 BERT 查询端 + LLM 文档端），超越对称 SOTA</td>
+          <td>1⬆</td>
+      </tr>
+  </tbody>
+</table></div>
+<details>
+<summary>📄 各论文详情</summary>
+<p><strong>Pseudo-Unification (2604.10949)</strong>
+提出信息论探测框架，联合分析 10 个统一多模态模型的输入编码和输出生成。发现伪统一源于双重分裂：模态非对称编码（视觉和语言不同熵轨迹）和模式分裂响应（文本高熵创造 vs 图像低熵保真）。只有通过上下文预测统一两端的模型才实现更真正的统一。</p>
+<p><strong>Panoptic Pairwise Distortion Graph (2604.11004)</strong>
+将图像配对评估扩展为区域级失真图（DG），表示密集退化信息。贡献区域级数据集 PandaSet、基准套件 PandaBench 和高效架构 Panda。当前 MLLM 在区域级退化理解上失败，即使提供显式区域提示。</p>
+<p><strong>CMedTEB &amp; CARE (2604.10937)</strong>
+构建覆盖检索/重排/STS 的中文医学文本嵌入基准，经多 LLM 投票 + 临床专家验证。提出非对称检索器 CARE：轻量 BERT 在线编码查询 + LLM 离线编码文档，两阶段渐进训练桥接表示。超越对称 SOTA 且不增加推理延迟。</p>
+</details>
+<hr>
+<h2 id="交叉趋势观察-">交叉趋势观察 🔍
+</h2><ol>
+<li><strong>离线/高效后训练成新热点</strong>：Lightning OPD（离线策略蒸馏）、KnowRL（最小知识引导）、rDPO（量表奖励）——都在用更少的计算资源达到更好的训练效果</li>
+<li><strong>长视野智能体是共识方向</strong>：LMM-Searcher（100轮搜索）、AiScientist（ML研究）、AggAgent（并行缩放）、OccuBench（职业任务）——从单步推理走向长程工程</li>
+<li><strong>MoE 架构在多领域开花</strong>：Nemotron 3 Super（LLM）、Nucleus-Image（图像生成）、ClawGUI（GUI Agent）——稀疏激活成为效率标配</li>
+<li><strong>音频语言模型走向细粒度时序</strong>：Audio Flamingo Next（时序 CoT）、SpotSound（事件定位）、OmniScript（音视频剧本）——从&quot;听到什么&quot;到&quot;什么时候听到的&quot;</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-14/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-14</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-13/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-13</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-12/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-12</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-11/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-11</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-07/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-07</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
