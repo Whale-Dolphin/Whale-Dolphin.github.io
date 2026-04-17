@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 本日报聚焦 AI/ML/LLM 领域最新动态，涵盖模型发布、行业研究、开源工具和安全事件。\n🔥 头条 OpenAI 发布 GPT-5.4-Cyber，与 Anthropic Mythos 正面交锋 4月14日，OpenAI 推出 GPT-5.4-Cyber——其旗舰模型 GPT-5.4 的网络安全专用变体，专精于发现软件安全漏洞。该模型采用有限发布策略，仅向经筛选的&quot;受信公司&quot;开放，这标志着 AI 巨头竞相进入网络安全 AI 赛道。一周前，Anthropic 刚发布了同样限制访问的 Mythos 模型。\n">
+<title>AI News Daily | 2026-04-17</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-04-17/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI News Daily | 2026-04-17">
+<meta property='og:description' content=" 本日报聚焦 AI/ML/LLM 领域最新动态，涵盖模型发布、行业研究、开源工具和安全事件。\n🔥 头条 OpenAI 发布 GPT-5.4-Cyber，与 Anthropic Mythos 正面交锋 4月14日，OpenAI 推出 GPT-5.4-Cyber——其旗舰模型 GPT-5.4 的网络安全专用变体，专精于发现软件安全漏洞。该模型采用有限发布策略，仅向经筛选的&quot;受信公司&quot;开放，这标志着 AI 巨头竞相进入网络安全 AI 赛道。一周前，Anthropic 刚发布了同样限制访问的 Mythos 模型。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-04-17/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-17T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI News Daily | 2026-04-17">
+<meta name="twitter:description" content=" 本日报聚焦 AI/ML/LLM 领域最新动态，涵盖模型发布、行业研究、开源工具和安全事件。\n🔥 头条 OpenAI 发布 GPT-5.4-Cyber，与 Anthropic Mythos 正面交锋 4月14日，OpenAI 推出 GPT-5.4-Cyber——其旗舰模型 GPT-5.4 的网络安全专用变体，专精于发现软件安全漏洞。该模型采用有限发布策略，仅向经筛选的&quot;受信公司&quot;开放，这标志着 AI 巨头竞相进入网络安全 AI 赛道。一周前，Anthropic 刚发布了同样限制访问的 Mythos 模型。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-04-17/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-头条">🔥 头条</a>
+      <ol>
+        <li><a href="#openai-发布-gpt-54-cyber与-anthropic-mythos-正面交锋">OpenAI 发布 GPT-5.4-Cyber，与 Anthropic Mythos 正面交锋</a></li>
+        <li><a href="#stanford-2026-ai-index-报告发布ai-进步神速但信任鸿沟触目惊心">Stanford 2026 AI Index 报告发布：AI 进步神速，但&quot;信任鸿沟&quot;触目惊心</a></li>
+      </ol>
+    </li>
+    <li><a href="#-模型发布">🧠 模型发布</a>
+      <ol>
+        <li><a href="#google-gemma-4让本地-ai-变得可选">Google Gemma 4：让本地 AI 变得可选</a></li>
+        <li><a href="#minimax-m27本地运行的sonnet-平替">MiniMax M2.7：本地运行的&quot;Sonnet 平替&quot;</a></li>
+        <li><a href="#prismml-bonsai1-bit-模型终于能用了">PrismML Bonsai：1-bit 模型终于能用了</a></li>
+        <li><a href="#glm-51zai-开源模型在-swe-bench-pro-上超越-gpt-54">GLM-5.1：Z.ai 开源模型在 SWE-Bench Pro 上超越 GPT-5.4</a></li>
+        <li><a href="#kimi-k26月之暗面的-agent-升级">Kimi K2.6：月之暗面的 Agent 升级</a></li>
+      </ol>
+    </li>
+    <li><a href="#-机器人与具身智能">🤖 机器人与具身智能</a>
+      <ol>
+        <li><a href="#google-gemini-robotics-er-16让机器人读懂世界">Google Gemini Robotics ER 1.6：让机器人读懂世界</a></li>
+        <li><a href="#腾讯-hy-embodied-05面向真实世界的具身基础模型">腾讯 HY-Embodied-0.5：面向真实世界的具身基础模型</a></li>
+      </ol>
+    </li>
+    <li><a href="#-研究前沿">🔬 研究前沿</a>
+      <ol>
+        <li><a href="#natureai-模型会潜意识传递偏见">Nature：AI 模型会&quot;潜意识&quot;传递偏见</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源工具">🛠️ 开源工具</a>
+      <ol>
+        <li><a href="#hermes-agent一周斩获-53k-stars-的-agent-框架">hermes-agent：一周斩获 53K Stars 的 Agent 框架</a></li>
+        <li><a href="#claude-code-routinesanthropic-官方的-agent-自动化">Claude Code Routines：Anthropic 官方的 Agent 自动化</a></li>
+        <li><a href="#openai-agents-sdk-重大更新">OpenAI Agents SDK 重大更新</a></li>
+        <li><a href="#其他值得关注的工具">其他值得关注的工具</a></li>
+      </ol>
+    </li>
+    <li><a href="#-安全事件">🔒 安全事件</a>
+      <ol>
+        <li><a href="#openai-axios-供应链攻击lazarus-组织的精心布局">OpenAI Axios 供应链攻击：Lazarus 组织的精心布局</a></li>
+        <li><a href="#gas-town-被指控盗用用户-llm-credits">Gas Town 被指控盗用用户 LLM Credits</a></li>
+      </ol>
+    </li>
+    <li><a href="#-产品动态">📱 产品动态</a>
+      <ol>
+        <li><a href="#google-gemini-登陆-macos">Google Gemini 登陆 macOS</a></li>
+        <li><a href="#openai-codex-新增-memory-和-sandbox">OpenAI Codex 新增 Memory 和 Sandbox</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业趋势">📊 行业趋势</a>
+      <ol>
+        <li><a href="#agent-基础设施成为新平台战争">Agent 基础设施成为新平台战争</a></li>
+        <li><a href="#开源-vs-ai-时代的拉锯">开源 vs AI 时代的拉锯</a></li>
+        <li><a href="#中美模型差距持续缩小">中美模型差距持续缩小</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-news-2026-04-17/">
+            <img alt="Featured image of post AI News Daily | 2026-04-17" height="608" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-news-2026-04-17/cover.jpg" srcset="/zh-cn/p/daily-news-2026-04-17/cover_hu_c2758c4961591951.jpg 800w, /zh-cn/p/daily-news-2026-04-17/cover.jpg 1080w" width="1080">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/news/" style="background-color: hsl(182, 60%, 84%); color: hsl(182, 60%, 15%);">
+                News
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-04-17/">AI News Daily | 2026-04-17</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-04-17T00:00:00Z'>Apr 17, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-头条">🔥 头条</a>
+      <ol>
+        <li><a href="#openai-发布-gpt-54-cyber与-anthropic-mythos-正面交锋">OpenAI 发布 GPT-5.4-Cyber，与 Anthropic Mythos 正面交锋</a></li>
+        <li><a href="#stanford-2026-ai-index-报告发布ai-进步神速但信任鸿沟触目惊心">Stanford 2026 AI Index 报告发布：AI 进步神速，但&quot;信任鸿沟&quot;触目惊心</a></li>
+      </ol>
+    </li>
+    <li><a href="#-模型发布">🧠 模型发布</a>
+      <ol>
+        <li><a href="#google-gemma-4让本地-ai-变得可选">Google Gemma 4：让本地 AI 变得可选</a></li>
+        <li><a href="#minimax-m27本地运行的sonnet-平替">MiniMax M2.7：本地运行的&quot;Sonnet 平替&quot;</a></li>
+        <li><a href="#prismml-bonsai1-bit-模型终于能用了">PrismML Bonsai：1-bit 模型终于能用了</a></li>
+        <li><a href="#glm-51zai-开源模型在-swe-bench-pro-上超越-gpt-54">GLM-5.1：Z.ai 开源模型在 SWE-Bench Pro 上超越 GPT-5.4</a></li>
+        <li><a href="#kimi-k26月之暗面的-agent-升级">Kimi K2.6：月之暗面的 Agent 升级</a></li>
+      </ol>
+    </li>
+    <li><a href="#-机器人与具身智能">🤖 机器人与具身智能</a>
+      <ol>
+        <li><a href="#google-gemini-robotics-er-16让机器人读懂世界">Google Gemini Robotics ER 1.6：让机器人读懂世界</a></li>
+        <li><a href="#腾讯-hy-embodied-05面向真实世界的具身基础模型">腾讯 HY-Embodied-0.5：面向真实世界的具身基础模型</a></li>
+      </ol>
+    </li>
+    <li><a href="#-研究前沿">🔬 研究前沿</a>
+      <ol>
+        <li><a href="#natureai-模型会潜意识传递偏见">Nature：AI 模型会&quot;潜意识&quot;传递偏见</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源工具">🛠️ 开源工具</a>
+      <ol>
+        <li><a href="#hermes-agent一周斩获-53k-stars-的-agent-框架">hermes-agent：一周斩获 53K Stars 的 Agent 框架</a></li>
+        <li><a href="#claude-code-routinesanthropic-官方的-agent-自动化">Claude Code Routines：Anthropic 官方的 Agent 自动化</a></li>
+        <li><a href="#openai-agents-sdk-重大更新">OpenAI Agents SDK 重大更新</a></li>
+        <li><a href="#其他值得关注的工具">其他值得关注的工具</a></li>
+      </ol>
+    </li>
+    <li><a href="#-安全事件">🔒 安全事件</a>
+      <ol>
+        <li><a href="#openai-axios-供应链攻击lazarus-组织的精心布局">OpenAI Axios 供应链攻击：Lazarus 组织的精心布局</a></li>
+        <li><a href="#gas-town-被指控盗用用户-llm-credits">Gas Town 被指控盗用用户 LLM Credits</a></li>
+      </ol>
+    </li>
+    <li><a href="#-产品动态">📱 产品动态</a>
+      <ol>
+        <li><a href="#google-gemini-登陆-macos">Google Gemini 登陆 macOS</a></li>
+        <li><a href="#openai-codex-新增-memory-和-sandbox">OpenAI Codex 新增 Memory 和 Sandbox</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业趋势">📊 行业趋势</a>
+      <ol>
+        <li><a href="#agent-基础设施成为新平台战争">Agent 基础设施成为新平台战争</a></li>
+        <li><a href="#开源-vs-ai-时代的拉锯">开源 vs AI 时代的拉锯</a></li>
+        <li><a href="#中美模型差距持续缩小">中美模型差距持续缩小</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>本日报聚焦 AI/ML/LLM 领域最新动态，涵盖模型发布、行业研究、开源工具和安全事件。</p>
+
+    </blockquote>
+<hr>
+<h2 id="-头条">🔥 头条
+</h2><h3 id="openai-发布-gpt-54-cyber与-anthropic-mythos-正面交锋">OpenAI 发布 GPT-5.4-Cyber，与 Anthropic Mythos 正面交锋
+</h3><p>4月14日，OpenAI 推出 <strong>GPT-5.4-Cyber</strong>——其旗舰模型 GPT-5.4 的网络安全专用变体，专精于发现软件安全漏洞。该模型采用有限发布策略，仅向经筛选的&quot;受信公司&quot;开放，这标志着 AI 巨头竞相进入网络安全 AI 赛道。一周前，Anthropic 刚发布了同样限制访问的 Mythos 模型。</p>
+<p>两家公司不约而同地选择了&quot;只给信得过的人用&quot;的发布策略——这种模式正在成为前沿 AI 模型的新常态。</p>
+<p><strong>来源：</strong> <a class="link" href="https://www.reuters.com/technology/openai-unveils-gpt-54-cyber-week-after-rivals-announcement-ai-model-2026-04-14/"  target="_blank" rel="noopener"
+    >Reuters</a> | <a class="link" href="https://www.bloomberg.com/news/articles/2026-04-14/openai-releases-cyber-model-to-limited-group-in-race-with-mythos"  target="_blank" rel="noopener"
+    >Bloomberg</a> | <a class="link" href="https://www.nytimes.com/2026/04/14/technology/openai-cybersecurity-gpt54-cyber.html"  target="_blank" rel="noopener"
+    >NYT</a></p>
+<hr>
+<h3 id="stanford-2026-ai-index-报告发布ai-进步神速但信任鸿沟触目惊心">Stanford 2026 AI Index 报告发布：AI 进步神速，但&quot;信任鸿沟&quot;触目惊心
+</h3><p>Stanford HAI 发布年度 AI Index 报告，核心发现：</p>
+<ul>
+<li><strong>SWE-bench Verified 从 60% 飙升至近 100%</strong>，一年内接近人类水平</li>
+<li><strong>Gemini Deep Think 获得 IMO 金牌</strong>，但最强模型读对模拟时钟的概率仅 50.1%</li>
+<li><strong>AI Agent 在 OSWorld 上从 12% 跃升至 66.3%</strong>，接近人类表现</li>
+<li><strong>机器人在真实家庭任务中成功率仅 12%</strong></li>
+<li>Anthropic 顶级模型领先第二名仅 2.7%，中美模型差距持续缩小</li>
+<li>公众与 AI 专家之间存在巨大<strong>信任鸿沟</strong>——专家乐观，公众焦虑</li>
+</ul>
+<p>报告用一句话概括了当前 AI 的荒诞：能拿数学奥赛金牌，却读不对一个钟。</p>
+<p><strong>来源：</strong> <a class="link" href="https://hai.stanford.edu/ai-index/2026-ai-index-report"  target="_blank" rel="noopener"
+    >Stanford HAI</a> | <a class="link" href="https://spectrum.ieee.org/state-of-ai-index-2026"  target="_blank" rel="noopener"
+    >IEEE Spectrum</a> | <a class="link" href="https://www.nature.com/articles/d41586-026-01199-z"  target="_blank" rel="noopener"
+    >Nature</a></p>
+<hr>
+<h2 id="-模型发布">🧠 模型发布
+</h2><h3 id="google-gemma-4让本地-ai-变得可选">Google Gemma 4：让本地 AI 变得可选
+</h3><p>4月2日发布的 <strong>Gemma 4</strong> 是 Google 最新开源模型家族，四个尺寸（E2B / E4B / 26B MoE / 31B Dense），全部原生多模态（文本+图像+视频，小模型还支持音频）。31B Dense 版本在 Arena AI 开源模型中排名第三，数学/编码/推理基准上超越了 Meta 的 Llama 4。Apache 2.0 许可证，可以在 iPhone 上运行。</p>
+<p>这不是&quot;还行的小模型&quot;——这是在说：你可能不再需要云端 API 了。</p>
+<p><strong>来源：</strong> <a class="link" href="https://deepmind.google/models/gemma/gemma-4/"  target="_blank" rel="noopener"
+    >DeepMind</a> | <a class="link" href="https://www.infoq.com/news/2026/04/gemma-4-android-ai-inference/"  target="_blank" rel="noopener"
+    >InfoQ</a> | <a class="link" href="https://www.startuphub.ai/ai-news/technology/2026/google-gemma-4-review-2026"  target="_blank" rel="noopener"
+    >StartupHub</a></p>
+<h3 id="minimax-m27本地运行的sonnet-平替">MiniMax M2.7：本地运行的&quot;Sonnet 平替&quot;
+</h3><p>本周 HuggingFace 热度最高的模型。一个对话式文本生成模型，85K 下载量，trending score 797。社区评价为&quot;家用的 Sonnet&quot;——在消费级硬件上运行、质量接近 Claude Sonnet。LocalLLaMA 社区将其列为本地 LLM 首选之一。</p>
+<p><strong>来源：</strong> <a class="link" href="https://www.minimax.io/news/minimax-m27-en"  target="_blank" rel="noopener"
+    >MiniMax</a> | <a class="link" href="https://huggingface.co/MiniMaxAI/MiniMax-M2.7"  target="_blank" rel="noopener"
+    >HuggingFace</a></p>
+<h3 id="prismml-bonsai1-bit-模型终于能用了">PrismML Bonsai：1-bit 模型终于能用了
+</h3><p>4月16日，PrismML 发布 Bonsai 模型家族（8B / 4B / 1.7B），基于 1.58-bit 权重架构。这不是概念验证——在旧笔记本上可达 88.6 tokens/s。1-bit 量化终于跨过了&quot;能用&quot;的门槛。</p>
+<p><strong>来源：</strong> <a class="link" href="https://www.prnewswire.com/news-releases/prismml-introduces-ternary-bonsai-model-family-302745151.html"  target="_blank" rel="noopener"
+    >PRNewswire</a> | <a class="link" href="https://github.com/PrismML-Eng/Bonsai-demo"  target="_blank" rel="noopener"
+    >GitHub</a> | <a class="link" href="https://www.datacamp.com/tutorial/run-bonsai-locally"  target="_blank" rel="noopener"
+    >DataCamp</a></p>
+<h3 id="glm-51zai-开源模型在-swe-bench-pro-上超越-gpt-54">GLM-5.1：Z.ai 开源模型在 SWE-Bench Pro 上超越 GPT-5.4
+</h3><p>中国 Z.ai（智谱）的 GLM-5.1 在 SWE-Bench Pro 上击败了 GPT-5.4 和 Opus 4.6。Google Trends 上 &ldquo;glm 5.1&rdquo; 搜索量上涨 160%。开源模型正在系统性缩小与闭源模型的差距。</p>
+<h3 id="kimi-k26月之暗面的-agent-升级">Kimi K2.6：月之暗面的 Agent 升级
+</h3><p>Moonshot AI 发布 Kimi K2.6，重点改进推理深度和 Agent 规划能力。Cursor 被发现其 Composer 2 底层使用了 Kimi K2.5 模型，引发社区讨论。MiniMax 和 Z.ai 已在港交所上市，为前沿 AI 实验室提供了罕见的财务透明度。</p>
+<p><strong>来源：</strong> <a class="link" href="https://fortune.com/2026/04/12/china-token-economy-ai-boom-big-tech-startups/"  target="_blank" rel="noopener"
+    >Fortune</a></p>
+<hr>
+<h2 id="-机器人与具身智能">🤖 机器人与具身智能
+</h2><h3 id="google-gemini-robotics-er-16让机器人读懂世界">Google Gemini Robotics ER 1.6：让机器人读懂世界
+</h3><p>DeepMind 发布 Gemini Robotics-ER 1.6，升级了空间推理和多视角理解能力，使自主机器人能够执行&quot;读取仪表盘&quot;等精细操作。这与腾讯 HY-Embodied-0.5 的发布形成了有趣的呼应——大厂和互联网巨头同时押注具身智能。</p>
+<p><strong>来源：</strong> <a class="link" href="https://deepmind.google/blog/gemini-robotics-er-1-6/"  target="_blank" rel="noopener"
+    >DeepMind Blog</a> | <a class="link" href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-1-6/"  target="_blank" rel="noopener"
+    >Google Blog</a></p>
+<h3 id="腾讯-hy-embodied-05面向真实世界的具身基础模型">腾讯 HY-Embodied-0.5：面向真实世界的具身基础模型
+</h3><p>腾讯 Robotics X 和 HY Vision 团队发布 HY-Embodied-0.5，一个面向真实世界 Agent 的视觉-语言具身模型。在 GitHub 上 trending score 678。中国大厂在具身智能上的投入正在加速。</p>
+<p><strong>来源：</strong> <a class="link" href="https://github.com/Tencent-Hunyuan/HY-Embodied"  target="_blank" rel="noopener"
+    >GitHub</a></p>
+<hr>
+<h2 id="-研究前沿">🔬 研究前沿
+</h2><h3 id="natureai-模型会潜意识传递偏见">Nature：AI 模型会&quot;潜意识&quot;传递偏见
+</h3><p>Nature 发表研究表明，用 AI 训练其他 AI 模型时，教师模型的不良特征会以&quot;潜意识&quot;方式传递给学生模型——即使这些特征已从训练数据中被清洗。这对整个 AI 蒸馏范式提出了严峻的安全隐患。</p>
+<p><strong>来源：</strong> <a class="link" href="https://www.nature.com/articles/d41586-026-01224-1"  target="_blank" rel="noopener"
+    >Nature</a> | <a class="link" href="https://www.theregister.com/2026/04/15/llms_inherit_bad_traits"  target="_blank" rel="noopener"
+    >The Register</a></p>
+<hr>
+<h2 id="-开源工具">🛠️ 开源工具
+</h2><h3 id="hermes-agent一周斩获-53k-stars-的-agent-框架">hermes-agent：一周斩获 53K Stars 的 Agent 框架
+</h3><p>NousResearch 的 hermes-agent 本周成为 GitHub Trending #1，周增 53,110 stars。核心卖点：&ldquo;随你成长的 Agent&rdquo;——技能随使用自动累积。纯 Python，无商业层、无托管版、无企业版。</p>
+<h3 id="claude-code-routinesanthropic-官方的-agent-自动化">Claude Code Routines：Anthropic 官方的 Agent 自动化
+</h3><p>Claude Code Routines 同时登上 HN（700 points）和 Product Hunt（#1，448 votes），提供标准化的 Agent 工作流基础设施。Google Trends 显示 &ldquo;claude managed agents&rdquo; 搜索量暴涨 950%。</p>
+<h3 id="openai-agents-sdk-重大更新">OpenAI Agents SDK 重大更新
+</h3><p>OpenAI 扩展了 Agents SDK，新增模型原生 Harness（让 Agent 跨文件和工具工作）和原生沙箱执行。Agent 基础设施正在成为新的平台战场。</p>
+<p><strong>来源：</strong> <a class="link" href="https://openai.com/index/the-next-evolution-of-the-agents-sdk/"  target="_blank" rel="noopener"
+    >OpenAI Blog</a> | <a class="link" href="https://techcrunch.com/2026/04/15/openai-updates-its-agents-sdk-to-help-enterprises-build-safer-more-capable-agents/"  target="_blank" rel="noopener"
+    >TechCrunch</a></p>
+<h3 id="其他值得关注的工具">其他值得关注的工具
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>描述</th>
+          <th>周增 Stars</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a class="link" href="https://github.com/forrestchang/andrej-karpathy-skills"  target="_blank" rel="noopener"
+    >andrej-karpathy-skills</a></td>
+          <td>Karpathy 风格的 Claude Code 配置文件</td>
+          <td>30,919</td>
+      </tr>
+      <tr>
+          <td><a class="link" href="https://github.com/microsoft/markitdown"  target="_blank" rel="noopener"
+    >markitdown</a></td>
+          <td>微软的文件→Markdown 转换工具</td>
+          <td>15,790</td>
+      </tr>
+      <tr>
+          <td><a class="link" href="https://github.com/multica-ai/multica"  target="_blank" rel="noopener"
+    >multica</a></td>
+          <td>开源 Managed Agents 平台</td>
+          <td>10,864</td>
+      </tr>
+      <tr>
+          <td><a class="link" href="https://github.com/thedotmack/claude-mem"  target="_blank" rel="noopener"
+    >claude-mem</a></td>
+          <td>Claude Code 会话记忆捕获</td>
+          <td>10,779</td>
+      </tr>
+      <tr>
+          <td><a class="link" href="https://github.com/VoltAgent/awesome-agent-skills"  target="_blank" rel="noopener"
+    >awesome-agent-skills</a></td>
+          <td>1000+ Agent Skills 合集</td>
+          <td>—</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-安全事件">🔒 安全事件
+</h2><h3 id="openai-axios-供应链攻击lazarus-组织的精心布局">OpenAI Axios 供应链攻击：Lazarus 组织的精心布局
+</h3><p>3月31日，朝鲜 Lazarus Group（BlueNoroff 子组）社工了 Axios npm 包的维护者，劫持其账户发布了恶意版本。OpenAI 的内部工具下载了受感染的 Axios 更新，但 OpenAI 表示未发现用户数据被访问、系统被入侵或软件被篡改。作为预防措施，OpenAI 吊销了 macOS 桌面应用的证书。</p>
+<p>这是 AI 公司首次公开披露的供应链攻击事件，值得所有依赖开源生态的团队警醒。</p>
+<p><strong>来源：</strong> <a class="link" href="https://openai.com/index/axios-developer-tool-compromise/"  target="_blank" rel="noopener"
+    >OpenAI</a> | <a class="link" href="https://thehackernews.com/2026/04/openai-revokes-macos-app-certificate.html"  target="_blank" rel="noopener"
+    >The Hacker News</a> | <a class="link" href="https://www.reuters.com/business/openai-identifies-security-issue-involving-third-party-tool-says-user-data-was-2026-04-11/"  target="_blank" rel="noopener"
+    >Reuters</a></p>
+<h3 id="gas-town-被指控盗用用户-llm-credits">Gas Town 被指控盗用用户 LLM Credits
+</h3><p>AI 工具 Gas Town 被曝光在用户不知情的情况下使用其 LLM API 额度来改进自身产品（HN 218 points, 109 comments）。</p>
+<p><strong>来源：</strong> <a class="link" href="https://github.com/gastownhall/gastown/issues/3649"  target="_blank" rel="noopener"
+    >GitHub Issue</a></p>
+<hr>
+<h2 id="-产品动态">📱 产品动态
+</h2><h3 id="google-gemini-登陆-macos">Google Gemini 登陆 macOS
+</h3><p>Google 发布原生 macOS Gemini 应用，形态类似 Spotlight——可在桌面直接调起 AI 对话和操作。Anthropic、OpenAI、Perplexity 都在争夺桌面端 AI 入口。</p>
+<p><strong>来源：</strong> <a class="link" href="https://www.theverge.com/tech/912638/google-gemini-mac-app"  target="_blank" rel="noopener"
+    >The Verge</a></p>
+<h3 id="openai-codex-新增-memory-和-sandbox">OpenAI Codex 新增 Memory 和 Sandbox
+</h3><p>OpenAI Codex 新增记忆功能（记住个人偏好和历史修正）和模型原生沙箱执行。侧边栏也增加了 PDF、电子表格和文档的富预览。</p>
+<p><strong>来源：</strong> <a class="link" href="https://www.iclarified.com/100577/openai-codex-can-now-control-your-mac-and-schedule-future-work-video"  target="_blank" rel="noopener"
+    >iClarified</a></p>
+<hr>
+<h2 id="-行业趋势">📊 行业趋势
+</h2><h3 id="agent-基础设施成为新平台战争">Agent 基础设施成为新平台战争
+</h3><p>本周 GitHub Trending 前 10 中有 7 个是 AI Agent 工具。&ldquo;claude managed agents&rdquo; 搜索量暴涨 950%，hermes-agent 一周 53K stars。开发者工具市场正以前所未有的速度被 Agent 原生架构重塑。</p>
+<h3 id="开源-vs-ai-时代的拉锯">开源 vs AI 时代的拉锯
+</h3><p>Cal.com 因&quot;AI 公司白嫖开源代码&quot;而转向闭源，引发 HN 上最激烈的讨论之一（313 points, 167 comments）。&ldquo;AI-resistant licensing&rdquo;（如 BSL）正在成为 2026 年开源项目的新考量。</p>
+<h3 id="中美模型差距持续缩小">中美模型差距持续缩小
+</h3><p>Stanford AI Index 显示，DeepSeek-R1 曾短暂追平美国顶级模型，截至 2026 年 3 月，Anthropic 顶级模型仅领先 2.7%。中国继续在论文数量、引用量、专利产出和工业机器人部署上领先。</p>
+<hr>
+<p><em>数据来源：Hacker News、GitHub Trending、Product Hunt、HuggingFace、Reddit r/LocalLLaMA / r/MachineLearning / r/artificial、Google Trends、BuilderPulse</em>
+<em>生成时间：2026-04-17 00:24 UTC</em></p>
+<hr>
+
+    <blockquote>
+        <p>Photo by <a class="link" href="https://unsplash.com/photos/artificial-intelligence-is-represented-by-the-lightbulb-and-brain-Q71kkJHARdg"  target="_blank" rel="noopener"
+    >Omar:. Lopez-Rincon</a> on <a class="link" href="https://unsplash.com"  target="_blank" rel="noopener"
+    >Unsplash</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-16/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-16" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-16/cover_hu_5fba8d1a0dc4d1b4.jpg" srcset="/zh-cn/p/daily-news-2026-04-16/cover_hu_5fba8d1a0dc4d1b4.jpg 1x, /zh-cn/p/daily-news-2026-04-16/cover_hu_41eac688ea9a574d.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #af5f4980 0%, #3d3d5aC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-16</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-14/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-14" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-14/cover_hu_58981d9c5133bb87.jpg" srcset="/zh-cn/p/daily-news-2026-04-14/cover_hu_58981d9c5133bb87.jpg 1x, /zh-cn/p/daily-news-2026-04-14/cover_hu_ea329d742ca07ce9.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #0d639b80 0%, #0a2336C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-14</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-13/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-13" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-13/cover_hu_5d988369f9ed8f.jpg" srcset="/zh-cn/p/daily-news-2026-04-13/cover_hu_5d988369f9ed8f.jpg 1x, /zh-cn/p/daily-news-2026-04-13/cover_hu_74a24406a096ba56.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #1d1baf80 0%, #02010cC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-13</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-12/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-12" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-12/cover_hu_3cfb27fe489c9822.jpg" srcset="/zh-cn/p/daily-news-2026-04-12/cover_hu_3cfb27fe489c9822.jpg 1x, /zh-cn/p/daily-news-2026-04-12/cover_hu_1418634de6857027.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #32292f80 0%, #a3a2a1C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-12</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-11/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-11" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-11/cover_hu_22ffeb80fbe4bca9.jpg" srcset="/zh-cn/p/daily-news-2026-04-11/cover_hu_22ffeb80fbe4bca9.jpg 1x, /zh-cn/p/daily-news-2026-04-11/cover_hu_dc83e6a9a7b3ae8e.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #094fd980 0%, #070f29C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-11</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
