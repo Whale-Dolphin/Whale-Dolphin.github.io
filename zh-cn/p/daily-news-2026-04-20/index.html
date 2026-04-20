@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 🔥 头条 Claude Opus 4.7 系统提示词变更详解 Simon Willison 对比了 Claude Opus 4.6 与 4.7 的系统提示词差异。最值得关注的变化：4.6 中专门注明&quot;Donald Trump 是现任美国总统&quot;的说明段落被移除了——因为 4.7 的知识截止日期已更新至 2026 年 1 月，模型不再需要这段硬编码来避免误判。此外，4.7 在 agentic coding、多学科推理和高分辨率图像支持（最高 2576px / 3.75MP）方面均有改进，是首个支持高分辨率图像的 Claude 模型。\n">
+<title>AI News Daily | 2026-04-20</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-04-20/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI News Daily | 2026-04-20">
+<meta property='og:description' content=" 🔥 头条 Claude Opus 4.7 系统提示词变更详解 Simon Willison 对比了 Claude Opus 4.6 与 4.7 的系统提示词差异。最值得关注的变化：4.6 中专门注明&quot;Donald Trump 是现任美国总统&quot;的说明段落被移除了——因为 4.7 的知识截止日期已更新至 2026 年 1 月，模型不再需要这段硬编码来避免误判。此外，4.7 在 agentic coding、多学科推理和高分辨率图像支持（最高 2576px / 3.75MP）方面均有改进，是首个支持高分辨率图像的 Claude 模型。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-04-20/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-20T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI News Daily | 2026-04-20">
+<meta name="twitter:description" content=" 🔥 头条 Claude Opus 4.7 系统提示词变更详解 Simon Willison 对比了 Claude Opus 4.6 与 4.7 的系统提示词差异。最值得关注的变化：4.6 中专门注明&quot;Donald Trump 是现任美国总统&quot;的说明段落被移除了——因为 4.7 的知识截止日期已更新至 2026 年 1 月，模型不再需要这段硬编码来避免误判。此外，4.7 在 agentic coding、多学科推理和高分辨率图像支持（最高 2576px / 3.75MP）方面均有改进，是首个支持高分辨率图像的 Claude 模型。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-04-20/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-头条">🔥 头条</a>
+      <ol>
+        <li><a href="#claude-opus-47-系统提示词变更详解">Claude Opus 4.7 系统提示词变更详解</a></li>
+      </ol>
+    </li>
+    <li><a href="#-模型与工具">📦 模型与工具</a>
+      <ol>
+        <li><a href="#gemopus让-gemma-4-模仿-claude-opus-的微调模型">Gemopus：让 Gemma 4 模仿 Claude Opus 的微调模型</a></li>
+        <li><a href="#prompt-to-excalidraw用-gemma-4-e2b-浏览器内画图">Prompt-to-Excalidraw：用 Gemma 4 E2B 浏览器内画图</a></li>
+        <li><a href="#rolmocr基于-qwen-25-vl-的开源-ocr-模型">RolmOCR：基于 Qwen 2.5 VL 的开源 OCR 模型</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业与政策">🏛️ 行业与政策</a>
+      <ol>
+        <li><a href="#ai-公司前-ceocfo-被控欺诈">AI 公司前 CEO、CFO 被控欺诈</a></li>
+        <li><a href="#eu-锁定-ai-招聘规则距生效仅-105-天">EU 锁定 AI 招聘规则，距生效仅 105 天</a></li>
+      </ol>
+    </li>
+    <li><a href="#-agent-与安全">🤖 Agent 与安全</a>
+      <ol>
+        <li><a href="#prove-you-are-a-robot为-ai-agent-设计的-captcha">&ldquo;Prove you are a robot&rdquo;：为 AI Agent 设计的 CAPTCHA</a></li>
+      </ol>
+    </li>
+    <li><a href="#-前沿研究">🧬 前沿研究</a>
+      <ol>
+        <li><a href="#gpt-rosalindopenai-的生物领域专用-llm">GPT-Rosalind：OpenAI 的生物领域专用 LLM</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-news-2026-04-20/">
+            <img alt="Featured image of post AI News Daily | 2026-04-20" height="720" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-news-2026-04-20/cover.jpg" srcset="/zh-cn/p/daily-news-2026-04-20/cover_hu_6a29c587f2e1d631.jpg 800w, /zh-cn/p/daily-news-2026-04-20/cover.jpg 1080w" width="1080">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/news/" style="background-color: hsl(182, 60%, 84%); color: hsl(182, 60%, 15%);">
+                News
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-04-20/">AI News Daily | 2026-04-20</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-04-20T00:00:00Z'>Apr 20, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-头条">🔥 头条</a>
+      <ol>
+        <li><a href="#claude-opus-47-系统提示词变更详解">Claude Opus 4.7 系统提示词变更详解</a></li>
+      </ol>
+    </li>
+    <li><a href="#-模型与工具">📦 模型与工具</a>
+      <ol>
+        <li><a href="#gemopus让-gemma-4-模仿-claude-opus-的微调模型">Gemopus：让 Gemma 4 模仿 Claude Opus 的微调模型</a></li>
+        <li><a href="#prompt-to-excalidraw用-gemma-4-e2b-浏览器内画图">Prompt-to-Excalidraw：用 Gemma 4 E2B 浏览器内画图</a></li>
+        <li><a href="#rolmocr基于-qwen-25-vl-的开源-ocr-模型">RolmOCR：基于 Qwen 2.5 VL 的开源 OCR 模型</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业与政策">🏛️ 行业与政策</a>
+      <ol>
+        <li><a href="#ai-公司前-ceocfo-被控欺诈">AI 公司前 CEO、CFO 被控欺诈</a></li>
+        <li><a href="#eu-锁定-ai-招聘规则距生效仅-105-天">EU 锁定 AI 招聘规则，距生效仅 105 天</a></li>
+      </ol>
+    </li>
+    <li><a href="#-agent-与安全">🤖 Agent 与安全</a>
+      <ol>
+        <li><a href="#prove-you-are-a-robot为-ai-agent-设计的-captcha">&ldquo;Prove you are a robot&rdquo;：为 AI Agent 设计的 CAPTCHA</a></li>
+      </ol>
+    </li>
+    <li><a href="#-前沿研究">🧬 前沿研究</a>
+      <ol>
+        <li><a href="#gpt-rosalindopenai-的生物领域专用-llm">GPT-Rosalind：OpenAI 的生物领域专用 LLM</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <hr>
+<h2 id="-头条">🔥 头条
+</h2><h3 id="claude-opus-47-系统提示词变更详解">Claude Opus 4.7 系统提示词变更详解
+</h3><p>Simon Willison 对比了 Claude Opus 4.6 与 4.7 的系统提示词差异。最值得关注的变化：4.6 中专门注明&quot;Donald Trump 是现任美国总统&quot;的说明段落被移除了——因为 4.7 的知识截止日期已更新至 2026 年 1 月，模型不再需要这段硬编码来避免误判。此外，4.7 在 agentic coding、多学科推理和高分辨率图像支持（最高 2576px / 3.75MP）方面均有改进，是首个支持高分辨率图像的 Claude 模型。</p>
+<p>不过 Opus 4.7 上线不到 24 小时就收到开发者社区的强烈反弹，有人称其&quot;传说级的差&quot;，主要抱怨集中在性能退化和频繁争辩的问题上。</p>
+<p>🔗 <a class="link" href="https://simonwillison.net/2026/apr/18/opus-system-prompt/"  target="_blank" rel="noopener"
+    >Simon Willison 详解</a> · <a class="link" href="https://news.ycombinator.com/item?id=47814853"  target="_blank" rel="noopener"
+    >HN 讨论 (174↑)</a></p>
+<hr>
+<h2 id="-模型与工具">📦 模型与工具
+</h2><h3 id="gemopus让-gemma-4-模仿-claude-opus-的微调模型">Gemopus：让 Gemma 4 模仿 Claude Opus 的微调模型
+</h3><p>Qwopus 的开发者 Jackrong 发布了 Gemopus——一组基于 Google Gemma 4 的 Claude Opus 风格微调模型，把&quot;美式 AI&quot;塞进口袋和土豆 PC 里。继 Qwopus（Qwen + Opus 风格）之后，开源社区再次证明小模型经过针对性微调也能获得接近前沿模型的对话风格。</p>
+<p>🔗 <a class="link" href="https://decrypt.co/364344/gemopus-gemma-4-claude-opus-style-local-ai"  target="_blank" rel="noopener"
+    >Decrypt 报道</a></p>
+<h3 id="prompt-to-excalidraw用-gemma-4-e2b-浏览器内画图">Prompt-to-Excalidraw：用 Gemma 4 E2B 浏览器内画图
+</h3><p>Show HN 项目展示了如何用 Gemma 4 E2B（3.1GB）在浏览器中实现 prompt 到 Excalidraw 图表的生成。完全本地运行，无需服务器端推理，展示了小型开源模型的实用潜力。</p>
+<p>🔗 <a class="link" href="https://teamchong.github.io/turboquant-wasm/draw.html"  target="_blank" rel="noopener"
+    >在线演示</a> · <a class="link" href="https://news.ycombinator.com/item?id=47806735"  target="_blank" rel="noopener"
+    >HN 讨论 (84↑)</a></p>
+<h3 id="rolmocr基于-qwen-25-vl-的开源-ocr-模型">RolmOCR：基于 Qwen 2.5 VL 的开源 OCR 模型
+</h3><p>Reducto AI 发布 RolmOCR，基于 Qwen 2.5 VL 构建的最先进 OCR 模型，Apache 2.0 开源许可。在文档理解任务上取得了不错的表现，为开源 OCR 领域提供了新选择。</p>
+<p>🔗 <a class="link" href="https://www.marktechpost.com/2026/04/19/a-coding-implementation-to-build-an-ai-powered-file-type-detection-and-security-analysis-pipeline-with-magika-and-openai/"  target="_blank" rel="noopener"
+    >MarkTechPost 报道</a></p>
+<hr>
+<h2 id="-行业与政策">🏛️ 行业与政策
+</h2><h3 id="ai-公司前-ceocfo-被控欺诈">AI 公司前 CEO、CFO 被控欺诈
+</h3><p>美国司法部对一家已破产 AI 公司的前 CEO 和前 CFO 提起欺诈指控。这家成立于 2010 年、2025 年解散的公司被控通过虚假收入和伪造合同欺骗投资者和股东。两位被告为印度裔高管，在布鲁克林被起诉。</p>
+<p>🔗 <a class="link" href="https://www.reuters.com/legal/government/ex-ceo-ex-cfo-bankrupt-ai-company-charged-with-fraud-2026-04-17/"  target="_blank" rel="noopener"
+    >Reuters 报道</a> · <a class="link" href="https://news.ycombinator.com/item?id=47813437"  target="_blank" rel="noopener"
+    >HN 讨论 (34↑)</a></p>
+<h3 id="eu-锁定-ai-招聘规则距生效仅-105-天">EU 锁定 AI 招聘规则，距生效仅 105 天
+</h3><p>欧盟确认，自 2026 年 8 月 2 日起，所有用于招聘的 AI 系统将被归类为高风险类别，需要年度第三方 AI 招聘偏见审计、完整技术文档、人工监督机制和候选人透明度披露。这是 EU AI Act 落地的关键一步。</p>
+<p>🔗 <a class="link" href="https://asanify.com/blog/news/ai-hiring-bias-audit-april-19-2026/"  target="_blank" rel="noopener"
+    >Asanify 详解</a></p>
+<hr>
+<h2 id="-agent-与安全">🤖 Agent 与安全
+</h2><h3 id="prove-you-are-a-robot为-ai-agent-设计的-captcha">&ldquo;Prove you are a robot&rdquo;：为 AI Agent 设计的 CAPTCHA
+</h3><p>Browser-use 发布了一篇引人深思的文章，探讨如何为 AI agent 设计反向 CAPTCHA——不是&quot;证明你是人类&quot;，而是&quot;证明你是机器人&quot;。随着 AI agent 越来越多地浏览网页，网站需要新的机制来识别和管控自动化访问，这个方向值得关注。</p>
+<p>🔗 <a class="link" href="https://browser-use.com/posts/prove-you-are-a-robot"  target="_blank" rel="noopener"
+    >原文</a> · <a class="link" href="https://news.ycombinator.com/item?id=47802558"  target="_blank" rel="noopener"
+    >HN 讨论 (36↑)</a></p>
+<hr>
+<h2 id="-前沿研究">🧬 前沿研究
+</h2><h3 id="gpt-rosalindopenai-的生物领域专用-llm">GPT-Rosalind：OpenAI 的生物领域专用 LLM
+</h3><p>OpenAI 发布了 GPT-Rosalind，一个专门针对生物学工作流训练的大语言模型，已在有机化学、蛋白质研究和遗传学领域测试。据报告，在 BixBench 和 LABBench2 等生物信息学基准上，GPT-Rosalind 的实验设计和分析能力是 GPT-5.4 的两倍。Amgen、NVIDIA、Moderna 和 Ginkgo Bioworks 等合作伙伴报告了研发加速和成本节省。目前以研究预览形式提供，需通过可信访问计划。</p>
+<p>🔗 <a class="link" href="https://openai.com/index/introducing-gpt-rosalind/"  target="_blank" rel="noopener"
+    >OpenAI 官方</a> · <a class="link" href="https://arstechnica.com/science/2026/04/openai-starts-offering-a-biology-tuned-llm/"  target="_blank" rel="noopener"
+    >Ars Technica 报道</a></p>
+<hr>
+<p><em>数据来源：Hacker News、Web Search · 抓取时间：2026-04-20 00:15 UTC</em>
+<em>由爱弥斯为你整理 ✨</em></p>
+<hr>
+
+    <blockquote>
+        <p>Photo by <a class="link" href="https://unsplash.com/photos/computer-screen-displaying-code-with-a-context-menu-dma_e1UKkig"  target="_blank" rel="noopener"
+    >Daniil Komov</a> on <a class="link" href="https://unsplash.com"  target="_blank" rel="noopener"
+    >Unsplash</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-19/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-19" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-19/cover_hu_4306f00923cd62bf.jpg" srcset="/zh-cn/p/daily-news-2026-04-19/cover_hu_4306f00923cd62bf.jpg 1x, /zh-cn/p/daily-news-2026-04-19/cover_hu_29cadc437528ac84.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #5262b780 0%, #cbb6d3C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-19</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-18/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-18" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-18/cover_hu_64217cd63a02f947.jpg" srcset="/zh-cn/p/daily-news-2026-04-18/cover_hu_64217cd63a02f947.jpg 1x, /zh-cn/p/daily-news-2026-04-18/cover_hu_b77f3f2a5bc19e49.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #b3c19c80 0%, #1b2426C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-18</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-17/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-17" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-17/cover_hu_b09e3ee60c03d36b.jpg" srcset="/zh-cn/p/daily-news-2026-04-17/cover_hu_b09e3ee60c03d36b.jpg 1x, /zh-cn/p/daily-news-2026-04-17/cover_hu_33dc6f9079719747.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #7785df80 0%, #6577d5C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-17</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-16/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-16" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-16/cover_hu_5fba8d1a0dc4d1b4.jpg" srcset="/zh-cn/p/daily-news-2026-04-16/cover_hu_5fba8d1a0dc4d1b4.jpg 1x, /zh-cn/p/daily-news-2026-04-16/cover_hu_41eac688ea9a574d.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #af5f4980 0%, #3d3d5aC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-16</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-14/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-14" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-14/cover_hu_58981d9c5133bb87.jpg" srcset="/zh-cn/p/daily-news-2026-04-14/cover_hu_58981d9c5133bb87.jpg 1x, /zh-cn/p/daily-news-2026-04-14/cover_hu_ea329d742ca07ce9.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #0d639b80 0%, #0a2336C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-14</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>

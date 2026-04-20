@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 30 篇论文 | Audio LLM: 4篇 | LLM Training: 15篇 | AI Agents: 10篇 | 其他值得关注: 1篇 来源: HuggingFace(30)\n重点推荐 ⭐ KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance 将知识提示设计为&quot;最小充分&quot;问题，约束子集搜索构建紧凑知识点子集，1.5B刷新推理SOTA\n">
+<title>AI Paper Daily | 2026-04-20</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-04-20/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-04-20">
+<meta property='og:description' content="今日概览 共收录 30 篇论文 | Audio LLM: 4篇 | LLM Training: 15篇 | AI Agents: 10篇 | 其他值得关注: 1篇 来源: HuggingFace(30)\n重点推荐 ⭐ KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance 将知识提示设计为&quot;最小充分&quot;问题，约束子集搜索构建紧凑知识点子集，1.5B刷新推理SOTA\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-04-20/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-20T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-04-20">
+<meta name="twitter:description" content="今日概览 共收录 30 篇论文 | Audio LLM: 4篇 | LLM Training: 15篇 | AI Agents: 10篇 | 其他值得关注: 1篇 来源: HuggingFace(30)\n重点推荐 ⭐ KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance 将知识提示设计为&quot;最小充分&quot;问题，约束子集搜索构建紧凑知识点子集，1.5B刷新推理SOTA\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-04-20/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#knowrl-boosting-llm-reasoning-via-reinforcement-learning-with-minimal-sufficient-knowledge-guidance">KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance</a></li>
+        <li><a href="#hy-world-20-a-multi-modal-world-model-for-reconstructing-generating-and-simulating-3d-worlds">HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds</a></li>
+        <li><a href="#seedance-20-advancing-video-generation-for-world-complexity">Seedance 2.0: Advancing Video Generation for World Complexity</a></li>
+        <li><a href="#spatialevo-self-evolving-spatial-intelligence-via-deterministic-geometric-environments">SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments</a></li>
+        <li><a href="#dr3-eval-towards-realistic-and-reproducible-deep-research-evaluation">DR^{3}-Eval: Towards Realistic and Reproducible Deep Research Evaluation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#merrin-a-benchmark-for-multimodal-evidence-retrieval-and-reasoning-in-noisy-web-environments">MERRIN: A Benchmark for Multimodal Evidence Retrieval and Reasoning in Noisy Web Environments</a></li>
+        <li><a href="#controlfoley-unified-and-controllable-video-to-audio-generation-with-cross-modal-conflict-handling">ControlFoley: Unified and Controllable Video-to-Audio Generation with Cross-Modal Conflict Handling</a></li>
+        <li><a href="#spotsound-enhancing-large-audio-language-models-with-fine-grained-temporal-grounding">SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#trex-automating-llm-fine-tuning-via-agent-driven-tree-based-exploration">TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration</a></li>
+        <li><a href="#rad-2-scaling-reinforcement-learning-in-a-generator-discriminator-framework">RAD-2: Scaling Reinforcement Learning in a Generator-Discriminator Framework</a></li>
+        <li><a href="#tracer-trace-based-adaptive-cost-efficient-routing-for-llm-classification">TRACER: Trace-Based Adaptive Cost-Efficient Routing for LLM Classification</a></li>
+        <li><a href="#towards-scalable-lightweight-gui-agents-via-multi-role-orchestration">Towards Scalable Lightweight GUI Agents via Multi-role Orchestration</a></li>
+        <li><a href="#lightning-opd-efficient-post-training-for-large-reasoning-models-with-offline-on-policy-distillation">Lightning OPD: Efficient Post-Training for Large Reasoning Models with Offline On-Policy Distillation</a></li>
+        <li><a href="#longact-harnessing-intrinsic-activation-patterns-for-long-context-reinforcement-learning">LongAct: Harnessing Intrinsic Activation Patterns for Long-Context Reinforcement Learning</a></li>
+        <li><a href="#dharmaocr-specialized-small-language-models-for-structured-ocr">DharmaOCR: Specialized Small Language Models for Structured OCR</a></li>
+        <li><a href="#reinforcement-learning-via-value-gradient-flow">Reinforcement Learning via Value Gradient Flow</a></li>
+        <li><a href="#from-pyx-to-py-investigating-reinforcement-learning-in-pre-train-space">From P(y|x) to P(y): Investigating Reinforcement Learning in Pre-train Space</a></li>
+        <li><a href="#toolomni-enabling-open-world-tool-use-via-agentic-learning-with-proactive-retrieval-and-grounded-execution">ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution</a></li>
+        <li><a href="#visual-preference-optimization-with-rubric-rewards">Visual Preference Optimization with Rubric Rewards</a></li>
+        <li><a href="#leapalign-post-training-flow-matching-models-at-any-generation-step-by-building-two-step-trajectories">LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories</a></li>
+        <li><a href="#quantcode-bench-a-benchmark-for-evaluating-llms">QuantCode-Bench: A Benchmark for Evaluating LLMs’ Ability to Generate Executable Algorithmic Trading Strategies</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#towards-long-horizon-agentic-multimodal-search">Towards Long-horizon Agentic Multimodal Search</a></li>
+        <li><a href="#spatialevo-self-evolving-spatial-intelligence-via-deterministic-geometric-environments-1">SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments</a></li>
+        <li><a href="#rose-retrieval-oriented-segmentation-enhancement">ROSE: Retrieval-Oriented Segmentation Enhancement</a></li>
+        <li><a href="#exploration-and-exploitation-errors-are-measurable-for-language-model-agents">Exploration and Exploitation Errors Are Measurable for Language Model Agents</a></li>
+        <li><a href="#toward-autonomous-long-horizon-engineering-for-ml-research">Toward Autonomous Long-Horizon Engineering for ML Research</a></li>
+        <li><a href="#mm-webagent-a-hierarchical-multimodal-web-agent-for-webpage-generation">MM-WebAgent: A Hierarchical Multimodal Web Agent for Webpage Generation</a></li>
+        <li><a href="#globalsplat-efficient-feed-forward-3d-gaussian-splatting-via-global-scene-tokens">GlobalSplat: Efficient Feed-Forward 3D Gaussian Splatting via Global Scene Tokens</a></li>
+        <li><a href="#tip-token-importance-in-on-policy-distillation">TIP: Token Importance in On-Policy Distillation</a></li>
+        <li><a href="#free-geometry-refining-3d-reconstruction-from-longer-versions-of-itself">Free Geometry: Refining 3D Reconstruction from Longer Versions of Itself</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#boosting-visual-instruction-tuning-with-self-supervised-guidance">Boosting Visual Instruction Tuning with Self-Supervised Guidance</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-04-20/">AI Paper Daily | 2026-04-20</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-04-20T00:00:00Z'>Apr 20, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#knowrl-boosting-llm-reasoning-via-reinforcement-learning-with-minimal-sufficient-knowledge-guidance">KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance</a></li>
+        <li><a href="#hy-world-20-a-multi-modal-world-model-for-reconstructing-generating-and-simulating-3d-worlds">HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds</a></li>
+        <li><a href="#seedance-20-advancing-video-generation-for-world-complexity">Seedance 2.0: Advancing Video Generation for World Complexity</a></li>
+        <li><a href="#spatialevo-self-evolving-spatial-intelligence-via-deterministic-geometric-environments">SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments</a></li>
+        <li><a href="#dr3-eval-towards-realistic-and-reproducible-deep-research-evaluation">DR^{3}-Eval: Towards Realistic and Reproducible Deep Research Evaluation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#merrin-a-benchmark-for-multimodal-evidence-retrieval-and-reasoning-in-noisy-web-environments">MERRIN: A Benchmark for Multimodal Evidence Retrieval and Reasoning in Noisy Web Environments</a></li>
+        <li><a href="#controlfoley-unified-and-controllable-video-to-audio-generation-with-cross-modal-conflict-handling">ControlFoley: Unified and Controllable Video-to-Audio Generation with Cross-Modal Conflict Handling</a></li>
+        <li><a href="#spotsound-enhancing-large-audio-language-models-with-fine-grained-temporal-grounding">SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#trex-automating-llm-fine-tuning-via-agent-driven-tree-based-exploration">TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration</a></li>
+        <li><a href="#rad-2-scaling-reinforcement-learning-in-a-generator-discriminator-framework">RAD-2: Scaling Reinforcement Learning in a Generator-Discriminator Framework</a></li>
+        <li><a href="#tracer-trace-based-adaptive-cost-efficient-routing-for-llm-classification">TRACER: Trace-Based Adaptive Cost-Efficient Routing for LLM Classification</a></li>
+        <li><a href="#towards-scalable-lightweight-gui-agents-via-multi-role-orchestration">Towards Scalable Lightweight GUI Agents via Multi-role Orchestration</a></li>
+        <li><a href="#lightning-opd-efficient-post-training-for-large-reasoning-models-with-offline-on-policy-distillation">Lightning OPD: Efficient Post-Training for Large Reasoning Models with Offline On-Policy Distillation</a></li>
+        <li><a href="#longact-harnessing-intrinsic-activation-patterns-for-long-context-reinforcement-learning">LongAct: Harnessing Intrinsic Activation Patterns for Long-Context Reinforcement Learning</a></li>
+        <li><a href="#dharmaocr-specialized-small-language-models-for-structured-ocr">DharmaOCR: Specialized Small Language Models for Structured OCR</a></li>
+        <li><a href="#reinforcement-learning-via-value-gradient-flow">Reinforcement Learning via Value Gradient Flow</a></li>
+        <li><a href="#from-pyx-to-py-investigating-reinforcement-learning-in-pre-train-space">From P(y|x) to P(y): Investigating Reinforcement Learning in Pre-train Space</a></li>
+        <li><a href="#toolomni-enabling-open-world-tool-use-via-agentic-learning-with-proactive-retrieval-and-grounded-execution">ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution</a></li>
+        <li><a href="#visual-preference-optimization-with-rubric-rewards">Visual Preference Optimization with Rubric Rewards</a></li>
+        <li><a href="#leapalign-post-training-flow-matching-models-at-any-generation-step-by-building-two-step-trajectories">LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories</a></li>
+        <li><a href="#quantcode-bench-a-benchmark-for-evaluating-llms">QuantCode-Bench: A Benchmark for Evaluating LLMs’ Ability to Generate Executable Algorithmic Trading Strategies</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#towards-long-horizon-agentic-multimodal-search">Towards Long-horizon Agentic Multimodal Search</a></li>
+        <li><a href="#spatialevo-self-evolving-spatial-intelligence-via-deterministic-geometric-environments-1">SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments</a></li>
+        <li><a href="#rose-retrieval-oriented-segmentation-enhancement">ROSE: Retrieval-Oriented Segmentation Enhancement</a></li>
+        <li><a href="#exploration-and-exploitation-errors-are-measurable-for-language-model-agents">Exploration and Exploitation Errors Are Measurable for Language Model Agents</a></li>
+        <li><a href="#toward-autonomous-long-horizon-engineering-for-ml-research">Toward Autonomous Long-Horizon Engineering for ML Research</a></li>
+        <li><a href="#mm-webagent-a-hierarchical-multimodal-web-agent-for-webpage-generation">MM-WebAgent: A Hierarchical Multimodal Web Agent for Webpage Generation</a></li>
+        <li><a href="#globalsplat-efficient-feed-forward-3d-gaussian-splatting-via-global-scene-tokens">GlobalSplat: Efficient Feed-Forward 3D Gaussian Splatting via Global Scene Tokens</a></li>
+        <li><a href="#tip-token-importance-in-on-policy-distillation">TIP: Token Importance in On-Policy Distillation</a></li>
+        <li><a href="#free-geometry-refining-3d-reconstruction-from-longer-versions-of-itself">Free Geometry: Refining 3D Reconstruction from Longer Versions of Itself</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#boosting-visual-instruction-tuning-with-self-supervised-guidance">Boosting Visual Instruction Tuning with Self-Supervised Guidance</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 30 篇论文 | Audio LLM: 4篇 | LLM Training: 15篇 | AI Agents: 10篇 | 其他值得关注: 1篇
+来源: HuggingFace(30)</p>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><h3 id="knowrl-boosting-llm-reasoning-via-reinforcement-learning-with-minimal-sufficient-knowledge-guidance"><a class="link" href="https://arxiv.org/abs/2604.12627"  target="_blank" rel="noopener"
+    >KnowRL: Boosting LLM Reasoning via Reinforcement Learning with Minimal-Sufficient Knowledge Guidance</a>
+</h3>
+    <blockquote>
+        <p>将知识提示设计为&quot;最小充分&quot;问题，约束子集搜索构建紧凑知识点子集，1.5B刷新推理SOTA</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Linhao Yu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (96 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.12627"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.12627.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: KnowRL将RL训练hint设计视为最小充分引导问题，原子知识点分解+约束子集搜索构建紧凑训练子集；发现并解决&quot;剪枝交互悖论&quot;。1.5B规模无提示推理达70.08（+9.63），加知识点后74.16。</li>
+<li><strong>相关技术</strong>: minimal-sufficient guidance, constrained subset search, pruning interaction paradox, atomic knowledge points, RLVR</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>RLVR提升了大语言模型推理能力，但效果常受限于难题上严重的奖励稀疏性。近期基于提示的RL方法通过注入部分解或抽象模板缓解稀疏性，但通常通过增加更多token扩展引导，引入冗余、不一致和额外训练开销。我们提出KnowRL（知识引导强化学习），将提示设计视为最小充分引导问题的RL训练框架。训练中将引导分解为原子知识点(KPs)，使用约束子集搜索(CSS)构建紧凑的交互感知训练子集。进一步发现剪枝交互悖论——移除一个KP可能有帮助，但移除多个反而有害——并在该依赖结构下显式优化鲁棒子集筛选。从OpenMath-Nemotron-1.5B训练KnowRL-Nemotron-1.5B，在1.5B规模八个推理基准上始终优于强RL和提示基线。无KP提示推理达70.08平均准确率（+9.63），使用选定KPs后提升至74.16，该规模新SOTA。</p>
+</details>
+<hr>
+<h3 id="hy-world-20-a-multi-modal-world-model-for-reconstructing-generating-and-simulating-3d-worlds"><a class="link" href="https://arxiv.org/abs/2604.14268"  target="_blank" rel="noopener"
+    >HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds</a>
+</h3>
+    <blockquote>
+        <p>统一多模态3D世界生成框架，开源权重代码，性能对标闭源Marble</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Team HY-World, Chenjie Cao et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (90 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14268"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14268.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 支持文本/单视图/多视图/视频输入的3D世界生成；四阶段方法（全景→轨迹→扩展→合成）；WorldLens高性能3DGS渲染平台，自动IBL光照和碰撞检测。</li>
+<li><strong>相关技术</strong>: 3D Gaussian Splatting, panorama generation, feed-forward 3D prediction, keyframe view generation, IBL lighting</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>HY-World 2.0推进了先前1.0项目的多模态世界模型框架，支持文本提示、单视图/多视图图像和视频输入生成3D世界表示。通过文本或单视图输入执行世界生成，合成高保真可导航3DGS场景，四阶段方法：a)HY-Pano 2.0全景生成，b)WorldNav轨迹规划，c)WorldStereo 2.0世界扩展，d)WorldMirror 2.0世界合成。引入关键创新增强全景保真度、3D场景理解和规划，升级配备一致性记忆的WorldStereo关键帧视图生成模型。WorldMirror通过改进架构和学习策略实现从多视图图像或视频的世界重建。WorldLens高性能3DGS渲染平台具有灵活引擎无关架构、自动IBL光照、高效碰撞检测和训练-渲染协同设计。多个基准上开源方法中达SOTA，结果可比闭源Marble。所有权重、代码和技术细节已发布。</p>
+</details>
+<hr>
+<h3 id="seedance-20-advancing-video-generation-for-world-complexity"><a class="link" href="https://arxiv.org/abs/2604.14148"  target="_blank" rel="noopener"
+    >Seedance 2.0: Advancing Video Generation for World Complexity</a>
+</h3>
+    <blockquote>
+        <p>字节跳动统一多模态音视频生成模型，四模态输入，4-15秒音视频直出</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Team Seedance, De Chen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (140 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14148"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14148.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 统一高效大规模架构实现多模态音视频联合生成，支持文本/图像/音频/视频四模态输入；业界最全面多模态内容参考和编辑能力套件；专家评估和公开用户测试达领域领先。</li>
+<li><strong>相关技术</strong>: multi-modal audio-video generation, native video generation, content reference, multi-modal editing</li>
+<li><strong>代码/权重</strong>: 未开源</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>Seedance 2.0是2026年2月初在中国正式发布的原生多模态音视频生成模型，采用统一高效大规模架构进行多模态音视频联合生成，支持文本、图像、音频和视频四种输入模态，集成业界最全面的多模态内容参考和编辑能力套件之一。视频和音频生成所有关键子维度全面大幅提升，专家评估和公开用户测试表现与领域领先水平相当。支持4到15秒音视频直出，原生480p和720p分辨率，开放平台最多3个视频片段、9张图像和3个音频片段参考。另提供Fast加速变体专为低延迟场景设计。</p>
+</details>
+<hr>
+<h3 id="spatialevo-self-evolving-spatial-intelligence-via-deterministic-geometric-environments"><a class="link" href="https://arxiv.org/abs/2604.14144"  target="_blank" rel="noopener"
+    >SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments</a>
+</h3>
+    <blockquote>
+        <p>3D几何确定性真值替代模型共识，零噪声自进化空间推理训练</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Dinging Li et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (62 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14144"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14144.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 发现3D空间推理独有属性——真值可从几何确定性计算无需模型；确定性几何环境(DGE)替代模型共识伪标签；共享参数策略提问者/求解者协同进化，任务自适应调度器内生聚焦最弱类别。</li>
+<li><strong>相关技术</strong>: deterministic geometric environment, self-evolving framework, point cloud validation, task-adaptive scheduler, 3D spatial reasoning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>三维场景空间推理是具身智能核心能力，但持续改进受限于几何标注成本。自进化范式依赖模型共识构建伪标签导致训练强化而非纠正几何错误。我们发现3D空间推理独有属性可绕过此限制：真值是底层几何的确定性结果，可从点云和相机位姿精确计算无需模型参与。提出SpatialEvo框架以确定性几何环境(DGE)为核心，在明确几何验证规则下形式化16个空间推理任务类别，将未标注3D场景转化为零噪声交互式预言机，用客观物理反馈替代模型共识。共享参数策略在DGE约束下协同进化提问者和求解者，任务自适应调度器内生聚焦最弱类别产生无需手动设计的动态课程。九个基准3B和7B规模均达最高平均分，空间推理持续提升且通用视觉理解无退化。</p>
+</details>
+<hr>
+<h3 id="dr3-eval-towards-realistic-and-reproducible-deep-research-evaluation"><a class="link" href="https://arxiv.org/abs/2604.14683"  target="_blank" rel="noopener"
+    >DR^{3}-Eval: Towards Realistic and Reproducible Deep Research Evaluation</a>
+</h3>
+    <blockquote>
+        <p>深度研究Agent现实可复现评测基准，静态研究沙盒+多维评估框架</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Qianqian Xie et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (30 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14683"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14683.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 基于真实用户材料的多模态多文件报告生成评测基准，每任务配静态研究沙盒模拟开放网络；多维评估框架（信息召回/事实准确性/引用覆盖/指令遵循/深度质量）与人类判断高度一致；揭示检索鲁棒性和幻觉控制关键失败模式。</li>
+<li><strong>相关技术</strong>: deep research agent evaluation, multimodal report generation, research sandbox, citation coverage, hallucination control</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>深度研究Agent(DRAs)旨在解决涉及规划、检索、多模态理解和报告生成的复杂长周期研究任务，但评估因动态网络环境和模糊任务定义仍具挑战。提出DR^3-Eval现实可复现基准，基于真实用户材料构建，每任务配静态研究沙盒语料库模拟开放网络复杂性同时保持完全可验证，包含支持性文档、干扰项和噪声。引入多维评估框架衡量信息召回、事实准确性、引用覆盖、指令遵循和深度质量，验证与人类判断一致。基于多个SOTA模型开发的多Agent系统实验表明DR^3-Eval极具挑战性，揭示检索鲁棒性和幻觉控制的关键失败模式。代码和数据已公开发布。</p>
+</details>
+<hr>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><h3 id="merrin-a-benchmark-for-multimodal-evidence-retrieval-and-reasoning-in-noisy-web-environments"><a class="link" href="https://arxiv.org/abs/2604.13418"  target="_blank" rel="noopener"
+    >MERRIN: A Benchmark for Multimodal Evidence Retrieval and Reasoning in Noisy Web Environments</a>
+</h3>
+    <blockquote>
+        <p>噪声网络多模态证据检索推理基准，最强Agent也仅40.1%准确率</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Han Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (6 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.13418"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.13418.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 人工标注多模态证据检索推理基准，无模态提示自然语言查询、纳入视频音频欠探索模态、噪声冲突多模态证据检索；10个模型评估平均准确率22.3%，最强40.1%。</li>
+<li><strong>相关技术</strong>: multimodal evidence retrieval, multi-hop reasoning, noisy web search, video/audio modality, agentic search</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>受搜索查询欠指定多跳特性和真实网络结果多模态异构常冲突特性驱动，引入MERRIN人工标注搜索增强Agent评估基准，衡量识别相关模态、检索多模态证据和在噪声网络源上执行多跳推理的能力。区别于先前工作：(1)无明确模态提示的自然语言查询，(2)纳入视频音频等欠探索模态，(3)要求检索复杂的常噪声或冲突多模态证据。评估十个模型驱动的多种搜索Agent（含GPT-5.4-mini、Gemini 3/3.1、Qwen3-4B/30B/235B），三种搜索设置。平均准确率22.3%，最佳40.1%。更强Agent因过度探索增益有限，常被冲突内容分散注意力。与人类相比消耗更多资源但准确率更低，主要因低效源选择和文本模态过度依赖。</p>
+</details>
+<hr>
+<h3 id="controlfoley-unified-and-controllable-video-to-audio-generation-with-cross-modal-conflict-handling"><a class="link" href="https://arxiv.org/abs/2604.15086"  target="_blank" rel="noopener"
+    >ControlFoley: Unified and Controllable Video-to-Audio Generation with Cross-Modal Conflict Handling</a>
+</h3>
+    <blockquote>
+        <p>统一可控V2A框架，视觉-文本冲突下精细控制</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Jianxuan Yang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.15086"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.15086.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 统一多模态V2A框架实现视频/文本/参考音频精确控制；CLIP+时空音视频编码器联合视觉编码；时间-音色解耦；模态鲁棒训练方案和VGGSound-TVC基准。</li>
+<li><strong>相关技术</strong>: video-to-audio generation, temporal-timbre decoupling, cross-modal conflict, multimodal representation alignment, spatio-temporal encoding</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视频转音频生成最新进展使从视觉内容合成高质量音频成为可能，但鲁棒精细可控性仍具挑战。现有方法视觉-文本冲突下文本可控性弱，参考音频中时间音色信息纠缠导致风格控制不精确。提出ControlFoley统一多模态V2A框架实现视频文本和参考音频精确控制。引入联合视觉编码集成CLIP与时空音视频编码器改善对齐和文本可控性。时间-音色解耦抑制冗余时间线索保留判别性音色特征。模态鲁棒训练方案配备统一多模态表示对齐(REPA)和随机模态dropout。VGGSound-TVC基准评估视觉-文本冲突下文本可控性。多个V2A任务达SOTA，跨模态冲突下可控性优越，与工业V2A系统相比具竞争力。</p>
+</details>
+<hr>
+<h3 id="spotsound-enhancing-large-audio-language-models-with-fine-grained-temporal-grounding"><a class="link" href="https://arxiv.org/abs/2604.13023"  target="_blank" rel="noopener"
+    >SpotSound: Enhancing Large Audio-Language Models with Fine-Grained Temporal Grounding</a>
+</h3>
+    <blockquote>
+        <p>音频事件时间定位模型，抑制幻觉时间戳</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Luoyi Sun et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.13023"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.13023.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: SpotSound新训练目标抑制不存在事件的幻觉时间戳；SpotSound-Bench目标事件仅占约10%，&ldquo;大海捞针&quot;评估；时间定位SOTA同时保持通用音频语言任务鲁棒。</li>
+<li><strong>相关技术</strong>: temporal grounding, hallucinated timestamp suppression, audio event localization, long-form audio understanding</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>大型音频语言模型在整体音频理解上展现卓越能力，但时间定位——精确定位事件在长音频中何时发生——仍不可靠。源于训练数据以缺乏精确时间戳的片段级监督为主，以及基准未模拟短事件被密集背景声掩盖的真实场景。介绍SpotSound为定位音频事件设计的音频语言模型，结合新训练目标专门抑制输入中不存在事件的幻觉时间戳。提出SpotSound-Bench挑战性时间定位基准，目标事件仅占每片段约10%，创建严格&quot;大海捞针&quot;评估。时间定位基准达SOTA，通用音频语言任务保持鲁棒。</p>
+</details>
+<hr>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="trex-automating-llm-fine-tuning-via-agent-driven-tree-based-exploration"><a class="link" href="https://arxiv.org/abs/2604.14116"  target="_blank" rel="noopener"
+    >TREX: Automating LLM Fine-tuning via Agent-Driven Tree-based Exploration</a>
+</h3>
+    <blockquote>
+        <p>多Agent自动化LLM微调全流程，树状搜索建模多轮实验</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zerun Ma et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (12 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14116"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14116.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: TREX多Agent系统自动化LLM训练全生命周期；多轮实验建模为搜索树，高效规划复用蒸馏；构建FT-Bench基准（10个真实场景任务），持续优化目标性能。</li>
+<li><strong>相关技术</strong>: multi-agent orchestration, tree-based exploration, automated fine-tuning, training strategy formulation, data recipe</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>虽然LLMs已使AI研究Agent能执行孤立科学任务，但自动化复杂真实世界工作流如LLM训练仍是重大挑战。介绍TREX自动化LLM训练全生命周期的多Agent系统，通过协调Researcher和Executor协作无缝执行需求分析、开放域文献数据研究、训练策略制定、数据配方准备及模型训练评估。多轮实验过程建模为搜索树，使系统能高效规划探索路径、复用历史结果并从迭代试验蒸馏高层洞察。构建FT-Bench包含10个真实场景任务的基准，TREX持续优化目标任务模型性能。</p>
+</details>
+<hr>
+<h3 id="rad-2-scaling-reinforcement-learning-in-a-generator-discriminator-framework"><a class="link" href="https://arxiv.org/abs/2604.15308"  target="_blank" rel="noopener"
+    >RAD-2: Scaling Reinforcement Learning in a Generator-Discriminator Framework</a>
+</h3>
+    <blockquote>
+        <p>扩散生成+RL判别器闭环规划，碰撞率降低56%</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Hao Gao et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (26 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.15308"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.15308.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 统一生成器-判别器框架，扩散生成器+RL判别器重排序；时间一致组相对策略优化缓解信用分配；BEV-Warp高通量仿真。碰撞率降低56%。</li>
+<li><strong>相关技术</strong>: diffusion-based planning, generator-discriminator, closed-loop planning, BEV simulation, temporal consistency</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>高级自动驾驶要求运动规划器建模多模态未来不确定性并在闭环交互中保持鲁棒。扩散规划器建模复杂轨迹分布有效但常受随机不稳定性影响且纯模仿学习缺乏纠正性负反馈。提出RAD-2统一生成器-判别器闭环规划框架：扩散生成器产生多样轨迹候选，RL优化判别器按长期驾驶质量重排序。解耦设计避免稀疏标量奖励直接用于全高维轨迹空间。引入时间一致组相对策略优化利用时间连贯性缓解信用分配，策略上生成器优化将闭环反馈转化为结构化纵向优化信号。BEV-Warp高通量仿真通过空间变换在鸟瞰图特征空间直接闭环评估。碰撞率比强扩散规划器降低56%，实际部署证明复杂城市交通中感知安全性和驾驶平顺性改善。</p>
+</details>
+<hr>
+<h3 id="tracer-trace-based-adaptive-cost-efficient-routing-for-llm-classification"><a class="link" href="https://arxiv.org/abs/2604.14531"  target="_blank" rel="noopener"
+    >TRACER: Trace-Based Adaptive Cost-Efficient Routing for LLM Classification</a>
+</h3>
+    <blockquote>
+        <p>LLM生产日志训练轻量代理，奇偶性门控成本路由</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Adam Rida</li>
+<li><strong>来源</strong>: HuggingFace Trending (6 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14531"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14531.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 在LLM生产追踪上训练ML代理，奇偶性门控仅一致性超阈值时激活；可解释性制品描述处理区域/停滞/推迟；77类基准83-100%覆盖率，150类代理完全替代教师。</li>
+<li><strong>相关技术</strong>: adaptive routing, parity gate, surrogate model, production trace mining, cost-efficient inference</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>每次调用LLM分类端点都产生保留在生产日志中的标记输入-输出对，构成免费不断增长的训练集。TRACER在LLM自身生产追踪上训练ML代理，通过奇偶性门控管理部署：仅当代理与LLM一致性超过用户指定阈值α时激活。生成可解释性制品描述代理处理哪些输入区域、在哪停滞及为何推迟。77类意图基准用Sonnet 4.6教师达83-100%覆盖率；150类基准代理完全替代教师；自然语言推理任务上奇偶性门控正确拒绝部署。</p>
+</details>
+<hr>
+<h3 id="towards-scalable-lightweight-gui-agents-via-multi-role-orchestration"><a class="link" href="https://arxiv.org/abs/2604.13488"  target="_blank" rel="noopener"
+    >Towards Scalable Lightweight GUI Agents via Multi-role Orchestration</a>
+</h3>
+    <blockquote>
+        <p>LAMO赋予轻量MLLM多角色编排能力，3B参与实际GUI工作流</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Ziwei Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.13488"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.13488.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: LAMO通过角色导向数据合成和两阶段训练（SFT+RL）赋予轻量MLLM GUI知识和任务可扩展性；困惑度加权交叉熵优化知识蒸馏；LAMO-3B支持单体执行和MAS编排。</li>
+<li><strong>相关技术</strong>: multi-role orchestration, GUI agent, perplexity-weighted cross-entropy, role-oriented RL, lightweight MLLM</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>MLLMs驱动的自主GUI Agent实现终端设备数字自动化，但先进方法在资源受限设备上部署成本高。轻量GUI Agent受限于有限容量和端到端情景学习下差的任务可扩展性。LAMO框架赋予轻量MLLM GUI特定知识和任务可扩展性，多角色编排扩展GUI自动化能力边界。结合角色导向数据合成与两阶段训练：困惑度加权交叉熵优化SFT进行知识蒸馏和视觉感知增强，角色导向协作探索RL。LAMO-3B支持单体执行和MAS式编排，与高级规划器配对可持续受益。</p>
+</details>
+<hr>
+<h3 id="lightning-opd-efficient-post-training-for-large-reasoning-models-with-offline-on-policy-distillation"><a class="link" href="https://arxiv.org/abs/2604.13010"  target="_blank" rel="noopener"
+    >Lightning OPD: Efficient Post-Training for Large Reasoning Models with Offline On-Policy Distillation</a>
+</h3>
+    <blockquote>
+        <p>离线策略蒸馏，30 GPU小时AIME 2024 69.9%，4倍加速</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yecheng Wu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (11 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.13010"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.13010.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 发现&quot;教师一致性&quot;OPD关键条件——SFT和OPD须同一教师，违反引入不可约梯度偏差；Lightning OPD预计算SFT rollout教师log概率消除实时教师服务器；与标准OPD共享最优点且具隐式正则化。</li>
+<li><strong>相关技术</strong>: offline on-policy distillation, teacher consistency, gradient bias, SFT rollouts, post-training efficiency</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>策略蒸馏(OPD)已成LLM高效后训练范式，但标准OPD全程需实时教师推理服务器造成大量基础设施开销。研究发现&quot;教师一致性&quot;条件——SFT和OPD必须使用同一教师模型，违反引入不可约梯度偏差导致收敛到次优不动点。Lightning OPD通过预计算SFT rollout教师log概率强制教师一致性，完全消除实时教师服务器。教师一致性下与标准OPD共享相同最优点，梯度差异有界且具隐式正则化效果。从SFT初始化Qwen3-8B-Base，30 GPU小时达AIME 2024 69.9%，4.0倍加速。</p>
+</details>
+<hr>
+<h3 id="longact-harnessing-intrinsic-activation-patterns-for-long-context-reinforcement-learning"><a class="link" href="https://arxiv.org/abs/2604.14922"  target="_blank" rel="noopener"
+    >LongAct: Harnessing Intrinsic Activation Patterns for Long-Context Reinforcement Learning</a>
+</h3>
+    <blockquote>
+        <p>长上下文高幅度激活引导稀疏更新，LongBench v2提升约8%</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Bowen Ping et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (6 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14922"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14922.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 观察到长上下文query/key向量高幅度激活；受量化启发假设这些权重是有效优化关键驱动；从均匀更新转向显著性引导稀疏更新；LongBench v2约8%提升，GRPO/DAPO一致有效。</li>
+<li><strong>相关技术</strong>: saliency-guided sparse updates, high-magnitude activations, long-context RL, key-query activation, GRPO/DAPO</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>RL已成增强LLM推理能力关键驱动力，但鲜有研究利用模型内在表示特征引导训练。观察到处理长上下文时query和key向量中存在高幅度激活，从模型量化确立此类高幅度激活关键性和长上下文推理固有稀疏结构的洞察出发，假设这些权重作为有效模型优化关键驱动。提出LongAct从均匀更新转向显著性引导稀疏更新，仅选择性更新与显著激活相关权重，LongBench v2约8%提升，RULER泛化增强，GRPO和DAPO等多种RL算法一致有效。</p>
+</details>
+<hr>
+<h3 id="dharmaocr-specialized-small-language-models-for-structured-ocr"><a class="link" href="https://arxiv.org/abs/2604.14314"  target="_blank" rel="noopener"
+    >DharmaOCR: Specialized Small Language Models for Structured OCR</a>
+</h3>
+    <blockquote>
+        <p>首次DPO用于OCR抑制退化，3B/7B超越所有开源商业基线</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Gabriel Pimenta de Freitas Cardoso et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14314"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14314.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 首次DPO用于OCR以退化生成为拒绝样本惩罚循环行为；SFT强制严格JSON模式；DPO一致降低退化率(最高87.6%)；Full(7B)0.925、Lite(3B)0.911，退化率0.40%/0.20%。</li>
+<li><strong>相关技术</strong>: direct preference optimization, structured OCR, text degeneration suppression, JSON schema, AWQ quantization</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>介绍DharmaOCR Full和Lite，一对联合优化转录质量、生成稳定性和推理成本的专用小型语言模型。提出DharmaOCR-Benchmark覆盖印刷、手写和法律/行政文档，以及统一评估协议衡量保真和结构并追踪文本退化为一等基准指标。实证表明退化不仅恶化质量还恶化生产性能——增加响应时间、降低吞吐量、膨胀计算成本。DPO在OCR的首次应用，显式使用退化生成为拒绝样例惩罚循环行为。结合SFT强制严格JSON模式(header/margin/footer/text)，DPO一致降低退化率(最高87.6%相对)同时保持或提升提取质量。Full(7B)0.925和Lite(3B)0.911分数，退化率0.40%和0.20%，超越所有评估的开源和商业基线。AWQ量化降低高达22%每页成本且质量损失可忽略。</p>
+</details>
+<hr>
+<h3 id="reinforcement-learning-via-value-gradient-flow"><a class="link" href="https://arxiv.org/abs/2604.14265"  target="_blank" rel="noopener"
+    >Reinforcement Learning via Value Gradient Flow</a>
+</h3>
+    <blockquote>
+        <p>将行为正则化RL建模为最优传输问题，值梯度引导粒子流</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Haoran Xu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (5 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14265"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14265.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出Value Gradient Flow(VGF)，将行为正则化RL建模为最优传输问题映射参考分布到值诱导最优策略分布；通过离散梯度流求解，消除显式策略参数化同时保持表达能力；支持自适应测试时缩放通过调节传输预算。</li>
+<li><strong>相关技术</strong>: value gradient flow, optimal transport, behavior-regularized RL, discrete gradient flow, test-time scaling</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>研究行为正则化强化学习，其中向参考分布（离线RL中的数据集或LLM RL微调中的基础模型）的正则化对防止由错误分布外外推引起的值过度优化至关重要。现有方法依赖重参数化策略梯度（难以扩展到大型生成模型）或拒绝采样（过于保守）。提出Value Gradient Flow(VGF)，行为正则化RL的可扩展新范式，将其建模为将参考分布映射到值诱导最优策略分布的最优传输问题，通过离散梯度流求解，值梯度引导从参考分布初始化的粒子。VGF通过控制传输预算隐式施加正则化，消除显式策略参数化同时保持表达力和灵活性，支持通过调节传输预算实现自适应测试时缩放。在离线RL基准(D4RL, OGBench)和LLM RL任务上显著优于先前方法达SOTA。</p>
+</details>
+<hr>
+<h3 id="from-pyx-to-py-investigating-reinforcement-learning-in-pre-train-space"><a class="link" href="https://arxiv.org/abs/2604.14142"  target="_blank" rel="noopener"
+    >From P(y|x) to P(y): Investigating Reinforcement Learning in Pre-train Space</a>
+</h3>
+    <blockquote>
+        <p>在预训练空间P(y)上做RL，负样本强化是推理的异常有效驱动</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yuqiao Tan et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (26 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14142"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14142.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出PreRL在预训练空间P(y)上直接应用奖励驱动在线更新；发现log P(y)和log P(y|x)间强梯度对齐；揭示负样本强化(NSR)是推理的异常有效驱动，转移和反思思维增加14.89x和6.54x；提出Dual Space RL(DSRL)策略轮回先NSR-PreRL扩展推理视野再标准RL精细优化。</li>
+<li><strong>相关技术</strong>: pre-train space RL, negative sample reinforcement, gradient alignment, policy reincarnation, marginal distribution optimization</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>虽然RLVR通过优化条件分布P(y|x)显著增强LLM推理，但其潜力从根本上受基础模型现有输出分布限制。在预训练空间优化边际分布P(y)解决此瓶颈，编码推理能力同时保留广泛探索容量。然而传统预训练依赖静态语料被动学习，分布偏移阻碍定向推理增强。引入PreRL直接对P(y)应用奖励驱动在线更新，理论和实证验证log P(y)和log P(y|x)间强梯度对齐，确立PreRL为标准RL的可行替代。进一步发现关键机制：PreRL中的负样本强化(NSR)作为推理的异常有效驱动，NSR-PreRL快速剪枝错误推理空间同时刺激内源性反思行为，转移和反思思维分别增加14.89x和6.54x。提出Dual Space RL(DSRL)策略轮回，先用NSR-PreRL扩展推理视野再转标准RL精细优化，持续优于强基线。</p>
+</details>
+<hr>
+<h3 id="toolomni-enabling-open-world-tool-use-via-agentic-learning-with-proactive-retrieval-and-grounded-execution"><a class="link" href="https://arxiv.org/abs/2604.13787"  target="_blank" rel="noopener"
+    >ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution</a>
+</h3>
+    <blockquote>
+        <p>开放世界工具使用的统一Agent框架，端到端执行成功率+10.8%</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Shouzheng Huang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.13787"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.13787.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: ToolOmni统一Agent框架通过主动检索和落地执行实现开放世界工具使用；冷启动多轮交互数据SFT注入基础Agent能力；解耦多目标GRPO同时优化工具检索准确性和执行效能；端到端执行成功率超强基线+10.8%。</li>
+<li><strong>相关技术</strong>: open-world tool use, proactive retrieval, decoupled multi-objective GRPO, grounded execution, agentic learning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>LLMs通过利用外部工具增强问题解决能力，但在大规模不断演化的工具仓库开放世界场景中，依赖静态嵌入检索或参数记忆的现有方法难以对齐用户意图与工具语义或泛化到未见工具，导致工具检索和执行准确率次优。提出ToolOmni统一Agent框架通过推理循环中的主动检索和落地执行使LLMs适应开放世界工具使用。首先构建冷启动多轮交互数据集通过SFT注入基础Agent能力，然后引入基于解耦多目标GRPO算法的开放世界工具学习，同时优化LLMs的工具检索准确性和执行效能。ToolOmni在检索和执行上达SOTA，端到端执行成功率超强基线+10.8%，同时展现卓越鲁棒性和泛化能力。</p>
+</details>
+<hr>
+<h3 id="visual-preference-optimization-with-rubric-rewards"><a class="link" href="https://arxiv.org/abs/2604.13029"  target="_blank" rel="noopener"
+    >Visual Preference Optimization with Rubric Rewards</a>
+</h3>
+    <blockquote>
+        <p>基于实例特定评分标准的视觉偏好优化，macro average 82.69</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Ya-Qi Yu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.13029"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.13029.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出rDPO基于实例特定评分标准的偏好优化框架；为每对图像-指令创建检查清单式评分标准评分任意策略响应；评分标准过滤将macro average提升至82.69，而基于结果的过滤降至75.82；rDPO达61.01显著超风格约束基线52.36。</li>
+<li><strong>相关技术</strong>: rubric-based preference optimization, instance-specific criteria, on-policy data construction, multimodal DPO, visual reasoning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>DPO的有效性取决于反映多模态任务中质量差异的偏好数据。现有管道依赖离策略扰动或粗粒度基于结果的信号，不适合细粒度视觉推理。提出rDPO基于实例特定评分标准的偏好优化框架，为每对图像-指令创建检查清单式评分标准包含必要和附加标准来评分任何可能策略的响应。指令-评分标准池离线构建在构建策略上数据时复用。公开奖励建模基准上评分标准提示大幅改善30B-A3B评判器并将其接近GPT-5.4。公开下游基准上评分标准过滤将macro average提升至82.69，而基于结果的过滤从81.14降至75.82。综合基准上rDPO达61.01，显著超风格约束基线52.36并超越59.48基础模型。</p>
+</details>
+<hr>
+<h3 id="leapalign-post-training-flow-matching-models-at-any-generation-step-by-building-two-step-trajectories"><a class="link" href="https://arxiv.org/abs/2604.15311"  target="_blank" rel="noopener"
+    >LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories</a>
+</h3>
+    <blockquote>
+        <p>两步跳跃缩短流匹配轨迹，任意生成步骤直接梯度传播对齐人类偏好</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zhanhao Liang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (8 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.15311"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.15311.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: LeapAlign将长轨迹缩短为仅两步，每个跳跃跳过多个ODE采样步骤预测未来潜变量；随机化起止时间步实现任意生成步骤的高效稳定更新；微调Flux模型时一致优于SOTA GRPO方法和直接梯度方法。</li>
+<li><strong>相关技术</strong>: flow matching alignment, two-step trajectory, reward gradient propagation, ODE sampling, human preference fine-tuning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>本文聚焦流匹配模型与人类偏好的对齐。有前景的方式是通过直接反向传播奖励梯度通过流匹配的可微生成过程进行微调，但通过长轨迹反向传播导致高昂内存成本和梯度爆炸，直接梯度方法难以更新对最终图像全局结构至关重要的早期生成步骤。引入LeapAlign，通过设计两次连续跳跃将长轨迹缩短为仅两步，每次跳过多个ODE采样步骤并单步预测未来潜变量。通过随机化跳跃的起止时间步，LeapAlign在任意生成步骤实现高效稳定模型更新。为更好利用缩短轨迹，对更符合长生成路径的轨迹分配更高训练权重，并降低大幅梯度项的权重而非完全移除。微调Flux模型时LeapAlign一致优于SOTA GRPO和直接梯度方法，实现卓越的图像质量和图像-文本对齐。</p>
+</details>
+<hr>
+<h3 id="quantcode-bench-a-benchmark-for-evaluating-llms"><a class="link" href="https://arxiv.org/abs/2604.15151"  target="_blank" rel="noopener"
+    >QuantCode-Bench: A Benchmark for Evaluating LLMs&rsquo; Ability to Generate Executable Algorithmic Trading Strategies</a>
+</h3>
+    <blockquote>
+        <p>量化交易策略生成基准，400任务评估LLM领域特定代码能力</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Alexey Khoroshilov et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.15151"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.15151.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出QuantCode-Bench评估LLM生成可执行算法交易策略的能力，400个任务来自Reddit/TradingView/StackExchange/GitHub/合成源；多阶段管道检查语法正确性、回测执行、交易存在性和语义对齐；主要限制非语法而是交易逻辑的正确操作化、API使用和任务语义遵守。</li>
+<li><strong>相关技术</strong>: algorithmic trading generation, Backtrader framework, domain-specific code generation, multi-stage evaluation, semantic alignment</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>LLMs在通用编程任务上表现强劲，但生成可执行算法交易策略的能力仍欠探索。不同于标准代码基准，交易策略生成需要同时掌握领域特定金融逻辑、专业API知识，以及生成不仅语法正确还能在历史数据上产生实际交易的代码。提出QuantCode-Bench，系统评估现代LLMs从英文描述生成Backtrader框架策略的基准，包含400个不同难度任务。评估通过多阶段管道检查语法正确性、回测执行成功、交易存在性以及使用LLM评判器的语义对齐。在单轮和多轮Agent设置下比较SOTA模型，分析不同管道阶段的失败模式，表明当前模型主要限制非语法相关，而是交易逻辑正确操作化、API使用和任务语义遵守。交易策略生成构成一类独特的领域特定代码生成任务。</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="towards-long-horizon-agentic-multimodal-search"><a class="link" href="https://arxiv.org/abs/2604.12890"  target="_blank" rel="noopener"
+    >Towards Long-horizon Agentic Multimodal Search</a>
+</h3>
+    <blockquote>
+        <p>基于文件系统的视觉表示机制，100轮搜索达开源SOTA</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yifan Du et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (19 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.12890"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.12890.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出LMM-Searcher长周期多模态深度搜索框架，以文件式视觉表示机制为核心；将视觉资产卸载到外部文件系统映射为轻量文本UID；配备按需视觉加载策略的fetch-image工具；蒸馏12K高质量轨迹微调Qwen3-VL-Thinking-30A3B，100轮搜索达开源SOTA。</li>
+<li><strong>相关技术</strong>: file-based visual representation, progressive visual loading, cross-modal multi-hop reasoning, long-horizon search, UID mapping</li>
+<li><strong>代码/权重</strong>: 将开源</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>多模态深度搜索Agent通过迭代收集文本和视觉证据解决复杂任务展现巨大潜力，但管理异构信息和高token成本仍是关键挑战，现有方法常受上下文爆炸或关键视觉信号丢失困扰。提出LMM-Searcher长周期多模态深度搜索框架，以文件式视觉表示机制为核心，将视觉资产卸载到外部文件系统并映射为轻量文本标识符(UID)，缓解上下文开销同时保留多模态信息供未来访问。配备定制的fetch-image工具实现渐进式按需视觉加载策略用于主动感知。引入数据合成管道生成需要复杂跨模态多跳推理的查询，蒸馏12K高质量轨迹将Qwen3-VL-Thinking-30A3B微调为专业多模态深度搜索Agent。四个基准上成功扩展到100轮搜索，在MM-BrowseComp和MMSearch-Plus等挑战性长周期基准上达开源SOTA，跨不同基础模型展现强泛化性。</p>
+</details>
+<hr>
+<h3 id="spatialevo-self-evolving-spatial-intelligence-via-deterministic-geometric-environments-1"><a class="link" href="https://arxiv.org/abs/2604.14144"  target="_blank" rel="noopener"
+    >SpatialEvo: Self-Evolving Spatial Intelligence via Deterministic Geometric Environments</a>
+</h3>
+    <blockquote>
+        <p><em>(见重点推荐)</em></p>
+
+    </blockquote>
+<hr>
+<h3 id="rose-retrieval-oriented-segmentation-enhancement"><a class="link" href="https://arxiv.org/abs/2604.14147"  target="_blank" rel="noopener"
+    >ROSE: Retrieval-Oriented Segmentation Enhancement</a>
+</h3>
+    <blockquote>
+        <p>即插即用检索增强分割框架，新/新兴实体分割gIoU超基线19.2</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Song Tang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (2 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14147"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14147.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出NEST任务聚焦分割训练数据中不存在的新实体和需最新外部信息的新兴实体；ROSE即插即用框架包含互联网RAG、文本提示增强器、视觉提示增强器和WebSense智能检索决策模块；NEST基准上超Gemini-2.0 Flash检索基线19.2 gIoU。</li>
+<li><strong>相关技术</strong>: novel emerging segmentation, retrieval-augmented generation, visual prompt enhancement, internet-sourced images, WebSense module</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>基于MLLMs的分割模型如LISA常难以处理因训练数据缺失而无法识别的新实体或需最新外部信息的新兴实体。提出新新兴分割任务(NEST)并构建NEST基准。ROSE即插即用框架增强任意MLLM分割模型：互联网RAG模块用多模态输入检索实时网络信息，文本提示增强器用最新信息丰富模型感知，视觉提示增强器用网络图像补偿MLLM对未见实体的缺乏，WebSense模块智能决定何时调用检索。NEST基准上ROSE显著提升性能，超Gemini-2.0 Flash检索基线19.2 gIoU。</p>
+</details>
+<hr>
+<h3 id="exploration-and-exploitation-errors-are-measurable-for-language-model-agents"><a class="link" href="https://arxiv.org/abs/2604.13151"  target="_blank" rel="noopener"
+    >Exploration and Exploitation Errors Are Measurable for Language Model Agents</a>
+</h3>
+    <blockquote>
+        <p>LM Agent的探索/利用错误可度量，推理模型通过最小harness工程显著改善</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Jaden Park et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (24 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.13151"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.13151.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 设计可控环境量化LM Agent的探索和利用错误；可编程调整2D网格地图强调探索或利用难度；设计策略无关度量从观测动作量化两类错误；发现推理模型更有效解决问题且通过最小harness工程两类错误均可显著改善。</li>
+<li><strong>相关技术</strong>: exploration-exploitation tradeoff, measurable error metrics, embodied AI evaluation, harness engineering, DAG task structure</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>LM Agent在从AI编码到物理AI的复杂开放式决策任务中日益使用，核心要求是有效探索问题空间和利用所获知识。然而在无法访问内部策略的情况下从观测动作系统区分和量化探索与利用仍具挑战。设计受实际具身AI启发的可控环境：部分可观测2D网格地图和未知任务DAG，地图生成可编程调整强调探索或利用难度。为策略无关评估设计度量从Agent动作量化探索和利用错误。评估多种前沿LM Agent发现即使SOTA模型也挣扎，不同模型展现独特失败模式。推理模型更有效解决问题且探索和利用均可通过最小harness工程显著改善。</p>
+</details>
+<hr>
+<h3 id="toward-autonomous-long-horizon-engineering-for-ml-research"><a class="link" href="https://arxiv.org/abs/2604.13018"  target="_blank" rel="noopener"
+    >Toward Autonomous Long-Horizon Engineering for ML Research</a>
+</h3>
+    <blockquote>
+        <p>AiScientist系统，层次编排+文件总线实现长周期ML研究工程</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Guoxin Chen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (34 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.13018"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.13018.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出AiScientist系统用于自主长周期ML研究工程，核心原则：结构化编排+持久状态连续性；层次编排配合权限范围File-as-Bus工作区；顶层Orchestrator维护阶段级控制，专业Agent基于持久工件（分析/计划/代码/实验证据）而非对话交接重新定位；PaperBench提升10.54分，MLE-Bench Lite达81.82 Any Medal%。</li>
+<li><strong>相关技术</strong>: hierarchical orchestration, File-as-Bus workspace, long-horizon engineering, durable state continuity, specialized agent coordination</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>自主AI研究进展迅速，但长周期ML研究工程仍困难：Agent需在数小时或数天中跨任务理解、环境搭建、实现、实验和调试维持连贯进展。引入AiScientist，基于简单原则构建的自主长周期ML研究工程系统：强长周期性能需结构化编排和持久状态连续性。结合层次编排与权限范围File-as-Bus工作区：顶层Orchestrator通过简洁摘要和工作区映射维护阶段级控制，专业Agent反复基于分析、计划、代码和实验证据等持久工件重新定位而非主要依赖对话交接，产生薄控制厚状态。两个互补基准上AiScientist PaperBench平均提升10.54分，MLE-Bench Lite达81.82 Any Medal%。消融表明File-as-Bus协议是性能关键驱动，移除后PaperBench降6.41分、MLE-Bench Lite降31.82分。</p>
+</details>
+<hr>
+<h3 id="mm-webagent-a-hierarchical-multimodal-web-agent-for-webpage-generation"><a class="link" href="https://arxiv.org/abs/2604.15309"  target="_blank" rel="noopener"
+    >MM-WebAgent: A Hierarchical Multimodal Web Agent for Webpage Generation</a>
+</h3>
+    <blockquote>
+        <p>层次化多模态网页生成Agent，协调AIGC元素生成实现全局一致性</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yan Li et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (5 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.15309"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.15309.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出MM-WebAgent层次化Agent框架，通过层次规划和迭代自反思协调AIGC元素生成；联合优化全局布局、局部多模态内容及其集成，产出连贯一致的网页；引入多模态网页生成基准和多级评估协议。</li>
+<li><strong>相关技术</strong>: hierarchical agentic framework, AIGC element coordination, multimodal webpage generation, iterative self-reflection, global layout optimization</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>AIGC工具快速进展使图像、视频和可视化可按需创建用于网页设计，但直接集成到自动网页生成常导致风格不一致和全局连贯性差，因为元素孤立生成。提出MM-WebAgent层次化Agent框架通过层次规划和迭代自反思协调AIGC元素生成进行多模态网页生成，联合优化全局布局、局部多模态内容及其集成，产出连贯一致的网页。引入多模态网页生成基准和多级评估协议。实验表明MM-WebAgent优于代码生成和基于Agent的基线，尤其在多模态元素生成和集成上。</p>
+</details>
+<hr>
+<h3 id="globalsplat-efficient-feed-forward-3d-gaussian-splatting-via-global-scene-tokens"><a class="link" href="https://arxiv.org/abs/2604.15284"  target="_blank" rel="noopener"
+    >GlobalSplat: Efficient Feed-Forward 3D Gaussian Splatting via Global Scene Tokens</a>
+</h3>
+    <blockquote>
+        <p>&ldquo;先对齐再解码&quot;原则，16K高斯实现4MB轻量3D重建</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Roni Itkin et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (21 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.15284"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.15284.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 基于先对齐再解码原则，学习紧凑全局潜变量场景表示在解码显式3D几何前编码多视图输入并解决跨视图对应；不依赖预训练像素预测骨干或复用密集基线潜变量特征；粗到精训练课程防止表示膨胀，16K高斯仅4MB，单前向传播78ms内推理。</li>
+<li><strong>相关技术</strong>: global scene tokens, compact Gaussian allocation, coarse-to-fine curriculum, cross-view correspondence, feed-forward 3DGS</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>基元的高效空间分配是3DGS的基础，直接决定表示紧凑性、重建速度和渲染保真度的协同。先前方案受限于局部启发式分配策略缺乏全局场景感知。当前前馈方法大多像素对齐或体素对齐，通过将像素反投影为密集视图对齐基元将冗余嵌入3D资产，输入视图增多时表示大小增加且全局一致性变弱。引入GlobalSplat，基于先对齐再解码原则，学习紧凑全局潜变量场景表示在解码显式3D几何前编码多视图输入并解决跨视图对应。关键是不依赖预训练像素预测骨干或复用密集基线潜变量特征，通过粗到精训练课程逐步增加解码容量原生防止表示膨胀。RealEstate10K和ACID上以仅16K高斯实现竞争性新视图合成，4MB轻量，单前向传播78ms内推理。</p>
+</details>
+<hr>
+<h3 id="tip-token-importance-in-on-policy-distillation"><a class="link" href="https://arxiv.org/abs/2604.14084"  target="_blank" rel="noopener"
+    >TIP: Token Importance in On-Policy Distillation</a>
+</h3>
+    <blockquote>
+        <p>策略蒸馏中的token重要性双轴分类法，&lt;20%token超全token训练</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yuanda Xu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (11 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14084"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14084.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出TIP双轴分类法（学生熵×教师-学生分歧），发现高信息量token来自两个区域：高学生熵位置和低学生熵+高师生分歧位置；仅10%过度自信token训练即近匹配全token基线；50%熵采样匹配全token训练同时峰值内存降47%；长周期Agent规划基准上&lt;20%token超全tokenOPD。</li>
+<li><strong>相关技术</strong>: token importance taxonomy, student entropy, teacher-student divergence, on-policy distillation, memory-efficient training</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>策略蒸馏(OPD)在教师token级监督下用学生自身rollout训练学生，但并非所有token位置同等重要。我们问：OPD中哪些token携带最有用的学习信号？答案是高信息量token来自两个区域：高学生熵位置，以及低学生熵加高教师-学生分歧位置（学生过度自信且错误）。实证中学生熵是强一阶代理：50%熵采样token匹配或超越全token训练同时峰值内存降47%。但仅熵遗漏第二个重要区域——隔离低熵高分歧token时，少于10%token训练即近匹配全token基线，表明过度自信token携密集纠正信号。TIP双轴分类法组织这些发现并给出理论解释为何熵有用但结构不完整，启发结合不确定性和分歧的类型感知token选择规则。在Qwen3、Llama、Qwen2.5三个教师-学生对上以及DeepPlanning长周期Agent规划基准验证。</p>
+</details>
+<hr>
+<h3 id="free-geometry-refining-3d-reconstruction-from-longer-versions-of-itself"><a class="link" href="https://arxiv.org/abs/2604.14048"  target="_blank" rel="noopener"
+    >Free Geometry: Refining 3D Reconstruction from Longer Versions of Itself</a>
+</h3>
+    <blockquote>
+        <p>测试时自进化3D重建，LoRA微调&lt;2分钟持续提升SOTA模型</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yuhang Dai et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (15 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.14048"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.14048.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出Free Geometry框架使前馈3D重建模型测试时自进化无需3D真值；核心洞察：模型接收更多视图时产生更可靠一致的重建；通过遮罩帧构建自监督任务，强制完整和部分观察表示间跨视图特征一致性；轻量LoRA更新单GPU不到2分钟，持续改善Depth Anything 3和VGGT。</li>
+<li><strong>相关技术</strong>: test-time self-evolution, cross-view feature consistency, LoRA fine-tuning, self-supervised 3D reconstruction, feed-forward refinement</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>前馈3D重建模型高效但僵化：训练后零样本推理无法适应测试场景，视觉合理的重建常含错误尤其在遮挡、镜面反射和模糊线索下。提出Free Geometry框架使前馈3D重建模型无需3D真值即可测试时自进化。核心洞察：模型接收更多视图时产生更可靠一致的重建。利用此属性，给定测试序列遮罩帧子集构建自监督任务，强制完整和部分观察表示间跨视图特征一致性同时保持被保留帧隐含的成对关系。自监督允许通过轻量LoRA更新快速再校准，单GPU不到2分钟。方法持续改善SOTA基础模型（含Depth Anything 3和VGGT），4个基准上相机位姿精度平均提升3.73%，点图预测提升2.88%。</p>
+</details>
+<hr>
+<h2 id="-其他值得关注">📌 其他值得关注
+</h2><h3 id="boosting-visual-instruction-tuning-with-self-supervised-guidance"><a class="link" href="https://arxiv.org/abs/2604.12966"  target="_blank" rel="noopener"
+    >Boosting Visual Instruction Tuning with Self-Supervised Guidance</a>
+</h3>
+    <blockquote>
+        <p>自监督视觉任务增强指令微调，3-10%视觉接地指令即显著提升视觉推理</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Sophia Sirko-Galouchenko et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (6 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.12966"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.12966.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出简单轻量方法用少量视觉接地自监督任务增强视觉指令微调；将旋转预测、颜色匹配、跨视图对应等经典自监督前置任务重构为图像-指令-响应三元组；无需人工标注、架构修改或额外训练阶段；仅3-10%视觉接地指令即一致改善视觉中心评估。</li>
+<li><strong>相关技术</strong>: self-supervised visual grounding, rotation prediction, color matching, cross-view correspondence, instruction tuning augmentation</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>MLLMs在许多视觉语言任务上表现良好但常在需细粒度视觉推理的视觉中心问题上挣扎。近期证据表明这非视觉表示弱而是指令微调期间视觉信息利用不足——许多任务可仅用语言先验部分解决。提出简单轻量方法用少量视觉接地自监督任务增强视觉指令微调，将旋转预测、颜色匹配和跨视图对应等经典自监督前置任务重构为图像-指令-响应三元组，引入不依赖视觉证据就无法解决的监督。无需人工标注、架构修改或额外训练阶段。在多个模型、训练制度和基准上，注入仅3-10%此类视觉接地指令即一致改善视觉中心评估。发现表明视觉接地SSL任务的指令微调是改善MLLMs视觉推理的强力杠杆。</p>
+</details>
+<hr>
+<p><em>Generated on 2026-04-20 00:00 UTC | Sources: HuggingFace</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-19/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-19</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-18/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-18</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-17/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-17</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-16/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-16</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-14/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-14</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
