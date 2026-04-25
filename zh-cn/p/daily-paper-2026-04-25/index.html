@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 15 篇论文 | Audio LLM: 0篇 | LLM Training: 8篇 | AI Agents: 3篇 | 其他值得关注: 4篇 来源: HuggingFace(15)\n重点推荐 ⭐ WebGen-R1: Incentivizing Large Language Models to Generate Functional and Aesthetic Websites with Reinforcement Learning 用强化学习训练 7B 小模型生成功能完整、视觉美观的多页面网站，性能甚至超越 671B 的 DeepSeek-R1\n">
+<title>AI Paper Daily | 2026-04-25</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-04-25/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-04-25">
+<meta property='og:description' content="今日概览 共收录 15 篇论文 | Audio LLM: 0篇 | LLM Training: 8篇 | AI Agents: 3篇 | 其他值得关注: 4篇 来源: HuggingFace(15)\n重点推荐 ⭐ WebGen-R1: Incentivizing Large Language Models to Generate Functional and Aesthetic Websites with Reinforcement Learning 用强化学习训练 7B 小模型生成功能完整、视觉美观的多页面网站，性能甚至超越 671B 的 DeepSeek-R1\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-04-25/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-04-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-25T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-04-25">
+<meta name="twitter:description" content="今日概览 共收录 15 篇论文 | Audio LLM: 0篇 | LLM Training: 8篇 | AI Agents: 3篇 | 其他值得关注: 4篇 来源: HuggingFace(15)\n重点推荐 ⭐ WebGen-R1: Incentivizing Large Language Models to Generate Functional and Aesthetic Websites with Reinforcement Learning 用强化学习训练 7B 小模型生成功能完整、视觉美观的多页面网站，性能甚至超越 671B 的 DeepSeek-R1\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-04-25/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#webgen-r1-incentivizing-large-language-models-to-generate-functional-and-aesthetic-websites-with-reinforcement-learning">WebGen-R1: Incentivizing Large Language Models to Generate Functional and Aesthetic Websites with Reinforcement Learning</a></li>
+        <li><a href="#the-expense-of-seeing-attaining-trustworthy-multimodal-reasoning-within-the-monolithic-paradigm">The Expense of Seeing: Attaining Trustworthy Multimodal Reasoning Within the Monolithic Paradigm</a></li>
+        <li><a href="#papermind-benchmarking-agentic-reasoning-and-critique-over-scientific-papers-in-multimodal-llms">PAPERMIND: Benchmarking Agentic Reasoning and Critique over Scientific Papers in Multimodal LLMs</a></li>
+        <li><a href="#vlaa-gui-knowing-when-to-stop-recover-and-search-a-modular-framework-for-gui-automation">VLAA-GUI: Knowing When to Stop, Recover, and Search, A Modular Framework for GUI Automation</a></li>
+        <li><a href="#co-evolving-llm-decision-and-skill-bank-agents-for-long-horizon-tasks-cosplay">Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks (COSPLAY)</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a></li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#s1-vl-scientific-multimodal-reasoning-model-with-thinking-with-images">S1-VL: Scientific Multimodal Reasoning Model with Thinking-with-Images</a></li>
+        <li><a href="#unit-toward-a-unified-physical-language-for-human-to-humanoid-policy-learning-and-world-modeling">UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling</a></li>
+        <li><a href="#unigendet-a-unified-generative-discriminative-framework-for-co-evolutionary-image-generation-and-generated-image-detection">UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated Image Detection</a></li>
+        <li><a href="#worldmark-a-unified-benchmark-suite-for-interactive-video-world-models">WorldMark: A Unified Benchmark Suite for Interactive Video World Models</a></li>
+        <li><a href="#encoder-free-human-motion-understanding-via-structured-motion-descriptions">Encoder-Free Human Motion Understanding via Structured Motion Descriptions</a></li>
+        <li><a href="#fundusegmenter-leveraging-the-retfound-foundation-model-for-joint-optic-disc-and-optic-cup-segmentation-in-retinal-fundus-images">FunduSegmenter: Leveraging the RETFound Foundation Model for Joint Optic Disc and Optic Cup Segmentation in Retinal Fundus Images</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#a-self-evolving-framework-for-efficient-terminal-agents-via-observational-context-compression-taco">A Self-Evolving Framework for Efficient Terminal Agents via Observational Context Compression (TACO)</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#context-unrolling-in-omni-models">Context Unrolling in Omni Models</a></li>
+        <li><a href="#arfbench-benchmarking-time-series-question-answering-ability-for-software-incident-response">ARFBench: Benchmarking Time Series Question Answering Ability for Software Incident Response</a></li>
+        <li><a href="#seeing-fast-and-slow-learning-the-flow-of-time-in-videos">Seeing Fast and Slow: Learning the Flow of Time in Videos</a></li>
+        <li><a href="#tingis-real-time-risk-event-discovery-from-noisy-customer-incidents-at-enterprise-scale">TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-04-25/">AI Paper Daily | 2026-04-25</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-04-25T00:00:00Z'>Apr 25, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a>
+      <ol>
+        <li><a href="#webgen-r1-incentivizing-large-language-models-to-generate-functional-and-aesthetic-websites-with-reinforcement-learning">WebGen-R1: Incentivizing Large Language Models to Generate Functional and Aesthetic Websites with Reinforcement Learning</a></li>
+        <li><a href="#the-expense-of-seeing-attaining-trustworthy-multimodal-reasoning-within-the-monolithic-paradigm">The Expense of Seeing: Attaining Trustworthy Multimodal Reasoning Within the Monolithic Paradigm</a></li>
+        <li><a href="#papermind-benchmarking-agentic-reasoning-and-critique-over-scientific-papers-in-multimodal-llms">PAPERMIND: Benchmarking Agentic Reasoning and Critique over Scientific Papers in Multimodal LLMs</a></li>
+        <li><a href="#vlaa-gui-knowing-when-to-stop-recover-and-search-a-modular-framework-for-gui-automation">VLAA-GUI: Knowing When to Stop, Recover, and Search, A Modular Framework for GUI Automation</a></li>
+        <li><a href="#co-evolving-llm-decision-and-skill-bank-agents-for-long-horizon-tasks-cosplay">Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks (COSPLAY)</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a></li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#s1-vl-scientific-multimodal-reasoning-model-with-thinking-with-images">S1-VL: Scientific Multimodal Reasoning Model with Thinking-with-Images</a></li>
+        <li><a href="#unit-toward-a-unified-physical-language-for-human-to-humanoid-policy-learning-and-world-modeling">UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling</a></li>
+        <li><a href="#unigendet-a-unified-generative-discriminative-framework-for-co-evolutionary-image-generation-and-generated-image-detection">UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated Image Detection</a></li>
+        <li><a href="#worldmark-a-unified-benchmark-suite-for-interactive-video-world-models">WorldMark: A Unified Benchmark Suite for Interactive Video World Models</a></li>
+        <li><a href="#encoder-free-human-motion-understanding-via-structured-motion-descriptions">Encoder-Free Human Motion Understanding via Structured Motion Descriptions</a></li>
+        <li><a href="#fundusegmenter-leveraging-the-retfound-foundation-model-for-joint-optic-disc-and-optic-cup-segmentation-in-retinal-fundus-images">FunduSegmenter: Leveraging the RETFound Foundation Model for Joint Optic Disc and Optic Cup Segmentation in Retinal Fundus Images</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#a-self-evolving-framework-for-efficient-terminal-agents-via-observational-context-compression-taco">A Self-Evolving Framework for Efficient Terminal Agents via Observational Context Compression (TACO)</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#context-unrolling-in-omni-models">Context Unrolling in Omni Models</a></li>
+        <li><a href="#arfbench-benchmarking-time-series-question-answering-ability-for-software-incident-response">ARFBench: Benchmarking Time Series Question Answering Ability for Software Incident Response</a></li>
+        <li><a href="#seeing-fast-and-slow-learning-the-flow-of-time-in-videos">Seeing Fast and Slow: Learning the Flow of Time in Videos</a></li>
+        <li><a href="#tingis-real-time-risk-event-discovery-from-noisy-customer-incidents-at-enterprise-scale">TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 15 篇论文 | Audio LLM: 0篇 | LLM Training: 8篇 | AI Agents: 3篇 | 其他值得关注: 4篇
+来源: HuggingFace(15)</p>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><h3 id="webgen-r1-incentivizing-large-language-models-to-generate-functional-and-aesthetic-websites-with-reinforcement-learning"><a class="link" href="https://arxiv.org/abs/2604.20398"  target="_blank" rel="noopener"
+    >WebGen-R1: Incentivizing Large Language Models to Generate Functional and Aesthetic Websites with Reinforcement Learning</a>
+</h3>
+    <blockquote>
+        <p>用强化学习训练 7B 小模型生成功能完整、视觉美观的多页面网站，性能甚至超越 671B 的 DeepSeek-R1</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Juyong Jiang, Chenglin Cai, Chansung Park et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (3 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.20398"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.20398.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出了脚手架驱动的结构化生成范式约束开放动作空间，设计了级联多模态奖励（结构保证+功能反馈+美学监督），使 7B 模型从生成不可用网站到产出可部署的多页面网站，功能成功率媲美 DeepSeek-R1 (671B)，有效渲染和美学对齐甚至大幅超越</li>
+<li><strong>相关技术</strong>: reinforcement learning, cascaded multimodal reward, scaffold-driven generation, website generation</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>虽然大语言模型 (LLM) 在函数级代码生成上表现出色，但项目级任务——如生成功能完整且视觉美观的多页面网站——仍然极具挑战。现有工作通常局限于单页静态网站，而智能体框架则依赖专有模型的多轮执行，导致大量 token 消耗、高延迟和脆弱的集成。用强化学习 (RL) 端到端训练小模型是一个有前景的替代方案，但面临关键瓶颈：如何为网站生成设计可靠且计算可行的奖励。与可通过单元测试验证的单文件编码任务不同，网站生成需要评估固有的主观美学、跨页面交互和功能正确性。为此，我们提出 WebGen-R1，一个专为项目级网站生成设计的端到端 RL 框架。我们首先引入脚手架驱动的结构化生成范式，约束大型开放动作空间并保持架构完整性。然后设计一种新颖的级联多模态奖励，将结构保证与基于执行的功能反馈和基于视觉的美学监督无缝耦合。大量实验表明，WebGen-R1 将 7B 基础模型从生成近乎不可用的网站，转变为产出可部署、美学对齐的多页面网站。值得注意的是，WebGen-R1 不仅持续超越大规模开源模型（最高 72B），还在功能成功率上媲美最先进的 DeepSeek-R1 (671B)，同时在有效渲染和美学对齐上大幅超越。这些结果将 WebGen-R1 定位为从小模型函数级代码生成扩展到项目级 Web 应用生成的可行路径。</p>
+</details>
+<hr>
+<h3 id="the-expense-of-seeing-attaining-trustworthy-multimodal-reasoning-within-the-monolithic-paradigm"><a class="link" href="https://arxiv.org/abs/2604.20665"  target="_blank" rel="noopener"
+    >The Expense of Seeing: Attaining Trustworthy Multimodal Reasoning Within the Monolithic Paradigm</a>
+</h3>
+    <blockquote>
+        <p>揭示当前 VLM 的&quot;功能性盲视&quot;现象——模型用语言先验绕过视觉瓶颈，并提出信息论方法量化&quot;看见的代价&quot;</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Karan Goyal, Dikshant Kukreja</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.20665"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.20665.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出模态翻译协议 (Modality Translation Protocol)，通过翻译语义负载而非消融来量化视觉知识瓶颈；定义三个新指标——看见的代价 (ToS)、看见的诅咒 (CoS)、看见的谬误 (FoS)，以及语义充分性准则 (SSC)；提出多模态缩放的发散定律假设——随着语言引擎缩放，视觉瓶颈的惩罚反而增大</li>
+<li><strong>相关技术</strong>: modality translation protocol, semantic sufficiency criterion, functional blindness, vision-language bottleneck</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视觉语言模型 (VLM) 的快速涌现被广泛赞誉为统一多模态知识发现的曙光，但其基础运作在一个危险的、未被质疑的公理之上：当前的 VLM 忠实地合成多模态数据。我们认为并非如此。相反，在主流的视觉编码器-投影器-LLM 范式之下潜藏着深刻的可信度危机。最先进的模型频繁表现出功能性盲视 (functional blindness)，即利用强语言先验绕过严重的视觉表示瓶颈，而非从视觉输入中提取有依据的知识。在本文中，我们挑战了依赖数据消融或新数据集创建的多模态评估常规方法——这些方法致命地将数据集偏差与架构无能混为一谈。我们提出了一种激进的信息论方法：模态翻译协议 (Modality Translation Protocol)，旨在可量化地揭示&quot;看见的代价&quot;。通过翻译语义负载而非消融它们，我们制定了三个新指标——看见的代价 (Toll of Seeing, ToS)、看见的诅咒 (Curse of Seeing, CoS) 和看见的谬误 (Fallacy of Seeing, FoS)——最终形成语义充分性准则 (Semantic Sufficiency Criterion, SSC)。此外，我们提出了一个挑衅性的多模态缩放发散定律 (Divergence Law of Multimodal Scaling)，假设随着底层语言引擎扩展到前所未有的推理能力，视觉知识瓶颈的数学惩罚反而增大。我们挑战 KDD 社区放弃对&quot;多模态增益&quot;的虚幻追求。通过将 SSC 从被动诊断约束提升为主动架构蓝图，我们提供了严格的、可信的基础，迫使下一代 AI 系统真正看到数据，实现真正的多模态推理。</p>
+</details>
+<hr>
+<h3 id="papermind-benchmarking-agentic-reasoning-and-critique-over-scientific-papers-in-multimodal-llms"><a class="link" href="https://arxiv.org/abs/2604.21304"  target="_blank" rel="noopener"
+    >PAPERMIND: Benchmarking Agentic Reasoning and Critique over Scientific Papers in Multimodal LLMs</a>
+</h3>
+    <blockquote>
+        <p>首个评估论文级科学推理的综合基准，覆盖多模态定位、实验解读、跨源证据推理和批判性评估四个认知维度</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yanjun Zhao, Tianxin Wei, Jiaru Zou et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21304"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21304.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 构建了覆盖 7 个学科的论文级科学推理基准 PAPERMIND，包含四组互补任务族（多模态定位、实验解读、跨源证据推理、批判性评估）；通过跨任务分析揭示模型在集成科学推理上的持续性能差距，现有开源和闭源多模态 LLM 均存在显著不足</li>
+<li><strong>相关技术</strong>: agentic scientific reasoning, multimodal grounding, cross-source evidence, critical assessment</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>理解科学论文需要超越回答孤立问题或总结内容的能力。它涉及一个整合推理过程：将文本和视觉信息进行定位、解读实验证据、跨信息源综合信息，以及批判性评估科学主张。然而，现有基准通常孤立地评估这些能力，难以将科学论文理解评估为一组相互作用的认知能力的统一体。在本文中，我们介绍 PAPERMIND，一个专为评估研究论文上的集成式和智能体导向科学推理而设计的基准。PAPERMIND 基于涵盖农业、生物学、化学、计算机科学、医学、物理学和经济学的真实科学论文构建。它包含四组互补的任务族，共同操作化科学论文推理的不同认知侧面，包括多模态定位 (multimodal grounding)、实验解读 (experimental interpretation)、跨源证据推理 (cross-source evidence reasoning) 和批判性评估 (critical assessment)。通过分析多个任务中的模型行为，PAPERMIND 能够对集成科学推理行为进行诊断性评估——这些行为难以通过孤立的任务评估来评估。在开源和闭源多模态 LLM 上的大量实验揭示了跨任务的持续性能差距，突显了集成科学推理和批判中的持续挑战。</p>
+</details>
+<hr>
+<h3 id="vlaa-gui-knowing-when-to-stop-recover-and-search-a-modular-framework-for-gui-automation"><a class="link" href="https://arxiv.org/abs/2604.21375"  target="_blank" rel="noopener"
+    >VLAA-GUI: Knowing When to Stop, Recover, and Search, A Modular Framework for GUI Automation</a>
+</h3>
+    <blockquote>
+        <p>模块化 GUI 智能体框架，三个核心组件解决过早停止和循环重复问题，OSWorld 单次通过率达 77.5% 超越人类</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Qijun Han, Haoqin Tu, Zijun Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (10 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21375"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21375.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 VLAA-GUI 框架，集成完整性验证器（强制 UI 可观察成功标准）、循环断路器（多层过滤切换交互模式）和搜索智能体（在线查询未知工作流）；在 OSWorld 达 77.5%、WindowsAgentArena 达 61.0%，五个骨干中有三个在 OSWorld 单次通过超越人类 (72.4%)；循环断路器将近乎将循环倾向模型的浪费步骤减半</li>
+<li><strong>相关技术</strong>: completeness verifier, loop breaker, search agent, GUI automation, modular framework</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>自主 GUI 智能体面临两个根本挑战：过早停止——智能体在没有可验证证据的情况下过早声明成功；以及循环重复——智能体循环执行相同的失败操作而无法恢复。我们提出 VLAA-GUI，一个围绕三个集成组件构建的模块化 GUI 智能体框架，指导系统何时停止 (Stop)、恢复 (Recover) 和搜索 (Search)。首先，强制完整性验证器在每个完成步骤强制执行 UI 可观察的成功标准和验证——带有智能体级验证器，用决策规则交叉检查完成声明，拒绝缺乏直接视觉证据的声明。其次，强制循环断路器提供多层过滤：在重复失败后切换交互模式，在持续屏幕状态循环后强制策略变更，并将反思信号绑定到策略变更。第三，按需搜索智能体通过直接查询具有搜索能力的 LLM 来在线搜索未知工作流，以纯文本返回结果。我们还集成了编码智能体用于代码密集型操作和定位智能体用于精确操作定位，两者按需调用。我们在五个顶级骨干（包括 Opus 4.5、4.6 和 Gemini 3.1 Pro）上评估 VLAA-GUI，在 Linux 和 Windows 任务的两个基准上取得顶级性能（OSWorld 77.5%，WindowsAgentArena 61.0%）。值得注意的是，五个骨干中有三个在 OSWorld 单次通过中超越人类表现 (72.4%)。消融研究表明，所有三个提出的组件持续改进强骨干，而弱骨干在步骤预算充足时从这些工具中获益更多。</p>
+</details>
+<hr>
+<h3 id="co-evolving-llm-decision-and-skill-bank-agents-for-long-horizon-tasks-cosplay"><a class="link" href="https://arxiv.org/abs/2604.20987"  target="_blank" rel="noopener"
+    >Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks (COSPLAY)</a>
+</h3>
+    <blockquote>
+        <p>决策智能体与技能库智能体共同进化，8B 模型在游戏环境上平均奖励提升 25.1%</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xiyang Wu, Zongxia Li, Guangyao Shi et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (14 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.20987"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.20987.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 COSPLAY 共进化框架——LLM 决策智能体从可学习的技能库检索技能指导行动，技能库智能体从无标注 rollout 中发现可复用技能；决策智能体学习更好的技能检索和动作生成，技能库智能体持续提取、精炼和更新技能；8B 基础模型在单人游戏基准上相对四个前沿 LLM 基线平均奖励提升 25.1%</li>
+<li><strong>相关技术</strong>: co-evolution, skill bank, skill discovery, long-horizon decision making, reusable skill</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>长视野交互环境是评估智能体技能使用能力的试验场。这些环境需要多步推理、在多个时间步上链接多种技能，以及在延迟奖励和部分可观察下的鲁棒决策。游戏是评估智能体技能使用的良好试验场。大语言模型 (LLM) 作为游戏智能体提供了有前景的替代方案，但它们在一致的长视野决策上经常遇到困难，因为缺乏跨回合发现、保留和重用结构化技能的机制。我们提出 COSPLAY，一个共进化框架，其中 LLM 决策智能体从可学习的技能库检索技能以指导行动，而智能体管理的技能流水线从智能体的无标注 rollout 中发现可复用技能以形成技能库。我们的框架同时改进决策智能体以学习更好的技能检索和动作生成，以及技能库智能体以持续提取、精炼和更新技能及其契约。在六个游戏环境上的实验表明，基于 8B 基础模型的 COSPLAY 在单人游戏基准上相对四个前沿 LLM 基线实现了超过 25.1% 的平均奖励提升，同时在多人社会推理游戏中保持竞争力。</p>
+</details>
+<hr>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><p>今日无新论文入选该方向。</p>
+<hr>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="s1-vl-scientific-multimodal-reasoning-model-with-thinking-with-images"><a class="link" href="https://arxiv.org/abs/2604.21409"  target="_blank" rel="noopener"
+    >S1-VL: Scientific Multimodal Reasoning Model with Thinking-with-Images</a>
+</h3>
+    <blockquote>
+        <p>科学多模态推理模型，支持&quot;用图像思考&quot;——通过 Python 代码主动操作图像进行推理</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Qingxiao Li, Lifeng Xu, QingLi Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21409"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21409.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 Thinking-with-Images 推理范式，模型在推理过程中生成并执行图像处理代码，获取中间视觉结果后继续多轮迭代推理；设计自适应数据路由策略，将低视觉信息增益的样本转换为纯推理模式数据；在 Qwen3-VL-32B 上构建 S1-VL-32B，在所有五个 Thinking-with-Images 基准上达到 SOTA</li>
+<li><strong>相关技术</strong>: thinking-with-images, scientific reasoning, SAPO reinforcement learning, adaptive data routing</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们提出 S1-VL，一个面向科学领域的多模态推理模型，原生支持两种互补的推理范式：科学推理 (Scientific Reasoning)——依赖结构化思维链，和用图像思考 (Thinking-with-Images)——使模型能够在推理过程中通过 Python 代码执行主动操作图像。在 Thinking-with-Images 模式下，模型在沙箱环境中生成并执行图像处理代码，获取中间视觉结果，并以多轮迭代方式继续推理。这种设计对于高分辨率科学图表解读、显微图像理解和几何辅助推理等具有挑战性的场景特别有效。为构建训练数据，我们收集了涵盖数学、物理、化学、天文学、地理学和生物学六大学科的科学多模态数据集。我们进一步开发了六维推理轨迹质量过滤框架。为缓解现有数据集中常见的冗余、无效和错误视觉操作，我们提出了多阶段过滤流水线和自适应数据路由策略。该策略将低视觉信息增益的样本转换为纯推理模式数据，使模型学习何时图像操作是真正必要的。S1-VL 通过四阶段渐进流水线训练：科学多模态 SFT、Thinking-with-Images 冷启动 SFT，以及两阶段 SAPO 强化学习。我们在 Qwen3-VL-32B-Thinking 之上构建 S1-VL-32B，并在 13 个基准上评估。实验结果表明，S1-VL-32B 在所有五个 Thinking-with-Images 基准上达到最先进性能，包括 HRBench-4K、HRBench-8K、MME-RealWorld-CN、MME-RealWorld-Lite 和 V*，并在物理和 VRSBench 等科学推理基准上超越对比系统。</p>
+</details>
+<hr>
+<h3 id="unit-toward-a-unified-physical-language-for-human-to-humanoid-policy-learning-and-world-modeling"><a class="link" href="https://arxiv.org/abs/2604.19734"  target="_blank" rel="noopener"
+    >UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling</a>
+</h3>
+    <blockquote>
+        <p>统一物理语言框架 UniT，通过视觉锚定桥接人体到人形机器人的跨体态迁移</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Boyu Chen, Yi Chen, Lu Qiu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (25 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.19734"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.19734.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 UniT 统一潜在动作标记器，通过三分支交叉重建机制建立跨体态共享的离散潜在空间；VLA-UniT 实现零样本任务迁移的 SOTA 数据效率和 OOD 泛化；WM-UniT 通过统一 token 对齐跨体态动力学，实现人数据到人形机器人动作的直接迁移</li>
+<li><strong>相关技术</strong>: unified latent action tokenizer, cross-embodiment transfer, visual anchoring, humanoid policy learning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>扩展人形机器人基础模型的瓶颈在于机器人数据的稀缺性。虽然大量第一人称人体数据提供了可扩展的替代方案，但由于运动学不匹配，跨越体态鸿沟仍是一个根本挑战。我们引入 UniT（通过视觉锚定的统一潜在动作标记器），一个为人到人形机器人迁移建立统一物理语言的框架。基于异构运动学共享普遍视觉后果的哲学，UniT 采用三分支交叉重建机制：动作预测视觉以将运动学锚定到物理结果，视觉重建动作以过滤无关视觉干扰因子，同时融合分支将这些净化后的模态协同到一个与体态无关的物理意图的共享离散潜在空间中。我们在两个范式上验证 UniT：1) 策略学习 (VLA-UniT)：通过预测这些统一 token，有效利用多样化人体数据，在人形机器人模拟基准和真实世界部署上实现最先进的数据效率和鲁棒的分布外 (OOD) 泛化，特别是展示了零样本任务迁移。2) 世界建模 (WM-UniT)：通过统一 token 作为条件对齐跨体态动力学，实现人到人形机器人的直接动作迁移。这种对齐确保人体数据无缝转化为增强的人形机器人视频生成的动作可控性。最终，通过诱导高度对齐的跨体态表示（t-SNE 可视化经验验证，揭示人体和人形机器人特征收敛到共享流形），UniT 提供了将海量人类知识蒸馏为通用人形机器人能力的可扩展路径。</p>
+</details>
+<hr>
+<h3 id="unigendet-a-unified-generative-discriminative-framework-for-co-evolutionary-image-generation-and-generated-image-detection"><a class="link" href="https://arxiv.org/abs/2604.21904"  target="_blank" rel="noopener"
+    >UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated Image Detection</a>
+</h3>
+    <blockquote>
+        <p>图像生成与检测的共生框架——生成任务提升检测可解释性，检测准则引导更高保真生成</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yanran Zhang, Wenzhao Zheng, Yifei Li et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (3 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21904"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21904.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出首个统一生成-判别的共生框架 UniGenDet，设计共生多模态自注意力机制桥接任务鸿沟；引入检测器引导的生成对齐机制促进双向信息交换；在多个数据集上达到 SOTA，生成质量和检测准确率同时提升</li>
+<li><strong>相关技术</strong>: generative-discriminative co-evolution, symbiotic multimodal attention, detector-informed alignment</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>近年来，图像生成和生成图像检测都取得了显著进展。尽管两者快速发展且在很大程度上独立进行，但它们演化出截然不同的架构范式：前者主要依赖生成网络，而后者偏重判别框架。两个领域的最新趋势是利用对抗信息提升性能，揭示了协同潜力。然而，它们之间显著的架构分歧带来了相当大的挑战。不同于以往方法，我们提出 UniGenDet：一个统一生成-判别的图像生成与生成图像检测共生框架。为桥接任务鸿沟，我们设计了共生多模态自注意力机制和统一微调算法。这种协同使生成任务提高真实性识别的可解释性，同时真实性准则引导创建更高保真图像。此外，我们引入检测器引导的生成对齐机制以促进无缝信息交换。在多个数据集上的大量实验表明，我们的方法达到最先进性能。</p>
+</details>
+<hr>
+<h3 id="worldmark-a-unified-benchmark-suite-for-interactive-video-world-models"><a class="link" href="https://arxiv.org/abs/2604.21686"  target="_blank" rel="noopener"
+    >WorldMark: A Unified Benchmark Suite for Interactive Video World Models</a>
+</h3>
+    <blockquote>
+        <p>首个交互式视频世界模型统一基准，提供相同场景和动作序列下的跨模型公平比较</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xiaojie Xu, Zhengyuan Lin, Kang He et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (29 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21686"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21686.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 首个为交互式 Image-to-Video 世界模型提供标准化测试条件的基准，包含统一动作映射层（WASD 词汇翻译为各模型原生控制格式）、500 个分级评估用例、模块化评估工具包（视觉质量/控制对齐/世界一致性）；同时发布 World Model Arena 在线对战平台</li>
+<li><strong>相关技术</strong>: interactive video world model, unified action mapping, control alignment, world consistency</li>
+<li><strong>代码/权重</strong>: 未提及（即将发布）</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>交互式视频生成模型如 Genie、YUME、HY-World 和 Matrix-Game 正在快速推进，但每个模型都在自己的基准上评估，使用私有场景和轨迹，使得公平的跨模型比较不可能。现有的公共基准提供了有用的指标如轨迹误差、美学分数和基于 VLM 的判断，但没有提供标准化测试条件——相同场景、相同动作序列和统一控制接口——使这些指标在具有异构输入的模型间可比。我们引入 WorldMark，首个为交互式 Image-to-Video 世界模型提供此类共同竞技场的基准。WorldMark 贡献：(1) 统一动作映射层，将共享的 WASD 风格动作词汇翻译为每个模型的原生控制格式，在相同场景和轨迹上实现六大模型的苹果对苹果比较；(2) 分层测试套件，包含 500 个评估用例，覆盖第一人称和第三人称视角、照片级真实和风格化场景，以及从简单到困难的三个难度等级，跨度 20-60 秒；(3) 模块化评估工具包，涵盖视觉质量 (Visual Quality)、控制对齐 (Control Alignment) 和世界一致性 (World Consistency)，使研究人员可以在使用标准化输入的同时插入自己的指标。我们将发布所有数据、评估代码和模型输出。除离线指标外，我们启动了 World Model Arena (warena.ai)，一个在线平台，任何人都可以让领先的世界模型进行并排对战并观看实时排行榜。</p>
+</details>
+<hr>
+<h3 id="encoder-free-human-motion-understanding-via-structured-motion-descriptions"><a class="link" href="https://arxiv.org/abs/2604.21668"  target="_blank" rel="noopener"
+    >Encoder-Free Human Motion Understanding via Structured Motion Descriptions</a>
+</h3>
+    <blockquote>
+        <p>无需编码器！用规则化结构化自然语言描述替代运动编码器，LLM 直接理解人体运动</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yao Zhang, Zhuchenyang Liu, Thomas Ploetz et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21668"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21668.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出结构化运动描述 (SMD)，基于生物力学分析将关节位置序列转换为关节角度、身体部位运动和全局轨迹的结构化自然语言描述；无需学习编码器或对齐模块，仅轻量 LoRA 适配即可在 8 个 LLM（6 个模型家族）上泛化；在运动问答 (BABEL-QA 66.7%, HuMMan-QA 90.1%) 和运动描述 (HumanML3D R@1 0.584, CIDEr 53.16) 上全面超越 SOTA</li>
+<li><strong>相关技术</strong>: structured motion description, biomechanical analysis, encoder-free, LoRA adaptation, joint angle</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>基于文本的大语言模型 (LLM) 的世界知识和推理能力正在快速进步，但当前的人体运动理解方法（包括运动问答和描述）尚未充分利用这些能力。现有的基于 LLM 的方法通常通过专用编码器学习运动-语言对齐，将运动特征投影到 LLM 的嵌入空间，仍受限于跨模态表示和对齐。受生物力学分析启发——关节角度和身体部位运动学长期以来一直是人体运动的精确描述语言——我们提出结构化运动描述 (Structured Motion Description, SMD)，一种基于规则的确定性方法，将关节位置序列转换为关节角度、身体部位运动和全局轨迹的结构化自然语言描述。够直接将其关于身体部位、空间方向和运动语义的预训练知识应用于运动推理，而无需学习编码器或对齐模块。我们证明这种方法超越了运动问答（BABEL-QA 66.7%，HuMMan-QA 90.1%）和运动描述（HumanML3D R@1 0.584，CIDEr 53.16）的先前最佳结果。SMD 还提供实用优势：相同的文本输入在不同 LLM 上仅需轻量 LoRA 适配即可工作（在来自 6 个模型家族的 8 个 LLM 上验证），其人类可读的表示使运动描述上的注意力分析具有可解释性。</p>
+</details>
+<hr>
+<h3 id="fundusegmenter-leveraging-the-retfound-foundation-model-for-joint-optic-disc-and-optic-cup-segmentation-in-retinal-fundus-images"><a class="link" href="https://arxiv.org/abs/2508.11354"  target="_blank" rel="noopener"
+    >FunduSegmenter: Leveraging the RETFound Foundation Model for Joint Optic Disc and Optic Cup Segmentation in Retinal Fundus Images</a>
+</h3>
+    <blockquote>
+        <p>首次将 RETFound 基础模型适配用于眼底图像视盘和视杯联合分割，内部验证 Dice 达 90.51%</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zhenyi Zhao, Muthu Rama Krishnan Mookiah, Emanuele Trucco</li>
+<li><strong>来源</strong>: HuggingFace Trending</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2508.11354"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2508.11354.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 首次将 RETFound 适配用于视盘 (OD) 和视杯 (OC) 联合分割，设计 Pre-adapter、Decoder、Post-adapter 及 CBAM 跳跃连接和 ViT 块适配器；内部验证平均 Dice 90.51% 大幅超越基线（nnU-Net 82.91%）；外部验证比最佳基线高约 3%</li>
+<li><strong>相关技术</strong>: RETFound, optic disc segmentation, fundus image, foundation model adaptation, CBAM</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>目的：本研究首次将 RETFound 适配用于视盘 (OD) 和视杯 (OC) 联合分割。RETFound 是一个为眼底相机和光学相干断层扫描图像开发的知名基础模型，在疾病诊断中表现出有前景的性能。方法：我们提出 FunduSegmenter，一个将一系列新模块与 RETFound 集成的模型，包括预适配器 (Pre-adapter)、解码器 (Decoder)、后适配器 (Post-adapter)、带有卷积块注意力模块 (CBAM) 的跳跃连接和 Vision Transformer 块适配器。该模型在专有数据集 GoDARTS 和四个公共数据集 IDRiD、Drishti-GS、RIM-ONE-r3 和 REFUGE 上进行评估，通过内部验证、外部验证和域泛化实验。结果：内部验证平均 Dice 相似系数达 90.51%，超越所有基线，部分大幅超越（nnU-Net: 82.91%；DUNet: 89.17%；TransUNet: 87.91%）。在所有外部验证实验中，平均结果比最佳基线高约 3%，我们的模型在域泛化中也具有竞争力。结论：本研究探索了 RETFound 学习的潜在通用表示在眼底相机图像 OD 和 OC 分割中的潜力。我们的 FunduSegmenter 总体优于最先进的基线方法。所提出的模块具有通用性，可扩展到微调其他基础模型。</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="a-self-evolving-framework-for-efficient-terminal-agents-via-observational-context-compression-taco"><a class="link" href="https://arxiv.org/abs/2604.19572"  target="_blank" rel="noopener"
+    >A Self-Evolving Framework for Efficient Terminal Agents via Observational Context Compression (TACO)</a>
+</h3>
+    <blockquote>
+        <p>自进化终端智能体压缩框架，自动发现和精炼压缩规则，减少约 10% token 开销同时提升性能</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Jincheng Ren, Siwei Wu, Yizhi Li et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (17 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.19572"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.19572.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 TACO 即插即用自进化框架，从交互轨迹中自动发现和精炼压缩规则；在 TerminalBench 上为强智能体模型带来 1%-4% 持续增益，同 token 预算下再提升 2%-3%；与 MiniMax-2.5 配合在多数基准上提升性能同时减少约 10% token 开销</li>
+<li><strong>相关技术</strong>: observational compression, self-evolving rules, terminal agent, context compression, token efficiency</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>随着模型能力提升，研究越来越转向长视野、多轮终端中心智能体任务，其中原始环境反馈通常保留在交互历史中以支持未来决策。然而，反复保留此类反馈引入了大量冗余，并导致累积 token 成本随步骤数二次增长，阻碍长视野推理。虽然观测压缩可以缓解这一问题，但终端环境的异构性使基于启发式或固定提示的方法难以泛化。我们提出 TACO，一个即插即用的自进化终端智能体压缩框架，从交互轨迹中自动发现和精炼压缩规则，适用于现有终端智能体。在 TerminalBench（TB 1.0 和 TB 2.0）及四个额外终端相关基准（SWE-Bench Lite、CompileBench、DevEval 和 CRUST-Bench）上的实验表明，TACO 在主流智能体框架和强骨干模型上一致提升性能。与 MiniMax-2.5 配合，它在多数基准上提升性能同时减少约 10% 的 token 开销。在 TerminalBench 上，它为强智能体模型带来 1%-4% 的持续增益，在同 token 预算下进一步提升约 2%-3% 的准确率。这些结果证明了自进化、任务感知压缩对终端智能体的有效性和泛化性。</p>
+</details>
+<hr>
+<h2 id="-其他值得关注">📌 其他值得关注
+</h2><h3 id="context-unrolling-in-omni-models"><a class="link" href="https://arxiv.org/abs/2604.21921"  target="_blank" rel="noopener"
+    >Context Unrolling in Omni Models</a>
+</h3>
+    <blockquote>
+        <p>统一多模态模型 Omni 原生训练于文本/图像/视频/3D/隐表示，发现&quot;上下文展开&quot;现象——跨模态推理后再预测</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Ceyuan Yang, Zhijie Lin, Yang Zhao et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (5 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21921"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21921.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 发现统一多模态训练产生上下文展开 (Context Unrolling) 现象——模型在预测前跨多个模态表示显式推理；聚合异构模态的互补信息，更忠实地逼近共享多模态知识流形；在多模态生成和理解基准上均取得强性能</li>
+<li><strong>相关技术</strong>: context unrolling, unified multimodal, multi-modal reasoning, in-context generation</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们提出 Omni，一个在多种模态（包括文本、图像、视频、3D 几何和隐表示）上原生训练的统一多模态模型。我们发现这种训练启用了上下文展开 (Context Unrolling)，即模型在产生预测之前跨多个模态表示进行显式推理。这一过程使模型能够聚合异构模态间的互补信息，促进对共享多模态知识流形的更忠实逼近，提升下游推理保真度。因此，Omni 在多模态生成和理解基准上都取得了强性能，同时展示了先进的多模态推理能力，包括文本、图像、视频和 3D 几何的上下文内生成。</p>
+</details>
+<hr>
+<h3 id="arfbench-benchmarking-time-series-question-answering-ability-for-software-incident-response"><a class="link" href="https://arxiv.org/abs/2604.21199"  target="_blank" rel="noopener"
+    >ARFBench: Benchmarking Time Series Question Answering Ability for Software Incident Response</a>
+</h3>
+    <blockquote>
+        <p>首个面向软件事件响应的时序问答基准，GPT-5 仅达 62.7% 准确率，模型-专家联合可达 87.2%</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Stephan Xie, Ben Cohen, Mononito Goswami et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21199"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21199.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 构建 ARFBench 时序问答基准，涵盖 142 条时序、538 万数据点和 750 个问题，数据来自 Datadog 63 个生产事件；开发 TSFM+VLM 混合原型，少量后训练即可媲美前沿模型；定义模型-专家预言机，最佳双选达 87.2% 准确率和 82.8% F1，为未来 TSQA 模型确立超人前沿</li>
+<li><strong>相关技术</strong>: time series question answering, software incident, TSFM+VLM hybrid, anomaly detection</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>时序问答 (TSQA)——通过自然语言问题推断和推理时序属性——是基础模型一个有前景但尚未充分探索的能力。在本文中，我们提出 ARFBench，一个评估多模态基础模型对软件事件数据中时序异常理解能力的 TSQA 基准。ARFBench 包含来自 Datadog 内部遥测的 63 个生产事件的 142 条时序、538 万数据点上的 750 个问题。我们评估了领先的专有和开源 LLM、VLM 和时序基础模型，观察到前沿 VLM 显著优于现有基线；领先模型 (GPT-5) 达到 62.7% 准确率和 51.9% F1。我们随后展示了专业化多模态方法的潜力。我们开发了一种新颖的 TSFM+VLM 混合原型，在少量合成和真实数据上后训练后，达到与前沿模型可比的整体 F1 和准确率。最后，我们发现模型和人类领域专家展现出互补优势。我们定义了模型-专家预言机——模型和专家答案的最佳双选选择器——达到 82.8% F1 和 87.2% 准确率，为未来 TSQA 模型确立了新的超人前沿。</p>
+</details>
+<hr>
+<h3 id="seeing-fast-and-slow-learning-the-flow-of-time-in-videos"><a class="link" href="https://arxiv.org/abs/2604.21931"  target="_blank" rel="noopener"
+    >Seeing Fast and Slow: Learning the Flow of Time in Videos</a>
+</h3>
+    <blockquote>
+        <p>将时间作为可学习的视觉概念——自监督检测速度变化、估计播放速度，并实现速度可控视频生成</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yen-Siang Wu, Rundong Luo, Jingsen Zhu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (13 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21931"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21931.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 首次将时间作为可学习的视觉概念进行系统研究；自监督方法学习检测速度变化和估计播放速度；利用学到的时序推理模型从嘈杂数据中策划最大慢动作视频数据集；开发速度条件视频生成和时间超分辨率模型</li>
+<li><strong>相关技术</strong>: temporal reasoning, speed estimation, speed-conditioned generation, temporal super-resolution, self-supervised</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们如何判断视频是否被加速或减速？我们如何以不同速度生成视频？尽管视频一直是现代计算机视觉研究的核心，但感知和控制时间流逝的问题几乎没有受到关注。在本文中，我们将时间作为可学习的视觉概念，开发用于推理和操纵视频中时间流动的模型。我们首先利用视频中自然存在的多模态线索和时间结构，以自监督方式学习检测速度变化和估计播放速度。然后展示这些学到的时序推理模型使我们能够从嘈杂的野外数据源中策划迄今最大的慢动作视频数据集。这类慢动作视频通常由高速相机拍摄，包含比标准视频更丰富的时间细节。利用这些数据，我们进一步开发具备时间控制能力的模型，包括速度条件视频生成（以指定播放速度生成运动）和时间超分辨率（将低 FPS 模糊视频转换为具有精细时间细节的高 FPS 序列）。我们的发现突出了时间作为视频学习中的可操纵感知维度，为时间可控视频生成、时间取证检测以及可能更丰富的理解事件如何随时间展开的世界模型打开了大门。</p>
+</details>
+<hr>
+<h3 id="tingis-real-time-risk-event-discovery-from-noisy-customer-incidents-at-enterprise-scale"><a class="link" href="https://arxiv.org/abs/2604.21889"  target="_blank" rel="noopener"
+    >TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale</a>
+</h3>
+    <blockquote>
+        <p>企业级事件发现系统，峰值吞吐 2000+ msg/min，P90 告警延迟 3.5 分钟，高优事件发现率 95%</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Jun Wang, Ziyin Zhang, Rui Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (9 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2604.21889"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2604.21889.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 端到端企业级事件发现系统 TingIS，核心是多阶段事件关联引擎（高效索引+LLM），从少量多样化用户描述中稳定提取可操作事件；级联路由机制实现精确业务归因；多维降噪流水线融合领域知识、统计模式和行为过滤；峰值吞吐 2000+ msg/min，P90 告警延迟 3.5 分钟</li>
+<li><strong>相关技术</strong>: event linking, LLM-based clustering, enterprise incident discovery, noise reduction, real-time alerting</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>实时检测和缓解技术异常对于大规模云原生服务至关重要，即使是几分钟的停机也可能导致巨大经济损失和用户信任下降。虽然客户事件作为发现监控系统遗漏风险的重要信号，但从这些数据中提取可操作情报仍然具有挑战性，因为极端噪声、高吞吐量和多元业务线的语义复杂性。在本文中，我们提出 TingIS，一个为企业级事件发现设计的端到端系统。TingIS 的核心是多阶段事件关联引擎，将高效索引技术与大语言模型 (LLM) 协同用于事件合并的明智决策，使从少量多样化用户描述中稳定提取可操作事件成为可能。该引擎辅以级联路由机制实现精确业务归因，以及多维降噪流水线整合领域知识、统计模式和行为过滤。在处理峰值吞吐超过每分钟 2,000 条消息和每日 300,000 条消息的生产环境中部署，TingIS 实现了 P90 告警延迟 3.5 分钟和高优事件 95% 的发现率。基于真实世界数据构建的基准表明，TingIS 在路由准确率、聚类质量和信噪比方面显著优于基线方法。</p>
+</details>
+<hr>
+<p><em>Generated on 2026-04-25 00:00 UTC | Sources: HuggingFace</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-24/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-24</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-23/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-23</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-22/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-22</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-04-19/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-04-19</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
