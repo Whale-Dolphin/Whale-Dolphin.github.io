@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 数据来源：Hacker News、GitHub Trending、Web Search · 聚焦 AI/ML/LLM 领域\n🔥 今日焦点 1. Anthropic 源码泄露：Claude Sonnet 4.8 和 &ldquo;Undercover Mode&rdquo; 曝光 Anthropic 发生约 51.2 万行源码泄露事件，暴露了即将发布的 Claude Sonnet 4.8 以及一个名为 &ldquo;Undercover Mode&rdquo; 的内部保密子系统——该系统专门防止 Anthropic 内部模型代号和机密泄露到公开代码提交中。讽刺的是，正是这个防泄露系统本身被泄露了。此外还发现了一个名为 &ldquo;Cardinal&rdquo; 的神秘功能，具体用途不明。\n">
+<title>AI News Daily | 2026-05-03</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-05-03/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI News Daily | 2026-05-03">
+<meta property='og:description' content=" 数据来源：Hacker News、GitHub Trending、Web Search · 聚焦 AI/ML/LLM 领域\n🔥 今日焦点 1. Anthropic 源码泄露：Claude Sonnet 4.8 和 &ldquo;Undercover Mode&rdquo; 曝光 Anthropic 发生约 51.2 万行源码泄露事件，暴露了即将发布的 Claude Sonnet 4.8 以及一个名为 &ldquo;Undercover Mode&rdquo; 的内部保密子系统——该系统专门防止 Anthropic 内部模型代号和机密泄露到公开代码提交中。讽刺的是，正是这个防泄露系统本身被泄露了。此外还发现了一个名为 &ldquo;Cardinal&rdquo; 的神秘功能，具体用途不明。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-05-03/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-05-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-05-03T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI News Daily | 2026-05-03">
+<meta name="twitter:description" content=" 数据来源：Hacker News、GitHub Trending、Web Search · 聚焦 AI/ML/LLM 领域\n🔥 今日焦点 1. Anthropic 源码泄露：Claude Sonnet 4.8 和 &ldquo;Undercover Mode&rdquo; 曝光 Anthropic 发生约 51.2 万行源码泄露事件，暴露了即将发布的 Claude Sonnet 4.8 以及一个名为 &ldquo;Undercover Mode&rdquo; 的内部保密子系统——该系统专门防止 Anthropic 内部模型代号和机密泄露到公开代码提交中。讽刺的是，正是这个防泄露系统本身被泄露了。此外还发现了一个名为 &ldquo;Cardinal&rdquo; 的神秘功能，具体用途不明。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-05-03/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-今日焦点">🔥 今日焦点</a>
+      <ol>
+        <li><a href="#1-anthropic-源码泄露claude-sonnet-48-和-undercover-mode-曝光">1. Anthropic 源码泄露：Claude Sonnet 4.8 和 &ldquo;Undercover Mode&rdquo; 曝光</a></li>
+        <li><a href="#2-apple-意外泄露-claudemd-文件内部-ai-使用全面曝光">2. Apple 意外泄露 Claude.md 文件，内部 AI 使用全面曝光</a></li>
+        <li><a href="#3-nistcaisi-发布-deepseek-v4-pro-评估落后美国领先模型约-8-个月">3. NIST/CAISI 发布 DeepSeek V4 Pro 评估：落后美国领先模型约 8 个月</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业动态">📰 行业动态</a>
+      <ol>
+        <li><a href="#4-anthropic-发布-claude-security-公测版赋能安全防御">4. Anthropic 发布 Claude Security 公测版，赋能安全防御</a></li>
+        <li><a href="#5-uber-四个月烧完全年-ai-预算claude-code-是元凶">5. Uber 四个月烧完全年 AI 预算，Claude Code 是元凶</a></li>
+        <li><a href="#6-vs-code-在-git-提交中强制插入-co-authored-by-copilot">6. VS Code 在 Git 提交中强制插入 &ldquo;Co-Authored-by Copilot&rdquo;</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源项目">🛠️ 开源项目</a>
+      <ol>
+        <li><a href="#7-open-design将-coding-agent-变为设计引擎">7. Open Design：将 Coding Agent 变为设计引擎</a></li>
+        <li><a href="#8-craft-agents-oss新开源-agent-框架">8. Craft Agents OSS：新开源 Agent 框架</a></li>
+        <li><a href="#9-fluetypescript-agent-框架">9. Flue：TypeScript Agent 框架</a></li>
+      </ol>
+    </li>
+    <li><a href="#-研究与模型">📊 研究与模型</a>
+      <ol>
+        <li><a href="#10-llm-拒绝行为由单一方向控制">10. LLM 拒绝行为由单一方向控制</a></li>
+        <li><a href="#11-gemini-35-flash-疑似在-lmarena-秘密测试">11. Gemini 3.5 Flash 疑似在 LMArena 秘密测试</a></li>
+        <li><a href="#12-位置编码的群论探索">12. 位置编码的群论探索</a></li>
+        <li><a href="#13-anthropic-分析百万-claude-对话人们如何用-ai-处理生活问题">13. Anthropic 分析百万 Claude 对话：人们如何用 AI 处理生活问题</a></li>
+      </ol>
+    </li>
+    <li><a href="#-观点与讨论">💡 观点与讨论</a>
+      <ol>
+        <li><a href="#14-agent-harness-应该在沙箱之外">14. Agent Harness 应该在沙箱之外</a></li>
+        <li><a href="#15-hn-上的编程模型-sota-众评">15. HN 上的编程模型 SOTA 众评</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-news-2026-05-03/">
+            <img alt="Featured image of post AI News Daily | 2026-05-03" height="720" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-news-2026-05-03/cover.jpg" srcset="/zh-cn/p/daily-news-2026-05-03/cover_hu_a00f8ef47cab8916.jpg 800w, /zh-cn/p/daily-news-2026-05-03/cover.jpg 1080w" width="1080">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/news/" style="background-color: hsl(182, 60%, 84%); color: hsl(182, 60%, 15%);">
+                News
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-05-03/">AI News Daily | 2026-05-03</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-05-03T00:00:00Z'>May 03, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-今日焦点">🔥 今日焦点</a>
+      <ol>
+        <li><a href="#1-anthropic-源码泄露claude-sonnet-48-和-undercover-mode-曝光">1. Anthropic 源码泄露：Claude Sonnet 4.8 和 &ldquo;Undercover Mode&rdquo; 曝光</a></li>
+        <li><a href="#2-apple-意外泄露-claudemd-文件内部-ai-使用全面曝光">2. Apple 意外泄露 Claude.md 文件，内部 AI 使用全面曝光</a></li>
+        <li><a href="#3-nistcaisi-发布-deepseek-v4-pro-评估落后美国领先模型约-8-个月">3. NIST/CAISI 发布 DeepSeek V4 Pro 评估：落后美国领先模型约 8 个月</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业动态">📰 行业动态</a>
+      <ol>
+        <li><a href="#4-anthropic-发布-claude-security-公测版赋能安全防御">4. Anthropic 发布 Claude Security 公测版，赋能安全防御</a></li>
+        <li><a href="#5-uber-四个月烧完全年-ai-预算claude-code-是元凶">5. Uber 四个月烧完全年 AI 预算，Claude Code 是元凶</a></li>
+        <li><a href="#6-vs-code-在-git-提交中强制插入-co-authored-by-copilot">6. VS Code 在 Git 提交中强制插入 &ldquo;Co-Authored-by Copilot&rdquo;</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源项目">🛠️ 开源项目</a>
+      <ol>
+        <li><a href="#7-open-design将-coding-agent-变为设计引擎">7. Open Design：将 Coding Agent 变为设计引擎</a></li>
+        <li><a href="#8-craft-agents-oss新开源-agent-框架">8. Craft Agents OSS：新开源 Agent 框架</a></li>
+        <li><a href="#9-fluetypescript-agent-框架">9. Flue：TypeScript Agent 框架</a></li>
+      </ol>
+    </li>
+    <li><a href="#-研究与模型">📊 研究与模型</a>
+      <ol>
+        <li><a href="#10-llm-拒绝行为由单一方向控制">10. LLM 拒绝行为由单一方向控制</a></li>
+        <li><a href="#11-gemini-35-flash-疑似在-lmarena-秘密测试">11. Gemini 3.5 Flash 疑似在 LMArena 秘密测试</a></li>
+        <li><a href="#12-位置编码的群论探索">12. 位置编码的群论探索</a></li>
+        <li><a href="#13-anthropic-分析百万-claude-对话人们如何用-ai-处理生活问题">13. Anthropic 分析百万 Claude 对话：人们如何用 AI 处理生活问题</a></li>
+      </ol>
+    </li>
+    <li><a href="#-观点与讨论">💡 观点与讨论</a>
+      <ol>
+        <li><a href="#14-agent-harness-应该在沙箱之外">14. Agent Harness 应该在沙箱之外</a></li>
+        <li><a href="#15-hn-上的编程模型-sota-众评">15. HN 上的编程模型 SOTA 众评</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>数据来源：Hacker News、GitHub Trending、Web Search · 聚焦 AI/ML/LLM 领域</p>
+
+    </blockquote>
+<hr>
+<h2 id="-今日焦点">🔥 今日焦点
+</h2><h3 id="1-anthropic-源码泄露claude-sonnet-48-和-undercover-mode-曝光">1. Anthropic 源码泄露：Claude Sonnet 4.8 和 &ldquo;Undercover Mode&rdquo; 曝光
+</h3><p>Anthropic 发生约 51.2 万行源码泄露事件，暴露了即将发布的 Claude Sonnet 4.8 以及一个名为 &ldquo;Undercover Mode&rdquo; 的内部保密子系统——该系统专门防止 Anthropic 内部模型代号和机密泄露到公开代码提交中。讽刺的是，正是这个防泄露系统本身被泄露了。此外还发现了一个名为 &ldquo;Cardinal&rdquo; 的神秘功能，具体用途不明。</p>
+<p>🔗 <a class="link" href="https://www.ainexusdaily.com/article/anthropic-source-leak-claude-sonnet-4-8-undercover-mode"  target="_blank" rel="noopener"
+    >AI Nexus Daily 报道</a></p>
+<h3 id="2-apple-意外泄露-claudemd-文件内部-ai-使用全面曝光">2. Apple 意外泄露 Claude.md 文件，内部 AI 使用全面曝光
+</h3><p>Apple Support App v5.13（5月1日发布）意外打包了内部 Claude.md 配置文件。泄露内容显示 Apple 内部使用了一套双后端对话架构：Juno AI 负责自动回复，Live Agents 负责人工客服接管。Claude.md 包含完整的 AI 交互规则、编码风格、架构说明和约束条件。这一事件引发了关于大厂 AI 代码安全审计流程的广泛讨论——讽刺的是，Apple 此前曾禁止 AI 编写的应用上架 App Store。</p>
+<p>🔗 <a class="link" href="https://eu.36kr.com/en/p/3791662444911617"  target="_blank" rel="noopener"
+    >36kr 报道</a> · <a class="link" href="https://news.ycombinator.com/item?id=47973378"  target="_blank" rel="noopener"
+    >HN 讨论</a></p>
+<h3 id="3-nistcaisi-发布-deepseek-v4-pro-评估落后美国领先模型约-8-个月">3. NIST/CAISI 发布 DeepSeek V4 Pro 评估：落后美国领先模型约 8 个月
+</h3><p>美国国家标准与技术研究院（NIST）下属的 CAISI 发布了对 DeepSeek V4 Pro 的正式评估报告。结果显示，DeepSeek V4 是目前评估过的最强大的中国 AI 模型，但能力仍落后美国领先模型约 8 个月。在 7 项基准测试中，DeepSeek V4 的成本从比对手便宜 53% 到贵 41% 不等。值得注意的是，DeepSeek V4 完整支持华为 Ascend 950 AI 芯片，标志着中国 AI 算力自主化迈出实质一步。</p>
+<p>🔗 <a class="link" href="https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro"  target="_blank" rel="noopener"
+    >NIST 官方报告</a></p>
+<hr>
+<h2 id="-行业动态">📰 行业动态
+</h2><h3 id="4-anthropic-发布-claude-security-公测版赋能安全防御">4. Anthropic 发布 Claude Security 公测版，赋能安全防御
+</h3><p>Anthropic 面向 Claude Enterprise 客户推出 Claude Security 公测版，由 Claude Opus 4.7 驱动。该工具可直接扫描代码库中的安全漏洞并自动生成修复补丁，支持定时扫描、目录定向扫描、发现排除（附理由文档化）、CSV/Markdown 导出和 Slack/Jira Webhook 集成。Anthropic 强调采用&quot;人在环中&quot;方案，建议组织在部署 AI 生成补丁前进行人工审查，尤其针对关键系统。同时 TrendAI（Trend Micro 旗下）宣布与 Anthropic 合作，用 Claude Opus 4.7 支持安全研究。</p>
+<p>🔗 <a class="link" href="https://cybersecuritynews.com/claude-security-public-beta/"  target="_blank" rel="noopener"
+    >Cybersecurity News</a> · <a class="link" href="https://www.tekedia.com/anthropic-releases-beta-version-of-its-new-claude-security-ai-tools/"  target="_blank" rel="noopener"
+    >Tekedia</a></p>
+<h3 id="5-uber-四个月烧完全年-ai-预算claude-code-是元凶">5. Uber 四个月烧完全年 AI 预算，Claude Code 是元凶
+</h3><p>Uber CTO Praveen Neppalli Naga 确认，公司因 Claude Code 采纳率从 32% 飙升至 84%（5000 名工程师团队），四个月内耗尽了 2026 年全年 AI 预算。此消息在科技圈引发广泛讨论——AI 编程工具的效率提升与成本失控之间的矛盾正在显现。同时 Uber 宣布将把司机车辆转变为自动驾驶 AI 的数据引擎。</p>
+<p>🔗 <a class="link" href="https://startupfortune.com/uber-burned-its-entire-2026-ai-budget-in-four-months-and-claude-code-is-why-finance-teams-should-be-worried/"  target="_blank" rel="noopener"
+    >Startup Fortune</a> · <a class="link" href="https://www.indiatoday.in/technology/news/story/uber-to-use-car-drivers-as-data-machines-for-self-driving-ai-companies-company-reveals-why-2904823-2026-05-02"  target="_blank" rel="noopener"
+    >India Today</a></p>
+<h3 id="6-vs-code-在-git-提交中强制插入-co-authored-by-copilot">6. VS Code 在 Git 提交中强制插入 &ldquo;Co-Authored-by Copilot&rdquo;
+</h3><p>VS Code 最新版本被发现无论用户是否实际使用了 Copilot，都会在 Git 提交中自动添加 &ldquo;Co-Authored-by Copilot&rdquo; 标记。该问题在 HN 上获得 593 分和 262 条评论，引发了对微软强制 AI 归属标记的强烈抗议。FreeBSD 论坛等社区也开始讨论此事，部分开发者表示将远离 VS Code。</p>
+<p>🔗 <a class="link" href="https://github.com/microsoft/vscode/pull/310226"  target="_blank" rel="noopener"
+    >GitHub PR #310226</a> · <a class="link" href="https://news.ycombinator.com/item?id=47989883"  target="_blank" rel="noopener"
+    >HN 讨论</a></p>
+<hr>
+<h2 id="-开源项目">🛠️ 开源项目
+</h2><h3 id="7-open-design将-coding-agent-变为设计引擎">7. Open Design：将 Coding Agent 变为设计引擎
+</h3><p>nexu-io/open-design 是 Claude Design 的本地优先、开源替代方案。支持 12 种编程 Agent CLI（Claude Code、Codex、Cursor Agent、Gemini CLI 等）自动检测，内置 31 个可组合 Skill 和 72 套品牌级 Design System，可生成 Web/Desktop/Mobile 原型、幻灯片、图片、视频，并导出为 HTML/PDF/PPTX/MP4。目前 14.7k Stars。</p>
+<p>🔗 <a class="link" href="https://github.com/nexu-io/open-design"  target="_blank" rel="noopener"
+    >GitHub</a></p>
+<h3 id="8-craft-agents-oss新开源-agent-框架">8. Craft Agents OSS：新开源 Agent 框架
+</h3><p>Lukilabs 发布了 Craft Agents OSS（Apache 2.0 许可），一个面向 AI Agent 开发的新框架，已登上 GitHub Trending。</p>
+<p>🔗 <a class="link" href="https://aitoolly.com/ai-news/article/2026-05-02-craft-agents-oss-lukilabs-launches-new-open-source-agent-framework-under-apache-20-license"  target="_blank" rel="noopener"
+    >AIToolly 报道</a></p>
+<h3 id="9-fluetypescript-agent-框架">9. Flue：TypeScript Agent 框架
+</h3><p>Flue 是一个新的 TypeScript 框架，面向构建下一代 AI Agent。HN 上获得 80 分和 44 条评论，讨论集中在 Agent 开发工具链的专业化趋势。</p>
+<p>🔗 <a class="link" href="https://flueframework.com/"  target="_blank" rel="noopener"
+    >Flue 官网</a></p>
+<hr>
+<h2 id="-研究与模型">📊 研究与模型
+</h2><h3 id="10-llm-拒绝行为由单一方向控制">10. LLM 拒绝行为由单一方向控制
+</h3><p>arXiv 论文 &ldquo;Refusal in Language Models Is Mediated by a Single Direction&rdquo;（arXiv:2406.11717）重新获得关注。研究发现语言模型的拒绝行为（如拒绝回答有害问题）由表示空间中的单一方向控制，这对理解模型安全机制和潜在的对抗攻击有重要意义。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2406.11717"  target="_blank" rel="noopener"
+    >arXiv</a></p>
+<h3 id="11-gemini-35-flash-疑似在-lmarena-秘密测试">11. Gemini 3.5 Flash 疑似在 LMArena 秘密测试
+</h3><p>LMArena 上出现频率异常增高的 &ldquo;Gemini 3 Flash&rdquo; 模型被怀疑是尚未发布的 Gemini 3.5 Flash。测试者反馈该模型性能远超当前版本，直逼 Gemini 3.1 Pro。这可能是 Google 在正式发布前的基准测试阶段。</p>
+<p>🔗 <a class="link" href="https://linux.do/t/topic/2099299"  target="_blank" rel="noopener"
+    >LINUX DO 讨论</a> · <a class="link" href="https://www.youtube.com/watch?v=BN7N6FvfKi0"  target="_blank" rel="noopener"
+    >YouTube 汇总</a></p>
+<h3 id="12-位置编码的群论探索">12. 位置编码的群论探索
+</h3><p>Jane Street 发布博客文章，用群论方法系统探索 Transformer 注意力机制中位置编码的设计空间，为理解位置信息的数学本质提供了新视角。</p>
+<p>🔗 <a class="link" href="https://blog.janestreet.com/using-group-theory-to-explore-positional-encodings-attention/"  target="_blank" rel="noopener"
+    >Jane Street Blog</a></p>
+<h3 id="13-anthropic-分析百万-claude-对话人们如何用-ai-处理生活问题">13. Anthropic 分析百万 Claude 对话：人们如何用 AI 处理生活问题
+</h3><p>Anthropic 使用隐私保护分析工具对 100 万条 Claude 对话进行分析，发现大量用户向 AI 寻求人生指导。公司据此推出新模型，将关系建议中的&quot;谄媚&quot;行为降低了 50%。约 63.9 万条独立对话被筛选分析，使用 &ldquo;Should I…?&rdquo; 和 &ldquo;What do I do about…?&rdquo; 等分类器聚焦于决策类对话。</p>
+<p>🔗 <a class="link" href="https://www.analyticsvidhya.com/blog/2026/05/how-people-are-figuring-out-life-with-claude/"  target="_blank" rel="noopener"
+    >Analytics Vidhya</a> · <a class="link" href="https://quantumzeitgeist.com/claude-cuts-relationship-guidance-demonstration/"  target="_blank" rel="noopener"
+    >QuantumZeitgeist</a></p>
+<hr>
+<h2 id="-观点与讨论">💡 观点与讨论
+</h2><h3 id="14-agent-harness-应该在沙箱之外">14. Agent Harness 应该在沙箱之外
+</h3><p>文章 &ldquo;The agent harness belongs outside the sandbox&rdquo; 讨论 AI Agent 的安全架构——Agent 执行代码的沙箱环境与控制 Agent 行为的框架（harness）应该分离部署，harness 不应被包含在沙箱内，否则 Agent 可以修改自身的行为约束。</p>
+<p>🔗 <a class="link" href="https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox"  target="_blank" rel="noopener"
+    >原文</a></p>
+<h3 id="15-hn-上的编程模型-sota-众评">15. HN 上的编程模型 SOTA 众评
+</h3><p>hnup.date 汇总了 Hacker News 评论者对各编程模型的真实评价，提供了不同于官方基准测试的社区视角。HN 29 分 / 15 评论。</p>
+<p>🔗 <a class="link" href="https://hnup.date/hn-sota"  target="_blank" rel="noopener"
+    >HN SOTA</a></p>
+<hr>
+<p><em>本日报由爱弥斯自动生成 · 数据抓取时间: 2026-05-03 00:15 UTC</em></p>
+<hr>
+
+    <blockquote>
+        <p>Photo by <a class="link" href="https://unsplash.com/photos/a-circular-object-is-shown-in-the-middle-of-a-dark-background-ayuLO_29tf8"  target="_blank" rel="noopener"
+    >aranprime</a> on <a class="link" href="https://unsplash.com"  target="_blank" rel="noopener"
+    >Unsplash</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-05-02/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-05-02" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-05-02/cover_hu_fa79d1e88472772e.jpg" srcset="/zh-cn/p/daily-news-2026-05-02/cover_hu_fa79d1e88472772e.jpg 1x, /zh-cn/p/daily-news-2026-05-02/cover_hu_d9e6b65d5332568a.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #d5dfd580 0%, #0b1413C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-05-02</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-05-01/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-05-01" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-05-01/cover_hu_d36d8049a6b3f231.jpg" srcset="/zh-cn/p/daily-news-2026-05-01/cover_hu_d36d8049a6b3f231.jpg 1x, /zh-cn/p/daily-news-2026-05-01/cover_hu_45a3792b076c7d8d.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #b1aead80 0%, #302f30C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-05-01</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-30/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-30" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-30/cover_hu_4df9cb98b884607f.jpg" srcset="/zh-cn/p/daily-news-2026-04-30/cover_hu_4df9cb98b884607f.jpg 1x, /zh-cn/p/daily-news-2026-04-30/cover_hu_25508c3523bbde98.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #aa67a180 0%, #b2b3f1C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-30</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-29/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-29" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-29/cover_hu_34c4cae03271ecdb.jpg" srcset="/zh-cn/p/daily-news-2026-04-29/cover_hu_34c4cae03271ecdb.jpg 1x, /zh-cn/p/daily-news-2026-04-29/cover_hu_6cb750e08a8012dd.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #1938b480 0%, #11171cC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-29</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-04-28/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-04-28" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-04-28/cover_hu_dfafceb58e55385a.jpg" srcset="/zh-cn/p/daily-news-2026-04-28/cover_hu_dfafceb58e55385a.jpg 1x, /zh-cn/p/daily-news-2026-04-28/cover_hu_7f1432bff4ce5178.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #173cb480 0%, #161d4dC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-04-28</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
