@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 今日新增 16 篇论文（已去重，跳过 14 篇历史收录） 数据来源：HuggingFace Daily Papers 覆盖方向：Audio LLM · LLM Training · AI Agents · 其他值得关注\n🎙️ Audio LLM 1. MiniMind-O：开源 0.1B 语音原生全能模型 论文 2605.03937 · PDF 链接\n">
+<title>AI Paper Daily | 2026-05-07</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-05-07/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-05-07">
+<meta property='og:description' content=" 今日新增 16 篇论文（已去重，跳过 14 篇历史收录） 数据来源：HuggingFace Daily Papers 覆盖方向：Audio LLM · LLM Training · AI Agents · 其他值得关注\n🎙️ Audio LLM 1. MiniMind-O：开源 0.1B 语音原生全能模型 论文 2605.03937 · PDF 链接\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-05-07/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-05-07T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-05-07T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-05-07">
+<meta name="twitter:description" content=" 今日新增 16 篇论文（已去重，跳过 14 篇历史收录） 数据来源：HuggingFace Daily Papers 覆盖方向：Audio LLM · LLM Training · AI Agents · 其他值得关注\n🎙️ Audio LLM 1. MiniMind-O：开源 0.1B 语音原生全能模型 论文 2605.03937 · PDF 链接\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-05-07/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-audio-llm">🎙️ Audio LLM</a>
+      <ol>
+        <li><a href="#1-minimind-o开源-01b-语音原生全能模型">1. MiniMind-O：开源 0.1B 语音原生全能模型</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🔬 LLM Training</a>
+      <ol>
+        <li><a href="#2-openseeker-v2仅用-sft--106k-数据打造-sota-搜索-agent">2. OpenSeeker-v2：仅用 SFT + 10.6K 数据打造 SOTA 搜索 Agent</a></li>
+        <li><a href="#3-临床-llm-的安全与精度遵循不同的扩展定律">3. 临床 LLM 的安全与精度遵循不同的扩展定律</a></li>
+        <li><a href="#4-oracleproto可复现的-llm-原生预测能力评测框架">4. OracleProto：可复现的 LLM 原生预测能力评测框架</a></li>
+        <li><a href="#5-先学会记住再谈遗忘重访-lvlm-反学习基准的基础学习失败">5. 先学会记住，再谈遗忘：重访 LVLM 反学习基准的基础学习失败</a></li>
+        <li><a href="#6-gui-sd首个面向-gui-定位的策略自蒸馏框架">6. GUI-SD：首个面向 GUI 定位的策略自蒸馏框架</a></li>
+        <li><a href="#7-heavyskill将深度思考视为-agent-框架的内在技能">7. HeavySkill：将深度思考视为 Agent 框架的内在技能</a></li>
+        <li><a href="#8-apo将漂移转化为约束非平稳环境中的鲁棒推理对齐">8. APO：将漂移转化为约束——非平稳环境中的鲁棒推理对齐</a></li>
+        <li><a href="#9-healthcare-ai-gym医疗-agent-的多轮强化学习训练场">9. Healthcare AI GYM：医疗 Agent 的多轮强化学习训练场</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#10-aris通过对抗性多-agent-协作实现自主研究">10. ARIS：通过对抗性多 Agent 协作实现自主研究</a></li>
+        <li><a href="#11-workspace-bench-10大规模文件依赖下的-ai-agent-工作空间评测">11. Workspace-Bench 1.0：大规模文件依赖下的 AI Agent 工作空间评测</a></li>
+        <li><a href="#12-physicianbench真实-ehr-环境下的-llm-agent-医生评测">12. PhysicianBench：真实 EHR 环境下的 LLM Agent 医生评测</a></li>
+        <li><a href="#13-iworld-bench交互式世界模型的统一评测基准">13. iWorld-Bench：交互式世界模型的统一评测基准</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#14-答案对了方向却错了transformer-为何数数失败及修复方案">14. 答案对了方向却错了：Transformer 为何数数失败及修复方案</a></li>
+        <li><a href="#15-patre专利审查全流程生成基准">15. PatRe：专利审查全流程生成基准</a></li>
+        <li><a href="#16-surgtemp时序感知的腹腔镜手术视频问答">16. SurgTEMP：时序感知的腹腔镜手术视频问答</a></li>
+      </ol>
+    </li>
+    <li><a href="#-今日统计">📊 今日统计</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-05-07/">AI Paper Daily | 2026-05-07</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-05-07T00:00:00Z'>May 07, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-audio-llm">🎙️ Audio LLM</a>
+      <ol>
+        <li><a href="#1-minimind-o开源-01b-语音原生全能模型">1. MiniMind-O：开源 0.1B 语音原生全能模型</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🔬 LLM Training</a>
+      <ol>
+        <li><a href="#2-openseeker-v2仅用-sft--106k-数据打造-sota-搜索-agent">2. OpenSeeker-v2：仅用 SFT + 10.6K 数据打造 SOTA 搜索 Agent</a></li>
+        <li><a href="#3-临床-llm-的安全与精度遵循不同的扩展定律">3. 临床 LLM 的安全与精度遵循不同的扩展定律</a></li>
+        <li><a href="#4-oracleproto可复现的-llm-原生预测能力评测框架">4. OracleProto：可复现的 LLM 原生预测能力评测框架</a></li>
+        <li><a href="#5-先学会记住再谈遗忘重访-lvlm-反学习基准的基础学习失败">5. 先学会记住，再谈遗忘：重访 LVLM 反学习基准的基础学习失败</a></li>
+        <li><a href="#6-gui-sd首个面向-gui-定位的策略自蒸馏框架">6. GUI-SD：首个面向 GUI 定位的策略自蒸馏框架</a></li>
+        <li><a href="#7-heavyskill将深度思考视为-agent-框架的内在技能">7. HeavySkill：将深度思考视为 Agent 框架的内在技能</a></li>
+        <li><a href="#8-apo将漂移转化为约束非平稳环境中的鲁棒推理对齐">8. APO：将漂移转化为约束——非平稳环境中的鲁棒推理对齐</a></li>
+        <li><a href="#9-healthcare-ai-gym医疗-agent-的多轮强化学习训练场">9. Healthcare AI GYM：医疗 Agent 的多轮强化学习训练场</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#10-aris通过对抗性多-agent-协作实现自主研究">10. ARIS：通过对抗性多 Agent 协作实现自主研究</a></li>
+        <li><a href="#11-workspace-bench-10大规模文件依赖下的-ai-agent-工作空间评测">11. Workspace-Bench 1.0：大规模文件依赖下的 AI Agent 工作空间评测</a></li>
+        <li><a href="#12-physicianbench真实-ehr-环境下的-llm-agent-医生评测">12. PhysicianBench：真实 EHR 环境下的 LLM Agent 医生评测</a></li>
+        <li><a href="#13-iworld-bench交互式世界模型的统一评测基准">13. iWorld-Bench：交互式世界模型的统一评测基准</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#14-答案对了方向却错了transformer-为何数数失败及修复方案">14. 答案对了方向却错了：Transformer 为何数数失败及修复方案</a></li>
+        <li><a href="#15-patre专利审查全流程生成基准">15. PatRe：专利审查全流程生成基准</a></li>
+        <li><a href="#16-surgtemp时序感知的腹腔镜手术视频问答">16. SurgTEMP：时序感知的腹腔镜手术视频问答</a></li>
+      </ol>
+    </li>
+    <li><a href="#-今日统计">📊 今日统计</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>今日新增 <strong>16 篇</strong>论文（已去重，跳过 14 篇历史收录）
+数据来源：HuggingFace Daily Papers
+覆盖方向：Audio LLM · LLM Training · AI Agents · 其他值得关注</p>
+
+    </blockquote>
+<hr>
+<h2 id="-audio-llm">🎙️ Audio LLM
+</h2><h3 id="1-minimind-o开源-01b-语音原生全能模型">1. MiniMind-O：开源 0.1B 语音原生全能模型
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.03937"  target="_blank" rel="noopener"
+    >2605.03937</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.03937.pdf"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p><strong>作者</strong> Jingyao Gong</p>
+<p><strong>摘要</strong> MiniMind-O 是基于 MiniMind 语言模型构建的开源 0.1B 级全能模型，同时接受文本、语音和图像输入，输出文本和流式语音。模型采用 MiniMind 主干作为 Thinker，独立的四层 Talker 由 MiniMind 模块构成。冻结的 SenseVoice-Small 和 SigLIP2 编码器分别提供语音和图像特征，通过轻量级 MLP 映射器注入到模态占位符位置。Talker 读取中间层 Thinker 状态和自回归八层 Mimi-code 缓冲区，说话人控制由专用 speaker token、右对齐参考 codec 提示和预计算 CAM++ 说话人嵌入实现。文章识别出小型全能模型的三个关键设计选择：中间层语义桥接、多模态序列格式和参数高效的八码本接口。</p>
+<p><strong>点评</strong> 这是难得的 0.1B 级别语音-文本-图像全模态开源工作。虽然性能指标不算惊艳（voice-cloning similarity 约 0.6），但完整开放了代码、检查点和训练数据，对社区构建小型端侧全能模型非常有参考价值。三个 scale-critical 设计洞见——中间层桥接、序列格式、码本接口——是本文的核心贡献。</p>
+<hr>
+<h2 id="-llm-training">🔬 LLM Training
+</h2><h3 id="2-openseeker-v2仅用-sft--106k-数据打造-sota-搜索-agent">2. OpenSeeker-v2：仅用 SFT + 10.6K 数据打造 SOTA 搜索 Agent
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.04036"  target="_blank" rel="noopener"
+    >2605.04036</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.04036.pdf"  target="_blank" rel="noopener"
+    >链接</a> · ⬆️ 38</p>
+<p><strong>作者</strong> Yuwen Du, Rui Ye, Shuo Tang 等</p>
+<p><strong>摘要</strong> OpenSeeker-v2 证明简单的 SFT 方法配合高信息量、高难度轨迹数据，就能训练出前沿搜索 Agent。通过三项数据合成改进——扩大知识图谱规模以增强探索、扩展工具集以增加功能广度、严格的低步数过滤——仅用 10.6K 数据，30B 模型在 BrowseComp (46.0%)、BrowseComp-ZH (58.1%)、HLE (34.6%) 和 xbench (78.0%) 上全面超越使用 CPT+SFT+RL 重型流水线的通义 DeepResearch。这是首个由纯学术团队仅用 SFT 达到 SOTA 的搜索 Agent。</p>
+<p><strong>点评</strong> &ldquo;少即是多&quot;的典型案例。工业界砸 CPT+SFT+RL 流水线，学术团队仅靠精心设计的 SFT 数据就赢了，说明数据质量 &gt; 训练复杂度。三项数据合成策略都很实用，值得所有做 Agent 训练的团队学习。</p>
+<hr>
+<h3 id="3-临床-llm-的安全与精度遵循不同的扩展定律">3. 临床 LLM 的安全与精度遵循不同的扩展定律
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.04039"  target="_blank" rel="noopener"
+    >2605.04039</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.04039.pdf"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p><strong>作者</strong> Sebastian Wind, Tri-Thien Nguyen 等</p>
+<p><strong>摘要</strong> 本文引入 SaFE-Scale 框架和 RadSaFE-200 基准，评估临床 LLM 安全性如何随模型规模、证据质量、检索策略等变化。关键发现：干净证据将准确率从 73.5% 提升至 94.1%，同时高风险错误从 12.0% 降至 2.6%；但标准 RAG 和 Agent RAG 未能复现这一安全特征——Agent RAG 虽提高了准确率，高风险错误和危险过度自信仍居高不下。最大上下文提示增加了延迟但未缩小安全差距。临床 LLM 的安全不是规模的自然副产品，而是由证据质量、检索设计和上下文构建塑造的部署属性。</p>
+<p><strong>点评</strong> 这篇对 RAG 在医疗场景的反思非常重要。&ldquo;加了 RAG 就更安全&quot;是个危险的幻觉——不干净的证据反而可能制造新的风险。对做医疗 AI 和高安全场景 RAG 的团队是必读的警示。</p>
+<hr>
+<h3 id="4-oracleproto可复现的-llm-原生预测能力评测框架">4. OracleProto：可复现的 LLM 原生预测能力评测框架
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.03762"  target="_blank" rel="noopener"
+    >2605.03762</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.03762.pdf"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p><strong>作者</strong> Yiding Ma, Chengyun Ruan 等</p>
+<p><strong>摘要</strong> OracleProto 提出了一个可复现的 LLM 预测能力评估框架，通过模型截止时间对齐的样本准入、工具级时间掩码、内容级泄漏检测、离散答案归一化和分层评分，将已解决事件重建为时间边界预测样本。在 FutureX-Past 数据集上实例化，对六个 LLM 的评测显示，OracleProto 将残余泄漏降到 1% 水平，比纯工具级时间过滤低一个数量级。</p>
+<p><strong>点评</strong> 预测能力评测的核心痛点就是数据泄漏——模型可能早就&quot;知道&quot;了答案。OracleProto 的多层防泄漏设计把残余泄漏压到 1%，这个水准在评测方法论上很有价值。对做 LLM 预测/决策评估的人来说是重要参考。</p>
+<hr>
+<h3 id="5-先学会记住再谈遗忘重访-lvlm-反学习基准的基础学习失败">5. 先学会记住，再谈遗忘：重访 LVLM 反学习基准的基础学习失败
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.03759"  target="_blank" rel="noopener"
+    >2605.03759</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.03759.pdf"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p><strong>作者</strong> JuneHyoung Kwon, MiHyeon Kim 等</p>
+<p><strong>摘要</strong> 当前 LVLM 反学习基准使用虚构身份，但忽略了一个关键的一阶段失败：模型根本没有有效记住目标信息，使得后续反学习评估不可靠。本文诊断了&quot;记忆不足&quot;和&quot;多跳诅咒&quot;为根因，提出 ReMem 基准确保通过原则性数据扩展、推理感知 QA 对和多样视觉上下文实现稳健的基础学习，并引入 Exposure 指标从模型内部概率分布量化信息擦除深度。</p>
+<p><strong>点评</strong> 反学习（unlearning）领域经常忽略一个前提：模型得先真正&quot;学会&quot;了才能谈&quot;忘掉&rdquo;。ReMem 的思路——先验证记忆充分性再评估遗忘——看似简单但影响深远。Exposure 指标也比传统的&quot;输出是否包含&quot;更深层。</p>
+<hr>
+<h3 id="6-gui-sd首个面向-gui-定位的策略自蒸馏框架">6. GUI-SD：首个面向 GUI 定位的策略自蒸馏框架
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.00642"  target="_blank" rel="noopener"
+    >2605.00642</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.00642.pdf"  target="_blank" rel="noopener"
+    >链接</a> · ⬆️ 4</p>
+<p><strong>作者</strong> Yan Zhang, Daiqing Wu 等</p>
+<p><strong>摘要</strong> GUI-SD 首次将策略自蒸馏（OPSD）应用于 GUI 定位任务。通过目标边界框和高斯软掩码构建视觉丰富的教师特权上下文，以及基于熵引导的蒸馏策略——根据数字显著性和教师置信度自适应加权 token——在六个 GUI 定位基准上一致超越 GRPO 方法和朴素 OPSD，在准确率和训练效率上均有优势。</p>
+<p><strong>点评</strong> GRPO 在 GUI Agent 领域很火，但它需要多次 rollout 计算量大。GUI-SD 用单次 rollout 的自蒸馏就达到了更好效果，而且针对 GUI 定位中数字（坐标）的特殊性做了熵引导加权，设计很到位。做 GUI Agent 训练的值得关注。</p>
+<hr>
+<h3 id="7-heavyskill将深度思考视为-agent-框架的内在技能">7. HeavySkill：将深度思考视为 Agent 框架的内在技能
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.02396"  target="_blank" rel="noopener"
+    >2605.02396</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.02396.pdf"  target="_blank" rel="noopener"
+    >链接</a> · ⬆️ 12</p>
+<p><strong>作者</strong> Jianing Wang, Linsen Guo 等</p>
+<p><strong>摘要</strong> HeavySkill 提出将深度思考（heavy thinking）不仅视为编排框架中的执行单元，更视为内化在模型参数中驱动编排器解决复杂任务的内在技能。识别出这种技能的两阶段流水线——并行推理后摘要——可以在任何 Agent 框架之下运作。实证表明这种内在技能一致优于 Best-of-N 策略，更强的 LLM 甚至能逼近 Pass@N 性能。通过 RL 可以进一步扩展深度思考的深度和宽度，为自演化 LLM 提供了路径。</p>
+<p><strong>点评</strong> 这篇视角很有意思——与其堆 Agent 框架的复杂度，不如让模型本身内化&quot;深度思考&quot;作为一项技能。并行推理→摘要的两阶段模式简洁但有效，而且证明了 RL 可以进一步扩展这种能力。对&quot;到底是框架重要还是模型重要&quot;这个争论提供了一个有力论据。</p>
+<hr>
+<h3 id="8-apo将漂移转化为约束非平稳环境中的鲁棒推理对齐">8. APO：将漂移转化为约束——非平稳环境中的鲁棒推理对齐
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2510.04142"  target="_blank" rel="noopener"
+    >2510.04142</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2510.04142.pdf"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p><strong>作者</strong> Xiaoyu Yang, En Yu 等</p>
+<p><strong>摘要</strong> APO 针对非平稳环境中多源推理对齐的挑战，将模型间分歧不视为噪声而视为动态负约束。两阶段协议：先通过监督引导将目标模型投射到源模型的能力联合中，再通过约束感知优化和多数负 Plackett-Luce 目标显式抑制漂移轨迹。在胸部 X 光解读上，7B 模型的鲁棒性超越了专有源模型。同时发布 CXR-MAX 基准，包含 170,982 条来自七个 MLLM 的推理轨迹。</p>
+<p><strong>点评</strong> 多模型推理对齐中&quot;源模型本身就在漂移&quot;这个问题确实被低估了。APO 的思路是&quot;用分歧作为约束而非噪声&rdquo;——把漂移当成负样本信号，巧妙。跨模型对齐在联邦学习/模型融合场景都有应用潜力。</p>
+<hr>
+<h3 id="9-healthcare-ai-gym医疗-agent-的多轮强化学习训练场">9. Healthcare AI GYM：医疗 Agent 的多轮强化学习训练场
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.02943"  target="_blank" rel="noopener"
+    >2605.02943</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.02943.pdf"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p><strong>作者</strong> Minbyul Jeong</p>
+<p><strong>摘要</strong> 本文研究多轮 Agent RL 训练医疗 AI 的挑战。在覆盖 10 个临床领域、3.6K+ 任务、135 个工具和 828K 医学段落的 gym 环境上，发现 Agent 多轮结构退化为冗长的单轮独白——响应长度单调爆炸而工具使用频率同时衰减。提出 Turn-level Truncated On-Policy Distillation (TT-OPD)，用梯度无关的 EMA 教师提供每轮密集 KL 正则，在 18 个基准的 10 个上取得最佳性能，平均提升 +3.9 pp。</p>
+<p><strong>点评</strong> &ldquo;多轮 Agent 退化成单轮独白&quot;这个现象太真实了——RL 训练的 Agent 容易学会&quot;一次性把所有推理都写出来&quot;而不是真正交互。TT-OPD 的逐轮蒸馏 + EMA 教师设计很实用，解决了 GRPO 的训练不稳定和响应爆炸问题。做 Agent RL 训练的必读。</p>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="10-aris通过对抗性多-agent-协作实现自主研究">10. ARIS：通过对抗性多 Agent 协作实现自主研究
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.03042"  target="_blank" rel="noopener"
+    >2605.03042</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.03042.pdf"  target="_blank" rel="noopener"
+    >链接</a> · ⬆️ 68</p>
+<p><strong>作者</strong> Ruofeng Yang, Yongcan Li, Shuai Li</p>
+<p><strong>摘要</strong> ARIS (Auto-Research-in-sleep) 是一个开源自主研究框架，核心设计是跨模型对抗协作：执行器模型推进研究进度，来自不同模型家族的审查器批评中间产物并要求修订。三层架构——执行层（65+ 可复用技能、MCP 集成、持久研究 wiki）、编排层（5 个端到端工作流）、保障层（三阶段声明验证、五轮科学编辑、数学证明检查和 PDF 视觉检查）。自我改进循环记录研究轨迹并提出框架改进建议。</p>
+<p><strong>点评</strong> 热度最高的 Agent 论文之一（68 upvotes），核心卖点是&quot;跨模型对抗&rdquo;——用不同模型家族的模型互相审查，避免同模型的自我确认偏误。保障层的三阶段验证设计相当扎实。对做 AI for Science 和自动化研究的团队很有参考价值。</p>
+<hr>
+<h3 id="11-workspace-bench-10大规模文件依赖下的-ai-agent-工作空间评测">11. Workspace-Bench 1.0：大规模文件依赖下的 AI Agent 工作空间评测
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.03596"  target="_blank" rel="noopener"
+    >2605.03596</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.03596.pdf"  target="_blank" rel="noopener"
+    >链接</a> · ⬆️ 2</p>
+<p><strong>作者</strong> Zirui Tang, Xuanhe Zhou 等</p>
+<p><strong>摘要</strong> Workspace-Bench 评估 AI Agent 在真实工作空间任务上的表现，构建了 5 种工作者画像、74 种文件类型、20,476 个文件（最大 20GB）和 388 个任务，每个任务配有独立的文件依赖图，跨 7,399 个评分标准评估。最佳 Agent 仅达 68.7%，远低于人类的 80.7%，平均仅 47.4%。还提供 Lite 版本（100 任务）降低约 70% 评估成本。</p>
+<p><strong>点评</strong> 终于有人认真做&quot;工作空间&quot;级别的 Agent 评测了。之前大多是在几个文件上做玩具任务，这里直接上 2 万个文件、20GB 规模。人类 80.7% vs Agent 68.7% 的差距说明现实工作空间任务远未解决。文件依赖图的设计是亮点。</p>
+<hr>
+<h3 id="12-physicianbench真实-ehr-环境下的-llm-agent-医生评测">12. PhysicianBench：真实 EHR 环境下的 LLM Agent 医生评测
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.02240"  target="_blank" rel="noopener"
+    >2605.02240</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.02240.pdf"  target="_blank" rel="noopener"
+    >链接</a> · ⬆️ 6</p>
+<p><strong>作者</strong> Ruoqi Liu, Imran Q. Mohiuddin 等</p>
+<p><strong>摘要</strong> PhysicianBench 在真实电子健康记录（EHR）环境中评估 LLM Agent 执行医生任务的能力。100 个长时域任务改编自真实的初级保健与专科医生间会诊案例，每个任务平均需要 27 次工具调用。涵盖 21 个专科，670 个结构化检查点。最佳模型仅 46% 成功率，开源模型最高仅 19%，揭示了当前 Agent 能力与真实临床工作流需求之间的巨大差距。</p>
+<p><strong>点评</strong> 医疗 Agent 评测的标杆之作——不是问模型&quot;这个病怎么治&quot;，而是让它在真实 EHR 系统里完成从调阅病史到开处方到写文档的完整工作流。46% 的成功率说明 Agent 在真实临床场景还远不可用，但这个基准本身为未来进步提供了清晰标尺。</p>
+<hr>
+<h3 id="13-iworld-bench交互式世界模型的统一评测基准">13. iWorld-Bench：交互式世界模型的统一评测基准
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.03941"  target="_blank" rel="noopener"
+    >2605.03941</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.03941.pdf"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p><strong>作者</strong> Jianjie Fang, Yingshan Lei 等</p>
+<p><strong>摘要</strong> iWorld-Bench 是针对交互式世界模型的全维度评测基准，构建了 330K 视频片段的数据集，精选 2.1K 高质量样本，引入统一动作生成框架（Action Generation Framework）将不同交互模态的世界模型统一评估，设计 6 种任务类型生成 4.9K 测试样本，评测了 14 个代表性世界模型，揭示关键局限性。</p>
+<p><strong>点评</strong> 世界模型评测一直很碎片——不同模型的交互接口不同，很难横向比较。iWorld-Bench 的统一动作生成框架解决了这个问题，让不同模态的世界模型可以在同一框架下评估。330K 视频数据集的规模也很可观。</p>
+<hr>
+<h2 id="-其他值得关注">📌 其他值得关注
+</h2><h3 id="14-答案对了方向却错了transformer-为何数数失败及修复方案">14. 答案对了方向却错了：Transformer 为何数数失败及修复方案
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.03258"  target="_blank" rel="noopener"
+    >2605.03258</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.03258.pdf"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p><strong>作者</strong> Gabriel Garcia</p>
+<p><strong>摘要</strong> LLM 在简单计数任务上经常失败。本文发现：线性探针能从中间层近乎完美地恢复正确计数（R² &gt; 0.99），但编码计数的内部方向与数字 token 的输出头行近乎正交（|cos| ≤ 0.032）。模型&quot;知道&quot;答案但输出通道几何错位。仅更新输出头的数字行（36,864 参数）将受限数字预测从 60.7% 提升至 100%，但无法修复自回归生成；而注意力 Q/V 上的小 LoRA（7.67M 参数）在真正的贪婪自回归生成中达到 83.1%。计数失败的根因是几何读出瓶颈，而非内部表示失败。</p>
+<p><strong>点评</strong> &ldquo;模型知道但说不出来&rdquo;——这个几何读出瓶颈的发现非常优雅。用探针证明信息存在、用余弦相似度证明方向错位、再用定向干预修复，逻辑链很漂亮。更深远的意义是：很多看似的&quot;能力缺失&quot;可能只是输出对齐问题，而非真正的理解失败。</p>
+<hr>
+<h3 id="15-patre专利审查全流程生成基准">15. PatRe：专利审查全流程生成基准
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2605.03571"  target="_blank" rel="noopener"
+    >2605.03571</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2605.03571.pdf"  target="_blank" rel="noopener"
+    >链接</a> · ⬆️ 4</p>
+<p><strong>作者</strong> Qiyao Wang, Xinyi Chen 等</p>
+<p><strong>摘要</strong> PatRe 是首个建模专利审查完整生命周期的基准，包括审查意见（Office Action）生成和申请人答辩。480 个真实案例，支持 oracle 和检索模拟评估设置，将专利审查重新定义为动态、多轮的论证与回应过程。实验揭示了专有模型与开源模型的差异，以及审查员分析和申请人答辩之间的任务不对称性。</p>
+<p><strong>点评</strong> 把专利审查建模成多轮对抗过程——类似学术同行评审但更结构化——是个很聪明的想法。专利领域 LLM 应用潜力巨大但研究很少，PatRe 填补了空白。任务不对称性的发现（生成审查意见 vs 答辩难度不同）也有实用价值。</p>
+<hr>
+<h3 id="16-surgtemp时序感知的腹腔镜手术视频问答">16. SurgTEMP：时序感知的腹腔镜手术视频问答
+</h3><p><strong>论文</strong> <a class="link" href="https://arxiv.org/abs/2603.29962"  target="_blank" rel="noopener"
+    >2603.29962</a> · <strong>PDF</strong> <a class="link" href="https://arxiv.org/pdf/2603.29962.pdf"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p><strong>作者</strong> Shi Li, Vinkle Srivastav 等</p>
+<p><strong>摘要</strong> SurgTEMP 提出查询引导的 token 选择模块构建分层视觉记忆（空间+时间记忆库），以及手术能力进展（SCP）训练方案，支持变长手术视频的有效建模。同时发布 CholeVidQA-32K 数据集，包含 32K 开放式 QA 对和 3,855 视频段（约 128 小时），按感知-评估-推理三级层次组织 11 个任务。在多模态和视频 LLM 上取得显著改进。</p>
+<p><strong>点评</strong> 手术视频理解是 AI 医疗的重要方向，但时序建模一直薄弱——手术是过程，不是单帧。SurgTEMP 的分层记忆库（空间+时间）和 SCP 训练方案直接针对这个痛点。32K QA 对的大规模数据集本身也是重要贡献。</p>
+<hr>
+<h2 id="-今日统计">📊 今日统计
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方向</th>
+          <th>数量</th>
+          <th>代表论文</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Audio LLM</td>
+          <td>1</td>
+          <td>MiniMind-O</td>
+      </tr>
+      <tr>
+          <td>LLM Training</td>
+          <td>8</td>
+          <td>OpenSeeker-v2, HeavySkill, Healthcare AI GYM</td>
+      </tr>
+      <tr>
+          <td>AI Agents</td>
+          <td>4</td>
+          <td>ARIS, Workspace-Bench, PhysicianBench</td>
+      </tr>
+      <tr>
+          <td>其他值得关注</td>
+          <td>3</td>
+          <td>Transformer 计数失败, PatRe, SurgTEMP</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>今日关键趋势：</strong></p>
+<ul>
+<li><strong>Agent RL 训练稳定性</strong>成为热点——Healthcare AI GYM、T²PO、GUI-SD 都在解决 RL 训练 Agent 时的退化/不稳定问题</li>
+<li><strong>基准成熟化</strong>——Workspace-Bench、PhysicianBench、iWorld-Bench 都在构建更真实、更复杂的评测环境，揭示当前模型的真实能力边界</li>
+<li><strong>数据 &gt; 流水线</strong>——OpenSeeker-v2 用 10.6K 精选数据 + SFT 击败重工业流水线，再次印证数据质量的决定性作用</li>
+</ul>
+<hr>
+<p><em>Generated by 爱弥斯 · 旅途愉快 ✨</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-06/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-06</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-05/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-05</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-04/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-04</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-03/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-03</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-02/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-02</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
