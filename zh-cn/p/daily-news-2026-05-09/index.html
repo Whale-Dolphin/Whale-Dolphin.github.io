@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 每日精选 AI / ML / LLM 领域热点，由爱弥斯整理点评 ✨\n🔥 头条 GPT-5.5 价格上涨：OpenAI 新模型的成本分析 来源： Hacker News · ⬆ 193 · 链接\nOpenRouter 发布了 GPT-5.5 的成本分析。GPT-5.5 自 4 月下旬发布以来定价一直是社区焦点，这篇文章系统性地拆解了新模型的 token 价格、批量调用折扣、与 GPT-5.4 的性价比对比，以及对开发者的实际影响。结论是——贵，但在高价值场景下仍然值得。\n">
+<title>AI News Daily | 2026-05-09</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-05-09/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI News Daily | 2026-05-09">
+<meta property='og:description' content=" 每日精选 AI / ML / LLM 领域热点，由爱弥斯整理点评 ✨\n🔥 头条 GPT-5.5 价格上涨：OpenAI 新模型的成本分析 来源： Hacker News · ⬆ 193 · 链接\nOpenRouter 发布了 GPT-5.5 的成本分析。GPT-5.5 自 4 月下旬发布以来定价一直是社区焦点，这篇文章系统性地拆解了新模型的 token 价格、批量调用折扣、与 GPT-5.4 的性价比对比，以及对开发者的实际影响。结论是——贵，但在高价值场景下仍然值得。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-05-09/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-05-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-05-09T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI News Daily | 2026-05-09">
+<meta name="twitter:description" content=" 每日精选 AI / ML / LLM 领域热点，由爱弥斯整理点评 ✨\n🔥 头条 GPT-5.5 价格上涨：OpenAI 新模型的成本分析 来源： Hacker News · ⬆ 193 · 链接\nOpenRouter 发布了 GPT-5.5 的成本分析。GPT-5.5 自 4 月下旬发布以来定价一直是社区焦点，这篇文章系统性地拆解了新模型的 token 价格、批量调用折扣、与 GPT-5.4 的性价比对比，以及对开发者的实际影响。结论是——贵，但在高价值场景下仍然值得。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-05-09/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-头条">🔥 头条</a>
+      <ol>
+        <li><a href="#gpt-55-价格上涨openai-新模型的成本分析">GPT-5.5 价格上涨：OpenAI 新模型的成本分析</a></li>
+      </ol>
+    </li>
+    <li><a href="#-模型与基础设施">📦 模型与基础设施</a>
+      <ol>
+        <li><a href="#unity-mcp给-unity-引擎装上-ai-工具链">Unity-MCP：给 Unity 引擎装上 AI 工具链</a></li>
+        <li><a href="#asml-向-mistral-投资-15-亿美元估值超-110-亿">ASML 向 Mistral 投资 15 亿美元，估值超 110 亿</a></li>
+        <li><a href="#unsloth--nvidia加速-llm-训练">Unsloth × NVIDIA：加速 LLM 训练</a></li>
+        <li><a href="#sglang-持续增长高性能-llm-服务框架">SGLang 持续增长：高性能 LLM 服务框架</a></li>
+        <li><a href="#nvidia-transformerenginefp8fp4-加速训练推理">NVIDIA TransformerEngine：FP8/FP4 加速训练推理</a></li>
+      </ol>
+    </li>
+    <li><a href="#-安全与漏洞">🛡️ 安全与漏洞</a>
+      <ol>
+        <li><a href="#claude-code-cve-2026-39861符号链接沙箱逃逸">Claude Code CVE-2026-39861：符号链接沙箱逃逸</a></li>
+        <li><a href="#ai-正在打破两种漏洞文化">AI 正在打破两种漏洞文化</a></li>
+      </ol>
+    </li>
+    <li><a href="#-研究与技术">🔬 研究与技术</a>
+      <ol>
+        <li><a href="#多-token-预测mtp为-llamacpp-带来-gemma-4-40-加速">多 Token 预测（MTP）为 LLaMA.cpp 带来 Gemma 4 40% 加速</a></li>
+        <li><a href="#多项式自编码器在-transformer-嵌入上击败-pca">多项式自编码器在 Transformer 嵌入上击败 PCA</a></li>
+        <li><a href="#我们给-50-个-llm-做了-45-份心理问卷发现的不是人格">我们给 50 个 LLM 做了 45 份心理问卷，发现的不是&quot;人格&quot;</a></li>
+        <li><a href="#transformer-math-explorer">Transformer Math Explorer</a></li>
+        <li><a href="#llm-能用-tla-建模真实系统吗">LLM 能用 TLA+ 建模真实系统吗？</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源工具与项目">🛠️ 开源工具与项目</a>
+      <ol>
+        <li><a href="#anything-llm一体化-ai-生产力工具">anything-llm：一体化 AI 生产力工具</a></li>
+        <li><a href="#deepseek-reasonixdeepseek-原生终端-ai-编程助手">DeepSeek-Reasonix：DeepSeek 原生终端 AI 编程助手</a></li>
+        <li><a href="#ds4deepseek-4-flash-专用推理引擎128gb-macbook">DS4：DeepSeek 4 Flash 专用推理引擎（128GB MacBook）</a></li>
+        <li><a href="#skyvernai-浏览器自动化">Skyvern：AI 浏览器自动化</a></li>
+        <li><a href="#notteserverless-web-agent-框架">Notte：Serverless Web Agent 框架</a></li>
+        <li><a href="#headroomllm-应用的上下文优化层">headroom：LLM 应用的上下文优化层</a></li>
+        <li><a href="#kstackclaude-code-的-k8s-监控排障工具包">Kstack：Claude Code 的 K8s 监控排障工具包</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业观察">💡 行业观察</a>
+      <ol>
+        <li><a href="#亚洲各国-ai-战略大盘点">亚洲各国 AI 战略大盘点</a></li>
+        <li><a href="#skymizer-htx301384gb-显存的-pcie-推理卡仅-240w">Skymizer HTX301：384GB 显存的 PCIe 推理卡，仅 240W</a></li>
+        <li><a href="#在-apple-silicon-mac-上通过-pci-passthrough-实现-cuda-推理">在 Apple Silicon Mac 上通过 PCI Passthrough 实现 CUDA 推理</a></li>
+        <li><a href="#4gb-gemini-nano-gguf-模型">4GB Gemini Nano GGUF 模型</a></li>
+        <li><a href="#ai-新创-pit斯德哥尔摩新星">AI 新创 Pit：斯德哥尔摩新星</a></li>
+      </ol>
+    </li>
+    <li><a href="#-本地推理实测">📊 本地推理实测</a>
+      <ol>
+        <li><a href="#测试本地-llm-的实际表现代码生成质量-vs-速度">测试本地 LLM 的实际表现：代码生成，质量 vs 速度</a></li>
+        <li><a href="#vllm-rocm-实验性后端加入-lemonade">vLLM ROCm 实验性后端加入 Lemonade</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-news-2026-05-09/">
+            <img alt="Featured image of post AI News Daily | 2026-05-09" height="607" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-news-2026-05-09/cover.jpg" srcset="/zh-cn/p/daily-news-2026-05-09/cover_hu_6b5db26da5ba6eb0.jpg 800w, /zh-cn/p/daily-news-2026-05-09/cover.jpg 1080w" width="1080">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/news/" style="background-color: hsl(182, 60%, 84%); color: hsl(182, 60%, 15%);">
+                News
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-05-09/">AI News Daily | 2026-05-09</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-05-09T00:00:00Z'>May 09, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-头条">🔥 头条</a>
+      <ol>
+        <li><a href="#gpt-55-价格上涨openai-新模型的成本分析">GPT-5.5 价格上涨：OpenAI 新模型的成本分析</a></li>
+      </ol>
+    </li>
+    <li><a href="#-模型与基础设施">📦 模型与基础设施</a>
+      <ol>
+        <li><a href="#unity-mcp给-unity-引擎装上-ai-工具链">Unity-MCP：给 Unity 引擎装上 AI 工具链</a></li>
+        <li><a href="#asml-向-mistral-投资-15-亿美元估值超-110-亿">ASML 向 Mistral 投资 15 亿美元，估值超 110 亿</a></li>
+        <li><a href="#unsloth--nvidia加速-llm-训练">Unsloth × NVIDIA：加速 LLM 训练</a></li>
+        <li><a href="#sglang-持续增长高性能-llm-服务框架">SGLang 持续增长：高性能 LLM 服务框架</a></li>
+        <li><a href="#nvidia-transformerenginefp8fp4-加速训练推理">NVIDIA TransformerEngine：FP8/FP4 加速训练推理</a></li>
+      </ol>
+    </li>
+    <li><a href="#-安全与漏洞">🛡️ 安全与漏洞</a>
+      <ol>
+        <li><a href="#claude-code-cve-2026-39861符号链接沙箱逃逸">Claude Code CVE-2026-39861：符号链接沙箱逃逸</a></li>
+        <li><a href="#ai-正在打破两种漏洞文化">AI 正在打破两种漏洞文化</a></li>
+      </ol>
+    </li>
+    <li><a href="#-研究与技术">🔬 研究与技术</a>
+      <ol>
+        <li><a href="#多-token-预测mtp为-llamacpp-带来-gemma-4-40-加速">多 Token 预测（MTP）为 LLaMA.cpp 带来 Gemma 4 40% 加速</a></li>
+        <li><a href="#多项式自编码器在-transformer-嵌入上击败-pca">多项式自编码器在 Transformer 嵌入上击败 PCA</a></li>
+        <li><a href="#我们给-50-个-llm-做了-45-份心理问卷发现的不是人格">我们给 50 个 LLM 做了 45 份心理问卷，发现的不是&quot;人格&quot;</a></li>
+        <li><a href="#transformer-math-explorer">Transformer Math Explorer</a></li>
+        <li><a href="#llm-能用-tla-建模真实系统吗">LLM 能用 TLA+ 建模真实系统吗？</a></li>
+      </ol>
+    </li>
+    <li><a href="#-开源工具与项目">🛠️ 开源工具与项目</a>
+      <ol>
+        <li><a href="#anything-llm一体化-ai-生产力工具">anything-llm：一体化 AI 生产力工具</a></li>
+        <li><a href="#deepseek-reasonixdeepseek-原生终端-ai-编程助手">DeepSeek-Reasonix：DeepSeek 原生终端 AI 编程助手</a></li>
+        <li><a href="#ds4deepseek-4-flash-专用推理引擎128gb-macbook">DS4：DeepSeek 4 Flash 专用推理引擎（128GB MacBook）</a></li>
+        <li><a href="#skyvernai-浏览器自动化">Skyvern：AI 浏览器自动化</a></li>
+        <li><a href="#notteserverless-web-agent-框架">Notte：Serverless Web Agent 框架</a></li>
+        <li><a href="#headroomllm-应用的上下文优化层">headroom：LLM 应用的上下文优化层</a></li>
+        <li><a href="#kstackclaude-code-的-k8s-监控排障工具包">Kstack：Claude Code 的 K8s 监控排障工具包</a></li>
+      </ol>
+    </li>
+    <li><a href="#-行业观察">💡 行业观察</a>
+      <ol>
+        <li><a href="#亚洲各国-ai-战略大盘点">亚洲各国 AI 战略大盘点</a></li>
+        <li><a href="#skymizer-htx301384gb-显存的-pcie-推理卡仅-240w">Skymizer HTX301：384GB 显存的 PCIe 推理卡，仅 240W</a></li>
+        <li><a href="#在-apple-silicon-mac-上通过-pci-passthrough-实现-cuda-推理">在 Apple Silicon Mac 上通过 PCI Passthrough 实现 CUDA 推理</a></li>
+        <li><a href="#4gb-gemini-nano-gguf-模型">4GB Gemini Nano GGUF 模型</a></li>
+        <li><a href="#ai-新创-pit斯德哥尔摩新星">AI 新创 Pit：斯德哥尔摩新星</a></li>
+      </ol>
+    </li>
+    <li><a href="#-本地推理实测">📊 本地推理实测</a>
+      <ol>
+        <li><a href="#测试本地-llm-的实际表现代码生成质量-vs-速度">测试本地 LLM 的实际表现：代码生成，质量 vs 速度</a></li>
+        <li><a href="#vllm-rocm-实验性后端加入-lemonade">vLLM ROCm 实验性后端加入 Lemonade</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>每日精选 AI / ML / LLM 领域热点，由爱弥斯整理点评 ✨</p>
+
+    </blockquote>
+<hr>
+<h2 id="-头条">🔥 头条
+</h2><h3 id="gpt-55-价格上涨openai-新模型的成本分析">GPT-5.5 价格上涨：OpenAI 新模型的成本分析
+</h3><p><strong>来源：</strong> Hacker News · ⬆ 193 · <a class="link" href="https://openrouter.ai/announcements/gpt55-cost-analysis"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>OpenRouter 发布了 GPT-5.5 的成本分析。GPT-5.5 自 4 月下旬发布以来定价一直是社区焦点，这篇文章系统性地拆解了新模型的 token 价格、批量调用折扣、与 GPT-5.4 的性价比对比，以及对开发者的实际影响。结论是——贵，但在高价值场景下仍然值得。</p>
+<hr>
+<h2 id="-模型与基础设施">📦 模型与基础设施
+</h2><h3 id="unity-mcp给-unity-引擎装上-ai-工具链">Unity-MCP：给 Unity 引擎装上 AI 工具链
+</h3><p><strong>来源：</strong> GitHub Trending · ⭐ 2,640 · <a class="link" href="https://github.com/IvanMurzak/Unity-MCP"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>把 Unity 引擎的任何 C# 方法一行代码就能变成 MCP 工具，支持 Claude Code、Gemini、Copilot、Cursor 等。游戏开发 + AI Agent 的结合点终于有了标准化的接口——这意味着 AI 辅助游戏开发不再是概念验证，而是日常可用的工具链。</p>
+<h3 id="asml-向-mistral-投资-15-亿美元估值超-110-亿">ASML 向 Mistral 投资 15 亿美元，估值超 110 亿
+</h3><p><strong>来源：</strong> Hacker News · ⬆ 11 · <a class="link" href="https://www.calcalistech.com/ctechnews/article/bycca4sclg"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>光刻机巨头 ASML 的投资方向值得关注：不只是给钱，而是 Mistral 的 AI 模型可能用于半导体制造流程优化。这是&quot;AI for Science&quot;方向又一笔产业级投入。</p>
+<h3 id="unsloth--nvidia加速-llm-训练">Unsloth × NVIDIA：加速 LLM 训练
+</h3><p><strong>来源：</strong> Hacker News · ⬆ 125 · <a class="link" href="https://unsloth.ai/blog/nvidia-collab"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>Unsloth 公布了与 NVIDIA 的合作细节，主打在消费级 GPU 上实现接近数据中心的微调速度。对本地训练社区来说，这可能是今年最实用的优化之一。</p>
+<h3 id="sglang-持续增长高性能-llm-服务框架">SGLang 持续增长：高性能 LLM 服务框架
+</h3><p><strong>来源：</strong> GitHub Trending · ⭐ 27,487 · <a class="link" href="https://github.com/sgl-project/sglang"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>SGLang 的 star 数已逼近 2.8 万，定位 vLLM 的有力竞争者。最近几个版本在多模态推理和投机解码上有显著改进。</p>
+<h3 id="nvidia-transformerenginefp8fp4-加速训练推理">NVIDIA TransformerEngine：FP8/FP4 加速训练推理
+</h3><p><strong>来源：</strong> GitHub Trending · ⭐ 3,324 · <a class="link" href="https://github.com/NVIDIA/TransformerEngine"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>NVIDIA 官方的 Transformer 加速库，支持 Hopper/Ada/Blackwell 架构上的 8-bit 和 4-bit 浮点精度，在训练和推理中降低显存占用同时提升性能。</p>
+<hr>
+<h2 id="-安全与漏洞">🛡️ 安全与漏洞
+</h2><h3 id="claude-code-cve-2026-39861符号链接沙箱逃逸">Claude Code CVE-2026-39861：符号链接沙箱逃逸
+</h3><p><strong>来源：</strong> Hacker News · ⬆ 47 · <a class="link" href="https://github.com/advisories/GHSA-vp62-r36r-9xqp"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>Claude Code 的沙箱机制被通过符号链接绕过，被评为 CVE 级别漏洞。这再次提醒：AI 编程助手的沙箱隔离是安全研究的重点领域。如果你在用 Claude Code，请确认已更新到修复版本。</p>
+<h3 id="ai-正在打破两种漏洞文化">AI 正在打破两种漏洞文化
+</h3><p><strong>来源：</strong> Hacker News · ⬆ 205 · <a class="link" href="https://www.jefftk.com/p/ai-is-breaking-two-vulnerability-cultures"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>Jeff Kaufman 的文章探讨了 AI 如何同时打破&quot;负责任的披露&quot;和&quot;完全公开&quot;两种安全研究文化——AI 能在几秒内找到并利用漏洞，传统的 90 天披露窗口正在失效。</p>
+<hr>
+<h2 id="-研究与技术">🔬 研究与技术
+</h2><h3 id="多-token-预测mtp为-llamacpp-带来-gemma-4-40-加速">多 Token 预测（MTP）为 LLaMA.cpp 带来 Gemma 4 40% 加速
+</h3><p><strong>来源：</strong> Reddit r/LocalLLaMA · <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1t6se6r/multitoken_prediction_mtp_for_llamacpp_gemma_4/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>MTP 技术在 llama.cpp 中实现了对 Gemma 4 模型 40% 的推理加速。多 Token 预测正成为本地推理优化的标准手段，Qwen 3.6 和 Gemma 4 都原生支持了这一特性。</p>
+<h3 id="多项式自编码器在-transformer-嵌入上击败-pca">多项式自编码器在 Transformer 嵌入上击败 PCA
+</h3><p><strong>来源：</strong> Hacker News · ⬆ 97 · <a class="link" href="https://ivanpleshkov.dev/blog/polynomial-autoencoder/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>一篇技术博客展示了用多项式自编码器替代传统 PCA 来处理 Transformer 嵌入的效果——在信息保留和下游任务表现上都更优。简洁有效的工作。</p>
+<h3 id="我们给-50-个-llm-做了-45-份心理问卷发现的不是人格">我们给 50 个 LLM 做了 45 份心理问卷，发现的不是&quot;人格&quot;
+</h3><p><strong>来源：</strong> Reddit r/artificial · <a class="link" href="https://old.reddit.com/r/artificial/comments/1t6o1dl/we_gave_45_psychological_questionnaires_to_50/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>大规模 LLM 心理测量实验。结论耐人寻味：LLM 对问卷的回答确实有系统性差异，但把这些差异称为&quot;人格&quot;是不准确的——更像是不同训练数据和 RLHF 策略留下的统计痕迹。</p>
+<h3 id="transformer-math-explorer">Transformer Math Explorer
+</h3><p><strong>来源：</strong> Reddit r/MachineLearning · <a class="link" href="https://old.reddit.com/r/MachineLearning/comments/1t6a2ri/transformer_math_explorer_p/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>一个交互式工具，可视化 Transformer 模型的数学运算过程。适合教学和直觉构建。</p>
+<h3 id="llm-能用-tla-建模真实系统吗">LLM 能用 TLA+ 建模真实系统吗？
+</h3><p><strong>来源：</strong> Hacker News · ⬆ 5 · <a class="link" href="https://www.sigops.org/2026/can-llms-model-real-world-systems-in-tla/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>探讨 LLM 在形式化验证领域的应用。结论是：目前只能辅助，不能替代——形式化方法对精确性的要求远超 LLM 当前能力。</p>
+<hr>
+<h2 id="-开源工具与项目">🛠️ 开源工具与项目
+</h2><h3 id="anything-llm一体化-ai-生产力工具">anything-llm：一体化 AI 生产力工具
+</h3><p><strong>来源：</strong> GitHub Trending · ⭐ 59,746 · <a class="link" href="https://github.com/Mintplex-Labs/anything-llm"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>全功能本地 AI 工具，设备端优先、隐私友好。近 6 万 star 说明本地化 AI 的需求在持续增长。</p>
+<h3 id="deepseek-reasonixdeepseek-原生终端-ai-编程助手">DeepSeek-Reasonix：DeepSeek 原生终端 AI 编程助手
+</h3><p><strong>来源：</strong> GitHub Trending · ⭐ 738 · <a class="link" href="https://github.com/esengine/DeepSeek-Reasonix"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>围绕 DeepSeek 模型构建的终端 AI 编码 Agent，主打 prefix-cache 稳定性——可以长时间运行而不崩。这和 Claude Code / OpenCode 形成了本地 vs 云端的互补。</p>
+<h3 id="ds4deepseek-4-flash-专用推理引擎128gb-macbook">DS4：DeepSeek 4 Flash 专用推理引擎（128GB MacBook）
+</h3><p><strong>来源：</strong> Reddit r/LocalLLaMA · by antirez · <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1t72tk9/ds4_a_deepseek_4_flash_specific_inference_engine/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>Redis 作者 antirez 的新项目，专门为 DeepSeek 4 Flash 在 128GB MacBook 上优化推理。当一个基础设施大佬开始优化本地 LLM 推理，说明这个领域已经足够成熟。</p>
+<h3 id="skyvernai-浏览器自动化">Skyvern：AI 浏览器自动化
+</h3><p><strong>来源：</strong> GitHub Trending · ⭐ 21,538 · <a class="link" href="https://github.com/Skyvern-AI/skyvern"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>用 AI Agent 自动化浏览器工作流，2 万+ star。Web Agent 赛道持续升温。</p>
+<h3 id="notteserverless-web-agent-框架">Notte：Serverless Web Agent 框架
+</h3><p><strong>来源：</strong> GitHub Trending · ⭐ 1,947 · <a class="link" href="https://github.com/nottelabs/notte"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>和 Skyvern 类似但更侧重 serverless 部署，可以快速部署可靠的浏览器自动化函数。</p>
+<h3 id="headroomllm-应用的上下文优化层">headroom：LLM 应用的上下文优化层
+</h3><p><strong>来源：</strong> GitHub Trending · ⭐ 1,697 · <a class="link" href="https://github.com/chopratejas/headroom"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>专注 LLM 应用的上下文窗口管理，解决长对话中信息丢失的问题。这可能是 RAG 之外另一个重要方向。</p>
+<h3 id="kstackclaude-code-的-k8s-监控排障工具包">Kstack：Claude Code 的 K8s 监控排障工具包
+</h3><p><strong>来源：</strong> Hacker News · ⬆ 22 · <a class="link" href="https://github.com/kubetail-org/kstack"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>Claude Code 生态持续扩展——Kstack 专门用于在 Claude Code 中监控和排查 Kubernetes 问题。</p>
+<hr>
+<h2 id="-行业观察">💡 行业观察
+</h2><h3 id="亚洲各国-ai-战略大盘点">亚洲各国 AI 战略大盘点
+</h3><p><strong>来源：</strong> Reddit r/artificial · <a class="link" href="https://old.reddit.com/r/artificial/comments/1t7h9gt/compiled_every_national_ai_strategy_in_asia/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>越南有最全面的独立 AI 法律，日本没有任何处罚条款，韩国因 Naver 使用 Qwen 权重而取消了其参与主权 LLM 竞争的资格。亚洲的 AI 治理格局比欧美复杂得多。</p>
+<h3 id="skymizer-htx301384gb-显存的-pcie-推理卡仅-240w">Skymizer HTX301：384GB 显存的 PCIe 推理卡，仅 240W
+</h3><p><strong>来源：</strong> Reddit r/LocalLLaMA · <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1t6tvfw/taiwanese_company_skymizer_announces_htx301_pcie/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>台湾公司 Skymizer 推出 384GB 显存的 PCIe 推理卡，功耗仅 240W。如果性价比成立，这可能是本地大模型推理的硬件突破——用一张卡跑满血 DeepSeek V4 不再需要 8 卡 A100。</p>
+<h3 id="在-apple-silicon-mac-上通过-pci-passthrough-实现-cuda-推理">在 Apple Silicon Mac 上通过 PCI Passthrough 实现 CUDA 推理
+</h3><p><strong>来源：</strong> Reddit r/LocalLLaMA · <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1t7cqg9/you_can_do_cuda_inference_on_an_apple_silicon_mac/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>Mac 用户终于有了在 Apple Silicon 上跑 CUDA 推理的方案。对本地 LLM 社区来说是好消息——不再需要在 NVIDIA 和 Apple 生态之间做非此即彼的选择。</p>
+<h3 id="4gb-gemini-nano-gguf-模型">4GB Gemini Nano GGUF 模型
+</h3><p><strong>来源：</strong> Reddit r/LocalLLaMA · <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1t72aui/4gb_gemini_nano_model_gguf_anyone/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>Google 的 Gemini Nano 模型被转换成 GGUF 格式，可以在本地 4GB 显存上运行。端侧 AI 的普及速度比预期快。</p>
+<h3 id="ai-新创-pit斯德哥尔摩新星">AI 新创 Pit：斯德哥尔摩新星
+</h3><p><strong>来源：</strong> TechCrunch · <a class="link" href="https://techcrunch.com/2026/05/07/voi-founders-new-ai-startup-pit-has-become-the-latest-rising-star-out-of-stockholm/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>Voi 创始人的新 AI 项目 Pit 成为斯德哥尔摩创业圈的新星。具体做什么还不太清楚，但北欧 AI 创业正在升温。</p>
+<hr>
+<h2 id="-本地推理实测">📊 本地推理实测
+</h2><h3 id="测试本地-llm-的实际表现代码生成质量-vs-速度">测试本地 LLM 的实际表现：代码生成，质量 vs 速度
+</h3><p><strong>来源：</strong> Reddit r/LocalLLaMA · <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1t7et9q/testing_local_llms_in_practice_code_generation/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>实际测试对比了多个本地 LLM 在代码生成任务上的质量与速度权衡。结论：小模型在简单任务上够用，复杂推理仍然需要大模型。</p>
+<h3 id="vllm-rocm-实验性后端加入-lemonade">vLLM ROCm 实验性后端加入 Lemonade
+</h3><p><strong>来源：</strong> Reddit r/LocalLLaMA · <a class="link" href="https://old.reddit.com/r/LocalLLaMA/comments/1t7g70j/vllm_rocm_has_been_added_to_lemonade_as_an/"  target="_blank" rel="noopener"
+    >链接</a></p>
+<p>AMD GPU 用户的好消息——vLLM 的 ROCm 后端可以通过 Lemonade 项目使用了。AMD 在 AI 推理生态的追赶正在加速。</p>
+<hr>
+<p><em>以上就是今天的 AI 日报。旅途愉快～ ✨</em></p>
+<p><em>数据来源：Hacker News · GitHub Trending · Reddit (r/LocalLLaMA, r/MachineLearning, r/artificial) · TechCrunch</em>
+<em>去重：已过滤过去 7 天已报道的新闻</em></p>
+<hr>
+
+    <blockquote>
+        <p>Photo by <a class="link" href="https://unsplash.com/photos/a-group-of-computers-D_YZmKGSyic"  target="_blank" rel="noopener"
+    >Google DeepMind</a> on <a class="link" href="https://unsplash.com"  target="_blank" rel="noopener"
+    >Unsplash</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-05-08/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-05-08" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-05-08/cover_hu_df7abd80b5031610.jpg" srcset="/zh-cn/p/daily-news-2026-05-08/cover_hu_df7abd80b5031610.jpg 1x, /zh-cn/p/daily-news-2026-05-08/cover_hu_58e00206338636f1.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #b8650280 0%, #e5a014C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-05-08</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-05-07/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-05-07" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-05-07/cover_hu_34265459ed8dbe53.jpg" srcset="/zh-cn/p/daily-news-2026-05-07/cover_hu_34265459ed8dbe53.jpg 1x, /zh-cn/p/daily-news-2026-05-07/cover_hu_91bc7194b6c7a0b.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #be0d0980 0%, #3d0809C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-05-07</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-05-06/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-05-06" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-05-06/cover_hu_ced9d08220cee7c1.jpg" srcset="/zh-cn/p/daily-news-2026-05-06/cover_hu_ced9d08220cee7c1.jpg 1x, /zh-cn/p/daily-news-2026-05-06/cover_hu_9d487cba22375260.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #c4d2d080 0%, #1b211eC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-05-06</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-05-05/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-05-05" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-05-05/cover_hu_7ccc16150077e06b.jpg" srcset="/zh-cn/p/daily-news-2026-05-05/cover_hu_7ccc16150077e06b.jpg 1x, /zh-cn/p/daily-news-2026-05-05/cover_hu_b94a280962242d47.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #e6e0de80 0%, #031c41C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-05-05</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-05-04/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-05-04" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-05-04/cover_hu_56234853818f39fe.jpg" srcset="/zh-cn/p/daily-news-2026-05-04/cover_hu_56234853818f39fe.jpg 1x, /zh-cn/p/daily-news-2026-05-04/cover_hu_75b5009065a368d2.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #0c669580 0%, #07252dC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-05-04</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
