@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本期从 filtered_papers.json 的 30 篇预筛选论文中，跳过过去 7 天已报道的 arXiv ID 后，收录 18 篇新论文。重点方向仍然集中在智能体评测、空间/机器人世界模型、语音智能体、多模态扩散模型和低比特训练。\n">
+<title>AI Paper Daily | 2026-06-20</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-06-20/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-06-20">
+<meta property='og:description' content="本期从 filtered_papers.json 的 30 篇预筛选论文中，跳过过去 7 天已报道的 arXiv ID 后，收录 18 篇新论文。重点方向仍然集中在智能体评测、空间/机器人世界模型、语音智能体、多模态扩散模型和低比特训练。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-06-20/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-06-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-06-20T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-06-20">
+<meta name="twitter:description" content="本期从 filtered_papers.json 的 30 篇预筛选论文中，跳过过去 7 天已报道的 arXiv ID 后，收录 18 篇新论文。重点方向仍然集中在智能体评测、空间/机器人世界模型、语音智能体、多模态扩散模型和低比特训练。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-06-20/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#重点推荐">重点推荐</a>
+      <ol>
+        <li><a href="#1-beyond-static-leaderboards-predictive-validity-for-the-evaluation-of-llm-agents">1. Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents</a></li>
+        <li><a href="#2-s-agent-spatial-tool-use-elicits-reasoning-for-spatial-intelligence">2. S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence</a></li>
+        <li><a href="#3-multi-lcb-extending-livecodebench-to-multiple-programming-languages">3. Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages</a></li>
+        <li><a href="#4-ihbench-evaluating-post-interruption-recovery-in-voice-agents-with-structured-workflows">4. IHBench: Evaluating Post-Interruption Recovery in Voice Agents with Structured Workflows</a></li>
+        <li><a href="#5-perceptiondlm-parallel-region-perception-with-multimodal-diffusion-language-models">5. PerceptionDLM: Parallel Region Perception with Multimodal Diffusion Language Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#训练世界模型与多模态生成">训练、世界模型与多模态生成</a>
+      <ol>
+        <li><a href="#loosecontrolvideo-directorial-video-control-using-spatial-blocking">LooseControlVideo: Directorial Video Control using Spatial Blocking</a></li>
+        <li><a href="#moebius-02b-lightweight-image-inpainting-framework-with-10b-level-performance">Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance</a></li>
+        <li><a href="#paiworld-a-3d-consistent-world-foundation-model-for-robotic-manipulation">PAIWorld: A 3D-Consistent World Foundation Model for Robotic Manipulation</a></li>
+        <li><a href="#rethinking-shrinkage-bias-in-llm-fp4-pretraining-geometric-origin-systemic-impact-and-ufp4-recipe">Rethinking Shrinkage Bias in LLM FP4 Pretraining: Geometric Origin, Systemic Impact, and UFP4 Recipe</a></li>
+        <li><a href="#qwen-robotnav-technical-report">Qwen-RobotNav Technical Report</a></li>
+        <li><a href="#looped-world-models">Looped World Models</a></li>
+        <li><a href="#the-stanford-edgar-filings-dataset">The Stanford EDGAR Filings Dataset</a></li>
+        <li><a href="#df3dv-1k-a-large-scale-dataset-and-benchmark-for-distractor-free-novel-view-synthesis">DF3DV-1K: A Large-Scale Dataset and Benchmark for Distractor-Free Novel View Synthesis</a></li>
+        <li><a href="#zone-of-proximal-policy-optimization-teacher-in-prompts-not-gradients">Zone of Proximal Policy Optimization: Teacher in Prompts, Not Gradients</a></li>
+      </ol>
+    </li>
+    <li><a href="#agent评测与自动优化">Agent、评测与自动优化</a>
+      <ol>
+        <li><a href="#wegenbench-a-multidimensional-diagnostic-benchmark-towards-text-to-image-model-optimization">WeGenBench: A Multidimensional Diagnostic Benchmark towards Text-to-Image Model Optimization</a></li>
+        <li><a href="#fapo-fully-autonomous-prompt-optimization-of-multi-step-llm-pipelines">FAPO: Fully Autonomous Prompt Optimization of Multi-Step LLM Pipelines</a></li>
+        <li><a href="#molmomotion-forecasting-point-trajectories-in-3d-with-language-instruction">MolmoMotion: Forecasting Point Trajectories in 3D with Language Instruction</a></li>
+      </ol>
+    </li>
+    <li><a href="#audio-llm">Audio LLM</a>
+      <ol>
+        <li><a href="#indiccontexteval-a-benchmark-for-evaluating-context-utilisation-in-audio-large-language-models-across-8-indic-languages">IndicContextEval: A Benchmark for Evaluating Context Utilisation in Audio Large Language Models Across 8 Indic Languages</a></li>
+      </ol>
+    </li>
+    <li><a href="#今日观察">今日观察</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-06-20/">AI Paper Daily | 2026-06-20</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-06-20T00:00:00Z'>Jun 20, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#重点推荐">重点推荐</a>
+      <ol>
+        <li><a href="#1-beyond-static-leaderboards-predictive-validity-for-the-evaluation-of-llm-agents">1. Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents</a></li>
+        <li><a href="#2-s-agent-spatial-tool-use-elicits-reasoning-for-spatial-intelligence">2. S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence</a></li>
+        <li><a href="#3-multi-lcb-extending-livecodebench-to-multiple-programming-languages">3. Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages</a></li>
+        <li><a href="#4-ihbench-evaluating-post-interruption-recovery-in-voice-agents-with-structured-workflows">4. IHBench: Evaluating Post-Interruption Recovery in Voice Agents with Structured Workflows</a></li>
+        <li><a href="#5-perceptiondlm-parallel-region-perception-with-multimodal-diffusion-language-models">5. PerceptionDLM: Parallel Region Perception with Multimodal Diffusion Language Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#训练世界模型与多模态生成">训练、世界模型与多模态生成</a>
+      <ol>
+        <li><a href="#loosecontrolvideo-directorial-video-control-using-spatial-blocking">LooseControlVideo: Directorial Video Control using Spatial Blocking</a></li>
+        <li><a href="#moebius-02b-lightweight-image-inpainting-framework-with-10b-level-performance">Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance</a></li>
+        <li><a href="#paiworld-a-3d-consistent-world-foundation-model-for-robotic-manipulation">PAIWorld: A 3D-Consistent World Foundation Model for Robotic Manipulation</a></li>
+        <li><a href="#rethinking-shrinkage-bias-in-llm-fp4-pretraining-geometric-origin-systemic-impact-and-ufp4-recipe">Rethinking Shrinkage Bias in LLM FP4 Pretraining: Geometric Origin, Systemic Impact, and UFP4 Recipe</a></li>
+        <li><a href="#qwen-robotnav-technical-report">Qwen-RobotNav Technical Report</a></li>
+        <li><a href="#looped-world-models">Looped World Models</a></li>
+        <li><a href="#the-stanford-edgar-filings-dataset">The Stanford EDGAR Filings Dataset</a></li>
+        <li><a href="#df3dv-1k-a-large-scale-dataset-and-benchmark-for-distractor-free-novel-view-synthesis">DF3DV-1K: A Large-Scale Dataset and Benchmark for Distractor-Free Novel View Synthesis</a></li>
+        <li><a href="#zone-of-proximal-policy-optimization-teacher-in-prompts-not-gradients">Zone of Proximal Policy Optimization: Teacher in Prompts, Not Gradients</a></li>
+      </ol>
+    </li>
+    <li><a href="#agent评测与自动优化">Agent、评测与自动优化</a>
+      <ol>
+        <li><a href="#wegenbench-a-multidimensional-diagnostic-benchmark-towards-text-to-image-model-optimization">WeGenBench: A Multidimensional Diagnostic Benchmark towards Text-to-Image Model Optimization</a></li>
+        <li><a href="#fapo-fully-autonomous-prompt-optimization-of-multi-step-llm-pipelines">FAPO: Fully Autonomous Prompt Optimization of Multi-Step LLM Pipelines</a></li>
+        <li><a href="#molmomotion-forecasting-point-trajectories-in-3d-with-language-instruction">MolmoMotion: Forecasting Point Trajectories in 3D with Language Instruction</a></li>
+      </ol>
+    </li>
+    <li><a href="#audio-llm">Audio LLM</a>
+      <ol>
+        <li><a href="#indiccontexteval-a-benchmark-for-evaluating-context-utilisation-in-audio-large-language-models-across-8-indic-languages">IndicContextEval: A Benchmark for Evaluating Context Utilisation in Audio Large Language Models Across 8 Indic Languages</a></li>
+      </ol>
+    </li>
+    <li><a href="#今日观察">今日观察</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>本期从 <code>filtered_papers.json</code> 的 30 篇预筛选论文中，跳过过去 7 天已报道的 arXiv ID 后，收录 18 篇新论文。重点方向仍然集中在智能体评测、空间/机器人世界模型、语音智能体、多模态扩散模型和低比特训练。</p>
+<p>数据来源：HuggingFace Papers 为主；本轮 arXiv 补充抓取超时，因此以已抓取到的 HuggingFace 条目和其 arXiv 链接为准。</p>
+<h2 id="重点推荐">重点推荐
+</h2><h3 id="1-beyond-static-leaderboards-predictive-validity-for-the-evaluation-of-llm-agents">1. Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.19704"  target="_blank" rel="noopener"
+    >2606.19704</a> | <a class="link" href="https://arxiv.org/pdf/2606.19704.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Dhaval C. Patel, Kaoutar El Maghraoui, Shuxin Lin et al.</li>
+<li>分类：AI Agents | 评分：22 | HF upvotes：21 | 日期：2026-06-18</li>
+</ul>
+<p>中文摘要：这篇论文认为，当前智能体 benchmark 增长很快，但单一 benchmark 很少覆盖真实部署会遇到的多维场景。作者汇总了一个 MCP 工业智能体 benchmark 的 14 组并行实现研究，并结合 7 个既有 agent benchmark，指出只看总分排行榜会系统性低估部署风险：公开集排名无法稳定迁移到分布外设置，隐藏集回顾也显示排名会发生明显波动。论文建议用“预测效度”，也就是样本内排名和样本外排名的相关性，替代样本内均分来排序模型/配置，并提出一套 12 层测量框架与 3 个可证伪的 OOD 标准。</p>
+<p>小爱精评：这篇的价值不在提出一个新模型，而是在把 agent 评测从“排行榜好看”拉回“上线后是否可靠”。如果你关心 MCP、企业 agent 或长链路自动化，这个方向很关键：未来 agent eval 可能必须报告跨资产、跨编排、跨检索策略、跨推理模式的稳定性，而不是只报平均成功率。需要注意的是，论文自己也承认证据还偏薄，更像评测范式提案和预注册 pilot 设计。</p>
+<h3 id="2-s-agent-spatial-tool-use-elicits-reasoning-for-spatial-intelligence">2. S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.20515"  target="_blank" rel="noopener"
+    >2606.20515</a> | <a class="link" href="https://arxiv.org/pdf/2606.20515.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Yalun Dai, Hao Li, Shulin Tian et al.</li>
+<li>分类：LLM Training | 评分：21 | HF upvotes：27 | 日期：2026-06-18</li>
+</ul>
+<p>中文摘要：S-Agent 把空间推理建模成跨时间、跨视角的证据积累，而不是单帧视觉问答。VLM 负责语义规划，决定需要什么证据；一组空间工具负责 2D 定位、3D 几何提升，并汇总为计数、测量、朝向和相对位置等空间知识。它还加入 Scene Memory 和 Agent Memory，用于维护场景状态和推理上下文。实验显示，S-Agent 可以在无需训练的情况下提升开源和闭源 VLM；再用 S-Agent 生成的 30 万条空间轨迹做 SFT 后，得到的 S-Agent-8B 在同级模型中表现突出，并接近先进闭源模型。</p>
+<p>小爱精评：这是“工具增强 VLM”在空间智能上的一条很实用路线。它没有把所有能力硬塞进模型参数，而是让模型学会调用几何工具和维护场景记忆。对机器人、室内导航、多视角视频理解都值得看。风险点是工具链复杂，真实系统里 2D/3D grounding 的误差会层层传播，论文里的提升要看工具质量和 benchmark 是否足够贴近真实环境。</p>
+<h3 id="3-multi-lcb-extending-livecodebench-to-multiple-programming-languages">3. Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.20517"  target="_blank" rel="noopener"
+    >2606.20517</a> | <a class="link" href="https://arxiv.org/pdf/2606.20517.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Maria Ivanova, Pavel Zadorozhny, Rodion Levichev et al.</li>
+<li>分类：其他值得关注 | 评分：19 | HF upvotes：26 | 日期：2026-06-18</li>
+</ul>
+<p>中文摘要：LiveCodeBench 已经是代码生成评测的重要基准，但主要限制在 Python。Multi-LCB 将 LCB 扩展到 12 种编程语言，同时保留发布时间过滤、污染控制和原有评测协议。由于格式兼容原始 LCB，它可以自动跟随未来 LCB 更新。作者评测了 24 个指令和推理模型，发现了 Python 过拟合、语言特定污染和多语言能力差异。</p>
+<p>小爱精评：这个 benchmark 对代码模型很有杀伤力。现在很多“coding 能力”其实是 Python 能力，到了 C++、Java、Rust、Go 或 JS 生态就会掉一截。Multi-LCB 的意义是逼模型证明跨语言迁移，而不是只会刷熟悉语法。后续如果有模型在 Multi-LCB 上显著领先，比单纯 LiveCodeBench 高分更有参考价值。</p>
+<h3 id="4-ihbench-evaluating-post-interruption-recovery-in-voice-agents-with-structured-workflows">4. IHBench: Evaluating Post-Interruption Recovery in Voice Agents with Structured Workflows
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.19595"  target="_blank" rel="noopener"
+    >2606.19595</a> | <a class="link" href="https://arxiv.org/pdf/2606.19595.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Ahmad Salimi, Wentao Ma, Yuzhi Tang et al.</li>
+<li>分类：Audio LLM | 评分：19 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：企业语音智能体在客服、医疗预约、账户管理等结构化流程里经常被用户打断。现有语音 benchmark 多关注 barge-in、端点检测和轮次切换，但很少衡量打断之后能否回到正确流程、处理插话、避免重复已播内容。IHBench 覆盖 10 个企业领域，在状态机工作流中注入 6 类中途打断，并从任务完成度和恢复质量两方面评分。作者评测 27 个音频语言模型配置，发现闭源模型在长对话和复杂打断下明显更稳，开放模型退化更快；恢复质量与其他音频 benchmark 衡量的是不同能力。</p>
+<p>小爱精评：这是语音 agent 走向生产环境必须补的一块评测。很多 demo 看起来顺滑，但用户一插话就乱，尤其是“你刚才说到哪了”“别重复”“先回答我这个问题再继续”这种真实场景。IHBench 的亮点是把 interruption handling 拆成后恢复能力，而不是只看能不能检测到打断。</p>
+<h3 id="5-perceptiondlm-parallel-region-perception-with-multimodal-diffusion-language-models">5. PerceptionDLM: Parallel Region Perception with Multimodal Diffusion Language Models
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.19534"  target="_blank" rel="noopener"
+    >2606.19534</a> | <a class="link" href="https://arxiv.org/pdf/2606.19534.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Yueyi Sun, Yuhao Wang, Jason Li et al.</li>
+<li>分类：LLM Training | 评分：19 | HF upvotes：2 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：多数多模态大模型采用自回归生成，在需要给多个图像区域同时生成描述时效率不高。PerceptionDLM 利用扩散语言模型的并行解码特性，通过高效 prompt 和结构化 attention mask，让模型同时感知多个 masked region，并在序列级和 token 级并行生成区域描述。作者还构建了 ParaDLC-Bench，用来同时评估 caption 质量和推理效率。实验表明，PerceptionDLM 在保持区域描述质量的同时显著提高多区域感知速度。</p>
+<p>小爱精评：这篇代表 diffusion language model 在视觉感知任务上的一个实际落点。它不是泛泛谈 DLM 能替代 AR，而是抓住“多区域并行描述”这个 AR 天然低效的场景。值得关注代码和模型释放后的真实吞吐，尤其是它在复杂图像、多 object grounding 和下游检测/标注管线里的性价比。</p>
+<h2 id="训练世界模型与多模态生成">训练、世界模型与多模态生成
+</h2><h3 id="loosecontrolvideo-directorial-video-control-using-spatial-blocking">LooseControlVideo: Directorial Video Control using Spatial Blocking
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.19495"  target="_blank" rel="noopener"
+    >2606.19495</a> | <a class="link" href="https://arxiv.org/pdf/2606.19495.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：LLM Training | 评分：17 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：LooseControlVideo 用稀疏、有朝向的 3D boxes 作为“blocking”控制信号，让用户以导演调度的方式指定物体布局和运动轨迹，再由视频生成模型补全真实遮挡、动力学和交互。方法在 Wan 2.2 backbone 上微调，并引入 DNOCS 来编码 3D 尺寸、朝向和深度顺序遮挡。实验显示，它在轨迹误差、刚体运动一致性和遮挡准确性上优于 2D box 与 flow-based 基线。</p>
+<p>小爱精评：视频生成最缺的是可控性，尤其是多物体、多运动主体的空间调度。用 3D blocking 做粗粒度导演语言，比逐帧 dense guidance 更像创作工具。如果结果稳定，它会更适合故事板、广告预演和机器人仿真数据生成。</p>
+<h3 id="moebius-02b-lightweight-image-inpainting-framework-with-10b-level-performance">Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.19195"  target="_blank" rel="noopener"
+    >2606.19195</a> | <a class="link" href="https://arxiv.org/pdf/2606.19195.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：LLM Training | 评分：17 | HF upvotes：97 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：Moebius 是一个 0.22B 参数的轻量图像修复框架，目标是在远低于 10B 级工业模型成本的情况下达到接近甚至超过 FLUX.1-Fill-Dev 的质量。它重构 diffusion backbone，引入 Local-lambda Mix Interaction block，用固定大小线性矩阵概括局部空间上下文和全局语义先验；同时使用 latent-space 的多粒度自适应蒸馏，避免昂贵的像素空间解码。实验显示，Moebius 以不到 2% 参数量实现超过 15 倍推理加速。</p>
+<p>小爱精评：这篇很工程向，亮点是“专用小模型打大通用模型”。如果开源权重可用，实际部署价值会很高，尤其是端侧、批量修图和低成本创作场景。需要警惕的是 benchmark 是否覆盖足够多真实编辑意图；inpainting 容易在精选样例里非常漂亮。</p>
+<h3 id="paiworld-a-3d-consistent-world-foundation-model-for-robotic-manipulation">PAIWorld: A 3D-Consistent World Foundation Model for Robotic Manipulation
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.18375"  target="_blank" rel="noopener"
+    >2606.18375</a> | <a class="link" href="https://arxiv.org/pdf/2606.18375.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：LLM Training | 评分：17 | HF upvotes：6 | 日期：2026-06-16</li>
+</ul>
+<p>中文摘要：PAIWorld 针对机器人操作中的多视角世界模型问题。现有 world foundation model 多是单视角，简单拼接多视角 token 容易造成跨视角物体漂移、深度不一致和纹理错位。PAIWorld 加入 Geometry-Aware Cross-View Attention、Geometric RoPE 和 Latent 3D-REPA，用相机射线、外参和冻结 3D foundation model 特征增强 3D 一致性。它在 WorldArena 和 AgiBot-Challenge2026 上取得领先结果，并支持 model-based planning、world action model 和多视角策略后训练。</p>
+<p>小爱精评：机器人世界模型不能只“看起来像”，还要跨相机几何一致。PAIWorld 把显式几何先验塞进 DiT world model，是很合理的路线。后续看点是它能否在真实机器人闭环里改善成功率，而不是只在生成质量或一致性指标上好看。</p>
+<h3 id="rethinking-shrinkage-bias-in-llm-fp4-pretraining-geometric-origin-systemic-impact-and-ufp4-recipe">Rethinking Shrinkage Bias in LLM FP4 Pretraining: Geometric Origin, Systemic Impact, and UFP4 Recipe
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.20381"  target="_blank" rel="noopener"
+    >2606.20381</a> | <a class="link" href="https://arxiv.org/pdf/2606.20381.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：LLM Training | 评分：16 | 日期：2026-06-18</li>
+</ul>
+<p>中文摘要：论文指出当前 FP4 训练常用的 E2M1 非均匀格式存在 Shrinkage Bias，也就是由可表示区间几何不对称导致的系统性负向舍入误差。这个偏差会跨层乘法式累积，并被 Random Hadamard Transform 放大，从而解释 E2M1 FP4 训练不稳定。作者提出 UFP4，使用 E1M2/INT4 风格的均匀 4-bit grid，并在三个训练 GEMM 中应用 RHT，同时只对 dY 使用随机舍入。Dense 1.5B、MoE 7.9B 和 MoE 124B 长训实验显示，UFP4 相比 E2M1 基线更接近 BF16 loss。</p>
+<p>小爱精评：这是低比特预训练里很硬的一篇。它不是调参 recipe，而是从量化网格几何解释训练偏差。如果结论站得住，后续硬件支持 uniform FP4/INT4 训练 primitive 的优先级会提高。</p>
+<h3 id="qwen-robotnav-technical-report">Qwen-RobotNav Technical Report
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.18112"  target="_blank" rel="noopener"
+    >2606.18112</a> | <a class="link" href="https://arxiv.org/pdf/2606.18112.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：LLM Training | 评分：16 | 日期：2026-06-18</li>
+</ul>
+<p>中文摘要：Qwen-RobotNav 面向 agentic navigation system，强调基础导航模型的观测策略必须能在推理时被外部重配置。模型提供任务模式和观测参数两类接口，例如 token budget、不同相机权重等，并在训练时对这些参数做随机化，使同一 backbone 可以在不同任务和视觉历史策略间切换。它用 1560 万样本训练，并通过与视觉语言数据共训避免退化成反应式动作序列映射。长程任务中，上层 planner 可以动态切换任务模式和上下文策略。</p>
+<p>小爱精评：这篇的系统设计味很浓：不是单独做导航模型，而是把导航模型设计成可被上层 agent 调度的模块。对真实机器人很重要，因为导航、找物、跟踪、自动驾驶并不是完全不同的模型问题，更多是同一感知规划底座在不同策略下工作。</p>
+<h3 id="looped-world-models">Looped World Models
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.18208"  target="_blank" rel="noopener"
+    >2606.18208</a> | <a class="link" href="https://arxiv.org/pdf/2606.18208.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：LLM Training | 评分：16 | HF upvotes：172 | 日期：2026-06-16</li>
+</ul>
+<p>中文摘要：Looped World Models 提出用参数共享的 transformer block 反复细化潜在环境状态，把“迭代 latent depth”作为世界模型的新 scaling axis。作者认为长程仿真需要更深计算，但堆深模型昂贵且容易累积误差；looped architecture 可以按预测复杂度自适应增加计算，同时带来最高 100 倍的参数效率。</p>
+<p>小爱精评：这篇和 LoopCoder-v2 的思路有共振：不要只靠更多参数，而是让同一组参数循环思考。世界模型如果能按场景复杂度动态加深，会很适合机器人、游戏和规划。摘要信息较短，建议后续优先看实验任务和“100x parameter efficiency”的比较口径。</p>
+<h3 id="the-stanford-edgar-filings-dataset">The Stanford EDGAR Filings Dataset
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.18192"  target="_blank" rel="noopener"
+    >2606.18192</a> | <a class="link" href="https://arxiv.org/pdf/2606.18192.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：LLM Training | 评分：16 | 日期：2026-06-16</li>
+</ul>
+<p>中文摘要：SEFD 将 SEC 公司申报文件重构为保留版式的 MultiMarkdown，为金融语言建模和长上下文评测提供开放数据。SEFD-v1 包含 152B tokens，完整归档估计 18.5M 份 filings、550B tokens，并与 Common Crawl 派生语料重叠低于 0.1%。论文还提出 EDGAR-Forecast 和 EDGAR-OCR 两个 benchmark，分别评估基于申报文件的数值预测和复杂金融表格转写。</p>
+<p>小爱精评：高质量公开长文档越来越稀缺，这种结构化、低污染、真实业务文档语料会变得很值钱。金融领域尤其需要版式、表格、脚注和长程引用关系。它更像基础设施论文，短期不性感，长期可能很有用。</p>
+<h3 id="df3dv-1k-a-large-scale-dataset-and-benchmark-for-distractor-free-novel-view-synthesis">DF3DV-1K: A Large-Scale Dataset and Benchmark for Distractor-Free Novel View Synthesis
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2604.13416"  target="_blank" rel="noopener"
+    >2604.13416</a> | <a class="link" href="https://arxiv.org/pdf/2604.13416.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：LLM Training | 评分：15 | HF upvotes：9 | 日期：2026-06-18</li>
+</ul>
+<p>中文摘要：DF3DV-1K 是一个用于 distractor-free novel view synthesis 的大规模真实数据集，包含 1048 个场景，每个场景有 clean 和 cluttered 图像集，共 89924 张图像，覆盖 128 类干扰物和 161 类场景主题。作者还设计了 DF3DV-41 子集评测困难场景，并 benchmark 了 9 种 distractor-free radiance field 方法和 3D Gaussian Splatting。进一步，他们用数据集微调 diffusion 2D enhancer，提高了 radiance field 方法的 PSNR 和 LPIPS。</p>
+<p>小爱精评：这类数据集对 3D 重建和新视角合成很实用，尤其是现实拍摄里总有路人、杂物、反光和遮挡。它的直接 AI 大模型味不强，但对空间建模、机器人视觉和场景数字化有支撑价值。</p>
+<h3 id="zone-of-proximal-policy-optimization-teacher-in-prompts-not-gradients">Zone of Proximal Policy Optimization: Teacher in Prompts, Not Gradients
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.18216"  target="_blank" rel="noopener"
+    >2606.18216</a> | <a class="link" href="https://arxiv.org/pdf/2606.18216.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：LLM Training | 评分：15 | HF upvotes：50 | 日期：2026-06-16</li>
+</ul>
+<p>中文摘要：ZPPO 试图解决小模型蒸馏和 RL 的夹缝问题。传统蒸馏让学生模仿大教师 logits，容易过度集中在教师高概率模式；RL 依赖学生 rollout，但全错问题会产生零 advantage 被丢弃。ZPPO 的做法是把教师放进 prompt，而不是放进 policy gradient：对困难问题构造 BCQ，让学生在一个正确教师回答和一个错误学生回答之间辨别；构造 NCQ，把学生错误 rollout 聚合出来暴露共同失败模式。难题会进入 replay buffer，直到学生准确率达到门槛或被淘汰。实验显示 ZPPO 在 Qwen3.5 多尺度学生模型上优于蒸馏和 GRPO。</p>
+<p>小爱精评：这个想法很漂亮：老师不直接改梯度，只在学生“够得着”的区域里提供可比较的脚手架。对小模型后训练尤其有意义。后续要看它对非问答类任务、工具调用和多轮 agent 是否同样有效。</p>
+<h2 id="agent评测与自动优化">Agent、评测与自动优化
+</h2><h3 id="wegenbench-a-multidimensional-diagnostic-benchmark-towards-text-to-image-model-optimization">WeGenBench: A Multidimensional Diagnostic Benchmark towards Text-to-Image Model Optimization
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.20100"  target="_blank" rel="noopener"
+    >2606.20100</a> | <a class="link" href="https://arxiv.org/pdf/2606.20100.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：AI Agents | 评分：15 | 日期：2026-06-18</li>
+</ul>
+<p>中文摘要：WeGenBench 面向文生图模型的多维诊断评测，包含 4000 个中英文平衡测试 prompt。它不仅按宏观场景分类，还为每个 prompt 标注多维标签，以定位模型在具体类别上的缺陷。评测机制结合场景分类和多维标签，并引入 VLM 设计和验证多个新指标，从三个核心方面评估领域任务表现，同时输出评测结论和推理轨迹。</p>
+<p>小爱精评：文生图评测越来越需要“诊断型”而不是总分型。WeGenBench 的中英双语和跨文化设定有价值，尤其适合看模型是不是只在英文 prompt 和常见西方视觉概念上强。风险是 VLM judge 自身偏差会影响结论，需要关注人工验证质量。</p>
+<h3 id="fapo-fully-autonomous-prompt-optimization-of-multi-step-llm-pipelines">FAPO: Fully Autonomous Prompt Optimization of Multi-Step LLM Pipelines
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.19605"  target="_blank" rel="noopener"
+    >2606.19605</a> | <a class="link" href="https://arxiv.org/pdf/2606.19605.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：AI Agents | 评分：15 | HF upvotes：4 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：FAPO 让 Claude Code 在标准化代码库中自动优化多步骤 LLM pipeline。它会评估 pipeline、检查中间步骤、诊断失败、提出局部修改并反复验证。框架优先尝试 prompt 修改；当 attribution 显示结构瓶颈且 prompt 不足时，才在允许范围内修改链路结构。六个 benchmark、三个任务模型上的实验显示，FAPO 在 18 个模型-benchmark 比较中赢下 15 个，相比 GEPA 平均提升 14.1 个百分点；在需要结构变化的 HoVer 和 IFBench 比较中平均提升 33.8 个百分点。</p>
+<p>小爱精评：这篇很贴近“让 coding agent 优化 agent/pipeline”的现实玩法。关键不是自动改 prompt，而是能看到中间失败并决定是否需要改链路结构。它也提示我们：复杂 LLM pipeline 的瓶颈常常不在单个 prompt，而在检索、推理、格式化之间的交互。</p>
+<h3 id="molmomotion-forecasting-point-trajectories-in-3d-with-language-instruction">MolmoMotion: Forecasting Point Trajectories in 3D with Language Instruction
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.18558"  target="_blank" rel="noopener"
+    >2606.18558</a> | <a class="link" href="https://arxiv.org/pdf/2606.18558.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：AI Agents | 评分：15 | HF upvotes：41 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：MolmoMotion 研究语言条件下的 3D 点运动预测：给定短视觉历史、物体上的一组 3D query points 和目标描述，模型预测每个点的未来 3D 轨迹。作者构建 MolmoMotion-1M 数据集，包含 116 万公开视频中标注的动作描述、物体 grounded 3D 点轨迹；还提出 PointMotionBench，覆盖 111 个物体类别和 61 种运动类型。MolmoMotion 支持自回归坐标预测和基于 flow matching 的轨迹生成，并能迁移到机器人操作和视频生成运动指导。</p>
+<p>小爱精评：用 3D 点轨迹作为运动表示很聪明：类别无关、视角稳定、紧凑，还能直接给机器人或生成模型用。它把“看懂物体会怎么动”和“按语言目标预测动作”连起来了，是视觉智能与 embodied AI 之间很好的桥。</p>
+<h2 id="audio-llm">Audio LLM
+</h2><h3 id="indiccontexteval-a-benchmark-for-evaluating-context-utilisation-in-audio-large-language-models-across-8-indic-languages">IndicContextEval: A Benchmark for Evaluating Context Utilisation in Audio Large Language Models Across 8 Indic Languages
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.19157"  target="_blank" rel="noopener"
+    >2606.19157</a> | <a class="link" href="https://arxiv.org/pdf/2606.19157.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>分类：Audio LLM | 评分：15 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：AudioLLM 可以在文本 prompt 条件下做语音识别，例如加入领域描述或实体列表。但现有 benchmark 很难判断模型是真的利用了上下文，还是依赖预训练里的参数知识。IndicContextEval 提供 56 小时、555 名说话人、8 种印度语言、23 个专业领域的自然语音，并设计 7 级 prompting 框架，逐步加入 metadata、自然语言描述、英文和本地文字实体列表，以及含错误实体的对抗 prompt。对 5 个模型的评测显示，不同模型利用上下文的行为差异很大。</p>
+<p>小爱精评：这篇补的是多语种语音模型里一个容易被忽略的问题：上下文到底有没有被用上。尤其在姓名、地名、专业术语和低资源语言里，prompt grounding 很关键。它也能帮助区分“模型本来就知道”和“模型真的听从上下文”。</p>
+<hr>
+<h2 id="今日观察">今日观察
+</h2><p>今天的新论文有几个共同信号。第一，agent 评测开始从总分排行榜转向稳定性、分布外预测和可诊断性；这和真实部署需求更接近。第二，空间智能正在快速工具化：S-Agent、PAIWorld、Qwen-RobotNav、MolmoMotion 都在把视觉、几何、记忆、语言目标和上层规划接起来。第三，效率路线很活跃，从 Moebius 的小模型专用化，到 UFP4 的低比特训练，再到 LoopWM 的循环计算，大家都在找“少花参数和算力，多做有效计算”的办法。</p>
+<p><em>生成时间：2026-06-20 00:00 UTC</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-19/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-19</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-13/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-13</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-12/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-12</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-11/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-11</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-10/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-10</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
