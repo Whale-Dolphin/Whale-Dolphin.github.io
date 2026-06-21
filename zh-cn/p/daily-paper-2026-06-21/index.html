@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本期从 filtered_papers.json 的 30 篇预筛选论文中，跳过过去 7 天已报道的 arXiv ID 后，收录 5 篇新论文。今天的新增论文集中在可验证推理评测、机器人操作基础模型、图像生成数据构造、游戏工程代码基准和 LoRA adapter 合并预测。\n">
+<title>AI Paper Daily | 2026-06-21</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-06-21/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-06-21">
+<meta property='og:description' content="本期从 filtered_papers.json 的 30 篇预筛选论文中，跳过过去 7 天已报道的 arXiv ID 后，收录 5 篇新论文。今天的新增论文集中在可验证推理评测、机器人操作基础模型、图像生成数据构造、游戏工程代码基准和 LoRA adapter 合并预测。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-06-21/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-06-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-06-21T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-06-21">
+<meta name="twitter:description" content="本期从 filtered_papers.json 的 30 篇预筛选论文中，跳过过去 7 天已报道的 arXiv ID 后，收录 5 篇新论文。今天的新增论文集中在可验证推理评测、机器人操作基础模型、图像生成数据构造、游戏工程代码基准和 LoRA adapter 合并预测。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-06-21/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#重点推荐">重点推荐</a>
+      <ol>
+        <li><a href="#1-defab-a-verifiable-benchmark-for-defeasible-abduction-in-foundation-models">1. DeFAb: A Verifiable Benchmark for Defeasible Abduction in Foundation Models</a></li>
+        <li><a href="#2-qwen-robotmanip-technical-report-alignment-unlocks-scale-for-robotic-manipulation-foundation-models">2. Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#生成代码与模型工程">生成、代码与模型工程</a>
+      <ol>
+        <li><a href="#freestyle-free-control-of-style-content-dual-reference-generation-from-community-lora-mining">FreeStyle: Free Control of Style-Content Dual-Reference Generation from Community LoRA Mining</a></li>
+        <li><a href="#jamer-project-level-code-framework-dataset-and-benchmark-on-professional-game-engines">JAMER: Project-Level Code Framework Dataset and Benchmark on Professional Game Engines</a></li>
+        <li><a href="#predicting-mergeability-of-parameter-efficient-fine-tuning-updates">Predicting Mergeability of Parameter-Efficient Fine-Tuning Updates</a></li>
+      </ol>
+    </li>
+    <li><a href="#今日观察">今日观察</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-06-21/">AI Paper Daily | 2026-06-21</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-06-21T00:00:00Z'>Jun 21, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#重点推荐">重点推荐</a>
+      <ol>
+        <li><a href="#1-defab-a-verifiable-benchmark-for-defeasible-abduction-in-foundation-models">1. DeFAb: A Verifiable Benchmark for Defeasible Abduction in Foundation Models</a></li>
+        <li><a href="#2-qwen-robotmanip-technical-report-alignment-unlocks-scale-for-robotic-manipulation-foundation-models">2. Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#生成代码与模型工程">生成、代码与模型工程</a>
+      <ol>
+        <li><a href="#freestyle-free-control-of-style-content-dual-reference-generation-from-community-lora-mining">FreeStyle: Free Control of Style-Content Dual-Reference Generation from Community LoRA Mining</a></li>
+        <li><a href="#jamer-project-level-code-framework-dataset-and-benchmark-on-professional-game-engines">JAMER: Project-Level Code Framework Dataset and Benchmark on Professional Game Engines</a></li>
+        <li><a href="#predicting-mergeability-of-parameter-efficient-fine-tuning-updates">Predicting Mergeability of Parameter-Efficient Fine-Tuning Updates</a></li>
+      </ol>
+    </li>
+    <li><a href="#今日观察">今日观察</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>本期从 <code>filtered_papers.json</code> 的 30 篇预筛选论文中，跳过过去 7 天已报道的 arXiv ID 后，收录 5 篇新论文。今天的新增论文集中在可验证推理评测、机器人操作基础模型、图像生成数据构造、游戏工程代码基准和 LoRA adapter 合并预测。</p>
+<p>数据来源：HuggingFace Papers 为主；本轮 <code>fetch_papers.py</code> 抓取到 100 篇 HuggingFace 条目，arXiv 补充返回 0 篇，因此以 HuggingFace 条目及其 arXiv 链接为准。</p>
+<h2 id="重点推荐">重点推荐
+</h2><h3 id="1-defab-a-verifiable-benchmark-for-defeasible-abduction-in-foundation-models">1. DeFAb: A Verifiable Benchmark for Defeasible Abduction in Foundation Models
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.18557"  target="_blank" rel="noopener"
+    >2606.18557</a> | <a class="link" href="https://arxiv.org/pdf/2606.18557.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Patrick Cooper, Alvaro Velasquez</li>
+<li>分类：LLM Training | 评分：14 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：DeFAb 是一个面向“可废止溯因推理”的可验证 benchmark。它把 OpenCyc、YAGO、Wikidata、ConceptNet、UMLS 等知识库转成形式化实例，要求模型构造能解释异常的假设：这些假设可以覆盖默认规则，但不能破坏无关预期。每个答案都要通过多项式时间检查，包括有效推导、保守性和最小性。数据规模超过 37 万个实例、3375 万条物化规则，覆盖 18 个来源和 3 个难度层级。作者报告称，规则求解器能在 50 微秒内 100% 解出实例，而最强前沿语言模型最高只有 65%，在 rendering-robust 评测下最低跌到 23.5%。论文还发布 DeFAb-Hard 和基于 Lean 4/Mathlib 的 CONJURE，用 proof kernel 做 judge-free 验证。</p>
+<p>小爱精评：这篇很适合拿来戳破“模型看起来会推理”的幻觉。它不让模型写漂亮解释，而是要求输出能被形式系统检查的理论修订，这比普通问答 benchmark 更硬。最有价值的点是 verifier 可以直接当 DPO、RLVR/GRPO 的精确 reward，用来训练模型做可验证的创造性假设构造。风险也很明显：形式逻辑任务和真实开放世界推理之间还有距离，但作为“模型能不能稳定遵守理论约束”的测试，它很锋利。</p>
+<h3 id="2-qwen-robotmanip-technical-report-alignment-unlocks-scale-for-robotic-manipulation-foundation-models">2. Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.17846"  target="_blank" rel="noopener"
+    >2606.17846</a> | <a class="link" href="https://arxiv.org/pdf/2606.17846.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Haoqi Yuan, Zhixuan Liang, Anzhe Chen et al.</li>
+<li>分类：LLM Training | 评分：14 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：Qwen-RobotManip 研究语言和多模态基础模型里的“对齐加规模化”路线，能否迁移到机器人操作。机器人数据天然异构、昂贵且多样性窄，直接堆数据往往互相冲突。作者基于 Qwen-VL 构建 Vision-Language-Action 模型，并从表示、运动和行为三个维度做统一对齐，让多源操作数据可以一起训练。系统还用人类第一视角手部演示合成机器人轨迹，覆盖 15 种平台，并用开源数据和人类视频构建约 38100 小时预训练语料。实验显示模型具备零样本指令跟随、扰动鲁棒性、错误恢复和跨 embodiment transfer，在 RoboCasa365、LIBERO-Plus、EBench、RoboTwin 等 OOD 设置中超过 π0.5，并在 RoboChallenge 上取得第一。</p>
+<p>小爱精评：这是今天最值得看的机器人论文。它的重点不是又做了一个 VLA，而是把“异构机器人数据怎么对齐到同一个可规模化训练问题”讲清楚了。如果这些结果能在真实平台上复现，说明机器人操作模型可能正在进入类似 LLM 早期的阶段：关键瓶颈从模型结构转向数据对齐、数据治理和规模化训练配方。需要重点看技术报告里各个 OOD benchmark 的定义，因为机器人论文最容易在评测环境和真实部署之间出现落差。</p>
+<h2 id="生成代码与模型工程">生成、代码与模型工程
+</h2><h3 id="freestyle-free-control-of-style-content-dual-reference-generation-from-community-lora-mining">FreeStyle: Free Control of Style-Content Dual-Reference Generation from Community LoRA Mining
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.20506"  target="_blank" rel="noopener"
+    >2606.20506</a> | <a class="link" href="https://arxiv.org/pdf/2606.20506.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Jinghong Lan, Wei Cheng, Yunuo Chen et al.</li>
+<li>分类：LLM Training | 评分：13 | HF upvotes：24 | 日期：2026-06-18</li>
+</ul>
+<p>中文摘要：FreeStyle 面向 style-content dual-reference generation：给一张内容参考图和一张风格参考图，生成既保留内容结构语义、又采用目标风格的新图像。论文指出瓶颈在于缺少大规模、内容和风格解耦干净、覆盖长尾风格的数据。作者把社区 LoRA 当作风格和内容的组合锚点，通过挖掘 LoRA、生成和过滤流程构造大规模三元组数据。为降低风格图中的语义泄漏，方法采用两阶段课程：第一阶段用 attention-level enrichment constraint 抑制风格参考泄漏，第二阶段用 frequency-aware RoPE modulation 处理更难的双参考位置对应泄漏。论文还提出覆盖风格参考和双参考生成的 benchmark，评估风格相似、内容保持、美学、指令遵循和泄漏拒绝。</p>
+<p>小爱精评：这篇的聪明之处在数据来源。社区 LoRA 本来就是创作者把风格、角色、内容概念拆出来的结果，拿它反向挖掘训练数据，比从网页图文里硬找“同内容不同风格”的配对现实很多。它对创作工具很有用，尤其是“用这张图的构图，套那种画风，但别把风格图里的人物也带过来”这种需求。后续要看 benchmark 是否足够防泄漏，以及模型是否会过度继承社区 LoRA 的版权和风格偏差问题。</p>
+<h3 id="jamer-project-level-code-framework-dataset-and-benchmark-on-professional-game-engines">JAMER: Project-Level Code Framework Dataset and Benchmark on Professional Game Engines
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.19830"  target="_blank" rel="noopener"
+    >2606.19830</a> | <a class="link" href="https://arxiv.org/pdf/2606.19830.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Jianwen Sun, Chuanhao Li, Zizhen Li et al.</li>
+<li>分类：LLM Training | 评分：13 | HF upvotes：3 | 日期：2026-06-18</li>
+</ul>
+<p>中文摘要：JAMER 提出 JamSet 和 JamBench，用来评测专业游戏引擎里的项目级代码工程能力。作者从 Game Jam 开源项目出发，利用 Godot 的文本格式和 headless execution 能力，从超过 24 万个仓库中筛出 8133 个可验证项目，其中 300 个手动验证项目组成 JamBench，其余构成 JamSet。JamBench 包含主题驱动生成和代码补全任务，评测指标结合编译通过率、结构完整性分数和行为对齐分数。对 9 个前沿模型的评测显示，项目规模一大能力会断崖式下降：小项目 runtime pass rate 可达 80.4%，大项目 Task2a 只有 5.7%。Code Agent 能提高编译率，但几乎不能提升运行时行为质量，说明瓶颈在架构设计而不是语法正确性。</p>
+<p>小爱精评：这个 benchmark 很有现实意义。现在很多 coding eval 还停留在单文件算法题或小型 repo 修补，但真正做游戏是资产、场景、脚本、状态机、输入、物理和 UI 的系统工程。JAMER 把“能不能编译”和“行为像不像题目要求”分开，会更容易看出模型到底是在修语法，还是在做项目架构。对 coding agent 来说，这类 benchmark 可能比又刷高 HumanEval 更有参考价值。</p>
+<h3 id="predicting-mergeability-of-parameter-efficient-fine-tuning-updates">Predicting Mergeability of Parameter-Efficient Fine-Tuning Updates
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.19549"  target="_blank" rel="noopener"
+    >2606.19549</a> | <a class="link" href="https://arxiv.org/pdf/2606.19549.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者：Lin Tang, Wei Zhang, Jing Li et al.</li>
+<li>分类：LLM Training | 评分：13 | HF upvotes：1 | 日期：2026-06-17</li>
+</ul>
+<p>中文摘要：这篇论文研究 LoRA 等参数高效微调 adapter 的可合并性。通常两个 adapter 是否能合并，要等训练完成并实际合并评测后才知道；但单独表现好的 adapter 合并后可能互相干扰。作者把 adapter mergeability 定义为合并后保留单任务能力的程度，并发现它可以从训练早期的信号预测出来，尤其是不同任务的低秩更新、梯度对齐程度，以及它们扰动共享表征的幅度。论文提出 MergeProbe，用这些轻量信号预测 pairwise 和 set-level retention，并给出具体决策：直接合并、重加权、剪枝或路由。在 MERGE-PEFT 五领域 benchmark 上，MergeProbe 在平均和最差保留率上优于多种干扰感知合并基线，同时比完整任务路由更轻。</p>
+<p>小爱精评：这篇是很实用的模型工程论文。现在大家会为不同领域训练大量 LoRA，但 adapter 库一多，怎么组合就会变成运维问题。MergeProbe 把“训练完再试错”提前成“训练早期就预测能不能合并”，能节省不少实验成本。它也提示一个更大的方向：PEFT 的组合管理会逐渐从手工经验，变成可测量、可决策的系统问题。</p>
+<h2 id="今日观察">今日观察
+</h2><p>今天的新论文数量不多，但方向很清楚。机器人操作开始认真处理异构数据对齐和规模化训练，代码模型评测开始走向项目级行为验证，推理 benchmark 也在从“答案像不像”转向“能不能被形式系统验证”。另一个信号是模型工程越来越重视训练前和训练中的可预测性：无论是 FreeStyle 用社区 LoRA 挖数据，还是 MergeProbe 预测 adapter 合并，都在把原本靠事后试错的流程前移。</p>
+<p><em>生成时间：2026-06-21 00:00 UTC</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-19/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-19</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-13/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-13</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-12/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-12</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-11/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-11</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
