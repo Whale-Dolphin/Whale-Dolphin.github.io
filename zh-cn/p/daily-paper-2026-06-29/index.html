@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 今日共筛选 30 篇论文，覆盖 LLM 训练、AI Agent、音频语言模型等方向。\n🔥 今日亮点 Wan-Streamer v0.1 — 万象流来了。端到端实时交互基础模型，单模型搞定语音+视频+文本的全双工流式交互，模型侧延迟仅 200ms，打破级联管道的延迟瓶颈。HF 热度 95 票，今天最值得关注的工作。\n">
+<title>AI Paper Daily | 2026-06-29</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-06-29/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-06-29">
+<meta property='og:description' content=" 今日共筛选 30 篇论文，覆盖 LLM 训练、AI Agent、音频语言模型等方向。\n🔥 今日亮点 Wan-Streamer v0.1 — 万象流来了。端到端实时交互基础模型，单模型搞定语音+视频+文本的全双工流式交互，模型侧延迟仅 200ms，打破级联管道的延迟瓶颈。HF 热度 95 票，今天最值得关注的工作。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-06-29/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-06-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-06-29T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-06-29">
+<meta name="twitter:description" content=" 今日共筛选 30 篇论文，覆盖 LLM 训练、AI Agent、音频语言模型等方向。\n🔥 今日亮点 Wan-Streamer v0.1 — 万象流来了。端到端实时交互基础模型，单模型搞定语音+视频+文本的全双工流式交互，模型侧延迟仅 200ms，打破级联管道的延迟瓶颈。HF 热度 95 票，今天最值得关注的工作。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-06-29/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#-今日亮点">🔥 今日亮点</a></li>
+    <li><a href="#-llm-训练-13篇">📚 LLM 训练 (13篇)</a>
+      <ol>
+        <li><a href="#1-jetspec打破投机解码的缩放天花板">1. JetSpec：打破投机解码的缩放天花板</a></li>
+        <li><a href="#2-被忽视的免费午餐rl-后训练的-progress-advantage">2. 被忽视的免费午餐：RL 后训练的 Progress Advantage</a></li>
+        <li><a href="#3-illada改进的大语言扩散模型">3. iLLaDA：改进的大语言扩散模型</a></li>
+        <li><a href="#4-causal-rcm自回归视频扩散的统一蒸馏方案">4. Causal-rCM：自回归视频扩散的统一蒸馏方案</a></li>
+        <li><a href="#5-mvtrack4gen多视角点追踪作为-4d-视频生成的几何监督">5. MVTrack4Gen：多视角点追踪作为 4D 视频生成的几何监督</a></li>
+        <li><a href="#6-为什么多步工具使用-rl-会崩以及监督信号如何修复">6. 为什么多步工具使用 RL 会崩以及监督信号如何修复</a></li>
+        <li><a href="#7-cliff-tokens识别-llm-数学推理中的单-token-失败触发器">7. Cliff Tokens：识别 LLM 数学推理中的单 token 失败触发器</a></li>
+        <li><a href="#8-flux3d扩散对齐稀疏表示的高保真-3dgs-生成">8. FLUX3D：扩散对齐稀疏表示的高保真 3DGS 生成</a></li>
+        <li><a href="#9-openthoughts-agentagent-模型的数据配方">9. OpenThoughts-Agent：Agent 模型的数据配方</a></li>
+        <li><a href="#10-phyeditbench物理感知图像编辑基准">10. PhyEditBench：物理感知图像编辑基准</a></li>
+        <li><a href="#11-scalereasoner-r1跨尺度推理增强病理-vlm">11. ScaleReasoner-R1：跨尺度推理增强病理 VLM</a></li>
+        <li><a href="#12-robust-to置信度感知的工具编排实现鲁棒视频理解">12. Robust-TO：置信度感知的工具编排实现鲁棒视频理解</a></li>
+        <li><a href="#13-icwm上下文内世界模型用于机器人控制">13. ICWM：上下文内世界模型用于机器人控制</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agent-7篇">🤖 AI Agent (7篇)</a>
+      <ol>
+        <li><a href="#14-gauntletbench重新评估-agent-在陌生环境中的能力">14. GauntletBench：重新评估 Agent 在陌生环境中的能力</a></li>
+        <li><a href="#15-验证地平线编程-agent-奖励没有银弹">15. 验证地平线：编程 Agent 奖励没有银弹</a></li>
+        <li><a href="#16-qwen-image-agent弥合真实世界图像生成的上下文鸿沟">16. Qwen-Image-Agent：弥合真实世界图像生成的上下文鸿沟</a></li>
+        <li><a href="#17-dicobench通过差异与共性视觉线索评测多图细粒度感知">17. DiCoBench：通过差异与共性视觉线索评测多图细粒度感知</a></li>
+        <li><a href="#18-ssmnbench诊断跨视角人物-物体理解">18. SSMNBench：诊断跨视角人物-物体理解</a></li>
+        <li><a href="#19-跑还是不跑分析编程-agent-中代码执行的成本效益">19. 跑还是不跑：分析编程 Agent 中代码执行的成本效益</a></li>
+        <li><a href="#20-signspark高效多语言手语生成">20. SignSparK：高效多语言手语生成</a></li>
+      </ol>
+    </li>
+    <li><a href="#-音频语言模型-4篇">🎵 音频语言模型 (4篇)</a>
+      <ol>
+        <li><a href="#21-wan-streamer-v01端到端实时交互基础模型">21. Wan-Streamer v0.1：端到端实时交互基础模型</a></li>
+        <li><a href="#22-sarashina22-tts解决日语语音生成中的汉字多音问题">22. Sarashina2.2-TTS：解决日语语音生成中的汉字多音问题</a></li>
+        <li><a href="#23-steb语音到语音翻译表现力基准">23. STEB：语音到语音翻译表现力基准</a></li>
+        <li><a href="#24-vpa-guard防御图像到视频生成中的视觉提示攻击">24. VPA-Guard：防御图像到视频生成中的视觉提示攻击</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注-6篇">🔬 其他值得关注 (6篇)</a>
+      <ol>
+        <li><a href="#25-viq任意分辨率的文本对齐视觉量化表示">25. ViQ：任意分辨率的文本对齐视觉量化表示</a></li>
+        <li><a href="#26-tempowave给-llm-唱数字多小波数字嵌入用于时序预测">26. TempoWave：给 LLM 唱数字——多小波数字嵌入用于时序预测</a></li>
+        <li><a href="#27-diffusionbench扩散-transformer-的全面评测">27. DiffusionBench：扩散 Transformer 的全面评测</a></li>
+        <li><a href="#28-flat前馈潜在三角形-splatting-用于几何精确场景生成">28. FLAT：前馈潜在三角形 Splatting 用于几何精确场景生成</a></li>
+        <li><a href="#29-infokv信息感知-kv-缓存压缩用于长推理">29. InfoKV：信息感知 KV 缓存压缩用于长推理</a></li>
+        <li><a href="#30-tatoxa低资源语言文本去毒以鞑靼语为例">30. Tatoxa：低资源语言文本去毒——以鞑靼语为例</a></li>
+      </ol>
+    </li>
+    <li><a href="#-今日统计">📊 今日统计</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-06-29/">AI Paper Daily | 2026-06-29</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-06-29T00:00:00Z'>Jun 29, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#-今日亮点">🔥 今日亮点</a></li>
+    <li><a href="#-llm-训练-13篇">📚 LLM 训练 (13篇)</a>
+      <ol>
+        <li><a href="#1-jetspec打破投机解码的缩放天花板">1. JetSpec：打破投机解码的缩放天花板</a></li>
+        <li><a href="#2-被忽视的免费午餐rl-后训练的-progress-advantage">2. 被忽视的免费午餐：RL 后训练的 Progress Advantage</a></li>
+        <li><a href="#3-illada改进的大语言扩散模型">3. iLLaDA：改进的大语言扩散模型</a></li>
+        <li><a href="#4-causal-rcm自回归视频扩散的统一蒸馏方案">4. Causal-rCM：自回归视频扩散的统一蒸馏方案</a></li>
+        <li><a href="#5-mvtrack4gen多视角点追踪作为-4d-视频生成的几何监督">5. MVTrack4Gen：多视角点追踪作为 4D 视频生成的几何监督</a></li>
+        <li><a href="#6-为什么多步工具使用-rl-会崩以及监督信号如何修复">6. 为什么多步工具使用 RL 会崩以及监督信号如何修复</a></li>
+        <li><a href="#7-cliff-tokens识别-llm-数学推理中的单-token-失败触发器">7. Cliff Tokens：识别 LLM 数学推理中的单 token 失败触发器</a></li>
+        <li><a href="#8-flux3d扩散对齐稀疏表示的高保真-3dgs-生成">8. FLUX3D：扩散对齐稀疏表示的高保真 3DGS 生成</a></li>
+        <li><a href="#9-openthoughts-agentagent-模型的数据配方">9. OpenThoughts-Agent：Agent 模型的数据配方</a></li>
+        <li><a href="#10-phyeditbench物理感知图像编辑基准">10. PhyEditBench：物理感知图像编辑基准</a></li>
+        <li><a href="#11-scalereasoner-r1跨尺度推理增强病理-vlm">11. ScaleReasoner-R1：跨尺度推理增强病理 VLM</a></li>
+        <li><a href="#12-robust-to置信度感知的工具编排实现鲁棒视频理解">12. Robust-TO：置信度感知的工具编排实现鲁棒视频理解</a></li>
+        <li><a href="#13-icwm上下文内世界模型用于机器人控制">13. ICWM：上下文内世界模型用于机器人控制</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agent-7篇">🤖 AI Agent (7篇)</a>
+      <ol>
+        <li><a href="#14-gauntletbench重新评估-agent-在陌生环境中的能力">14. GauntletBench：重新评估 Agent 在陌生环境中的能力</a></li>
+        <li><a href="#15-验证地平线编程-agent-奖励没有银弹">15. 验证地平线：编程 Agent 奖励没有银弹</a></li>
+        <li><a href="#16-qwen-image-agent弥合真实世界图像生成的上下文鸿沟">16. Qwen-Image-Agent：弥合真实世界图像生成的上下文鸿沟</a></li>
+        <li><a href="#17-dicobench通过差异与共性视觉线索评测多图细粒度感知">17. DiCoBench：通过差异与共性视觉线索评测多图细粒度感知</a></li>
+        <li><a href="#18-ssmnbench诊断跨视角人物-物体理解">18. SSMNBench：诊断跨视角人物-物体理解</a></li>
+        <li><a href="#19-跑还是不跑分析编程-agent-中代码执行的成本效益">19. 跑还是不跑：分析编程 Agent 中代码执行的成本效益</a></li>
+        <li><a href="#20-signspark高效多语言手语生成">20. SignSparK：高效多语言手语生成</a></li>
+      </ol>
+    </li>
+    <li><a href="#-音频语言模型-4篇">🎵 音频语言模型 (4篇)</a>
+      <ol>
+        <li><a href="#21-wan-streamer-v01端到端实时交互基础模型">21. Wan-Streamer v0.1：端到端实时交互基础模型</a></li>
+        <li><a href="#22-sarashina22-tts解决日语语音生成中的汉字多音问题">22. Sarashina2.2-TTS：解决日语语音生成中的汉字多音问题</a></li>
+        <li><a href="#23-steb语音到语音翻译表现力基准">23. STEB：语音到语音翻译表现力基准</a></li>
+        <li><a href="#24-vpa-guard防御图像到视频生成中的视觉提示攻击">24. VPA-Guard：防御图像到视频生成中的视觉提示攻击</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注-6篇">🔬 其他值得关注 (6篇)</a>
+      <ol>
+        <li><a href="#25-viq任意分辨率的文本对齐视觉量化表示">25. ViQ：任意分辨率的文本对齐视觉量化表示</a></li>
+        <li><a href="#26-tempowave给-llm-唱数字多小波数字嵌入用于时序预测">26. TempoWave：给 LLM 唱数字——多小波数字嵌入用于时序预测</a></li>
+        <li><a href="#27-diffusionbench扩散-transformer-的全面评测">27. DiffusionBench：扩散 Transformer 的全面评测</a></li>
+        <li><a href="#28-flat前馈潜在三角形-splatting-用于几何精确场景生成">28. FLAT：前馈潜在三角形 Splatting 用于几何精确场景生成</a></li>
+        <li><a href="#29-infokv信息感知-kv-缓存压缩用于长推理">29. InfoKV：信息感知 KV 缓存压缩用于长推理</a></li>
+        <li><a href="#30-tatoxa低资源语言文本去毒以鞑靼语为例">30. Tatoxa：低资源语言文本去毒——以鞑靼语为例</a></li>
+      </ol>
+    </li>
+    <li><a href="#-今日统计">📊 今日统计</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    
+    <blockquote>
+        <p>今日共筛选 <strong>30</strong> 篇论文，覆盖 LLM 训练、AI Agent、音频语言模型等方向。</p>
+
+    </blockquote>
+<hr>
+<h2 id="-今日亮点">🔥 今日亮点
+</h2><p><strong>Wan-Streamer v0.1</strong> — 万象流来了。端到端实时交互基础模型，单模型搞定语音+视频+文本的全双工流式交互，模型侧延迟仅 200ms，打破级联管道的延迟瓶颈。HF 热度 95 票，今天最值得关注的工作。</p>
+<p><strong>JetSpec</strong> — 推理加速新王者。投机解码终于突破了缩放天花板，在 H100 上 MATH-500 达到 9.64x 加速，对话场景 4.58x。核心是把单向 draft head 和树状并行验证结合起来，一次 forward 生成整棵候选树。</p>
+<p><strong>iLLaDA</strong> — 掩码扩散语言模型的反击。8B 参数从零训练，全双向注意力，12T tokens 预训练，在 BBH 上比 LLaDA 提升 21.6 分，MATH 提升 14.5 分，部分指标追平 Qwen2.5 7B。非自回归路线有了强劲新选手。</p>
+<hr>
+<h2 id="-llm-训练-13篇">📚 LLM 训练 (13篇)
+</h2><h3 id="1-jetspec打破投机解码的缩放天花板">1. JetSpec：打破投机解码的缩放天花板
+</h3><p><strong>JetSpec: Breaking the Scaling Ceiling of Speculative Decoding with Parallel Tree Drafting</strong></p>
+<p>投机解码（SD）面临一个核心瓶颈：增加 draft budget 只在高接受率且低开销时才能提速。JetSpec 提出了一种融合方案——用因果并行 draft head 在一次 forward 中生成候选树，同时保持与目标模型自回归分解对齐的分数。在 Qwen3 dense/MoE 模型上，MATH-500 达到 9.64x、对话场景 4.58x 加速，且已集成 vLLM。</p>
+<p>🎯 <strong>核心贡献</strong>：解决了&quot;自回归 draft 慢但准确、双向 draft 快但树不一致&quot;的矛盾，一次 forward 搞定树状候选生成。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.18394"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍31 · Score 18</p>
+<hr>
+<h3 id="2-被忽视的免费午餐rl-后训练的-progress-advantage">2. 被忽视的免费午餐：RL 后训练的 Progress Advantage
+</h3><p><strong>Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents</strong></p>
+<p>过程奖励模型（PRM）在 Agent 场景下极难构建——长时序交互、不可逆动作、随机环境反馈让人工标注和 MC 估计都不可行。本文发现 RL 后训练已经隐式提供了有效的步骤级评分：训练策略与参考策略的对数概率比恰好恢复了最优优势函数，称为&quot;Progress Advantage&quot;。无需额外训练 PRM，直接从 RL pipeline 中白嫖步骤级信号。在 test-time scaling、不确定性量化、失败归因三个应用上全面超越基于置信度的基线，甚至超过专门的 PRM。</p>
+<p>🎯 <strong>核心贡献</strong>：RL 后训练的 log-prob ratio = 最优 advantage，零标注、零额外训练，直接可用。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26080"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍8 · Score 18</p>
+<hr>
+<h3 id="3-illada改进的大语言扩散模型">3. iLLaDA：改进的大语言扩散模型
+</h3><p><strong>Improved Large Language Diffusion Models (iLLaDA)</strong></p>
+<p>8B 掩码扩散语言模型，全双向注意力，从零训练。12T tokens 预训练 + 25B tokens SFT，12 epoch。引入变长生成和基于置信度的多选评分。iLLaDA-Base 在 BBH 上比 LLaDA 提升 21.6 分，ARC-Challenge 提升 14.9 分；iLLaDA-Instruct 在 MATH 上提升 14.5 分，HumanEval 提升 16.5 分。部分指标已追平 Qwen2.5 7B。</p>
+<p>🎯 <strong>核心贡献</strong>：证明全双向扩散训练从零开始是一条可行且有力的 LM 路线，不是自回归的附属品。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.25331"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍41 · Score 18</p>
+<hr>
+<h3 id="4-causal-rcm自回归视频扩散的统一蒸馏方案">4. Causal-rCM：自回归视频扩散的统一蒸馏方案
+</h3><p><strong>Causal-rCM: A Unified Teacher-Forcing and Self-Forcing Open Recipe for Autoregressive Diffusion Distillation</strong></p>
+<p>将 rCM 扩散蒸馏框架扩展到自回归视频扩散。核心洞察：teacher-forcing CM 是 self-forcing DMD 的最佳初始化；首次实现基于 teacher-forcing 的连续时间 CM（sCM/MeanFlow），自定义 FlashAttention-2 JVP 核心实现 10x 收敛加速。蒸馏后的 2-step 因果 Wan2.1-1.3B 模型在 VBench-T2V 上达到 84.63 分。还应用到 Cosmos 3 世界模型实现了交互式世界模型。</p>
+<p>🎯 <strong>核心贡献</strong>：TF-CM + SF-DMD 互补 + 自定义 JVP kernel = 开源 SOTA 流式视频生成方案。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.25473"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍22 · Score 16</p>
+<hr>
+<h3 id="5-mvtrack4gen多视角点追踪作为-4d-视频生成的几何监督">5. MVTrack4Gen：多视角点追踪作为 4D 视频生成的几何监督
+</h3><p><strong>MVTrack4Gen: Multi-View Point Tracking as Geometric Supervision for 4D Video Generation</strong></p>
+<p>发现视频扩散模型中特定 attention 层编码了跨视角、跨时间的几何对应关系，这些对应的错位会导致运动不一致。利用这一发现，将对应特征路由到辅助多视角追踪头，联合训练扩散模型和点追踪目标。SOTA 几何一致性 + 竞争性相机精度。</p>
+<p>🎯 <strong>核心贡献</strong>：attention 层里藏着几何对应信号，把它挖出来当监督，就能同时提升视频生成的运动一致性和几何一致性。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26087"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍34 · Score 16</p>
+<hr>
+<h3 id="6-为什么多步工具使用-rl-会崩以及监督信号如何修复">6. 为什么多步工具使用 RL 会崩以及监督信号如何修复
+</h3><p><strong>Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It</strong></p>
+<p>纯 RL 训练工具使用时常出现灾难性崩溃——某些控制 token 的概率突然飙升，破坏结构化执行，但底层工具能力其实还在。论文系统研究了 off-policy 监督、hint 引导、错误样本监督等多种信号，发现 SFT+RL 交替训练（interleaved）提升稳定性，但在格式/内容 OOD 评测下表现退化。</p>
+<p>🎯 <strong>核心贡献</strong>：揭示了工具 RL 崩溃的机制（控制 token 概率尖峰），以及 SFT+RL interleaved 的稳定性-泛化权衡。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26027"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍16 · Score 16</p>
+<hr>
+<h3 id="7-cliff-tokens识别-llm-数学推理中的单-token-失败触发器">7. Cliff Tokens：识别 LLM 数学推理中的单 token 失败触发器
+</h3><p><strong>Cliff Tokens: Identifying Single-Token Failure Triggers in LLM Mathematical Reasoning</strong></p>
+<p>提出&quot;悬崖 token&quot;概念——token 级势能骤降点。删除第一个 cliff token 后重采样可恢复 pass@64 到 1.0，保留则恢复率仅 0.71-1.00。进一步分为确定性、不确定性和采样偏移三类 cliff，只有后两类通过 Cliff-DPO 优化有效。在 GSM8K 上训练后跨基准提升最高 +6.6。</p>
+<p>🎯 <strong>核心贡献</strong>：找到了推理链中&quot;一子错满盘皆输&quot;的精确 token 位置，以及针对性地修复方法。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.25524"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍2 · Score 16</p>
+<hr>
+<h3 id="8-flux3d扩散对齐稀疏表示的高保真-3dgs-生成">8. FLUX3D：扩散对齐稀疏表示的高保真 3DGS 生成
+</h3><p><strong>FLUX3D: High-Fidelity 3D Gaussian Generation with Diffusion-Aligned Sparse Representation</strong></p>
+<p>解决图像到 3DGS 的两个瓶颈：判别性 2D 特征丢失重建线索 → 提出 Diffusion-Aligned Structured Latents (DA-SLAT)；标准 DiT 缺乏 2D-3D 对齐机制 → 设计 SMDiT + MARoPE 实现几何无关的跨模态对齐。外观保真度大幅提升，全面超越 SOTA。</p>
+<p>🎯 <strong>核心贡献</strong>：用扩散特征代替判别特征做 3D 表示学习 + 稀疏结构感知的跨模态对齐 = 高保真 3DGS。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.24874"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍1 · Score 16</p>
+<hr>
+<h3 id="9-openthoughts-agentagent-模型的数据配方">9. OpenThoughts-Agent：Agent 模型的数据配方
+</h3><p><strong>OpenThoughts-Agent: Data Recipes for Agentic Models</strong></p>
+<p>100+ 消融实验研究 agent 训练数据配方的每个阶段，100K 训练集微调 Qwen3-32B 在 7 个 agent 基准上平均 44.8%，超 Nemotron-Terminal-32B 3.9 个百分点。数据展现强缩放性，每个训练集大小下都优于替代数据集。全开源。</p>
+<p>🎯 <strong>核心贡献</strong>：首个系统的 agent 训练数据消融研究 + 开源 SOTA agent 数据管线。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.24855"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍45 · Score 16</p>
+<hr>
+<h3 id="10-phyeditbench物理感知图像编辑基准">10. PhyEditBench：物理感知图像编辑基准
+</h3><p><strong>PhyEditBench: A Real-World Multi-Stage Benchmark for Physics-Aware Image Editing</strong></p>
+<p>238 个从视频提取的真实物理编辑实例 + 35 个反物理实例，4 大类 12 子类。发现当前 SOTA 编辑方法在物理推理上严重不足。提出 test-time scaling + 潜空间缩减的无训练基线 PhyWorld，证明视频生成过程可作为图像编辑的推理机制。</p>
+<p>🎯 <strong>核心贡献</strong>：首个物理推理编辑基准，揭示编辑模型&quot;不懂物理&quot;的问题，并给出简单有效基线。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26551"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍0 · Score 15</p>
+<hr>
+<h3 id="11-scalereasoner-r1跨尺度推理增强病理-vlm">11. ScaleReasoner-R1：跨尺度推理增强病理 VLM
+</h3><p><strong>Enhancing Pathological VLMs with Cross-scale Reasoning</strong></p>
+<p>病理图像天生多尺度，但现有数据集缺乏显式跨尺度推理目标。提出泄漏感知数据构建管线（对抗性文本筛选 + 约束引导问题设计），构建 Scale-VQA（4685 题，2537 图，多放大倍率）。用 RL 训练的 ScaleReasoner-R1 在跨尺度基准上 SOTA，且泛化到单尺度基准也 SOTA。</p>
+<p>🎯 <strong>核心贡献</strong>：多尺度推理不应只是&quot;看到多尺度&quot;，而应有显式跨尺度推理监督——防止模型走文本捷径。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.17412"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍0 · Score 15</p>
+<hr>
+<h3 id="12-robust-to置信度感知的工具编排实现鲁棒视频理解">12. Robust-TO：置信度感知的工具编排实现鲁棒视频理解
+</h3><p><strong>Confidence-Aware Tool Orchestration for Robust Video Understanding</strong></p>
+<p>发现视频推理模型在模糊/遮挡等扰动下准确率骤降 15-30%，但模型对此毫无感知——&ldquo;盲目信任问题&rdquo;。提出 Robust-TO：逐帧可信度评分 → 按可靠性-相关性选帧 → 工具返回带校准可靠性分数的证据 → 三级综合合成。干净输入 56.4%（超 Gemini-2.5-Pro），扰动下仅降 2.1%。</p>
+<p>🎯 <strong>核心贡献</strong>：让视频理解模型知道自己&quot;看不清&quot;，并据此调整推理权重——有自知之明的 agent 才是靠谱的 agent。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26904"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍9 · Score 14</p>
+<hr>
+<h3 id="13-icwm上下文内世界模型用于机器人控制">13. ICWM：上下文内世界模型用于机器人控制
+</h3><p><strong>In-Context World Modeling for Robotic Control</strong></p>
+<p>VLA 模型泛化性差，因为只看当前观测和语言指令，忽略了系统配置。ICWM 把系统辨识当成 in-context 适应问题：用一段简短的自生成交互历史让模型推断系统变量（相机视角、机器人形态等），无需参数更新即可适应新配置。仿真和真机实验都显著超越标准 VLA 基线。</p>
+<p>🎯 <strong>核心贡献</strong>：ICL 不只用来学&quot;做什么任务&quot;，还用来学&quot;系统怎么运作&quot;——把上下文窗口当世界模型用。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26025"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍50 · Score 14</p>
+<hr>
+<h2 id="-ai-agent-7篇">🤖 AI Agent (7篇)
+</h2><h3 id="14-gauntletbench重新评估-agent-在陌生环境中的能力">14. GauntletBench：重新评估 Agent 在陌生环境中的能力
+</h3><p><strong>Running the Gauntlet: Re-evaluating the Capabilities of Agents Beyond Familiar Environments</strong></p>
+<p>聚焦三个被忽视的能力维度（时间感知、图形理解、3D 推理），跨 5 个专业应用（视频编辑器、工作流构建器、3D 建模器、飞行分析器、电路设计器），100 个视觉密集型任务。最强 agent 也只有 19.1% 成功率，而人类标注者超 80%。当前 agent 在这些被忽视维度上离人类水平还很远。</p>
+<p>🎯 <strong>核心贡献</strong>：用专业应用暴露 agent 的深层弱点——不是做不了简单任务，是在需要真正&quot;看懂&quot;和&quot;推理&quot;的场景中彻底崩盘。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.14397"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍17 · Score 17</p>
+<hr>
+<h3 id="15-验证地平线编程-agent-奖励没有银弹">15. 验证地平线：编程 Agent 奖励没有银弹
+</h3><p><strong>The Verification Horizon: No Silver Bullet for Coding Agent Rewards</strong></p>
+<p>经典直觉认为验证比生成简单，但对编程 agent 这正在反转——生成候选方案已不难，可靠验证才是难题。沿可扩展性、忠实性、鲁棒性三个维度刻画验证信号质量，研究了四种奖励构造（通用编程测试验证、前端 rubric 验证、用户验证、自动化 agent 验证），发现没有固定奖励函数能随策略能力增长持续有效——验证必须与生成器共同进化。</p>
+<p>🎯 <strong>核心贡献</strong>：验证是编程 agent 的核心瓶颈，且不存在一劳永逸的验证方案，reward hacking 是持久战。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26300"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍41 · Score 17</p>
+<hr>
+<h3 id="16-qwen-image-agent弥合真实世界图像生成的上下文鸿沟">16. Qwen-Image-Agent：弥合真实世界图像生成的上下文鸿沟
+</h3><p><strong>Qwen-Image-Agent: Bridging the Context Gap in Real-World Image Generation</strong></p>
+<p>用户请求往往不够具体、隐含依赖最新知识——这是&quot;上下文鸿沟&quot;。Qwen-Image-Agent 把用户输入视为部分上下文，通过上下文感知规划 + 上下文落地逐步补全生成上下文，整合推理、搜索、记忆和反馈。提出 IA-Bench 评测 agent 图像生成的规划/推理/搜索/记忆四维能力。在 IA-Bench、Mindbench 和 WISE-Verified 上 SOTA。</p>
+<p>🎯 <strong>核心贡献</strong>：首次系统定义和解决 T2I 的上下文鸿沟问题——用户说&quot;画个猫&quot;可能是想画自家的猫。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26907"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍42 · Score 16</p>
+<hr>
+<h3 id="17-dicobench通过差异与共性视觉线索评测多图细粒度感知">17. DiCoBench：通过差异与共性视觉线索评测多图细粒度感知
+</h3><p><strong>DiCoBench: Benchmarking Multi-Image Fine-Grained Perception via Differential and Commonality Visual Cues</strong></p>
+<p>765 个精心策划的样本，分为差异视觉线索和共性视觉线索两个渐进赛道，8 个感知任务，接近 2K 高分辨率。人类准确率 98.3%，最强 MLLM 严重挣扎于微观细节捕捉。现有模型依赖&quot;多图语义平均&quot;而非真正的跨图综合。</p>
+<p>🎯 <strong>核心贡献</strong>：高分辨率 + 多图 + 细粒度 = 当代 MLLM 的死穴，不是看不清，是不会比。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26602"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍1 · Score 16</p>
+<hr>
+<h3 id="18-ssmnbench诊断跨视角人物-物体理解">18. SSMNBench：诊断跨视角人物-物体理解
+</h3><p><strong>SSMNBench: Diagnosing Image-based Cross-View Human-Object Understanding</strong></p>
+<p>3300 个 QA 对，分为单视角充分（SVS）和多视角必要（MVN）两类。发现 MLLM 在冗余视角下被&quot;干扰退化&quot;（SVS），且无法跨相机融合碎片化几何证据（MVN）。模型依赖单图语义平均和视角偏好，而非真正的跨视角合成。</p>
+<p>🎯 <strong>核心贡献</strong>：多视角 ≠ 多信息，冗余视角反而有害；模型不会&quot;拼图&quot;，只会&quot;投票&quot;。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.25634"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍1 · Score 16</p>
+<hr>
+<h3 id="19-跑还是不跑分析编程-agent-中代码执行的成本效益">19. 跑还是不跑：分析编程 Agent 中代码执行的成本效益
+</h3><p><strong>To Run or Not to Run: Analyzing the Cost-Effectiveness of Code Execution in LLM-Based Program Repair</strong></p>
+<p>分析 7,745 条 agent trace 和 3,000 次修复尝试，发现：平均每任务 8.8 次测试运行；禁止执行和自由执行之间修复成功率差距仅 1.25%（不显著），但禁止执行大幅节省 token 和时间；执行收益集中在少数实例。当前 agent 在&quot;无差别执行&quot;，应该把执行当作有成本效益权衡的资源。</p>
+<p>🎯 <strong>核心贡献</strong>：代码执行不是万能的——大部分情况下跑不跑测试差异不大，但 agent 每次都跑，浪费严重。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26978"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍1 · Score 15</p>
+<hr>
+<h3 id="20-signspark高效多语言手语生成">20. SignSparK：高效多语言手语生成
+</h3><p><strong>SignSparK: Efficient Multilingual Sign Language Production via Sparse Keyframe Learning</strong></p>
+<p>用手语稀疏关键帧捕获运动分布，从离散锚点生成密集动作，同时避免回归到均值和保证流畅性。FAST 超高效手语分割模型自动挖掘时间边界，Conditional Flow Match 框架生成 3D 手语序列。跨 4 种手语语言，迄今最大规模多语言手语生成框架，集成 3DGS 实现照片级渲染。</p>
+<p>🎯 <strong>核心贡献</strong>：稀疏关键帧 + CFM = 既流畅又精确的手语生成，还支持关键帧到姿态的精确编辑。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2603.10446"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍0 · Score 14</p>
+<hr>
+<h2 id="-音频语言模型-4篇">🎵 音频语言模型 (4篇)
+</h2><h3 id="21-wan-streamer-v01端到端实时交互基础模型">21. Wan-Streamer v0.1：端到端实时交互基础模型
+</h3><p><strong>Wan-Streamer v0.1: End-to-end Real-time Interactive Foundation Models</strong></p>
+<p>原生流式端到端交互基础模型，单一 Transformer 统一建模语言、音频、视频的输入输出，block-causal attention 协调增量流式传输。不依赖任何外部 ASR/TTS/头像/视频生成模块，感知、推理、生成、响应时序、轮次管理、跨模态同步全部在模型内学习。模型侧延迟约 200ms，总交互延迟约 550ms（含 350ms 网络延迟），支持亚秒级全双工音视频通信。</p>
+<p>🎯 <strong>核心贡献</strong>：第一个真正的端到端流式多模态交互模型——不是管道拼接，是一体化。200ms 模型侧延迟是实时交互的里程碑。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.25041"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍95 · Score 21 ⭐</p>
+<hr>
+<h3 id="22-sarashina22-tts解决日语语音生成中的汉字多音问题">22. Sarashina2.2-TTS：解决日语语音生成中的汉字多音问题
+</h3><p><strong>Sarashina2.2-TTS: Tackling Kanji Polyphony in Japanese Speech Generation via Data Scaling and Targeted Data Synthesis</strong></p>
+<p>日语 TTS 的核心难题——汉字多音。361k 小时语音训练 + 覆盖全部 2,136 常用汉字的定向数据增强管线 + Joyo Kanji Yomi Benchmark（4,378 读法）+ Kana-CER 评测指标。在汉字级读音准确率上 SOTA，一般句子级发音匹配顶级基线，零样本日语语音合成中说话人相似度最高。跨语言评测中唯一能在任何提示语言下稳定日语发音的系统。</p>
+<p>🎯 <strong>核心贡献</strong>：定向数据增强覆盖全部常用汉字 + kana 空间评测 = 日语 TTS 的多音字问题被系统性地解决了。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.25369"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍0 · Score 18</p>
+<hr>
+<h3 id="23-steb语音到语音翻译表现力基准">23. STEB：语音到语音翻译表现力基准
+</h3><p><strong>STEB: A Speech-to-Speech Translation Expressiveness Benchmark for Evaluating Beyond Translation Fidelity</strong></p>
+<p>32.6 小时中英基准，评测翻译保真度 + 表现力（情感、场景风格、非语言发声）。用&quot;描述-总结&quot;框架将语音转化为结构化表现属性，LLM 裁判对比源端和假设端属性。多数系统翻译保真度高，但情感保持仅 3.82/5，非语言发声保持仅 2.31/5。语义迁移和表现力迁移之间存在明显鸿沟。</p>
+<p>🎯 <strong>核心贡献</strong>：S2ST 不能只看&quot;说得对不对&quot;，还要看&quot;说得有没有感情&quot;——现有系统在这方面严重不足。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.25529"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍1 · Score 16</p>
+<hr>
+<h3 id="24-vpa-guard防御图像到视频生成中的视觉提示攻击">24. VPA-Guard：防御图像到视频生成中的视觉提示攻击
+</h3><p><strong>VPA-Guard: Defending and Benchmarking Image-to-Video Generation Against Visual Prompt Attacks</strong></p>
+<p>I2V 模型中的视觉提示（箭头、草图、emoji）可被恶意利用——静态视觉线索被模型解读为可执行时序指令，生成有害视频。Wan 2.7 上攻击成功率 100%，Veo 3.1 上 74.8%。VPA-Guard 用检索增强 + 自演化防御框架，攻击 ASR 平均降低 44.2%，有害性评分降低 73.4%，同时保持合法编辑的可用性。</p>
+<p>🎯 <strong>核心贡献</strong>：首次系统定义视觉提示攻击威胁模型 + 有效防御——视觉可控性是把双刃剑。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.25592"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍1 · Score 15</p>
+<hr>
+<h2 id="-其他值得关注-6篇">🔬 其他值得关注 (6篇)
+</h2><h3 id="25-viq任意分辨率的文本对齐视觉量化表示">25. ViQ：任意分辨率的文本对齐视觉量化表示
+</h3><p><strong>ViQ: Text-Aligned Visual Quantized Representations at Any Resolution</strong></p>
+<p>视觉量化表示的核心矛盾：重建导向的缺语义，语义强的丢细节。ViQ 分两阶段——文本对齐预训练增强语义 + 特征离散化渐进紧缩特征空间 + 位置感知头级量化支持任意分辨率。与连续高维 SOTA 视觉编码器竞争力相当，同时保持高精度低层重建。多模态训练加速 20%-70%。</p>
+<p>🎯 <strong>核心贡献</strong>：文本对齐 + 位置感知量化 = 语义和细节兼得的离散视觉表示，还支持原生分辨率输入。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.27313"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍38 · Score 18</p>
+<hr>
+<h3 id="26-tempowave给-llm-唱数字多小波数字嵌入用于时序预测">26. TempoWave：给 LLM 唱数字——多小波数字嵌入用于时序预测
+</h3><p><strong>Speaking Numbers to LLMs: Multi-Wavelet Number Embeddings for Time Series Forecasting</strong></p>
+<p>LLM 的离散语言 tokenization 和连续数值不匹配，损害数值排序和预测可靠性。TempoWave 用多小波多尺度系数构建数字级嵌入，直接覆盖标准 token 表示，同时保留细粒度局部波动和宏观全局结构。5 个上下文增强预测基准上一致优于标准数值 tokenization 和其他嵌入接口。</p>
+<p>🎯 <strong>核心贡献</strong>：数值接口是 LLM 做时序预测的关键瓶颈——多分辨率小波嵌入比直接喂数字好得多。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26487"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍0 · Score 16</p>
+<hr>
+<h3 id="27-diffusionbench扩散-transformer-的全面评测">27. DiffusionBench：扩散 Transformer 的全面评测
+</h3><p><strong>DiffusionBench: On Holistic Evaluation of Diffusion Transformers</strong></p>
+<p>DiT 评测困在 ImageNet 类条件生成上，但方法排名在 ImageNet 和 T2I 之间几乎不相关（Pearson -0.377 ~ -0.580）。引入 NanoGen 框架，12 行配置改动就能从 ImageNet 切换到 T2I 训练。建议用 DiffusionBench 替代单独的 ImageNet 评测——ImageNet FID 提升可能完全不反映 T2I 进步。</p>
+<p>🎯 <strong>核心贡献</strong>：ImageNet FID 和 T2I 质量负相关——在 ImageNet 上刷点可能是在自嗨。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.24888"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍11 · Score 15</p>
+<hr>
+<h3 id="28-flat前馈潜在三角形-splatting-用于几何精确场景生成">28. FLAT：前馈潜在三角形 Splatting 用于几何精确场景生成
+</h3><p><strong>FLAT: Feedforward Latent Triangle Splatting for Geometrically Accurate Scene Generation</strong></p>
+<p>首次从视频扩散潜空间直接解码三角形 splat。三角形比 3DGS 更难回归（对方向极其敏感，梯度流差），用光线中心旋转参数化 + 乘积窗函数解决。几何精度显著优于 SOTA，视觉质量竞争力。轻量测试时精炼可将三角面片转换为游戏引擎可用的不透明表示。</p>
+<p>🎯 <strong>核心贡献</strong>：视频扩散潜空间 → 三角面片（不是 3DGS），一步到位输出游戏引擎可用的几何。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.24876"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍21 · Score 15</p>
+<hr>
+<h3 id="29-infokv信息感知-kv-缓存压缩用于长推理">29. InfoKV：信息感知 KV 缓存压缩用于长推理
+</h3><p><strong>Information-Aware KV Cache Compression for Long Reasoning</strong></p>
+<p>现有 KV 压缩依赖注意力权重估计 token 重要性，但注意力主要反映上下文相关性，忽略预测不确定性和信息量。提出 Forward Influence 度量——被压缩 token 对未来上下文的影响。高预测不确定性的 token 对远期上下文影响更大。InfoKV 融合 token 级预测不确定性和层级表示演化，在 Llama-3.1/3.2 和 DeepSeek-R1 上一致优于注意力方法。</p>
+<p>🎯 <strong>核心贡献</strong>：注意力权重只看&quot;谁现在重要&quot;，InfoKV 还看&quot;谁将来重要&quot;——不确定的 token 反而是长程推理的关键。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26875"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍9 · Score 14</p>
+<hr>
+<h3 id="30-tatoxa低资源语言文本去毒以鞑靼语为例">30. Tatoxa：低资源语言文本去毒——以鞑靼语为例
+</h3><p><strong>The Tatoxa System for Text Detoxification in Low-Resource Languages: The Case of Tatar</strong></p>
+<p>鞑靼语文本去毒系统，超越开源和商业 LLM。新数据集用于微调和评测。跨语言迁移实验表明，即使有大量俄语语料，从俄语迁移的效果也显著差于直接用鞑靼语数据训练。</p>
+<p>🎯 <strong>核心贡献</strong>：低资源语言去毒不能指望跨语言迁移，即使是文化相近的语言——原生数据不可替代。</p>
+<p>🔗 <a class="link" href="https://arxiv.org/abs/2606.26015"  target="_blank" rel="noopener"
+    >arxiv</a> · HF 👍1 · Score 14</p>
+<hr>
+<h2 id="-今日统计">📊 今日统计
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>篇数</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LLM 训练</td>
+          <td>13</td>
+      </tr>
+      <tr>
+          <td>AI Agent</td>
+          <td>7</td>
+      </tr>
+      <tr>
+          <td>音频语言模型</td>
+          <td>4</td>
+      </tr>
+      <tr>
+          <td>其他值得关注</td>
+          <td>6</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>HF 热度 Top 5：</strong></p>
+<ol>
+<li>🔥 Wan-Streamer v0.1 — 95 👍</li>
+<li>ICWM（上下文内世界模型）— 50 👍</li>
+<li>OpenThoughts-Agent — 45 👍</li>
+<li>Qwen-Image-Agent — 42 👍</li>
+<li>iLLaDA — 41 👍</li>
+</ol>
+<hr>
+<p><em>Generated by 爱弥斯 · 2026-06-29</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-22/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-22</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-21/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-21</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-19/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-19</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-05-13/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-05-13</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
