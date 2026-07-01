@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="生成时间：2026-07-01 08:15 Asia/Shanghai\n今天的主线很清楚：模型厂商继续把重点放到「更便宜的 agent 执行」和「垂直工作流」，开源侧则集中在 AI gateway、KV cache、agent 框架、AI IDE/浏览器和数据格式。相比单纯发模型，工程化和可部署性正在变成更值得看的信号。\n">
+<title>AI News Daily | 2026-07-01</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-07-01/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI News Daily | 2026-07-01">
+<meta property='og:description' content="生成时间：2026-07-01 08:15 Asia/Shanghai\n今天的主线很清楚：模型厂商继续把重点放到「更便宜的 agent 执行」和「垂直工作流」，开源侧则集中在 AI gateway、KV cache、agent 框架、AI IDE/浏览器和数据格式。相比单纯发模型，工程化和可部署性正在变成更值得看的信号。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-07-01/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI News Daily | 2026-07-01">
+<meta name="twitter:description" content="生成时间：2026-07-01 08:15 Asia/Shanghai\n今天的主线很清楚：模型厂商继续把重点放到「更便宜的 agent 执行」和「垂直工作流」，开源侧则集中在 AI gateway、KV cache、agent 框架、AI IDE/浏览器和数据格式。相比单纯发模型，工程化和可部署性正在变成更值得看的信号。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-07-01/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a></li>
+    <li><a href="#工程与开源">工程与开源</a></li>
+    <li><a href="#产品与应用">产品与应用</a></li>
+    <li><a href="#研究与底层">研究与底层</a></li>
+    <li><a href="#今天跳过的内容">今天跳过的内容</a></li>
+    <li><a href="#数据与去重">数据与去重</a></li>
+    <li><a href="#本次收录-url">本次收录 URL</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-news-2026-07-01/">
+            <img alt="Featured image of post AI News Daily | 2026-07-01" height="720" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-news-2026-07-01/cover.jpg" srcset="/zh-cn/p/daily-news-2026-07-01/cover_hu_69c89b9ccdf02b94.jpg 800w, /zh-cn/p/daily-news-2026-07-01/cover.jpg 1080w" width="1080">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/news/" style="background-color: hsl(182, 60%, 84%); color: hsl(182, 60%, 15%);">
+                News
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-07-01/">AI News Daily | 2026-07-01</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-01T00:00:00Z'>Jul 01, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a></li>
+    <li><a href="#工程与开源">工程与开源</a></li>
+    <li><a href="#产品与应用">产品与应用</a></li>
+    <li><a href="#研究与底层">研究与底层</a></li>
+    <li><a href="#今天跳过的内容">今天跳过的内容</a></li>
+    <li><a href="#数据与去重">数据与去重</a></li>
+    <li><a href="#本次收录-url">本次收录 URL</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>生成时间：2026-07-01 08:15 Asia/Shanghai</p>
+<p>今天的主线很清楚：模型厂商继续把重点放到「更便宜的 agent 执行」和「垂直工作流」，开源侧则集中在 AI gateway、KV cache、agent 框架、AI IDE/浏览器和数据格式。相比单纯发模型，工程化和可部署性正在变成更值得看的信号。</p>
+<h2 id="今日重点">今日重点
+</h2><ol>
+<li>
+<p><a class="link" href="https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/"  target="_blank" rel="noopener"
+    >Anthropic 发布 Claude Sonnet 5，主打更便宜的 agent 运行</a></p>
+<ul>
+<li>来源：TechCrunch AI；时间：Tue, 30 Jun 2026 18:00:00 +0000</li>
+<li>精评：如果标题里的定位成立，Anthropic 不是在单纯追求旗舰模型参数，而是在补 agent 长时间执行的成本短板。对企业和开发者来说，真正卡预算的往往不是一次问答，而是工具调用、循环推理和后台任务。</li>
+<li>观察点：关注它是否会改写 Claude 在 coding agent、研究 agent 和企业自动化里的默认模型选择。</li>
+</ul>
+</li>
+<li>
+<p><a class="link" href="https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/"  target="_blank" rel="noopener"
+    >Claude Science：Anthropic 押注科学工作流，而不只是新模型</a></p>
+<ul>
+<li>来源：TechCrunch AI；时间：Tue, 30 Jun 2026 17:00:00 +0000</li>
+<li>精评：这类产品化方向比「模型又强了一点」更现实：科研用户要的是文献、实验、数据和写作链路被串起来。Anthropic 如果能把 Claude 嵌进具体 workflow，就会更接近高价值垂直场景。</li>
+<li>观察点：值得看它和通用聊天、Notebook、实验记录工具之间怎么分工。</li>
+</ul>
+</li>
+<li>
+<p><a class="link" href="https://code.claude.com/docs/en/desktop-linux"  target="_blank" rel="noopener"
+    >Claude Desktop Linux beta 上线</a></p>
+<ul>
+<li>来源：Hacker News；时间：2026-06-30T16:09:10</li>
+<li>精评：Linux 桌面支持对 AI 编程和研究人群很关键，因为这部分用户大量在 Linux 环境里工作。桌面端如果能稳定承载 MCP、文件上下文和本地工具调用，会让 Claude 的开发者入口更完整。</li>
+<li>观察点：如果你依赖 Linux 主力机，这条比普通产品更新更值得试。</li>
+</ul>
+</li>
+<li>
+<p><a class="link" href="https://github.com/BerriAI/litellm"  target="_blank" rel="noopener"
+    >LiteLLM 继续占据 AI Gateway 心智</a></p>
+<ul>
+<li>来源：GitHub Trending；时间：2026-07-01T00:16:44Z</li>
+<li>精评：LiteLLM 的价值在于把多模型调用、成本追踪、guardrails、负载均衡和日志放到统一代理里。模型供应商越多，企业越需要这一层。</li>
+<li>观察点：AI gateway 正在从「兼容 OpenAI API」变成模型治理基础设施。</li>
+</ul>
+</li>
+<li>
+<p><a class="link" href="https://github.com/LMCache/LMCache"  target="_blank" rel="noopener"
+    >LMCache：KV cache 变成 LLM 推理优化热点</a></p>
+<ul>
+<li>来源：GitHub Trending；时间：2026-07-01T00:07:52Z</li>
+<li>精评：KV cache 不是新概念，但单独做成基础设施说明推理成本和延迟优化进入了细分阶段。长上下文、agent 多轮和高并发服务都会吃 cache 能力。</li>
+<li>观察点：后续可以重点看它和 vLLM、SGLang、云厂商推理服务的集成。</li>
+</ul>
+</li>
+</ol>
+<h2 id="工程与开源">工程与开源
+</h2><ul>
+<li><a class="link" href="https://github.com/VoltAgent/voltagent"  target="_blank" rel="noopener"
+    >VoltAgent</a>：TypeScript AI agent 框架继续热，说明前端/全栈团队也在把 agent 当正式工程对象，而不是 demo 脚本。
+<ul>
+<li>项目描述：AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework</li>
+</ul>
+</li>
+<li><a class="link" href="https://github.com/onyx-dot-app/onyx"  target="_blank" rel="noopener"
+    >Onyx</a>：开源 AI Chat 平台的吸引力在于可控的数据连接、权限和部署方式，适合企业内部知识库场景。
+<ul>
+<li>项目描述：Open Source AI Platform - AI Chat with advanced features that works with every LLM</li>
+</ul>
+</li>
+<li><a class="link" href="https://github.com/CopilotKit/CopilotKit"  target="_blank" rel="noopener"
+    >CopilotKit</a>：把 agent 和生成式 UI 放到前端栈里，方向很实用：未来很多 AI 功能不会只停留在聊天框。
+<ul>
+<li>项目描述：The Frontend Stack for Agents &amp; Generative UI. React, Angular, Mobile, Slack, and more.  Makers of the AG-UI Protocol</li>
+</ul>
+</li>
+<li><a class="link" href="https://github.com/langchain-ai/open-swe"  target="_blank" rel="noopener"
+    >LangChain open-swe</a>：异步 coding agent 仍是开源社区的高热方向，关键看任务恢复、评测和代码审查能力。
+<ul>
+<li>项目描述：An Open-Source Asynchronous Coding Agent</li>
+</ul>
+</li>
+<li><a class="link" href="https://github.com/browseros-ai/BrowserOS"  target="_blank" rel="noopener"
+    >BrowserOS</a>：Agentic browser 的开源替代品继续出现，浏览器正在变成 AI agent 的执行环境之一。
+<ul>
+<li>项目描述：🌐 The open-source Agentic browser; alternative to ChatGPT Atlas, Perplexity Comet, Dia.</li>
+</ul>
+</li>
+<li><a class="link" href="https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/"  target="_blank" rel="noopener"
+    >X MCP server</a>：MCP 继续从开发者工具扩散到平台入口。平台开放 MCP，本质是在争夺被 AI 工具调用的默认位置。</li>
+<li><a class="link" href="https://github.com/lance-format/lance"  target="_blank" rel="noopener"
+    >Lance</a>：多模态 AI 数据格式和向量索引一体化仍值得关注，数据层优化会直接影响训练、检索和评测效率。
+<ul>
+<li>项目描述：Open Lakehouse Format for Multimodal AI. Convert from Parquet in 2 lines of code for 100x faster random access, vector index, and data versioning. Compatible with Pandas, DuckDB, Polars, Pyarrow, and PyTorch with more integrations coming..</li>
+</ul>
+</li>
+</ul>
+<h2 id="产品与应用">产品与应用
+</h2><ul>
+<li><a class="link" href="https://techcrunch.com/2026/06/30/lumo-protons-privacy-focused-ai-chatbot-gets-an-upgrade/"  target="_blank" rel="noopener"
+    >Proton Lumo 升级</a>：隐私取向 AI chatbot 继续迭代，说明「不把数据交给大平台」仍是差异化卖点。</li>
+<li><a class="link" href="https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-own-model-as-ai-startups-seek-defensibility/"  target="_blank" rel="noopener"
+    >Base44 推出自有模型</a>：vibe-coding 平台开始做自有模型，核心动机大概率是成本、延迟、可控性和产品壁垒。</li>
+</ul>
+<h2 id="研究与底层">研究与底层
+</h2><ul>
+<li><a class="link" href="https://aleph-alpha.com/en/blog/model-training-as-code/"  target="_blank" rel="noopener"
+    >Model Training as Code</a>：把训练流程工程化、代码化，方向对可复现训练和企业 ML 管线更重要。</li>
+<li><a class="link" href="https://arxiv.org/abs/2606.22283"  target="_blank" rel="noopener"
+    >Apple Neural Engine: Architecture, Programming, and Performance</a>：端侧 AI 的性能和可编程性仍是大方向，ANE 相关资料对移动端和本地推理开发有参考价值。</li>
+</ul>
+<h2 id="今天跳过的内容">今天跳过的内容
+</h2><ul>
+<li>过滤结果里有大量 HN Algolia 搜到的旧 LLM/ML 经典文章，虽然相关但不是今天新闻，未收录。</li>
+<li>明显非 AI/ML/LLM 内容已丢弃，例如政治、普通硬件、DRM、TLD、简历 ATS 等泛科技新闻。</li>
+<li>Reddit r/artificial 与 r/LocalLLaMA 抓取遇到 429，脚本已继续；本次 Reddit 候选主要来自 r/MachineLearning。</li>
+<li>抓取日志中未看到 Product Hunt 项目输出；按约束未改脚本，只基于脚本产出的 filtered_news.json 生成。</li>
+</ul>
+<h2 id="数据与去重">数据与去重
+</h2><ul>
+<li>原始抓取：179 条；预筛选后：119 条；脚本去重：18 条。</li>
+<li>fetch_news.py 记录的非致命错误：HN Algolia deep learning 查询超时；Reddit r/artificial 与 r/LocalLLaMA 返回 429。</li>
+<li>生成日报前已读取 ~/.seen_news.json，并跳过过去 7 天已报道 URL。</li>
+</ul>
+<h2 id="本次收录-url">本次收录 URL
+</h2><ul>
+<li><a class="link" href="https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/"  target="_blank" rel="noopener"
+    >https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/</a></li>
+<li><a class="link" href="https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/"  target="_blank" rel="noopener"
+    >https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/</a></li>
+<li><a class="link" href="https://code.claude.com/docs/en/desktop-linux"  target="_blank" rel="noopener"
+    >https://code.claude.com/docs/en/desktop-linux</a></li>
+<li><a class="link" href="https://github.com/BerriAI/litellm"  target="_blank" rel="noopener"
+    >https://github.com/BerriAI/litellm</a></li>
+<li><a class="link" href="https://github.com/LMCache/LMCache"  target="_blank" rel="noopener"
+    >https://github.com/LMCache/LMCache</a></li>
+<li><a class="link" href="https://github.com/VoltAgent/voltagent"  target="_blank" rel="noopener"
+    >https://github.com/VoltAgent/voltagent</a></li>
+<li><a class="link" href="https://github.com/onyx-dot-app/onyx"  target="_blank" rel="noopener"
+    >https://github.com/onyx-dot-app/onyx</a></li>
+<li><a class="link" href="https://github.com/CopilotKit/CopilotKit"  target="_blank" rel="noopener"
+    >https://github.com/CopilotKit/CopilotKit</a></li>
+<li><a class="link" href="https://github.com/langchain-ai/open-swe"  target="_blank" rel="noopener"
+    >https://github.com/langchain-ai/open-swe</a></li>
+<li><a class="link" href="https://github.com/browseros-ai/BrowserOS"  target="_blank" rel="noopener"
+    >https://github.com/browseros-ai/BrowserOS</a></li>
+<li><a class="link" href="https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/"  target="_blank" rel="noopener"
+    >https://techcrunch.com/2026/06/30/x-now-offers-an-mcp-server-to-make-its-platform-easier-for-ai-tools-to-use/</a></li>
+<li><a class="link" href="https://techcrunch.com/2026/06/30/lumo-protons-privacy-focused-ai-chatbot-gets-an-upgrade/"  target="_blank" rel="noopener"
+    >https://techcrunch.com/2026/06/30/lumo-protons-privacy-focused-ai-chatbot-gets-an-upgrade/</a></li>
+<li><a class="link" href="https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-own-model-as-ai-startups-seek-defensibility/"  target="_blank" rel="noopener"
+    >https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-own-model-as-ai-startups-seek-defensibility/</a></li>
+<li><a class="link" href="https://aleph-alpha.com/en/blog/model-training-as-code/"  target="_blank" rel="noopener"
+    >https://aleph-alpha.com/en/blog/model-training-as-code/</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2606.22283"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2606.22283</a></li>
+<li><a class="link" href="https://github.com/lance-format/lance"  target="_blank" rel="noopener"
+    >https://github.com/lance-format/lance</a></li>
+</ul>
+<hr>
+
+    <blockquote>
+        <p>Photo by <a class="link" href="https://unsplash.com/photos/man-in-blue-nike-crew-neck-t-shirt-standing-beside-man-in-blue-crew-neck-t-3souOx_6Jyk"  target="_blank" rel="noopener"
+    >Nguyen Dang Hoang Nhu</a> on <a class="link" href="https://unsplash.com"  target="_blank" rel="noopener"
+    >Unsplash</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-06-30/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-06-30" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-06-30/cover_hu_e23894f4d4558d12.jpg" srcset="/zh-cn/p/daily-news-2026-06-30/cover_hu_e23894f4d4558d12.jpg 1x, /zh-cn/p/daily-news-2026-06-30/cover_hu_64e6a14f711657f6.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #6246ab80 0%, #c1a8f2C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-06-30</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-06-22/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-06-22" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-06-22/cover_hu_9cfcb3e5652df0b7.jpg" srcset="/zh-cn/p/daily-news-2026-06-22/cover_hu_9cfcb3e5652df0b7.jpg 1x, /zh-cn/p/daily-news-2026-06-22/cover_hu_b7c6f5ac6d20bca0.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #589fc080 0%, #3e6196C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-06-22</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-06-21/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-06-21" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-06-21/cover_hu_d0b881ae4afb9da4.jpg" srcset="/zh-cn/p/daily-news-2026-06-21/cover_hu_d0b881ae4afb9da4.jpg 1x, /zh-cn/p/daily-news-2026-06-21/cover_hu_a7b3e0f5c9d73cab.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #27426480 0%, #3f609dC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-06-21</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-06-20/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-06-20" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-06-20/cover_hu_a5c8ab6eb5ed46a.jpg" srcset="/zh-cn/p/daily-news-2026-06-20/cover_hu_a5c8ab6eb5ed46a.jpg 1x, /zh-cn/p/daily-news-2026-06-20/cover_hu_c179cf0d78d68c15.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #ccd1c480 0%, #0f1111C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-06-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-06-19/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-06-19" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-06-19/cover_hu_1c72bc8b4169b22d.jpg" srcset="/zh-cn/p/daily-news-2026-06-19/cover_hu_1c72bc8b4169b22d.jpg 1x, /zh-cn/p/daily-news-2026-06-19/cover_hu_9f69eff461ecad25.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #6096f580 0%, #eff1feC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-06-19</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>

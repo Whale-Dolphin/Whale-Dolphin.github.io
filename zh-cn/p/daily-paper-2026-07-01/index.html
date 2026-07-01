@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 今天抓取 HuggingFace/arXiv 共 100 篇，预筛 30 篇；按 ~/DailyReport/.seen_papers.json 去重后，新收录 23 篇，跳过过去 7 天已报道 7 篇。 分类分布：AI Agents: 7 | Audio LLM: 2 | LLM Training: 10 | 其他值得关注: 4。\n今天主线很清楚：agent 的扩展正在从“更大模型”转向“更长任务、更好验证、更会停止”；同时，多模态评测开始从感知识别进入创作意图、世界状态、终端/电脑操作等更贴近真实任务的层面。\n">
+<title>AI Paper Daily | 2026-07-01</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-01/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-01">
+<meta property='og:description' content="今日概览 今天抓取 HuggingFace/arXiv 共 100 篇，预筛 30 篇；按 ~/DailyReport/.seen_papers.json 去重后，新收录 23 篇，跳过过去 7 天已报道 7 篇。 分类分布：AI Agents: 7 | Audio LLM: 2 | LLM Training: 10 | 其他值得关注: 4。\n今天主线很清楚：agent 的扩展正在从“更大模型”转向“更长任务、更好验证、更会停止”；同时，多模态评测开始从感知识别进入创作意图、世界状态、终端/电脑操作等更贴近真实任务的层面。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-01/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-01T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-01">
+<meta name="twitter:description" content="今日概览 今天抓取 HuggingFace/arXiv 共 100 篇，预筛 30 篇；按 ~/DailyReport/.seen_papers.json 去重后，新收录 23 篇，跳过过去 7 天已报道 7 篇。 分类分布：AI Agents: 7 | Audio LLM: 2 | LLM Training: 10 | 其他值得关注: 4。\n今天主线很清楚：agent 的扩展正在从“更大模型”转向“更长任务、更好验证、更会停止”；同时，多模态评测开始从感知识别进入创作意图、世界状态、终端/电脑操作等更贴近真实任务的层面。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-01/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点精读">重点精读</a>
+      <ol>
+        <li><a href="#scaling-the-horizon-not-the-parameters-reaching-trillion-parameter-performance-with-a-35b-agent">Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent</a></li>
+        <li><a href="#agentic-abstention-do-agents-know-when-to-stop-instead-of-act">Agentic Abstention: Do Agents Know When to Stop Instead of Act?</a></li>
+        <li><a href="#taco-tool-augmented-credit-optimization-for-agentic-tool-use">TACO: Tool-Augmented Credit Optimization for Agentic Tool Use</a></li>
+        <li><a href="#tua-bench-a-benchmark-for-general-purpose-terminal-use-agents">TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents</a></li>
+        <li><a href="#musebench-benchmarking-intent-level-audiovisual-arts-understanding-in-mllms">MuseBench: Benchmarking Intent-Level Audiovisual Arts Understanding in MLLMs</a></li>
+        <li><a href="#orca-the-world-is-in-your-mind">Orca: The World is in Your Mind</a></li>
+        <li><a href="#safepyramid-a-hierarchical-benchmark-for-in-context-policy-guardrailing">SafePyramid: A Hierarchical Benchmark for In-context Policy Guardrailing</a></li>
+        <li><a href="#bridging-videoqa-and-video-guided-agentic-tasks-via-generalized-keyframe-extraction">Bridging VideoQA and Video-Guided Agentic Tasks via Generalized Keyframe Extraction</a></li>
+      </ol>
+    </li>
+    <li><a href="#全量速览">全量速览</a>
+      <ol>
+        <li><a href="#audio-llm">Audio LLM</a></li>
+        <li><a href="#llm-training">LLM Training</a></li>
+        <li><a href="#ai-agents">AI Agents</a></li>
+        <li><a href="#其他值得关注">其他值得关注</a></li>
+      </ol>
+    </li>
+    <li><a href="#已跳过的-7-天内重复论文">已跳过的 7 天内重复论文</a></li>
+    <li><a href="#本次收录-arxiv-id">本次收录 arXiv ID</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-01/">AI Paper Daily | 2026-07-01</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-01T00:00:00Z'>Jul 01, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点精读">重点精读</a>
+      <ol>
+        <li><a href="#scaling-the-horizon-not-the-parameters-reaching-trillion-parameter-performance-with-a-35b-agent">Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent</a></li>
+        <li><a href="#agentic-abstention-do-agents-know-when-to-stop-instead-of-act">Agentic Abstention: Do Agents Know When to Stop Instead of Act?</a></li>
+        <li><a href="#taco-tool-augmented-credit-optimization-for-agentic-tool-use">TACO: Tool-Augmented Credit Optimization for Agentic Tool Use</a></li>
+        <li><a href="#tua-bench-a-benchmark-for-general-purpose-terminal-use-agents">TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents</a></li>
+        <li><a href="#musebench-benchmarking-intent-level-audiovisual-arts-understanding-in-mllms">MuseBench: Benchmarking Intent-Level Audiovisual Arts Understanding in MLLMs</a></li>
+        <li><a href="#orca-the-world-is-in-your-mind">Orca: The World is in Your Mind</a></li>
+        <li><a href="#safepyramid-a-hierarchical-benchmark-for-in-context-policy-guardrailing">SafePyramid: A Hierarchical Benchmark for In-context Policy Guardrailing</a></li>
+        <li><a href="#bridging-videoqa-and-video-guided-agentic-tasks-via-generalized-keyframe-extraction">Bridging VideoQA and Video-Guided Agentic Tasks via Generalized Keyframe Extraction</a></li>
+      </ol>
+    </li>
+    <li><a href="#全量速览">全量速览</a>
+      <ol>
+        <li><a href="#audio-llm">Audio LLM</a></li>
+        <li><a href="#llm-training">LLM Training</a></li>
+        <li><a href="#ai-agents">AI Agents</a></li>
+        <li><a href="#其他值得关注">其他值得关注</a></li>
+      </ol>
+    </li>
+    <li><a href="#已跳过的-7-天内重复论文">已跳过的 7 天内重复论文</a></li>
+    <li><a href="#本次收录-arxiv-id">本次收录 arXiv ID</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>今天抓取 HuggingFace/arXiv 共 100 篇，预筛 30 篇；按 <code>~/DailyReport/.seen_papers.json</code> 去重后，新收录 <strong>23</strong> 篇，跳过过去 7 天已报道 <strong>7</strong> 篇。
+分类分布：AI Agents: 7 | Audio LLM: 2 | LLM Training: 10 | 其他值得关注: 4。</p>
+<p>今天主线很清楚：agent 的扩展正在从“更大模型”转向“更长任务、更好验证、更会停止”；同时，多模态评测开始从感知识别进入创作意图、世界状态、终端/电脑操作等更贴近真实任务的层面。</p>
+<h2 id="重点精读">重点精读
+</h2><h3 id="scaling-the-horizon-not-the-parameters-reaching-trillion-parameter-performance-with-a-35b-agent">Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent
+</h3><p><strong>中文标题</strong>：不扩参数，扩展 Agent 视野：35B Agent 达到万亿参数级表现<br>
+<strong>信息</strong>：LLM Training | score 22 | 2026-06-29, HF 67 upvotes | Lei Bai, Zongsheng Cao, Yang Chen, Zhiyao Cui et al.<br>
+<strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2606.30616"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30616.pdf"  target="_blank" rel="noopener"
+    >PDF</a></p>
+<p><strong>为什么值得看</strong>：今天最值得读。它把“agent scaling”的重点从模型尺寸转到长轨迹、异构能力和 verifier 反馈闭环，方向上很像把训练数据从静态问答推进到可执行任务经验。</p>
+<p><strong>摘要翻译</strong>：论文提出 Agents-A1，一个 35B MoE agentic model。作者构建长程知识-动作基础设施，把外部知识、动作、观察和验证器结果连成平均 45K token 的轨迹，再用全域 SFT、领域 teacher、domain-routed on-policy distillation 三阶段训练，把六类能力压进一个可部署学生模型。结果显示，在 SEAL-0、IFBench、HiPhO、FrontierScience-Olympiad、MolBench-Bind 等长程 agent benchmark 上，35B 模型能接近或超过若干 1T 级模型。</p>
+<p><strong>小爱精评</strong>：如果结果可复现，这篇的意义不只是省参数，而是把“长 horizon 数据 + teacher 路由蒸馏”作为 agent 模型扩展路线。需要重点看 benchmark 是否公平、teacher 成本是否被隐含，以及 45K 轨迹里 verifier 的质量上限。</p>
+<hr>
+<h3 id="agentic-abstention-do-agents-know-when-to-stop-instead-of-act">Agentic Abstention: Do Agents Know When to Stop Instead of Act?
+</h3><p><strong>中文标题</strong>：Agentic Abstention：Agent 知不知道什么时候该停止行动<br>
+<strong>信息</strong>：AI Agents | score 18 | 2026-06-27, HF 120 upvotes | Han Luo, Bingbing Wen, Lucy Lu Wang<br>
+<strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2606.28733"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.28733.pdf"  target="_blank" rel="noopener"
+    >PDF</a></p>
+<p><strong>为什么值得看</strong>：非常贴近真实 agent 产品。很多失败不是不会做，而是不知道任务已经不可解，继续乱搜乱点。</p>
+<p><strong>摘要翻译</strong>：作者把 agent abstention 定义为序贯决策问题：agent 每一步都要选择回答、放弃，还是继续收集信息。论文在网页购物、终端和问答等场景评测 13 个 LLM-agent 系统、2 个 agent scaffold，共 28,000 多个任务。结果显示，一些 agent 从不该停时不停，另一些停得太晚。CONVOLVE 通过把完整交互轨迹蒸馏成可复用停止规则，在 WebShop 上把 Llama-3.3-70B 的 timely recall 从 26.7 提到 57.4。</p>
+<p><strong>小爱精评</strong>：这是 agent 可靠性里被低估的一环。真正的产品需要“及时停止 + 解释为什么停止 + 请求用户补充信息”，这篇至少把第一步评测框架搭起来了。</p>
+<hr>
+<h3 id="taco-tool-augmented-credit-optimization-for-agentic-tool-use">TACO: Tool-Augmented Credit Optimization for Agentic Tool Use
+</h3><p><strong>中文标题</strong>：TACO：给 agentic tool use 做工具调用级别的信用分配<br>
+<strong>信息</strong>：LLM Training | score 18 | 2026-06-29, HF 15 upvotes | Mingkuan Feng, Jinyang Wu, Hao Gu, Fangrui Lv et al.<br>
+<strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2606.30251"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30251.pdf"  target="_blank" rel="noopener"
+    >PDF</a></p>
+<p><strong>为什么值得看</strong>：工具调用 RL 的核心痛点是“哪个工具调用真正帮了最终答案”。这篇给了一个不依赖外部 judge 的 credit assignment 方案。</p>
+<p><strong>摘要翻译</strong>：TACO 是面向 code-tool multimodal agent 的 GRPO 变体。它用 Differential Answer-Probe Reward 插入 probe token，比对模型在有/无某次工具结果时的答题变化，把每次工具调用标为有用、误导或无效；再用 Outcome-Gated Advantage Routing 把最终答案奖励分配给真正负责的推理片段。实验显示模型准确率提升，同时学会减少无效工具调用。</p>
+<p><strong>小爱精评</strong>：这篇很实用，因为它把工具调用的奖励从“最后对不对”拆到过程贡献。关键问题是 probe 是否会改变推理分布，以及 answer checker 覆盖不了开放任务时怎么办。</p>
+<hr>
+<h3 id="tua-bench-a-benchmark-for-general-purpose-terminal-use-agents">TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents
+</h3><p><strong>中文标题</strong>：TUA-Bench：通用终端使用 Agent Benchmark<br>
+<strong>信息</strong>：AI Agents | score 17 | 2026-06-26, HF 44 upvotes | Shoufa Chen, Luyuan Wang, Xuan Yang, Zhiheng Liu et al.<br>
+<strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2606.28480"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.28480.pdf"  target="_blank" rel="noopener"
+    >PDF</a></p>
+<p><strong>为什么值得看</strong>：它把 terminal agent 从 coding 扩到文档、邮件、网页信息、科研工程软件，更接近真实工作流。</p>
+<p><strong>摘要翻译</strong>：TUA-Bench 有 120 个真实终端任务，覆盖五类任务：常规数字活动、文档编辑、邮件管理、实时网页信息检索，以及 PhD 级专家共同设计的科学/工程工作流。每个任务都有确定性环境和 execution-based scoring。最强 frontier agent（Claude Code + Claude Opus 4.8 max reasoning effort）总体 65.8%，不同任务轨道仍有明显差距。</p>
+<p><strong>小爱精评</strong>：这类 benchmark 对 Codex/Claude Code 一类 CLI agent 很重要。它提醒我们 terminal agent 不只是写代码，还要会管理文件、查网页、处理邮件和专业软件。</p>
+<hr>
+<h3 id="musebench-benchmarking-intent-level-audiovisual-arts-understanding-in-mllms">MuseBench: Benchmarking Intent-Level Audiovisual Arts Understanding in MLLMs
+</h3><p><strong>中文标题</strong>：MuseBench：评测 MLLM 是否理解影音艺术中的创作意图<br>
+<strong>信息</strong>：Audio LLM | score 20 | 2026-06-29 | Yuxuan Fan, Gyusik Seo, Jing Hao, Jaemin Cho et al.<br>
+<strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2606.30026"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30026.pdf"  target="_blank" rel="noopener"
+    >PDF</a></p>
+<p><strong>为什么值得看</strong>：它把多模态评测从“看到了什么”推进到“为什么这样表达”，对视频/音频模型很有参考价值。</p>
+<p><strong>摘要翻译</strong>：MuseBench 包含 4,016 个问题，覆盖电影、静态视觉艺术、舞台表演和游戏艺术，数据来自 1 万多个带专业评论的视频 essay。评测目标不是识别物体或镜头，而是判断模型能否理解构图、沉默、节奏、叙事等创作选择背后的意图。28 个 SOTA MLLM 零样本评测中，最佳模型只有 48.29% 准确率，明显低于人类专家的 87.18%。</p>
+<p><strong>小爱精评</strong>：这是一个更接近“审美/导演意图理解”的 benchmark。短板也很明显：艺术理解本身主观，数据从 video essay 蒸馏可能会带来评论风格偏置。适合跟踪多模态模型的高层语义能力，不适合当作单一综合排名。</p>
+<hr>
+<h3 id="orca-the-world-is-in-your-mind">Orca: The World is in Your Mind
+</h3><p><strong>中文标题</strong>：Orca：以 Next-State Prediction 训练通用世界基础模型<br>
+<strong>信息</strong>：其他值得关注 | score 17 | 2026-06-29, HF 64 upvotes | Yihao Wang, Yuheng Ji, Mingyu Cao, Yanqing Shen et al.<br>
+<strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2606.30534"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30534.pdf"  target="_blank" rel="noopener"
+    >PDF</a></p>
+<p><strong>为什么值得看</strong>：世界模型方向的大体量工作，125K 小时视频和 160M event annotations 的规模值得关注。</p>
+<p><strong>摘要翻译</strong>：Orca 学习统一的 world latent space，不再只做 next-token、next-frame 或 next-action，而是围绕 Next-State-Prediction 建模状态转移。训练分为 unconscious learning（连续视频中的密集自然状态转移）和 conscious learning（语言描述事件与 VQA 监督下的稀疏有意义转移）。冻结 backbone 后，轻量 decoder 可读出文本生成、图像预测和 embodied action。</p>
+<p><strong>小爱精评</strong>：概念上很漂亮，像是在给视频、语言、动作找共同的状态空间。需要重点看数据标注质量、状态定义是否真正统一，以及下游 readout 是否证明了 latent 的因果/物理泛化，而不只是大规模视频预训练收益。</p>
+<hr>
+<h3 id="safepyramid-a-hierarchical-benchmark-for-in-context-policy-guardrailing">SafePyramid: A Hierarchical Benchmark for In-context Policy Guardrailing
+</h3><p><strong>中文标题</strong>：SafePyramid：面向上下文策略的分层 Guardrail 评测<br>
+<strong>信息</strong>：其他值得关注 | score 17 | 2026-06-29, HF 3 upvotes | Jiacheng Zhang, Haoyu He, Sen Zhang, Shen Wang et al.<br>
+<strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2606.29887"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29887.pdf"  target="_blank" rel="noopener"
+    >PDF</a></p>
+<p><strong>为什么值得看</strong>：现实产品里的安全规则通常是应用自定义 policy，而不是固定 taxonomy。这篇正好评测这个难点。</p>
+<p><strong>摘要翻译</strong>：SafePyramid 包含 1,000 段多轮对话、10 个领域、3,000 个应用特定政策，总计 61,699 条自然语言规则。评测分为 L0 单条规则理解、L1 规则依赖推理、L2 完整新 policy framework 适配。10 个 frontier LLM 和 5 个可配置 guardrail 系统表现都不理想，最佳模型在 L0/L1/L2 完整识别违规规则的比例分别只有 54.0%、35.3%、12.9%。</p>
+<p><strong>小爱精评</strong>：结论很直接：现在的 guardrail 还不擅长“读一份新规则并稳定执行”。这对企业 agent、客服、医疗/金融产品尤其重要。</p>
+<hr>
+<h3 id="bridging-videoqa-and-video-guided-agentic-tasks-via-generalized-keyframe-extraction">Bridging VideoQA and Video-Guided Agentic Tasks via Generalized Keyframe Extraction
+</h3><p><strong>中文标题</strong>：从 VideoQA 到视频指导 GUI Agent：任务驱动关键帧抽取<br>
+<strong>信息</strong>：AI Agents | score 18 | 2026-06-28, HF 21 upvotes | Sunqi Fan, Qingle Liu, Runqi Yin, Meng-Hao Guo et al.<br>
+<strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2606.29445"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29445.pdf"  target="_blank" rel="noopener"
+    >PDF</a></p>
+<p><strong>为什么值得看</strong>：视频理解和 agent 操作之间的桥接越来越重要，这篇抓住了“关键帧选择”这个低调但很关键的瓶颈。</p>
+<p><strong>摘要翻译</strong>：论文提出 VG-GUIBench，评测 MLLM GUI agent 能否看视频教程后完成对应 GUI 任务。同时提出 TASKER 关键帧抽取算法，结合任务相关性与场景变化挑选信息帧。TASKER 在 VideoQA 与 video-guided agentic task 上均带来提升，在 EgoSchema fullset 和 NExT-QA 上分别超过最佳 baseline 2.0% 和 1.8%。</p>
+<p><strong>小爱精评</strong>：对低 token 预算的视频 agent 很有价值。提升幅度不算夸张，但它指出一个可靠方向：视频 agent 的瓶颈经常不是大模型本身，而是输入证据选择。</p>
+<hr>
+<h2 id="全量速览">全量速览
+</h2><h3 id="audio-llm">Audio LLM
+</h3><ul>
+<li><strong>MuseBench: Benchmarking Intent-Level Audiovisual Arts Understanding in MLLMs</strong>（2606.30026）
+<ul>
+<li>中文：MuseBench：评测 MLLM 是否理解影音艺术中的创作意图</li>
+<li>信息：Audio LLM | score 20 | 2026-06-29 | Yuxuan Fan, Gyusik Seo, Jing Hao, Jaemin Cho et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.30026"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30026.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：MuseBench 包含 4,016 个问题，覆盖电影、静态视觉艺术、舞台表演和游戏艺术，数据来自 1 万多个带专业评论的视频 essay。评测目标不是识别物体或镜头，而是判断模型能否理解构图、沉默、节奏、叙事等创作选择背后的意图。28 个 SOTA MLLM 零样本评测中，最佳模型只有 48.29% 准确率，明显低于人类专家的 87.18%。</li>
+<li>精评：这是一个更接近“审美/导演意图理解”的 benchmark。短板也很明显：艺术理解本身主观，数据从 video essay 蒸馏可能会带来评论风格偏置。适合跟踪多模态模型的高层语义能力，不适合当作单一综合排名。</li>
+</ul>
+</li>
+<li><strong>SICAGE: Speaker-Independent Culture-Aware Gesture Generation using TED4C-L Dataset</strong>（2606.30001）
+<ul>
+<li>中文：SICAGE：说话人独立、文化感知的共语手势生成</li>
+<li>信息：Audio LLM | score 16 | 2026-06-29 | Ariel Gjaci, Antonio Sgorbissa, Vittorio Murino</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.30001"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30001.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：SICAGE 从音频和文本中学习说话人无关的文化表征，再用这些 embedding 条件化多模态手势生成器。作者构建 TED4C-L 数据集，含 764 位 TED 演讲者、106 小时多模态数据、四个文化群体。实验显示在真实感、多样性、节拍同步、语义相关和文化一致性上都有提升。</li>
+<li>精评：亮点是 speaker-disjoint evaluation，能避免把说话人习惯误认为文化特征。风险是“文化”标签本身可能过粗，实际部署要避免刻板化。</li>
+</ul>
+</li>
+</ul>
+<h3 id="llm-training">LLM Training
+</h3><ul>
+<li><strong>Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent</strong>（2606.30616）
+<ul>
+<li>中文：不扩参数，扩展 Agent 视野：35B Agent 达到万亿参数级表现</li>
+<li>信息：LLM Training | score 22 | 2026-06-29, HF 67 upvotes | Lei Bai, Zongsheng Cao, Yang Chen, Zhiyao Cui et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.30616"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30616.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：论文提出 Agents-A1，一个 35B MoE agentic model。作者构建长程知识-动作基础设施，把外部知识、动作、观察和验证器结果连成平均 45K token 的轨迹，再用全域 SFT、领域 teacher、domain-routed on-policy distillation 三阶段训练，把六类能力压进一个可部署学生模型。结果显示，在 SEAL-0、IFBench、HiPhO、FrontierScience-Olympiad、MolBench-Bind 等长程 agent benchmark 上，35B 模型能接近或超过若干 1T 级模型。</li>
+<li>精评：如果结果可复现，这篇的意义不只是省参数，而是把“长 horizon 数据 + teacher 路由蒸馏”作为 agent 模型扩展路线。需要重点看 benchmark 是否公平、teacher 成本是否被隐含，以及 45K 轨迹里 verifier 的质量上限。</li>
+</ul>
+</li>
+<li><strong>TACO: Tool-Augmented Credit Optimization for Agentic Tool Use</strong>（2606.30251）
+<ul>
+<li>中文：TACO：给 agentic tool use 做工具调用级别的信用分配</li>
+<li>信息：LLM Training | score 18 | 2026-06-29, HF 15 upvotes | Mingkuan Feng, Jinyang Wu, Hao Gu, Fangrui Lv et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.30251"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30251.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：TACO 是面向 code-tool multimodal agent 的 GRPO 变体。它用 Differential Answer-Probe Reward 插入 probe token，比对模型在有/无某次工具结果时的答题变化，把每次工具调用标为有用、误导或无效；再用 Outcome-Gated Advantage Routing 把最终答案奖励分配给真正负责的推理片段。实验显示模型准确率提升，同时学会减少无效工具调用。</li>
+<li>精评：这篇很实用，因为它把工具调用的奖励从“最后对不对”拆到过程贡献。关键问题是 probe 是否会改变推理分布，以及 answer checker 覆盖不了开放任务时怎么办。</li>
+</ul>
+</li>
+<li><strong>Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks</strong>（2606.29082）
+<ul>
+<li>中文：Evolution Fine-Tuning：让模型跨 371 个优化任务学会“进化式发现”</li>
+<li>信息：LLM Training | score 15 | 2026-06-27 | Young-Jun Lee, Seungone Kim, Minki Kang, Alistair Cheong Liang Chuen et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.29082"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29082.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：EFT 把进化搜索轨迹转为监督数据，构建 Finch Collection：10 个领域、371 个优化任务、156K 条轨迹。2B 到 9B 开源模型 fine-tune 后，在 22 个 held-out 任务上平均比 base 提升 10.22%，与 test-time RL 结合后在圆堆积和 Erdos overlap 问题上表现强。</li>
+<li>精评：对科学发现 agent 很有启发：让模型学习“怎么改解法、什么时候回退”，而不是只生成答案。缺点是轨迹质量和任务分布会强烈限制泛化。</li>
+</ul>
+</li>
+<li><strong>Dockerless: Environment-Free Program Verifier for Coding Agents</strong>（2606.28436）
+<ul>
+<li>中文：Dockerless：不跑环境的 Coding Agent 程序验证器</li>
+<li>信息：LLM Training | score 15 | 2026-06-26, HF 5 upvotes | Wenhao Zeng, Yuling Shi, Xiaodong Gu, Chao Hu et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.28436"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.28436.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：Dockerless 不执行单元测试，也不构建每个 repo 的 Docker 环境，而是通过 agentic repository exploration 收集证据来判断 patch correctness。它在 verifier benchmark 上比最强开源 verifier 高 14.3 AUC 点；作为 SFT 轨迹过滤器和 RL reward，可让模型在 SWE-bench Verified/Multilingual/Pro 达到 62.0%、50.0%、35.2%。</li>
+<li>精评：很实用，但也要谨慎：不执行代码的 verifier 天然可能被风格、相似 patch 或不完整证据欺骗。适合作为低成本过滤/奖励，关键任务仍应执行验证。</li>
+</ul>
+</li>
+<li><strong>Cognitive Episodes in LLM Reasoning Traces Enable Interpretable Human Item Difficulty Prediction</strong>（2606.28186）
+<ul>
+<li>中文：用 LLM 推理轨迹中的认知 episode 预测人类题目难度</li>
+<li>信息：LLM Training | score 15 | 2026-06-26, HF 4 upvotes | Chenguang Wang, Ming Li, Xinyue Zeng, Zhuochun Li et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.28186"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.28186.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：Epi2Diff 将大推理模型的 trace 切成认知 episode 序列，提取推理规模、努力分配和状态转移等特征，再结合题目语义表示预测人类题目难度。在四个真实难度数据集上超过 fine-tuned small LM、LLM ICL 和监督 LLM adaptation；SAT 分类任务上比监督 LLM fine-tuning 平均相对提升 8.1%。</li>
+<li>精评：有趣之处是：难题不是简单让模型回答更长，而是诱发更多迭代和实现型 episode。它给教育评测提供了更可解释的模型辅助信号。</li>
+</ul>
+</li>
+<li><strong>Drop-Then-Recovery: How Redundant Are Vision-Language-Action Models?</strong>（2606.27755）
+<ul>
+<li>中文：Drop-Then-Recovery：VLA 模型到底有多少冗余</li>
+<li>信息：LLM Training | score 15 | 2026-06-26, HF 2 upvotes | Guoheng Sun, Kaixi Feng, Shwai He, Xiaochuan Gong et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.27755"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.27755.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：DTR 移除 VLA 模型中的 transformer blocks 后再 fine-tune，看被移除容量是否必要；GateProbe 用一次 virtual-gate sensitivity 排序 block 贡献。结果显示，标准机器人操作任务中 language backbone 高度冗余，而 vision/action pathway 更不能删。LIBERO 上移除一半 LLM blocks 甚至让 OpenVLA-OFT 从 95.0% 到 98.3%，只保留两个 language blocks 也能接近 baseline。</li>
+<li>精评：这对 VLA 架构设计很有价值：短指令 manipulation benchmark 可能根本没压到深语言理解。未来应把容量更多给视觉、动作和长程组合。</li>
+</ul>
+</li>
+<li><strong>Aloe-Vision: Robust Vision-Language Models for Healthcare</strong>（2606.27500）
+<ul>
+<li>中文：Aloe-Vision：开放可复现的医疗视觉语言模型</li>
+<li>信息：LLM Training | score 15 | 2026-06-25 | Jaume Guasch-Martí, Enrique Lopez-Cuena, Martín Suárez-Fernández, Jordi Bayarri-Planas et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.27500"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.27500.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：Aloe-Vision-Data 混合医疗和通用多模态/文本数据，训练 7B 与 72B 医疗 LVLM，并开放权重、recipe 和数据。作者还提出 CareQA-Vision，用西班牙 MIR/EIR 医护考试构建低污染视觉评测。模型在医疗能力上有提升且尽量保持通用能力，但仍容易受对抗和误导输入影响。</li>
+<li>精评：医疗场景最重要的是可靠性和审计性。Aloe-Vision 的开放性是优点，但论文也再次说明 LVLM 离临床可依赖还有距离。</li>
+</ul>
+</li>
+<li><strong>One-Step Gradient Delay is Not a Barrier for Large-Scale Asynchronous Pipeline Parallel LLM Pretraining</strong>（2606.30634）
+<ul>
+<li>中文：一步梯度延迟不是大规模异步 Pipeline LLM 预训练的障碍</li>
+<li>信息：LLM Training | score 14 | 2026-06-29, HF 19 upvotes | Philip Zmushko, Egor Petrov, Nursultan Abdullaev, Mikhail Khrushchev et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.30634"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30634.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：论文重新考察 PipeDream-2BW 这类一阶梯度延迟的异步 pipeline parallelism。作者发现 AdamW 在延迟下退化严重，但 Muon 对一步延迟更稳；再加入 optimizer-agnostic 的 error-feedback correction，可进一步减轻延迟影响。实验扩展到 10B 模型，显示可接近同步训练效果。</li>
+<li>精评：如果后续大规模验证成立，这会提高 pipeline 利用率，减少 bubble 浪费。最需要关注的是 10B 之外是否仍稳定，以及 Muon 在不同训练 recipe 中的普适性。</li>
+</ul>
+</li>
+<li><strong>StrucTab: A Structured Optimization Framework for Table Parsing</strong>（2606.29905）
+<ul>
+<li>中文：StrucTab：用结构化中间监督和分解奖励做表格解析</li>
+<li>信息：LLM Training | score 14 | 2026-06-29 | Gengluo Li, Shangpin Peng, Chengquan Zhang, Binghong Wu et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.29905"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29905.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：StrucTab 将表格解析拆成行列计数、合并单元格分析等人类式子任务，通过顺序推理统一输出。Uni-TabRL 用 validity、structure、content 三类分解奖励提供更稳定的 RL 信号。作者还提出 TableVerse-5K，覆盖多样真实表格场景，并在多项公开 benchmark 和 TableVerse-5K 上达到 SOTA。</li>
+<li>精评：优点是结构约束强，适合复杂表格。需要看输出格式和 reward 是否能泛化到扫描件、低质图片和行业表格。</li>
+</ul>
+</li>
+<li><strong>AerialMetric: Benchmarking and Adapting UAV Monocular Metric Depth Estimation in the Real World</strong>（2606.29716）
+<ul>
+<li>中文：AerialMetric：无人机视角单目 metric depth 评测与适配</li>
+<li>信息：LLM Training | score 14 | 2026-06-29 | Zhongqiang Song, Guanying Chen, Yuqi Zhang, Yin Zou et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.29716"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29716.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：AerialMetric 提供 52K 真实和 16K 合成 image-depth pair，覆盖摄影测量、受控航拍、合成场景和互联网图像。作者系统评测现有 metric depth 模型在 UAV aerial viewpoint 下的表现，并分析视角、高度、相机参数影响；在数据集上微调代表模型后建立新的航拍 depth SOTA。</li>
+<li>精评：对无人机、测绘、城市建模很有用。它提醒单目 depth 的“通用性”往往对摄像机视角很敏感。</li>
+</ul>
+</li>
+</ul>
+<h3 id="ai-agents">AI Agents
+</h3><ul>
+<li><strong>Bridging VideoQA and Video-Guided Agentic Tasks via Generalized Keyframe Extraction</strong>（2606.29445）
+<ul>
+<li>中文：从 VideoQA 到视频指导 GUI Agent：任务驱动关键帧抽取</li>
+<li>信息：AI Agents | score 18 | 2026-06-28, HF 21 upvotes | Sunqi Fan, Qingle Liu, Runqi Yin, Meng-Hao Guo et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.29445"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29445.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：论文提出 VG-GUIBench，评测 MLLM GUI agent 能否看视频教程后完成对应 GUI 任务。同时提出 TASKER 关键帧抽取算法，结合任务相关性与场景变化挑选信息帧。TASKER 在 VideoQA 与 video-guided agentic task 上均带来提升，在 EgoSchema fullset 和 NExT-QA 上分别超过最佳 baseline 2.0% 和 1.8%。</li>
+<li>精评：对低 token 预算的视频 agent 很有价值。提升幅度不算夸张，但它指出一个可靠方向：视频 agent 的瓶颈经常不是大模型本身，而是输入证据选择。</li>
+</ul>
+</li>
+<li><strong>Agentic Abstention: Do Agents Know When to Stop Instead of Act?</strong>（2606.28733）
+<ul>
+<li>中文：Agentic Abstention：Agent 知不知道什么时候该停止行动</li>
+<li>信息：AI Agents | score 18 | 2026-06-27, HF 120 upvotes | Han Luo, Bingbing Wen, Lucy Lu Wang</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.28733"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.28733.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：作者把 agent abstention 定义为序贯决策问题：agent 每一步都要选择回答、放弃，还是继续收集信息。论文在网页购物、终端和问答等场景评测 13 个 LLM-agent 系统、2 个 agent scaffold，共 28,000 多个任务。结果显示，一些 agent 从不该停时不停，另一些停得太晚。CONVOLVE 通过把完整交互轨迹蒸馏成可复用停止规则，在 WebShop 上把 Llama-3.3-70B 的 timely recall 从 26.7 提到 57.4。</li>
+<li>精评：这是 agent 可靠性里被低估的一环。真正的产品需要“及时停止 + 解释为什么停止 + 请求用户补充信息”，这篇至少把第一步评测框架搭起来了。</li>
+</ul>
+</li>
+<li><strong>TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents</strong>（2606.28480）
+<ul>
+<li>中文：TUA-Bench：通用终端使用 Agent Benchmark</li>
+<li>信息：AI Agents | score 17 | 2026-06-26, HF 44 upvotes | Shoufa Chen, Luyuan Wang, Xuan Yang, Zhiheng Liu et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.28480"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.28480.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：TUA-Bench 有 120 个真实终端任务，覆盖五类任务：常规数字活动、文档编辑、邮件管理、实时网页信息检索，以及 PhD 级专家共同设计的科学/工程工作流。每个任务都有确定性环境和 execution-based scoring。最强 frontier agent（Claude Code + Claude Opus 4.8 max reasoning effort）总体 65.8%，不同任务轨道仍有明显差距。</li>
+<li>精评：这类 benchmark 对 Codex/Claude Code 一类 CLI agent 很重要。它提醒我们 terminal agent 不只是写代码，还要会管理文件、查网页、处理邮件和专业软件。</li>
+</ul>
+</li>
+<li><strong>SWE-Together: Evaluating Coding Agents in Interactive User Sessions</strong>（2606.29957）
+<ul>
+<li>中文：SWE-Together：交互式用户会话中的 Coding Agent 评测</li>
+<li>信息：AI Agents | score 16 | 2026-06-29, HF 11 upvotes | Yifan Wu, Zhuokai Zhao, Songlin Li, Ho Hin Lee et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.29957"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29957.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：SWE-Together 从 11,260 条真实 user-agent coding session 中筛出 109 个 repo-level 任务，并用 reactive LLM user simulator 重放原用户意图、在需要时给反馈。评测不仅看最终代码是否正确，也看 agent 需要多少轮纠正。</li>
+<li>精评：很适合衡量“协作体验”。不过 user simulator 的真实性会决定上限，真实用户的耐心、表述变化和中途改需求仍然很难模拟。</li>
+</ul>
+</li>
+<li><strong>Beyond IID: How General Are Tabular Foundation Models, Really?</strong>（2606.30410）
+<ul>
+<li>中文：Beyond IID：表格基础模型到底有多通用</li>
+<li>信息：AI Agents | score 15 | 2026-06-29, HF 36 upvotes | Lennart Purucker, Andrej Tschalzev, Nick Erickson, Gioia Blayer et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.30410"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30410.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：BeyondArena 汇总 142 个数据集，覆盖 IID、时间、分组、不同样本规模和特征维度，以及文本/高基数特征等复杂情况。11 个模型结果显示，现有 tabular foundation model 在小到中型 IID 数据上很强，但在非 IID、大规模、高维场景仍常被传统 tree-based 或深度模型超过。</li>
+<li>精评：这篇的价值在评测协议。对 AutoML/表格模型产品来说，不能只看标准 leaderboard，要区分真实数据漂移和分组泛化。</li>
+</ul>
+</li>
+<li><strong>OSWorld2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks</strong>（2606.29537）
+<ul>
+<li>中文：OSWorld 2.0：长程真实电脑使用 Agent 评测</li>
+<li>信息：AI Agents | score 15 | 2026-06-28, HF 15 upvotes | Mengqi Yuan, Zilong Zhou, Xinzhuang Xiong, Weiming Wu et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.29537"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29537.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：OSWorld 2.0 包含 108 个长程真实电脑使用任务。论文显示当前 agent 离专业级电脑操作仍很远：不是只卡在 GUI 控制，而是会忘约束、漏掉中途出现的信息、该问不问、跳过验证，尤其在需要恢复隐藏状态时失败。</li>
+<li>精评：这是很重要的失败画像。下一阶段 computer-use agent 需要更强的状态追踪、任务复盘和验证习惯，而不只是更会点鼠标。</li>
+</ul>
+</li>
+<li><strong>Monte Carlo Energy Aggregation for Mobile 3D Gaussian Splatting</strong>（2606.30017）
+<ul>
+<li>中文：Flux-GS：面向移动端 3D Gaussian Splatting 的 Monte Carlo 能量聚合</li>
+<li>信息：AI Agents | score 14 | 2026-06-29, HF 16 upvotes | Xiaobiao Du, YuAn Wang, Hao Li, Bosheng Wang et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.30017"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30017.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：Flux-GS 用 Monte Carlo Specular Energy Aggregator 把三阶 SH 的高阶 radiance residual 聚合到紧凑 latent，保留视觉上重要的镜面光照；再用 Attribute-Conditioned SH Enhancement 弥补压缩损失，并通过多视角 alpha densification/pruning 减少冗余 Gaussian。目标是在移动端降低存储和推理成本，同时保持画质。</li>
+<li>精评：看点是工程落地，尤其是无额外推理成本的 SH enhancement。它更偏图形学系统，不属于 agent 主线，但对空间智能/移动端渲染链路有参考价值。</li>
+</ul>
+</li>
+</ul>
+<h3 id="其他值得关注">其他值得关注
+</h3><ul>
+<li><strong>Orca: The World is in Your Mind</strong>（2606.30534）
+<ul>
+<li>中文：Orca：以 Next-State Prediction 训练通用世界基础模型</li>
+<li>信息：其他值得关注 | score 17 | 2026-06-29, HF 64 upvotes | Yihao Wang, Yuheng Ji, Mingyu Cao, Yanqing Shen et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.30534"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.30534.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：Orca 学习统一的 world latent space，不再只做 next-token、next-frame 或 next-action，而是围绕 Next-State-Prediction 建模状态转移。训练分为 unconscious learning（连续视频中的密集自然状态转移）和 conscious learning（语言描述事件与 VQA 监督下的稀疏有意义转移）。冻结 backbone 后，轻量 decoder 可读出文本生成、图像预测和 embodied action。</li>
+<li>精评：概念上很漂亮，像是在给视频、语言、动作找共同的状态空间。需要重点看数据标注质量、状态定义是否真正统一，以及下游 readout 是否证明了 latent 的因果/物理泛化，而不只是大规模视频预训练收益。</li>
+</ul>
+</li>
+<li><strong>SafePyramid: A Hierarchical Benchmark for In-context Policy Guardrailing</strong>（2606.29887）
+<ul>
+<li>中文：SafePyramid：面向上下文策略的分层 Guardrail 评测</li>
+<li>信息：其他值得关注 | score 17 | 2026-06-29, HF 3 upvotes | Jiacheng Zhang, Haoyu He, Sen Zhang, Shen Wang et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.29887"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29887.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：SafePyramid 包含 1,000 段多轮对话、10 个领域、3,000 个应用特定政策，总计 61,699 条自然语言规则。评测分为 L0 单条规则理解、L1 规则依赖推理、L2 完整新 policy framework 适配。10 个 frontier LLM 和 5 个可配置 guardrail 系统表现都不理想，最佳模型在 L0/L1/L2 完整识别违规规则的比例分别只有 54.0%、35.3%、12.9%。</li>
+<li>精评：结论很直接：现在的 guardrail 还不擅长“读一份新规则并稳定执行”。这对企业 agent、客服、医疗/金融产品尤其重要。</li>
+</ul>
+</li>
+<li><strong>PoseShield: Neural Collision Fields for Human Self-Collision Resolution</strong>（2606.29686）
+<ul>
+<li>中文：PoseShield：面向人体自碰撞修正的神经碰撞场</li>
+<li>信息：其他值得关注 | score 14 | 2026-06-29, HF 1 upvotes | Zhengyuan Li, Zeyun Deng, Yifan Shen, Liangyan Gui et al.</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.29686"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29686.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：PoseShield 在 SMPL pose space 中学习神经碰撞约束，把碰撞修正表述为约束优化问题，并连接到 Eikonal equation。Eikonal regularization 保证碰撞边界附近梯度不消失，提高优化稳定性。它不依赖 mesh-space heuristic，可作为生成器无关的 post-hoc collision corrector，SMPL pose benchmark 上成功率 95.8%。</li>
+<li>精评：作为后处理模块很实用，尤其适合 motion generation pipeline。需要看在衣物、接触物体和多人交互中能否保持稳定。</li>
+</ul>
+</li>
+<li><strong>Unlocking the Visual Record of Materials Science: A Large-Scale Multimodal Dataset from Scientific Literature</strong>（2606.29667）
+<ul>
+<li>中文：MatSciFig：从材料科学文献中释放大规模多模态图像数据</li>
+<li>信息：其他值得关注 | score 14 | 2026-06-29, HF 6 upvotes | Subham Ghosh, Shubham Tiwari, Mohammad Ibrahim, Abhishek Tewari</li>
+<li>链接：<a class="link" href="https://arxiv.org/abs/2606.29667"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29667.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>摘要翻译：MatMMExtract 将材料科学论文中的复合图拆成子图，并用材料科学 taxonomy 引导 LLM 生成 grounded annotations。应用于 14,810 篇开放论文后，得到 MatSciFig：180,571 张 figure 中的 391,606 个 panel-level image-text pair。MaterialScope 检测数据集含 2,811 张手标图，YOLO12-m mAP50 为 0.9227；双编码检索 baseline 相比 zero-shot CLIP 的 R@1 提升 4.4 倍。</li>
+<li>精评：这是领域科学多模态数据建设的好案例。数据质量关键在 panel detection 和 LLM annotation 的幻觉控制，论文报告 Gemini 3.1 Flash Lite 幻觉率 4.8%，值得进一步抽检。</li>
+</ul>
+</li>
+</ul>
+<h2 id="已跳过的-7-天内重复论文">已跳过的 7 天内重复论文
+</h2><ul>
+<li>2606.27828 | Video-MME-Logical: A Controlled Diagnostic Benchmark for Video Temporal-Logical Reasoning | previously seen: 2026-06-30</li>
+<li>2606.28215 | HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration | previously seen: 2026-06-30</li>
+<li>2606.27608 | Qwen-Image-2.0-RL Technical Report | previously seen: 2026-06-30</li>
+<li>2606.27771 | NormGuard: Reward-Preserving Norm Constraints in Flow-Matching Reinforcement Learning | previously seen: 2026-06-30</li>
+<li>2606.27826 | NormAct: A Benchmark for Hidden Social Norm Compliance in Embodied Planning | previously seen: 2026-06-30</li>
+<li>2606.27974 | ProMSA:Progressive Multimodal Search Agents for Knowledge-Based Visual Question Answering | previously seen: 2026-06-30</li>
+<li>2606.27406 | Towards Evaluation of Implicit Software World Models in Coding LLMs | previously seen: 2026-06-30</li>
+</ul>
+<h2 id="本次收录-arxiv-id">本次收录 arXiv ID
+</h2><p>2606.30616, 2606.30026, 2606.30251, 2606.29445, 2606.28733, 2606.30534, 2606.29887, 2606.28480, 2606.30001, 2606.29957, 2606.30410, 2606.29537, 2606.29082, 2606.28436, 2606.28186, 2606.27755, 2606.27500, 2606.30634, 2606.30017, 2606.29905, 2606.29716, 2606.29686, 2606.29667</p>
+<hr>
+<p>生成时间：2026-07-01 00:05:13 UTC。数据源：HuggingFace Papers + arXiv API（本次 arXiv API 抓取部分遇到超时/429，实际入选来自 HuggingFace backfill）。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-30/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-30</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-29/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-29</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-22/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-22</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-21/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-21</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-20</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
