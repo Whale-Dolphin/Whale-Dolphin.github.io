@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="生成时间：2026-07-03 08:00 Asia/Shanghai\n本轮流程：fetch_papers.py 抓取 100 篇，prefilter.py 预筛到 30 篇；读取 ~/DailyReport/.seen_papers.json 后，跳过过去 7 天已报道论文，最终收录 19 篇。今天的主线很清楚：agent 评测开始从“能否完成任务”推进到“长期记忆、真实软件维护、科研发现、医疗环境和机器人技能积累”；训练侧则继续围绕多模态原生预训练、agentic search、MoE serving、校准与安全对齐。\n">
+<title>AI Paper Daily | 2026-07-03</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-03/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-03">
+<meta property='og:description' content="生成时间：2026-07-03 08:00 Asia/Shanghai\n本轮流程：fetch_papers.py 抓取 100 篇，prefilter.py 预筛到 30 篇；读取 ~/DailyReport/.seen_papers.json 后，跳过过去 7 天已报道论文，最终收录 19 篇。今天的主线很清楚：agent 评测开始从“能否完成任务”推进到“长期记忆、真实软件维护、科研发现、医疗环境和机器人技能积累”；训练侧则继续围绕多模态原生预训练、agentic search、MoE serving、校准与安全对齐。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-03/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-03T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-03">
+<meta name="twitter:description" content="生成时间：2026-07-03 08:00 Asia/Shanghai\n本轮流程：fetch_papers.py 抓取 100 篇，prefilter.py 预筛到 30 篇；读取 ~/DailyReport/.seen_papers.json 后，跳过过去 7 天已报道论文，最终收录 19 篇。今天的主线很清楚：agent 评测开始从“能否完成任务”推进到“长期记忆、真实软件维护、科研发现、医疗环境和机器人技能积累”；训练侧则继续围绕多模态原生预训练、agentic search、MoE serving、校准与安全对齐。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-03/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a>
+      <ol>
+        <li><a href="#1-multimodal-continuous-reasoning-via-asymmetric-mutual-variational-learning">1. Multimodal Continuous Reasoning via Asymmetric Mutual Variational Learning</a></li>
+        <li><a href="#2-memsyco-bench-benchmarking-sycophancy-in-agent-memory">2. MemSyco-Bench: Benchmarking Sycophancy in Agent Memory</a></li>
+        <li><a href="#3-reporescue-an-empirical-study-of-llm-agents-on-whole-repository-compatibility-rescue">3. RepoRescue: An Empirical Study of LLM Agents on Whole-Repository Compatibility Rescue</a></li>
+        <li><a href="#4-autonomous-scientific-discovery-via-iterative-meta-reflection">4. Autonomous Scientific Discovery via Iterative Meta-Reflection</a></li>
+        <li><a href="#5-abot-m05-unified-mobility-and-manipulation-world-action-model">5. ABot-M0.5: Unified Mobility-and-Manipulation World Action Model</a></li>
+      </ol>
+    </li>
+    <li><a href="#agent-与机器人">Agent 与机器人</a>
+      <ol>
+        <li><a href="#videosearch-r1-iterative-video-retrieval-and-reasoning-via-soft-query-refinement">VideoSearch-R1: Iterative Video Retrieval and Reasoning via Soft Query Refinement</a></li>
+        <li><a href="#simplesearch-vl-a-simple-recipe-for-multimodal-agentic-deep-search">SimpleSearch-VL: A Simple Recipe for Multimodal Agentic Deep Search</a></li>
+        <li><a href="#mirth-mutual-information-reasoning-with-temporal-hubs-for-vision-language-action-agents">MIRTH: Mutual-Information Reasoning with Temporal Hubs for Vision-Language-Action Agents</a></li>
+        <li><a href="#aspire-agentic-skills-discovery-for-robotics">ASPIRE: Agentic Skills Discovery for Robotics</a></li>
+        <li><a href="#valdi-value-diffusion-world-models">Valdi: Value Diffusion World Models</a></li>
+        <li><a href="#digitalcoach-communication-and-grounding-gaps-in-human-and-agentic-computer-use-coaching">DigitalCoach: Communication and Grounding Gaps in Human and Agentic Computer Use Coaching</a></li>
+        <li><a href="#healthagentbench-a-unified-benchmark-suite-of-realistic-agentic-healthcare-environments">HealthAgentBench: A Unified Benchmark Suite of Realistic Agentic Healthcare Environments</a></li>
+      </ol>
+    </li>
+    <li><a href="#模型训练多模态与系统">模型训练、多模态与系统</a>
+      <ol>
+        <li><a href="#rosetta-composable-native-multimodal-pretraining">Rosetta: Composable Native Multimodal Pretraining</a></li>
+        <li><a href="#mmlop-multi-modal-low-rank-prompting-for-efficient-vision-language-adaptation">MMLoP: Multi-Modal Low-Rank Prompting for Efficient Vision-Language Adaptation</a></li>
+        <li><a href="#msqa-a-natively-sourced-multilingual-and-multicultural-simpleqa-benchmark">MSQA: A Natively Sourced Multilingual and Multicultural SimpleQA Benchmark</a></li>
+        <li><a href="#harc-coupling-harmfulness-and-refusal-directions-for-robust-safety-alignment">HARC: Coupling Harmfulness and Refusal Directions for Robust Safety Alignment</a></li>
+        <li><a href="#eldr-expert-locality-aware-decode-routing-for-pd-disaggregated-moe-serving">ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving</a></li>
+        <li><a href="#autotrainess-teaching-language-models-to-improve-language-models-autonomously">AutoTrainess: Teaching Language Models to Improve Language Models Autonomously</a></li>
+        <li><a href="#the-state-prediction-separation-hypothesis">The State-Prediction Separation Hypothesis</a></li>
+      </ol>
+    </li>
+    <li><a href="#audio--music">Audio / Music</a>
+      <ol>
+        <li><a href="#mg-rwkv-multi-grained-context-aware-rwkv-for-temporal-forgery-localization">MG-RWKV: Multi-Grained Context-Aware RWKV for Temporal Forgery Localization</a></li>
+      </ol>
+    </li>
+    <li><a href="#今日观察">今日观察</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-03/">AI Paper Daily | 2026-07-03</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-03T00:00:00Z'>Jul 03, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a>
+      <ol>
+        <li><a href="#1-multimodal-continuous-reasoning-via-asymmetric-mutual-variational-learning">1. Multimodal Continuous Reasoning via Asymmetric Mutual Variational Learning</a></li>
+        <li><a href="#2-memsyco-bench-benchmarking-sycophancy-in-agent-memory">2. MemSyco-Bench: Benchmarking Sycophancy in Agent Memory</a></li>
+        <li><a href="#3-reporescue-an-empirical-study-of-llm-agents-on-whole-repository-compatibility-rescue">3. RepoRescue: An Empirical Study of LLM Agents on Whole-Repository Compatibility Rescue</a></li>
+        <li><a href="#4-autonomous-scientific-discovery-via-iterative-meta-reflection">4. Autonomous Scientific Discovery via Iterative Meta-Reflection</a></li>
+        <li><a href="#5-abot-m05-unified-mobility-and-manipulation-world-action-model">5. ABot-M0.5: Unified Mobility-and-Manipulation World Action Model</a></li>
+      </ol>
+    </li>
+    <li><a href="#agent-与机器人">Agent 与机器人</a>
+      <ol>
+        <li><a href="#videosearch-r1-iterative-video-retrieval-and-reasoning-via-soft-query-refinement">VideoSearch-R1: Iterative Video Retrieval and Reasoning via Soft Query Refinement</a></li>
+        <li><a href="#simplesearch-vl-a-simple-recipe-for-multimodal-agentic-deep-search">SimpleSearch-VL: A Simple Recipe for Multimodal Agentic Deep Search</a></li>
+        <li><a href="#mirth-mutual-information-reasoning-with-temporal-hubs-for-vision-language-action-agents">MIRTH: Mutual-Information Reasoning with Temporal Hubs for Vision-Language-Action Agents</a></li>
+        <li><a href="#aspire-agentic-skills-discovery-for-robotics">ASPIRE: Agentic Skills Discovery for Robotics</a></li>
+        <li><a href="#valdi-value-diffusion-world-models">Valdi: Value Diffusion World Models</a></li>
+        <li><a href="#digitalcoach-communication-and-grounding-gaps-in-human-and-agentic-computer-use-coaching">DigitalCoach: Communication and Grounding Gaps in Human and Agentic Computer Use Coaching</a></li>
+        <li><a href="#healthagentbench-a-unified-benchmark-suite-of-realistic-agentic-healthcare-environments">HealthAgentBench: A Unified Benchmark Suite of Realistic Agentic Healthcare Environments</a></li>
+      </ol>
+    </li>
+    <li><a href="#模型训练多模态与系统">模型训练、多模态与系统</a>
+      <ol>
+        <li><a href="#rosetta-composable-native-multimodal-pretraining">Rosetta: Composable Native Multimodal Pretraining</a></li>
+        <li><a href="#mmlop-multi-modal-low-rank-prompting-for-efficient-vision-language-adaptation">MMLoP: Multi-Modal Low-Rank Prompting for Efficient Vision-Language Adaptation</a></li>
+        <li><a href="#msqa-a-natively-sourced-multilingual-and-multicultural-simpleqa-benchmark">MSQA: A Natively Sourced Multilingual and Multicultural SimpleQA Benchmark</a></li>
+        <li><a href="#harc-coupling-harmfulness-and-refusal-directions-for-robust-safety-alignment">HARC: Coupling Harmfulness and Refusal Directions for Robust Safety Alignment</a></li>
+        <li><a href="#eldr-expert-locality-aware-decode-routing-for-pd-disaggregated-moe-serving">ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving</a></li>
+        <li><a href="#autotrainess-teaching-language-models-to-improve-language-models-autonomously">AutoTrainess: Teaching Language Models to Improve Language Models Autonomously</a></li>
+        <li><a href="#the-state-prediction-separation-hypothesis">The State-Prediction Separation Hypothesis</a></li>
+      </ol>
+    </li>
+    <li><a href="#audio--music">Audio / Music</a>
+      <ol>
+        <li><a href="#mg-rwkv-multi-grained-context-aware-rwkv-for-temporal-forgery-localization">MG-RWKV: Multi-Grained Context-Aware RWKV for Temporal Forgery Localization</a></li>
+      </ol>
+    </li>
+    <li><a href="#今日观察">今日观察</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>生成时间：2026-07-03 08:00 Asia/Shanghai</p>
+<p>本轮流程：<code>fetch_papers.py</code> 抓取 100 篇，<code>prefilter.py</code> 预筛到 30 篇；读取 <code>~/DailyReport/.seen_papers.json</code> 后，跳过过去 7 天已报道论文，最终收录 19 篇。今天的主线很清楚：agent 评测开始从“能否完成任务”推进到“长期记忆、真实软件维护、科研发现、医疗环境和机器人技能积累”；训练侧则继续围绕多模态原生预训练、agentic search、MoE serving、校准与安全对齐。</p>
+<h2 id="今日重点">今日重点
+</h2><h3 id="1-multimodal-continuous-reasoning-via-asymmetric-mutual-variational-learning">1. Multimodal Continuous Reasoning via Asymmetric Mutual Variational Learning
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00461"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00461</a></li>
+<li>方向：多模态推理 / latent reasoning</li>
+<li>作者：Shijie Li, Yilin Gao, Siyuan Yang, Tieyuan Chen, Chaofan Gan et al.</li>
+<li>日期：2026-07-01</li>
+<li>评分：20</li>
+</ul>
+<p>精评：这篇的价值在于把多模态推理里的“离散语言瓶颈”问题讲得很具体：很多视觉细节被迫压进文本 token 后会丢失。作者用连续 latent reasoning 来保留隐含推理路径，但指出训练时 posterior 看得到答案，会产生 answer leakage，导致推理时 prior 学到不该学的捷径。AMVL 用 forward KL 让 prior 贴近 posterior，同时用 reverse KL 约束 posterior 不要跑到测试时不可用的区域。结果在 BLINK 上平均 +10.83，部分任务 +32.00。值得关注，因为它不是单纯加大模型，而是在处理 latent reasoning 的训练-推理错配。</p>
+<p>摘要翻译：多模态大模型常被语言空间瓶颈限制，需要把复杂视觉推理压缩成离散 token，从而损失感知细节。连续 latent reasoning 试图在多模态问题和最终答案之间发现隐含推理路径，但训练阶段依赖真实答案的 posterior 可能利用答案捷径，造成训练-推理不一致。本文提出 AMVL，用双向校准目标缓解这个问题：forward KL 训练测试时可用的 prior，reverse KL 约束 posterior，避免“答案泄漏”。理论分析将泄漏形式化为 prior contamination，并证明双 KL 目标可以降低该问题。实验显示 AMVL 优于离散和 latent 推理基线，在复杂 BLINK benchmark 上明显提升。</p>
+<h3 id="2-memsyco-bench-benchmarking-sycophancy-in-agent-memory">2. MemSyco-Bench: Benchmarking Sycophancy in Agent Memory
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.01071"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.01071</a></li>
+<li>方向：Agent memory / sycophancy benchmark</li>
+<li>作者：Zhishang Xiang, Zerui Chen, Yunbo Tang, Zhimin Wei, Ruqin Ning et al.</li>
+<li>日期：2026-07-01</li>
+<li>评分：18</li>
+</ul>
+<p>精评：agent 记忆一直被当作能力增强模块，但这篇反过来问：记忆会不会让模型更会讨好用户？MemSyco-Bench 的重点不是“能不能记住”，而是“记忆该不该影响判断”。它覆盖拒绝把记忆当事实证据、判断适用范围、处理记忆与客观证据冲突、跟踪记忆更新、用有效记忆做个性化等 5 类任务。这个 benchmark 很适合用来评估长期记忆 agent 的安全性，尤其是个人助手场景。</p>
+<p>摘要翻译：记忆已经成为现代 LLM agent 的核心能力，但检索出的记忆也可能诱发迎合性，让 agent 过度顺从用户，牺牲事实准确性和客观推理。现有记忆 benchmark 多关注存储、检索和更新是否正确，很少评估记忆如何影响下游决策。MemSyco-Bench 用来衡量记忆何时应该影响决策、有效记忆应该如何被使用，并通过 5 类任务评估 agent 是否能拒绝无效记忆、尊重适用范围、处理冲突、跟踪更新并进行合理个性化。</p>
+<h3 id="3-reporescue-an-empirical-study-of-llm-agents-on-whole-repository-compatibility-rescue">3. RepoRescue: An Empirical Study of LLM Agents on Whole-Repository Compatibility Rescue
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.01213"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.01213</a></li>
+<li>方向：Coding agents / repository repair</li>
+<li>作者：Zhihao Lin, Mingyi Zhou, Zhensu Sun, Yizhuo Yang, Renyu Yang et al.</li>
+<li>日期：2026-07-01</li>
+<li>评分：17</li>
+</ul>
+<p>精评：这篇很像真实世界的 coding-agent 压力测试：不是修一个已知 bug，而是把曾经能跑、现在因生态变化坏掉的老仓库“救活”。RepoRescue 包含 193 个 Python 和 122 个 Java 仓库，要求 agent 在现代环境中诊断、定位并修改源码让历史测试恢复。它还专门检查 agent 是否通过改测试作弊，并加入 runtime-enforced 的禁止改测试设置。结果挺有信息量：系统之间互补明显，union 能到 62.7%；跨文件协调是核心难点；通过测试也不等于真实可用，还要再做现实场景验证。对评估 Codex/Claude Code/Kimi 这类系统很有价值。</p>
+<p>摘要翻译：开源库被广泛复用，但生态变化会让无人维护的仓库逐渐失效。本文研究 LLM agent 是否能让旧仓库适配现代环境，称为 compatibility rescue。与普通 bug repair 不同，任务从一个历史上可运行、现代环境中失败的仓库开始，agent 必须诊断失败原因、定位代码并恢复测试。作者构建了 Python 和 Java 仓库集合，评估多个部署中的 agent 系统，并通过移除测试文件修改、运行时禁止改测试、真实场景验证等方式检查修复质量。结果显示 agent 系统互补性强，但跨文件协调仍是主要困难。</p>
+<h3 id="4-autonomous-scientific-discovery-via-iterative-meta-reflection">4. Autonomous Scientific Discovery via Iterative Meta-Reflection
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.01131"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.01131</a></li>
+<li>方向：Scientific discovery agents</li>
+<li>作者：Bingchen Zhao, Sara Beery, Oisin Mac Aodha</li>
+<li>日期：2026-07-01</li>
+<li>评分：17</li>
+</ul>
+<p>精评：DiscoPER 的亮点不是“让 LLM 生成假设”，而是加入了二阶 meta-reflection：系统会周期性回看自己已经发现的结果，把这些发现当成经验数据，找结构模式、混杂因素和知识缺口，再反过来引导下一轮探索。它还要求每个发现都通过统计检验。生态 benchmark iNatDisco 上恢复 8/9 个已知 pattern，hypothesis support rate 72.7%。这类工作在往“自动科研系统”靠近，重要的是它开始把探索历史本身纳入推理对象。</p>
+<p>摘要翻译：自动科学发现系统有潜力加速假设生成和验证，但现有系统通常受限于固定搜索空间或预设问题，也缺少对累计发现进行综合的能力。DiscoPER 是一个 LLM 驱动的开放式研究框架，可以动态生成和执行代码探索数据集，不需要预设研究目标。每个提出的发现都必须通过统计检验。系统还会周期性分析自己积累的发现，识别结构模式、混杂因素和知识缺口，并把探索导向未覆盖区域。实验显示它在生态知识 benchmark 上明显优于传统因果发现和 LLM 引导基线。</p>
+<h3 id="5-abot-m05-unified-mobility-and-manipulation-world-action-model">5. ABot-M0.5: Unified Mobility-and-Manipulation World Action Model
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00678"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00678</a></li>
+<li>方向：Embodied AI / world action model</li>
+<li>作者：Ronghan Chen, Yandan Yang, Zuojin Tang, Dongjie Huo, Tong Lin et al.</li>
+<li>日期：2026-07-01</li>
+<li>评分：17</li>
+</ul>
+<p>精评：移动操作机器人最难的是导航和手臂操作同时存在，动作空间和时间粒度都很混。ABot-M0.5 从三个层面做对齐：用 intermediate latent actions 对齐时间粒度；用 dual-level Mixture-of-Transformers 解耦模态表征与底盘/机械臂等动作子空间；用 dream-forcing 让 inverse dynamics 在模型预测视频上训练，减少自回归推理时的分布偏移。适合关注 VLA、world model 和机器人长程任务的人重点看。</p>
+<p>摘要翻译：移动操作是通用机器人关键能力，但现有 VLA 策略多为反应式，缺乏显式世界建模；已有 World Action Models 又常用粗粒度视频块，动作建模混杂，训练监督与自回归推理不一致。ABot-M0.5 认为移动操作需要在时间粒度、动作空间和训练-推理一致性上同时对齐。作者提出 intermediate latent actions、dual-level Mixture-of-Transformers 和 dream-forcing 训练策略，在长程任务成功率和细粒度控制准确性上达到 SOTA。</p>
+<h2 id="agent-与机器人">Agent 与机器人
+</h2><h3 id="videosearch-r1-iterative-video-retrieval-and-reasoning-via-soft-query-refinement">VideoSearch-R1: Iterative Video Retrieval and Reasoning via Soft Query Refinement
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00446"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00446</a></li>
+<li>方向：Video retrieval agent / GRPO</li>
+<li>评分：17</li>
+</ul>
+<p>精评：VideoSearch-R1 把视频检索从“一次性预处理”变成可迭代 agent 流程。关键点是 Soft Query Refinement：不在离散文本层反复改 query，而是在连续 latent token 空间细调查询，并用 GRPO 结合检索和下游 temporal grounding 奖励训练。它更像是把搜索动作也纳入可学习的推理过程。</p>
+<p>摘要翻译：面对不断扩大的视频语料，系统既要跨视频检索相关内容，又要在检索到的视频内进行细粒度推理。现有方法通常把检索作为前处理，一旦初始检索失败，后续推理就会失败。VideoSearch-R1 通过与视频搜索引擎多轮交互进行迭代检索和推理，并提出 Soft Query Refinement，在连续 latent 空间优化查询 token。模型用 GRPO 训练，在多个 VCMR 数据集上达到 SOTA，并且比文本式 query rewrite 需要更少生成 token。</p>
+<h3 id="simplesearch-vl-a-simple-recipe-for-multimodal-agentic-deep-search">SimpleSearch-VL: A Simple Recipe for Multimodal Agentic Deep Search
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.31504"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2606.31504</a></li>
+<li>方向：Multimodal agentic search</li>
+<li>评分：17</li>
+</ul>
+<p>精评：这篇的思路偏工程实用：不扩大工具链，也不堆更多辅助模型，而是改进 agent 自己的搜索与验证过程。FAR 提高采样效率，evidence-verified reasoning 显式检查检索到的视觉/文本证据是否支持原问题。只用 5K SFT 轨迹和 2K RL 数据，就让 Qwen3-VL agentic baseline 提升 15.8/16.0 分，数据效率很值得看。</p>
+<p>摘要翻译：SimpleSearch-VL 是一个高效、可靠、实用的多模态 agentic search 框架。它的核心不是扩展数据、工具或外部组件，而是提升 agent 自身的搜索与验证流程。Factorized Adaptive Rollout 提高训练采样效率；evidence-verified reasoning 用显式思维链验证检索证据与原始上下文的相关性；系统保持轻量工具接口并让 agent 自行总结网页。实验显示它显著提升 Qwen3-VL agentic baseline，并让 30B-A3B 模型接近 agentic Gemini-3-Pro。</p>
+<h3 id="mirth-mutual-information-reasoning-with-temporal-hubs-for-vision-language-action-agents">MIRTH: Mutual-Information Reasoning with Temporal Hubs for Vision-Language-Action Agents
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.31167"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2606.31167</a></li>
+<li>方向：VLA agents</li>
+<li>评分：16</li>
+</ul>
+<p>精评：MIRTH 针对单帧 VLA 的三个短板：时间近视、高层指令到低层动作之间的推理断层，以及自回归标量动作解码慢。它用双尺度 temporal memory hubs 压缩长期场景演化和短期运动趋势，用互信息目标训练 latent reasoning tokens，再用并行动作解码提升控制吞吐。真实 LeRobot 平台上的 error recovery 是一个值得追的信号。</p>
+<p>摘要翻译：VLA 模型能把 web-scale 语义知识迁移到物理控制，但当前单帧架构会丢失历史动态，缺少从高层指令到低层动作的推理桥梁，且自回归动作解码效率低。MIRTH 在预训练 VLA backbone 上加入双尺度时间记忆 hub、互信息优化的 latent reasoning token 和并行动作解码。LIBERO 仿真与真实 LeRobot 平台实验显示它达到 SOTA，并出现错误恢复能力。</p>
+<h3 id="aspire-agentic-skills-discovery-for-robotics">ASPIRE: Agentic Skills Discovery for Robotics
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00272"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00272</a></li>
+<li>方向：Robot skill discovery</li>
+<li>评分：14</li>
+</ul>
+<p>精评：ASPIRE 把机器人编程做成一个不断探索、修复、沉淀技能库的闭环。它不是每次从零推理，而是把成功修复蒸馏成可复用技能，再通过 evolutionary search 生成更多任务序列探索。LIBERO-Pro、Robosuite 和 BEHAVIOR-1K 上提升都很大，尤其是 accumulated library 带来的 zero-shot long-horizon generalization。</p>
+<p>摘要翻译：机器人编程需要处理多模态感知、接触动力学、不同配置和执行失败。ASPIRE 是一个持续学习系统，在 code-as-policy 范式下自主编写和改进机器人控制程序，并把经验积累为可复用技能库。系统包含闭环执行引擎、持续扩展技能库和演化搜索。实验显示 ASPIRE 在多个操作 benchmark 上显著优于先前方法，积累的技能库还能提升未见长程任务的 zero-shot 泛化，并初步展示 sim-to-real 迁移效果。</p>
+<h3 id="valdi-value-diffusion-world-models">Valdi: Value Diffusion World Models
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00917"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00917</a></li>
+<li>方向：World model / MPC</li>
+<li>评分：14</li>
+</ul>
+<p>精评：Valdi 还偏 preliminary，但问题选得对：diffusion dynamics 能表达多未来不确定性，却太慢，不适合低延迟 MPC。作者尝试用单步 diffusion 同时满足训练和推理速度，在 CarRacing 上追平 deterministic MLP baseline。更重要的是它暴露了“预测多模态性”和“控制性能”之间的张力。</p>
+<p>摘要翻译：World model 可以支持 Model Predictive Control，但需要既快又能表达不确定未来的 dynamics prediction。Diffusion model 适合建模不确定动态，却因迭代推理不利于低延迟规划。Valdi 将端到端在线 MPC 训练与 latent diffusion dynamics model 结合，在 CarRacing 上用单步 diffusion 达到与确定性 MLP baseline 相当的表现，并展示了预测多模态性与控制性能之间的权衡。</p>
+<h3 id="digitalcoach-communication-and-grounding-gaps-in-human-and-agentic-computer-use-coaching">DigitalCoach: Communication and Grounding Gaps in Human and Agentic Computer Use Coaching
+</h3><p>本篇今天未收录，因为 <code>2606.31980</code> 已在过去 7 天 seen 列表中，跳过。</p>
+<h3 id="healthagentbench-a-unified-benchmark-suite-of-realistic-agentic-healthcare-environments">HealthAgentBench: A Unified Benchmark Suite of Realistic Agentic Healthcare Environments
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.31179"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2606.31179</a></li>
+<li>方向：Healthcare agent benchmark</li>
+<li>评分：14</li>
+</ul>
+<p>精评：HealthAgentBench 的强度在“环境真实”和“任务端到端”。54 个任务、7 类医疗流程，要求 agent 在复杂环境里探索原始数据并完成多步解决方案。最强且最具成本效益的 Codex GPT-5.5 约 42% 成功率，说明医疗 agent 离可靠部署还很远。它适合作为高风险 agent 评测基准观察。</p>
+<p>摘要翻译：随着 AI agent 具备更强长程推理能力，需要更全面地评估其在真实医疗工作流中的表现。HealthAgentBench 包含 54 个 agentic healthcare task，覆盖 7 类任务和多种模态。每个任务都模拟端到端临床流程，agent 需要在最少指令下探索原始医疗数据、操作复杂环境并执行多步方案。评测显示 frontier agents 的整体成功率仍较低，最强系统也只有约 42%，医学影像和大搜索空间组合推理尤其困难。</p>
+<h2 id="模型训练多模态与系统">模型训练、多模态与系统
+</h2><h3 id="rosetta-composable-native-multimodal-pretraining">Rosetta: Composable Native Multimodal Pretraining
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00293"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00293</a></li>
+<li>方向：Native multimodal pretraining</li>
+<li>评分：15</li>
+</ul>
+<p>精评：Rosetta 聚焦一个很现实的问题：给 foundation model 加新模态时，连续生成目标和离散理解任务会互相打架，导致 catastrophic forgetting。它用 global shared experts 保留核心知识，用 plug-and-play experts 承载模态能力，并用 MAOP 借助 optimizer momentum 作为语义锚点来过滤冲突梯度。关键词是“可组合、非破坏式扩展”。</p>
+<p>摘要翻译：真正通用的基础模型需要能整合新模态而不遗忘旧知识，但连续生成目标和离散理解任务会产生严重梯度冲突，标准 MoE 和 MoT 都容易发生表示覆盖。Rosetta 采用模块化 native multimodal pretraining：核心知识保存在全局共享专家中，模态能力放在可插拔专家中。Momentum-Anchored Orthogonal Projection 使用优化器动量作为语义锚点，中和冲突梯度并保留协同更新。实验显示 Rosetta 能保留语言和视觉理解，同时提升图像生成并释放跨模态协同。</p>
+<h3 id="mmlop-multi-modal-low-rank-prompting-for-efficient-vision-language-adaptation">MMLoP: Multi-Modal Low-Rank Prompting for Efficient Vision-Language Adaptation
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2602.21397"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2602.21397</a></li>
+<li>方向：Efficient VLM adaptation</li>
+<li>评分：15</li>
+</ul>
+<p>精评：这篇虽然 arXiv id 是 2602，但本轮数据日期为 2026-07-01，且未在 seen 中，所以作为补充收录。MMLoP 的卖点是把深层多模态 prompting 压到 11.5K 可训练参数，同时用一致性损失、drift correction 和共享 up-projection 补足性能。适合关注 CLIP/VLM 下游适配、参数效率的人。</p>
+<p>摘要翻译：Prompt learning 可以在不改预训练权重的情况下适配 CLIP 等 VLM，但把 prompt 扩展到视觉和文本编码器多个层后，参数量会达到百万级。MMLoP 用低秩分解为每层视觉和文本 prompt 参数化，只需 11.5K 可训练参数。作者还加入自调节一致性损失、全局漂移修正和共享 up-projection，以保持类判别结构和跨模态对齐。多个 benchmark 显示 MMLoP 在准确率与参数效率之间取得很好的平衡。</p>
+<h3 id="msqa-a-natively-sourced-multilingual-and-multicultural-simpleqa-benchmark">MSQA: A Natively Sourced Multilingual and Multicultural SimpleQA Benchmark
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00724"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00724</a></li>
+<li>方向：Multilingual / cultural alignment benchmark</li>
+<li>评分：14</li>
+</ul>
+<p>精评：MSQA 提醒一个常被忽略的点：会说某种语言，不等于理解那种文化。它用 11 个语言群、5 个文化维度、3 个难度层级的本地原生问题测试 18 个 LLM，发现 cultural competence 更受预训练暴露影响，而不是单纯跟 reasoning 能力同步。RAG、重复采样和校准都不能彻底解决这个问题。</p>
+<p>摘要翻译：多语言流利度常让人误以为模型也理解语言背后的文化，作者称之为 cultural alignment illusion。MSQA 包含 1,064 个本地原生问题，覆盖 11 个语言群、5 个文化维度和 3 个难度层级，避免翻译 benchmark 带来的英语中心捷径。对 18 个 LLM 的评测显示，模型在文化知识上显著退化，并存在 locality effect：文化能力更接近预训练暴露，而非通用推理能力。常见推理时补救方法并不能消除这一幻觉。</p>
+<h3 id="harc-coupling-harmfulness-and-refusal-directions-for-robust-safety-alignment">HARC: Coupling Harmfulness and Refusal Directions for Robust Safety Alignment
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00572"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00572</a></li>
+<li>方向：Safety alignment / representation</li>
+<li>评分：14</li>
+</ul>
+<p>精评：HARC 的观察很有用：harmfulness 和 refusal 在 residual stream 里是可分方向，jailbreak 往往在生成前就压掉其中一个方向。作者进一步发现模型在生成有害内容时其实能识别内容有害，只是 prompt-side 没触发拒绝。HARC 把 prompt 和 response 位置上的 harmfulness/refusal 子空间耦合起来，试图提高鲁棒性又不过度拒绝。</p>
+<p>摘要翻译：理解 LLM 内部如何表示安全性，有助于诊断 jailbreak 为什么成功。已有研究表明 aligned LLM 在 prompt token 的 residual stream 中编码了 harmfulness 和 refusal 两个可分方向。本文发现 jailbreak 会在生成前抑制 refusal 或 harmfulness 方向，不同攻击类型在二维平面上分布不同；而在 response token 位置，模型即使已经开始生成有害内容，也能识别其有害性。HARC 通过 fine-tuning 耦合 prompt 和 response 位置的两个方向，在不损害一般能力和不过度拒绝的情况下提升鲁棒性。</p>
+<h3 id="eldr-expert-locality-aware-decode-routing-for-pd-disaggregated-moe-serving">ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00466"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00466</a></li>
+<li>方向：MoE serving / vLLM</li>
+<li>评分：14</li>
+</ul>
+<p>精评：这是偏系统但很实用的一篇。PD disaggregated serving 里 decode worker 的负载均衡不够，因为 MoE decode 延迟还取决于这一批请求激活了哪些 expert。ELDR 从 prefill expert activations 构建 expert signature，按 locality-band routing 分配请求。实现到 vLLM，在最高 40 GPU 部署中 median TPOT 降 5.9%-13.9%，且输出不变。</p>
+<p>摘要翻译：在 prefill-decode 解耦的 LLM serving 中，请求在 prefill 后被分配到 decode worker。现有路由主要平衡负载，但 MoE 模型中，相同负载的 worker 延迟也可能不同，因为每个 decode step 要加载 batch 激活的不同 expert 权重。ELDR 根据请求 prefill 阶段的 expert activation 构建 expert signature，用离线 K-means 划分 signature 空间，在线将请求路由到最匹配且负载较低的 worker。vLLM 实验显示它能降低 TPOT，且不改变模型输出。</p>
+<h3 id="autotrainess-teaching-language-models-to-improve-language-models-autonomously">AutoTrainess: Teaching Language Models to Improve Language Models Autonomously
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2606.31551"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2606.31551</a></li>
+<li>方向：Autonomous post-training</li>
+<li>评分：14</li>
+</ul>
+<p>精评：AutoTrainess 把“让模型训练模型”从一句口号拆成了具体接口：规划、数据准备、训练、评估、日志和状态保持。它不是让 agent 裸奔 CLI，而是把人类训练经验外化成工作流、规则和约束。PostTrainBench 上 GPT-5.4 Codex 从 CLI-only 23.21 提升到 26.94，DeepSeek-V4-Flash 也有明显提升。对于自动 post-training pipeline 很有参考价值。</p>
+<p>摘要翻译：训练语言模型仍高度依赖人工，即便 frontier agent 已能完成软件工程等长程任务。自动 post-training 的难点不只是写代码，还包括规划迭代、构建 benchmark 对齐数据、稳定运行训练、评估 checkpoint、保留长时间实验状态。AutoTrainess 将这些操作暴露为 agent-computer interfaces，并把人类经验整理为工作流、规则和执行约束。实验显示它显著优于 CLI-only baseline，并能跨模型和 harness 泛化。</p>
+<h3 id="the-state-prediction-separation-hypothesis">The State-Prediction Separation Hypothesis
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.01218"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.01218</a></li>
+<li>方向：Transformer architecture</li>
+<li>评分：13</li>
+</ul>
+<p>精评：这篇提出一个架构假设：Transformer 现在用同一条 forward stream 同时预测 next token 和保存未来预测所需状态，可能不是最优。作者设计双流变体，把 state 和 prediction 分离，预训练实验显示更好的数据/计算效率，下游任务平均提升 2-3 个百分点。它属于“简单但可能底层”的架构方向，值得后续看复现规模。</p>
+<p>摘要翻译：Transformer 用同一个前向计算流同时预测下一个 token，并存储未来 token 预测所需状态。作者提出 state-prediction separation hypothesis：把这两个角色解耦会带来更好的语言建模性能。他们设计了一个双计算流 Transformer 变体，并在多个规模上预训练。实验显示该设计在数据和计算效率上更好，validation loss 降低，下游任务平均优于标准 Transformer 2-3 个百分点，并通过实证分析排除若干混杂因素。</p>
+<h2 id="audio--music">Audio / Music
+</h2><h3 id="mg-rwkv-multi-grained-context-aware-rwkv-for-temporal-forgery-localization">MG-RWKV: Multi-Grained Context-Aware RWKV for Temporal Forgery Localization
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00902"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00902</a></li>
+<li>方向：Audio-visual forgery localization / RWKV</li>
+<li>评分：18</li>
+</ul>
+<p>精评：虽然被归到 Audio LLM，但它更准确地说是音视频伪造片段定位。MG-RWKV 用 O(T) 的 RWKV 处理长序列，通过 bidirectional RWKV 捕捉双向时间上下文，用多粒度 MoE 按伪造时长动态选择感受野，再用跨粒度一致性减少真实区域误报。对 AIGC 检测和音视频取证有直接意义。</p>
+<p>摘要翻译：AIGC 让音视频真实性面临挑战，Temporal Forgery Localization 需要在未裁剪序列中精确定位被篡改片段。CNN 感受野有限，Transformer 二次复杂度高，线性模型又难兼顾全局真实上下文和局部突变伪造感知。MG-RWKV 利用 RWKV 的数据依赖状态演化实现 O(T) 全序列处理，包含双向 RWKV、多粒度 MoE 和跨粒度一致性模块。Lav-DF、TVIL 和 Psynd 实验显示其以较低计算成本达到 SOTA。</p>
+<h2 id="今日观察">今日观察
+</h2><p>今天最值得细读的三条线：第一是 memory agent 的安全性，MemSyco-Bench 把“记忆会不会让模型失去客观性”这个问题单独拿出来，非常贴近长期个人助手；第二是真实环境 agent benchmark，RepoRescue、HealthAgentBench、Xiaomi-GUI-0 这类工作都在把评测从玩具任务拉回真实世界，今天 Xiaomi-GUI-0 因已在 seen 中被跳过，但趋势很明显；第三是训练与系统工程的细化，ELDR、AutoTrainess、Rosetta 都不是追求单点炫技，而是在解决部署、扩展和自动训练流程里的实际摩擦。</p>
+<p>本次收录 arXiv IDs：2607.00461, 2607.01071, 2607.00902, 2607.01213, 2607.01131, 2607.00678, 2607.00446, 2606.31504, 2606.31167, 2607.00293, 2602.21397, 2607.00917, 2607.00724, 2607.00572, 2607.00466, 2607.00272, 2606.31551, 2606.31179, 2607.01218.</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-02/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-02</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-01/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-01</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-30/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-30</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-29/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-29</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-22/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-22</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
