@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="生成时间：2026-07-05 08:00 Asia/Shanghai\n今天 fetch_papers.py 抓到 100 篇，prefilter.py 预筛到 30 篇。按 ~/DailyReport/.seen_papers.json 做过去 7 天去重后，27 篇已报道过，本期只收录 3 篇新论文。整体看，今天的新内容集中在 agent memory、具身安全评测，以及 diffusion language model 在医学报告草稿中的交互式生成。\n">
+<title>AI Paper Daily | 2026-07-05</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-05/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-05">
+<meta property='og:description' content="生成时间：2026-07-05 08:00 Asia/Shanghai\n今天 fetch_papers.py 抓到 100 篇，prefilter.py 预筛到 30 篇。按 ~/DailyReport/.seen_papers.json 做过去 7 天去重后，27 篇已报道过，本期只收录 3 篇新论文。整体看，今天的新内容集中在 agent memory、具身安全评测，以及 diffusion language model 在医学报告草稿中的交互式生成。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-05/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-05T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-05T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-05">
+<meta name="twitter:description" content="生成时间：2026-07-05 08:00 Asia/Shanghai\n今天 fetch_papers.py 抓到 100 篇，prefilter.py 预筛到 30 篇。按 ~/DailyReport/.seen_papers.json 做过去 7 天去重后，27 篇已报道过，本期只收录 3 篇新论文。整体看，今天的新内容集中在 agent memory、具身安全评测，以及 diffusion language model 在医学报告草稿中的交互式生成。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-05/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a></li>
+    <li><a href="#1-automem-automated-learning-of-memory-as-a-cognitive-skill">1. AutoMem: Automated Learning of Memory as a Cognitive Skill</a>
+      <ol>
+        <li><a href="#中文标题">中文标题</a></li>
+        <li><a href="#摘要翻译">摘要翻译</a></li>
+        <li><a href="#精评">精评</a></li>
+      </ol>
+    </li>
+    <li><a href="#2-egosafetybench-a-diagnostic-egocentric-video-benchmark-for-evaluating-embodied-vlms-as-runtime-safety-guards">2. EgoSafetyBench: A Diagnostic Egocentric Video Benchmark for Evaluating Embodied VLMs as Runtime Safety Guards</a>
+      <ol>
+        <li><a href="#中文标题-1">中文标题</a></li>
+        <li><a href="#摘要翻译-1">摘要翻译</a></li>
+        <li><a href="#精评-1">精评</a></li>
+      </ol>
+    </li>
+    <li><a href="#3-discrete-diffusion-language-models-for-interactive-radiology-report-drafting">3. Discrete Diffusion Language Models for Interactive Radiology Report Drafting</a>
+      <ol>
+        <li><a href="#中文标题-2">中文标题</a></li>
+        <li><a href="#摘要翻译-2">摘要翻译</a></li>
+        <li><a href="#精评-2">精评</a></li>
+      </ol>
+    </li>
+    <li><a href="#本期去重记录">本期去重记录</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-05/">AI Paper Daily | 2026-07-05</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-05T00:00:00Z'>Jul 05, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a></li>
+    <li><a href="#1-automem-automated-learning-of-memory-as-a-cognitive-skill">1. AutoMem: Automated Learning of Memory as a Cognitive Skill</a>
+      <ol>
+        <li><a href="#中文标题">中文标题</a></li>
+        <li><a href="#摘要翻译">摘要翻译</a></li>
+        <li><a href="#精评">精评</a></li>
+      </ol>
+    </li>
+    <li><a href="#2-egosafetybench-a-diagnostic-egocentric-video-benchmark-for-evaluating-embodied-vlms-as-runtime-safety-guards">2. EgoSafetyBench: A Diagnostic Egocentric Video Benchmark for Evaluating Embodied VLMs as Runtime Safety Guards</a>
+      <ol>
+        <li><a href="#中文标题-1">中文标题</a></li>
+        <li><a href="#摘要翻译-1">摘要翻译</a></li>
+        <li><a href="#精评-1">精评</a></li>
+      </ol>
+    </li>
+    <li><a href="#3-discrete-diffusion-language-models-for-interactive-radiology-report-drafting">3. Discrete Diffusion Language Models for Interactive Radiology Report Drafting</a>
+      <ol>
+        <li><a href="#中文标题-2">中文标题</a></li>
+        <li><a href="#摘要翻译-2">摘要翻译</a></li>
+        <li><a href="#精评-2">精评</a></li>
+      </ol>
+    </li>
+    <li><a href="#本期去重记录">本期去重记录</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>生成时间：2026-07-05 08:00 Asia/Shanghai</p>
+<p>今天 <code>fetch_papers.py</code> 抓到 100 篇，<code>prefilter.py</code> 预筛到 30 篇。按 <code>~/DailyReport/.seen_papers.json</code> 做过去 7 天去重后，27 篇已报道过，本期只收录 3 篇新论文。整体看，今天的新内容集中在 agent memory、具身安全评测，以及 diffusion language model 在医学报告草稿中的交互式生成。</p>
+<h2 id="今日重点">今日重点
+</h2><p>最值得优先看的是 <strong>AutoMem</strong>。它把“记忆管理”从 prompt 工程问题变成可训练技能，且声称只优化 memory skill 就能让长程任务表现提升约 2x-4x。这个方向很贴近长期 agent 的核心瓶颈：不是模型能不能推理一次，而是几千步以后还知不知道该记什么、取什么、丢什么。</p>
+<p><strong>EgoSafetyBench</strong> 也值得注意。它不是再做一个宽泛的 embodied VLM benchmark，而是专门检查 runtime safety guard 在机器人第一视角视频里能不能识别真正危险、避免误报，以及能不能不被场景文字误导。这个评测设计比单纯 binary safe/unsafe 更接近部署时的麻烦。</p>
+<p><strong>Discrete Diffusion Language Models for Interactive Radiology Report Drafting</strong> 的亮点在交互形态。它不只是说 diffusion LM 比 AR 快，而是利用双向去噪天然支持 any-order infill，让医生固定报告片段后由模型补中间内容。这种“编辑式生成”比从左到右续写更贴近真实报告工作流。</p>
+<hr>
+<h2 id="1-automem-automated-learning-of-memory-as-a-cognitive-skill">1. AutoMem: Automated Learning of Memory as a Cognitive Skill
+</h2><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.01224"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.01224</a></li>
+<li>PDF: <a class="link" href="https://arxiv.org/pdf/2607.01224.pdf"  target="_blank" rel="noopener"
+    >https://arxiv.org/pdf/2607.01224.pdf</a></li>
+<li>作者: Shengguang Wu, Hao Zhu, Yuhui Zhang, Xiaohan Wang, Serena Yeung-Levy</li>
+<li>方向: AI Agents / Long-horizon memory</li>
+<li>预筛分: 13</li>
+<li>来源: HuggingFace Papers, 12 upvotes</li>
+<li>发表日期: 2026-07-01</li>
+</ul>
+<h3 id="中文标题">中文标题
+</h3><p>AutoMem：把记忆作为一种认知技能进行自动化学习</p>
+<h3 id="摘要翻译">摘要翻译
+</h3><p>记忆能力是一种可以学习的技能：知道该编码什么、何时检索、以及如何组织知识，这在认知科学中被称为元记忆。本文把这一视角引入 LLM，将记忆管理视为一种可训练技能。作者把文件系统操作提升为与任务动作同等的一等记忆动作，让模型自行决定如何管理自己的记忆。</p>
+<p>这种记忆技能沿两个轴改进：一是支撑记忆的结构，包括 prompt、文件 schema、动作词表；二是模型实际运用这些结构的熟练度。这两个轴都很难手工优化，因为长程任务可能持续数千步，单次记忆错误往往要过很久才暴露，人工审查完整轨迹并不现实。</p>
+<p>作者提出 AutoMem，用两个循环自动优化这两件事。第一个循环让强 LLM 审查完整 agent 轨迹，并迭代修订影响 agent 如何与记忆文件交互的记忆结构。第二个循环从大量 episode 中识别 agent 自己做得好的记忆决策，把它们作为训练信号，直接提升模型的记忆熟练度。</p>
+<p>在 Crafter、MiniHack 和 NetHack 三个程序生成的长程游戏中，作者只优化记忆而不改变模型的任务动作行为，就让基础 agent 性能提升约 2x-4x，使一个 32B 开源权重模型接近 Claude Opus 4.5 和 Gemini 3.1 Pro Thinking 等前沿系统。结果表明，记忆管理是一种可独立学习的技能，也是长程任务中高杠杆的优化目标。</p>
+<h3 id="精评">精评
+</h3><p>这篇的价值在于把 agent memory 从“存储组件”重新定义成“行为技能”。很多记忆系统默认问题是检索算法、向量库、上下文压缩或 memory schema，但 AutoMem 的立场更激进：记忆本身包含决策，模型需要学会何时写、写成什么粒度、什么时候读、读出来以后如何用。</p>
+<p>方法上，它把文件系统操作纳入 agent action space，这一点很实用。长期 agent 真正运行时，memory 往往不是单条向量，而是文件、日志、状态、计划、规则和摘要的混合物。让强模型审查完整轨迹并改 schema，再用好决策反哺训练，像是在给 agent 做“记忆行为的自举课程”。</p>
+<p>需要谨慎的是，实验场景集中在游戏类长程任务，和真实办公、研究、软件工程 agent 还有距离。另一个风险是第一循环依赖强 LLM 审查轨迹，成本、稳定性和审查标准是否可迁移还要看正文细节。不过结论如果成立，它会直接影响长期个人 agent、游戏 agent、研究助理和自动化操作系统的 memory 设计。</p>
+<p>建议优先读：方法章节、memory action space 设计、trajectory review prompt/schema 的迭代方式，以及 2x-4x 提升是否来自更好检索、避免遗忘，还是某种任务特定的记忆模板。</p>
+<hr>
+<h2 id="2-egosafetybench-a-diagnostic-egocentric-video-benchmark-for-evaluating-embodied-vlms-as-runtime-safety-guards">2. EgoSafetyBench: A Diagnostic Egocentric Video Benchmark for Evaluating Embodied VLMs as Runtime Safety Guards
+</h2><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.00218"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.00218</a></li>
+<li>PDF: <a class="link" href="https://arxiv.org/pdf/2607.00218.pdf"  target="_blank" rel="noopener"
+    >https://arxiv.org/pdf/2607.00218.pdf</a></li>
+<li>作者: Siddhant Panpatil, Arth Singh, Mijin Koo, Chaeyun Kim, Haon Park, Dasol Choi</li>
+<li>方向: AI Agents / Embodied VLM safety evaluation</li>
+<li>预筛分: 13</li>
+<li>来源: HuggingFace Papers, 1 upvote</li>
+<li>发表日期: 2026-06-30</li>
+</ul>
+<h3 id="中文标题-1">中文标题
+</h3><p>EgoSafetyBench：用于评估具身 VLM 作为实时安全守卫的诊断型第一视角视频基准</p>
+<h3 id="摘要翻译-1">摘要翻译
+</h3><p>视觉语言模型现在被提议作为家庭和工厂中具身 agent 的实时安全守卫。一个可部署的守卫必须能捕捉真正危险的情况，同时避免对日常但表面上看起来可疑的活动做不必要干预，而这种区别是二元安全基准难以揭示的。</p>
+<p>作者提出 EgoSafetyBench，这是一个包含 1,200 个机器人视角场景、以 0.5 秒粒度标注的第一视角视频基准，用于在两个 track 上评估 VLM 作为流式安全守卫的能力。情境 track 包含 800 个场景，覆盖四类情况，从常规安全、看似可疑但安全，到明显危险和上下文相关危险。视觉通道 track 包含 400 个场景，针对场景中的文字，例如标志、贴纸或标签，这些文字可能错误描述物理情况；每个误导性标志都配有真实版本，用来测试守卫能否识别文字误导，以及文字是否会污染它对物理安全的判断。</p>
+<p>两个 track 都使用对比阶梯设计：近乎相同的场景只在一个可见决定性线索上不同，因此正确判断必须依赖这个线索，而不能只根据整体场景类型猜测。作者评估了 10 个开源和闭源 VLM。结果发现，安全守卫通常能识别包含危险的视频，但经常错过具体危险时刻，尤其是上下文相关危险。此外，误导性的场景内文字会削弱所有测试守卫：脆弱模型最多漏掉三分之一危险，而鲁棒模型则会对安全内容过度干预。匹配对照显示，表面上的安全鲁棒性常常只是无差别报警，而不是真正的物理推理。</p>
+<h3 id="精评-1">精评
+</h3><p>这篇的关键贡献不是模型方法，而是评测问题定义。具身安全守卫如果只做“这个视频安全吗”的离线判断，离部署还很远；真正困难的是流式检测、半秒级时刻定位、对上下文危险的理解，以及少误报。EgoSafetyBench 把这些问题拆成更可诊断的测试，非常适合发现 VLM 作为 safety monitor 时的失败模式。</p>
+<p>我比较看重它的两个设计。第一是 contrastive ladders，让场景只差一个决定性线索，能减少模型靠场景先验蒙对的空间。第二是 in-scene text 误导测试，这很现实：机器人看到“安全”“清洁剂”“已断电”之类标签时，模型可能过度相信文字，而忽略物理状态本身。</p>
+<p>局限也明显：1,200 个场景对于真实具身安全仍然偏小，且 benchmark 本身是否覆盖家庭、工厂、医疗、实验室等不同风险分布，需要看数据构成。它更像诊断仪，不是最终部署认证。但对做 embodied agent、机器人安全、VLM video grounding 的人来说，它提供了一个很好的错误分类框架。</p>
+<p>建议关注：场景类别定义、0.5 秒标注协议、误导文字对不同 VLM 的影响，以及作者如何区分“谨慎”与“无差别报警”。</p>
+<hr>
+<h2 id="3-discrete-diffusion-language-models-for-interactive-radiology-report-drafting">3. Discrete Diffusion Language Models for Interactive Radiology Report Drafting
+</h2><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.01436"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2607.01436</a></li>
+<li>PDF: <a class="link" href="https://arxiv.org/pdf/2607.01436.pdf"  target="_blank" rel="noopener"
+    >https://arxiv.org/pdf/2607.01436.pdf</a></li>
+<li>作者: Max Van Puyvelde, Halil Ibrahim Gulluk, Wim Van Criekinge, Olivier Gevaert</li>
+<li>方向: Diffusion language models / Medical report drafting</li>
+<li>预筛分: 12</li>
+<li>来源: HuggingFace Papers, 4 upvotes</li>
+<li>发表日期: 2026-07-01</li>
+</ul>
+<h3 id="中文标题-2">中文标题
+</h3><p>用于交互式放射科报告草拟的离散扩散语言模型</p>
+<h3 id="摘要翻译-2">摘要翻译
+</h3><p>扩散语言模型通过双向去噪 token 画布来生成文本，而不是像自回归模型那样从左到右逐 token 输出；这类模型已经在生成能力上接近自回归生成。然而，医学基础模型几乎仍然全是自回归模型。</p>
+<p>作者改造了一个 mixture-of-experts 扩散语言模型 DiffusionGemma-26B，并在医学视觉问答数据集上，与同等规模的自回归兄弟模型 Gemma-4-26B 进行对比。两者使用相同的 LoRA 配方，并由对冗长程度鲁棒的 LLM judge 评分。结果显示，扩散模型在所有数据集上都匹配或超过自回归模型；微调后的模型有 3.8B active 参数，表现可与前沿视觉语言模型竞争，解码速度也快 3.5-4.4 倍。</p>
+<p>除了这种性能相当之外，扩散模型还提供了自回归模型缺少的草稿能力：任意顺序补全。由于画布是双向去噪的，放射科医生可以固定报告片段，让模型填充片段之间的文本。这是扩散生成天然具备、而自回归生成不擅长的操作。它适合真实报告，因为不同医生和机构的报告常常简短且格式不一致。</p>
+<h3 id="精评-2">精评
+</h3><p>这篇值得看的地方在于，它不是简单把 diffusion LM 套进医学文本生成，而是抓住了 diffusion 的交互优势：any-order infill。医疗报告不是聊天续写，医生经常已经有若干确定片段，只需要模型在中间补结构、补表述、补一致性。自回归模型当然也可以用 prompt 模拟填空，但生成机制本身并不天然适合这种非线性编辑。</p>
+<p>性能部分如果正文支持摘要里的说法，会很有吸引力：同 LoRA recipe 下扩散模型不弱于同尺寸 AR sibling，且解码快 3.5-4.4 倍。这对医学场景重要，因为低延迟和可编辑性往往比“从零生成一整段漂亮报告”更有用。</p>
+<p>需要小心的是，摘要里提到的医学视觉问答和 radiology report drafting 之间仍有任务差距。VQA judge 分数不等于临床报告质量，更不等于安全可用。LLM judge 即便做了 verbosity-robust，也可能无法覆盖医学事实一致性、漏诊风险和机构模板要求。</p>
+<p>建议读正文时重点查：具体数据集、report drafting 是否有真实医生交互实验、infill 任务如何构造、以及 diffusion 生成在事实一致性上的错误类型。</p>
+<hr>
+<h2 id="本期去重记录">本期去重记录
+</h2><p>本期收录并写入 <code>~/DailyReport/.seen_papers.json</code> 的 arXiv ID：</p>
+<ul>
+<li>2607.01224</li>
+<li>2607.00218</li>
+<li>2607.01436</li>
+</ul>
+<p>本期从预筛结果中跳过 27 篇过去 7 天已报道论文，包括：2607.02479, 2607.00461, 2607.01647, 2607.02032, 2607.01071, 2607.02269, 2607.02255, 2607.01232, 2607.00902, 2607.02440, 2607.01213, 2607.01131, 2607.00881, 2607.00678, 2607.00446, 2606.08625, 2607.00248, 2607.01874, 2603.29616, 2607.00466, 2607.00272, 2607.02512, 2607.01763, 2606.25842, 2607.00293, 2602.21397, 2607.02461。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-04/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-04</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-03/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-03</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-02/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-02</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-01/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-01</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-06-30/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-06-30</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
