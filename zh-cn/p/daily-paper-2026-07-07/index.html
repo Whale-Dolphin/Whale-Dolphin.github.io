@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="抓取 100 篇，预筛 30 篇；按 ~/DailyReport/.seen_papers.json 去掉过去 7 天已报道论文后，本期收录 5 篇。今天没有特别强的 Audio LLM 新论文，主线集中在 embodied AI 部署运行时、LVLM 视觉遗忘修正、agent 评测去框架偏差，以及高风险行业知识 benchmark。\n">
+<title>AI Paper Daily | 2026-07-07</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-07/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-07">
+<meta property='og:description' content="抓取 100 篇，预筛 30 篇；按 ~/DailyReport/.seen_papers.json 去掉过去 7 天已报道论文后，本期收录 5 篇。今天没有特别强的 Audio LLM 新论文，主线集中在 embodied AI 部署运行时、LVLM 视觉遗忘修正、agent 评测去框架偏差，以及高风险行业知识 benchmark。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-07/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-07T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-07T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-07">
+<meta name="twitter:description" content="抓取 100 篇，预筛 30 篇；按 ~/DailyReport/.seen_papers.json 去掉过去 7 天已报道论文后，本期收录 5 篇。今天没有特别强的 Audio LLM 新论文，主线集中在 embodied AI 部署运行时、LVLM 视觉遗忘修正、agent 评测去框架偏差，以及高风险行业知识 benchmark。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-07/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a></li>
+    <li><a href="#embodied-ai--runtime">Embodied AI / Runtime</a>
+      <ol>
+        <li><a href="#embodiedcpp-a-portable-inference-runtime-of-embodied-ai-models-on-heterogeneous-robots">Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots</a></li>
+      </ol>
+    </li>
+    <li><a href="#lvlm-training--visual-grounding">LVLM Training / Visual Grounding</a>
+      <ol>
+        <li><a href="#laser-a-corrective-lens-for-lvlms-via-visual-attention-preservation-and-sink-suppression">LASER: A Corrective Lens for LVLMs via Visual Attention Preservation and Sink Suppression</a></li>
+      </ol>
+    </li>
+    <li><a href="#ai-agents--evaluation">AI Agents / Evaluation</a>
+      <ol>
+        <li><a href="#a-unified-framework-for-the-evaluation-of-llm-agentic-capabilities">A Unified Framework for the Evaluation of LLM Agentic Capabilities</a></li>
+      </ol>
+    </li>
+    <li><a href="#multimodal-qa--attribution">Multimodal QA / Attribution</a>
+      <ol>
+        <li><a href="#multattnattrib-training-free-multimodal-attribution-in-long-document-question-answering">MultAttnAttrib: Training-Free Multimodal Attribution in Long Document Question Answering</a></li>
+      </ol>
+    </li>
+    <li><a href="#domain-benchmark--aviation">Domain Benchmark / Aviation</a>
+      <ol>
+        <li><a href="#pre-flight-a-benchmark-for-evaluating-large-language-models-on-aviation-operational-knowledge">Pre-Flight: A Benchmark for Evaluating Large Language Models on Aviation Operational Knowledge</a></li>
+      </ol>
+    </li>
+    <li><a href="#本次收录-arxiv-id">本次收录 arXiv ID</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-07/">AI Paper Daily | 2026-07-07</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-07T00:00:00Z'>Jul 07, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a></li>
+    <li><a href="#embodied-ai--runtime">Embodied AI / Runtime</a>
+      <ol>
+        <li><a href="#embodiedcpp-a-portable-inference-runtime-of-embodied-ai-models-on-heterogeneous-robots">Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots</a></li>
+      </ol>
+    </li>
+    <li><a href="#lvlm-training--visual-grounding">LVLM Training / Visual Grounding</a>
+      <ol>
+        <li><a href="#laser-a-corrective-lens-for-lvlms-via-visual-attention-preservation-and-sink-suppression">LASER: A Corrective Lens for LVLMs via Visual Attention Preservation and Sink Suppression</a></li>
+      </ol>
+    </li>
+    <li><a href="#ai-agents--evaluation">AI Agents / Evaluation</a>
+      <ol>
+        <li><a href="#a-unified-framework-for-the-evaluation-of-llm-agentic-capabilities">A Unified Framework for the Evaluation of LLM Agentic Capabilities</a></li>
+      </ol>
+    </li>
+    <li><a href="#multimodal-qa--attribution">Multimodal QA / Attribution</a>
+      <ol>
+        <li><a href="#multattnattrib-training-free-multimodal-attribution-in-long-document-question-answering">MultAttnAttrib: Training-Free Multimodal Attribution in Long Document Question Answering</a></li>
+      </ol>
+    </li>
+    <li><a href="#domain-benchmark--aviation">Domain Benchmark / Aviation</a>
+      <ol>
+        <li><a href="#pre-flight-a-benchmark-for-evaluating-large-language-models-on-aviation-operational-knowledge">Pre-Flight: A Benchmark for Evaluating Large Language Models on Aviation Operational Knowledge</a></li>
+      </ol>
+    </li>
+    <li><a href="#本次收录-arxiv-id">本次收录 arXiv ID</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>抓取 100 篇，预筛 30 篇；按 <code>~/DailyReport/.seen_papers.json</code> 去掉过去 7 天已报道论文后，本期收录 5 篇。今天没有特别强的 Audio LLM 新论文，主线集中在 embodied AI 部署运行时、LVLM 视觉遗忘修正、agent 评测去框架偏差，以及高风险行业知识 benchmark。</p>
+<h2 id="今日重点">今日重点
+</h2><p>最值得读的是 <code>2607.02501</code> 和 <code>2605.27898</code>。前者把 VLA/WAM 的部署问题从“模型能不能跑”推进到“异构机器人闭环控制里能不能稳定低延迟跑”，如果 embodied AI 要从 demo 进入真实设备，这类 C++ runtime 会越来越关键。后者则继续收紧 agent benchmark 的可信度问题：同一个模型分数可能被 scaffold、工具封装和 live environment 波动明显影响，所以评测框架本身必须被纳入实验对象。</p>
+<p><code>2607.01707</code> 关注 LVLM 长程解码时的 visual forgetting，用奖励约束视觉注意力轨迹和视觉 sink token；<code>2607.01420</code> 做长文档多模态 QA 的训练无关 attribution，强调低延迟、细粒度证据定位；<code>2607.01829</code> 是航空运营知识 benchmark，结论很现实：即便 2026 年强模型也还明显低于专家可靠性。</p>
+<hr>
+<h2 id="embodied-ai--runtime">Embodied AI / Runtime
+</h2><h3 id="embodiedcpp-a-portable-inference-runtime-of-embodied-ai-models-on-heterogeneous-robots">Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.02501"  target="_blank" rel="noopener"
+    >2607.02501</a> | <a class="link" href="https://arxiv.org/pdf/2607.02501.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Ling Xu, Chuyu Han, Borui Li, Hao Wu, Shiqi Jiang et al.</li>
+<li>日期: 2026-07-02</li>
+<li>预筛分: 14 | HuggingFace: 36 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> 一个面向 embodied AI 的可移植 C++ 推理运行时，把 VLA 和 WAM 在异构机器人上的闭环部署抽象成统一执行路径。</p>
+<p><strong>精评:</strong> 这篇的价值偏工程底座。现在很多 VLA/WAM 论文能在特定 Python 栈和特定机器人 glue code 上跑，但一到边缘设备、不同后端、不同控制频率，部署就碎掉。Embodied.cpp 把 embodied runtime 的契约说清楚：batch-1 低延迟、多速率闭环执行、可扩展 I/O，而不是传统 request-response serving。五层架构也比较实用：input adapters、sequence builders、backbone execution、head plugins、deployment adapters。结果里 HY-VLA 和 pi0.5 的闭环成功率分别到 100.0% 和 91.0%，WAM block 内存从 312.2 MiB 降到 88.1 MiB。它不一定是“新能力”论文，但很可能是机器人模型落地会反复遇到的基础设施问题。</p>
+<p><strong>中文摘要翻译:</strong> Embodied AI 模型已经覆盖视觉-语言-动作模型和世界-动作模型，但实际部署仍被模型专用 Python 栈、后端假设和机器人侧胶水代码割裂，尤其是在异构边缘设备上。现有推理运行时主要面向请求-响应式服务，无法满足 embodied 部署需要的多速率闭环控制、batch-1 延迟优先推理，以及固定 token I/O 之外的可扩展接口。作者提出 Embodied.cpp，一个面向 embodied 模型的可移植 C++ 推理运行时。基于对代表性 VLA 和 WAM 架构的分析，它抽象出共享执行路径，并组织成输入适配、序列构建、骨干执行、头部插件和部署适配五层。该运行时支持模块化多速率执行、延迟优先融合推理，以及可扩展算子和 I/O，从而通过统一后端抽象部署到不同设备、机器人和模拟器。实验显示，它能在多个 embodied 架构上提升部署效率，同时保持较高任务精度。</p>
+<hr>
+<h2 id="lvlm-training--visual-grounding">LVLM Training / Visual Grounding
+</h2><h3 id="laser-a-corrective-lens-for-lvlms-via-visual-attention-preservation-and-sink-suppression">LASER: A Corrective Lens for LVLMs via Visual Attention Preservation and Sink Suppression
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.01707"  target="_blank" rel="noopener"
+    >2607.01707</a> | <a class="link" href="https://arxiv.org/pdf/2607.01707.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Bowen Yuan, Zijian Wang, Yadan Luo, Shijie Wang, Zi Huang</li>
+<li>日期: 2026-07-02</li>
+<li>预筛分: 12 | HuggingFace: 1 upvote</li>
+</ul>
+<p><strong>一句话:</strong> LASER 用视觉 grounding reward 和 sink suppression reward 缓解 LVLM 长程推理时注意力偏离视觉证据的问题。</p>
+<p><strong>精评:</strong> 视觉遗忘不是新问题，但这篇把病灶拆得更细：不只是解码后期 attention decay，早期注意力衰减会直接破坏证据获取；同时，一些任务无关的 visual sink token 会吸走注意力。LASER 的思路是 post-training 阶段直接管注意力轨迹和视觉 token 内部分布，让模型既持续看语义相关视觉 token，又别把注意力塌到无信息区域。这个方向值得关注，因为 LVLM 的很多长答案、多步推理错误并不是语言模型不会推，而是视觉证据在生成过程中失联。风险是 attention-based 约束能否泛化到不同 backbone、不同视觉 tokenization，以及它对开放式生成质量有没有副作用。</p>
+<p><strong>中文摘要翻译:</strong> 大型视觉语言模型具备较强推理能力，但在长程解码中常出现视觉遗忘，即注意力逐渐偏离视觉证据。现有方法多把它视为后期注意力衰减问题，或用启发式提醒、事后 attention lifting 缓解。作者通过系统实验发现，性能退化主要来自两个被忽视的因素：早期注意力衰减会破坏证据获取，注意力还会集中到一部分与任务无关的视觉 sink token 上。基于这些发现，作者提出 LASER，一个 post-training 框架，在推理过程中同时调节视觉注意力轨迹和视觉 token 内部分布。它引入视觉 grounding reward，鼓励模型持续关注语义显著视觉 token；同时引入 sink suppression reward，惩罚对 visual sink token 的过度集中。八个 benchmark 上的实验显示，LASER 稳定超过强基线，证明 attention-aware training 是缓解视觉遗忘的有效方式。</p>
+<hr>
+<h2 id="ai-agents--evaluation">AI Agents / Evaluation
+</h2><h3 id="a-unified-framework-for-the-evaluation-of-llm-agentic-capabilities">A Unified Framework for the Evaluation of LLM Agentic Capabilities
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2605.27898"  target="_blank" rel="noopener"
+    >2605.27898</a> | <a class="link" href="https://arxiv.org/pdf/2605.27898.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Pengyu Zhu, Lijun Li, Yaxing Lyu, Qianxin Luo, Jingyi Yang et al.</li>
+<li>日期: 2026-07-02</li>
+<li>预筛分: 12</li>
+<li>代码/数据: <a class="link" href="https://github.com/whfeLingYu/A-Unified-Framework-for-the-Evaluation-of-LLM-Agentic-Capabilities"  target="_blank" rel="noopener"
+    >https://github.com/whfeLingYu/A-Unified-Framework-for-the-Evaluation-of-LLM-Agentic-Capabilities</a> | <a class="link" href="https://huggingface.co/datasets/whfeLingYu/Unified_Agent_Framework"  target="_blank" rel="noopener"
+    >https://huggingface.co/datasets/whfeLingYu/Unified_Agent_Framework</a></li>
+</ul>
+<p><strong>一句话:</strong> 一个统一 agent 评测框架，把 benchmark 任务统一到 instruction-tool-environment 格式，并显式分离模型能力、scaffold 选择和环境波动。</p>
+<p><strong>精评:</strong> 这篇和最近几天的 coding-agent/agent benchmark 审计是一条线：agent 分数并不只等于模型能力。工具 schema、ReAct scaffold、sandbox、live environment 的随机波动，都可能改变结果。作者把 7 个常用 benchmark、24 个领域统一进固定 ReAct 架构和可控 sandbox，还提供 offline snapshots 来隔离环境变化；400K rollouts、5B tokens、15 个模型的规模不小。真正有用的是它的 failure attribution taxonomy 和资源消耗指标，因为 agent 产品不只关心成功率，也关心失败发生在决策层还是执行层、花了多少 token、是否因为环境本身漂移。后续如果能被更多 benchmark 接入，会让 agent leaderboard 少一点“框架运气”。</p>
+<p><strong>中文摘要翻译:</strong> 随着 LLM 越来越多以 agent 形式部署，可靠评估其 agentic 能力变得关键。但现有 benchmark 分数往往混合了模型能力和 benchmark 自带实现选择，导致跨 benchmark 结果很难被解释为干净的模型测量。作者提出一个统一框架，用统一配置系统把不同 benchmark 整合为标准化的 instruction-tool-environment 格式，并在可控 sandbox 中通过固定 ReAct 风格架构执行 agent；同时提供可选 offline setting，用精选快照替代易波动的 live environment，从而分别分析框架效应和环境效应。该框架保留各 benchmark 原本的任务成功标准，同时引入统一资源消耗指标，以及决策层和执行层失败归因分类。作者适配了覆盖 24 个领域的 7 个常用 benchmark，并在 15 个模型上进行了 400K rollouts 和 5B tokens 的大规模分析，发现 scaffold 选择和环境波动会显著改变 benchmark 结果。</p>
+<hr>
+<h2 id="multimodal-qa--attribution">Multimodal QA / Attribution
+</h2><h3 id="multattnattrib-training-free-multimodal-attribution-in-long-document-question-answering">MultAttnAttrib: Training-Free Multimodal Attribution in Long Document Question Answering
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.01420"  target="_blank" rel="noopener"
+    >2607.01420</a> | <a class="link" href="https://arxiv.org/pdf/2607.01420.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Dang Quang Thien Tran, Quang V. Dang, Vinamra Tyagi, Sai Soorya Rao Veeravalli, Trang Nguyen et al.</li>
+<li>日期: 2026-07-01</li>
+<li>预筛分: 12 | HuggingFace: 5 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> 一个训练无关的多模态 attribution 方法，用 prefill attention 头和校准阈值在长文档里定位答案证据。</p>
+<p><strong>精评:</strong> 这篇很适合放进 grounded assistant/RAG 产品视角看。长文档问答里，“回答对”只是第一步，真正上线还要知道答案每个成分来自哪里，尤其是图文混排、表格、扫描件这类多模态材料。MultAttnAttrib 不靠额外训练，而是利用 base model prefill pass 中选定 attention heads 做证据定位，所以延迟比再提示模型生成引用低很多，论文声称可到同模型 prompting 的七分之一。它还配了 MultAttrEval，专门给多模态长文档 attribution 标细粒度 ground truth。需要留意的是 attention attribution 天然会遇到可解释性争议，但作为低成本证据定位器，它的工程吸引力很强。</p>
+<p><strong>中文摘要翻译:</strong> 随着 grounded QA 系统越来越多部署到 AI assistant 中，准确把生成答案归因到证据来源，对用户信任和模型安全非常重要。虽然单模态 attribution 已被深入研究，多模态场景仍相对不足。作者提出 MultAttnAttrib，一个训练无关的 attribution 生成方法，利用模型 prefill pass、选定 attention heads 和校准阈值，在文档中定位源证据。为建立基线，作者还提出 MultAttrEval，一个带细粒度 ground-truth attribution 的 benchmark，覆盖多模态源文档中由答案组件对应的证据。据作者称，这是第一个专门面向长文档多模态 attribution 的评测集。实验显示，MultAttnAttrib 稳定超过多种 attribution 方法，包括强 prompting baseline，并接近 GPT 5.4 等前沿模型；同时在同一 base model 上，相比 prompting 方式最多可将直接推理延迟降到七分之一。</p>
+<hr>
+<h2 id="domain-benchmark--aviation">Domain Benchmark / Aviation
+</h2><h3 id="pre-flight-a-benchmark-for-evaluating-large-language-models-on-aviation-operational-knowledge">Pre-Flight: A Benchmark for Evaluating Large Language Models on Aviation Operational Knowledge
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.01829"  target="_blank" rel="noopener"
+    >2607.01829</a> | <a class="link" href="https://arxiv.org/pdf/2607.01829.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Alex Brooker, Tim Hughes</li>
+<li>日期: 2026-07-02</li>
+<li>预筛分: 11</li>
+</ul>
+<p><strong>一句话:</strong> 一个航空运营知识 benchmark，300 道多选题覆盖机场地面运营、ICAO/FAA 规则和复杂运营场景。</p>
+<p><strong>精评:</strong> 这篇不是方法论文，但有现实价值。很多企业想把 LLM 用在文档、培训、客服和运营支持里，但通用 benchmark 基本测不出“懂不懂某个高规制行业的操作知识”。Pre-Flight 的关键在于题目来自国际标准和机场地面运营材料，并由空管、地面运营、商业飞行相关从业者审阅。结果也比较克制：专家 informal reference 约 95%，最强 2026 模型只有 82.7%，从 2025 年早期约 75% 只缓慢提升。作者强调它面向 non safety critical aviation operations，但这个缺口已经足够说明，行业部署前必须有领域专用 eval，不能只靠通用模型榜单背书。</p>
+<p><strong>中文摘要翻译:</strong> LLM 正越来越多被提议用于航空业务运营，例如文档、培训生成和面向客户的 assistant。通用 benchmark 无法衡量模型是否能安全、正确地理解航空特定运营知识，而该领域高风险且受严格监管，这个缺口后果很大。作者提出 Pre-Flight，一个开源 benchmark，包含 300 道多选题，题目来自国际标准和机场地面运营材料，覆盖国际机场地面运营、ICAO 和美国 FAA 规定、航空通识以及复杂运营场景。题目由具备空中交通管理、地面运营和商业飞行经验的从业者编写并审阅。作者使用 Inspect evaluation framework 评估多个商业和开源权重模型，并滚动维护 leaderboard。与会议上航空专业人士小样本测验得到的约 95% informal expert reference 相比，即使 2026 年发布的最强模型也只有 82.7%，说明距离专家级可靠性仍有明显差距。作者发布了数据集、评测 harness 和结果，并认为这类领域评测是生成式 AI 负责任部署到非安全关键航空运营中的必要前提。</p>
+<hr>
+<h2 id="本次收录-arxiv-id">本次收录 arXiv ID
+</h2><p><code>2607.02501</code>, <code>2607.01707</code>, <code>2605.27898</code>, <code>2607.01420</code>, <code>2607.01829</code></p>
+<p><em>生成时间：2026-07-07 08:00 Asia/Shanghai | 数据来源：HuggingFace Papers / arXiv</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-06/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-06</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-05/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-05</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-04/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-04</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-03/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-03</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-02/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-02</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
