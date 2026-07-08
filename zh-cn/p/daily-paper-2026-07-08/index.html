@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="抓取 100 篇，预筛 30 篇；按 ~/DailyReport/.seen_papers.json 去掉过去 7 天已报道论文后，本期可选 29 篇，精收 19 篇。今天主线很清楚：Audio LLM 继续往统一音频-文本模型和实时音视频交互推进；agent 评测开始更认真地模拟真实世界噪声、工具发现和长期经验迁移；训练与推理侧则集中在 verifier、模型压缩、KV cache、speculative decoding 这些更接近生产瓶颈的问题。\n">
+<title>AI Paper Daily | 2026-07-08</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-08/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-08">
+<meta property='og:description' content="抓取 100 篇，预筛 30 篇；按 ~/DailyReport/.seen_papers.json 去掉过去 7 天已报道论文后，本期可选 29 篇，精收 19 篇。今天主线很清楚：Audio LLM 继续往统一音频-文本模型和实时音视频交互推进；agent 评测开始更认真地模拟真实世界噪声、工具发现和长期经验迁移；训练与推理侧则集中在 verifier、模型压缩、KV cache、speculative decoding 这些更接近生产瓶颈的问题。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-08/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-08T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-08">
+<meta name="twitter:description" content="抓取 100 篇，预筛 30 篇；按 ~/DailyReport/.seen_papers.json 去掉过去 7 天已报道论文后，本期可选 29 篇，精收 19 篇。今天主线很清楚：Audio LLM 继续往统一音频-文本模型和实时音视频交互推进；agent 评测开始更认真地模拟真实世界噪声、工具发现和长期经验迁移；训练与推理侧则集中在 verifier、模型压缩、KV cache、speculative decoding 这些更接近生产瓶颈的问题。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-08/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a></li>
+    <li><a href="#audio-llm--unified-audio-intelligence">Audio LLM / Unified Audio Intelligence</a>
+      <ol>
+        <li><a href="#unified-audio-intelligence-without-regressing-on-text-intelligence">Unified Audio Intelligence Without Regressing on Text Intelligence</a></li>
+      </ol>
+    </li>
+    <li><a href="#verification--agentic-feedback">Verification / Agentic Feedback</a>
+      <ol>
+        <li><a href="#llm-as-a-verifier-a-general-purpose-verification-framework">LLM-as-a-Verifier: A General-Purpose Verification Framework</a></li>
+      </ol>
+    </li>
+    <li><a href="#ai-agents--real-world-evaluation">AI Agents / Real-World Evaluation</a>
+      <ol>
+        <li><a href="#agentgym2-benchmarking-large-language-model-agents-in-de-idealized-real-world-environments">AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments</a></li>
+        <li><a href="#evoagentbench-benchmarking-agent-self-evolution-via-ability-transfer">EvoAgentBench: Benchmarking Agent Self-Evolution via Ability Transfer</a></li>
+        <li><a href="#metaskill-evolve-recursive-self-improvement-of-llm-agents-via-two-timescale-meta-skill-evolution">MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution</a></li>
+      </ol>
+    </li>
+    <li><a href="#gui-agents--continual-learning">GUI Agents / Continual Learning</a>
+      <ol>
+        <li><a href="#ui-mopd-multi-platform-on-policy-distillation-for-continual-gui-agent-learning">UI-MOPD: Multi-Platform On-Policy Distillation for Continual GUI Agent Learning</a></li>
+      </ol>
+    </li>
+    <li><a href="#model-compression--serving">Model Compression / Serving</a>
+      <ol>
+        <li><a href="#nemotron-labs-3-puzzle-75b-a9b-compressing-hybrid-moe-llms">Nemotron-Labs-3-Puzzle-75B-A9B: Compressing Hybrid MoE LLMs</a></li>
+        <li><a href="#kvpop--key-value-cache-compression-with-predictive-online-pruning">KVpop &ndash; Key-Value Cache Compression with Predictive Online Pruning</a></li>
+        <li><a href="#dspark-confidence-scheduled-speculative-decoding-with-semi-autoregressive-generation">DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#embodied-ai--vla">Embodied AI / VLA</a>
+      <ol>
+        <li><a href="#look-before-you-leap-distilling-tree-search-into-action-evaluation-for-frozen-vla-models">Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models</a></li>
+        <li><a href="#internvla-a15-unifying-understanding-latent-foresight-and-action-for-compositional-generalization">InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization</a></li>
+      </ol>
+    </li>
+    <li><a href="#multimodal-reasoning--visual-workspace">Multimodal Reasoning / Visual Workspace</a>
+      <ol>
+        <li><a href="#mentalthink-shaping-thoughts-in-mental-svg-world">MentalThink: Shaping Thoughts in Mental SVG World</a></li>
+      </ol>
+    </li>
+    <li><a href="#real-time-audio-visual-interaction">Real-Time Audio-Visual Interaction</a>
+      <ol>
+        <li><a href="#wan-streamer-v02-higher-resolution-same-latency">Wan-Streamer v0.2: Higher Resolution, Same Latency</a></li>
+      </ol>
+    </li>
+    <li><a href="#research-automation--skill-composition">Research Automation / Skill Composition</a>
+      <ol>
+        <li><a href="#researchstudio-reel-automate-the-last-mile-of-research-from-paper-to-poster-video-and-blog">ResearchStudio-Reel: Automate the Last Mile of Research from Paper to Poster, Video, and Blog</a></li>
+      </ol>
+    </li>
+    <li><a href="#agent-learning-from-environments">Agent Learning From Environments</a>
+      <ol>
+        <li><a href="#edgebench-unveiling-scaling-laws-of-learning-from-real-world-environments">EdgeBench: Unveiling Scaling Laws of Learning from Real-World Environments</a></li>
+      </ol>
+    </li>
+    <li><a href="#diffusion-llm-training">Diffusion LLM Training</a>
+      <ol>
+        <li><a href="#dopsd-on-policy-self-distillation-for-diffusion-language-models">dOPSD: On-Policy Self-Distillation for Diffusion Language Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#personal-agent-security">Personal Agent Security</a>
+      <ol>
+        <li><a href="#when-claws-remember-but-do-not-tell-stealthy-memory-injection-in-persistent-personal-agents">When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents</a></li>
+        <li><a href="#your-agents-memories-are-not-its-own-forged-reasoning-attacks-on-llm-agent-memory-and-defenses">Your Agent&rsquo;s Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses</a></li>
+      </ol>
+    </li>
+    <li><a href="#optimizers--training-cookbook">Optimizers / Training Cookbook</a>
+      <ol>
+        <li><a href="#omniopt-taxonomy-geometry-and-benchmarking-of-modern-optimizers">OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers</a></li>
+      </ol>
+    </li>
+    <li><a href="#本次收录-arxiv-id">本次收录 arXiv ID</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-08/">AI Paper Daily | 2026-07-08</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-08T00:00:00Z'>Jul 08, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日重点">今日重点</a></li>
+    <li><a href="#audio-llm--unified-audio-intelligence">Audio LLM / Unified Audio Intelligence</a>
+      <ol>
+        <li><a href="#unified-audio-intelligence-without-regressing-on-text-intelligence">Unified Audio Intelligence Without Regressing on Text Intelligence</a></li>
+      </ol>
+    </li>
+    <li><a href="#verification--agentic-feedback">Verification / Agentic Feedback</a>
+      <ol>
+        <li><a href="#llm-as-a-verifier-a-general-purpose-verification-framework">LLM-as-a-Verifier: A General-Purpose Verification Framework</a></li>
+      </ol>
+    </li>
+    <li><a href="#ai-agents--real-world-evaluation">AI Agents / Real-World Evaluation</a>
+      <ol>
+        <li><a href="#agentgym2-benchmarking-large-language-model-agents-in-de-idealized-real-world-environments">AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments</a></li>
+        <li><a href="#evoagentbench-benchmarking-agent-self-evolution-via-ability-transfer">EvoAgentBench: Benchmarking Agent Self-Evolution via Ability Transfer</a></li>
+        <li><a href="#metaskill-evolve-recursive-self-improvement-of-llm-agents-via-two-timescale-meta-skill-evolution">MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution</a></li>
+      </ol>
+    </li>
+    <li><a href="#gui-agents--continual-learning">GUI Agents / Continual Learning</a>
+      <ol>
+        <li><a href="#ui-mopd-multi-platform-on-policy-distillation-for-continual-gui-agent-learning">UI-MOPD: Multi-Platform On-Policy Distillation for Continual GUI Agent Learning</a></li>
+      </ol>
+    </li>
+    <li><a href="#model-compression--serving">Model Compression / Serving</a>
+      <ol>
+        <li><a href="#nemotron-labs-3-puzzle-75b-a9b-compressing-hybrid-moe-llms">Nemotron-Labs-3-Puzzle-75B-A9B: Compressing Hybrid MoE LLMs</a></li>
+        <li><a href="#kvpop--key-value-cache-compression-with-predictive-online-pruning">KVpop &ndash; Key-Value Cache Compression with Predictive Online Pruning</a></li>
+        <li><a href="#dspark-confidence-scheduled-speculative-decoding-with-semi-autoregressive-generation">DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#embodied-ai--vla">Embodied AI / VLA</a>
+      <ol>
+        <li><a href="#look-before-you-leap-distilling-tree-search-into-action-evaluation-for-frozen-vla-models">Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models</a></li>
+        <li><a href="#internvla-a15-unifying-understanding-latent-foresight-and-action-for-compositional-generalization">InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization</a></li>
+      </ol>
+    </li>
+    <li><a href="#multimodal-reasoning--visual-workspace">Multimodal Reasoning / Visual Workspace</a>
+      <ol>
+        <li><a href="#mentalthink-shaping-thoughts-in-mental-svg-world">MentalThink: Shaping Thoughts in Mental SVG World</a></li>
+      </ol>
+    </li>
+    <li><a href="#real-time-audio-visual-interaction">Real-Time Audio-Visual Interaction</a>
+      <ol>
+        <li><a href="#wan-streamer-v02-higher-resolution-same-latency">Wan-Streamer v0.2: Higher Resolution, Same Latency</a></li>
+      </ol>
+    </li>
+    <li><a href="#research-automation--skill-composition">Research Automation / Skill Composition</a>
+      <ol>
+        <li><a href="#researchstudio-reel-automate-the-last-mile-of-research-from-paper-to-poster-video-and-blog">ResearchStudio-Reel: Automate the Last Mile of Research from Paper to Poster, Video, and Blog</a></li>
+      </ol>
+    </li>
+    <li><a href="#agent-learning-from-environments">Agent Learning From Environments</a>
+      <ol>
+        <li><a href="#edgebench-unveiling-scaling-laws-of-learning-from-real-world-environments">EdgeBench: Unveiling Scaling Laws of Learning from Real-World Environments</a></li>
+      </ol>
+    </li>
+    <li><a href="#diffusion-llm-training">Diffusion LLM Training</a>
+      <ol>
+        <li><a href="#dopsd-on-policy-self-distillation-for-diffusion-language-models">dOPSD: On-Policy Self-Distillation for Diffusion Language Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#personal-agent-security">Personal Agent Security</a>
+      <ol>
+        <li><a href="#when-claws-remember-but-do-not-tell-stealthy-memory-injection-in-persistent-personal-agents">When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents</a></li>
+        <li><a href="#your-agents-memories-are-not-its-own-forged-reasoning-attacks-on-llm-agent-memory-and-defenses">Your Agent&rsquo;s Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses</a></li>
+      </ol>
+    </li>
+    <li><a href="#optimizers--training-cookbook">Optimizers / Training Cookbook</a>
+      <ol>
+        <li><a href="#omniopt-taxonomy-geometry-and-benchmarking-of-modern-optimizers">OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers</a></li>
+      </ol>
+    </li>
+    <li><a href="#本次收录-arxiv-id">本次收录 arXiv ID</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>抓取 100 篇，预筛 30 篇；按 <code>~/DailyReport/.seen_papers.json</code> 去掉过去 7 天已报道论文后，本期可选 29 篇，精收 19 篇。今天主线很清楚：Audio LLM 继续往统一音频-文本模型和实时音视频交互推进；agent 评测开始更认真地模拟真实世界噪声、工具发现和长期经验迁移；训练与推理侧则集中在 verifier、模型压缩、KV cache、speculative decoding 这些更接近生产瓶颈的问题。</p>
+<h2 id="今日重点">今日重点
+</h2><p>最值得优先读的是 <code>2607.05196</code>、<code>2607.05391</code>、<code>2607.05174</code> 和 <code>2607.05189</code>。<code>Audex</code> 是一个很完整的统一音频智能路线：单 Transformer decoder，把音频输入投到文本 embedding 空间，并把文本 token 和量化音频输出 token 统一生成，同时还强调不牺牲原文本 LLM 的推理、长上下文和 agentic 能力。<code>LLM-as-a-Verifier</code> 把 verification 明确当成新的 scaling axis，不只是“让 LLM 打分”，而是用 scoring token logits 的期望做连续分数，能服务 agent 选择、进度估计和 RL dense feedback。</p>
+<p>agent 方向今天两条线都很有价值：<code>AgentGym2</code> 把评测从理想化工具调用推进到噪声、欠指定输入、工具发现和端到端执行；<code>EvoAgentBench</code>、<code>MetaSkill-Evolve</code> 则关注 agent 如何把执行经验变成可复用 procedure。安全方向的两篇 memory attack 论文值得特别警惕，尤其 <code>2607.05189</code> 直接把 persistent personal agent、邮件 payload、隐蔽写入长期记忆和未来行为污染连成完整攻击链，和真实个人 agent 的风险非常贴近。</p>
+<hr>
+<h2 id="audio-llm--unified-audio-intelligence">Audio LLM / Unified Audio Intelligence
+</h2><h3 id="unified-audio-intelligence-without-regressing-on-text-intelligence">Unified Audio Intelligence Without Regressing on Text Intelligence
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05196"  target="_blank" rel="noopener"
+    >2607.05196</a> | <a class="link" href="https://arxiv.org/pdf/2607.05196.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Zhifeng Kong, Sang-gil Lee, Jaehyeon Kim, Boxin Wang, Zihan Liu et al.</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 29 | HuggingFace: 7 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> Audex 在强文本 MoE LLM 上做统一 audio-text LLM，把音频理解、ASR/翻译、TTS、音频生成和 speech-to-speech 放进同一套 decoder 生成框架里，同时尽量保留文本智能。</p>
+<p><strong>精评:</strong> 这篇是今天最贴近 Audio LLM 主线的论文。它有两个关键点：第一，架构没有另起炉灶，而是把音频输入编码后投影到 text embedding space，输出侧把文本 token 和量化音频 token 统一处理，所以训练和推理基础设施可以沿用标准 LLM 栈；第二，它明确把“不回退文本能力”当成目标，而不是只追音频榜单。157.4B audio tokens 加 320.5B text tokens、多阶段 SFT、text-only Cascade RL 和 multi-domain on-policy distillation，这套配方说明 unified audio model 已经进入大规模后训练工程阶段。值得看的是它在 audio generation/speech-to-speech 之外，是否真的能保住 long-context、alignment 和 agentic capability，这会决定它是不是能做通用语音 agent 的底座。</p>
+<p><strong>中文摘要翻译:</strong> 音频智能包含对音频和语音的理解、推理与生成。作者提出 Nemotron-Labs-Audex-30B-A3B，一个基于强文本 MoE LLM Nemotron-Cascade-2-30B-A3B 的统一音频-文本 LLM。Audex 采用简洁的统一设计：音频输入先被编码并投影到文本 embedding 空间，文本 token 与量化后的音频输出 token 在生成时被统一对待。这样的架构支持强音频-文本融合、无缝多模态生成，并兼容标准 LLM 训练和推理基础设施。训练上，作者精心整理了包含 157.4B 音频 token 和 320.5B 文本 token 的音频-文本数据集，进行多阶段监督训练，然后接 text-only Cascade RL 和多领域 on-policy distillation。Audex 在音频理解、语音识别与翻译、文本转语音、音频生成和语音到语音生成上达到 SOTA，同时基本保留文本 LLM backbone 的推理、对齐、知识、长上下文和 agent 能力。作者发布模型 checkpoint 以支持开放研究。</p>
+<hr>
+<h2 id="verification--agentic-feedback">Verification / Agentic Feedback
+</h2><h3 id="llm-as-a-verifier-a-general-purpose-verification-framework">LLM-as-a-Verifier: A General-Purpose Verification Framework
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05391"  target="_blank" rel="noopener"
+    >2607.05391</a> | <a class="link" href="https://arxiv.org/pdf/2607.05391.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Jacky Kwok, Shulu Li, Pranav Atreya, Yuejiang Liu, Yixing Jiang et al.</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 25 | HuggingFace: 9 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> 一个通用 verification 框架，用 scoring token logits 的期望生成连续分数，让 verifier 可以按粒度、重复次数和 criteria decomposition 扩展。</p>
+<p><strong>精评:</strong> 这篇很值得放进 agent 产品和 RL pipeline 里看。传统 LLM judge 往往是离散打分，颗粒度粗、校准差，而且很难当 dense signal 用。作者这里把 verifier 的输出变成连续概率分数，然后沿三个维度扩展：更细 score granularity、重复评价降低方差、把复杂 criteria 拆开降低判断难度。亮点是它不只做 benchmark judge，还展示了 Terminal-Bench V2、SWE-Bench Verified、RoboRewardBench、MedAgentBench 上的强结果，并把 verifier 信号用于 task progress 估计和 SAC/GRPO 的 dense feedback。它的真正价值可能不是某个 leaderboard 分数，而是把“验证”变成 pretraining/post-training/test-time compute 之外的第四类系统扩展旋钮。</p>
+<p><strong>中文摘要翻译:</strong> 扩展预训练、后训练和测试时计算已经成为提升 LLM 能力的核心范式。作者提出，验证能力，也就是判断一个解是否正确的能力，可以成为新的 scaling axis。为此，他们提出 LLM-as-a-Verifier，一个无需额外训练、可为 agentic task 提供细粒度反馈的通用验证框架。不同于让 LLM 直接输出离散分数的标准 judge，LLM-as-a-Verifier 计算 scoring token logits 分布的期望，从而得到连续分数。这种概率式表述让 verification 可以沿多个维度扩展：分数粒度、重复评价，以及评价标准拆解。更细的评分粒度能更好地区分正负解，重复评价和 criteria decomposition 则通过降低方差和复杂度稳定提升验证准确率。作者还提出一个低成本排序算法，用 verifier 的连续分数从多个候选答案中选出最优解。该框架在 Terminal-Bench V2、SWE-Bench Verified、RoboRewardBench 和 MedAgentBench 上取得 SOTA，并能提供任务进度估计和 RL dense feedback。</p>
+<hr>
+<h2 id="ai-agents--real-world-evaluation">AI Agents / Real-World Evaluation
+</h2><h3 id="agentgym2-benchmarking-large-language-model-agents-in-de-idealized-real-world-environments">AgentGym2: Benchmarking Large Language Model Agents in De-Idealized Real-World Environments
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05174"  target="_blank" rel="noopener"
+    >2607.05174</a> | <a class="link" href="https://arxiv.org/pdf/2607.05174.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Zhiheng Xi, Dingwen Yang, Jiaqi Liu, Jixuan Huang, Honglin Guo et al.</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 20 | HuggingFace: 1 upvote</li>
+</ul>
+<p><strong>一句话:</strong> AgentGym2 把 agent 评测从干净、理想化、工具预封装环境推进到更接近真实部署的噪声、欠指定任务、工具发现和端到端执行。</p>
+<p><strong>精评:</strong> 最近 agent benchmark 的共同问题是太“顺”：工具已经包装好，输入已经整理好，关键步骤被 benchmark 隐式替 agent 做掉了。AgentGym2 的价值在于把这些舒适假设拿掉，要求模型主动探索环境、发现新工具、组合工具处理未见任务，并在有噪声和信息缺失的情况下完成完整流程。论文说即使 Gemini 和 GPT-5 这类 SOTA 系统也明显吃力，这个结论并不意外，但很重要：真实 agent 的瓶颈往往不在单步推理，而在环境建模、错误恢复、工具发现和执行韧性。后续如果它的任务设计足够可复现，它会比传统静态 tool-use benchmark 更能反映生产 agent 的真实差距。</p>
+<p><strong>中文摘要翻译:</strong> LLM agent 发展迅速，并越来越多进入生产环境，因此需要严格而现实的评估。但多数现有 benchmark 仍在简化、理想化设置中评价 agent：它们依赖预先封装好的工具接口，忽略关键步骤，并假设输入干净且完全指定。这会低估真实部署难度，因为真实环境中充满不确定性和噪声，agent 还必须主动探索环境以发现新工具。为弥补这一缺口，作者提出 AgentGym2，一个基于真实端到端工作需求的新评测框架。除了推理和规划，它还测量 agent 执行完整流程、通过探索发现工具、为未见任务组合工具，以及面对噪声和欠指定信息仍保持鲁棒的能力。对 15 个闭源和开源模型的实验显示，即使 SOTA 系统在 AgentGym2 上也表现困难，说明当前 agent 能力与真实应用需求之间仍有明显差距。</p>
+<h3 id="evoagentbench-benchmarking-agent-self-evolution-via-ability-transfer">EvoAgentBench: Benchmarking Agent Self-Evolution via Ability Transfer
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05202"  target="_blank" rel="noopener"
+    >2607.05202</a> | <a class="link" href="https://arxiv.org/pdf/2607.05202.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Xingze Gao, Chuanrui Hu, Hongda Chen, Pengfei Yao, Zhao Wang et al.</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 17</li>
+</ul>
+<p><strong>一句话:</strong> 一个专门评测 agent 能否把过去执行经验转化为可迁移 procedural ability 的 benchmark。</p>
+<p><strong>精评:</strong> 这篇切中了“长期 agent 记忆到底该记什么”的核心。对长程任务来说，有价值的经验通常不是事实条目，而是搜索、调试、验证、路由这些可复用 procedure。EvoAgentBench 从执行轨迹里抽取 Ability，标准化成 operational units，再用 Ability Graph 连接有过程重叠的任务。比较现实的结果是：人工整理过的 Ability content 可以跨模型迁移，但现有自动方法无法在所有设置里稳定带来正增益。这说明 self-evolving agent 不是“把轨迹塞进记忆”就够了，关键难点在经验编码、检索路由和具体 uptake。</p>
+<p><strong>中文摘要翻译:</strong> 长程 LLM 系统中的 agent 自我进化本质上是程序性的：有用经验不只是存储信息，而是可复用的搜索、调试和验证过程。但当前评测没有隔离这种迁移能力。agent benchmark 多测试单次任务解决，memory benchmark 则关注信息保留而非 procedure 复用。作者提出 EvoAgentBench，用 Ability-guided transfer 评测 agent 自我进化，覆盖 web research、算法推理、软件工程和知识工作四个 agentic 领域。EvoAgentBench 从 agent 执行轨迹中抽取有依据的 Ability，将其规范化为操作单元，并构建特定领域的 Ability Graph，把有过程重叠的任务连接起来。每个测试任务都由训练侧已验证的 Ability 支持。实验覆盖 528/267 的 train/test split、两个 scaffold 和三个 backbone，发现人工整理的 Ability 内容能可靠跨模型迁移，但目前没有自动方法能在所有设置中稳定取得正收益。</p>
+<h3 id="metaskill-evolve-recursive-self-improvement-of-llm-agents-via-two-timescale-meta-skill-evolution">MetaSkill-Evolve: Recursive Self-Improvement of LLM Agents via Two-Timescale Meta-Skill Evolution
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05297"  target="_blank" rel="noopener"
+    >2607.05297</a> | <a class="link" href="https://arxiv.org/pdf/2607.05297.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Zefeng Wang, Minxi Yan, Jinhe Bi, Sikuan Yan, Volker Tresp, Yunpu Ma</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 14</li>
+</ul>
+<p><strong>一句话:</strong> 不只让 agent 改 task skill，也让“如何改 skill”的 meta-skill 自己演化，形成快慢两个时间尺度的递归自改进。</p>
+<p><strong>精评:</strong> 这篇和 EvoAgentBench 可以一起看。很多 self-improving agent 只会根据执行轨迹重写某个任务 skill，但改进流程本身是人手写死的。MetaSkill-Evolve 把 meta-skill 拆成 Analyzer、Retriever、Allocator、Proposer、Evolver 等组件参数，让 task skill 快速演化，meta-skill 慢速演化。这个设定很诱人，因为它试图让 agent 学会“怎样更好地学习”。风险也很明显：如果没有足够强的验证和回滚机制，递归改进很容易把系统带向不可解释的局部最优甚至退化。论文在 OfficeQA、SealQA、ALFWorld 上有增益，但更值得关注的是这种框架如何保证 skill 质量、兼容版本管理和防止 reward hacking。</p>
+<p><strong>中文摘要翻译:</strong> 近期 LLM agent 正处理越来越长程、开放的任务，而外部 skill 作为可复用 procedure 可以扩展 agent 能力。但固定、手写的 skill 很少对所有任务都最优，也难以适配 agent 遇到的任务多样性。自改进 agent 通过执行轨迹重写自己的 skill，在挑战性 benchmark 上取得收益，但这种演化通常不是递归的：它只改进任务 skill，也就是 agent 做什么，而“如何改进”的流程仍由人手写并保持固定。作者提出 MetaSkill-Evolve，一个双时间尺度框架，让 agentic skill improvement 变成递归过程：每个分支同时携带 task skill 和分支本地 meta-skill，后者参数化 Analyzer、Retriever、Allocator、Proposer 和 Evolver。task skill 在快循环中演化，meta-skill 在慢循环中用同一套流程自我演化，不需要额外模型或目标。实验显示，在所有五个 pipeline agent 共享单个冻结 backbone 时，该方法在三个 agentic benchmark 上超过无 skill、静态 skill 和单层演化 baseline。</p>
+<hr>
+<h2 id="gui-agents--continual-learning">GUI Agents / Continual Learning
+</h2><h3 id="ui-mopd-multi-platform-on-policy-distillation-for-continual-gui-agent-learning">UI-MOPD: Multi-Platform On-Policy Distillation for Continual GUI Agent Learning
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.04425"  target="_blank" rel="noopener"
+    >2607.04425</a> | <a class="link" href="https://arxiv.org/pdf/2607.04425.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Niu Lian, Alan Chen, Zhehao Yu, Chengzhen Duan, Fazhan Liu et al.</li>
+<li>日期: 2026-07-05</li>
+<li>预筛分: 17 | HuggingFace: 62 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> UI-MOPD 用多平台教师的 on-policy distillation 做 GUI agent continual learning，目标是在跨平台适配时减少行为混淆和灾难性遗忘。</p>
+<p><strong>精评:</strong> GUI agent 的难点不只是“看懂屏幕点按钮”，而是不同平台的交互惯例差异很大。移动端、桌面端、网页端的动作粒度、视觉布局、状态反馈和失败恢复都不一样，直接联合训练容易互相污染。UI-MOPD 的思路是给不同平台配 platform-specific teacher，再根据当前环境动态选择教师，把平台行为先验蒸馏到共享 policy 里。它还构建 Uni-GUI 数据集来缓解可执行跨平台轨迹稀缺的问题。OSWorld 38.2%、MobileWorld 12.0% 的绝对成功率说明 GUI agent 仍然很难，但这个方法对“持续加入新平台同时保住旧平台能力”很有工程意义。</p>
+<p><strong>中文摘要翻译:</strong> 多模态基础模型和 agent 系统推动 GUI agent 从单平台任务执行走向跨平台交互，但构建多平台 GUI agent 仍很困难。一方面，高质量、可执行的跨平台交互轨迹稀缺，现有数据平台覆盖有限；另一方面，不同平台有不同交互惯例，联合训练或 continual training 容易导致行为模式混合、平台特定能力退化和灾难性遗忘。作者构建 Uni-GUI，一个高质量跨平台 GUI 交互数据集，并提出 UI-MOPD，第一个把多教师 on-policy distillation 引入 GUI agent continual learning 的方法。UI-MOPD 根据当前环境动态选择平台特定教师，并通过平台条件蒸馏把平台行为先验转移到共享 policy 中，从而适配新平台并保留旧平台能力。OSWorld 和 MobileWorld 实验显示，该方法分别达到 38.2% 和 12.0% 的任务成功率，证明它能平衡跨平台能力保持和新平台适配。</p>
+<hr>
+<h2 id="model-compression--serving">Model Compression / Serving
+</h2><h3 id="nemotron-labs-3-puzzle-75b-a9b-compressing-hybrid-moe-llms">Nemotron-Labs-3-Puzzle-75B-A9B: Compressing Hybrid MoE LLMs
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.04371"  target="_blank" rel="noopener"
+    >2607.04371</a> | <a class="link" href="https://arxiv.org/pdf/2607.04371.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Akhiad Bercovich, Talor Abramovich, Daniel Afrimi, Shay Aharon, Nir Ailon et al.</li>
+<li>日期: 2026-07-05</li>
+<li>预筛分: 17 | HuggingFace: 1 upvote</li>
+</ul>
+<p><strong>一句话:</strong> 一个面向交互式部署的 Nemotron-3-Super 压缩版本，通过 MoE/Mamba pruning、蒸馏、RL、量化和 MTP 头提升吞吐与长上下文并发。</p>
+<p><strong>精评:</strong> 这篇偏部署工程，但含金量不低。大模型压缩常常只讲参数量下降，Puzzle-75B-A9B 直接按 interactive serving workload 优化：在单 8xB200 节点、matched user throughput 约束下服务器吞吐约 2x；单 H100 上 1M-token 并发从 1 个请求提升到 8 个。它的 pipeline 也体现出现在 hybrid MoE 模型压缩的复杂性：不只是剪 MoE，还要联合 active parameter budget、Mamba pruning、distillation、RL、quantization 和 Multi-Token Prediction。最值得看的是它如何在 reasoning、coding、multilingual、long-context 和 agentic benchmark 上保持质量，因为 2026 年的部署瓶颈越来越像“强模型能不能以可承受成本实时服务”。</p>
+<p><strong>中文摘要翻译:</strong> 作者提出 Nemotron-Labs-3-Puzzle-75B-A9B，一个针对交互式部署优化的 Nemotron-3-Super 压缩版本。模型设计目标是在高用户吞吐约束下最大化服务器吞吐。在单个 8xB200 节点的交互式服务负载中，Puzzle-75B-A9B 在匹配用户吞吐约束下达到约 2 倍于 Nemotron-3-Super 的服务器吞吐。在单 H100 GPU 的超长上下文部署中，压缩模型把 1M token 并发从 1 个请求提升到 8 个请求。Puzzle-75B-A9B 由多阶段 pipeline 构建，结合 Iterative Puzzle 压缩框架、知识蒸馏、强化学习、量化和 Multi-Token Prediction head。压缩过程联合优化异构 MoE pruning、active parameter budget 和 Mamba pruning，以在保持模型质量的同时提高推理效率。实验覆盖推理、代码、多语言、长上下文和 agent benchmark，显示模型在大幅压缩后仍保留强下游能力。</p>
+<h3 id="kvpop--key-value-cache-compression-with-predictive-online-pruning">KVpop &ndash; Key-Value Cache Compression with Predictive Online Pruning
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05061"  target="_blank" rel="noopener"
+    >2607.05061</a> | <a class="link" href="https://arxiv.org/pdf/2607.05061.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Lukas Hauzenberger, Niklas Schmidinger, Anamaria-Roberta Hartl, David Stap, Thomas Schmied et al.</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 14 | HuggingFace: 16 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> KVpop 用 future-attention target 监督 KV cache 的 keep/drop 决策，在高压缩率下保留接近 full-attention 的数学推理性能。</p>
+<p><strong>精评:</strong> 长上下文推理的实际成本很大一部分卡在 KV cache 内存和带宽。KVpop 不是静态 heuristic eviction，而是训练一个固定预算的在线剪枝策略，目标是预测未来 token 是否还会被用到。它还加入 delayed memory-based scorer，让 scorer 延迟若干步再评分，以利用近未来上下文。结果很漂亮：Qwen3-4B 在 AIME/HMMT 上 75% KV 压缩保留 98% full-attention 性能，88% 压缩仍保留 97%。这类方法如果能稳定泛化到更多任务和模型，会直接影响长上下文 serving 的成本结构。</p>
+<p><strong>中文摘要翻译:</strong> KV cache 增长是自回归解码的主要瓶颈，因为内存和带宽会随上下文长度线性增长。现有 KV eviction 方法常依赖静态启发式或代理分数，难以追踪未来 token 的真实效用，在相关性变化时容易脆弱。作者提出 KVpop，通过直接监督 keep-or-drop 决策来学习固定预算 KV eviction policy。scorer 使用一种新的 future-attention target 训练，该目标无需构造稠密 attention map 即可高效计算。作者还提出 delayed memory-based scorer，它会延迟固定步数再评分，从而利用近未来上下文。在 AIME 和 HMMT 数学推理上，KVpop 在 Qwen3-4B 上以 75% KV cache 压缩保留 98% full-attention 性能，以 88% 压缩保留 97%，并稳定超过已有 eviction baseline。Qwen3-8B 结果更强，接近 full teacher performance。</p>
+<h3 id="dspark-confidence-scheduled-speculative-decoding-with-semi-autoregressive-generation">DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05147"  target="_blank" rel="noopener"
+    >2607.05147</a> | <a class="link" href="https://arxiv.org/pdf/2607.05147.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Xin Cheng, Xingkai Yu, Chenze Shao, Jiashi Li, Yunfan Xiong et al.</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 16 | HuggingFace: 1 upvote</li>
+</ul>
+<p><strong>一句话:</strong> DSpark 把半自回归 draft generation 和按置信度调度的 verification 结合起来，缓解长 draft 接受率衰减和高并发 batch 浪费。</p>
+<p><strong>精评:</strong> speculative decoding 现在的难点不是“能不能并行 draft”，而是长 draft 后缀接受率掉得太快，target verification 又会把 batch capacity 花在很可能被拒的 token 上。DSpark 的两个设计都很工程导向：半自回归 draft 架构在并行 backbone 外加轻量 sequential module，补一点 intra-block dependency；verification 侧根据 prefix survival probability 和 engine throughput profile 动态决定每个请求验证多长。这比固定 draft length 更像真实 serving 系统会需要的策略，尤其适合高并发场景。后续需要看它对不同 target/draft 模型组合、不同延迟 SLO 的鲁棒性。</p>
+<p><strong>中文摘要翻译:</strong> speculative decoding 通过把 draft generation 与 target verification 解耦来加速 LLM 推理。近期并行 drafter 能一次 forward 提出长 token 序列，但由于缺少 token 间依赖，接受率会快速衰减。此外，不加区分地验证长 block 会把关键 batch capacity 浪费在高拒绝风险 token 上，严重损害高并发服务系统吞吐。作者提出 DSpark，一个结合高吞吐并行生成与自适应、负载感知验证的 speculative decoding 框架。为保持 draft 质量，DSpark 使用半自回归架构，把并行 backbone 与轻量 sequential module 结合，引入 block 内依赖建模以缓解后缀衰减。为优化系统效率，DSpark 使用 confidence-scheduled verification，根据估计的 prefix survival probability 和引擎吞吐 profile 动态调整每个请求的验证长度。离线 benchmark 显示，DSpark 在多个领域显著提升 accepted length 和吞吐。</p>
+<hr>
+<h2 id="embodied-ai--vla">Embodied AI / VLA
+</h2><h3 id="look-before-you-leap-distilling-tree-search-into-action-evaluation-for-frozen-vla-models">Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.03751"  target="_blank" rel="noopener"
+    >2607.03751</a> | <a class="link" href="https://arxiv.org/pdf/2607.03751.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Xinyi Xie, Zican Hu, Zhanyu Liu, Yicheng Dong, Wenhao Wu et al.</li>
+<li>日期: 2026-07-04</li>
+<li>预筛分: 17 | HuggingFace: 3 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> SVA 保持 VLA backbone 冻结，用仿真中的 MCTS 轨迹蒸馏出轻量 Q-value evaluator，部署时从多个动作候选中选长期后果更好的动作。</p>
+<p><strong>精评:</strong> 这篇有一个很好的诊断：VLA 失败不只是 action generation 差，也可能是 action evaluation 差。pass@k 从 33% 到 92% 的提升说明 frozen VLA 的输出分布里其实有可用动作，只是单次采样和选择机制不够好。SVA 用仿真里的 MCTS 探索输出分布，给轨迹标注 empirical returns，再蒸馏成轻量 Q-value model；部署时不需要 simulator，只让 frozen VLA 提多个候选，由 evaluator 选择。这个方向和 LLM 的 test-time scaling 很像：不急着改大 backbone，而是提高候选评估能力。它让 9B VLA 超过 27B VLA 且延迟更低，说明 embodied 模型也可能进入“评估器比更大生成器更划算”的阶段。</p>
+<p><strong>中文摘要翻译:</strong> VLA 模型通过大规模预训练获得广泛 embodied 能力，但其泛化仍比 LLM 和 VLM 脆弱得多。常见补救方式是通过 SFT 或 RL 后训练提升特定任务性能，但这可能削弱预训练带来的通用能力。作者指出一个关键瓶颈：VLA 失败不仅来自动作生成，也来自动作评价。pass@k 诊断显示，冻结 VLA 的输出分布中已经包含不错的行为，整体成功率从 pass@1 的 33% 提升到 pass@32 的 92%。基于此，作者提出 SVA，即 Search, Value, and Act。它先在仿真中使用 MCTS 充分探索 VLA 输出分布，并收集带 empirical return 标注的多样轨迹；然后把这些知识蒸馏进轻量 Q-value 模型，用于预测候选动作的长期后果；部署时，冻结 VLA 提出多个候选，evaluator 选择 uncertainty-regularized Q-value 最高的动作，无需 simulator。实验显示 SVA 在 embodied benchmark 上稳定提升 unseen task 泛化，并表现出强 test-time scaling。</p>
+<h3 id="internvla-a15-unifying-understanding-latent-foresight-and-action-for-compositional-generalization">InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.04988"  target="_blank" rel="noopener"
+    >2607.04988</a> | <a class="link" href="https://arxiv.org/pdf/2607.04988.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Haoxiang Ma, Junhao Cai, Xiaoxu Xu, Hao Li, Yuyin Yang et al.</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 15 | HuggingFace: 18 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> InternVLA-A1.5 把 VLM 语义理解、latent foresight 和连续动作生成统一到机器人策略里，用冻结视频生成模型提供动态先验。</p>
+<p><strong>精评:</strong> 这篇的设计比较务实：很多机器人统一模型会在动作训练中侵蚀 VLM backbone 的语义能力，也会让理解、预测、动作目标互相干扰。InternVLA-A1.5 继续保留 VQA 和 subtask prediction 训练，同时接一个轻量 unified expert 生成连续动作。最有意思的是 foresight 分支：它不在像素空间从头学未来预测，而是用少量 learnable foresight tokens，在冻结视频生成模型监督下压缩任务相关未来 latent；推理时再丢掉视频分支，保留实时控制。这个方法像是在不支付完整 video generation 推理成本的情况下，借用视频模型的 world-model prior。</p>
+<p><strong>中文摘要翻译:</strong> 机器人操作的统一模型希望让一个 policy 同时具备预训练 VLM 的语义先验，以及通过未来预测获得的物理动态理解。实践中，现有设计往往侵蚀预训练 backbone 的语义能力，在异构目标之间产生干扰，并在像素空间从头学习未来预测，未能利用预训练视频生成模型的动态先验。作者提出 InternVLA-A1.5，它基于原生 VLM backbone 构建 policy，并持续训练 VQA 和 subtask prediction，同时接入轻量 unified expert 进行连续动作生成。未来预测被重写为 latent-querying 问题：少量可学习 foresight tokens 在冻结预训练视频生成模型监督下，把任务相关未来压缩为紧凑 latent code，从而让 policy 继承 world-model 动态先验而无需学习像素级生成。推理时视频分支被丢弃，保持实时控制。模型在 1.2M 机器人 episode 和 3M 多模态样本上预训练，并在多个仿真 benchmark 上取得最佳整体结果。</p>
+<hr>
+<h2 id="multimodal-reasoning--visual-workspace">Multimodal Reasoning / Visual Workspace
+</h2><h3 id="mentalthink-shaping-thoughts-in-mental-svg-world">MentalThink: Shaping Thoughts in Mental SVG World
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.03530"  target="_blank" rel="noopener"
+    >2607.03530</a> | <a class="link" href="https://arxiv.org/pdf/2607.03530.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Kangheng Lin, Jisheng Yin, Dingming Li, En Yu, Yana Wei et al.</li>
+<li>日期: 2026-07-03</li>
+<li>预筛分: 17</li>
+</ul>
+<p><strong>一句话:</strong> MentalThink 让 MLLM 在推理中生成、渲染和解读 SVG，把可执行 vector sketch 当成空间推理的中间工作区。</p>
+<p><strong>精评:</strong> 这篇很像 multimodal reasoning 里的“外部草稿纸”。语言 CoT 对空间题往往不够，像素级中间图又难以验证和编辑；SVG 刚好介于两者之间，结构化、可执行、可渲染，还能限制在几何空间里。MentalThink 先用 SFT 对齐 SVG 语法，再用多轮 RL 鼓励模型迭代检查、修正和完善 visual hypotheses，在 VSIBench、MindCube 等空间理解 benchmark 上有明显提升。这个方向值得关注，因为它把“思考过程”从纯文本扩展成可执行可检查的多模态中间表示，未来也许能和工具调用、diagram rendering、formal geometry 结合。</p>
+<p><strong>中文摘要翻译:</strong> 作者提出 MentalThink，一种 visual-symbolic reasoning 范式，为 MLLM 提供可执行的“心理”可视化机制。MentalThink 的核心是 think-with-SVG pipeline，模型学习在多轮推理中生成、渲染并解释 SVG 代码，把它作为中间视觉表示。通过创建结构化 vector sketch，模型可以外化空间假设，用确定性渲染检查它们，并在受约束的几何空间中推理，类似人类心理图像过程。作者通过两阶段训练实现这一范式：先用 SFT 做 SVG 语法对齐，再用多轮 RL 鼓励中间视觉假设的迭代检查、修改和完善。大量评测显示，MentalThink 在空间理解和推理 benchmark 上表现更好，例如 VSIBench 55.1%、MindCube 76.0%，说明可执行 vector graphics 能为动态视角转换、视觉反思和组合场景构建提供可验证视觉工作区。</p>
+<hr>
+<h2 id="real-time-audio-visual-interaction">Real-Time Audio-Visual Interaction
+</h2><h3 id="wan-streamer-v02-higher-resolution-same-latency">Wan-Streamer v0.2: Higher Resolution, Same Latency
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.04443"  target="_blank" rel="noopener"
+    >2607.04443</a> | <a class="link" href="https://arxiv.org/pdf/2607.04443.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Lianghua Huang, Zhi-Fan Wu, Yupeng Shi, Wei Wang, Mengyang Feng et al.</li>
+<li>日期: 2026-07-05</li>
+<li>预筛分: 16 | HuggingFace: 24 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> Wan-Streamer v0.2 把实时音视频交互输出从 192x336 提到 640x368，同时保持约 200ms model-side signal-to-signal latency。</p>
+<p><strong>精评:</strong> 对实时 avatar/agent 来说，分辨率和延迟是硬约束。192x336 可以证明链路，但姿态、视线、手部、附近物体和场景布局很难稳定可读；640x368 则接近“能用”的中景交互。v0.2 的系统拆分值得看：thinker 仍走单 GPU 低延迟路径处理流式感知、短语言/状态 Transformer 和最终解码；昂贵的 next-unit latent generation 交给 multi-GPU Ulysses-style context-parallel performer。换句话说，它把交互闭环和重生成负载拆开，尽量不让高分辨率拖垮可感知延迟。这类架构会影响之后实时 multimodal agent 的产品形态。</p>
+<p><strong>中文摘要翻译:</strong> 作者提出 Wan-Streamer v0.2，这是原生流式、端到端音视频交互模型的延迟保持升级版。v0.2 保持 v0.1 的建模形式，但把交互输出流从 192x336 提升到 640x368，同时在 25 FPS 下保持约 200ms 的模型侧 signal-to-signal latency。更高分辨率支持 scene-grounded mid-shot agent，使姿态、视线、手、附近物体和本地场景布局在实时对话中保持清晰可读。为支持更大的视觉流且不增加用户可见延迟，v0.2 让 thinker 继续作为单 GPU 低延迟路径，负责流式感知、短语言/状态 Transformer pass 和最终解码；performer 则成为多 GPU Ulysses-style context-parallel group，处理昂贵的 next-unit latent generation。每个 performer rank 将 incoming K/V 写入预分片本地 cache，高分辨率 latent video sequence 被跨 rank 切分做 denoising，再通过 Ulysses communication 聚合。</p>
+<hr>
+<h2 id="research-automation--skill-composition">Research Automation / Skill Composition
+</h2><h3 id="researchstudio-reel-automate-the-last-mile-of-research-from-paper-to-poster-video-and-blog">ResearchStudio-Reel: Automate the Last Mile of Research from Paper to Poster, Video, and Blog
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.04438"  target="_blank" rel="noopener"
+    >2607.04438</a> | <a class="link" href="https://arxiv.org/pdf/2607.04438.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Lingao Xiao, Yalun Dai, Yangyu Huang, Qihao Zhao, Wenshan Wu et al.</li>
+<li>日期: 2026-07-05</li>
+<li>预筛分: 16 | HuggingFace: 47 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> 一个把论文转成 poster、talk video 和 bilingual blog 的 research dissemination agent workflow，强调共享抽取器、可编辑输出和硬渲染验收。</p>
+<p><strong>精评:</strong> 这篇有点“agent workflow 产品论文”的味道，但方向很实用。把论文变成 poster、视频和博客不是单次 summarization，而是多产物共享信息抽取、版面填充、可编辑输出、渲染检查和交互式收敛。ResearchStudio-Reel 把流程拆成 Paper2Assets、Paper2Poster、Paper2Video、Paper2Blog 和 Paper2Reel 五个 skill，重点不是让 VLM 给软偏好分，而是用 deterministic primitives 和 measured-fill loop，并用硬 pass/fail render gates 卡质量。这个思路对真实自动化很重要：agent 生成物要能被 PowerPoint/Word 继续编辑，也要能被机器验证有没有空段、溢出、错位。</p>
+<p><strong>中文摘要翻译:</strong> 研究传播，也就是把论文变成 poster、演讲视频和博客，仍然是人工完成的最后一公里。以往自动化方法往往把每种产物孤立处理，每个产物都从头抽取论文信息，输出单向渲染结果、作者无法在 PowerPoint 或 Word 中重新编辑，并依赖容易停滞的软 VLM 偏好分评价质量，即使关键部分仍显得空洞。作者认为，这个最后一公里更适合被构建为 skill composition：薄的、agent 可读的契约共享一个上游抽取器，并把确定性 primitive 包装进 measured-fill loop，用硬性的 pass/fail render gate 作为退出条件。ResearchStudio-Reel 包含一个共享抽取器 Paper2Assets、三个可编辑生成器 Paper2Poster/Paper2Video/Paper2Blog，以及一个交互式收敛层 Paper2Reel。Paper2Assets 只抽取一次论文，生成可被下游 skill 复用的 bundle；三个生成器分别输出可打印 poster、同步 talk video 和 bilingual blog。</p>
+<hr>
+<h2 id="agent-learning-from-environments">Agent Learning From Environments
+</h2><h3 id="edgebench-unveiling-scaling-laws-of-learning-from-real-world-environments">EdgeBench: Unveiling Scaling Laws of Learning from Real-World Environments
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05155"  target="_blank" rel="noopener"
+    >2607.05155</a> | <a class="link" href="https://arxiv.org/pdf/2607.05155.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Deyao Zhu, Xin Zhou, Shengling Qin, Xuekai Zhu, Hangliang Ding et al.</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 16 | HuggingFace: 11 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> EdgeBench 用 134 个超长程真实任务、约 38,000 小时 agent 环境交互，观察到 environment learning 的 log-sigmoid scaling law。</p>
+<p><strong>精评:</strong> 预训练 scaling law 已经很成熟，但 agent 部署后的“从环境反馈中学习”还缺少类似坐标系。EdgeBench 的任务设置很重：每个任务至少持续 12 小时，覆盖科学发现、软件工程、组合优化、专业知识工作、形式数学和交互游戏，带多层级反馈。作者报告 overall performance 随环境学习呈 log-sigmoid scaling，R^2 = 0.998，并观察到跨模型代际 agent learning speed 大约每三个月翻倍。这个结论需要等待复现，但问题本身很重要：长期运行 agent 的能力增长不能只用单 episode success 衡量，而要看它如何在真实环境里积累反馈、形成策略和跨时间改进。</p>
+<p><strong>中文摘要翻译:</strong> 预训练 scaling law 表明模型能力会随数据和计算可预测提升，但部署后从真实环境中学习的规律仍不清楚。作者分析了约 38,000 小时 agent 与环境交互数据，覆盖 134 个真实任务，并发现整体性能在环境学习中遵循高度精确的 log-sigmoid scaling law，R^2 达 0.998。跨模型代际来看，agent 学习速度大约每三个月翻倍。这个发现来自 EdgeBench，一个包含 134 个真实世界超长程任务的 suite，覆盖科学发现、软件工程、组合优化、专业知识工作、形式数学和交互游戏。每个任务都支持至少 12 小时连续 agent 运行，并提供丰富、多层级反馈，构建过程需要大量专家投入。作者公开了 51 个任务和完整评测框架，以推动对 agent 如何从真实经验中学习的研究。</p>
+<hr>
+<h2 id="diffusion-llm-training">Diffusion LLM Training
+</h2><h3 id="dopsd-on-policy-self-distillation-for-diffusion-language-models">dOPSD: On-Policy Self-Distillation for Diffusion Language Models
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.04428"  target="_blank" rel="noopener"
+    >2607.04428</a> | <a class="link" href="https://arxiv.org/pdf/2607.04428.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Phuong Tuan Dat, Qi Li, Xinchao Wang</li>
+<li>日期: 2026-07-05</li>
+<li>预筛分: 15 | HuggingFace: 14 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> dOPSD 让 diffusion LLM 从自己的 denoising trajectory 后续步骤中获得 teacher privilege，做无需外部 reference 的 on-policy self-distillation。</p>
+<p><strong>精评:</strong> diffusion LLM 的并行生成很有吸引力，但 reasoning 后训练一直难做：SFT 是 off-policy，会有 exposure bias；RL 又受限于 sparse sequence reward 和 likelihood 不便。OPSD 的关键是让 teacher 有 privileged information，但传统 PI 常来自 ground-truth reference，推理时不可用。dOPSD 的聪明点是把 privilege 放回模型自己的 denoising trajectory：后面更解码的步骤可以评价前面 masked positions，于是 teacher advantage 来自生成过程本身。这个方法如果稳定，可能会成为 dLLM reasoning post-training 的一个基础组件。</p>
+<p><strong>中文摘要翻译:</strong> diffusion large language models 通过迭代去噪 masked sequence 生成文本，提供了自回归模型之外的并行替代方案。但通过后训练激发强推理能力仍很困难：SFT 是 off-policy，容易受 exposure bias 影响；RL 只有稀疏序列级奖励，并且在没有可 tractable sequence likelihood 时难以应用。on-policy self-distillation 是一种有前景的替代方法，让同一个模型同时作为 student 和 teacher，提供 dense、token-level、on-policy supervision。但 OPSD 效果依赖 teacher 获得 privileged information，通常是推理时不可用的 instance-specific ground-truth reference，导致 student 最终蒸馏的是较弱的无 PI consensus policy。作者提出 dOPSD，直接从 student 自己的 denoising trajectory 中获得 teacher privilege，用同一轨迹中后续、更充分解码的步骤评价 masked positions，而不是依赖外部标签。这样 teacher advantage 来自模型自身解码过程。</p>
+<hr>
+<h2 id="personal-agent-security">Personal Agent Security
+</h2><h3 id="when-claws-remember-but-do-not-tell-stealthy-memory-injection-in-persistent-personal-agents">When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05189"  target="_blank" rel="noopener"
+    >2607.05189</a> | <a class="link" href="https://arxiv.org/pdf/2607.05189.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Yechao Zhang, Shiqian Zhao, Jiawen Zhang, Jie Zhang, Gelei Deng et al.</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 14</li>
+</ul>
+<p><strong>一句话:</strong> WhisperBench/MemGhost 研究远程黑盒攻击者如何通过单封邮件让 personal agent 隐蔽写入有毒长期记忆，并影响之后行为。</p>
+<p><strong>精评:</strong> 这篇是今天最需要认真看的安全论文。personal agent 的长期记忆本来是连续性的来源，但只要它能处理外部不可信内容，记忆就可能变成持久攻击面。论文的攻击链很完整：单封 email payload、诱导写入 poisoned memory、对用户回应中保持隐蔽、未来行为受影响。更麻烦的是它用环境代理模拟 agent 执行、用 objective proxy 把 memory adoption 和 conversational stealth 变成 dense reward，再训练攻击 payload。作者报告 MemGhost 在 OpenClaw with GPT-5.4 上 87.5% end-to-end success，这个数字不论是否需要独立复现，都足够提醒：个人 agent 的 memory write 必须有来源标记、可信边界、用户可审计、写入前后检测和到期机制，不能把“写记忆”当成普通总结步骤。</p>
+<p><strong>中文摘要翻译:</strong> 持久 personal agent 结合长期记忆和用户外部环境访问，可以提供个性化前台协助和主动后台执行。但这种整合也带来新的攻击路径：不可信外部内容可以被悄悄写入持久记忆，并在之后作为可信状态被复用。作者研究 stealth memory injection 威胁，其中远程黑盒攻击者通过单个邮件 payload 诱导 agent 写入有毒记忆，同时在对用户的回应中保持隐藏，并影响未来行为。作者提出 WhisperBench，一个包含 108 个案例的 benchmark，覆盖五类风险以及事实和偏好投毒，基于真实 IMAP/SMTP workflow 和真实邮件 agent skill，支持完整周期评估。为实现单邮件、无运行时反馈的黑盒攻击，作者提出 MemGhost，一种 one-shot payload generation 框架。MemGhost 使用 environment proxy 模拟持久 agent 执行，并用 objective proxy 把记忆采纳和对话隐蔽性转成 dense rubric-based reward，然后用 SFT 和 RL 训练攻击策略。实验显示，MemGhost 在 OpenClaw with GPT-5.4 上达到 87.5% 端到端成功率，在 Claude Code SDK with Sonnet 4.6 上达到 71.4%，并能跨 agent 架构和记忆后端迁移。</p>
+<h3 id="your-agents-memories-are-not-its-own-forged-reasoning-attacks-on-llm-agent-memory-and-defenses">Your Agent&rsquo;s Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.05029"  target="_blank" rel="noopener"
+    >2607.05029</a> | <a class="link" href="https://arxiv.org/pdf/2607.05029.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Neeraj Karamchandani, Piyush Nagasubramaniam, Sencun Zhu, Dinghao Wu</li>
+<li>日期: 2026-07-06</li>
+<li>预筛分: 14</li>
+</ul>
+<p><strong>一句话:</strong> FARMA 攻击投毒的不是事实记忆，而是 agent 的 reasoning history；SENTINEL 则用结构信号检测伪造推理条目。</p>
+<p><strong>精评:</strong> 这篇和 <code>2607.05189</code> 互补。事实投毒比较容易想到，比如改用户偏好或某个联系人信息；reasoning trace 投毒更隐蔽，因为它会污染 agent 自己“为什么这么做”的内部依据。FARMA 用 evasive language 绕过关键词防御，再用自引用强化击穿 consensus defense。SENTINEL 的 Reasoning Guard 用五个加权结构信号分析候选记忆是否伪造，论文报告可把 FARMA 攻击成功率降到 0%，且 326 个 benign trace 无 false positives。真实系统里它提示我们：memory defense 不能只看内容敏感词，也要看推理条目的来源、时间、可验证性、自引用模式和与实际工具轨迹的一致性。</p>
+<p><strong>中文摘要翻译:</strong> 持久记忆让 LLM agent 能存储事实知识、过往决策、推理历史、工具使用信息和上下文，从而提升跨任务连续性。但它也引入新的攻击面：agent 自己的推理历史。作者提出 Forged Amplifying Rationale Memory Attack，即 FARMA，它投毒的不是事实知识，而是 agent 记住的推理。FARMA 使用规避性语言插入伪造推理轨迹，绕过关键词防御，再通过自引用强化击败 consensus-based defense。为应对 FARMA，作者提出 SENTINEL，一个分层防御 pipeline，用于检测伪造推理条目。其核心组件 Reasoning Guard 使用五个加权信号对候选条目进行结构分析。作者在多个 agent 和 LLM 模型上进行 50 次试验，显示 FARMA 在 baseline 条件下攻击成功率最高可达 100%，并能击败 keyword filter 和 A-MemGuard；SENTINEL 则能把 FARMA 成功率降到最低 0%，且在 326 个 benign agent trace 上没有观察到 false positive。</p>
+<hr>
+<h2 id="optimizers--training-cookbook">Optimizers / Training Cookbook
+</h2><h3 id="omniopt-taxonomy-geometry-and-benchmarking-of-modern-optimizers">OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers
+</h3><ul>
+<li>arXiv: <a class="link" href="https://arxiv.org/abs/2607.04033"  target="_blank" rel="noopener"
+    >2607.04033</a> | <a class="link" href="https://arxiv.org/pdf/2607.04033.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li>作者: Siyuan Li, Jiabao Pan, Yumou Liu, Zhuoli Ouyang, Xin Jin et al.</li>
+<li>日期: 2026-07-04</li>
+<li>预筛分: 15 | HuggingFace: 64 upvotes</li>
+</ul>
+<p><strong>一句话:</strong> OmniOpt 给现代 optimizer 做统一 taxonomy、几何解释和跨域 benchmark，把 optimizer 选择从经验列表整理成可操作坐标系。</p>
+<p><strong>精评:</strong> optimizer 论文太多，实际训练时选择 optimizer 已经变成系统决策：算力、显存、调参预算、任务类型和稳定性都绑在一起。OmniOpt 的价值是把上百种方法放进统一框架：用五阶段 meta-pipeline 描述每次 update 的结构变化，用 norm-constrained LMO 统一不同 optimizer，再用机制家族和目标效果两个维度分类。它不是单个新 optimizer，而是 cookbook/benchmark；对做大规模训练的人，可能比又一个小改 Adam 的方法更有用。需要注意的是 optimizer benchmark 很容易被任务和调参预算影响，所以它的实用价值取决于 benchmark 覆盖和配置透明度。</p>
+<p><strong>中文摘要翻译:</strong> 大规模模型训练中的 optimizer 选择已经成为系统级设计决策，受到计算、内存、调参预算和任务多样性共同约束，但上百种方法的格局仍很碎片化。作者提出 OmniOpt，一个面向研究社区的统一 optimizer survey 和 benchmark cookbook。OmniOpt 包含四个相互耦合的组件。首先，它把每个 optimizer update 视为经过五阶段 meta-pipeline 的结构化转换，并显示大多数方法只涉及其中一两个阶段。其次，它用 norm-constrained linear minimization oracle 统一不同 optimizer。第三，这两个视角支撑一个双维 taxonomy：一维把每种方法分配到机制家族，另一维记录它试图改善的可测训练目标。第四，也是论文核心，作者在统一跨域 benchmark 中实例化完整 taxonomy，覆盖代表性 optimizer、模型规模和训练设置，从语言模型预训练到图像分类，系统分析不同方法家族在多个效果目标上的表现和权衡。OmniOpt 为在明确机制和目标假设下选择 optimizer 提供可操作坐标系。</p>
+<hr>
+<h2 id="本次收录-arxiv-id">本次收录 arXiv ID
+</h2><p><code>2607.05196</code>, <code>2607.05391</code>, <code>2607.05174</code>, <code>2607.05202</code>, <code>2607.05297</code>, <code>2607.04425</code>, <code>2607.04371</code>, <code>2607.05061</code>, <code>2607.05147</code>, <code>2607.03751</code>, <code>2607.04988</code>, <code>2607.03530</code>, <code>2607.04443</code>, <code>2607.04438</code>, <code>2607.05155</code>, <code>2607.04428</code>, <code>2607.05189</code>, <code>2607.05029</code>, <code>2607.04033</code></p>
+<p><em>生成时间：2026-07-08 08:00 Asia/Shanghai | 数据来源：HuggingFace Papers / arXiv</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-07/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-07</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-06/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-06</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-05/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-05</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-04/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-04</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-03/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-03</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
