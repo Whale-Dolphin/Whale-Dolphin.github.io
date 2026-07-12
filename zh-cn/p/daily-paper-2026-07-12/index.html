@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 13 篇论文 | Audio LLM: 0 篇 | LLM Training: 7 篇 | AI Agents: 5 篇 | 其他: 1 篇\n来源: arXiv(0) | HuggingFace(13) | Papers With Code(0)\n今天没有通过筛选且未在近 7 天报道过的 Audio LLM 论文。主要看点集中在 VLA 的记忆与注意力、Agent 工具边界可靠性、长程状态建模，以及更贴近真实工程的数据与代码智能体评测。\n">
+<title>AI Paper Daily | 2026-07-12</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-12/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-12">
+<meta property='og:description' content="今日概览 共收录 13 篇论文 | Audio LLM: 0 篇 | LLM Training: 7 篇 | AI Agents: 5 篇 | 其他: 1 篇\n来源: arXiv(0) | HuggingFace(13) | Papers With Code(0)\n今天没有通过筛选且未在近 7 天报道过的 Audio LLM 论文。主要看点集中在 VLA 的记忆与注意力、Agent 工具边界可靠性、长程状态建模，以及更贴近真实工程的数据与代码智能体评测。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-12/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-12T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-12">
+<meta name="twitter:description" content="今日概览 共收录 13 篇论文 | Audio LLM: 0 篇 | LLM Training: 7 篇 | AI Agents: 5 篇 | 其他: 1 篇\n来源: arXiv(0) | HuggingFace(13) | Papers With Code(0)\n今天没有通过筛选且未在近 7 天报道过的 Audio LLM 论文。主要看点集中在 VLA 的记忆与注意力、Agent 工具边界可靠性、长程状态建模，以及更贴近真实工程的数据与代码智能体评测。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-12/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a></li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#towards-mechanistically-understanding-why-memorized-knowledge-fails-to-generalize-in-large-language-model-finetuning">Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning</a></li>
+        <li><a href="#infinite-worlds-with-versatile-interactions">Infinite Worlds with Versatile Interactions</a></li>
+        <li><a href="#sparse-delta-memory-scaling-the-state-of-linear-rnns-through-sparsity">Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity</a></li>
+        <li><a href="#ego-human-motion-prediction-with-3d-aware-llm">Ego-Human Motion Prediction with 3D-Aware LLM</a></li>
+        <li><a href="#deepswe-measuring-frontier-coding-agents-on-original-long-horizon-engineering-tasks">DeepSWE: Measuring Frontier Coding Agents on Original, Long-Horizon Engineering Tasks</a></li>
+        <li><a href="#infinity-parser2-technical-report">Infinity-Parser2 Technical Report</a></li>
+        <li><a href="#pelican-vla-05-attending-before-acting-benefits-generalization">Pelican-VLA 0.5: Attending Before Acting Benefits Generalization</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#leevla-seeing-what-matters-in-latent-environment-evolution-for-vision-language-action">LEEVLA: Seeing What Matters in Latent Environment Evolution for Vision-Language-Action</a></li>
+        <li><a href="#reason-less-verify-more-deterministic-gates-recover-a-silent-policy-violation-failure-mode-in-tool-using-llm-agents">Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents</a></li>
+        <li><a href="#a-hierarchical-memory-architecture-overcomes-context-limits-in-long-horizon-multi-agent-computational-modeling">A hierarchical memory architecture overcomes context limits in long-horizon multi-agent computational modeling</a></li>
+        <li><a href="#from-atomic-actions-to-standard-operating-procedures-iterative-tool-optimization-for-self-evolving-llm-agents">From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents</a></li>
+        <li><a href="#data-analysis-in-the-wild-benchmarking-large-language-models-against-real-world-data-complexities">Data Analysis in the Wild: Benchmarking Large Language Models Against Real-World Data Complexities</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#dual-latent-memory-in-vision-language-action-models-for-robotic-manipulation">Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-12/">AI Paper Daily | 2026-07-12</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-12T00:00:00Z'>Jul 12, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a></li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#towards-mechanistically-understanding-why-memorized-knowledge-fails-to-generalize-in-large-language-model-finetuning">Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning</a></li>
+        <li><a href="#infinite-worlds-with-versatile-interactions">Infinite Worlds with Versatile Interactions</a></li>
+        <li><a href="#sparse-delta-memory-scaling-the-state-of-linear-rnns-through-sparsity">Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity</a></li>
+        <li><a href="#ego-human-motion-prediction-with-3d-aware-llm">Ego-Human Motion Prediction with 3D-Aware LLM</a></li>
+        <li><a href="#deepswe-measuring-frontier-coding-agents-on-original-long-horizon-engineering-tasks">DeepSWE: Measuring Frontier Coding Agents on Original, Long-Horizon Engineering Tasks</a></li>
+        <li><a href="#infinity-parser2-technical-report">Infinity-Parser2 Technical Report</a></li>
+        <li><a href="#pelican-vla-05-attending-before-acting-benefits-generalization">Pelican-VLA 0.5: Attending Before Acting Benefits Generalization</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#leevla-seeing-what-matters-in-latent-environment-evolution-for-vision-language-action">LEEVLA: Seeing What Matters in Latent Environment Evolution for Vision-Language-Action</a></li>
+        <li><a href="#reason-less-verify-more-deterministic-gates-recover-a-silent-policy-violation-failure-mode-in-tool-using-llm-agents">Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents</a></li>
+        <li><a href="#a-hierarchical-memory-architecture-overcomes-context-limits-in-long-horizon-multi-agent-computational-modeling">A hierarchical memory architecture overcomes context limits in long-horizon multi-agent computational modeling</a></li>
+        <li><a href="#from-atomic-actions-to-standard-operating-procedures-iterative-tool-optimization-for-self-evolving-llm-agents">From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents</a></li>
+        <li><a href="#data-analysis-in-the-wild-benchmarking-large-language-models-against-real-world-data-complexities">Data Analysis in the Wild: Benchmarking Large Language Models Against Real-World Data Complexities</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#dual-latent-memory-in-vision-language-action-models-for-robotic-manipulation">Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 13 篇论文 | Audio LLM: 0 篇 | LLM Training: 7 篇 | AI Agents: 5 篇 | 其他: 1 篇<br>
+来源: arXiv(0) | HuggingFace(13) | Papers With Code(0)</p>
+<p>今天没有通过筛选且未在近 7 天报道过的 Audio LLM 论文。主要看点集中在 VLA 的记忆与注意力、Agent 工具边界可靠性、长程状态建模，以及更贴近真实工程的数据与代码智能体评测。</p>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><ul>
+<li><a class="link" href="https://arxiv.org/abs/2607.07608"  target="_blank" rel="noopener"
+    >Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation</a>：把短期与长期历史压缩成 VLA 原生潜在记忆 token，让记忆真正参与推理与动作生成。</li>
+<li><a class="link" href="https://arxiv.org/abs/2607.08393"  target="_blank" rel="noopener"
+    >Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning</a>：从内部激活路由解释“记住但不会用”，并用轻量启发式恢复 58%–75% 的泛化上限空间。</li>
+<li><a class="link" href="https://arxiv.org/abs/2607.07405"  target="_blank" rel="noopener"
+    >Reason Less, Verify More</a>：证明工具调用前的确定性只读门控能显著减少智能体静默违反业务策略的问题。</li>
+<li><a class="link" href="https://arxiv.org/abs/2607.07386"  target="_blank" rel="noopener"
+    >Sparse Delta Memory</a>：用稀疏寻址把线性 RNN 状态容量扩展多个数量级，在等 FLOPs 下改善长上下文回忆。</li>
+<li><a class="link" href="https://arxiv.org/abs/2607.07946"  target="_blank" rel="noopener"
+    >DeepSWE</a>：以原创长程工程任务和手写验证器降低训练污染与错误判分，更可靠地区分前沿编码智能体。</li>
+</ul>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><p>今日无符合条件的新论文。</p>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="towards-mechanistically-understanding-why-memorized-knowledge-fails-to-generalize-in-large-language-model-finetuning"><a class="link" href="https://arxiv.org/abs/2607.08393"  target="_blank" rel="noopener"
+    >Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning</a>
+</h3>
+    <blockquote>
+        <p>大模型微调时“记住新知识却不会用于推理”的根因，可能是知识表征没有被路由到真正参与计算的层。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Lu Dai et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.08393"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.08393.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 论文形式化提出“Knowing–Using Gap（知道—使用鸿沟）”，并用 self-patching 干预技术追踪新知识在网络内部的空间传播。结果支持“知识回路错位”假设；基于诊断得到的简单策略可恢复 oracle 泛化提升空间的 58%–75%，对知识注入和持续微调很有参考价值。</li>
+<li><strong>相关技术</strong>: self-patching, knowledge-circuit misalignment, knowledge injection, activation intervention, finetuning generalization</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>通过微调向大语言模型注入新知识面临一个关键挑战：模型可以迅速记住新事实，却无法在下游推理任务中使用这些事实。我们将这一失败形式化为 <strong>Knowing–Using Gap（知道—使用鸿沟）</strong>，其特征是记忆与泛化之间既存在准确率差距，也存在时间滞后。为理解这一现象，我们使用未见过的知识微调大语言模型，并通过一种名为 self-patching（自修补）的新型干预技术，监测知识在模型内部的空间渗透动态。Self-patching 会找出这样的激活位置：将表征迁移至这些位置后，原本失败的泛化案例能得到显著改善。结果与“知识回路错位”假设一致：已记忆的表征可能确实存在于模型内部，但未被路由到能够有效参与计算的层。为证明这一诊断发现的实用性，我们设计了一种简单的启发式策略，在泛化失败案例中恢复了 oracle 可提升空间的 58%–75%。我们还开展了跨领域实验，以验证该发现的稳健性。</p>
+</details>
+<hr>
+<h3 id="infinite-worlds-with-versatile-interactions"><a class="link" href="https://arxiv.org/abs/2607.07534"  target="_blank" rel="noopener"
+    >Infinite Worlds with Versatile Interactions</a>
+</h3>
+    <blockquote>
+        <p>LingBot-World 2.0 将无限交互时长、60 fps 实时生成、多样动作和双智能体导演机制结合进世界模型。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zelin Gao et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (29 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.07534"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.07534.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 通过因果预训练维持无限时长交互的一致质量，并蒸馏出可驱动 720p/60 fps 视频流的实时版本。Pilot/Director 双智能体分别负责角色行为和环境增量生成，14B 主模型另配 1.3B 单卡版本，适合关注交互式世界模型部署的工程团队。</li>
+<li><strong>相关技术</strong>: causal video pretraining, real-time world model, agentic harness, multi-player simulation, model distillation</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们提出 LingBot-World 2.0（亦称 LingBot-World-Infinity），这是 LingBot-World 的高级迭代版本，包含四项明显升级。第一，得益于精心设计的因果预训练范式，模型能够实现无界的交互时长，同时保持一致的输出质量。第二，通过从基础模型蒸馏出实时版本，系统可以保证快速响应，足以驱动 720p、60 fps 的视频流。第三，相比上一版本，本次更新引入了高度多样的交互元素，包括更广泛的动作，例如攻击、射箭、施法和射击，以及种类更丰富的文本驱动事件。第四，我们率先在世界建模领域引入智能体式执行框架：其中 pilot agent（领航智能体）负责规划并执行角色行为，director agent（导演智能体）则负责随着场景推进合成新的环境元素。此外，为提供共享体验，我们开发了允许多名玩家同时沉浸于这一生动世界模拟器的交互界面。我们还为主要的 14B 模型配套提供轻量级 1.3B 版本，后者可轻松部署在单张 GPU 上。</p>
+</details>
+<hr>
+<h3 id="sparse-delta-memory-scaling-the-state-of-linear-rnns-through-sparsity"><a class="link" href="https://arxiv.org/abs/2607.07386"  target="_blank" rel="noopener"
+    >Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity</a>
+</h3>
+    <blockquote>
+        <p>SDM 用稀疏读写的大型显式记忆替代稠密键值外积，在不增加等效计算量的前提下扩大线性 RNN 状态容量。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Loïc Cabannes et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (10 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.07386"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.07386.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: Sparse Delta Memory（稀疏增量记忆, SDM）扩展 Gated DeltaNet，通过稀疏寻址将隐藏状态容量提高多个数量级。等 FLOPs、同参数量实验表明，更大的状态记忆能改善上下文学习和长程检索；可学习初始状态还可充当参数记忆，提升常识与推理任务表现。</li>
+<li><strong>相关技术</strong>: sparse addressing, Gated DeltaNet, linear RNN, explicit memory, long-context retrieval</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>线性注意力模型能够使状态大小和每个 token 的计算量保持固定。然而，由于状态容量有限，线性注意力模型在长上下文回忆方面落后于基于 softmax 注意力的 Transformer 架构。增大线性注意力的状态规模可以改善回忆性能，但代价是更高的 FLOPs。在这项工作中，我们提出 Sparse Delta Memory（稀疏增量记忆, SDM），这是一种利用稀疏寻址方案，将门控线性 RNN 的隐藏状态扩展到高出多个数量级容量的架构。SDM 扩展了 Gated DeltaNet 架构，以对大型显式记忆的稀疏读写替代稠密的键值外积。我们表明，在等 FLOPs 约束且参数数量相同的情况下，更高的状态记忆容量能显著提升上下文学习和长上下文检索任务的性能。此外，通过学习 SDM 记忆的初始状态，并将其作为参数记忆使用，我们证明模型还可以在广泛的常识和推理任务上进一步提升性能。</p>
+</details>
+<hr>
+<h3 id="ego-human-motion-prediction-with-3d-aware-llm"><a class="link" href="https://arxiv.org/abs/2607.07001"  target="_blank" rel="noopener"
+    >Ego-Human Motion Prediction with 3D-Aware LLM</a>
+</h3>
+    <blockquote>
+        <p>Ego3DLM 在一次自回归解码中联合预测姿态与语言，并用三维场景约束提升第一视角人体运动预测。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yujin Bae et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.07001"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.07001.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 模型统一解码过去/未来姿态与叙述，让动作语义和物理姿态彼此约束，而不是走两条独立推理流。三阶段训练结合空间语义预训练、整体指令微调和带跨模态奖励的 GRPO，在 Nymeria 上刷新多项结果。</li>
+<li><strong>相关技术</strong>: 3D scene grounding, egocentric motion forecasting, GRPO, pose-language consistency, autoregressive multimodal decoding</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>从第一视角预测人体运动，是增强现实/虚拟现实、人与机器人协作以及具身智能实现主动辅助的基础。近期工作虽然将语言作为语义先验，以缓解第一视角预测问题的不适定性，但大多忽略了支配运动展开方式的三维空间与语义上下文，并将姿态预测和语言预测视为相互分离的推理流。我们提出 Ego3DLM，它建立在两个核心原则之上：准确的运动预测需要对三维环境进行明确的空间和语义理解；姿态与语言必须在单次过程中整体预测，因为运动与正在执行动作的语义解释天然关联。给定三点追踪、三维场景特征和第一视角视频，Ego3DLM 在一次自回归过程中同时解码过去姿态、未来姿态、过去叙述和未来叙述，并让预测的姿态与描述彼此落地，以保证跨模态与时间一致性。我们采用三阶段训练方案：第一，空间—语义场景感知预训练；第二，在一次解码中针对全部四类输出进行整体指令微调；第三，使用模态内与模态间奖励进行基于 GRPO 的强化微调，直接优化姿态—语言保真度。Nymeria 基准上的实验表明，Ego3DLM 在未来运动预测、过去运动追踪和运动描述方面均达到当前最佳性能，说明三维场景落地与整体式跨模态预测能够产生物理合理、语义连贯的运动预测。项目页面位于 <a class="link" href="https://jaewoo97.github.io/Ego3DLM/"  target="_blank" rel="noopener"
+    >https://jaewoo97.github.io/Ego3DLM/</a>。</p>
+</details>
+<hr>
+<h3 id="deepswe-measuring-frontier-coding-agents-on-original-long-horizon-engineering-tasks"><a class="link" href="https://arxiv.org/abs/2607.07946"  target="_blank" rel="noopener"
+    >DeepSWE: Measuring Frontier Coding Agents on Original, Long-Horizon Engineering Tasks</a>
+</h3>
+    <blockquote>
+        <p>DeepSWE 用原创、未回流上游仓库的长程工程任务和手写功能验证器，更干净地评测编码智能体。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Wenqi Huang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.07946"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.07946.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 113 项任务覆盖 91 个活跃开源仓库和 5 种语言，参考答案不进入公开训练语料；验证器按功能而非某个固定补丁判分。与独立 LLM 复核相比，其判分分歧仅 1.4%，远低于 SWE-Bench Pro 的 32.4%，而且能把前沿智能体拉开更宽的分数差距。</li>
+<li><strong>相关技术</strong>: coding agents, long-horizon software engineering, hand-written verifier, benchmark contamination, SWE-bench</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（基准、验证器与评测轨迹）</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>DeepSWE 是一个用于评估编码智能体的基准，包含 113 项原创的长程软件工程任务。多数公开的智能体编码基准沿用 SWE-bench 的做法，从公开 GitHub 仓库中挖掘已经合并的修复，这会带来两个问题：第一，这些修复及其讨论很可能在预训练中已经被模型见过，因此高分可能反映的是记忆而非问题解决能力；第二，每项任务由随已合并修复提交的测试来评分，而这些测试的目的是确认某一种特定修复，并非评估任意可能的解决方案，因此它们可能拒绝正确的替代实现，或放过不完整的实现。DeepSWE 避免了这两点。其任务是围绕 91 个活跃开源仓库、使用五种编程语言从零编写的，并且永远不会贡献回上游仓库，因此参考解决方案不会进入模型训练会抓取的公开记录；每项任务则由手写验证器评分，验证器检查所要求的功能，并接受任何能够实现该功能的方案。当独立 LLM 裁判重新审查已评分的运行记录时，它与 DeepSWE 验证器的分歧率相比 SWE-Bench Pro 的继承测试低约一个数量级（1.4% 对 32.4%）。尽管 DeepSWE 的任务描述长度约为 SWE-Bench Pro 的一半，但其参考解决方案涉及的代码量是后者的 5.5 倍；同时，该基准能在更宽的分数区间内区分前沿智能体，而这些智能体在其他排行榜上的得分通常聚集在一起。我们公开发布该基准、验证器以及完整的评测轨迹记录。</p>
+</details>
+<hr>
+<h3 id="infinity-parser2-technical-report"><a class="link" href="https://arxiv.org/abs/2607.07836"  target="_blank" rel="noopener"
+    >Infinity-Parser2 Technical Report</a>
+</h3>
+    <blockquote>
+        <p>Infinity-Parser2 将可控合成数据和八任务联合强化学习用于端到端文档解析，同时兼顾高吞吐与高精度版本。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zuming Huang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.07836"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.07836.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 工作发布 500 万中英双语样本的 Infinity-Doc2-5M，并用可验证奖励统一训练布局、表格、公式、图表、化学式、VQA 等八项任务。Flash 版吞吐比 Infinity-Parser-7B 提升 3.68 倍，Pro 版在 olmOCR-Bench 与 ParseBench 上达到 87.6% 和 74.3%。</li>
+<li><strong>相关技术</strong>: document parsing, synthetic data engine, joint reinforcement learning, verifiable rewards, multimodal OCR</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（数据集与模型版本）</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们提出 Infinity-Parser2，这是一种大型多模态模型，它将可控数据合成流水线与多任务强化学习结合起来，用于端到端文档解析，以解决高保真标注文档解析语料长期匮乏的问题。我们的贡献有三方面。第一，我们构建了可扩展的合成引擎，将可控渲染框架与迭代优化循环配对，并据此构建并开源 Infinity-Doc2-5M：一个包含 500 万样本的中英双语语料库，覆盖多种文档类型，标注了元素边界框、规范化内容形式（Markdown、HTML、LaTeX、SMILES 与结构化图表）以及完整页面阅读顺序。第二，我们提出可验证的多任务奖励系统，使八个共同训练目标能够进行联合强化学习，包括文档解析、布局分析、表格解析、数学公式解析、图表解析、化学式解析、文档视觉问答以及通用多模态理解，从而用统一优化信号整合感知、结构与推理。第三，我们在共享架构下发布两个版本：Infinity-Parser2-Flash 面向低延迟推理优化，吞吐量比 Infinity-Parser-7B 提高 3.68 倍；Infinity-Parser2-Pro 面向精度关键场景设计。Infinity-Parser2-Pro 在 olmOCR-Bench 上达到当前最佳的 87.6%，在 ParseBench 上达到 74.3%，超过 DeepSeek-OCR-2、PaddleOCR-VL-1.5 和 MinerU2.5，并对图表、化学公式和文档视觉问答表现出很强的泛化能力。</p>
+</details>
+<hr>
+<h3 id="pelican-vla-05-attending-before-acting-benefits-generalization"><a class="link" href="https://arxiv.org/abs/2607.06655"  target="_blank" rel="noopener"
+    >Pelican-VLA 0.5: Attending Before Acting Benefits Generalization</a>
+</h3>
+    <blockquote>
+        <p>在感知与动作之间加入可学习 Reasoning Slots，可让 VLA 无需显式注意力监督便聚焦任务相关物体与接触区域。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zeyuan Ding et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (8 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.06655"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.06655.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: Pelican-VLA 0.5 在统一架构中整合视觉语言理解、未来帧生成与动作预测。紧凑的推理槽形成面向操作的注意力瓶颈，在未见场景、未见机器人形态和不同策略架构之间均保持有效，说明“先关注再动作”可成为 VLA 泛化的重要归纳偏置。</li>
+<li><strong>相关技术</strong>: Reasoning Slots, attention-level generalization, future-frame generation, action prediction, vision-language-action</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>本报告提出 Pelican-VLA 0.5，这是一种统一的 Vision-Language-Action（视觉—语言—动作, VLA）模型，在单一架构中整合了视觉语言理解、未来帧生成和动作预测。Pelican-VLA 0.5 实现了注意力层面的泛化：即便没有物体标注、分割掩码、注意力监督或任务特定微调，其动作通路也已经会聚焦于与指令相关的物体和接触区域。这一行为在未见场景和未见机器人形态上仍然保持，并且明显强于其他开源 VLA 基线。我们验证了这种能力源自插入感知与动作之间的可学习 Reasoning Slots（推理槽）：通过紧凑瓶颈路由与任务相关的视觉信息，槽接口在预训练期间诱导出以操作为中心的注意力，并能在包括 MoT 风格架构在内的不同策略结构中持续发挥作用。</p>
+</details>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="leevla-seeing-what-matters-in-latent-environment-evolution-for-vision-language-action"><a class="link" href="https://arxiv.org/abs/2607.08182"  target="_blank" rel="noopener"
+    >LEEVLA: Seeing What Matters in Latent Environment Evolution for Vision-Language-Action</a>
+</h3>
+    <blockquote>
+        <p>LEEVLA 同时学习“应该关注哪里”与“关键特征如何在潜空间演化”，提升复杂动态场景中的 VLA 表现。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Qi Lyu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.08182"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.08182.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: DGDP 结合动态位置优先级与语义漂移，引导模型注意指令相关区域；SFFG 则用 prototype-to-periphery 预测和互邻域对比损失维持潜在世界表征的结构演化。该“where-how”训练框架在多项 VLA 基准上稳定超过既有方法。</li>
+<li><strong>相关技术</strong>: drift-guided dynamic prioritization, structured feature flow, prototype-to-periphery prediction, mutual-neighborhood contrastive loss, VLA</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>Vision-Language-Action（视觉—语言—动作, VLA）模型旨在将多模态输入映射为机器人动作。然而，多数现有方法对所有视觉 token 一视同仁，并使用人工选择的因素进行推理，因此缺少强调任务关键证据和发现潜在因素的机制，难以覆盖复杂动态场景。为解决这一问题，我们提出 LEEVLA，这是一种面向 Latent Environment Evolution（潜在环境演化）的 VLA 架构，可在保留潜在世界表征结构化演化的同时，明确引导模型关注信息丰富的区域。为识别显著且与指令相关的区域，我们提出 drift-guided dynamic prioritization（漂移引导动态优先化, DGDP），它结合 dynamic position prioritization（动态位置优先化, DPP）与 semantic drift guidance（语义漂移引导, SDG），在训练期间指导 VLA 智能体应该关注哪里。在此基础上，我们提出 structured feature flow generation（结构化特征流生成, SFFG），通过 prototype-to-periphery（原型到外围, P2P）预测来建模这些优先特征应如何在潜空间中演化，并使用 mutual-neighborhood contrastive（互邻域对比, MC）损失维持邻域间的拓扑一致性。DGDP 与 SFFG 共同构成任务感知的“where-how（哪里—如何）”训练框架。大量 VLA 基准实验表明，LEEVLA 持续优于以往方法，证实显式任务证据引导与结构化潜在推理对于可扩展 VLA 都至关重要。代码已发布于 <a class="link" href="https://github.com/LyuQi127/LEEVLA"  target="_blank" rel="noopener"
+    >https://github.com/LyuQi127/LEEVLA</a>。</p>
+</details>
+<hr>
+<h3 id="reason-less-verify-more-deterministic-gates-recover-a-silent-policy-violation-failure-mode-in-tool-using-llm-agents"><a class="link" href="https://arxiv.org/abs/2607.07405"  target="_blank" rel="noopener"
+    >Reason Less, Verify More: Deterministic Gates Recover a Silent Policy-Violation Failure Mode in Tool-Using LLM Agents</a>
+</h3>
+    <blockquote>
+        <p>在策略宽松的工具前加只读确定性门控，可阻止一类“调用成功但业务状态违规”的静默错误。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Vikas Reddy et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.07405"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.07405.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 论文在 τ²-bench 航空场景中发现，低预算智能体 78% 的失败属于没有工具报错的静默错误状态。四个确定性门控把 gpt-4o-mini 的全基准成功率从 29.6% 提升到 42.0%，且独立随机种子复现实验几乎得到相同提升；这提示业务策略应在动作边界硬校验，而非只靠模型推理。</li>
+<li><strong>相关技术</strong>: deterministic pre-execution gates, policy-permissive tools, silent wrong state, τ²-bench, tool-use reliability</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>会使用工具的大语言模型智能体可能违反其部署时本应执行的策略，同时表面上仍像是成功完成了任务。在策略宽松的环境中，只要工具调用格式正确，工具就可能执行它，即使相应的状态转换已被领域策略禁止。结果便是静默错误状态，例如预订被取消、乘客人数被修改，或索赔在未经核验时被处理，而工具和智能体的自我报告都不会暴露该问题。</p>
+<p>我们在 τ²-bench 的航空领域研究这一失败模式。对于低预算智能体，观察到的失败中有 78% 是没有工具错误的静默错误状态；总体失败率可在互不重叠的随机种子上复现，并非采样噪声。随后，我们评估了一种轻量干预：在执行前部署确定性的只读门控，在允许写操作之前检查拟议调用和当前状态。四门控套件将 gpt-4o-mini 的全基准成功率从 29.6% 提升至 42.0%（+12.4 个百分点；成对任务级 bootstrap，P=0.0012）；在另一组互不重叠的 15 个随机种子上，该提升也得到复现（+12.3 个百分点；P=0.0008）。</p>
+<p>效果集中在门控实际触发的任务上：在 50 项任务中门控触发的 26 项上，成功率提高了 19.2 个百分点；而在其余 24 项未触发任务上，变化无法排除为零。两个负对照——工具会自行执行策略的零售领域与 BFCL——限定了该机制的适用范围：当工具在策略上宽松时，门控有效；当工具已经自行强制执行策略时，门控作用很小。作为提示性证据而非核心主张，同一失败模式在前沿模型上依然存在：使用默认推理配置的 gpt-5.2 仍会尝试违反策略的写操作，同一套门控将成功率从 61.2% 提升至 71.6%（+10.4 个百分点；P=0.020；n=5，未复现）。本文贡献是一项边界明确的评估和可靠性结果：确定性门控不能保证任务成功，但可以在动作边界确定性地阻止一类已知的静默策略违规写操作。</p>
+</details>
+<hr>
+<h3 id="a-hierarchical-memory-architecture-overcomes-context-limits-in-long-horizon-multi-agent-computational-modeling"><a class="link" href="https://arxiv.org/abs/2607.07666"  target="_blank" rel="noopener"
+    >A hierarchical memory architecture overcomes context limits in long-horizon multi-agent computational modeling</a>
+</h3>
+    <blockquote>
+        <p>三层分级记忆通过限制状态类别并淘汰已完成工作，让多智能体科研流程的注入上下文随项目时长保持有界。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Shivendra G. Tewari et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.07666"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.07666.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: Ensemble QSP 用三层记忆、五个专家工作智能体和领域 PI 智能体支撑多会话定量研究。104 次运行中期项目状态中位数仅 301 token，系统还能稳定执行药代/药效模型选择；适配新科学领域只需新增 PI 配置，架构复用性较强。</li>
+<li><strong>相关技术</strong>: hierarchical memory, multi-agent orchestration, bounded context, pharmacokinetic modeling, PI-agent oversight</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>大语言模型展现出显著的推理能力，但其无状态架构从根本上限制了它们在需要跨会话连续性和定量严谨性的长程研究工作流中的部署。本文提出 Ensemble QSP，一个采用三层分级记忆架构的多智能体框架。该架构通过限制每类状态的容量并淘汰已完成工作，使注入上下文相对于项目持续时间保持有界且恒定：在 104 次运行中，中期项目状态的中位数为 301 token，最大值为 4,050 token，从而支持无上下文退化的持续自主运行。系统在领域专家型首席研究员智能体的管理下协调五个专业工作智能体，并通过基于物理的检查清单和结构化领域知识强制执行物理约束。综合基准测试表明，系统无需人工干预即可稳健地完成药代动力学—药效动力学模型选择；较低成本与前沿大语言模型均能保持一致的结果质量；相较单智能体基线，药代动力学参数恢复更准确；对于语言表达不同但任务相同的提示，模型选择也保持稳定。针对覆盖广泛复杂度的生理药代动力学模型开展特征级消融后发现，PI 智能体监督提高了调试效率，同时在不同条件下保持最终准确率。该架构在结构上与领域无关，增加一个新的科学领域只需要配置新的 PI 智能体。</p>
+</details>
+<hr>
+<h3 id="from-atomic-actions-to-standard-operating-procedures-iterative-tool-optimization-for-self-evolving-llm-agents"><a class="link" href="https://arxiv.org/abs/2607.07321"  target="_blank" rel="noopener"
+    >From Atomic Actions to Standard Operating Procedures: Iterative Tool Optimization for Self-Evolving LLM Agents</a>
+</h3>
+    <blockquote>
+        <p>EvoSOP 从执行轨迹中把原子工具组合成可复用 SOP，并通过构建、合并、评估和剪枝持续优化工具集。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Haipeng Ding et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.07321"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.07321.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 论文把 SOP 视为封装多步逻辑的高阶可调用工具，避免智能体在重复工作流中反复重建底层逻辑。EvoSOP 的工具生命周期显著提高任务成功率并减少交互轮数，为自演化智能体提供了比单纯扩充原子工具更可扩展的路径。</li>
+<li><strong>相关技术</strong>: Standard Operating Procedures, tool synthesis, execution trajectories, iterative tool optimization, self-evolving agents</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>工具使用使大语言模型智能体能够与真实世界交互并解决复杂任务。然而，现有智能体框架主要依赖由细粒度原子动作组成的静态工具集，例如基础文件输入输出或单轮搜索。这迫使智能体在每个重复出现的工作流中重新构建底层逻辑，导致推理开销和失败率上升。本研究提出，智能体可以通过将这些原子动作合成为可复用的 Standard Operating Procedures（标准操作程序, SOP）来实现自我演化；这些 SOP 作为可调用的高阶工具，封装了多步逻辑。我们进一步提出 EvoSOP 框架，使智能体能够从执行轨迹中提取 SOP，并通过构建、合并、评估和剪枝组成的系统化生命周期，迭代优化工具集。大量实验表明，与基线相比，EvoSOP 显著提升任务成功率，同时大幅减少交互轮数。分析还显示，迭代式工具优化能够形成可靠且高效的工具使用模式，为自演化智能体的发展提供一条可扩展路径。</p>
+</details>
+<hr>
+<h3 id="data-analysis-in-the-wild-benchmarking-large-language-models-against-real-world-data-complexities"><a class="link" href="https://arxiv.org/abs/2607.06482"  target="_blank" rel="noopener"
+    >Data Analysis in the Wild: Benchmarking Large Language Models Against Real-World Data Complexities</a>
+</h3>
+    <blockquote>
+        <p>DataGovBench 用政府开放数据评测复杂多表问答、可视化和探索式洞察，揭示现有数据分析智能体与真实需求的差距。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: So Hasegawa et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.06482"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.06482.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 基准不再局限于小表格事实检索，而是覆盖大型多表数据、外部知识整合、文本或可视化回答，以及专家级探索性发现。对有无智能体框架的前沿模型评测均显示明显能力缺口，适合用来检验真实数据工作流中的端到端可靠性。</li>
+<li><strong>相关技术</strong>: governmental open data, multi-tabular analysis, Table QA, exploratory data analysis, agentic data analytics</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>当前用于评估大语言模型数据分析能力的基准通常无法反映真实环境。它们往往专注于从小型表格中检索事实，而忽略大型多表数据集、外部知识整合和探索式洞察发现带来的挑战。我们提出 DataGovBench，这是一个源自政府开放数据、面向实际场景的大语言模型评测基准。基准包含两项任务：Table QA（表格问答）要求解决复杂且可分解的问题，并生成文本答案或可视化；Table Insight（表格洞察）则评估模型通过探索性数据分析生成专家级发现的能力。我们对带有和不带智能体框架的当前最佳大语言模型进行了综合实验，结果显示两项任务均存在显著性能差距。这说明当前基于大语言模型的系统距离满足真实世界数据分析需求仍然很远。DataGovBench 为推动既能回答分析问题、又能从数据中发现洞察的大语言模型研究提供了具有挑战性的基准。代码与样例数据已发布于 <a class="link" href="https://github.com/SoHasegawa/datagovbench"  target="_blank" rel="noopener"
+    >https://github.com/SoHasegawa/datagovbench</a>。</p>
+</details>
+<h2 id="-其他值得关注">📌 其他值得关注
+</h2><h3 id="dual-latent-memory-in-vision-language-action-models-for-robotic-manipulation"><a class="link" href="https://arxiv.org/abs/2607.07608"  target="_blank" rel="noopener"
+    >Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation</a>
+</h3>
+    <blockquote>
+        <p>LaMem-VLA 把短期与长期历史都重构为潜在记忆 token，使历史经验直接参与 VLA 推理和动作生成。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Hongyu Qu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (51 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.07608"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.07608.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 框架用 curator、seeker、condenser、weaver 四个模块完成历史组织、检索、压缩与注入，统一处于连续潜空间中。对长程机器人任务而言，这比单纯扩大观察窗口或附加外部检索上下文更自然，也能在固定上下文预算下利用历史经验；SimplerEnv 与 LIBERO 实验验证了优势。</li>
+<li><strong>相关技术</strong>: latent memory tokens, short-term memory, long-term memory, VLA reasoning, robotic manipulation</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>主流 Vision-Language-Action（视觉—语言—动作, VLA）模型主要在马尔可夫假设下依据当前观察预测动作，因此难以处理长程、具有时间依赖性的任务。现有记忆增强型 VLA 要么扩大观察窗口，要么从记忆库中检索历史，将其作为策略侧的辅助上下文。然而，它们把记忆留在 VLA 推理原生潜在嵌入空间之外，导致历史经验无法与多模态推理和动作形成过程流畅交织。为此，我们提出 LaMem-VLA，一个以原生潜在记忆为核心的框架，它把历史经验重构为潜在记忆 token，并直接将其交织进 VLA 推理。LaMem-VLA 的核心包括四个协同组件：第一，curator（整理器）将历史经验组织进相互补充的短期与长期记忆库；第二，seeker（检索器）利用多模态认知查询两个记忆库，检索与上下文相关的证据；第三，condenser（压缩器）将检索到的证据重构成紧凑的短期与长期潜在记忆 token；第四，weaver（编织器）把这些记忆 token 与当前观察和指令一起注入一个连续嵌入序列。通过完全在同一连续潜空间中表征、检索和使用历史经验，LaMem-VLA 使记忆能够在受限上下文中直接参与 VLA 推理并指导动作生成。我们在 SimplerEnv 和 LIBERO 上开展了大量实验，证明 LaMem-VLA 具有更优性能。</p>
+</details>
+<hr>
+<p><em>Generated on 2026-07-12 08:00 CST | Sources: arXiv, HuggingFace, Papers With Code</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-11/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-11</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-09/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-09</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-08/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-08</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-07/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-07</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-06/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-06</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
