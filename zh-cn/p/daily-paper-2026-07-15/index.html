@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 18 篇论文 | Audio LLM: 4 篇 | LLM Training: 4 篇 | AI Agents: 6 篇 | 其他: 4 篇\n来源: arXiv(0) | HuggingFace(18) | Papers With Code(0)\n近 7 天去重后，30 篇预筛选候选中有 18 篇尚未报道。今天值得重点留意的是：可验证像素级证据的视频问答、慢思考与快控制解耦的视觉语言导航、具备终身多模态记忆的机器人 Agent OS，以及面向真实生活流的轻量多模态记忆。\n">
+<title>AI Paper Daily | 2026-07-15</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-15/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-15">
+<meta property='og:description' content="今日概览 共收录 18 篇论文 | Audio LLM: 4 篇 | LLM Training: 4 篇 | AI Agents: 6 篇 | 其他: 4 篇\n来源: arXiv(0) | HuggingFace(18) | Papers With Code(0)\n近 7 天去重后，30 篇预筛选候选中有 18 篇尚未报道。今天值得重点留意的是：可验证像素级证据的视频问答、慢思考与快控制解耦的视觉语言导航、具备终身多模态记忆的机器人 Agent OS，以及面向真实生活流的轻量多模态记忆。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-15/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-15T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-15">
+<meta name="twitter:description" content="今日概览 共收录 18 篇论文 | Audio LLM: 4 篇 | LLM Training: 4 篇 | AI Agents: 6 篇 | 其他: 4 篇\n来源: arXiv(0) | HuggingFace(18) | Papers With Code(0)\n近 7 天去重后，30 篇预筛选候选中有 18 篇尚未报道。今天值得重点留意的是：可验证像素级证据的视频问答、慢思考与快控制解耦的视觉语言导航、具备终身多模态记忆的机器人 Agent OS，以及面向真实生活流的轻量多模态记忆。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-15/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#automated-synthesis-of-facial-mechanisms-for-conversational-animatronic-robots">Automated Synthesis of Facial Mechanisms for Conversational Animatronic Robots</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#evidence-backed-video-question-answering">Evidence-Backed Video Question Answering</a></li>
+        <li><a href="#monkeyocrv2-a-visual-text-foundation-model-for-document-ai">MonkeyOCRv2: A Visual-Text Foundation Model for Document AI</a></li>
+        <li><a href="#proxy-exploration-and-reusable-guidance-a-modular-llm-post-training-paradigm-via-proxy-guided-update-signals">Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals</a></li>
+        <li><a href="#agentabstain-do-llm-agents-know-when-not-to-act">AgentAbstain: Do LLM Agents Know When Not to Act?</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm续">🔊 Audio LLM（续）</a>
+      <ol>
+        <li><a href="#evaluating-ssl-and-vivit-architectures-for-cross-corpus-audio-mos-prediction-via-lodo-validation">Evaluating SSL and ViViT Architectures for Cross-Corpus Audio MOS Prediction via LODO Validation</a></li>
+        <li><a href="#lightmem-ego-your-ai-memory-for-everyday-life">LightMem-Ego: Your AI Memory for Everyday Life</a></li>
+        <li><a href="#gigaam-multilingual-foundation-model-for-underrepresented-languages">GigaAM Multilingual: Foundation Model for Underrepresented Languages</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#abot-n1-toward-a-general-visual-language-navigation-foundation-model">ABot-N1: Toward a General Visual Language Navigation Foundation Model</a></li>
+        <li><a href="#abot-agentos-a-general-robotic-agent-os-with-lifelong-multi-modal-memory">ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory</a></li>
+        <li><a href="#advancedmathbench-a-benchmark-suite-for-advanced-mathematical-proof-generation-and-verification">AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification</a></li>
+        <li><a href="#tofu-a-white-box-token-efficient-agent-harness-for-researchers">ToFu: A White-Box, Token-Efficient Agent Harness for Researchers</a></li>
+        <li><a href="#met-theory-grounded-and-culture-aware-multilingual-moral-reasoning">MET: Theory-Grounded and Culture-Aware Multilingual Moral Reasoning</a></li>
+        <li><a href="#vinci2-providing-proactive-assistance-in-continuous-egocentric-videos">Vinci2: Providing Proactive Assistance in Continuous Egocentric Videos</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#xiaomi-robotics-u0-unified-embodied-synthesis-with-world-foundation-model">Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model</a></li>
+        <li><a href="#metacognition-in-llms-foundations-progress-and-opportunities">Metacognition in LLMs: Foundations, Progress, and Opportunities</a></li>
+        <li><a href="#asysplat-efficient-asymmetric-3d-gaussian-splatting-for-long-sequence-scene-modeling">AsySplat: Efficient Asymmetric 3D Gaussian Splatting for Long-Sequence Scene Modeling</a></li>
+        <li><a href="#prompt-generation-technical-report">Prompt Generation Technical Report</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-15/">AI Paper Daily | 2026-07-15</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-15T00:00:00Z'>Jul 15, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#automated-synthesis-of-facial-mechanisms-for-conversational-animatronic-robots">Automated Synthesis of Facial Mechanisms for Conversational Animatronic Robots</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#evidence-backed-video-question-answering">Evidence-Backed Video Question Answering</a></li>
+        <li><a href="#monkeyocrv2-a-visual-text-foundation-model-for-document-ai">MonkeyOCRv2: A Visual-Text Foundation Model for Document AI</a></li>
+        <li><a href="#proxy-exploration-and-reusable-guidance-a-modular-llm-post-training-paradigm-via-proxy-guided-update-signals">Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals</a></li>
+        <li><a href="#agentabstain-do-llm-agents-know-when-not-to-act">AgentAbstain: Do LLM Agents Know When Not to Act?</a></li>
+      </ol>
+    </li>
+    <li><a href="#-audio-llm续">🔊 Audio LLM（续）</a>
+      <ol>
+        <li><a href="#evaluating-ssl-and-vivit-architectures-for-cross-corpus-audio-mos-prediction-via-lodo-validation">Evaluating SSL and ViViT Architectures for Cross-Corpus Audio MOS Prediction via LODO Validation</a></li>
+        <li><a href="#lightmem-ego-your-ai-memory-for-everyday-life">LightMem-Ego: Your AI Memory for Everyday Life</a></li>
+        <li><a href="#gigaam-multilingual-foundation-model-for-underrepresented-languages">GigaAM Multilingual: Foundation Model for Underrepresented Languages</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#abot-n1-toward-a-general-visual-language-navigation-foundation-model">ABot-N1: Toward a General Visual Language Navigation Foundation Model</a></li>
+        <li><a href="#abot-agentos-a-general-robotic-agent-os-with-lifelong-multi-modal-memory">ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory</a></li>
+        <li><a href="#advancedmathbench-a-benchmark-suite-for-advanced-mathematical-proof-generation-and-verification">AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification</a></li>
+        <li><a href="#tofu-a-white-box-token-efficient-agent-harness-for-researchers">ToFu: A White-Box, Token-Efficient Agent Harness for Researchers</a></li>
+        <li><a href="#met-theory-grounded-and-culture-aware-multilingual-moral-reasoning">MET: Theory-Grounded and Culture-Aware Multilingual Moral Reasoning</a></li>
+        <li><a href="#vinci2-providing-proactive-assistance-in-continuous-egocentric-videos">Vinci2: Providing Proactive Assistance in Continuous Egocentric Videos</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#xiaomi-robotics-u0-unified-embodied-synthesis-with-world-foundation-model">Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model</a></li>
+        <li><a href="#metacognition-in-llms-foundations-progress-and-opportunities">Metacognition in LLMs: Foundations, Progress, and Opportunities</a></li>
+        <li><a href="#asysplat-efficient-asymmetric-3d-gaussian-splatting-for-long-sequence-scene-modeling">AsySplat: Efficient Asymmetric 3D Gaussian Splatting for Long-Sequence Scene Modeling</a></li>
+        <li><a href="#prompt-generation-technical-report">Prompt Generation Technical Report</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 18 篇论文 | Audio LLM: 4 篇 | LLM Training: 4 篇 | AI Agents: 6 篇 | 其他: 4 篇<br>
+来源: arXiv(0) | HuggingFace(18) | Papers With Code(0)</p>
+<p>近 7 天去重后，30 篇预筛选候选中有 18 篇尚未报道。今天值得重点留意的是：可验证像素级证据的视频问答、慢思考与快控制解耦的视觉语言导航、具备终身多模态记忆的机器人 Agent OS，以及面向真实生活流的轻量多模态记忆。</p>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><ul>
+<li><a class="link" href="https://arxiv.org/abs/2607.11862"  target="_blank" rel="noopener"
+    >Evidence-Backed Video Question Answering</a>：要求模型在回答问题的同时给出时间片段和持续跟踪的像素级目标掩码，直接检验答案是否真正建立在视觉证据上。</li>
+<li><a class="link" href="https://arxiv.org/abs/2607.10383"  target="_blank" rel="noopener"
+    >ABot-N1</a>：以慢速视觉语言推理器生成像素目标、快速动作专家输出连续航点，在城市级导航上把 POI 到达率提升至 77.3%。</li>
+<li><a class="link" href="https://arxiv.org/abs/2607.10350"  target="_blank" rel="noopener"
+    >ABot-AgentOS</a>：在低层控制器之上提供规划、技能隔离、验证、终身多模态图记忆和失败驱动自进化的通用运行层。</li>
+<li><a class="link" href="https://arxiv.org/abs/2607.11487"  target="_blank" rel="noopener"
+    >LightMem-Ego</a>：把手机或 AI 眼镜的第一视角音视频组织成当前、短期和长期三级记忆，可用于找物、回忆对话和总结生活。</li>
+<li><a class="link" href="https://arxiv.org/abs/2607.10146"  target="_blank" rel="noopener"
+    >Evaluating SSL and ViViT Architectures for Cross-Corpus Audio MOS Prediction</a>：19 个语料、13 万样本的 LODO 实验显示，冻结 SSL 表征比微调 SSL 更能抵抗未见域偏移。</li>
+</ul>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><h3 id="automated-synthesis-of-facial-mechanisms-for-conversational-animatronic-robots"><a class="link" href="https://arxiv.org/abs/2607.11688"  target="_blank" rel="noopener"
+    >Automated Synthesis of Facial Mechanisms for Conversational Animatronic Robots</a>
+</h3>
+    <blockquote>
+        <p>从单张肖像自动设计可制造的机械面部结构，并由音频联合驱动说话与倾听两种三维表情。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zongzheng Zhang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11688"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11688.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 工作提出拓扑和执行器布局均可参数化的连杆式机械脸模板，并用分层算法从二维肖像重建三维面部、搜索无碰撞且可制造的内部机构。音频驱动的双身份表情框架同时建模说话者与倾听者行为，对社交机器人硬件个性化和实时交互都有直接价值。</li>
+<li><strong>相关技术</strong>: parametric linkage mechanism, Action Unit trajectories, collision-driven refinement, audio-driven facial motion, 3D face reconstruction</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>机械动画面部是社交交互机器人的核心部件，能借助面部关节传递丰富的非语言信息。然而，当前先进机械脸通常是定制系统；每种新面部几何都需要大量人工机械重设计，使大规模个性化既缓慢又昂贵。本文追求自动、可扩展的机械脸合成，目标是为广泛面部几何快速生成物理可实现的机构。作者提出一种参数化连杆驱动模板，显式参数化其拓扑与执行器布局，以便针对不同面部形态缩放和重定向。在此基础上，分层自动设计算法以单张二维肖像为输入，重建目标三维面部，并合成无碰撞、可制造的内部机构；算法结合解剖学引导的可行动作体积、由 Action Unit（动作单元，AU）导出的轨迹表达力目标，以及碰撞驱动的外循环细化。作者进一步指出，大规模部署的机械脸必须进行双向多轮交流，而不能只是说话头或倾听头，因此提出双身份对话表情合成框架，从音频中联合建模说话与倾听行为，生成适合物理执行且时间连贯的三维面部动作。实验覆盖不同面部几何的自动机构合成、与人工机械设计对比、对话表情合成及实时部署基准，以及感知用户研究。</p>
+</details>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="evidence-backed-video-question-answering"><a class="link" href="https://arxiv.org/abs/2607.11862"  target="_blank" rel="noopener"
+    >Evidence-Backed Video Question Answering</a>
+</h3>
+    <blockquote>
+        <p>E-VQA 要求视频模型同时输出语义答案与可追踪的时空像素证据，暴露“答对但没看对”的问题。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Shijie Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11862"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11862.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 论文提出首个人工验证的判别式与生成式像素级视频落地基准 ST-Evidence，并发现问答准确率与真实视觉感知明显脱钩。自动构建的 16 万规模 ST-Evidence-Instruct 用于微调后，7B 模型相对同规模 UniPixel 基线取得 +27.2 t-mean、+13.8 J&amp;F，为可解释视频理解提供了强基线。</li>
+<li><strong>相关技术</strong>: spatio-temporal grounding, tracked segmentation masklets, ST-Evidence, pixel-level video QA, grounded instruction tuning</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（代码与数据）</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>当前 Video Large Language Models（视频大语言模型，Video LLM）擅长问答，却大多像黑箱一样只给出文本答案，缺少可验证的视觉落地。现有解释方法依赖文本推理说明或稀疏边界框，难以刻画遮挡、非刚性形变等复杂视频动态。作者提出 Evidence-Backed Video Question Answering（证据支撑的视频问答，E-VQA）新任务，要求模型联合输出语义答案与精确的时空证据，包括时间片段和密集、持续跟踪的目标分割掩码序列。为支持该任务，论文构建 ST-Evidence，这是首个同时面向判别式和生成式像素级落地、经人工验证的基准。先进模型评测揭示问答准确率与真实视觉感知之间存在关键脱钩，仅靠扩大规模无法弥合。作者又开发可扩展自动生成流水线，构建 16 万规模的 ST-Evidence-Instruct 数据集，把高层推理与细粒度落地连接起来。在该数据上微调具备落地能力的 Video LLM，相较同规模 UniPixel 基线显著提升，例如 7B 模型的 t-mean 提高 27.2、J&amp;F 提高 13.8，由此建立可解释、证据支撑视频理解的稳健基线。代码和数据已公开。</p>
+</details>
+<hr>
+<h3 id="monkeyocrv2-a-visual-text-foundation-model-for-document-ai"><a class="link" href="https://arxiv.org/abs/2607.11562"  target="_blank" rel="noopener"
+    >MonkeyOCRv2: A Visual-Text Foundation Model for Document AI</a>
+</h3>
+    <blockquote>
+        <p>MonkeyOCRv2 用 1.13 亿张、17 种语言的文档图像预训练字符级视觉编码器，同时学习图文生成与像素重建。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yuliang Liu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11562"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11562.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 预训练任务一边对齐图像与文本内容，一边保留字符笔画和版式细节，解决自然图像编码器在密集文档上的先天不足。冻结编码器配轻量语言模型即可得到 0.7B 解析模型，在 MDPBench 上超过 3B dots.mocr 2.8 个百分点，视觉编码器规模约小 11 倍。</li>
+<li><strong>相关技术</strong>: document-oriented visual pretraining, pixel-level reconstruction, multilingual OCR, document parsing, character-stroke perception</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>主流视觉编码器在自然图像上预训练，若不做面向文档的适配便难以有效处理文档图像，因为密集文本和细粒度字符笔画要求字符级视觉感知。作者提出面向 Document AI 的视觉文本预训练模型 MonkeyOCRv2。首先构建 MonkeyDoc v2，据作者所知这是规模最大的文档图像预训练语料，包含 1.13 亿张图像和 17 种语言。其次提出联合学习图像到文本生成与像素级文档重建的策略：前者让视觉表征对齐文本内容，后者保留字符笔画和版式细节。在文本识别、公式识别、文本检测、文档篡改检测和重叠文本分割五项任务上，用 MonkeyOCRv2 替换原编码器均能稳定提升。作者还把它用作多模态大模型的视觉编码器，验证文档解析和理解能力。编码器保持冻结、配合轻量语言模型即可形成 0.7B 文档解析模型；它在覆盖原生数字文档与拍摄文档、包含 17 种语言的 MDPBench 上刷新开源最佳结果，绝对领先此前最佳 3B dots.mocr 2.8%，且视觉编码器约小 11 倍。相同训练设置下，它构建的文档理解模型也在八个基准上超过 CLIP、DINO 和 SAM 编码器。结果说明，面向文档的视觉预训练本身可以成为文档智能的基础。</p>
+</details>
+<hr>
+<h3 id="proxy-exploration-and-reusable-guidance-a-modular-llm-post-training-paradigm-via-proxy-guided-update-signals"><a class="link" href="https://arxiv.org/abs/2607.11505"  target="_blank" rel="noopener"
+    >Proxy Exploration and Reusable Guidance: A Modular LLM Post-Training Paradigm via Proxy-Guided Update Signals</a>
+</h3>
+    <blockquote>
+        <p>PUST 让轻量代理模型承担昂贵探索，再把优化前后的相对改进方向迁移给主模型。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Daocheng Fu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (7 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11505"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11505.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 框架把更新信号探索与策略分布对齐解耦，使优化信号可异步生成、缓存、复用并跨模型迁移。Qwen3 数学和代码实验显示，显著更弱的代理也能稳定增强更强主模型，为降低 RL 后训练探索成本提供了模块化路径。</li>
+<li><strong>相关技术</strong>: proxy-guided update transfer, weak-to-strong improvement, policy alignment, reusable optimization signals, LLM post-training</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>后训练是强化大语言模型领域能力的关键，但现有奖励优化和分布匹配方法把策略探索与分布对齐紧密耦合，迫使主策略模型亲自执行昂贵探索，也严重妨碍优化信号的异步生成、复用和跨模型迁移。论文提出 Proxy-guided Update Signal Transfer（代理引导的更新信号迁移，PUST），从根本上解耦更新信号探索和分布对齐。PUST 不让主模型承担高成本探索，而是用轻量代理模型作为高效试验台寻找高奖励行为；随后提取代理模型初始状态与优化状态之间的相对改进信号，把这个方向性更新迁移给主模型以指导策略对齐。由代理探索、信号提取和信号迁移组成的流水线显著降低计算开销，并允许异步生成、缓存和复用优化信号。由于迁移的是相对改进而非绝对策略分布，PUST 天然支持弱到强提升和跨模型迁移。Qwen3 系列在数学与代码领域的系统实验表明，从明显更弱的代理中提取的更新信号，也能稳健且可调地增强更强主模型。该方法由此把单体在线优化式后训练转变为模块化、可复用且成本更低的范式。</p>
+</details>
+<hr>
+<h3 id="agentabstain-do-llm-agents-know-when-not-to-act"><a class="link" href="https://arxiv.org/abs/2607.10059"  target="_blank" rel="noopener"
+    >AgentAbstain: Do LLM Agents Know When Not to Act?</a>
+</h3>
+    <blockquote>
+        <p>AgentAbstain 成对测试智能体“该行动时行动、该放弃时放弃”的校准能力，最强系统两边都答对也只有 59.5%。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xun Liu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.10059"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.10059.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 基准覆盖 8 类放弃场景、42 个可执行沙箱与 263 对任务，通过对指令、工具或环境状态做受控扰动构造应执行/应放弃对。17 个模型和 4 种 Agent harness 的结果说明，任务能力提升不会自动带来可靠放弃能力，尤其要警惕不可逆操作后才发现问题的“事后放弃”。</li>
+<li><strong>相关技术</strong>: agentic abstention, paired-task benchmark, sandbox evaluation, AbstainGen, irreversible-action safety</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（代码与数据集）</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>基于大语言模型的智能体正越来越多地用于自主任务，但现有评测主要关注任务成功，很少考察智能体是否知道何时应该放弃。这会带来真实风险：面对歧义、冲突约束或工具故障，智能体可能执行非预期且不可逆的动作。为此，作者提出首个系统性的智能体放弃评测框架，衡量工具型 LLM 智能体校准地识别“不应行动”的能力。核心 AgentAbstain 是成对任务基准，基于智能体原生分类体系，覆盖执行前推理和运行时发现阶段的 8 类放弃场景；它在 42 个可执行沙箱中包含 263 对任务，每对由一个应执行任务及其应放弃变体构成，后者通过受控修改指令、工具或环境状态生成。为扩展这种设计并抵抗数据污染，论文提出全自动 AbstainGen，从头合成沙箱并生成成对任务，利用确定性回放和语义 LLM 裁判验证；任务可按需重新生成，三名独立标注者认为 94%–98% 的抽样任务设计良好。在 4 种 harness 上测试 17 个前沿模型后，最佳系统 Gemini 3.1 Pro 的成对准确率也只有 59.5%。更重要的是，放弃能力与一般任务求解能力大体独立，说明仅扩展求解能力无法弥合差距。论文还发现“事后放弃”等失效模式，即智能体在识别放弃触发条件前已执行不可逆动作。代码和数据集已在 agentabstain.github.io 开源。</p>
+</details>
+<hr>
+<h2 id="-audio-llm续">🔊 Audio LLM（续）
+</h2><h3 id="evaluating-ssl-and-vivit-architectures-for-cross-corpus-audio-mos-prediction-via-lodo-validation"><a class="link" href="https://arxiv.org/abs/2607.10146"  target="_blank" rel="noopener"
+    >Evaluating SSL and ViViT Architectures for Cross-Corpus Audio MOS Prediction via LODO Validation</a>
+</h3>
+    <blockquote>
+        <p>跨语料 MOS 评测表明，冻结的自监督语音表征配合深层 Transformer，在未见数据分布上比全量微调更稳健。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Mustafa Ozan Duman, Ahmet Emir Dirik</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.10146"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.10146.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 论文在 19 个数据集、13 万样本以及净化后的 17 个英语数据集上，对冻结 SSL、微调 SSL 和 ViViT 做系统 LODO 验证。结果提示工程上不能只看同域验证集：SSL-FT 同域最好，但 SSL-FRZ 在未知分布上更稳定，并已开放最佳模型权重。</li>
+<li><strong>相关技术</strong>: Mean Opinion Score prediction, frozen SSL embeddings, Leave-One-Dataset-Out, ViViT, cross-corpus robustness</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（最佳英语 SSL-Transformer 模型与权重）</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>自动 Mean Opinion Score（平均意见分，MOS）预测对于大规模合成语音和音频增强系统的评估至关重要，但模型经常难以应对域偏移。本文全面比较三种架构：冻结的 Self-Supervised Learning（自监督学习，SSL-FRZ）、微调 SSL（SSL-FT）和 Video Vision Transformer（视频视觉 Transformer，ViViT）。评估分两阶段进行：第一阶段整合 19 个数据集的 13 万个样本，第二阶段聚焦清洗后的 17 个纯英语数据集。研究采用系统性的 Leave-One-Dataset-Out（留一数据集法，LODO）量化已见与未见分布间的泛化差距，并用 ARECHO 框架将最佳模型与 18 种先进指标比较。结果显示，纯英语清洗语料在所有架构上都带来更高预测精度；SSL-FT 在已见验证数据上最佳，而 SSL-FRZ 对未见分布更稳健，在 URGENT 2024 上取得 0.36 的 MSE，接近域专用先进指标的 0.30。ViViT 总体能力不及 SSL 模型，但在纯英语实验中表现稳定。LODO 进一步确认，冻结 SSL 嵌入配合深层 Transformer 编码器，是通用语音质量评估中最稳定、可扩展的方案。最佳英语 SSL-Transformer 模型与权重已在 Hugging Face 公开。</p>
+</details>
+<hr>
+<h3 id="lightmem-ego-your-ai-memory-for-everyday-life"><a class="link" href="https://arxiv.org/abs/2607.11487"  target="_blank" rel="noopener"
+    >LightMem-Ego: Your AI Memory for Everyday Life</a>
+</h3>
+    <blockquote>
+        <p>轻量流式记忆把第一视角音视频对齐到统一时间轴，并按查询动态路由至当前、短期或长期记忆。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yijun Chen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (33 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11487"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11487.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 系统持续采集并对齐视觉、音频流，以分层结构控制长期积累的存储和检索成本，再用多模态证据生成有依据的回答。它可部署在手机和 AI 眼镜上，支持找物、对话回忆、生活总结、习惯发现和个性化辅助，代码已开放。</li>
+<li><strong>相关技术</strong>: egocentric audio-visual streams, hierarchical memory, query routing, multimodal evidence grounding, wearable AI</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>手机和可穿戴设备上的个人 AI 助手会通过视觉与音频流持续感知用户的日常生活。然而，要回答有关过去经历的问题，需要一种能不断积累、组织和检索长期体验的轻量多模态记忆，这仍然很有挑战。为此，作者提出 LightMem-Ego，一套面向日常生活辅助的轻量流式多模态记忆系统。系统持续捕获第一视角视觉和音频流，将它们对齐到共享时间轴，并组织成包含当前记忆、短期记忆和长期记忆的层级结构。收到用户查询后，LightMem-Ego 会把检索动态路由到合适的记忆层，并基于多模态证据生成回答。其演示系统可部署在智能手机和 AI 眼镜上，支持物品查找、对话回忆、生活总结、日常规律发现和个性化辅助。代码已发布于 <a class="link" href="https://github.com/zjunlp/LightMem-Ego"  target="_blank" rel="noopener"
+    >https://github.com/zjunlp/LightMem-Ego</a>。</p>
+</details>
+<hr>
+<h3 id="gigaam-multilingual-foundation-model-for-underrepresented-languages"><a class="link" href="https://arxiv.org/abs/2607.10371"  target="_blank" rel="noopener"
+    >GigaAM Multilingual: Foundation Model for Underrepresented Languages</a>
+</h3>
+    <blockquote>
+        <p>以 200 万小时音频预训练的 Conformer，通过聚类级均衡和域感知采样改善中亚低资源语言 ASR。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Andrei Kuzmenko et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.10371"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.10371.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: GigaAM Multilingual 针对哈萨克语、吉尔吉斯语和乌兹别克语的数据稀缺与头部语言压制，分别在预训练和微调阶段实施数据平衡。模型在目标语言上超过 Whisper Large v3 与 Omnilingual-1B，尤其提升自发语音，同时公开基础编码器和 ASR 模型。</li>
+<li><strong>相关技术</strong>: multilingual ASR, Conformer encoder, HuBERT objective, cluster-level balancing, domain-aware sampling</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（基础编码器与 ASR 模型）</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>尽管规模扩展取得成功，多语言 ASR 的表现仍极不均衡，长尾语言受制于严重的数据稀缺。本文研究如何为代表性不足的中亚语言——哈萨克语、吉尔吉斯语和乌兹别克语——构建稳健的基础模型。作者提出 GigaAM Multilingual，这是一个在 200 万小时音频上使用 HuBERT 风格目标预训练的 Conformer 编码器。关键做法是在预训练期间采用聚类级数据平衡，并在微调期间使用域感知采样，以减轻头部语言的支配效应。受控比较显示，该方法在目标语言上超过 Whisper Large v3、Omnilingual-1B 等强开源预训练编码器，在保持效率的同时显著改善自发语音。作者公开基础编码器和 ASR 模型，为现实数据不平衡条件下的有效多语言适配提供了经过验证的方案。</p>
+</details>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="abot-n1-toward-a-general-visual-language-navigation-foundation-model"><a class="link" href="https://arxiv.org/abs/2607.10383"  target="_blank" rel="noopener"
+    >ABot-N1: Toward a General Visual Language Navigation Foundation Model</a>
+</h3>
+    <blockquote>
+        <p>慢速推理器输出语言轨迹与像素锚点，快速动作专家据此高频生成连续航点。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Ruiyan Gong et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (81 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.10383"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.10383.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: ABot-N1 用双视觉语言信号和慢—快架构把认知与控制解耦，以统一像素目标接口覆盖点目标、物体目标、POI、指令跟随和人员跟随。其城市级 POI 到达率提高 35 个百分点至 77.3%，复杂室内外场景成功率达到 95.4%/92.9%。</li>
+<li><strong>相关技术</strong>: visual language navigation, slow-fast policy, pixel-goal anchors, Chain-of-Thought, continuous waypoint control</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（Point-Goal/POI-Goal 基准）</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>视觉语言导航基础模型希望把落地空间决策的深度推理与多种具身任务的通用性统一起来。当前方法多用单体策略直接把观察映射到动作，容易出现坐标漂移、难以处理长尾语义，且黑箱映射缺乏可解释性。ABot-N1 通过双视觉语言信号引导的慢—快架构解耦认知与控制：慢速视觉语言推理器进行显式 Chain-of-Thought（思维链）推理并生成像素目标；这组图像空间锚点作为点目标、物体目标、POI 目标、指令跟随和人员跟随的统一接口。快速动作专家再结合文本线索与像素引导，以原生控制频率生成连续航点。像素落地锚点和显式语言轨迹连接高层意图与低层控制，使模拟和真实环境中的导航更稳健、通用且可解释。ABot-N1 在城市级导航上把 POI 到达率提高 35.0% 至 77.3%，复杂室内外场景成功率达 95.4%/92.9，并在物体到达、人员与指令跟随上保持优势。新的 Point-Goal/POI-Goal 基准已开源。</p>
+</details>
+<hr>
+<h3 id="abot-agentos-a-general-robotic-agent-os-with-lifelong-multi-modal-memory"><a class="link" href="https://arxiv.org/abs/2607.10350"  target="_blank" rel="noopener"
+    >ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory</a>
+</h3>
+    <blockquote>
+        <p>在机器人控制器之上加入可审计的规划、工具、验证和终身多模态图记忆运行层。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Jiayi Tian et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (68 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.10350"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.10350.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: AgentOS 提供场景条件规划、隔离技能执行、多阶段验证和边云协同；Universal Multi-modal Graph Memory 把对话、视觉、时空关系与任务轨迹统一为有类型图。失败驱动的自进化只把新资产晋升到后续评测划分，兼顾持续改进与防止真值泄漏。</li>
+<li><strong>相关技术</strong>: robotic Agent OS, multimodal graph memory, multi-stage verification, edge-cloud collaboration, failure-driven self-evolution</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>近期 VLM 和 VLA 改善了机器人感知与动作预测，但长时程具身智能体仍需要通用运行层承担推理、记忆、工具使用、验证和跨本体执行。ABot-AgentOS 位于低层控制器之上，提供场景条件规划、上下文隔离技能执行、多阶段验证、多模态记忆和边云协同。其可执行基准 EmbodiedWorldBench 包含 16 个室内、室外和混合场景、四档难度及 200 多项任务，覆盖导航、寻物、NPC 对话、动态事件和轨迹评分。Universal Multi-modal Graph Memory 把对话、视觉观察、空间上下文、时间关系和任务轨迹转成有类型的节点与边。失败驱动的自进化循环把诊断出的记忆故障转成受门控运行时资产，只在后续评测划分启用，避免当前划分真值泄漏。初步实验中，AgentOS 比单控制器基线有更高任务成功和目标完成度；静态版本在 LoCoMo、OpenEQA EM-EQA、Mem-Gallery 和 NExT-QA 上分别达到 87.5、59.9、88.6 和 76.5，自进化后前三项升至 88.7、60.4、89.0。结果表明通用 Agent OS 能改善长时程具身执行，并提供持久、可审计的交互记忆。</p>
+</details>
+<hr>
+<h3 id="advancedmathbench-a-benchmark-suite-for-advanced-mathematical-proof-generation-and-verification"><a class="link" href="https://arxiv.org/abs/2607.11849"  target="_blank" rel="noopener"
+    >AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification</a>
+</h3>
+    <blockquote>
+        <p>分别评测高等数学证明生成与证明核验，并对推理过程中的错误给出细粒度判断。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Lingkai Kong et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (20 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11849"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11849.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: ProverBench 含 296 道本科至博士资格考试题，VerifierBench 含 888 条带专家真值的模型证明轨迹。最佳模型在资格考试证明生成上仅 66.1，证明核验 Balanced F1 仅 65.1，且真负率普遍偏低，显示关键错误检测仍是瓶颈。</li>
+<li><strong>相关技术</strong>: mathematical proof generation, proof verification, ProverBench, VerifierBench, fine-grained error assessment</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>LLM 在高中和奥赛数学上表现突出，但对高等数学的能力仍不清楚；现有基准学科覆盖有限，又常只看最终答案或粗粒度判断，难以验证推理过程。AdvancedMathBench 用于评估高等数学推理：核心生成基准 ProverBench 含 296 道本科及博士资格考试层级问题；作者基于大规模专家标注训练专用自动核验流水线，同时输出正确性结论和细粒度证明错误，并在留出证明轨迹上与专家高度一致。VerifierBench 则包含 888 条模型生成证明轨迹及专家真值，用来评估模型能否判断证明有效性并给出可靠核验理由。实验显示基准对前沿模型仍很困难：最佳 GPT-5.5-xhigh 在 UGD 和 QE 生成划分上仅得 75.8 和 66.1；证明核验最佳 Balanced F1 仅 65.1，且模型普遍真负率偏低，说明关键错误检测仍是主要瓶颈。</p>
+</details>
+<hr>
+<h3 id="tofu-a-white-box-token-efficient-agent-harness-for-researchers"><a class="link" href="https://arxiv.org/abs/2607.11423"  target="_blank" rel="noopener"
+    >ToFu: A White-Box, Token-Efficient Agent Harness for Researchers</a>
+</h3>
+    <blockquote>
+        <p>面向科研工作流的白盒 Agent harness，兼顾代码库编辑、命令执行、低 token 成本和可研究性。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Junhao Ruan et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11423"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11423.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: ToFu 既可作为读取代码、编辑文件和运行命令的研究助手，也把编排逻辑和工具行为完整开放为研究对象。MIT 许可、可本地部署与较高 token 效率使其适合隐私敏感的 Agent 实验。</li>
+<li><strong>相关技术</strong>: agent harness, white-box orchestration, token efficiency, codebase editing, local deployment</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（MIT License）</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>智能体编码工具为科研工作流带来新机会。智能体系统的性能既取决于 LLM，也取决于包围 LLM、决定其行为的编排代码，即 harness。作者提出 ToFu：它能读取代码库、编辑文件、运行命令并接入开发工具，在科研中扮演双重角色。作为研究助手，它相较现有 harness 以更高 token 效率、更低成本和多语言能力支持实际工作流；MIT 许可还允许隐私敏感用户本地部署。作为研究对象，它提供白盒 harness，让研究者检查、修改和评估编排逻辑、工具使用行为与 harness 设计，同时保留强基准表现和应用级体验。</p>
+</details>
+<hr>
+<h3 id="met-theory-grounded-and-culture-aware-multilingual-moral-reasoning"><a class="link" href="https://arxiv.org/abs/2607.11736"  target="_blank" rel="noopener"
+    >MET: Theory-Grounded and Culture-Aware Multilingual Moral Reasoning</a>
+</h3>
+    <blockquote>
+        <p>先按文化和情境选择心理学、哲学道德依据，再用用户母语推理，并以自蒸馏强化第二步。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Ayoung Lee et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (4 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11736"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11736.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: MCLASH 避免直接翻译造成的文化错位，MET-D 不依赖更强模型或人工监督即可提升三类小模型的道德判断。它平均提升 MCLASH 3.71、MMoralExceptQA 4.23 个 macro-F1 点，并显著增加母语推理。</li>
+<li><strong>相关技术</strong>: multilingual moral reasoning, culture-aware benchmark, theory-grounded prompting, self-distillation, native-language reasoning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>语言模型日益参与跨语言、跨文化的道德决策，但现有工作有三处不足：多语言基准直接翻译，未适配文化特定条目；推理时方法依赖静态、英语中心且缺少道德理论依据的脚手架；训练又常需要更强模型或人工的昂贵监督。作者首先提出 MCLASH，以捕捉不同语言中受文化情境影响的道德直觉和社会规范；其次提出 MET 两步提示法，依据心理学和哲学专家整理的理论基础，先选择适合情境与文化的依据，再用用户母语推理；最后提出无需外部监督的自蒸馏 MET-D。MET-D 在 Qwen3-4B、Qwen3-8B、Gemma3-4B 上均提升 macro-F1，MCLASH 平均提高 3.71，MMoralExceptQA 提高 4.23，最高使 Qwen3-8B 的马来语 MCLASH 增长 12.94；母语推理平均增加 62.13 个百分点，且有益依据随文化系统性变化。</p>
+</details>
+<hr>
+<h3 id="vinci2-providing-proactive-assistance-in-continuous-egocentric-videos"><a class="link" href="https://arxiv.org/abs/2607.11523"  target="_blank" rel="noopener"
+    >Vinci2: Providing Proactive Assistance in Continuous Egocentric Videos</a>
+</h3>
+    <blockquote>
+        <p>用多尺度摘要、语义知识图和视觉嵌入档案判断第一视角视频中何时应主动介入。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Gong Sitong et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (0 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11523"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11523.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: EgoServe 含 3000 多个服务实例、4 种记忆跨度与 10 类服务，从即时安全提醒覆盖到长期习惯辅导。免训练 EgoMemo 通过三类互补记忆做检索增强推理，同时决定是否干预以及该说什么。</li>
+<li><strong>相关技术</strong>: proactive assistance, continuous egocentric video, EgoServe, memory-augmented agent, retrieval-augmented reasoning</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（基准与代码）</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>智能助手应在何时不经询问主动开口？连续第一视角视频提供不断演化的丰富上下文，使主动辅助成为可能，但现有方法要么等待用户提问，要么把每个事件都当成需回应，忽略用户历史、当前活动和是否欢迎帮助。作者把主动辅助重构为依赖上下文的决策：智能体既要感知事件，也要结合累积时间上下文判断是否及何时介入。Vinci2 将端侧助手 Vinci 从被动响应推进到主动协助。其 EgoServe 是首个连续第一视角视频大规模主动辅助基准，含 3000 多个服务实例、从即时安全警报到长期习惯辅导的 4 种时间记忆跨度和 10 类服务。免训练 EgoMemo 维护多尺度时间摘要、语义知识图和视觉嵌入档案三类互补记忆，每个时间步检索增强推理是否需要帮助，并在需要时生成有上下文依据的回应。实验显示其在 EgoServe 上建立强基线，在既有第一视角基准上也具竞争力。基准与代码已公开。</p>
+</details>
+<h2 id="-其他值得关注">📌 其他值得关注
+</h2><h3 id="xiaomi-robotics-u0-unified-embodied-synthesis-with-world-foundation-model"><a class="link" href="https://arxiv.org/abs/2607.11643"  target="_blank" rel="noopener"
+    >Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model</a>
+</h3>
+    <blockquote>
+        <p>38B 多模态自回归世界模型统一生成多机器人本体的一致多视角场景、编辑与视频数据。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xinghang Li et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (3 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11643"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11643.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: U0 联合优化文生图、图像编辑、具身场景生成、具身迁移和视频生成，保留基础世界模型泛化能力的同时满足几何与本体约束。合成数据把 π0.5 在真实操控 OOD 任务上的成功率从 36.9% 提升到 63.2%。</li>
+<li><strong>相关技术</strong>: embodied world model, multi-view consistency, embodied transfer, multimodal autoregression, synthetic robot data</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（代码与检查点）</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>基础图像和视频生成模型有很强的泛化与可控性，但具身场景要求多视角一致、几何连贯和机器人本体约束，因而不能直接套用；用少量机器人数据适配又常损害大规模预训练获得的视觉知识。Xiaomi-Robotics-U0 是一个 380 亿参数的多模态自回归统一具身合成模型，把具身生成视为基础图像、视频生成的延伸，联合优化文生图、图像编辑、具身场景生成、具身迁移和具身视频生成，在适配具身场景时保留预训练世界模型的泛化能力。它首次支持多种机器人本体的高质量多视角场景生成，并用结构化、可控的具身迁移做细粒度编辑，同时维持多视角一致性和交互动态。模型在单步及序列生成上达到最佳：具身场景和迁移的人评超过 GPT-Image-2.0，具身视频位列 World Arena 第一，并把 π0.5 在困难真实操控 OOD 任务上的成功率从 36.9% 提至 63.2%。代码和检查点已公开，结果说明基础世界模型既能成为具身世界模型，也能充当可扩展数据引擎。</p>
+</details>
+<hr>
+<h3 id="metacognition-in-llms-foundations-progress-and-opportunities"><a class="link" href="https://arxiv.org/abs/2607.11881"  target="_blank" rel="noopener"
+    >Metacognition in LLMs: Foundations, Progress, and Opportunities</a>
+</h3>
+    <blockquote>
+        <p>首篇系统梳理 LLM 元认知的测量、诱发、增强与应用方法，以及尚未解决的可靠性问题。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Gabrielle Kaili-May Liu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (12 upvotes)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11881"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11881.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 综述为“模型是否知道自己知道什么”这一新兴方向建立分类体系，覆盖评测基准、能力诱发和改进技术、应用与研究发现。配套论文清单已开放，适合作为不确定性、自我监控和可靠 Agent 研究入口。</li>
+<li><strong>相关技术</strong>: LLM metacognition, self-monitoring, confidence calibration, metacognitive benchmarks, reliability</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（整理后的论文清单）</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>元认知是智能的基础组成部分，对有效学习、问题求解、决策和交流都很关键，近年来也被视为构建有能力、透明 AI 的基石。尽管 LLM 在多种真实任务上进展显著，我们仍不清楚它们在何时、以何种方式、在多大程度上能展现或被赋予有效元认知，也不清楚如何利用这种能力提升 AI 的基础能力、可靠性和智能。本文通过首篇关于 LLM 元认知现状的全面综述弥补这一缺口：分析并分类这一新兴领域，汇总用于测量和评估元认知的方法与基准、诱发和增强及应用元认知的技术，以及持续研究的发现与影响；同时讨论应用、开放问题、挑战和未来方向。作者希望提供详尽且最新的研究地图并推动讨论，整理后的论文列表见 <a class="link" href="https://github.com/yale-nlp/LLM-Metacognition"  target="_blank" rel="noopener"
+    >https://github.com/yale-nlp/LLM-Metacognition</a>。</p>
+</details>
+<hr>
+<h3 id="asysplat-efficient-asymmetric-3d-gaussian-splatting-for-long-sequence-scene-modeling"><a class="link" href="https://arxiv.org/abs/2607.10995"  target="_blank" rel="noopener"
+    >AsySplat: Efficient Asymmetric 3D Gaussian Splatting for Long-Sequence Scene Modeling</a>
+</h3>
+    <blockquote>
+        <p>用粗粒度重几何分支和细粒度轻外观分支拆分 3DGS 计算，在 32 视角 960P 输入上提速近 800 倍。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yingji Zhong et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.10995"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.10995.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 非对称架构把多数参数放在粗 token 几何恢复上，以少量参数从细 token 学习外观，并通过双边连接互相引导。它减少多视图长序列中的冗余计算，以更小模型超过先进可泛化方法的零样本表现。</li>
+<li><strong>相关技术</strong>: 3D Gaussian Splatting, asymmetric architecture, coarse geometry tokens, fine appearance tokens, novel view synthesis</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>近期可泛化 3D Gaussian Splatting（3D 高斯泼溅，3DGS）模型推进了长序列新视角合成，却带来大量冗余计算。作者基于两点观察减少冗余：高质量 NVS 并不严格需要高精度几何，外观学习通常也比几何恢复容易。因此提出解耦几何与外观的非对称架构：几何分支用大部分参数处理粗粒度 token 以完成多视图重建，外观分支用显著更少的参数处理细粒度 token 并捕捉细节；二者通过双边连接互相引导。面向任务的不对称分配提高参数效率，让小模型也有强表现。在 32 视角 960P 输入上，该模型达到优化式方法的质量、速度提高近 800 倍，并以更少参数和更低训练推理开销超过先进可泛化模型的零样本表现。</p>
+</details>
+<hr>
+<h3 id="prompt-generation-technical-report"><a class="link" href="https://arxiv.org/abs/2607.11326"  target="_blank" rel="noopener"
+    >Prompt Generation Technical Report</a>
+</h3>
+    <blockquote>
+        <p>用两份声明式 JSON 解耦工业生成式检索的特征处理与模型架构，统一离线训练和在线服务。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Dan Ou et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending (1 upvote)</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11326"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11326.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: PG 把异构特征组织为四类，并用三个可组合组件装配、压缩，特征实验仅需改配置，新场景只需接入统一 schema。淘宝搜索线上 A/B 中交易笔数和 GMV 分别提升 0.47% 与 0.51%。</li>
+<li><strong>相关技术</strong>: generative retrieval, configuration-driven tokenization, feature-model decoupling, sequence compression, online serving</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details><summary>📄 Abstract 中文翻译</summary>
+<p>生成式检索已广泛用于工业搜索、推荐和广告，并带来线上收益。现有工作多结合用户行为序列与 LLM 建模偏好，但特征工程仍决定效果，其复杂性拖慢离线迭代，也让在线部署沉重、难复用；根因是特征处理和模型架构紧耦合，每次特征变更都会触及训练与服务代码。Prompt Generation（PG）是高层 tokenizer 与配置驱动框架，通过两份声明式 JSON 把两者解耦，并让它们成为离线训练和在线服务的共同唯一事实源，保证两阶段特征一致。PG 把特征分为四类，用三个可组合处理组件装配并压缩异构特征，从三方面加速：特征实验只改配置且内置超长序列压缩；新场景只需符合 PG schema 即可接入通用流水线；在线引擎可基于标准配置统一优化，使 PG 开销几乎可忽略。PG 已部署于淘宝搜索，线上 A/B 的交易笔数和 GMV 分别显著提升 0.47% 和 0.51%，并被多个淘宝搜索推荐团队采用。</p>
+</details>
+<hr>
+<p><em>Generated on 2026-07-15 08:00 CST | Sources: arXiv, HuggingFace, Papers With Code</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-14/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-14</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-13/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-13</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-12/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-12</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-11/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-11</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-09/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-09</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
