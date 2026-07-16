@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 12 篇论文 | Audio LLM: 1 篇 | LLM Training: 8 篇 | AI Agents: 2 篇 | 其他值得关注: 1 篇\n来源: HuggingFace Papers（12） | 去重跳过近 7 天已报道论文（18）\n重点推荐 ⭐ AVSCap：把非语音声学事件和视觉动作显式绑定，且显示强化学习比单纯扩充 SFT 数据更有效，最贴合 Audio LLM 方向。 Read It Back / SpectraReward：用提示词条件似然把预训练 MLLM 直接变成零样本奖励模型，避免偏好标注和奖励模型微调。 Hy-Embodied-VLM-1.0：只激活 3B 参数，却接近上一代激活 32B 参数的具身模型，兼顾推理能力和部署延迟。 Self in Space：将无人机的空间认知与“自我”状态放进统一评测框架，暴露现有 MLLM 的主体运动建模短板。 SynthDocBench：通过可控合成变量定位长文档 VLM 的长度、位置和图表理解退化，适合做模型诊断而非只看总分。 🔊 Audio LLM AVSCap: Orchestrating Audio-Visual Synergy for Omni-modal Video Captioning 通过显式跨模态事件绑定、三模态数据构建和混合奖励强化学习，让视频描述真正刻画画面、语音、音乐与音效之间的协同演化。\n">
+<title>AI Paper Daily | 2026-07-16</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-16/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-16">
+<meta property='og:description' content="今日概览 共收录 12 篇论文 | Audio LLM: 1 篇 | LLM Training: 8 篇 | AI Agents: 2 篇 | 其他值得关注: 1 篇\n来源: HuggingFace Papers（12） | 去重跳过近 7 天已报道论文（18）\n重点推荐 ⭐ AVSCap：把非语音声学事件和视觉动作显式绑定，且显示强化学习比单纯扩充 SFT 数据更有效，最贴合 Audio LLM 方向。 Read It Back / SpectraReward：用提示词条件似然把预训练 MLLM 直接变成零样本奖励模型，避免偏好标注和奖励模型微调。 Hy-Embodied-VLM-1.0：只激活 3B 参数，却接近上一代激活 32B 参数的具身模型，兼顾推理能力和部署延迟。 Self in Space：将无人机的空间认知与“自我”状态放进统一评测框架，暴露现有 MLLM 的主体运动建模短板。 SynthDocBench：通过可控合成变量定位长文档 VLM 的长度、位置和图表理解退化，适合做模型诊断而非只看总分。 🔊 Audio LLM AVSCap: Orchestrating Audio-Visual Synergy for Omni-modal Video Captioning 通过显式跨模态事件绑定、三模态数据构建和混合奖励强化学习，让视频描述真正刻画画面、语音、音乐与音效之间的协同演化。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-16/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-16T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-16">
+<meta name="twitter:description" content="今日概览 共收录 12 篇论文 | Audio LLM: 1 篇 | LLM Training: 8 篇 | AI Agents: 2 篇 | 其他值得关注: 1 篇\n来源: HuggingFace Papers（12） | 去重跳过近 7 天已报道论文（18）\n重点推荐 ⭐ AVSCap：把非语音声学事件和视觉动作显式绑定，且显示强化学习比单纯扩充 SFT 数据更有效，最贴合 Audio LLM 方向。 Read It Back / SpectraReward：用提示词条件似然把预训练 MLLM 直接变成零样本奖励模型，避免偏好标注和奖励模型微调。 Hy-Embodied-VLM-1.0：只激活 3B 参数，却接近上一代激活 32B 参数的具身模型，兼顾推理能力和部署延迟。 Self in Space：将无人机的空间认知与“自我”状态放进统一评测框架，暴露现有 MLLM 的主体运动建模短板。 SynthDocBench：通过可控合成变量定位长文档 VLM 的长度、位置和图表理解退化，适合做模型诊断而非只看总分。 🔊 Audio LLM AVSCap: Orchestrating Audio-Visual Synergy for Omni-modal Video Captioning 通过显式跨模态事件绑定、三模态数据构建和混合奖励强化学习，让视频描述真正刻画画面、语音、音乐与音效之间的协同演化。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-16/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#avscap-orchestrating-audio-visual-synergy-for-omni-modal-video-captioning">AVSCap: Orchestrating Audio-Visual Synergy for Omni-modal Video Captioning</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#hy-embodied-vlm-10-efficient-physical-world-agents">Hy-Embodied-VLM-1.0: Efficient Physical-World Agents</a></li>
+        <li><a href="#read-it-back-pretrained-mllms-are-zero-shot-reward-models-for-text-to-image-generation">Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation</a></li>
+        <li><a href="#function-aware-fill-in-the-middle-as-mid-training-for-coding-agent-foundation-models">Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models</a></li>
+        <li><a href="#magic-transition-aware-generation-of-navigable-multi-scene-game-worlds-with-large-language-models">MAGIC: Transition-Aware Generation of Navigable Multi-Scene Game Worlds with Large Language Models</a></li>
+        <li><a href="#controllable-generation-of-diverse-dermatological-imagery-for-fair-and-efficient-malignancy-classification">Controllable Generation of Diverse Dermatological Imagery for Fair and Efficient Malignancy Classification</a></li>
+        <li><a href="#ring-zero-scaling-zero-rl-to-a-trillion-parameters-for-emergent-reasoning">Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning</a></li>
+        <li><a href="#da-nav-direction-aware-city-scale-vision-language-navigation">DA-Nav: Direction-Aware City-Scale Vision-Language Navigation</a></li>
+        <li><a href="#extoken-structured-exploration-for-efficient-vision-language-action-reinforcement-fine-tuning">ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#self-in-space-benchmarking-self-awareness-and-spatial-cognition-in-uav-embodied-intelligence">Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence</a></li>
+        <li><a href="#evidence-grounded-ai-for-musculoskeletal-care">Evidence-Grounded AI for Musculoskeletal Care</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#synthdocbench-controlled-benchmark-for-long-context-visual-document-understanding">SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-16/">AI Paper Daily | 2026-07-16</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-16T00:00:00Z'>Jul 16, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#avscap-orchestrating-audio-visual-synergy-for-omni-modal-video-captioning">AVSCap: Orchestrating Audio-Visual Synergy for Omni-modal Video Captioning</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#hy-embodied-vlm-10-efficient-physical-world-agents">Hy-Embodied-VLM-1.0: Efficient Physical-World Agents</a></li>
+        <li><a href="#read-it-back-pretrained-mllms-are-zero-shot-reward-models-for-text-to-image-generation">Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation</a></li>
+        <li><a href="#function-aware-fill-in-the-middle-as-mid-training-for-coding-agent-foundation-models">Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models</a></li>
+        <li><a href="#magic-transition-aware-generation-of-navigable-multi-scene-game-worlds-with-large-language-models">MAGIC: Transition-Aware Generation of Navigable Multi-Scene Game Worlds with Large Language Models</a></li>
+        <li><a href="#controllable-generation-of-diverse-dermatological-imagery-for-fair-and-efficient-malignancy-classification">Controllable Generation of Diverse Dermatological Imagery for Fair and Efficient Malignancy Classification</a></li>
+        <li><a href="#ring-zero-scaling-zero-rl-to-a-trillion-parameters-for-emergent-reasoning">Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning</a></li>
+        <li><a href="#da-nav-direction-aware-city-scale-vision-language-navigation">DA-Nav: Direction-Aware City-Scale Vision-Language Navigation</a></li>
+        <li><a href="#extoken-structured-exploration-for-efficient-vision-language-action-reinforcement-fine-tuning">ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#self-in-space-benchmarking-self-awareness-and-spatial-cognition-in-uav-embodied-intelligence">Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence</a></li>
+        <li><a href="#evidence-grounded-ai-for-musculoskeletal-care">Evidence-Grounded AI for Musculoskeletal Care</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a>
+      <ol>
+        <li><a href="#synthdocbench-controlled-benchmark-for-long-context-visual-document-understanding">SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 12 篇论文 | Audio LLM: 1 篇 | LLM Training: 8 篇 | AI Agents: 2 篇 | 其他值得关注: 1 篇</p>
+<p>来源: HuggingFace Papers（12） | 去重跳过近 7 天已报道论文（18）</p>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><ol>
+<li><a class="link" href="#avscap-orchestrating-audio-visual-synergy-for-omni-modal-video-captioning" >AVSCap</a>：把非语音声学事件和视觉动作显式绑定，且显示强化学习比单纯扩充 SFT 数据更有效，最贴合 Audio LLM 方向。</li>
+<li><a class="link" href="#read-it-back-pretrained-mllms-are-zero-shot-reward-models-for-text-to-image-generation" >Read It Back / SpectraReward</a>：用提示词条件似然把预训练 MLLM 直接变成零样本奖励模型，避免偏好标注和奖励模型微调。</li>
+<li><a class="link" href="#hy-embodied-vlm-10-efficient-physical-world-agents" >Hy-Embodied-VLM-1.0</a>：只激活 3B 参数，却接近上一代激活 32B 参数的具身模型，兼顾推理能力和部署延迟。</li>
+<li><a class="link" href="#self-in-space-benchmarking-self-awareness-and-spatial-cognition-in-uav-embodied-intelligence" >Self in Space</a>：将无人机的空间认知与“自我”状态放进统一评测框架，暴露现有 MLLM 的主体运动建模短板。</li>
+<li><a class="link" href="#synthdocbench-controlled-benchmark-for-long-context-visual-document-understanding" >SynthDocBench</a>：通过可控合成变量定位长文档 VLM 的长度、位置和图表理解退化，适合做模型诊断而非只看总分。</li>
+</ol>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><h3 id="avscap-orchestrating-audio-visual-synergy-for-omni-modal-video-captioning"><a class="link" href="https://arxiv.org/abs/2607.12820"  target="_blank" rel="noopener"
+    >AVSCap: Orchestrating Audio-Visual Synergy for Omni-modal Video Captioning</a>
+</h3>
+    <blockquote>
+        <p>通过显式跨模态事件绑定、三模态数据构建和混合奖励强化学习，让视频描述真正刻画画面、语音、音乐与音效之间的协同演化。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yanghai Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12820"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12820.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 构建 AVSCap-130K、AVSCap-7B 与 AVSCapBench，形成从训练数据、两阶段训练到细粒度事件召回评测的完整闭环。对 Audio LLM 工程尤其有价值的是，其缩放实验表明优化混合奖励的强化学习收益高于继续堆叠 SFT 数据，可直接指导音视频描述模型的数据与算力分配。</li>
+<li><strong>相关技术</strong>: cross-modal event binding, audio-visual captioning, hybrid-reward reinforcement learning, non-speech audio coverage, fine-grained event recall</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>全模态视频描述并不只是把视觉描述与音频转写拼接起来：有用的描述必须说明视觉动作、语音、音乐和音效如何共同演变。现有大型多模态模型往往无法完成这种关系建模，它们把音频流与视觉流当作松散耦合的观察结果，依赖自动语音识别，并且对非语音声音及其与视觉事件的联系描述不足。我们提出 AVSCap，这是一个以显式跨模态事件绑定为核心的音视频描述框架。首先，我们构建 AVSCap-130K，一个由“先解耦、后融合”流程生成的三模态训练语料库；该流程先锚定视觉与声学证据，再合成有依据的全模态描述。其次，我们训练了 AVSCap-7B，一个采用两阶段策略的 70 亿参数描述模型：监督微调（Supervised Fine-Tuning, SFT）建立基础能力，样本高效的强化学习则使用混合奖励优化声学信息完整性与音视频协同性。我们的缩放分析表明，与增加 SFT 数据相比，强化学习带来的增益更大。第三，我们提出 AVSCapBench，该基准把描述拆解为视觉事件、音频事件和协同事件，并用细粒度事件召回率进行评估。在 AVSCapBench 和外部基准上的实验显示，AVSCap-7B 提高了非语音音频的覆盖率与跨模态绑定能力，并在所有参与评估的开源模型中取得最佳综合性能。</p>
+</details>
+<hr>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="hy-embodied-vlm-10-efficient-physical-world-agents"><a class="link" href="https://arxiv.org/abs/2607.12894"  target="_blank" rel="noopener"
+    >Hy-Embodied-VLM-1.0: Efficient Physical-World Agents</a>
+</h3>
+    <blockquote>
+        <p>以动作中心能力分类体系组织预训练和后训练数据，并用高效 MoE 在仅激活 3B 参数时实现接近上一代 32B 激活模型的具身性能。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Ziyi Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（5 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12894"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12894.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 论文把具身能力拆成动作相关状态理解、动作转移推理、序列与自适应推理三个递进层级，并据此贯通数据混合与训练阶段。Hy3-A3B、Hy-ViT2 和 MoE 的组合展示了面向实时物理智能体的实用路线：用稀疏激活降低延迟，同时保留长时程、多轮交互能力。</li>
+<li><strong>相关技术</strong>: action-centric capability taxonomy, Hy3-A3B, Hy-ViT2, sparse Mixture-of-Experts, long-horizon embodied reasoning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>构建有能力的具身智能体，不仅需要多模态感知与理解，还需要围绕动作进行推理、适应不断变化的情境以及与物理世界交互的智能体能力。在本报告中，我们提出 Hy-Embodied-VLM-1.0，这是一个专为在物理世界中运行的具身智能体设计的高效且强大的具身基础模型。为了从预训练阶段开始培养这些能力，我们定义了一套以动作为中心的能力分类体系，其中包含三个递进维度：动作相关状态理解、动作转移推理，以及序列与自适应推理。在该分类体系指导下，我们开发了系统化的数据流水线，并整理出覆盖预训练和后训练的数据混合。为了在支持延迟敏感型部署的同时提供强大的物理世界理解与交互能力，我们以 Hy3-A3B 语言骨干和 Hy-ViT2 视觉编码器构建模型。其高效的混合专家（Mixture-of-Experts, MoE）架构兼具较强的模型容量与较高的推理效率。我们在一套包含 38 个基准的综合评测中测试 Hy-Embodied-VLM-1.0，这些基准覆盖具身感知、物理世界理解和具身推理。模型在其中 19 个基准上取得同等规模模型中的最佳性能，并显著超过 Qwen3.6-A3B、Cosmos 3 等强劲竞争模型。与上一代 Hy-Embodied-0.5 MoT-2B 相比，Hy-Embodied-VLM-1.0 的平均性能提高 8.4%。尽管只激活 30 亿参数，它的性能已接近上一代激活 320 亿参数的模型。除静态基准评估外，Hy-Embodied-VLM-1.0 在需要多轮交互和长时程推理的具身智能体任务上也表现出色。</p>
+</details>
+<hr>
+<h3 id="read-it-back-pretrained-mllms-are-zero-shot-reward-models-for-text-to-image-generation"><a class="link" href="https://arxiv.org/abs/2607.11886"  target="_blank" rel="noopener"
+    >Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation</a>
+</h3>
+    <blockquote>
+        <p>SpectraReward 以“能否从生成图像中读回原提示词”的条件似然作为奖励，无需偏好数据或奖励模型微调即可训练文生图策略。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Runhui Huang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（42 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11886"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11886.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://huangrh99.github.io/SpectraReward/"  target="_blank" rel="noopener"
+    >项目页</a></li>
+<li><strong>关键贡献</strong>: 单次图像条件、教师强制前向即可计算平均提示词对数似然，省去了问题分解、偏好标注和奖励模型训练。Self-SpectraReward 进一步让统一多模态模型的理解分支评价其生成分支，实验提示“奖励—策略对齐”可能比单纯扩大奖励模型更关键。</li>
+<li><strong>相关技术</strong>: image-conditioned prompt likelihood, teacher-forced reward, zero-shot reward modeling, Self-SpectraReward, image-generation reinforcement learning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>本文提出 SpectraReward，一种无需训练的奖励函数，可将预训练多模态大语言模型（Multimodal Large Language Model, MLLM）直接转化为图像生成强化学习可用的现成奖励模型。SpectraReward 不要求 MLLM 判断生成图像的好坏，也不要求它回答拆分后的验证问题，而是通过一次以图像为条件、采用教师强制的前向传播，衡量从生成图像中恢复原始提示词的程度。我们将图像条件下提示词的平均对数似然作为奖励，无需偏好标签或奖励模型微调，直接复用 MLLM 在预训练中获得的图文对齐能力。我们还提出 Self-SpectraReward，这是面向统一多模态模型的一个特殊形式：策略自身的理解分支充当生成分支的奖励模型，从而在不依赖外部奖励模型或外部知识的情况下形成闭环自我改进框架。我们通过一项广泛的图像生成强化学习研究验证 SpectraReward，实验覆盖两个扩散模型、三种强化学习算法、来自四个 MLLM 家族且参数规模从 40 亿到 2350 亿的九种奖励 MLLM 骨干，以及五个分布外文生图基准。结果显示，SpectraReward 和 Self-SpectraReward 都能显著且稳定地改善生成性能，并超过此前从 MLLM 派生奖励的训练方法。进一步分析发现，更大的奖励 MLLM 并不总是更好；Self-SpectraReward 能够达到或超过规模大得多的外部奖励模型，这说明奖励模型与策略之间的对齐是图像生成强化学习有效性的关键因素。</p>
+</details>
+<hr>
+<h3 id="function-aware-fill-in-the-middle-as-mid-training-for-coding-agent-foundation-models"><a class="link" href="https://arxiv.org/abs/2607.12463"  target="_blank" rel="noopener"
+    >Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models</a>
+</h3>
+    <blockquote>
+        <p>将编码智能体的“动作—观察—继续推理”映射为函数调用结构，用函数感知 FIM 中期训练强化模型吸收工具返回值的能力。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yubo Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（12 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12463"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12463.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 方法利用程序依赖图和“复杂度—可推断性”双重标准选择被遮蔽函数，把互联网规模代码中的函数调用结构转成智能体工具使用的自监督信号。它在多种基础模型和后训练流水线上稳定提高 SWE-Bench，同时缓解智能体后训练造成的通用编码与工具使用能力侵蚀。</li>
+<li><strong>相关技术</strong>: function-aware fill-in-the-middle, program dependency graph, agentic mid-training, tool-return integration, SWE-Bench</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>编码智能体必须把外部工具的返回结果整合进正在进行的推理，而标准的从左到右代码预训练只会让模型接触这一能力的正向形式。我们观察到，编码智能体的“动作—观察—继续”循环在结构上与函数调用点同构：调用方绑定参数，被调用方返回在其他位置计算出的值，后续代码再消费该值。这种条件结构在互联网规模的普通代码中广泛存在。我们通过函数感知的中间填充（Fill-in-the-Middle, FIM）中期训练利用这一结构：该自监督目标使用程序依赖图分析，并依据“复杂度—可推断性”双重标准选择要遮蔽的函数。我们在一个去污染语料库上对 Qwen2.5-Coder-Instruct（7B/14B）和 Qwen3-8B 进行中期训练；该语料来自 968 个 GitHub 仓库，共 26 亿 token，之后再应用现有智能体后训练流水线。中期训练使 7B、14B 和 Qwen3-8B 在 SWE-Bench-Verified 上分别提高 2.8、3.0 和 3.2 个百分点，在 SWE-Bench-Lite 上分别提高 3.7、4.0 和 5.4 个百分点。这种提升在两套后训练流水线（R2E-Gym、SWE-Smith）以及不同于 Qwen2.5 的基础模型（结合 SWE-Lego 的 Qwen3-8B）上均成立。除域内增益外，中期训练还缓解了智能体后训练通常对非智能体编码能力（如 LiveCodeBench）和非编码工具使用基准（tau-bench、BFCL）造成的能力侵蚀：尽管中期训练语料只包含 Python 代码，函数调用的归纳偏置在后训练后依然保留，并带来稳定增益。</p>
+</details>
+<hr>
+<h3 id="magic-transition-aware-generation-of-navigable-multi-scene-game-worlds-with-large-language-models"><a class="link" href="https://arxiv.org/abs/2607.11594"  target="_blank" rel="noopener"
+    >MAGIC: Transition-Aware Generation of Navigable Multi-Scene Game Worlds with Large Language Models</a>
+</h3>
+    <blockquote>
+        <p>从一条自然语言提示直接生成可运行的多场景游戏项目，并用可达性校验与实际执行代理保证场景门户真的可穿越。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Tsz Hei Fan et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11594"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11594.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://github.com/sereneee1201/MAGIC/"  target="_blank" rel="noopener"
+    >代码</a></li>
+<li><strong>关键贡献</strong>: 四阶段流水线用共享的过渡感知中间表示维持跨场景一致性，并以 flood-fill 校验门户可达性。配套的执行型评估代理会真正运行每个过渡，比只测单场景视觉保真度更接近游戏生成系统的工程验收条件。</li>
+<li><strong>相关技术</strong>: transition-aware intermediate representation, multi-scene game generation, flood-fill reachability, executable project synthesis, evaluation agent</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>多场景导航——在一个有边界的空间中完成目标，再穿过入口进入下一个空间——是当代 3D 游戏的标志性特征，但创作过程十分费力：每个入口在两侧都必须拥有一致的端点，每个室内场景布置完成后仍须保持可导航，并且由此产生的连接关系还要在许多文件间保持一致。近期基于大型语言模型（Large Language Model, LLM）和多模态大型语言模型（Multimodal Large Language Model, MLLM）的场景生成器大幅降低了单个室内场景的合成成本，但它们一次只生成一个场景，简单重复使用无法得到相互连通的多场景世界。我们指出单场景方法尚未解决的三项障碍：跨场景一致性、场景内可导航性，以及判断过渡是否真正有效的评估方法。我们提出 MAGIC，一个同时解决三项问题的“提示词到项目”系统。MAGIC 是一条四阶段流水线，可把单条自然语言提示转换为可运行的多场景游戏项目：它先规划共享的过渡感知中间表示，再在使用洪泛填充验证器确保入口可达的同时规定各个场景，随后生成场景及其过渡脚本，最后将它们组合成统一项目。由于现有单场景保真度指标从不实际执行过渡，我们还引入一个聚焦过渡的评估智能体，在运行时逐一执行各个过渡。在一个包含 100 个多场景案例的新基准上，MAGIC 为每个案例都生成了可执行项目，并在端到端过渡识别上达到 0.99 的精确率、0.95 的召回率和 0.96 的 F1；从各阶段来看，与 LLM 基线和 Holodeck 相比，它恢复了更多真实入口并生成了明显更可导航的布局。我们的代码已公开。</p>
+</details>
+<hr>
+<h3 id="controllable-generation-of-diverse-dermatological-imagery-for-fair-and-efficient-malignancy-classification"><a class="link" href="https://arxiv.org/abs/2607.12987"  target="_blank" rel="noopener"
+    >Controllable Generation of Diverse Dermatological Imagery for Fair and Efficient Malignancy Classification</a>
+</h3>
+    <blockquote>
+        <p>cgDDI 用混合式可控生成扩展稀缺肤色与罕见病变样本，在只用合成数据训练时仍取得 86.4% 的恶性分类准确率。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Héctor Carrión, Narges Norouzi</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12987"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12987.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://github.com/hectorcarrion/ControllableGenDDI"  target="_blank" rel="noopener"
+    >代码与模型</a></li>
+<li><strong>关键贡献</strong>: 框架覆盖健康皮肤生成、罕见病变跨肤色/位置非参数迁移以及少至 10 个训练样本的参数化生成，并兼容人工或自动分割掩码。它把 656 张图像扩展 400 倍以上，还公开 26.6 万余张合成图像，给医学影像公平性研究提供了可复用数据资产。</li>
+<li><strong>相关技术</strong>: controllable dermatology synthesis, lesion transfer, few-shot parametric generation, skin-tone fairness, synthetic-only malignancy classification</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>准确的皮肤病诊断天然要求模型在不同人群中都具有公平表现，但系统性缺乏专家标注图像——尤其是代表性不足的肤色和罕见疾病图像——阻碍了可量化公平方法的发展。我们提出 cgDDI（Controllable Generation of Diverse Dermatological Imagery，可控多样化皮肤病学图像生成），这是一种混合框架，能够：（1）合成逼真的健康皮肤样本，同时不改变输入的其他属性；（2）以非参数方式把单样本罕见病变映射到新的肤色和位置；（3）仅用少至 10 个训练样本实现高效参数化生成。该框架同时支持人工和自动分割掩码，因此可扩展到没有预制病变掩码的数据集。我们把一个 656 张图像的数据集扩充了 400 倍以上，并在两个数据集上进行验证：经活检确认的 Diverse Dermatology Images（DDI）和经专家核验的 Fitzpatrick17k（F17k）。在 DDI 基准上，仅使用合成数据训练时，我们取得 86.4% 的恶性分类准确率；使用真实数据微调后达到 90.9% 的最新最佳性能，同时在公平性指标上也处于领先地位。跨数据集实验显示，即使疾病类型重合极少，模型在未见过的 F17k 数据上仍获得 13.9% 的准确率提升。我们公开发布超过 26.6 万张合成图像、代码和生成模型，以进一步支持公平性研究。</p>
+</details>
+<hr>
+<h3 id="ring-zero-scaling-zero-rl-to-a-trillion-parameters-for-emergent-reasoning"><a class="link" href="https://arxiv.org/abs/2607.12395"  target="_blank" rel="noopener"
+    >Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning</a>
+</h3>
+    <blockquote>
+        <p>将无需人工标注、采用可验证奖励的 Zero RL 扩展到万亿参数，并系统观察大规模推理行为的发现期、锐化期及自发涌现特征。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xinyu Tang et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12395"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12395.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 训练流水线结合截断重要性采样、训推比例校正和混合精度控制，解决直接放大 Zero RL 时可读性差、token 冗余与推理深度僵化的问题。论文还把 CoT 质量拆成可理解性、可复现性和效率三维，为避免只看最终答案正确率提供了可操作的评估框架。</li>
+<li><strong>相关技术</strong>: zero reinforcement learning, verifiable rewards, clipped importance sampling, training-inference ratio correction, CoT quality evaluation</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>无需人工标注数据、使用可验证奖励的强化学习通常被称为 Zero RL，它已成为激发思维链推理的有力范式。然而受计算约束影响，现有研究大多局限于小模型，大规模条件下的训练动态和涌现能力仍未得到探索。为了有意义地探索这一前沿，我们希望从模型中激发高质量推理行为。但我们发现，朴素扩展模型规模经常带来可读性差、token 冗余以及无法自适应调整推理深度的问题。为此，我们提出稳定且高效的训练流水线，其中包含截断重要性采样、训练—推理比例校正和混合精度控制等算法与系统优化。实验得到三项关键发现，它们印证了规模扩展的“苦涩教训”：（1）扩展到 1 万亿参数能显著提高样本效率和性能上限；（2）训练过程依次经历最初的发现阶段和随后的锐化阶段；（3）模型会自发形成高级认知行为，包括拟人化、结构化格式、自我验证、并行推理和上下文焦虑，使人工设计的启发式规则变得多余。Ring-2.5-1T-Zero 在七个数学基准上取得有竞争力的性能。此外，为了在最终答案正确性之外评估思维链（Chain-of-Thought, CoT）质量，我们提出一个涵盖可理解性、可复现性和效率三个维度的结构化评估框架；模型在生成结构清晰且简洁的推理轨迹方面展现出明显优势。通过分享观察到的涌现现象，我们希望让社区更深入地理解规模扩展行为，尤其是万亿参数规模下的行为。</p>
+</details>
+<hr>
+<h3 id="da-nav-direction-aware-city-scale-vision-language-navigation"><a class="link" href="https://arxiv.org/abs/2607.11638"  target="_blank" rel="noopener"
+    >DA-Nav: Direction-Aware City-Scale Vision-Language Navigation</a>
+</h3>
+    <blockquote>
+        <p>将商业导航工具的方向指令落到第一视角图像的离散网格上，并用 CoT 做偏航判断、动作预测和目标网格选择以恢复长程轨迹。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Ye Yuan et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.11638"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.11638.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: DA-Nav 避开稠密地图和昂贵导航监督，把城市导航重构为空间定位问题；ReDA 数据集专门提供方向指令与恢复轨迹。在 CARLA 未见城市中达到 56.16% 成功率，并能零微调迁移到四足和人形机器人，显示接口设计具有跨本体潜力。</li>
+<li><strong>相关技术</strong>: direction-aware navigation, egocentric grid grounding, trajectory recovery, Chain-of-Thought recovery, ReDA dataset</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>当前城市尺度户外导航严重依赖稠密地图或成本高昂的导航监督，因此受到限制。本文提出一种新范式，利用商业导航工具（如 Google Maps）提供的方向指令。为弥合商业指令与可执行导航动作之间的差距，并通过稳健的轨迹恢复缓解长时程误差累积，我们提出 DA-Nav，一种方向感知视觉语言导航框架。该框架将导航重新表述为第一视角二维图像平面上的离散空间定位问题。为实现轨迹恢复，DA-Nav 使用包含偏离评估、动作预测和目标网格选择的思维链（Chain-of-Thought, CoT）推理过程。我们还提出 ReDA 数据集，其中包含方向感知指令和恢复轨迹，可增强空间定位并支持 CoT 恢复推理。在 CARLA 中进行的大量实验表明，DA-Nav 在未见过的城市环境中取得 56.16% 的高成功率，超过现有最新最佳方法，同时保持强得多的恢复能力。此外，无需微调，DA-Nav 就能顺利适配四足机器人和人形机器人，并在复杂真实世界环境中实现稳定的公里级闭环户外导航。</p>
+</details>
+<hr>
+<h3 id="extoken-structured-exploration-for-efficient-vision-language-action-reinforcement-fine-tuning"><a class="link" href="https://arxiv.org/abs/2607.12931"  target="_blank" rel="noopener"
+    >ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</a>
+</h3>
+    <blockquote>
+        <p>用来自离线示范的离散行为 token 条件化 VLA 策略，以轨迹多样性驱动结构化探索，降低机器人强化微调的环境交互成本。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yilun Kong et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12931"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12931.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 论文指出在 VLA-RL 中，轨迹多样性比 rollout 总数量更决定样本效率。ExToken 在采样时切换行为先验，并在部署时通过状态条件 token 选择器恢复确定性决策，为有限真机预算下的探索提供了轻量通用接口。</li>
+<li><strong>相关技术</strong>: RL Exploration Token, VLA reinforcement fine-tuning, offline behavioral priors, trajectory diversity, state-conditioned token selection</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>强化学习（Reinforcement Learning, RL）在提升视觉—语言—动作（Vision-Language-Action, VLA）模型处理复杂操作任务的能力方面展现出巨大潜力。然而，环境交互的高昂成本严重限制了它在实践中的可扩展性。本文首先研究现有 VLA-RL 框架中的探索停滞瓶颈，并揭示轨迹多样性对样本效率的根本重要性高于所收集 rollout 的绝对数量。基于这些发现，我们提出强化学习探索 token（RL Exploration Token, ExToken），这是一个简单而通用的框架，它以从离线示范中提取的离散行为先验为条件来控制 VLA 策略，从而开展结构化探索。在收集 rollout 时使用不同 token 对策略进行条件化，ExToken 会鼓励智能体探索多样化行为模式，显著提升状态—动作覆盖范围和探索效率。为了衔接训练时的探索和部署时的确定性推理，ExToken 还引入一个以状态为条件的 token 选择器，可针对未见场景自适应预测有效的行为模式。在模拟和真实世界机器人操作任务上的大量实验表明，ExToken 能够稳定加速收敛、提高任务性能，并在环境交互预算高度受限时表现出很强的稳健性。</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="self-in-space-benchmarking-self-awareness-and-spatial-cognition-in-uav-embodied-intelligence"><a class="link" href="https://arxiv.org/abs/2607.12477"  target="_blank" rel="noopener"
+    >Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence</a>
+</h3>
+    <blockquote>
+        <p>SIS-Bench 用“空间—自我”双维度和“感知—记忆—推理”三级层次评测无人机具身智能，并验证主体运动信息能改善自我觉察。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zhishan Zou et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（2 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12477"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12477.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 4,856 个问答对覆盖 1,646 段真实无人机视频和 13 类任务，首次把智能体自身状态从隐含因素提升为显式评测轴。光流与视觉特征融合带来的普遍增益说明，具身模型若只建模环境而忽略主体运动，会在记忆和下游决策上留下系统性缺口。</li>
+<li><strong>相关技术</strong>: SIS-Bench, UAV self-awareness, embodied spatial cognition, optical flow fusion, agent-centered motion modeling</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>自主无人机系统越来越依赖多模态大型语言模型（Multimodal Large Language Model, MLLM）在复杂真实环境中运行。这类具身场景不仅要求理解周围空间，还要求维持对智能体自身的一致表征。然而，现有面向无人机的方法和基准仍主要以环境为中心，重点关注空间理解任务，智能体的自我觉察则一直是隐含的。为弥补这一缺口，我们提出 SIS-Bench，一个在统一“空间中的自我”表述下评估无人机场景具身空间智能的基准。SIS-Bench 沿空间和自我两个互补维度，以及感知、记忆和推理三个层级组织评测。它通过任务条件化构建流水线并经专家核验，从 1,646 段真实无人机视频中得到覆盖 13 项任务的 4,856 个问答对。大量评估显示，当前 MLLM 在动态过程和以智能体为中心的过程建模上存在根本性局限。特别是，我们观察到空间认知与自我觉察之间存在明显失衡，而且性能会随着认知层级提高而逐步下降。受这些发现启发，我们进一步探索了一种运动感知表征，通过光流和视觉特征融合纳入与自我相关的动态信息。实验结果表明，对智能体运动进行建模能够稳定改善感知和记忆性能；这种提升不仅出现在空间认知上，也出现在自我觉察上，并且可以泛化到下游无人机决策任务。我们的结果强调了自我觉察对推进具身空间智能的重要性，并为运动感知的“空间中的自我”建模提供了新基准和实证依据。</p>
+</details>
+<hr>
+<h3 id="evidence-grounded-ai-for-musculoskeletal-care"><a class="link" href="https://arxiv.org/abs/2607.12527"  target="_blank" rel="noopener"
+    >Evidence-Grounded AI for Musculoskeletal Care</a>
+</h3>
+    <blockquote>
+        <p>OrthoPilot 把医院实时数据与权威医学知识连接起来，将临床 AI 从单点预测推进到覆盖诊断、治疗和康复的纵向管理。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Wenjie Li et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（13 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12527"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12527.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 系统自动检索影像、检验、病理与医嘱，以持续变化的患者状态驱动循证决策，并在专家对照、60 家外部中心、前瞻性病例与随机部署中多层验证。结果很强，但其临床部署结论仍需结合数据治理、责任边界与独立复现谨慎解读。</li>
+<li><strong>相关技术</strong>: longitudinal clinical management, evidence-grounded LLM, real-time hospital data retrieval, specialist-validated benchmark, randomized inpatient deployment</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>肌肉骨骼疾病是全球主要致残原因之一，也造成了全球最大的康复需求。由于恢复、重塑和退行性变化往往持续数月乃至数年，肌肉骨骼护理需要纵向管理，反复整合不断变化的患者证据、外部医学知识和特定阶段的功能目标。在常规实践中，这些证据分散在不同就诊、科室和医院系统之间，限制了个体化循证护理。本文报告 OrthoPilot，这是一个由大型语言模型驱动的临床人工智能系统，它整合医院数据流与权威外部知识，以支持持续的肌肉骨骼管理。OrthoPilot 可自主检索实时影像、实验室检查、病理和医嘱数据，并把不断变化的患者状态转化为从入院诊断到康复规划的循证决策。我们基于覆盖 1,000 个疾病编码的真实世界电子健康记录，建立了经专科医生验证的基准。在覆盖完整护理路径的读者研究中，OrthoPilot 与 81 名骨科医生进行比较，在诊断推理、临床决策和管理规划方面超过拥有 25 年经验的专家。它还在 60 家外部临床中心超过所有参与评估的智能系统。在一项包含 1,870 个复杂病例的前瞻性研究中，OrthoPilot 使全链条管理成功率提高 10.6%。在一项为期 8 个月、涉及 8,240 名住院患者的随机部署中，它使每张病床的累计收治病例数提高 9.7%，并改善了患者自报的健康信息可获得性。这些结果推动临床 AI 从预测孤立事件迈向执行覆盖完整肌肉骨骼护理路径的纵向管理。</p>
+</details>
+<hr>
+<h2 id="-其他值得关注">📌 其他值得关注
+</h2><h3 id="synthdocbench-controlled-benchmark-for-long-context-visual-document-understanding"><a class="link" href="https://arxiv.org/abs/2607.10400"  target="_blank" rel="noopener"
+    >SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding</a>
+</h3>
+    <blockquote>
+        <p>通过独立控制文档长度、布局、模态组成和问题类型，SynthDocBench 能把长文档 VLM 的失败归因到具体因素，而不只是给出一个混合总分。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Abhigya Verma et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（52 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.10400"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.10400.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 全合成组合设计使各因素可独立变化，并用 40% 随机覆盖防止模型利用伪相关。对七个前沿 VLM 的评测暴露出长度急剧退化、文档中段最难和长文档图表理解崩溃三种现有基准难以发现的失效模式。</li>
+<li><strong>相关技术</strong>: controlled synthetic benchmark, long-context visual documents, combinatorial factor design, positional sensitivity, chart comprehension</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视觉语言模型（Vision-Language Model, VLM）已经在 DocVQA、ChartQA 和 MMLongBench-Doc 等视觉文档理解基准上取得很强的性能。然而，真实世界文档同时包含长度、布局复杂度、模态和问题难度等多种因素，因此很难把模型失败归因于某个具体原因。我们提出 SynthDocBench，这是一个面向长上下文视觉文档理解的全合成基准，可系统控制文档长度、布局结构、模态组成和问题类型等因素。该基准采用组合式设计构建，每个因素都可在生成文档中独立变化，从而支持对模型行为的可控分析。文档通过大型语言模型流水线端到端生成，覆盖六种布局原型，并加入 40% 的随机覆盖，防止模型利用伪相关。此外，SynthDocBench 所覆盖的长上下文文档在长度和结构多样性上都显著超过现有基准。通过评估七个前沿 VLM，我们发现了现有基准无法揭示的三种失效模式：性能会随文档长度急剧下降；模型存在系统性位置敏感，其中六个模型中的五个在处理文档中间三分之一时最困难，而且六个模型中的五个表现出从前到后的负向趋势，最陡降幅达到 8.3 个百分点；在长文档环境中，图表理解能力会崩溃。这些结果说明，当前模型可能是在过拟合基准伪影，而非真正获得稳健的长上下文视觉文档理解能力。</p>
+</details>
+<hr>
+<p><em>Generated on 2026-07-16 08:00 CST | Sources: HuggingFace Papers, arXiv links</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-15/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-15</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-14/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-14</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-13/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-13</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-12/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-12</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-11/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-11</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
