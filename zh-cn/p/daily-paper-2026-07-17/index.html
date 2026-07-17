@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 11 篇论文 | Audio LLM: 0 篇 | LLM Training: 6 篇 | AI Agents: 5 篇 | 其他值得关注: 0 篇\n来源: HuggingFace Papers（11） | 去重跳过近 7 天已报道论文（19）\n今日 Audio LLM 候选均已在近 7 天日报中报道，因此不重复收录。arXiv 补充抓取遇到超时与 HTTP 429，本期论文信息均来自 HuggingFace Papers，且摘要完整。\n">
+<title>AI Paper Daily | 2026-07-17</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-17/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-17">
+<meta property='og:description' content="今日概览 共收录 11 篇论文 | Audio LLM: 0 篇 | LLM Training: 6 篇 | AI Agents: 5 篇 | 其他值得关注: 0 篇\n来源: HuggingFace Papers（11） | 去重跳过近 7 天已报道论文（19）\n今日 Audio LLM 候选均已在近 7 天日报中报道，因此不重复收录。arXiv 补充抓取遇到超时与 HTTP 429，本期论文信息均来自 HuggingFace Papers，且摘要完整。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-17/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-17T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-17">
+<meta name="twitter:description" content="今日概览 共收录 11 篇论文 | Audio LLM: 0 篇 | LLM Training: 6 篇 | AI Agents: 5 篇 | 其他值得关注: 0 篇\n来源: HuggingFace Papers（11） | 去重跳过近 7 天已报道论文（19）\n今日 Audio LLM 候选均已在近 7 天日报中报道，因此不重复收录。arXiv 补充抓取遇到超时与 HTTP 429，本期论文信息均来自 HuggingFace Papers，且摘要完整。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-17/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a></li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#boogu-image-01-boosting-open-source-unified-multimodal-understanding-and-generation">Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation</a></li>
+        <li><a href="#gigaworld-policy-05-a-faster-and-stronger-wam-empowered-by-autoresearch">GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch</a></li>
+        <li><a href="#ovisocr2-technical-report">OvisOCR2 Technical Report</a></li>
+        <li><a href="#exploratory-communicative-and-deployable-vision-driven-embodied-agents-for-open-world-mobile-manipulation">Exploratory, Communicative, and Deployable: Vision-Driven Embodied Agents for Open-World Mobile Manipulation</a></li>
+        <li><a href="#tracing-agentic-failure-from-the-flow-of-success">Tracing Agentic Failure from the Flow of Success</a></li>
+        <li><a href="#discrete-diffusion-models-a-unified-framework-from-tokenization-to-generation">Discrete Diffusion Models: A Unified Framework from Tokenization to Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#towards-spatial-supersensing-in-the-wild">Towards Spatial Supersensing in the Wild</a></li>
+        <li><a href="#knowact-guiclaw-know-deeply-act-perfectly-personal-gui-assistant-with-self-evolving-memory-and-skill">KnowAct-GUIClaw: Know Deeply, Act Perfectly, Personal GUI Assistant with Self-Evolving Memory and Skill</a></li>
+        <li><a href="#agentcompass-a-unified-evaluation-infrastructure-for-agent-capabilities">AgentCompass: A Unified Evaluation Infrastructure for Agent Capabilities</a></li>
+        <li><a href="#harness-handbook-making-evolving-agent-harnesses-readablenavigable-and-editable">Harness Handbook: Making Evolving Agent Harnesses Readable,Navigable, and Editable</a></li>
+        <li><a href="#from-controlled-to-the-wild-evaluation-of-pentesting-agents-for-the-real-world">From Controlled to the Wild: Evaluation of Pentesting Agents for the Real-World</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-17/">AI Paper Daily | 2026-07-17</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-17T00:00:00Z'>Jul 17, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a></li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#boogu-image-01-boosting-open-source-unified-multimodal-understanding-and-generation">Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation</a></li>
+        <li><a href="#gigaworld-policy-05-a-faster-and-stronger-wam-empowered-by-autoresearch">GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch</a></li>
+        <li><a href="#ovisocr2-technical-report">OvisOCR2 Technical Report</a></li>
+        <li><a href="#exploratory-communicative-and-deployable-vision-driven-embodied-agents-for-open-world-mobile-manipulation">Exploratory, Communicative, and Deployable: Vision-Driven Embodied Agents for Open-World Mobile Manipulation</a></li>
+        <li><a href="#tracing-agentic-failure-from-the-flow-of-success">Tracing Agentic Failure from the Flow of Success</a></li>
+        <li><a href="#discrete-diffusion-models-a-unified-framework-from-tokenization-to-generation">Discrete Diffusion Models: A Unified Framework from Tokenization to Generation</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#towards-spatial-supersensing-in-the-wild">Towards Spatial Supersensing in the Wild</a></li>
+        <li><a href="#knowact-guiclaw-know-deeply-act-perfectly-personal-gui-assistant-with-self-evolving-memory-and-skill">KnowAct-GUIClaw: Know Deeply, Act Perfectly, Personal GUI Assistant with Self-Evolving Memory and Skill</a></li>
+        <li><a href="#agentcompass-a-unified-evaluation-infrastructure-for-agent-capabilities">AgentCompass: A Unified Evaluation Infrastructure for Agent Capabilities</a></li>
+        <li><a href="#harness-handbook-making-evolving-agent-harnesses-readablenavigable-and-editable">Harness Handbook: Making Evolving Agent Harnesses Readable,Navigable, and Editable</a></li>
+        <li><a href="#from-controlled-to-the-wild-evaluation-of-pentesting-agents-for-the-real-world">From Controlled to the Wild: Evaluation of Pentesting Agents for the Real-World</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 11 篇论文 | Audio LLM: 0 篇 | LLM Training: 6 篇 | AI Agents: 5 篇 | 其他值得关注: 0 篇</p>
+<p>来源: HuggingFace Papers（11） | 去重跳过近 7 天已报道论文（19）</p>
+
+    <blockquote>
+        <p>今日 Audio LLM 候选均已在近 7 天日报中报道，因此不重复收录。arXiv 补充抓取遇到超时与 HTTP 429，本期论文信息均来自 HuggingFace Papers，且摘要完整。</p>
+
+    </blockquote>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><ol>
+<li><a class="link" href="#boogu-image-01-boosting-open-source-unified-multimodal-understanding-and-generation" >Boogu-Image-0.1</a>：以 2.0862 亿张去重图像和约 40 万美元理论训练成本逼近闭源图像系统，并完整开放权重、代码与训练配方。</li>
+<li><a class="link" href="#harness-handbook-making-evolving-agent-harnesses-readablenavigable-and-editable" >Harness Handbook</a>：把智能体 harness 的“行为—代码位置”映射做成自动生成的手册，直接击中复杂智能体系统难以维护的工程痛点。</li>
+<li><a class="link" href="#gigaworld-policy-05-a-faster-and-stronger-wam-empowered-by-autoresearch" >GigaWorld-Policy-0.5</a>：训练时学习未来视觉动态、推理时只解码动作，在 RTX 4090 上做到 85 ms 延迟。</li>
+<li><a class="link" href="#knowact-guiclaw-know-deeply-act-perfectly-personal-gui-assistant-with-self-evolving-memory-and-skill" >KnowAct-GUIClaw</a>：围绕记忆、技能自演化和跨平台 GUI 执行扩展 OpenClaw，在 MobileWorld 上报告 64.1% 的长程任务成绩。</li>
+<li><a class="link" href="#ovisocr2-technical-report" >OvisOCR2</a>：0.8B 端到端文档解析模型结合 RL、在线蒸馏和模型融合，在 OmniDocBench v1.6 上取得 96.58。</li>
+</ol>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><p>近 7 天去重后暂无新增论文。</p>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="boogu-image-01-boosting-open-source-unified-multimodal-understanding-and-generation"><a class="link" href="https://arxiv.org/abs/2607.13125"  target="_blank" rel="noopener"
+    >Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation</a>
+</h3>
+    <blockquote>
+        <p>用针对性的模型理解、数据质量与训练流水线改进，再叠加智能体式推理时扩展，在有限算力下构建兼顾生成、编辑和双语文字渲染的开源统一多模态模型族。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Guoxuan Chen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（107 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.13125"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.13125.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://github.com/Boogu-Project/Boogu-Image"  target="_blank" rel="noopener"
+    >代码</a></li>
+<li><strong>关键贡献</strong>: Boogu-Image-0.1 提供 Base、Turbo、Edit、Edit-Turbo 四种变体，在高质量文生图、快速推理、指令编辑和中英文字渲染上达到有竞争力的水平。工程价值在于它公开说明如何以 2.0862 亿张去重图像和约 40 万美元理论训练成本逼近闭源系统，并以 Apache 2.0 发布权重、代码和训练配方。</li>
+<li><strong>相关技术</strong>: unified multimodal generation, agentic inference-time scaling, instruction-based image editing, bilingual text rendering, data-quality optimization</li>
+<li><strong>代码/权重</strong>: 已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们推出 Boogu-Image-0.1，一个开源的统一多模态理解与生成模型家族，包含 Base、Turbo、Edit 和 Edit-Turbo 变体。它在高质量文生图、快速推理、基于指令的编辑以及中英双语文字渲染方面展现出有竞争力的性能。Nano-Banana-Pro 和 GPT-Image-2 等闭源多模态系统通过系统级集成而非单一模型取得了强劲表现，但其内部实践大多没有公开。本文证明，即使计算预算受到严格限制，有针对性地改进模型理解、数据质量和训练流水线，再结合智能体式推理时扩展，也能显著提升生成与编辑性能。综合评测显示，Boogu-Image-0.1 在标准基准上持续达到或超过其他开源模型，并取得接近领先闭源系统的结果。值得注意的是，这一成果只使用了 2.0862 亿张去重图像，基础模型的理论训练成本也仅约 40 万美元。我们分享了若干相信会对更广泛研究社区有价值的实践讨论，并以 Apache 2.0 许可证发布权重、代码和训练配方，以推动统一多模态理解与生成的开放生态。</p>
+</details>
+<hr>
+<h3 id="gigaworld-policy-05-a-faster-and-stronger-wam-empowered-by-autoresearch"><a class="link" href="https://arxiv.org/abs/2607.13960"  target="_blank" rel="noopener"
+    >GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch</a>
+</h3>
+    <blockquote>
+        <p>训练阶段联合学习动作与未来视觉动态，部署阶段只解码动作，并以专家分工架构把机器人策略推理延迟压到本地 RTX 4090 上的 85 ms。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: GigaWorld Team et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（21 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.13960"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.13960.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 论文用混合动作条件世界建模（AC-WM）与 WAM 预训练强化视觉动态和动作表示之间的耦合，同时以 Mixture-of-Transformers 把视觉建模与动作生成拆给不同专家。其 AutoResearch 智能体流水线还自动搜索训练配置，适合关注机器人策略训练效率和低延迟闭环部署的工程团队。</li>
+<li><strong>相关技术</strong>: World Action Models, action-conditioned world modeling, Mixture-of-Transformers, action-only decoding, agent-based AutoResearch</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>世界动作模型（World Action Models, WAM）通过联合建模动作与未来视觉观察来改进机器人策略学习，并把未来场景演化作为生成符合物理约束动作的稠密监督。然而，现有 WAM 的常见设计是在推理时显式生成未来视频，这会产生可观的计算开销，并妨碍实时闭环部署。GigaWorld-Policy 采用以动作为中心的表述来解决这一问题：训练时使用未来视觉动态，推理时则只进行动作解码。在此框架上，我们提出 GigaWorld-Policy-0.5，一个为提高机器人控制效率而设计的增强型动作中心 WAM。预训练期间，GigaWorld-Policy-0.5 采用混合的动作条件世界建模（Action-Conditioned World Modeling, AC-WM）与 WAM 训练策略。这会加强视觉动态与机器人动作之间的耦合，并提高动作表示迁移到下游策略学习的能力。为了高效推理，GigaWorld-Policy-0.5 引入 Mixture-of-Transformers（Transformer 混合）架构，将视觉动态建模与动作生成分配给专门的专家，从而减少只推理动作时的活跃计算量，并在本地 RTX 4090 环境中达到 85 毫秒推理延迟。此外，我们使用基于智能体的 AutoResearch 流水线系统搜索训练配置，以更高效地找到最优实验设置，同时减少超参数调优所需的时间和人工干预。实验与消融结果表明，GigaWorld-Policy-0.5 在提高机器人控制推理效率的同时，保留了未来视觉动态所带来的训练收益。</p>
+</details>
+<hr>
+<h3 id="ovisocr2-technical-report"><a class="link" href="https://arxiv.org/abs/2607.13639"  target="_blank" rel="noopener"
+    >OvisOCR2 Technical Report</a>
+</h3>
+    <blockquote>
+        <p>仅 0.8B 参数的端到端模型直接把文档页图像转换为自然阅读顺序的 Markdown，并在以流水线方法为主的 OmniDocBench 榜单登顶。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Shiyin Lu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（42 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.13639"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.13639.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://huggingface.co/ATH-MaaS/OvisOCR2"  target="_blank" rel="noopener"
+    >模型</a></li>
+<li><strong>关键贡献</strong>: OvisOCR2 的数据引擎把过滤后的真实文档标注与由同一 HTML 同步渲染的合成图像/Markdown 对结合，减少版面与目标不一致。训练上串联 SFT、4B 分支多奖励 RL、在线蒸馏和模型融合，使 0.8B 模型在 OmniDocBench v1.6 和 PureDocBench 分别取得 96.58 与 75.06。</li>
+<li><strong>相关技术</strong>: end-to-end document parsing, HTML-rendered synthetic pages, multi-component reward learning, on-policy distillation, model fusion</li>
+<li><strong>代码/权重</strong>: 权重已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们推出 OvisOCR2，一个 8 亿参数的文档解析模型。OvisOCR2 被设计为端到端解析器：给定一张文档页面图像，它会按照自然阅读顺序生成 Markdown 表示，覆盖文本、公式、表格和视觉区域。我们构建了一个数据引擎，将经过过滤的真实文档标注与合成页面相结合；这些合成页面的渲染图像和 Markdown 目标来自同一份 HTML 源文件。训练方案包括监督微调、在 40 亿参数分支上采用多组成奖励设计的强化学习、向 8 亿参数模型进行在线策略蒸馏，以及模型融合。在 OmniDocBench v1.6 上，OvisOCR2 取得 96.58 的最新最佳综合得分，使端到端模型登上此前由流水线方法主导的榜首，也凸显了端到端文档解析的潜力。在 PureDocBench 上，OvisOCR2 同样取得最高的 Avg3 分数 75.06。除这两个公开基准外，我们还在一个内部基准上评估 OvisOCR2，该基准旨在覆盖更广泛的长尾和高难场景。OvisOCR2 在所有对比方法中取得最佳综合性能，进一步证明了它的泛化能力与稳健性。OvisOCR2 已在 HuggingFace 开放使用。</p>
+</details>
+<hr>
+<h3 id="exploratory-communicative-and-deployable-vision-driven-embodied-agents-for-open-world-mobile-manipulation"><a class="link" href="https://arxiv.org/abs/2607.13653"  target="_blank" rel="noopener"
+    >Exploratory, Communicative, and Deployable: Vision-Driven Embodied Agents for Open-World Mobile Manipulation</a>
+</h3>
+    <blockquote>
+        <p>REAL 用无预言机感知的仿真到现实一致接口、模拟用户和分层训练，让具身智能体学会主动探索、澄清含糊意图并执行长程移动操作。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Boyu Mi et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.13653"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.13653.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://github.com/InternRobotics/REAL"  target="_blank" rel="noopener"
+    >代码</a></li>
+<li><strong>关键贡献</strong>: REAL 将主动探索、视觉干扰、关节物体操作和交互式消歧纳入 241 项任务，并用 SFT 与在线 RL 系统优化智能体。模型在交互任务上以 56.9% 成功率超过论文所测闭源 VLM，并在实体双臂移动机器人 60 次实验中达到 78.3% 端到端成功率。</li>
+<li><strong>相关技术</strong>: open-world mobile manipulation, sim-to-real environment API, interactive intent disambiguation, online reinforcement learning, hierarchical tool-use training</li>
+<li><strong>代码/权重</strong>: 代码已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>具身智能体要部署到真实世界，需要具备主动探索、视觉指代定位以及通过交互消除意图歧义的能力。然而，现有框架往往依赖只有模拟器才能提供的特权状态，或假设指令信息完整，从而绕开了现实部署中的挑战。为弥合这一差距，我们提出 REAL，一个面向开放世界移动操作的智能体框架。REAL 建立了无需预言机感知、且在仿真与现实间保持一致的环境 API，并集成模拟用户以支持人在回路交互。在这一环境中，我们设计了多样化的任务组合，以推动数据收集、监督微调和在线强化学习，并系统优化智能体性能。为了全面评估该方法，我们还提出 REAL-Bench，其中包含 241 项任务，覆盖主动探索、视觉干扰、关节物体操作和交互式消歧。实验结果显示，我们训练的智能体在交互任务上以 56.9% 的成功率超过领先的商用闭源视觉语言模型。进一步的实证分析表明，分层训练流水线在保持长时间探索下开放词表推理稳健性的同时，成功对齐了模型的工具使用能力。最后，我们将框架部署到实体双臂移动机器人上进行评估，在 60 次真实环境实验中取得 78.3% 的端到端成功率。这些实体实验展示了模型向未见家庭场景进行强健零样本迁移的能力，并验证了仿真到现实一致设计能够为长时程移动操作有效弥合现实差距。代码已经公开。</p>
+</details>
+<hr>
+<h3 id="tracing-agentic-failure-from-the-flow-of-success"><a class="link" href="https://arxiv.org/abs/2607.12747"  target="_blank" rel="noopener"
+    >Tracing Agentic Failure from the Flow of Success</a>
+</h3>
+    <blockquote>
+        <p>OAT 只用成功轨迹学习正常动态，在失败轨迹上把偏离该动态的步骤标成异常，从而无需失败样本的逐步错误标注。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Samuel Yeh et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（8 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12747"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12747.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 方法将无监督失败归因建模为基于神经控制微分方程的单类学习，训练只需 100 条成功轨迹。相比提示式基线，OAT 快 200–5000 倍，并在域内和分布外数据上分别提高 20% 与 7% F1，适合低成本定位智能体轨迹中的故障步骤。</li>
+<li><strong>相关技术</strong>: unsupervised failure attribution, one-class learning, neural controlled differential equations, trajectory anomaly scoring, agent debugging</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>对基于大型语言模型的智能体系统进行失败归因，即识别失败轨迹中哪些步骤导致任务失败，是调试和改进这类系统的关键。现有方法要么依赖计算成本很高的提示式流水线，要么需要用带有逐步错误标注的失败轨迹进行后训练，而此类标注收集昂贵且难以扩展。我们认为，实用的失败归因模型应该足够轻量，并且无需失败数据上的逐步监督即可训练。为此，我们研究无监督失败归因：训练时只使用成功轨迹，推理时则给定一条失败轨迹并识别其中的错误步骤。我们提出 OAT，将该问题表述为结合神经控制微分方程的单类学习，在潜在空间中建模成功轨迹的动态模式。推理时，失败轨迹中的每个步骤都会根据它对所学习成功动态的偏离程度获得异常分数，再由此形成错误步骤集合。实验显示，只使用 100 条成功轨迹训练时，OAT 比基于提示的基线快 200 到 5000 倍，同时在域内和分布外数据集上持续超过这些基线，F1 分数分别提高 20% 和 7%。这表明 OAT 是诊断智能体系统失败的一条有前景且高效的路径。</p>
+</details>
+<hr>
+<h3 id="discrete-diffusion-models-a-unified-framework-from-tokenization-to-generation"><a class="link" href="https://arxiv.org/abs/2607.13431"  target="_blank" rel="noopener"
+    >Discrete Diffusion Models: A Unified Framework from Tokenization to Generation</a>
+</h3>
+    <blockquote>
+        <p>从离散状态空间的构造出发，把转移矩阵、掩码/吸收态以及基于 score/ratio 的离散扩散方法放进统一设计空间。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Ye Yuan et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（7 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.13431"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.13431.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 这篇综述强调，离散扩散的能力不仅由去噪过程决定，还受 tokenization、词表拓扑和领域结构字母表塑造。统一框架系统串联训练目标、推理算法、缩放规律、系统优化和评估协议，可作为设计非自回归离散生成模型的路线图。</li>
+<li><strong>相关技术</strong>: discrete denoising diffusion, vocabulary topology, absorbing-state diffusion, score-ratio modeling, parallel token generation</li>
+<li><strong>代码/权重</strong>: 不适用（综述/框架论文）</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>离散去噪扩散模型（Discrete Denoising Diffusion Models, DDM）近来成为离散数据自回归（Autoregressive, AR）建模的一种引人关注的替代方案，能够实现并行生成和迭代式全局细化。连续扩散的状态空间是固定的，而 DDM 从根本上受到离散状态空间构造方式的影响，包括分词方案、词表拓扑以及特定领域的结构化字母表。本文提出一个统一概念框架，从底层离散状态空间的构造来理解离散扩散模型。在该框架中，包括转移矩阵、掩码/吸收态以及基于 score/ratio 的方法在内，现有形式都可以看作同一设计空间的不同实例。该框架还揭示了训练目标、推理算法、缩放行为、系统优化和评估协议之间的共同设计权衡，并据此指出若干有前景的未来研究方向。</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="towards-spatial-supersensing-in-the-wild"><a class="link" href="https://arxiv.org/abs/2607.13681"  target="_blank" rel="noopener"
+    >Towards Spatial Supersensing in the Wild</a>
+</h3>
+    <blockquote>
+        <p>VSI-Super-Wild 用最长超过 4 小时的真实视频测试智能体、物体和环境的联合时空状态追踪，揭示静态图像能力并不会自然转化为长期世界模型。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Tianjun Gu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（10 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.13681"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.13681.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 基准包含 442 段、8 类真实场景视频和 6,980 个人工核验问答对，并系统覆盖观察者、场景物体和地点/全局布局三类世界状态。实验归纳出空间坍塌、语义捷径、更新不足与实例混淆四类失败，为长视频智能体的记忆绑定与状态更新提供了明确诊断轴。</li>
+<li><strong>相关技术</strong>: spatial supersensing, long-horizon video understanding, world-state tracking, agent-object-environment binding, temporal failure taxonomy</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>人类能够高效解析从数小时到数年不等的连续感官流，并以此搭建内部世界模型，支撑空间推理和预测。为了模拟这种能力，空间超感知要求多模态模型超越语言理解，迈向真正的世界建模。然而，现有基准依赖将随机短片拼接而成的合成长视频，并且大多局限于家庭场景，未能充分探索真实世界的连续性与多样性。为填补这一空白，我们推出 VSI-Super-Wild，一个用于评估多样化自然场景中长时间跨度空间超感知的大规模基准。特别是，受人类如何组织经验的认知研究启发，我们系统考察世界状态的完整三元组：智能体（观察者）、物体（场景中的项目）和环境（地点与全局布局）。VSI-Super-Wild 总计包含 6,980 个人工核验的问答对，源自 442 段覆盖 8 类场景的真实世界视频，其中包括时长超过 4 小时的长视频。VSI-Super-Wild 上的结果揭示了一种根本脱节：尽管静态图像理解已有进步，模型在需要随时间一致追踪世界状态的任务上仍持续失败。我们刻画了性能如何随世界状态复杂度和时间跨度增加而下降，并诊断出四种失败模式：空间坍塌、语义捷径、更新不足和实例混淆。这一分类说明，模型缺乏把物体、智能体和环境绑定为统一空间世界模型的机制；这一根本缺口也指明了空间超感知下一步的发展方向。</p>
+</details>
+<hr>
+<h3 id="knowact-guiclaw-know-deeply-act-perfectly-personal-gui-assistant-with-self-evolving-memory-and-skill"><a class="link" href="https://arxiv.org/abs/2607.12625"  target="_blank" rel="noopener"
+    >KnowAct-GUIClaw: Know Deeply, Act Perfectly, Personal GUI Assistant with Self-Evolving Memory and Skill</a>
+</h3>
+    <blockquote>
+        <p>以 Know-Route-Act-Reflect 框架为 OpenClaw 补上跨平台 GUI 子智能体、可归因经验记忆和自演化技能库，让执行经验持续反哺任务分解与工具调用。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yunxin Li et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（44 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.12625"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.12625.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: KnowAct-GUIClaw 把主智能体的长程分解与可插拔 GUI 子智能体结合，并持续存储用户画像、反馈和可归因执行经验以改进路线规划。论文报告该框架横跨 Android、iOS、HarmonyOS 和 Windows；搭配开源 Kimi-2.6 时在 MobileWorld 达到 64.1%，记忆与技能迁移可再带来 8.5% 提升。</li>
+<li><strong>相关技术</strong>: Know-Route-Act-Reflect, cross-platform GUI agent, experience-attributable memory, self-evolving skill library, long-horizon task decomposition</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>OpenClaw 已成为复杂任务自动化领域领先的智能体框架，但它仍缺乏充分的跨平台 GUI 交互支持以及完善的自我演化机制。这些缺陷限制了它适配多样设备生态的能力，也使它无法通过持续学习执行经验来提升性能。为解决这些问题，我们提出面向个人助理的“深知、善行”（Know Deeply, Act Perfectly）范式。该范式认为，积累用户交互与任务运行经验能够直接提高执行准确率和效率，从而统一认知理解与操作执行。基于这一范式，我们推出 KnowAct-GUIClaw，一个新的 Know-Route-Act-Reflect（知晓—规划—行动—反思）框架，旨在弥补 OpenClaw 的 GUI 操作缺陷，突破其跨平台和递归式自我改进方面的限制。首先，主智能体利用积累的交互经验和任务相关知识，对长时程任务进行分解与分配（Know）。其次，一个可插拔 GUI 子智能体配备可追溯经验来源的记忆系统（Know）和自我演化技能库（Act），从而实现无缝跨平台迁移和快速路径集成。尤其是，该框架会持续存储用户画像和反馈，以提高任务分解与工具调用的准确率。Android、iOS、HarmonyOS 和 Windows 上的大量实验显示，KnowAct-GUIClaw 具有更好的效率、准确性与跨平台适应性。特别是，采用开源 Kimi-2.6 模型的 GUIClaw 在长时程 MobileWorld 基准上取得最佳成绩 64.1%，超过所有参评智能体框架和 Seed-2.0-Pro、GPT-5.5 等闭源智能体模型。此外，该框架支持的知识记忆和执行技能可以在不同基础模型间迁移；配合 Kimi-2.6 时可提升 8.5%。</p>
+</details>
+<hr>
+<h3 id="agentcompass-a-unified-evaluation-infrastructure-for-agent-capabilities"><a class="link" href="https://arxiv.org/abs/2607.13705"  target="_blank" rel="noopener"
+    >AgentCompass: A Unified Evaluation Infrastructure for Agent Capabilities</a>
+</h3>
+    <blockquote>
+        <p>将 Benchmark、Harness 和 Environment 解耦，并提供异步容错运行时与轨迹分析，使智能体评测配置可以复用而不必反复重写执行逻辑。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zichen Ding et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（9 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.13705"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.13705.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: AgentCompass 以三个独立组件重构智能体评测基础设施，原生支持五类能力维度下的 20 多个基准。其容错异步运行时和完整轨迹诊断可透明定位 reward hacking 等细微失败模式，重点解决评测复现难与重复工程问题。</li>
+<li><strong>相关技术</strong>: benchmark-harness-environment decoupling, fault-tolerant asynchronous runtime, agent trajectory analysis, reward-hacking diagnosis, reproducible evaluation</li>
+<li><strong>代码/权重</strong>: 已开源 ✅（摘要未给出仓库链接）</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>随着大型语言模型（Large Language Models, LLM）演变为自主智能体，对统一评测基础设施的需求变得至关重要。然而，当前评测流水线仍高度碎片化且紧密耦合，不仅妨碍复现，还造成重复工程。为解决这一问题，我们提出 AgentCompass，一个用于评估 LLM 智能体的开源、轻量且可扩展的基础设施。AgentCompass 围绕三个相互独立的组件组织评测流程，即 Benchmark（基准）、Harness（运行框架）和 Environment（环境），因此无需重新实现复杂执行逻辑即可灵活组合配置。此外，它还提供容错异步运行时和完整的轨迹分析工具，以透明诊断 reward hacking（奖励投机）等细微失败模式。AgentCompass 原生支持横跨五个能力维度的 20 多个基准，为社区推进智能体研究提供可扩展、可复现的基础设施。</p>
+</details>
+<hr>
+<h3 id="harness-handbook-making-evolving-agent-harnesses-readablenavigable-and-editable"><a class="link" href="https://arxiv.org/abs/2607.13285"  target="_blank" rel="noopener"
+    >Harness Handbook: Making Evolving Agent Harnesses Readable,Navigable, and Editable</a>
+</h3>
+    <blockquote>
+        <p>自动从智能体 harness 代码库生成以行为为中心、可回链源码的手册，再用渐进披露帮助编码智能体找到真正需要修改的位置。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Ruhan Wang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（163 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.13285"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.13285.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: Harness Handbook 结合静态分析与 LLM 结构化，把分散在文件、模块和少见执行路径中的行为实现重新组织为可导航表示。Behavior-Guided Progressive Disclosure（BGPD）从高层行为逐步下钻并用当前源码核验候选位置，实验显示它能以更少规划 token 提高行为定位和编辑计划质量。</li>
+<li><strong>相关技术</strong>: behavior localization, harness code representation, static analysis, LLM-assisted structuring, Behavior-Guided Progressive Disclosure</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>现代 AI 智能体的能力不仅取决于基础模型，也取决于它的 harness（智能体运行框架）；后者负责构建提示、管理状态、调用工具和协调执行。随着模型、API、环境和需求演变，harness 必须持续修改。在实施这类修改之前，开发者或编码智能体必须找出实现目标行为的全部代码位置。这项工作很困难，因为生产级 harness 庞大、紧密耦合，行为实现分散在各处；与此同时，修改请求描述的是系统“应该做什么”，代码仓库却按文件和模块组织。代码搜索、仓库索引和长上下文处理能减轻检查负担，但仍需人工恢复从行为到代码的映射。因此，行为定位是 harness 演进中的核心瓶颈。我们提出 Harness Handbook，这是一种通过静态分析和 LLM 辅助结构化从 harness 代码库自动合成的、以行为为中心的表示，可将每种行为链接到对应源码。我们还提出行为引导的渐进披露（Behavior-Guided Progressive Disclosure, BGPD），引导智能体从高层行为逐步深入相关实现细节，并根据当前源码核验候选位置。在来自两个开源 harness 的多样化修改请求上，Handbook 辅助规划使用更少的规划 token，提高了行为定位和编辑计划质量；在实现位置分散、很少执行的路径以及跨模块交互上，收益最为明显。因此，复杂智能体系统的演进不仅依赖生成修改，还依赖判断应该在何处修改。</p>
+</details>
+<hr>
+<h3 id="from-controlled-to-the-wild-evaluation-of-pentesting-agents-for-the-real-world"><a class="link" href="https://arxiv.org/abs/2605.10834"  target="_blank" rel="noopener"
+    >From Controlled to the Wild: Evaluation of Pentesting Agents for the Real-World</a>
+</h3>
+    <blockquote>
+        <p>把渗透测试智能体的评估目标从完成预定义任务转向发现经验证的真实漏洞，以覆盖多攻击面、开放探索和含糊匹配。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Pedro Conde et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（3 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2605.10834"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2605.10834.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://github.com/ethiack/ethibench"  target="_blank" rel="noopener"
+    >代码与标注</a></li>
+<li><strong>关键贡献</strong>: 新协议结合结构化真值、LLM 语义匹配、二分图消歧、动态真值维护、随机智能体重复/累积评测和效率指标，更贴近真实渗透测试。作者还提供缩减评测套件的选择方法，并开放专家标注真值与代码，便于持续实验和复现。</li>
+<li><strong>相关技术</strong>: pentesting agents, validated vulnerability discovery, LLM semantic matching, bipartite finding resolution, stochastic-agent evaluation</li>
+<li><strong>代码/权重</strong>: 代码与数据已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>AI 渗透测试智能体作为攻击性安全系统正变得越来越可信，但当前基准仍无法充分指导人们判断哪种智能体在真实目标上表现最好。现有评估协议通常在简化或狭窄的环境中，围绕夺旗、远程代码执行、漏洞复现或轨迹相似度等预定义目标进行评估和优化。这些工具对衡量边界明确的能力很有价值，却无法充分覆盖现实渗透测试所需的复杂性、开放式探索和策略决策。本文提出一种实用评估协议，将评测重点从任务完成转向经过验证的漏洞发现，使评估能够在足够复杂、跨越多个攻击面和漏洞类别的目标上进行。该协议结合结构化真实标注与基于 LLM 的语义匹配来识别漏洞，使用二分图解析在真实歧义下为发现结果评分，持续维护真实标注，对随机智能体进行重复和累积评估，引入效率指标，并选择缩减套件以支持可持续实验。该协议支持对 AI 渗透测试智能体进行更真实、更具运维参考价值的比较，从而扩展了现有最佳实践。为了保证可复现性，我们还公开了专家标注的真实数据和所提评估协议的代码。</p>
+</details>
+<hr>
+<p><em>Generated on 2026-07-17 08:00 CST | Sources: HuggingFace Papers (arXiv metadata and links)</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-16/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-16</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-15/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-15</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-14/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-14</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-13/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-13</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-12/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-12</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
