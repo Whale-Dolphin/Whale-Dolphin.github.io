@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 17 篇论文 | Audio LLM: 3 篇 | LLM Training: 4 篇 | AI Agents: 6 篇 | 其他值得关注: 4 篇\n来源: HuggingFace Papers（17） | 去重跳过近 7 天已报道论文（8） | 预筛选后未收录（5）\n">
+<title>AI Paper Daily | 2026-07-18</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-18/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-18">
+<meta property='og:description' content="今日概览 共收录 17 篇论文 | Audio LLM: 3 篇 | LLM Training: 4 篇 | AI Agents: 6 篇 | 其他值得关注: 4 篇\n来源: HuggingFace Papers（17） | 去重跳过近 7 天已报道论文（8） | 预筛选后未收录（5）\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-18/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-18T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-18">
+<meta name="twitter:description" content="今日概览 共收录 17 篇论文 | Audio LLM: 3 篇 | LLM Training: 4 篇 | AI Agents: 6 篇 | 其他值得关注: 4 篇\n来源: HuggingFace Papers（17） | 去重跳过近 7 天已报道论文（8） | 预筛选后未收录（5）\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-18/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#video--world--event-stream">Video = World + Event Stream</a></li>
+        <li><a href="#multiref-compass-towards-comprehensive-evaluation-of-multi-reference-to-audio-video-generation">MultiRef-Compass: Towards Comprehensive Evaluation of Multi-Reference-to-Audio-Video Generation</a></li>
+        <li><a href="#wansong-v10-technical-report">WanSong v1.0 Technical Report</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#seed-self-evolving-on-policy-distillation-for-agentic-reinforcement-learning">SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning</a></li>
+        <li><a href="#robottt-context-scaling-for-robot-policies">RoboTTT: Context Scaling for Robot Policies</a></li>
+        <li><a href="#longstraw-long-context-rl-beyond-2m-tokens-under-a-fixed-gpu-budget">LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget</a></li>
+        <li><a href="#meanflownft-bringing-forward-process-rl-to-average-velocity-generators">MeanFlowNFT: Bringing Forward-Process RL to Average-Velocity Generators</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#searchos-v1-towards-robust-open-domain-information-seeking-agent-collaboration">SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration</a></li>
+        <li><a href="#mcpevol-bench-benchmarking-llm-agent-performance-across-dynamic-evolutions-of-mcp-servers">MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers</a></li>
+        <li><a href="#hierarchical-denoising-for-multi-step-visual-reasoning">Hierarchical Denoising For Multi-Step Visual Reasoning</a></li>
+        <li><a href="#mm-issueloc-a-controlled-benchmark-for-evaluating-visual-evidence-in-multimodal-repository-level-issue-localization">MM-IssueLoc: A Controlled Benchmark for Evaluating Visual Evidence in Multimodal Repository-Level Issue Localization</a></li>
+        <li><a href="#structureclaw-traceable-llm-agents-and-an-executable-benchmark-for-structural-engineering-workflows">StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows</a></li>
+        <li><a href="#saferelbench-a-spatial-relation-aware-benchmark-for-process-level-safety-in-vlm-driven-embodied-agents">SafeRelBench: A Spatial-Relation-Aware Benchmark for Process-Level Safety in VLM-Driven Embodied Agents</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">👀 其他值得关注</a>
+      <ol>
+        <li><a href="#videochat3-fully-open-video-mllm-for-efficient-and-generalist-video-understanding">VideoChat3: Fully Open Video MLLM for Efficient and Generalist Video Understanding</a></li>
+        <li><a href="#viabench-a-comprehensive-video-benchmark-collected-from-blind-individuals-for-visual-impairment-assistance">VIABench: A Comprehensive Video Benchmark Collected from Blind Individuals for Visual Impairment Assistance</a></li>
+        <li><a href="#concurrent-image-understanding-and-generation-self-correcting-coupled-markov-jump-processes">Concurrent Image Understanding and Generation: Self-Correcting Coupled Markov Jump Processes</a></li>
+        <li><a href="#keyframe-compass-towards-comprehensive-evaluation-of-keyframe-conditioned-video-generation">KeyFrame-Compass: Towards Comprehensive Evaluation of Keyframe-Conditioned Video Generation</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-18/">AI Paper Daily | 2026-07-18</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-18T00:00:00Z'>Jul 18, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#video--world--event-stream">Video = World + Event Stream</a></li>
+        <li><a href="#multiref-compass-towards-comprehensive-evaluation-of-multi-reference-to-audio-video-generation">MultiRef-Compass: Towards Comprehensive Evaluation of Multi-Reference-to-Audio-Video Generation</a></li>
+        <li><a href="#wansong-v10-technical-report">WanSong v1.0 Technical Report</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#seed-self-evolving-on-policy-distillation-for-agentic-reinforcement-learning">SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning</a></li>
+        <li><a href="#robottt-context-scaling-for-robot-policies">RoboTTT: Context Scaling for Robot Policies</a></li>
+        <li><a href="#longstraw-long-context-rl-beyond-2m-tokens-under-a-fixed-gpu-budget">LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget</a></li>
+        <li><a href="#meanflownft-bringing-forward-process-rl-to-average-velocity-generators">MeanFlowNFT: Bringing Forward-Process RL to Average-Velocity Generators</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#searchos-v1-towards-robust-open-domain-information-seeking-agent-collaboration">SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration</a></li>
+        <li><a href="#mcpevol-bench-benchmarking-llm-agent-performance-across-dynamic-evolutions-of-mcp-servers">MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers</a></li>
+        <li><a href="#hierarchical-denoising-for-multi-step-visual-reasoning">Hierarchical Denoising For Multi-Step Visual Reasoning</a></li>
+        <li><a href="#mm-issueloc-a-controlled-benchmark-for-evaluating-visual-evidence-in-multimodal-repository-level-issue-localization">MM-IssueLoc: A Controlled Benchmark for Evaluating Visual Evidence in Multimodal Repository-Level Issue Localization</a></li>
+        <li><a href="#structureclaw-traceable-llm-agents-and-an-executable-benchmark-for-structural-engineering-workflows">StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows</a></li>
+        <li><a href="#saferelbench-a-spatial-relation-aware-benchmark-for-process-level-safety-in-vlm-driven-embodied-agents">SafeRelBench: A Spatial-Relation-Aware Benchmark for Process-Level Safety in VLM-Driven Embodied Agents</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">👀 其他值得关注</a>
+      <ol>
+        <li><a href="#videochat3-fully-open-video-mllm-for-efficient-and-generalist-video-understanding">VideoChat3: Fully Open Video MLLM for Efficient and Generalist Video Understanding</a></li>
+        <li><a href="#viabench-a-comprehensive-video-benchmark-collected-from-blind-individuals-for-visual-impairment-assistance">VIABench: A Comprehensive Video Benchmark Collected from Blind Individuals for Visual Impairment Assistance</a></li>
+        <li><a href="#concurrent-image-understanding-and-generation-self-correcting-coupled-markov-jump-processes">Concurrent Image Understanding and Generation: Self-Correcting Coupled Markov Jump Processes</a></li>
+        <li><a href="#keyframe-compass-towards-comprehensive-evaluation-of-keyframe-conditioned-video-generation">KeyFrame-Compass: Towards Comprehensive Evaluation of Keyframe-Conditioned Video Generation</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 17 篇论文 | Audio LLM: 3 篇 | LLM Training: 4 篇 | AI Agents: 6 篇 | 其他值得关注: 4 篇</p>
+<p>来源: HuggingFace Papers（17） | 去重跳过近 7 天已报道论文（8） | 预筛选后未收录（5）</p>
+
+    <blockquote>
+        <p>今日最明显的主线是“长时程与真实环境”：智能体开始面对会变化的工具接口、百万 token 轨迹、持久搜索状态、过程安全和可执行工程证据链；生成模型则继续向实时音视频交互、长歌曲和多参考可控生成推进。</p>
+
+    </blockquote>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><ol>
+<li><a class="link" href="#searchos-v1-towards-robust-open-domain-information-seeking-agent-collaboration" >SearchOS-V1</a>：把搜索进度、证据、覆盖缺口和失败记录变成共享持久状态，系统性减少多智能体搜索的重复循环。</li>
+<li><a class="link" href="#robottt-context-scaling-for-robot-policies" >RoboTTT</a>：用测试时训练把机器人策略上下文扩到 8K timestep，并把长历史压进可在线更新的 fast weights。</li>
+<li><a class="link" href="#longstraw-long-context-rl-beyond-2m-tokens-under-a-fixed-gpu-budget" >LongStraw</a>：在固定 GPU 预算下验证 210 万 token 的 RL 后训练执行路径，但作者明确说明训练正确性仍未完全闭环。</li>
+<li><a class="link" href="#mcpevol-bench-benchmarking-llm-agent-performance-across-dynamic-evolutions-of-mcp-servers" >MCPEvol-Bench</a>：首次把 MCP 服务接口演化纳入智能体评测，前沿模型在工具变化后仍出现两位数性能跌幅。</li>
+<li><a class="link" href="#videochat3-fully-open-video-mllm-for-efficient-and-generalist-video-understanding" >VideoChat3</a>：4B 全开放视频 MLLM 同时覆盖普通、长视频和流式场景，兼顾泛化与效率。</li>
+</ol>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><h3 id="video--world--event-stream"><a class="link" href="https://arxiv.org/abs/2607.15038"  target="_blank" rel="noopener"
+    >Video = World + Event Stream</a>
+</h3>
+    <blockquote>
+        <p>Wan-Streamer v0.3 把视频拆成持久的“世界”和持续变化的“事件流”，以统一预训练任务支撑实时全双工音视频交互。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Lianghua Huang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（15 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15038"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15038.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 模型把环境、主体、声学条件和音色视为稳定世界状态，把动作、语音与声音变化视为事件流，并学习根据世界与输入预测实时响应。系统维持 640×368、25 FPS、160 ms 流式单元，模型侧响应约 200 ms；在假设 350 ms 双向网络预算时总交互延迟约 550 ms。</li>
+<li><strong>相关技术</strong>: native streaming, full-duplex audio-visual interaction, world-event decomposition, vision-language-action modeling, low-latency generation</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们提出 Wan-Streamer v0.3，并用一个统一观点重新表述原生流式交互模型：视频等于世界加事件流。“世界”是视频展开时持续存在的上下文，包括环境、场景、主体、环境声学条件、声音特征以及其他相对稳定的条件；“事件流”则是这个世界中随时间变化的一切，包括场景或环境变化、主体行为、语音和其他声音。由此可以在大量真实视频上构造通用预训练任务：给定一个世界和到来的输入，预测世界将如何实时运动、变化与响应。所得能力可进一步专门化到广泛的实时下游任务。本文将它实例化为实时全双工音视频交互，其中事件流是智能体的语音和自由形式行为。从功能上看，模型的多模态理解过程类似视觉—语言—动作系统：它把多模态用户输入映射为语言形式的语音和行为动作。Wan-Streamer v0.3 保持 v0.2 的运行指标：640×368 视频、25 FPS、160 毫秒流式单元、约 200 毫秒模型侧响应延迟；在 350 毫秒双向网络预算下，总交互延迟约 550 毫秒。</p>
+</details>
+<hr>
+<h3 id="multiref-compass-towards-comprehensive-evaluation-of-multi-reference-to-audio-video-generation"><a class="link" href="https://arxiv.org/abs/2607.14189"  target="_blank" rel="noopener"
+    >MultiRef-Compass: Towards Comprehensive Evaluation of Multi-Reference-to-Audio-Video Generation</a>
+</h3>
+    <blockquote>
+        <p>用 350 个可控样本和 14 项子指标，评估模型能否把多个参考主体正确绑定进同步的音视频事件。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xiaohan Zhang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（29 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14189"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14189.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: MultiRef-Compass 覆盖多视角主体保持、多实体绑定和人—物—场景组合，从基础质量、参考一致性、音视频一致性、指令遵循四个维度评测。它将自动指标与带复核机制的 MLLM-as-a-Judge 结合，对八个系统的实验显示当前模型在多参考组合上仍有明显缺口。</li>
+<li><strong>相关技术</strong>: multi-reference conditioning, audio-video synchronization, entity binding, MLLM-as-a-Judge, compositional generation evaluation</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>多参考音视频生成旨在依据多个参考和文本指令生成连贯的音视频内容。现有基准主要关注文本驱动生成、单参考主体保持或孤立的音视频对齐，尚未充分探索新兴的多参考场景。相比这些设定，多参考音视频生成要求模型在生成同步视听内容时联合推理多个参考，不仅要忠实保留每个参考，还要将多个被引用实体正确绑定并组合为连贯的音视频事件。为填补这一空白，我们提出统一基准 MultiRef-Compass。它通过可扩展、可控的素材组合流水线构建了 350 个精心筛选的样本，覆盖多视角主体保持、多实体绑定以及人—物—场景组合。为提供可解释评测，基准从基础质量、参考一致性、音视频一致性和指令遵循四个维度定义了 14 项子指标，并把自动指标与带复核增强的 MLLM-as-a-Judge 框架结合，使感知保真度和参考条件组合都能被规模化、可审计地评估。对八个代表性系统的实验显示，各评测维度仍有很大提升空间。</p>
+</details>
+<hr>
+<h3 id="wansong-v10-technical-report"><a class="link" href="https://arxiv.org/abs/2607.14749"  target="_blank" rel="noopener"
+    >WanSong v1.0 Technical Report</a>
+</h3>
+    <blockquote>
+        <p>用纯扩散模型一次生成最长 5 分钟的多语言歌曲及人声、伴奏双分轨，并以步数蒸馏加速推理。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Binghui Chen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（9 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14749"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14749.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: WanSong 避开自回归或“自回归+扩散”的级联流水线，直接以纯扩散生成高保真长歌曲，同时输出 vocals 与 background music。摘要还强调其框架便于通过蒸馏减少采样步数，并可低成本微调到编辑等下游任务。</li>
+<li><strong>相关技术</strong>: pure diffusion music generation, long-form song generation, dual-stem output, step distillation, controllable audio editing</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>音乐生成基础模型近来受到产业界广泛关注，但在支持可控性的同时实现高效生成和高保真长音频仍然困难。为此，我们提出 WanSong，一种简洁而强大的商用品质长歌曲生成方法。不同于自回归模型和级联多阶段流水线（如先自回归、再扩散），WanSong 是纯扩散模型，能够一次直接生成最长 5 分钟的高保真多语言歌曲，并输出人声与背景音乐双分轨。此外，该扩散框架可通过步数蒸馏实现更快推理，也为微调和定制提供了高效路径，从而支持下游编辑任务。</p>
+</details>
+<hr>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="seed-self-evolving-on-policy-distillation-for-agentic-reinforcement-learning"><a class="link" href="https://arxiv.org/abs/2607.14777"  target="_blank" rel="noopener"
+    >SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning</a>
+</h3>
+    <blockquote>
+        <p>从当前策略完成的轨迹中提炼自然语言“事后技能”，再把技能造成的动作概率变化蒸馏成稠密 token 级监督。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Jinyang Wu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（66 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14777"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14777.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://github.com/jinyangwu/SEED"  target="_blank" rel="noopener"
+    >代码</a></li>
+<li><strong>关键贡献</strong>: SEED 用当前策略同时采样轨迹和分析轨迹，将可复用工作流、关键观察与避错规则提炼为 hindsight skills。它比较普通上下文与技能增强上下文下的动作概率，把差异转成与当前 on-policy 分布对齐的稠密蒸馏信号，与稀疏结果奖励联合优化。</li>
+<li><strong>相关技术</strong>: agentic reinforcement learning, on-policy distillation, hindsight skills, dense token-level supervision, trajectory analysis</li>
+<li><strong>代码/权重</strong>: 代码已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>大型语言模型越来越多地被训练为处理长时程任务的交互式智能体，这些任务涉及多轮交互、工具使用和环境反馈。基于结果的强化学习是一种实用优化范式，但稀疏的轨迹级奖励难以指导中间决策，在回合级结果和 token 级策略学习之间留下监督缺口。我们提出 SEED，一种自演化的同策略蒸馏框架：它把已完成的同策略轨迹转化为训练时的事后技能，再将这些技能的行为影响蒸馏回策略模型。SEED 首先微调策略，使其能够分析完整轨迹并生成自然语言技能，捕获可复用工作流、决定性观察或避错规则。在强化学习期间，当前策略既收集轨迹，也充当提炼技能的分析器，因此策略更新会同时改进后续决策与技能分析。SEED 随后在普通上下文和技能增强上下文中重新评分采样动作，把技能引发的概率变化转化为稠密的 token 级同策略蒸馏信号，并与结果强化学习联合优化。文本和视觉智能体任务上的实验表明，SEED 能持续提高性能与样本效率，并稳健泛化到未见场景。</p>
+</details>
+<hr>
+<h3 id="robottt-context-scaling-for-robot-policies"><a class="link" href="https://arxiv.org/abs/2607.15275"  target="_blank" rel="noopener"
+    >RoboTTT: Context Scaling for Robot Policies</a>
+</h3>
+    <blockquote>
+        <p>让机器人策略在训练和推理时都用梯度更新 fast weights，把 8K timestep 历史压进权重空间，而不让推理延迟随上下文增长。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yunfan Jiang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（12 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15275"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15275.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://research.nvidia.com/labs/gear/robottt/"  target="_blank" rel="noopener"
+    >项目页</a></li>
+<li><strong>关键贡献</strong>: RoboTTT 把机器人视觉运动上下文扩至 8K timestep，比现有策略高三个数量级，并解锁从人类视频单样本模仿、在线策略改进和长程多阶段操作。真实机器人实验中总体性能较单步上下文基线提高 87%，8K 预训练比 1K 上下文同模型高 62%，并完成基线从未完成的 5 分钟十阶段装配任务。</li>
+<li><strong>相关技术</strong>: test-time training, fast weights, vision-language-action policy, truncated BPTT, long-context robot learning</li>
+<li><strong>代码/权重</strong>: 未提及；项目视频已公开</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>近期机器人基础模型通常只使用单步或很短的视觉运动历史。我们提出测试时训练机器人策略 RoboTTT，这一模型和训练配方可把视觉运动上下文扩展到 8K timestep，比当前先进策略高三个数量级，同时不增加推理延迟。该长度带来新的机器人能力，包括从人类视频演示进行单样本上下文模仿、即时策略改进、对扰动的稳健性，以及在多阶段长时程任务上的更强表现。我们还首次观察到，随着预训练上下文长度增加，闭环性能稳定提升。RoboTTT 的核心是把测试时训练集成进视觉—语言—动作策略等机器人基础模型，使序列模型以 fast weights 作为循环状态；这些参数在训练和推理时均通过梯度下降更新，把历史压缩进权重空间，并在长上下文条件下检索信息。训练配方结合序列动作强制与截断式时间反向传播。真实机器人操作实验中，RoboTTT 较单步上下文基线总体提升 87%，并完整完成一个持续 5 分钟、包含十个阶段的装配任务，而所有基线都未能做到。使用 8K timestep 上下文训练的模型比 1K 版本高 62%，说明上下文长度可能成为机器人基础模型的新扩展轴。</p>
+</details>
+<hr>
+<h3 id="longstraw-long-context-rl-beyond-2m-tokens-under-a-fixed-gpu-budget"><a class="link" href="https://arxiv.org/abs/2607.14952"  target="_blank" rel="noopener"
+    >LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget</a>
+</h3>
+    <blockquote>
+        <p>对共享长提示关闭 autograd、保留模型特定状态并逐条重放短响应分支，以额外时间换取百万 token RL 后训练的显存可行性。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Changhai Zhou et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（40 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14952"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14952.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: LongStraw 在 8 张 H20 上完成 Qwen3.6-27B 的 210 万位置分组评分与响应反传，压力测试达到 446 万位置；在 32 张 H20 上验证 GLM-5.2 全 78 层的 210 万 token 执行路径。重要限制是共享提示状态被 detach，部分分布式 forward 与梯度组合尚未完成，因此论文证明的是执行容量，而非完整训练正确性。</li>
+<li><strong>相关技术</strong>: million-token RL, GRPO, prompt-state detachment, response-branch replay, fixed-memory post-training</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>推理上下文与强化学习后训练之间的差距正在扩大：推理系统正在接近百万 token，而后训练通常仍停留在 256K 以下，并依赖部署时的长度泛化。这对智能体尤其重要，因为观察、工具输出、文档和先前决策会在长轨迹中不断累积。LongStraw 是一套面向固定 GPU 预算下百万 token 强化学习后训练的架构感知执行栈，并以 GRPO 实例化。它在不启用 autograd 的情况下计算共享提示，只保留后续 token 所需的模型特定状态，再逐一重放短响应分支，以额外重放时间换取更小的实时训练图。我们为混合循环与全注意力架构的 Qwen3.6-27B，以及压缩注意力 MoE 模型 GLM-5.2 实现了该方法。在 8 张 H20 上，LongStraw 对组大小 2 和 8 均能在 210 万位置完成 Qwen 分组评分与响应反向传播；增大组大小只增加 0.21 GB 峰值已分配显存，单独压力测试则达到 446 万位置。在 32 张 H20 上，我们验证了 GLM-5.2 全部 78 层处理 210 万 token 提示的端到端执行路径。这些实验验证的是执行容量，而非完整训练正确性，因为捕获的提示状态已被分离，部分分布式前向与梯度组合路径仍不完整。</p>
+</details>
+<hr>
+<h3 id="meanflownft-bringing-forward-process-rl-to-average-velocity-generators"><a class="link" href="https://arxiv.org/abs/2607.15273"  target="_blank" rel="noopener"
+    >MeanFlowNFT: Bringing Forward-Process RL to Average-Velocity Generators</a>
+</h3>
+    <blockquote>
+        <p>构造诱导的瞬时速度预测器，把前向过程 RL 接到平均速度生成器上，同时保留少步采样优势。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yushi Huang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（9 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15273"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15273.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: MeanFlowNFT 用 MeanFlow identity 桥接平均速度与瞬时速度，使 DiffusionNFT 的奖励优化目标适用于 MeanFlow，并继承严格策略改进保证。图像和视频实验中，它在 SD3.5-M 的 8 项指标中赢下 6 项；Wan 2.1 上 4 步采样达到 VBench 84.33，高于 50 步 LongCat-Video RL 的 82.57。</li>
+<li><strong>相关技术</strong>: MeanFlow, forward-process reinforcement learning, induced instantaneous velocity, few-step generation, reward alignment</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>MeanFlow 生成器通过预测时间区间上的平均速度实现快速少步采样，因此很适合高效生成。强化学习已成为将扩散和流模型与人类偏好及特定任务目标对齐的有力方法，其中 DiffusionNFT 提供了无需反向过程轨迹或似然估计的高效前向过程强化学习框架，但这类方法在 MeanFlow 上仍缺乏探索。DiffusionNFT 优化瞬时速度，而 MeanFlow 用平均速度采样。为弥合差距，我们提出 MeanFlowNFT。受连接平均速度和瞬时速度的 MeanFlow 恒等式启发，我们构造一个诱导的瞬时速度预测器，并将 DiffusionNFT 目标施加于该预测器，使 MeanFlow 上的奖励优化有明确定义；采样仍使用平均速度，因此保留快速少步生成能力。我们进一步证明 MeanFlowNFT 继承 DiffusionNFT 的严格策略改进保证。图像和视频生成实验显示，该方法持续改进基线，并在多数指标上超过此前经过 RL 调优的少步生成器，甚至能以少量采样步数超过多步 RL 扩散模型。例如在 Wan 2.1 上，4 步 MeanFlowNFT 的 VBench 得分为 84.33，高于 50 步 LongCat-Video RL 的 82.57。</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="searchos-v1-towards-robust-open-domain-information-seeking-agent-collaboration"><a class="link" href="https://arxiv.org/abs/2607.15257"  target="_blank" rel="noopener"
+    >SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration</a>
+</h3>
+    <blockquote>
+        <p>把开放域搜索建模为带证据引用的关系模式补全，并将任务前沿、证据图、覆盖图和失败记忆外置成共享状态。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yuyao Zhang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（49 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15257"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15257.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: Search-Oriented Context Management 显式维护未解决任务、证据、覆盖缺口和失败模式；流水线并行调度在子智能体槽位释放后立即补入新任务。中间件会拦截模型与工具交互、记录引用证据并处理停滞或预算耗尽，分层技能系统则避免跨运行重复失败。</li>
+<li><strong>相关技术</strong>: multi-agent web search, relational schema completion, evidence graph, failure memory, pipeline-parallel scheduling</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>工具集成语言模型的发展使网络搜索成为信息检索智能体的核心能力，但随着交互历史增长，智能体越来越难追踪任务进度。搜索尝试未获得有效证据时，现有单智能体和多智能体系统容易陷入重复循环，浪费预算并损害最终结果的质量与完整性。我们提出 SearchOS，一个把脆弱、隐式的搜索进度转化为显式、持久且共享状态的系统级多智能体框架。首先，我们把开放域信息检索表述为带可靠引用的关系模式补全：智能体发现实体、填写关联表中的属性，并把每个值锚定到来源证据。随后设计 Search-Oriented Context Management，将演化状态外置为任务前沿、证据图、覆盖图和失败记忆。在此基础上，SearchOS 使用流水线并行调度，重叠执行子智能体，并不断用针对未覆盖缺口的任务填补空闲槽位。系统还引入搜索工具中间件，拦截模型和工具交互以记录证据，并对停滞或预算耗尽作出反应；可复用的分层技能系统则增强搜索过程，避免跨运行重复失败模式。在 WideSearch 和 GISA 上，SearchOS 在所评估的单智能体与多智能体基线中领先所有指标。</p>
+</details>
+<hr>
+<h3 id="mcpevol-bench-benchmarking-llm-agent-performance-across-dynamic-evolutions-of-mcp-servers"><a class="link" href="https://arxiv.org/abs/2607.14642"  target="_blank" rel="noopener"
+    >MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers</a>
+</h3>
+    <blockquote>
+        <p>用 11 类变异算子模拟 123 个 MCP 服务的真实接口演化，评估智能体能否适应工具名称、参数与功能变化。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Huanxi Liu et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14642"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14642.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 基准基于大规模实证研究构造工具演化，并在多个服务器版本上评测 12 个先进模型。论文报告 GPT-5.4 与 Claude-Sonnet-4-6 在演化后的 MCP 服务上分别下降 13.7% 和 14.4%，同时规划与推理错误显著增加，说明静态工具基准会高估生产环境可靠性。</li>
+<li><strong>相关技术</strong>: Model Context Protocol, tool evolution, mutation testing, agent adaptability, tool-use benchmarking</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>随着模型上下文协议服务成为连接大语言模型与外部工具的核心基础设施，现有基准开始使用真实 MCP 服务评估智能体的工具使用能力。然而，这些基准忽视了服务中工具接口和功能的持续演化，无法衡量智能体对变化中工具环境的适应能力。为此，我们提出 MCPEvol-Bench，用于评估动态工具集演化下语言模型智能体解决任务的能力。受大规模实证研究启发，我们设计 11 种变异算子，在 123 个 MCP 服务中模拟真实工具演化，并在服务的多个版本上评测 12 个先进语言模型。结果显示，即使前沿模型也难以适应工具变化：GPT-5.4 和 Claude-Sonnet-4-6 在演化后的 MCP 服务上分别下降 13.7% 和 14.4%，且规划与推理错误明显增加。这些发现揭示了语言模型工作流在动态工具环境中的脆弱性。</p>
+</details>
+<hr>
+<h3 id="hierarchical-denoising-for-multi-step-visual-reasoning"><a class="link" href="https://arxiv.org/abs/2607.15278"  target="_blank" rel="noopener"
+    >Hierarchical Denoising For Multi-Step Visual Reasoning</a>
+</h3>
+    <blockquote>
+        <p>用树状层级 latent 先保留不确定假设并进行全局规划，再逐层细化为可流式输出的具体视觉状态。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zezhong Qian et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（1 upvote）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15278"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15278.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://hierarchical-diffusion-reasoning.github.io/"  target="_blank" rel="noopener"
+    >项目页</a></li>
+<li><strong>关键贡献</strong>: HDR 结合因果视频生成、层级 latent 和稀疏层级注意力，在六类多步视觉推理任务上把成功率从 34.22 提升到 60.29，且每 latent 延迟 0.70 秒，比双向扩散快 54.2 倍。只用 2% 训练数据仍保留完整数据性能的 82.9%，并展示真实机器人实验。</li>
+<li><strong>相关技术</strong>: hierarchical latent reasoning, causal video generation, sparse hierarchical attention, streaming diffusion, visual world modeling</li>
+<li><strong>代码/权重</strong>: 未提及；项目演示已公开</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视频模型正在演变为视觉基础模型，但仍缺乏类人的多步推理。流式自回归扩散效率高却推理能力有限，双向扩散能够全局修订，却因密集逐帧去噪而推理昂贵。我们提出 HDR，将层级 latent 集成进用于多步推理的因果视频生成。HDR 把视频 latent 组织成树状层级，在流式输出前执行由粗到细的推理：粗层去噪保留不确定假设以进行全局规划，细层再逐步细化为具体视觉状态；稀疏层级注意力进一步降低时间注意力开销。我们构建了包含分布外案例的分层多步视频推理基准，覆盖迷宫、汉诺塔、一笔画、滑块、推箱子和倒水六类任务。相比流式自回归扩散基线，HDR 将成功率从 34.22 提升到 60.29，平均进度从 76.00 提高到 89.56；它以每个 latent 0.70 秒保持低延迟流式输出，比双向扩散快 54.2 倍。只用 2% 训练数据时，HDR 保留 82.9% 的完整数据性能，而双向扩散仅保留 52.0%。真实机器人实验进一步展示了其用于物理交互和世界建模的潜力。</p>
+</details>
+<hr>
+<h3 id="mm-issueloc-a-controlled-benchmark-for-evaluating-visual-evidence-in-multimodal-repository-level-issue-localization"><a class="link" href="https://arxiv.org/abs/2607.15205"  target="_blank" rel="noopener"
+    >MM-IssueLoc: A Controlled Benchmark for Evaluating Visual Evidence in Multimodal Repository-Level Issue Localization</a>
+</h3>
+    <blockquote>
+        <p>用成对的纯文本/带图评测隔离“截图到底有没有帮助定位代码”，避免被后续补丁生成能力掩盖。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Shaoxiong Zhan et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15205"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15205.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: MM-IssueLoc 含 652 个 issue–PR 样本、23 种语言、7 类图像和 4 级相关度，并提供文件级与函数级真值。最强智能体仅达到文件 Acc@5 38.96、函数 Acc@10 22.45，说明文本主导 SWE 基准上的强定位能力不能直接迁移到带视觉证据的真实 issue。</li>
+<li><strong>相关技术</strong>: repository-level issue localization, visual evidence control, multimodal software engineering, paired evaluation, VCE diagnostics</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>真实代码仓库 issue 经常包含截图、错误对话框、渲染后的 UI 状态和日志等视觉证据，但仓库级问题定位大多仍按纯文本任务评估。现有多模态软件工程基准通常评测端到端修复，把定位与补丁合成混在一起，因而看不清视觉输入究竟有帮助、造成干扰还是被忽略。我们提出 MM-IssueLoc，一个面向带视觉证据的仓库级定位的受控基准与评测协议。它包含 652 个 issue–PR 实例，横跨 23 种语言，并标注 7 类图像和 4 级相关性；同时提供文件级和函数级真值、纯文本与带图成对评测，以及把图像转为结构化文本证据的 VCE 诊断。实验显示，现有系统距离可靠的多模态仓库定位仍很远：最强智能体达到文件 Acc@5 38.96 和函数 Acc@10 22.45，最强检索器的函数 Acc@10 为 33.86。跨基准比较还表明，文本主导 SWE 基准上的高定位分数无法干净迁移到多模态 issue 定位。</p>
+</details>
+<hr>
+<h3 id="structureclaw-traceable-llm-agents-and-an-executable-benchmark-for-structural-engineering-workflows"><a class="link" href="https://arxiv.org/abs/2607.14896"  target="_blank" rel="noopener"
+    >StructureClaw: Traceable LLM Agents and an Executable Benchmark for Structural Engineering Workflows</a>
+</h3>
+    <blockquote>
+        <p>不只检查最终答案，而是要求需求、计算模型、验证记录、求解结果、规范校核和报告整条工程证据链一次执行通过。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Sizhong Qin et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14896"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14896.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://github.com/structureclaw/structureclaw"  target="_blank" rel="noopener"
+    >代码与基准</a></li>
+<li><strong>关键贡献</strong>: StructureClaw 以受治理技能、类型化工具、共享 artifact state 和本地分析后端组织智能体；StructureClaw-Bench 提供 150 个可执行场景。十种智能体—模型配置在相同 50 个标准案例上的平均成功率，从通用技能基线 56.8% 提升至完整自动工作流 88.6%。</li>
+<li><strong>相关技术</strong>: artifact-centered agents, executable engineering benchmark, typed tools, shared artifact state, workflow traceability</li>
+<li><strong>代码/权重</strong>: 代码与基准已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>处理结构工程请求不只是给出一个答案，而是要形成一条彼此依赖的产物链：解释后的需求、可计算模型、验证记录、求解器输出、规范校核记录和最终报告。只评问答或脚本生成的方式很少验证完整证据链，可能会奖励流畅但不完整、不一致或不可执行的结果。为此，我们提出 StructureClaw，一个以产物为中心的工作台，语言模型智能体通过受治理的工程技能、类型化工具、共享产物状态和本地分析后端工作。我们还提出 StructureClaw-Bench，其中包含 150 个受控可执行场景，覆盖标准工作流、交互稳健性和多模态结构模型重建。只有所有产物级和执行级断言在一次运行中通过，场景才算成功。在十种智能体—模型配置上，每种都评测相同的 50 个标准案例，平均成功率从通用技能基线的 56.8% 提升到完整自动工作流的 88.6%。交互与多模态评测揭示两项主要挑战：安全处理无效数值输入，以及与固定真值一致地重建结构模型。</p>
+</details>
+<hr>
+<h3 id="saferelbench-a-spatial-relation-aware-benchmark-for-process-level-safety-in-vlm-driven-embodied-agents"><a class="link" href="https://arxiv.org/abs/2607.14543"  target="_blank" rel="noopener"
+    >SafeRelBench: A Spatial-Relation-Aware Benchmark for Process-Level Safety in VLM-Driven Embodied Agents</a>
+</h3>
+    <blockquote>
+        <p>关注支撑、包含和邻近关系如何随动作变化，检查机器人是否在危险动作之前满足过程安全条件，而不只看最终任务是否完成。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Huaigang Yang et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14543"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14543.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 基准包含 507 个可执行样本，其中 248 个空间关系样本、259 个非空间对照样本。对七种开源和闭源 VLM 具身智能体的评测显示，任务成功与过程安全合规之间存在明显落差：模型经常完成任务，却在过程中违反安全约束。</li>
+<li><strong>相关技术</strong>: embodied-agent safety, spatial relation reasoning, process-level evaluation, support-containment-proximity, executable benchmarks</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视觉语言模型正越来越多地作为具身智能体的推理核心，使机器人能够理解视觉场景、遵循语言指令并规划多步动作。然而在家庭环境中，安全不仅取决于识别物体，还取决于动作如何随时间改变物理场景。现有具身安全评测主要关注静态风险识别、拒绝不安全指令或最终状态任务完成，对由支撑、包含和邻近等空间关系引起的过程安全失败研究不足。为此，我们提出 SAFERELBENCH，一个空间关系感知安全基准，包含 507 个可执行样本，其中 248 个为空间关系样本，259 个为非空间对照样本。对七种开源和闭源 VLM 具身智能体的评测发现，任务成功与过程安全合规之间存在显著差距：模型常常能完成请求，却违反过程安全约束。与以往基准不同，SAFERELBENCH 明确检查智能体是否在风险动作发生前满足安全条件，把空间关系作为具身安全评估的核心维度。</p>
+</details>
+<hr>
+<h2 id="-其他值得关注">👀 其他值得关注
+</h2><h3 id="videochat3-fully-open-video-mllm-for-efficient-and-generalist-video-understanding"><a class="link" href="https://arxiv.org/abs/2607.14935"  target="_blank" rel="noopener"
+    >VideoChat3: Fully Open Video MLLM for Efficient and Generalist Video Understanding</a>
+</h3>
+    <blockquote>
+        <p>用 I3D-ViT、流式自适应帧分辨率和三套合成数据，把 4B 视频 MLLM 做到普通、长视频与流式场景兼顾。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xinhao Li et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（108 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14935"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14935.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: VideoChat3 以膨胀式 3D Vision Transformer 建模时空特征，并按流式内容自适应帧分辨率以降低训练和推理成本。其数据流水线构建 Academic2M、LV116K 和 OL617K 三套数据；论文报告仅 4B 参数便在普通、长视频与流式基准上超过参数相当或更大的开源模型。</li>
+<li><strong>相关技术</strong>: video MLLM, Inflated 3D ViT, adaptive frame resolution, streaming video perception, synthetic video instruction data</li>
+<li><strong>代码/权重</strong>: 论文声明 fully open；摘要未给出仓库地址</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视频理解近来在运动、长视频和流式交互方面快速发展，但当前开源模型往往难以跨不同视频类型泛化，计算需求较高，而且训练代码、策略或数据集等关键组件经常没有完全开放。我们提出 VideoChat3，一个完全开放、高效且通用的以视频为中心的多模态大语言模型。为提高效率，我们引入膨胀式 3D Vision Transformer 和面向流式视频感知的自适应帧分辨率，以高效表示时空信息并降低训练与推理成本。为提高效果，我们构建可扩展的视频数据合成流水线，整理出 VideoChat3-Academic2M、VideoChat3-LV116K 和 VideoChat3-OL617K 三套覆盖普通、长视频和流式场景的高质量训练数据。两类设计结合后，VideoChat3 在广泛泛化和计算效率间取得平衡。普通、长视频和流式基准上的实验显示，它仅以 4B 参数和更高效率，便超过参数量相同或更大的以往开源模型。</p>
+</details>
+<hr>
+<h3 id="viabench-a-comprehensive-video-benchmark-collected-from-blind-individuals-for-visual-impairment-assistance"><a class="link" href="https://arxiv.org/abs/2607.14660"  target="_blank" rel="noopener"
+    >VIABench: A Comprehensive Video Benchmark Collected from Blind Individuals for Visual Impairment Assistance</a>
+</h3>
+    <blockquote>
+        <p>直接使用视障人士录制或分享的第一人称视频，测试模型能否主动预警、回答环境问题并指导真实互动。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yunfeng Liu et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（7 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14660"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14660.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://github.com/MCG-NJU/VIABench"  target="_blank" rel="noopener"
+    >代码与数据</a></li>
+<li><strong>关键贡献</strong>: VIABench 将真实视障辅助拆成主动提醒、视频问答和视觉引导互动三项任务，并同时支持在线实时与离线评测。当前多模态模型尤其难以做好需要提前预测导航风险、及时口头提醒的 Proactive Reminder，说明通用视频理解成绩不能代表可用的无障碍辅助能力。</li>
+<li><strong>相关技术</strong>: assistive video understanding, proactive reminder, first-person VQA, vision-guided interaction, online evaluation</li>
+<li><strong>代码/权重</strong>: 代码与数据将开源</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视障人士因视觉信息获取受限而面临诸多日常挑战。尽管多模态大语言模型在通用视觉语言任务上表现出色，其在真实盲人辅助中的实用价值仍缺乏探索。为此，我们提出 VIABench，一个使用视障人士亲自拍摄或分享的第一人称视频、专门评估多模态模型视障辅助能力的综合基准。它定义三项核心任务：主动提醒评估模型理解持续视频、提前预测并口头描述关键导航事件的能力；视觉问答评估模型回答用户关于环境或物体问题的能力；视觉引导互动则测试模型为完成用户与环境之间有意图的互动而进行上下文推理的能力。基准提供同时支持在线实时和离线设定的严格评测流程。实验显示，当前多模态模型仍难以为视障人士提供完整支持，尤其不擅长要求准确预判和实时响应的主动提醒任务。代码与数据将公开。</p>
+</details>
+<hr>
+<h3 id="concurrent-image-understanding-and-generation-self-correcting-coupled-markov-jump-processes"><a class="link" href="https://arxiv.org/abs/2607.13188"  target="_blank" rel="noopener"
+    >Concurrent Image Understanding and Generation: Self-Correcting Coupled Markov Jump Processes</a>
+</h3>
+    <blockquote>
+        <p>让文本与图像在同一步内依据对方最新置信度互相修正，并在跨模态证据冲突时重新遮盖错误承诺。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Minh-Quan Le et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（23 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.13188"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.13188.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://coupled-jump.github.io/"  target="_blank" rel="noopener"
+    >项目页</a></li>
+<li><strong>关键贡献</strong>: SC-CMJP 用跨模态注意力加权另一模态的置信度，动态控制当前模态转移率；remasking jump 允许撤销与新证据冲突的生成决定。训练自由的单程采样器 CO₂Jump 在图像理解、编辑及迷宫/数织视觉推理的联合表现上达到最佳，并随去噪步数单调改善。</li>
+<li><strong>相关技术</strong>: masked diffusion, coupled Markov jump processes, cross-modal confidence, remasking, joint multimodal generation</li>
+<li><strong>代码/权重</strong>: 未提及；项目页已公开</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>人类认知不会把理解与生成分开：教师在白板前边说边画，每种模态都会重塑另一种。本文把这种耦合循环引入人工系统。掩码扩散模型很适合这一任务，但现有采样器要么交错解码文本与图像，要么在只共享上一步历史的独立并行分支中更新，无法在同一步利用另一模态的最新决策；再加上模型不能重新遮盖，跨模态矛盾既无法检测也无法修复。我们提出自纠正耦合马尔可夫跳跃过程 SC-CMJP，其中一种模态的转移率是另一模态置信度分数的函数，并由跨模态注意力加权；当跨模态证据不再支持既有决定时，重新遮盖跳跃会立即撤销该承诺。结合这一框架，我们提出训练自由、单程的联合多模态生成采样器 CO₂Jump。我们还构建并将发布 JEdit-1M、JMaze-200K 和 JNono-200K 三个大规模联合多模态语料及对应的域内、域外基准。CO₂Jump 在图像理解与编辑、迷宫和数织求解等视觉推理上取得最佳联合性能，而且性能随去噪步数单调提高。</p>
+</details>
+<hr>
+<h3 id="keyframe-compass-towards-comprehensive-evaluation-of-keyframe-conditioned-video-generation"><a class="link" href="https://arxiv.org/abs/2607.14202"  target="_blank" rel="noopener"
+    >KeyFrame-Compass: Towards Comprehensive Evaluation of Keyframe-Conditioned Video Generation</a>
+</h3>
+    <blockquote>
+        <p>把“关键帧是否被执行”拆成出现、保真、顺序、定位、持续和唯一性六项指标，揭示约束服从与自然视频质量之间的冲突。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yuqi Tang et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（30 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14202"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14202.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 基准含 386 个样本，横跨三类应用、两种视频结构、两种提示粒度、两种条件格式和四档关键帧密度。对九个系统的评测表明，关键帧越密集性能越差，多数开源模型也不能把 storyboard grid 正确解释为按时间排序的关键帧序列。</li>
+<li><strong>相关技术</strong>: keyframe-conditioned video generation, storyboard control, temporal ordering, evidence-grounded MLLM evaluation, controllability-quality trade-off</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视频生成越来越多采用基于关键帧的工作流，由创作者指定一系列参考图像引导生成。尽管近期模型开始支持多关键帧条件，但它们能否在保持整体视频质量的同时忠实复现规定关键帧仍不明确。我们提出 KeyFrame-Compass，首个全面评估关键帧条件视频生成的基准。它包含 386 个精心筛选的样本，覆盖三类应用、两种视频结构、两种提示粒度、两种条件格式和四档关键帧密度，可在多样设定下进行受控分析。我们还提出同时衡量关键帧执行与整体视频质量的自动评测框架：关键帧执行被拆为出现、保真度、时间顺序、定位、持续性和唯一性六项指标；整体质量则由有证据支撑的 MLLM 判断结合专门感知模型评估。对九种代表性视频生成系统的实验揭示了几项根本限制：当前模型在忠实执行关键帧与自然视频合成之间存在明显权衡；关键帧约束越密，性能越差；多数开源模型也无法把故事板网格理解为按时间排序的关键帧序列。</p>
+</details>
+<hr>
+<p><em>Generated on 2026-07-18 08:00 CST | Sources: HuggingFace Papers (arXiv metadata and links)</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-17/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-17</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-16/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-16</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-15/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-15</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-14/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-14</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-13/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-13</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
