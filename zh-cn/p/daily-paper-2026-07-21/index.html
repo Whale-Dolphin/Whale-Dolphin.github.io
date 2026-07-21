@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 13 篇论文 | Audio LLM: 2 篇 | LLM Training: 6 篇 | AI Agents: 5 篇\n来源: HuggingFace Papers（13） | 去重跳过近 7 天已报道论文（12）\n今天值得看的不是某一条单点能力刷新，而是三条更清晰的工程趋势：语音与视频模型开始从短片段感知走向长时程、跨模态推理；训练侧继续寻找参数规模之外的新缩放轴，包括循环层、扩展残差流和更直接的推理蒸馏信号；Agent 侧则把“技能、记忆、环境模型和长程工具调用”逐渐做成可复用的系统组件。\n">
+<title>AI Paper Daily | 2026-07-21</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-21/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-21">
+<meta property='og:description' content="今日概览 共收录 13 篇论文 | Audio LLM: 2 篇 | LLM Training: 6 篇 | AI Agents: 5 篇\n来源: HuggingFace Papers（13） | 去重跳过近 7 天已报道论文（12）\n今天值得看的不是某一条单点能力刷新，而是三条更清晰的工程趋势：语音与视频模型开始从短片段感知走向长时程、跨模态推理；训练侧继续寻找参数规模之外的新缩放轴，包括循环层、扩展残差流和更直接的推理蒸馏信号；Agent 侧则把“技能、记忆、环境模型和长程工具调用”逐渐做成可复用的系统组件。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-21/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-21T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-21">
+<meta name="twitter:description" content="今日概览 共收录 13 篇论文 | Audio LLM: 2 篇 | LLM Training: 6 篇 | AI Agents: 5 篇\n来源: HuggingFace Papers（13） | 去重跳过近 7 天已报道论文（12）\n今天值得看的不是某一条单点能力刷新，而是三条更清晰的工程趋势：语音与视频模型开始从短片段感知走向长时程、跨模态推理；训练侧继续寻找参数规模之外的新缩放轴，包括循环层、扩展残差流和更直接的推理蒸馏信号；Agent 侧则把“技能、记忆、环境模型和长程工具调用”逐渐做成可复用的系统组件。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-21/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#audio-visual-flamingo-open-audio-visual-intelligence-for-long-and-complex-videos">Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos</a></li>
+        <li><a href="#rw-voice-eq-bench-a-real-world-benchmark-for-evaluating-voice-ai-systems">RW-Voice-EQ Bench: A Real World Benchmark for Evaluating Voice AI Systems</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#xiaomi-robotics-1-scaling-vision-language-action-models-with-over-100k-hours-of-real-world-trajectories">Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</a></li>
+        <li><a href="#loop-the-loopies">Loop the Loopies!</a></li>
+        <li><a href="#xhc-expanded-hyper-connections">xHC: Expanded Hyper-Connections</a></li>
+        <li><a href="#understanding-reasoning-from-pretraining-to-post-training">Understanding Reasoning from Pretraining to Post-Training</a></li>
+        <li><a href="#on-policy-delta-distillation">On-Policy Delta Distillation</a></li>
+        <li><a href="#joynexus-service-oriented-multi-tenant-post-training-for-vla-models">JoyNexus: Service-Oriented Multi-Tenant Post-Training for VLA Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#cura-1t-specialized-model-for-agentic-healthcare">Cura 1T: Specialized Model for Agentic Healthcare</a></li>
+        <li><a href="#recgpt-v3-technical-report">RecGPT-V3 Technical Report</a></li>
+        <li><a href="#resource2skill-distilling-executable-agent-skills-from-human-created-multimodal-resources">RESOURCE2SKILL: Distilling Executable Agent Skills from Human-Created Multimodal Resources</a></li>
+        <li><a href="#dsworld-a-data-science-world-model-for-efficient-autonomous-agents">DSWorld: A Data Science World Model for Efficient Autonomous Agents</a></li>
+        <li><a href="#toolverse-unlocking-massive-environments-and-long-horizon-tasks-for-agentic-reinforcement-learning">ToolVerse: Unlocking Massive Environments and Long-Horizon Tasks for Agentic Reinforcement Learning</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-21/">AI Paper Daily | 2026-07-21</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-21T00:00:00Z'>Jul 21, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a>
+      <ol>
+        <li><a href="#audio-visual-flamingo-open-audio-visual-intelligence-for-long-and-complex-videos">Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos</a></li>
+        <li><a href="#rw-voice-eq-bench-a-real-world-benchmark-for-evaluating-voice-ai-systems">RW-Voice-EQ Bench: A Real World Benchmark for Evaluating Voice AI Systems</a></li>
+      </ol>
+    </li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#xiaomi-robotics-1-scaling-vision-language-action-models-with-over-100k-hours-of-real-world-trajectories">Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</a></li>
+        <li><a href="#loop-the-loopies">Loop the Loopies!</a></li>
+        <li><a href="#xhc-expanded-hyper-connections">xHC: Expanded Hyper-Connections</a></li>
+        <li><a href="#understanding-reasoning-from-pretraining-to-post-training">Understanding Reasoning from Pretraining to Post-Training</a></li>
+        <li><a href="#on-policy-delta-distillation">On-Policy Delta Distillation</a></li>
+        <li><a href="#joynexus-service-oriented-multi-tenant-post-training-for-vla-models">JoyNexus: Service-Oriented Multi-Tenant Post-Training for VLA Models</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#cura-1t-specialized-model-for-agentic-healthcare">Cura 1T: Specialized Model for Agentic Healthcare</a></li>
+        <li><a href="#recgpt-v3-technical-report">RecGPT-V3 Technical Report</a></li>
+        <li><a href="#resource2skill-distilling-executable-agent-skills-from-human-created-multimodal-resources">RESOURCE2SKILL: Distilling Executable Agent Skills from Human-Created Multimodal Resources</a></li>
+        <li><a href="#dsworld-a-data-science-world-model-for-efficient-autonomous-agents">DSWorld: A Data Science World Model for Efficient Autonomous Agents</a></li>
+        <li><a href="#toolverse-unlocking-massive-environments-and-long-horizon-tasks-for-agentic-reinforcement-learning">ToolVerse: Unlocking Massive Environments and Long-Horizon Tasks for Agentic Reinforcement Learning</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 13 篇论文 | Audio LLM: 2 篇 | LLM Training: 6 篇 | AI Agents: 5 篇</p>
+<p>来源: HuggingFace Papers（13） | 去重跳过近 7 天已报道论文（12）</p>
+
+    <blockquote>
+        <p>今天值得看的不是某一条单点能力刷新，而是三条更清晰的工程趋势：语音与视频模型开始从短片段感知走向长时程、跨模态推理；训练侧继续寻找参数规模之外的新缩放轴，包括循环层、扩展残差流和更直接的推理蒸馏信号；Agent 侧则把“技能、记忆、环境模型和长程工具调用”逐渐做成可复用的系统组件。</p>
+
+    </blockquote>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><ol>
+<li><a class="link" href="#audio-visual-flamingo-open-audio-visual-intelligence-for-long-and-complex-videos" >Audio-Visual Flamingo</a>：用约 700 万条训练样本、三阶段课程学习和带时间戳的交错思维链，把开放音视频模型推进到长视频多事件推理。</li>
+<li><a class="link" href="#xiaomi-robotics-1-scaling-vision-language-action-models-with-over-100k-hours-of-real-world-trajectories" >Xiaomi-Robotics-1</a>：以超过 10 万小时真实轨迹验证 VLA 数据与模型规模的可迁移缩放规律，RoboCasa365 成功率从 46.6% 提升到 57.6%。</li>
+<li><a class="link" href="#loop-the-loopies" >Loopie</a>：让循环 Transformer 在相同预训练算力下超过常规增参路线，并在无工具条件下达到 2025 IMO、IPhO 金牌水平，但仍需完整开放结果验证。</li>
+<li><a class="link" href="#xhc-expanded-hyper-connections" >xHC</a>：把并行残差流从 N=4 扩到 N=16，用稀疏更新和 Flash 实现控制算力与内存流量，给 LLM 预训练增加了一个可操作的新缩放轴。</li>
+<li><a class="link" href="#resource2skill-distilling-executable-agent-skills-from-human-created-multimodal-resources" >RESOURCE2SKILL</a>：从教程视频、代码仓库和文章中自动提炼可执行技能，七类任务平均提高 11.9 个百分点，是今天最贴近 Agent 工程落地的工作。</li>
+</ol>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><h3 id="audio-visual-flamingo-open-audio-visual-intelligence-for-long-and-complex-videos"><a class="link" href="https://arxiv.org/abs/2607.16107"  target="_blank" rel="noopener"
+    >Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos</a>
+</h3>
+    <blockquote>
+        <p>AV-Flamingo 面向长而复杂的真实视频，联合理解音频、图像和视频，并把中间推理步骤显式对齐到时间戳。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Sreyan Ghosh, Arushi Goel, Kaousheik Jayakumar et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（7 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.16107"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.16107.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 构建约 700 万条字幕与问答实例的 Audio-Visual-Skills 数据集，并以三阶段课程从短程感知逐步训练到长程、多事件推理。Temporal Audio-Visual Interleaved Chain-of-Thought 将中间推理显式锚定到长音视频流的时间戳，兼顾时序对齐与可解释性。</li>
+<li><strong>实验结果</strong>: 在 15 个以上音视频、全模态、音频和视觉基准上，模型明显超过同规模开放模型；在长时复杂场景中还可与更大的开放权重或闭源模型竞争，部分任务实现反超。</li>
+<li><strong>精评</strong>: 这篇最值得 Audio LLM 团队关注的是训练配方，而不只是榜单分数：数据构造、课程长度和时间戳监督形成了完整闭环。摘要没有给出逐项分数、推理成本及长视频上下文上限，因此“长程能力”到底能扩展到多长、是否依赖昂贵采样，仍需看正文和代码复现。</li>
+<li><strong>相关技术</strong>: audio-visual LLM, long-form video reasoning, curriculum learning, timestamp grounding, interleaved chain-of-thought</li>
+<li><strong>代码/权重</strong>: 论文声明 fully open，已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们提出 Audio-Visual Flamingo（AV-Flamingo），一种完全开放、达到当前最佳水平的音视频大语言模型（Audio-Visual Large Language Model，AV-LLM），用于对音频、图像和长视频进行联合理解与推理。不同于以往主要关注短片段的 AV-LLM，AV-Flamingo 专门面向长而复杂的真实世界音视频理解与推理。为此，我们作出三项关键贡献：（1）Audio-Visual-Skills，一个大规模真实视频集合，包含约 700 万条字幕和问答训练实例，重点训练时间、组合以及跨模态音视频推理；（2）一种新的三阶段课程学习方法，使模型从短程感知逐步发展到长时程、多事件推理；（3）Temporal Audio-Visual Interleaved Chain-of-Thought（时间音视频交错思维链），一种把中间推理步骤显式锚定到长音视频流时间戳的推理框架，从而改善时间对齐和可解释性。在 15 个以上音视频、全模态、音频及视觉基准上的大量实验表明，AV-Flamingo 以明显优势超过同等规模的开放模型，并且仍能与大得多的开放权重模型和闭源模型高度竞争，部分情况下还能超越它们，尤其是在长而复杂的真实世界音视频理解和推理任务上。除基准性能外，AV-Flamingo 还表现出很强的实际效用，并能良好迁移到未见任务，体现出稳健性与泛化能力。</p>
+</details>
+<hr>
+<h3 id="rw-voice-eq-bench-a-real-world-benchmark-for-evaluating-voice-ai-systems"><a class="link" href="https://arxiv.org/abs/2607.14846"  target="_blank" rel="noopener"
+    >RW-Voice-EQ Bench: A Real World Benchmark for Evaluating Voice AI Systems</a>
+</h3>
+    <blockquote>
+        <p>RW-Voice-EQ Bench 不再用单一 WER 或对话分数概括语音系统，而是分别测量声学、表现力、交互与真实环境鲁棒性。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: David Ayllon, Alice Baird, Jeffrey Brooks et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers（0 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14846"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14846.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 统一评测 TTS、Speech-to-Speech（STS）、语音理解和 ASR，重点测试文本转写无法保留的情绪、口音、身份与副语言信息。作者主张用多维能力画像替代单一总分，避免把彼此独立的语音能力错误压缩成一个指标。</li>
+<li><strong>实验结果</strong>: 评测显示 TTS 的自然度、表现力、身份稳定性和可靠性相互独立；部分 STS Agent 即便能访问音频仍主要依赖转写文本；真实口音、情绪、噪声和对话条件会暴露干净语音基准遗漏的 ASR 缺陷。</li>
+<li><strong>精评</strong>: 这是偏评测方法论而非新模型，但对选型和回归测试很实用。它提醒团队：WER 低并不等于模型理解了说话方式，TTS 自然也不等于身份稳定；后续要重点检查数据许可、主观评测一致性以及各维度样本覆盖。</li>
+<li><strong>相关技术</strong>: text-to-speech evaluation, speech-to-speech agents, paralinguistic understanding, real-world ASR, voice identity stability</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>现有语音 AI 基准通常评估语音可懂度、词错误率或基于文本的对话质量等孤立能力，却很少检验系统能否利用那些使口语区别于文本表达的声学信息。为此，我们提出 Real World Voice EQ Bench，这是一个多维基准，用于从文本转语音（Text-to-Speech，TTS）、语音到语音（Speech-to-Speech，STS）、语音理解（Speech Understanding，SU）和自动语音识别（Automatic Speech Recognition，ASR）四个方面评估语音 AI。评测结果表明，系统表现高度依赖具体维度。在 TTS 中，自然度、表现力、身份稳定性和可靠性基本是彼此独立的评估维度。在 STS 中，能够访问音频并不保证系统会利用声音情感，一些 Agent 仍然主要由转写文本驱动。在 SU 中，模型在不同副语言任务上的表现不均衡。在 ASR 中，真实世界的口音、情绪、噪声和对话条件会暴露现有干净语音基准无法捕捉的失败。综合来看，语音 AI 应被评估为声学、表现力、交互和鲁棒性能力的多维画像，而不应只看单一聚合分数。</p>
+</details>
+<hr>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="xiaomi-robotics-1-scaling-vision-language-action-models-with-over-100k-hours-of-real-world-trajectories"><a class="link" href="https://arxiv.org/abs/2607.15330"  target="_blank" rel="noopener"
+    >Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</a>
+</h3>
+    <blockquote>
+        <p>Xiaomi-Robotics-1 用超过 10 万小时真实操作轨迹预训练通用动作能力，再通过后训练对齐机器人本体和人类指令。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xiaomi Robotics Team, Jun Guo, Piaopiao Jin et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（54 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15330"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15330.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://robotics.xiaomi.com/xiaomi-robotics-1.html"  target="_blank" rel="noopener"
+    >项目页</a></li>
+<li><strong>关键贡献</strong>: 提出 VLA 的预训练—后训练两阶段配方，并用可扩展自动标注流水线将 UMI 采集轨迹转写为描述场景状态变化的自然语言，为动作学习提供细粒度条件。研究还系统展示了数据规模和模型规模的预训练收益能够传递到未见环境的真实机器人执行与下游小样本微调。</li>
+<li><strong>实验结果</strong>: RoboCasa365 成功率达到 57.6%，超过此前最佳的 46.6%；RoboDojo 平均分为 20.07，明显高于此前的 13.07，并在多个仿真基准上超过现有方法。</li>
+<li><strong>精评</strong>: 10 万小时真实轨迹的规模本身很有分量，但更重要的是自动语言标注把数据规模转化成了可用监督。摘要没有披露数据构成、重复度、失败轨迹比例和真实机评测任务数；在代码、权重与数据细节发布前，外界还难以判断结果更依赖规模、标注质量还是特定机器人体系。</li>
+<li><strong>相关技术</strong>: vision-language-action model, UMI trajectories, automatic language labeling, robot post-training, embodiment alignment</li>
+<li><strong>代码/权重</strong>: 论文称将发布，当前未开放 ⏳</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们提出 Xiaomi-Robotics-1，一种基础视觉—语言—动作（Vision-Language-Action，VLA）模型，能够：（1）遵循多样化语言指令，在未见环境中开箱即用地执行广泛的移动操作任务；（2）只用少量微调数据，高效适配新的下游任务。我们提出由预训练和后训练组成的两阶段训练配方。在预训练阶段，我们利用 UMI 设备采集的超过 10 万小时真实世界操作轨迹进行训练，使模型获得广泛且可泛化的动作生成能力。关键在于，我们开发了一条可扩展的自动标注流水线，用自然语言描述场景状态变化并标注轨迹片段，从而为动作学习提供丰富而精确的条件。在后训练阶段，我们让这些能力与具体机器人本体以及人类通常用于指挥机器人的祈使指令对齐。大量实验展现出明显的缩放行为：随着预训练数据规模和模型规模增加，Xiaomi-Robotics-1 的表现持续改善。这种缩放行为会直接传递到后训练阶段，更强的预训练模型能在未见环境中获得更好的真实机器人开箱性能。此外，Xiaomi-Robotics-1 还是一种强大的机器人基础策略，可以较高的数据效率微调到复杂、灵巧的任务上。在多个仿真基准中，Xiaomi-Robotics-1 超过了当前最佳方法。值得注意的是，它在 RoboCasa365 上以 57.6% 的成功率刷新当前最佳结果，超过此前的 46.6%；在 RoboDojo 上取得 20.07 的平均分，也显著超过此前最佳的 13.07。代码和模型检查点将会发布。项目页：https://robotics.xiaomi.com/xiaomi-robotics-1.html 。</p>
+</details>
+<hr>
+<h3 id="loop-the-loopies"><a class="link" href="https://arxiv.org/abs/2607.16051"  target="_blank" rel="noopener"
+    >Loop the Loopies!</a>
+</h3>
+    <blockquote>
+        <p>Loopie 让同一组 Transformer 层多次循环计算，在相同算力预算下反超常规增参的 Transformer 基线。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zitian Gao, Yilong Chen, Yihao Xiao et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（55 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.16051"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.16051.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 20B/2B active 和 6B/0.6B active 两个循环 MoE 模型，直接挑战“多给 N 倍算力时，增大 N 倍参数优于循环 N 次”的传统结论。配套后训练流程进一步把循环表示转化为较强的数学与物理推理能力。</li>
+<li><strong>实验结果</strong>: 消融实验包含与 30B-A3B 常规模型的比较；摘要称 Loopie 在相同训练算力下显著超过普通 Transformer，并在不使用工具时达到 2025 年 IMO 与 IPhO 金牌水平。</li>
+<li><strong>精评</strong>: 如果结果成立，循环深度会成为参数规模之外很有吸引力的 test-time/train-time 计算旋钮，尤其适合显存受限但允许更多计算的场景。不过“金牌水平”和同算力优势都高度依赖评测协议、采样预算与数据污染控制，摘要没给数字，也没有开放声明，结论暂时应谨慎看待。</li>
+<li><strong>相关技术</strong>: looped Transformer, mixture-of-experts, parameter sharing, compute-matched scaling, reasoning post-training</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>我们提出 Loopie，这是迄今能力最强的循环 Transformer。Loopie 系列包含两个混合专家（Mixture-of-Experts，MoE）模型：一个总参数量 20B、激活参数量 2B；另一个总参数量 6B、激活参数量 0.6B。循环 Transformer 长期面临一个难题：当预训练计算量增加 N 倍时，把参数量扩大 N 倍通常比让同一模型循环 N 次表现更好。Loopie 解决了这一难题。大量消融研究——包括与常规 30B-A3B 模型的比较——表明，在相同计算预算下训练时，Loopie 显著超过普通 Transformer 基线。我们提出的新型后训练流水线赋予 Loopie 强大的推理能力。在 2025 年国际数学奥林匹克（IMO）和国际物理奥林匹克（IPhO）试题上，Loopie 在不使用工具的情况下达到金牌水平。</p>
+</details>
+<hr>
+<h3 id="xhc-expanded-hyper-connections"><a class="link" href="https://arxiv.org/abs/2607.14530"  target="_blank" rel="noopener"
+    >xHC: Expanded Hyper-Connections</a>
+</h3>
+    <blockquote>
+        <p>xHC 通过时间特征增强和稀疏残差流更新，将 Hyper-Connections 从 4 条并行残差流实用地扩展到 16 条。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xiangdong Zhang, Xiaohan Qin, Sunan Zou et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（47 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.14530"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.14530.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 找出 mHC 扩展受阻的两个瓶颈：写回信息不足，以及残差混合生成成本随 N 三次方增长。xHC 在保留对完整残差状态稠密读取的同时，每层只更新 N=16 中的 k=4 条流；xHC-Flash 再针对大 N 的内存流量做算子级优化。</li>
+<li><strong>实验结果</strong>: 在 18B MoE 上，xHC 比 mHC 的下游平均分高 4.0 分；达到同等 loss 时，普通模型和 mHC 分别需要 xHC 的 1.50 倍与 1.19 倍算力。xHC-Flash 将每子层内存流量从 73.5C 降到 40C，接近 N=4 mHC 的 34C。</li>
+<li><strong>精评</strong>: 论文把架构收益、缩放律和硬件效率放在一起评估，这比只报下游分数扎实。它真正的价值在于给残差流扩展补上了系统实现，但 18B/28B MoE 之外能否稳定扩到稠密模型、更大规模及不同训练栈，仍需要开放实现和独立复现。</li>
+<li><strong>相关技术</strong>: Hyper-Connections, parallel residual streams, sparse stream update, temporal feature augmentation, xHC-Flash</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>Hyper-Connections（HC）把 Transformer 的残差流扩展成 N 条并行流，提供一种超越模型宽度和深度的记忆缩放方式。Manifold-Constrained HC（流形约束 HC，mHC）让这种形式能在大规模训练中保持稳定。从 N=1 到 N=4 的巨大收益表明，扩展残差流是一条很有希望的缩放轴。然而，现有 HC 系列方法通常止步于 N=4。我们的实验揭示了原因：继续扩大 mHC 会使性能收益递减，同时训练成本迅速上升。我们把这一限制归因于两个瓶颈：随着流数量增加，写回信息不足；残差混合生成的成本随 N 呈三次方增长。为同时解决这两个瓶颈，我们提出 xHC（Expanded Hyper-Connections，扩展超连接），这是首个能在 N&gt;4 时实现有意义扩展的 HC 系列方法。xHC 结合时间特征增强以丰富写回信息，并采用稀疏残差流架构：在 N=16 条流中只更新 k=4 条，同时仍可稠密访问完整残差状态。在 18B 和 28B MoE 模型上，xHC 都带来强劲且一致的下游改进。在 18B MoE 模型上，xHC 比 mHC 的平均下游分数提高 4.0 分，而相较普通基线只增加少量训练 FLOPs。缩放律实验表明，要达到与 xHC 相同的损失，普通模型和 mHC 分别需要 1.50 倍和 1.19 倍计算量。实际的大 N 训练还必须控制扩展残差状态造成的内存流量。为此，我们提出 xHC-Flash，把每个子层的内存流量从 73.5C 降到 40C，接近 N=4 时 mHC 所需的 34C，同时保留完整 xHC 的收益。xHC 与 xHC-Flash 共同使大 N 残差流扩展成为一种有效、实用的 LLM 预训练方法。</p>
+</details>
+<hr>
+<h3 id="understanding-reasoning-from-pretraining-to-post-training"><a class="link" href="https://arxiv.org/abs/2607.16097"  target="_blank" rel="noopener"
+    >Understanding Reasoning from Pretraining to Post-Training</a>
+</h3>
+    <blockquote>
+        <p>论文用棋类和数学构造可控实验，说明预训练 loss 与 token 数能够预测后续 RL 的收益与学习速度。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Jingyan Shen, Ang Li, Salman Rahman et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（19 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.16097"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.16097.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 建立从预训练、合成推理轨迹 SFT 到可验证奖励 RL 的完整可控实验链，隔离研究预训练规模对 RL 收益的影响。结果还区分了 RL 在简单题上强化已有正确动作、在难题上唤起 SFT 几乎未表达正确动作的两种机制。</li>
+<li><strong>实验结果</strong>: 对 5M 至 1B 参数棋类模型，给定 RL 算力下的最终表现可由预训练 loss 预测，RL 奖励曲线斜率随预训练 token 近似线性改善；1B 数学模型复现实验呈现相同模式。</li>
+<li><strong>精评</strong>: 这项工作给“先把预训练做扎实再投入 RL”提供了更定量的依据，也提示预算规划可以用预训练指标预测后训练回报。棋类是干净但狭窄的世界，数学迁移只验证了一个 1B 模型；结论是否适用于开放式推理、工具调用和超大模型仍不能直接外推。</li>
+<li><strong>相关技术</strong>: verifiable-reward RL, chess language models, synthetic reasoning traces, pretraining loss prediction, RL compute scaling</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>强化学习（Reinforcement Learning，RL）已经成为提升大语言模型（LLM）复杂推理能力的核心方法，但 RL 后训练通常与此前的预训练割裂研究。因此，两个基本问题仍未解决：（1）预训练选择——模型规模和数据——如何影响 RL 算力的回报；（2）RL 究竟对模型做了什么？这些问题很难在标准 LLM 环境中研究：预训练语料庞大且不可控，难以把行为归因于预训练还是 RL；同时系统地扫描两个阶段的计算规模成本过高。为应对这些挑战，我们把国际象棋作为受控测试平台，研究贯穿预训练到后训练全过程的推理。我们遵循标准 LLM 训练流程：在人类棋局上预训练参数量从 5M 到 1B 的语言模型，使用合成推理轨迹进行监督微调，再用可验证奖励在棋类谜题上执行 RL。在这个框架下，我们发现：给定 RL 计算量时，RL 后性能可以由预训练损失良好预测；RL 奖励曲线的斜率则随预训练 token 数近似线性改善。除了缩放规律，我们还发现 RL 并非只是锐化 SFT 策略：在简单谜题上，它会放大 SFT 策略原本已经偏好的正确走法；在困难谜题上，它会发掘 SFT 下几乎没有出现的正确走法。我们进一步在数学领域文本上训练一个 1B 语言模型，检验这些发现能否迁移到棋类之外；同样的预测模式再次出现：预训练更久的检查点在 RL 后达到更高性能，改善速度也更快。总之，我们定量刻画了预训练与 RL 的接口，并提供一个可控测试平台，用于研究贯穿预训练和后训练全过程的推理科学。</p>
+</details>
+<hr>
+<h3 id="on-policy-delta-distillation"><a class="link" href="https://arxiv.org/abs/2607.15161"  target="_blank" rel="noopener"
+    >On-Policy Delta Distillation</a>
+</h3>
+    <blockquote>
+        <p>OPD² 不直接模仿教师分布，而是蒸馏“推理教师相对其基座模型发生了什么变化”，用 delta signal 更直接地转移推理能力。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Byeongho Heo, Jaehui Hwang, Sangdoo Yun et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（27 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15161"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15161.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://github.com/naver-ai/opd2"  target="_blank" rel="noopener"
+    >代码</a></li>
+<li><strong>关键贡献</strong>: 把蒸馏奖励定义为教师模型与其指令微调前基座模型的分布差异，使监督聚焦于推理训练带来的增量，而不是复制教师的全部先验。该信号用于 on-policy 蒸馏，可以绕过奖励模型限制并继续提供 token 级监督。</li>
+<li><strong>实验结果</strong>: 在数学、科学和代码推理基准上，OPD² 持续超过传统 on-policy 蒸馏，并使推理 LLM 只需较短后训练即可达到较强性能；摘要未披露具体提升幅度。</li>
+<li><strong>精评</strong>: “蒸馏变化而非蒸馏完整模型”是简洁且可迁移的设计，也有望减少与任务无关的教师偏差。工程上要重点看 delta 的数值稳定性、教师与基座必须严格配对的限制，以及不同温度和采样策略是否会放大噪声。</li>
+<li><strong>相关技术</strong>: on-policy distillation, delta reward signal, token-level supervision, reasoning transfer, instruction-tuned teacher</li>
+<li><strong>代码/权重</strong>: 论文称代码将发布，当前待开放 ⏳</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>On-policy 蒸馏是强化学习中的一种替代性后训练方法，它通过教师模型提供 token 级监督，缓解奖励模型施加的限制。虽然 on-policy 蒸馏已在多种场景中得到研究和应用，其基础设计仍缺少充分探索。本文不再直接模仿教师的输出分布，而是提出一种名为 delta signal（增量信号）的新蒸馏奖励。delta signal 被定义为教师模型与其在推理能力指令微调之前的基座模型之间的差异。因此，它能够捕捉推理调优带来的变化，为转移推理能力提供更直接的信号。通过大量实验证据，我们表明 delta signal 可以显著改善 on-policy 蒸馏，并把这种新蒸馏方法称为 On-Policy Delta Distillation（OPD²）。在数学、科学和代码推理基准上的实验表明，OPD² 持续超过传统 on-policy 蒸馏，使推理 LLM 只需较短的后训练周期就能获得强劲性能。代码将发布于 <a class="link" href="https://github.com/naver-ai/opd2"  target="_blank" rel="noopener"
+    >https://github.com/naver-ai/opd2</a> 。</p>
+</details>
+<hr>
+<h3 id="joynexus-service-oriented-multi-tenant-post-training-for-vla-models"><a class="link" href="https://arxiv.org/abs/2607.16074"  target="_blank" rel="noopener"
+    >JoyNexus: Service-Oriented Multi-Tenant Post-Training for VLA Models</a>
+</h3>
+    <blockquote>
+        <p>JoyNexus 将 VLA 的微调、RL 与评测拆成共享服务，通过多租户调度和异构数据组批降低短时、突发训练负载的成本。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Haoran Sun, Wentao Zhang, Junyang Hua et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers（1 upvote）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.16074"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.16074.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 将训练模型、推理模型和环境解耦为 API 服务，由常驻共享基座模型承载租户专属模块、优化器、轨迹和策略版本。针对模型输入前缀兼容但 schema 不同的 VLA 数据，提出 group batching，让多租户样本复用一次共享骨干前向。</li>
+<li><strong>实验结果</strong>: 工作负载模拟与具身场景流水线显示，相比租户独占资源执行，跨租户调度可降低聚合 GPU 时间并提升服务利用率；摘要未给出具体百分比。</li>
+<li><strong>精评</strong>: 这篇更像训练平台论文，解决的是 VLA 实验碎片化导致的 GPU 空洞，而非模型精度。架构对内部平台团队很有参考价值，但真实收益会高度依赖租户负载重叠、模型兼容程度和环境服务延迟，需要看到尾延迟、隔离开销及故障恢复数据。</li>
+<li><strong>相关技术</strong>: multi-tenant VLA training, service-oriented post-training, group batching, shared backbone, cross-tenant scheduling</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>视觉—语言—动作（Vision-Language-Action，VLA）模型的后训练十分必要，因为模拟器、机器人本体和任务目标具有高度多样性。现有计算服务无论采用直接租用加速器还是提交批处理作业，通常都会为单一租户分配一组独占 GPU 和 CPU 资源。这种模式虽然给客户端最大的灵活性，却迫使用户自行适配基础设施；固定的卡时计费也让短时或突发工作负载对租户而言成本高昂，对服务商而言效率低下。为解决这些问题，我们提出 JoyNexus，一个统一的多租户 VLA 监督微调、强化学习和评估服务。JoyNexus 将 Training Model Service、Inference Model Service 和 Environment Service 解耦，分别通过 API 访问；各服务都以常驻共享基座模型为支撑，并提供租户专属槽位。租户既可直接调用训练、rollout 和评估的高层语义 API，也可使用较低层 API 和分配给自己的端点组合自定义算法。多个租户可以并发提交工作负载；它们的动作模块、优化器、rollout 记录和策略版本保持隔离，由全局 Training Queue 与 Inference Queue 进行调度。为进一步提高多租户训练效率，JoyNexus 针对共享兼容模型输入前缀、但数据 schema 不同的异构 VLA 数据引入 group batching，使分组样本可以共用一次骨干网络前向传播。最后，我们通过工作负载模拟和真实具身场景中的 group-batching 流水线评估 JoyNexus。结果表明，与隔离的单租户执行相比，JoyNexus 通过共享资源上的跨租户调度，减少了聚合 GPU 时间并提高服务利用率。</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="cura-1t-specialized-model-for-agentic-healthcare"><a class="link" href="https://arxiv.org/abs/2607.15314"  target="_blank" rel="noopener"
+    >Cura 1T: Specialized Model for Agentic Healthcare</a>
+</h3>
+    <blockquote>
+        <p>Cura 1T 用有人类把关的自我演化循环，针对医疗问诊、推理、交互诊断和 EHR 工具调用的不同失败模式持续改造数据配比。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: actAVA AI, Haolin Chen, Leon Qi et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（43 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15314"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15314.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 每轮由训练 Agent 规划目标能力、训练模型、评估轨迹，再根据失败样本调整合成与精选数据混合；人类门控避免完全自动的自我训练失控。方案试图同时覆盖患者沟通、文本/图像临床推理、交互诊断和 EHR 工具使用，减少单任务更新造成的能力退化。</li>
+<li><strong>实验结果</strong>: 摘要称 Cura 1T 在医疗评测套件上位居前沿基线首位或接近首位，同时在域外推理和 Agent 基准上保持竞争力，但未提供模型规模、分项分数和统计显著性。</li>
+<li><strong>精评</strong>: 以失败分析驱动数据混合比一次性灌入通用医疗数据更符合高风险领域迭代逻辑。不过摘要的证据表述偏笼统，缺少临床安全、校准、拒答和真实 EHR 环境结果；在这些信息披露前，不能把“榜单靠前”视作可部署证明。</li>
+<li><strong>相关技术</strong>: human-gated self-evolution, healthcare LLM, EHR tool use, multimodal clinical reasoning, failure-driven data mixture</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>医疗保健涵盖高风险沟通、专家推理和工作流执行，但能够同时覆盖这些场景的专用 LLM 仍然有限。医疗模型必须处理患者问诊、基于文本和图像的临床推理、交互式诊断以及电子健康记录（Electronic Health Record，EHR）工具使用。这些能力有着不同的失败方式，针对一个任务进行狭窄更新还可能损害其他任务。我们提出 Cura 1T，一个通过“有人类把关的自我演化循环”训练的医疗专用 LLM。在每一轮演化中，训练 Agent 会规划目标能力、训练模型、评估基准轨迹，再根据观察到的失败调整数据混合。这个以数据为中心的循环通过有针对性的合成和精选样本改进模型，而不是只执行一次通用医疗数据更新。在整个医疗评测套件中，Cura 1T 在前沿基线中排名第一或接近第一，同时在域外推理和 Agent 基准上仍保持竞争力。</p>
+</details>
+<hr>
+<h3 id="recgpt-v3-technical-report"><a class="link" href="https://arxiv.org/abs/2607.15591"  target="_blank" rel="noopener"
+    >RecGPT-V3 Technical Report</a>
+</h3>
+    <blockquote>
+        <p>RecGPT-V3 用持续演化的用户记忆、文本与 Semantic ID 混合推理以及潜在意图 token，把推荐 Agent 的效果和线上成本一起优化。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Bowen Zheng, Chao Yi, Dian Chen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（26 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15591"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15591.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: Memory Hub 将长期行为压缩为结构化、持续更新的用户记忆，避免每次请求重算完整历史；混合模态基础模型同时对自然语言标签和商品 Semantic ID 推理，缓解标签到商品的有损瓶颈。Latent Intent Reasoning 再把冗长显式理由内化为可学习潜 token，同时保留可解码解释。</li>
+<li><strong>实验结果</strong>: 用户建模计算量降低 55.8%，输出 token 成本降低 200 倍，端到端服务资源下降 52.4%。淘宝“猜你喜欢”线上 A/B 测试中，IPV +1.28%、CTR +1.00%、TC +1.97%、GMV +3.97%。</li>
+<li><strong>精评</strong>: 这是少见同时给出在线商业指标与资源指标的 Agent 推荐系统报告，记忆和 SID 的组合也很有工程可复制性。仍需留意 A/B 周期、流量分层、长期新颖性与回音室效应；潜在理由可解码并不自动等于理由忠实于真实决策过程。</li>
+<li><strong>相关技术</strong>: stateful user memory, Semantic IDs, hybrid-modal recommendation, latent intent reasoning, online A/B testing</li>
+<li><strong>代码/权重</strong>: 生产系统，未开放</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>大语言模型（LLM）正在推动推荐系统从匹配历史行为中的共现模式，转向推理驱动这些行为的意图。RecGPT-V1 在淘宝率先实践这一范式，把用户理解置于核心；RecGPT-V2 则通过协同多 Agent 推理扩大规模。两者都已部署到生产环境，并持续改善用户体验和商业结果。然而，大规模运行 RecGPT 暴露出三个挑战：（1）无状态行为建模：每次请求都重新处理完整用户历史，既浪费计算，也丢弃此前分析；（2）标签到商品的信息瓶颈：自然语言标签在用户理解与商品落地之间形成有损通道；（3）低效的显式推理：冗长思维链造成难以承受的延迟和计算开销。</p>
+<p>我们提出 RecGPT-V3，一种有状态、混合模态的推荐系统：它用自然语言推理开放世界知识，并用 Semantic ID（语义标识，SID）完成具体商品落地。Memory Hub 维护结构化、持续演化的用户记忆，把长时程行为提炼成紧凑单元，使用户建模计算量降低 55.8%。Hybrid-modal Foundation Model 让 LLM 能够联合推理文本标签和 SID，打通通往商品空间的高带宽通道。Latent Intent Reasoning（潜在意图推理）把冗长推理过程内化为紧凑、可学习的潜 token；这些 token 仍可解码成可读解释，同时把输出 token 成本降低 200 倍。RecGPT-V3 已部署到淘宝“猜你喜欢”信息流，在大规模在线 A/B 测试中持续获得收益：IPV +1.28%、CTR +1.00%、TC +1.97%、GMV +3.97%，同时把端到端服务资源消耗降低 52.4%。</p>
+</details>
+<hr>
+<h3 id="resource2skill-distilling-executable-agent-skills-from-human-created-multimodal-resources"><a class="link" href="https://arxiv.org/abs/2606.29538"  target="_blank" rel="noopener"
+    >RESOURCE2SKILL: Distilling Executable Agent Skills from Human-Created Multimodal Resources</a>
+</h3>
+    <blockquote>
+        <p>RESOURCE2SKILL 把教程视频、代码仓库、文章和参考作品转化成带来源、可检索、可组合的可执行 Agent 技能。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yijia Fan, Zonglin Di, Zimo Wen et al.</li>
+<li><strong>来源</strong>: HuggingFace Trending（113 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2606.29538"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2606.29538.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 构建分层多模态 Skill Wiki，每个技能联合结构化文本、代码、视觉示例、元数据和来源，使视频中的操作时序、代码中的工具模式与文章中的概念风格互补。Agent 在推理时检索并组合技能；覆盖不足时，还能在线调用同一构建算子获取新技能。</li>
+<li><strong>实验结果</strong>: 在七类实际创作领域中，RESOURCE2SKILL 相比无技能 Agent 的总体平均分提高 11.9 个百分点，并在 28 个主要“模型×领域”聚合单元中的 26 个超过强 harness 基线。</li>
+<li><strong>精评</strong>: 它把互联网上大量“给人看的教程”变成 Agent 可复用过程知识，方向比单纯从成功轨迹总结文本更宽。真正落地时，技能的安全边界、依赖版本、来源许可和在线获取时的提示注入风险会和能力同样重要；摘要中的创作任务结果也未必直接迁移到高风险操作。</li>
+<li><strong>相关技术</strong>: multimodal skill distillation, hierarchical Skill Wiki, tutorial video grounding, provenance tracking, online skill acquisition</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>技能是软件 Agent 的一种有用抽象，它能把人类与 Agent 的经验转化为可复用的过程知识。然而，现有技能库大多由人工编写、以文本为中心，或从 Agent 轨迹中提取；教程视频和其他多模态人类资源仍未得到充分利用。我们提出 RESOURCE2SKILL，一个把教程视频、代码仓库、文章和参考作品等多模态资源提炼成软件 Agent 可执行技能的框架。RESOURCE2SKILL 把这些技能组织成分层多模态 Skill Wiki，其中每个条目都结合结构化文本、代码、视觉示例、元数据和来源信息。这种设计保留了不同资源的互补信号：视频捕捉操作的时间过程和视觉效果，代码捕捉可执行工具模式，文章或参考作品提供概念与风格依据。在推理阶段，Agent 从 Wiki 中检索并组合相关技能；当覆盖不足时，同一个构建算子还可以在线获取新技能。在七个实际创作领域中，RESOURCE2SKILL 相比无技能 Agent 将总体平均分提高 11.9 个百分点，并在 28 个主要聚合“模型—领域”单元中的 26 个超过强大的 harness 基线。消融实验确认了多模态技能格式、分层组织、来源多样性、选择策略和在线获取的价值。</p>
+</details>
+<hr>
+<h3 id="dsworld-a-data-science-world-model-for-efficient-autonomous-agents"><a class="link" href="https://arxiv.org/abs/2607.15901"  target="_blank" rel="noopener"
+    >DSWorld: A Data Science World Model for Efficient Autonomous Agents</a>
+</h3>
+    <blockquote>
+        <p>DSWorld 在执行昂贵的数据科学操作前预测环境状态变化，用世界模型减少 Agent 训练和搜索中的真实试错。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Zherui Yang, Fan Liu, Hao Liu</li>
+<li><strong>来源</strong>: HuggingFace Trending（7 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15901"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15901.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://anonymous.4open.science/r/DSWorld"  target="_blank" rel="noopener"
+    >代码</a></li>
+<li><strong>关键贡献</strong>: 把数据科学工作流表示为状态与候选操作条件下的转移预测，并结合结构化状态构建、成本感知路由、轻量真实执行和 LLM 模拟器。提出 Reflective World Model Optimization，用对转移错误的反思式反馈进行强化学习优化。</li>
+<li><strong>实验结果</strong>: 8K 规模转移轨迹训练后，DSWorld 将基于 RL 的 Agent 训练加速约 14 倍、基于搜索的推理加速约 3–6 倍，同时保持有竞争力的任务表现；转移预测比最强 LLM 基线高 35.6%。</li>
+<li><strong>精评</strong>: 用模型预测昂贵工具调用的后果，是降低 Agent 试错成本的直接路线，尤其适合数据处理和模型训练这类慢反馈环境。风险是世界模型误差会被搜索或 RL 放大；8K 轨迹也偏小，需要观察跨数据集、跨库版本和罕见失败状态下的校准与回退策略。</li>
+<li><strong>相关技术</strong>: data science world model, transition prediction, cost-aware routing, reflective RL optimization, model-based agent search</li>
+<li><strong>代码/权重</strong>: 已提供匿名代码仓库 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>尽管自主数据科学 Agent 在数据理解和决策方面能力很强，它们仍严重依赖涉及昂贵计算的试错式工作流。这个瓶颈促使我们开发一种能在真实执行前预判数据科学操作效果的模型。本文提出 Data Science World Model（数据科学世界模型）概念：根据当前工作流状态和候选操作，预测数据科学执行环境的状态转移。我们进一步提出 DSWorld，一个实用框架，它结合结构化状态构建、成本感知路由、轻量级真实执行，以及用于昂贵操作的 LLM 模拟器。为支持训练，我们构建了 8K 规模的状态转移轨迹数据集，并提出 Reflective World Model Optimization（反思式世界模型优化），一种利用错误感知强化学习改善状态转移预测的策略。实验表明，在保持有竞争力性能的同时，DSWorld 可把基于 RL 的 Agent 训练加速约 14 倍，把基于搜索的推理加速约 3 至 6 倍；在状态转移预测任务上，它还比最强 LLM 基线高 35.6%。代码位于 <a class="link" href="https://anonymous.4open.science/r/DSWorld"  target="_blank" rel="noopener"
+    >https://anonymous.4open.science/r/DSWorld</a> 。</p>
+</details>
+<hr>
+<h3 id="toolverse-unlocking-massive-environments-and-long-horizon-tasks-for-agentic-reinforcement-learning"><a class="link" href="https://arxiv.org/abs/2607.15660"  target="_blank" rel="noopener"
+    >ToolVerse: Unlocking Massive Environments and Long-Horizon Tasks for Agentic Reinforcement Learning</a>
+</h3>
+    <blockquote>
+        <p>ToolVerse 从近 400 个 MCP、约 4500 个工具自动构建可执行训练环境，并针对长程工具任务设计数据生成与细粒度 RL 归因。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Shuaiyu Zhou, Fengpeng Yue, Zengjie Hu et al.</li>
+<li><strong>来源</strong>: HuggingFace Papers（0 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.15660"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.15660.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 从真实 Model Context Protocol（MCP）自动扩展 Agent RL 环境，并基于工具依赖图与 Dynamic Unlocking Sampling 生成 GUST 长时程任务。Turn-Aware Relative Advantage 则把优势信号细化到交互轮次，以缓解长任务只有终局奖励时的信用分配困难。</li>
+<li><strong>实验结果</strong>: 摘要称在多个 Agent 基准上进行大规模强化学习后，模型的长时程工具使用能力显著提升，并在动态环境中表现出更稳健的推理；未提供绝对分数、提升幅度和执行成功率。</li>
+<li><strong>精评</strong>: MCP 让真实工具环境规模化成为可能，ToolVerse 正好切中训练环境不足和长程信用分配两个痛点。但“近 400 个 MCP”也意味着版本漂移、权限差异、网络不稳定和不可信工具描述会进入训练环；若没有严格沙箱与可复现快照，大规模本身可能制造大量噪声。</li>
+<li><strong>相关技术</strong>: Model Context Protocol, tool dependency graph, Dynamic Unlocking Sampling, GUST dataset, Turn-Aware Relative Advantage</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>尽管 LLM Agent 在紧凑、定义明确的场景中表现出强大推理能力，但面对需要无缝集成工具的大规模、多样且动态的真实世界环境时，它们仍难以保持稳健和有效。为弥合这一差距，我们提出 ToolVerse，一个能够扩大 Agent 强化学习环境，并使 Agent 在工具集成推理（Tool-Integrated Reasoning，TIR）任务中执行复杂长时程推理的综合框架。首先，ToolVerse 从近 400 个真实世界 Model Context Protocol（模型上下文协议，MCP）自动构建大规模可执行 Agent 训练环境，其中包含约 4500 个工具。其次，我们提出一种基于工具依赖图的任务设计策略，使用 Dynamic Unlocking Sampling Algorithm（动态解锁采样算法）生成长时程任务，并产出 GUST（Graph Unlocking Sampling Tasks）数据集。第三，为缓解长时程 Agent 强化学习中的信用分配问题，我们提出细粒度的 Turn-Aware Relative Advantage（轮次感知相对优势）算法。我们使用 ToolVerse 开展大规模 Agent 强化学习训练，并在多个 Agent 基准上评估该框架。实验结果表明，我们的框架显著增强了 LLM 的长时程工具使用能力，取得明显性能提升，并展现出在动态环境中的稳健推理能力。</p>
+</details>
+<hr>
+<p><em>Generated on 2026-07-21 08:00 CST | Sources: HuggingFace Papers</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-19/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-19</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-18/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-18</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-17/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-17</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-16/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-16</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
