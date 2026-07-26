@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日概览 共收录 5 篇论文（去重跳过 25 篇近 7 天已报道论文） | Audio LLM: 0 篇 | LLM Training: 1 篇 | AI Agents: 4 篇 | 其他值得关注: 0 篇\n来源: HuggingFace Papers（5） | arXiv 补充抓取（0，接口超时/限流）\n">
+<title>AI Paper Daily | 2026-07-26</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-26/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-07-26">
+<meta property='og:description' content="今日概览 共收录 5 篇论文（去重跳过 25 篇近 7 天已报道论文） | Audio LLM: 0 篇 | LLM Training: 1 篇 | AI Agents: 4 篇 | 其他值得关注: 0 篇\n来源: HuggingFace Papers（5） | arXiv 补充抓取（0，接口超时/限流）\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-07-26/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-07-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-07-26T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Paper Daily | 2026-07-26">
+<meta name="twitter:description" content="今日概览 共收录 5 篇论文（去重跳过 25 篇近 7 天已报道论文） | Audio LLM: 0 篇 | LLM Training: 1 篇 | AI Agents: 4 篇 | 其他值得关注: 0 篇\n来源: HuggingFace Papers（5） | arXiv 补充抓取（0，接口超时/限流）\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-07-26/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a></li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#seededgrasp-language-guided-grasping-in-complex-scenes-with-multiple-embodiments">SeededGrasp: Language-Guided Grasping in Complex Scenes with Multiple Embodiments</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#sciexplore-evaluating-autonomous-agents-from-scientific-navigation-to-information-integration">SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration</a></li>
+        <li><a href="#filmworld-agentic-novel-to-film-generation-through-dynamic-cinematic-world-modeling">FilmWorld: Agentic Novel-to-Film Generation through Dynamic Cinematic World Modeling</a></li>
+        <li><a href="#two-level-meta-rubrics-for-evaluating-open-ended-generation-gamut-a-benchmark-for-factual-completeness">Two-Level Meta-Rubrics for Evaluating Open-Ended Generation: GAMUT, a Benchmark for Factual Completeness</a></li>
+        <li><a href="#financecomplexqa-benchmarking-agentic-reasoning-on-industrial-grade-financial-documents">FinanceComplexQA: Benchmarking Agentic Reasoning on Industrial-grade Financial Documents</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-07-26/">AI Paper Daily | 2026-07-26</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-07-26T00:00:00Z'>Jul 26, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#重点推荐-">重点推荐 ⭐</a></li>
+    <li><a href="#-audio-llm">🔊 Audio LLM</a></li>
+    <li><a href="#-llm-training">🧠 LLM Training</a>
+      <ol>
+        <li><a href="#seededgrasp-language-guided-grasping-in-complex-scenes-with-multiple-embodiments">SeededGrasp: Language-Guided Grasping in Complex Scenes with Multiple Embodiments</a></li>
+      </ol>
+    </li>
+    <li><a href="#-ai-agents">🤖 AI Agents</a>
+      <ol>
+        <li><a href="#sciexplore-evaluating-autonomous-agents-from-scientific-navigation-to-information-integration">SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration</a></li>
+        <li><a href="#filmworld-agentic-novel-to-film-generation-through-dynamic-cinematic-world-modeling">FilmWorld: Agentic Novel-to-Film Generation through Dynamic Cinematic World Modeling</a></li>
+        <li><a href="#two-level-meta-rubrics-for-evaluating-open-ended-generation-gamut-a-benchmark-for-factual-completeness">Two-Level Meta-Rubrics for Evaluating Open-Ended Generation: GAMUT, a Benchmark for Factual Completeness</a></li>
+        <li><a href="#financecomplexqa-benchmarking-agentic-reasoning-on-industrial-grade-financial-documents">FinanceComplexQA: Benchmarking Agentic Reasoning on Industrial-grade Financial Documents</a></li>
+      </ol>
+    </li>
+    <li><a href="#-其他值得关注">📌 其他值得关注</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><p>共收录 5 篇论文（去重跳过 25 篇近 7 天已报道论文） | Audio LLM: 0 篇 | LLM Training: 1 篇 | AI Agents: 4 篇 | 其他值得关注: 0 篇</p>
+<p>来源: HuggingFace Papers（5） | arXiv 补充抓取（0，接口超时/限流）</p>
+
+    <blockquote>
+        <p>今天的新论文集中在“复杂任务的可验证评测与结构化执行”：SciExplore 检验科研 Agent 从数据库导航到跨来源知识综合的完整链路；GAMUT 把开放式回答的“事实完整性”编译成可机评清单；FinanceComplexQA 用工业级复杂版式金融文档测试深度研究能力。FilmWorld 和 SeededGrasp 则分别展示了多 Agent 长视频生成与语义—几何解耦机器人抓取的工程路径。Audio LLM 方向今日没有未报道的新论文。</p>
+
+    </blockquote>
+<h2 id="重点推荐-">重点推荐 ⭐
+</h2><ol>
+<li><a class="link" href="#sciexplore-evaluating-autonomous-agents-from-scientific-navigation-to-information-integration" >SciExplore</a>：覆盖科研数据库导航、模糊文献检索、缺失引用补全和跨来源结构化综合，直接暴露现有科研 Agent 随任务复杂度增加而急剧退化的问题。</li>
+<li><a class="link" href="#filmworld-agentic-novel-to-film-generation-through-dynamic-cinematic-world-modeling" >FilmWorld</a>：将小说改编电影建模为动态电影世界的“构建—演化”过程，用两组专门化 Agent 维持跨镜头实体状态、因果与视觉一致性。</li>
+<li><a class="link" href="#two-level-meta-rubrics-for-evaluating-open-ended-generation-gamut-a-benchmark-for-factual-completeness" >GAMUT</a>：不再只检查模型说错了什么，而是评估它漏掉了什么；两级元量表把复杂内容结构机械编译为可靠的二元检查项。</li>
+<li><a class="link" href="#financecomplexqa-benchmarking-agentic-reasoning-on-industrial-grade-financial-documents" >FinanceComplexQA</a>：用 1,009 份复杂版式金融文档和 2,026 个深度研究任务，系统测试数值计算、多跳推理、总结与行业分析。</li>
+<li><a class="link" href="#seededgrasp-language-guided-grasping-in-complex-scenes-with-multiple-embodiments" >SeededGrasp</a>：让 VLM 只预测语义种子点，再由轻量抓取模型完成几何执行，在避免昂贵端到端训练的同时支持多种机器人形态。</li>
+</ol>
+<hr>
+<h2 id="-audio-llm">🔊 Audio LLM
+</h2><p>今日无未报道的新论文。</p>
+<h2 id="-llm-training">🧠 LLM Training
+</h2><h3 id="seededgrasp-language-guided-grasping-in-complex-scenes-with-multiple-embodiments"><a class="link" href="https://arxiv.org/abs/2607.20207"  target="_blank" rel="noopener"
+    >SeededGrasp: Language-Guided Grasping in Complex Scenes with Multiple Embodiments</a>
+</h3>
+    <blockquote>
+        <p>将高层语义判断与低层几何抓取解耦：VLM 先给出种子点，轻量抓取生成模型再完成具体动作。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yang Xu, Gurpreet Singh Mukker, Raymond Wang, Jasper Gerigk, Maria Attarian, Igor Gilitschenski</li>
+<li><strong>来源</strong>: HuggingFace Papers（3 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.20207"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.20207.pdf"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://uoft-isl.github.io/seeded-grasp/"  target="_blank" rel="noopener"
+    >项目页/代码与数据</a></li>
+<li><strong>关键贡献</strong>: 提出数据高效的 SeededGrasp 框架，由 VLM 根据语言任务预测一个三维种子点，再将其作为条件输入轻量抓取生成模型。语义推理与几何执行解耦后，无需联合端到端训练即可扩展到多种机器人形态；作者还发布了首个多形态桌面抓取数据集，包含杂乱场景中的 250 万余个抓取样本。</li>
+<li><strong>实验结果</strong>: 相比现有基线取得更高成功率，仿真抓取成功率为 72%，真实世界实验为 78%。</li>
+<li><strong>精评</strong>: 这个接口设计很实用：让大模型做擅长的语义定位，让小模型做精确几何控制，既减少训练成本，也降低 VLM 空间感知不足带来的风险。实际落地仍需关注种子点误差向下游传播的敏感性，以及跨相机标定、遮挡和新末端执行器上的泛化。</li>
+<li><strong>相关技术</strong>: language-guided grasping, VLM seed-point prediction, conditional grasp generation, semantic-geometric decoupling, multi-embodiment robotics</li>
+<li><strong>代码/权重</strong>: 数据与代码已开源 ✅</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>复杂场景中的实用机器人抓取既需要三维空间推理，也需要与具体任务要求对齐。Vision-Language Model（视觉语言模型，VLM）提供了一种通过自然语言指定这些要求的方式，但现有方法要么直接用 VLM 预测抓取动作，空间感知能力有限；要么将 VLM 与抓取模型联合训练，需要显著更多的数据和计算资源。这些局限阻碍了性能提升，也使方法难以扩展到复杂场景中的多种机器人形态。为此，我们提出 SeededGrasp，一种新颖的数据高效框架：让 VLM 预测一个种子点，并将其作为后续轻量抓取生成模型的条件。该架构将高层语义推理与低层几何执行解耦，在绕过昂贵端到端训练需求的同时支持多种机器人形态。为训练此类模型，我们发布了首个多形态桌面抓取数据集，其中包含杂乱场景中的 250 万余个抓取样本。实验结果表明，我们的方法优于现有基线，在仿真中达到 72% 的抓取成功率，在真实世界抓取实验中达到 78%。数据和代码见项目网站：https://uoft-isl.github.io/seeded-grasp/ 。</p>
+</details>
+<hr>
+<h2 id="-ai-agents">🤖 AI Agents
+</h2><h3 id="sciexplore-evaluating-autonomous-agents-from-scientific-navigation-to-information-integration"><a class="link" href="https://arxiv.org/abs/2607.20926"  target="_blank" rel="noopener"
+    >SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration</a>
+</h3>
+    <blockquote>
+        <p>面向真实科研工作流的 Agent 基准，从数据库导航逐级推进到跨来源结构化知识综合。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Yinhao Tang, Youqing Fang, Yanan Sun, Wenran Liu, Weiming Zhang, Bin Liu, Kuikun Liu, Wenwei Zhang, Kai Chen</li>
+<li><strong>来源</strong>: HuggingFace Papers（0 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.20926"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.20926.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出 SciExplore，以 103 个专家策划任务覆盖十余个学科和四类科研信息工作流：科学数据库导航、模糊文献检索、缺失引用补全、跨来源结构化知识综合。任务从实体级推理、文档识别逐步提升到证据落地与领域综合，比静态科研问答更接近实际研究流程。</li>
+<li><strong>实验结果</strong>: 对十余种先进 LLM 和自主 Agent 的评测显示，性能会随任务复杂度增加而急剧下降，其中最困难的结构化综合任务准确率极低。</li>
+<li><strong>精评</strong>: 这类基准对深度研究系统很有价值，因为它不把“找到一篇相关论文”误当成科研能力，而是继续追问引用是否完整、证据能否跨来源对齐、最终结构化结论是否可靠。摘要没有披露具体模型分数、成本和数据污染控制，使用时还需结合正文判断基准区分度。</li>
+<li><strong>相关技术</strong>: scientific database navigation, ambiguous literature retrieval, missing-reference completion, cross-source knowledge synthesis, evidence grounding</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>科学研究涉及跨异构来源的复杂信息检索与推理工作流。然而，现有基准主要强调通用领域检索或静态科学问答，因此无法评估真实科研流程所需的关键能力。我们提出 SciExplore，一个用于评估 LLM 和 Agent 的科学信息检索与推理能力的基准。SciExplore 包含四类任务，覆盖十余个科学学科中的 103 个专家策划任务：科学数据库导航、模糊文献检索、缺失引用补全，以及跨来源结构化知识综合。这些任务从实体级推理和文档级识别，逐步考查更高层次的证据级落地与领域级综合能力。我们在 SciExplore 上评估了十余种最先进的 LLM 和自主 Agent，结果揭示出显著的性能差距：随着任务复杂度增加，性能急剧下降，在最具挑战性的结构化综合任务上准确率极低。这些结果凸显了当前模型和 Agent 在真实科学信息检索场景中的重大局限。</p>
+</details>
+<hr>
+<h3 id="filmworld-agentic-novel-to-film-generation-through-dynamic-cinematic-world-modeling"><a class="link" href="https://arxiv.org/abs/2607.19038"  target="_blank" rel="noopener"
+    >FilmWorld: Agentic Novel-to-Film Generation through Dynamic Cinematic World Modeling</a>
+</h3>
+    <blockquote>
+        <p>用动态电影世界模型把小说中的抽象叙述落成可持续演化的实体状态，再通过多 Agent 协作生成长篇多场景影片。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Jialong Zuo, Haotong Zuo, Shiwei Zhang, Xiang Wang, Chen Li, Nong Sang, Changxin Gao, Xiang Bai</li>
+<li><strong>来源</strong>: HuggingFace Papers（2 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.19038"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.19038.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 将小说到电影生成形式化为动态电影世界建模，并拆成“构建”和“演化”两阶段。构建侧 Agent 完成叙事结构化翻译、带视觉锚定的实体状态建模和镜头规划；演化侧 Agent 负责状态锚定生成、跨镜头状态传播和闭环验证，以维持长篇内容的因果与视觉一致性。</li>
+<li><strong>实验结果</strong>: 配套 FilmEval 用 15 部代表性小说、9 项客观指标评估电影表现、影片一致性和原著忠实度；FilmWorld 持续优于现有视频生成 Agent 系统，尤其改善叙事忠实度与跨场景一致性。</li>
+<li><strong>精评</strong>: 真正的贡献不只是串联视频模型，而是明确维护“世界状态”，让角色、物件和情节变化成为可检查的中间表示。15 部小说的规模仍偏小，自动指标能否可靠衡量审美、节奏和改编合理性，也需要更多人工评估验证。</li>
+<li><strong>相关技术</strong>: dynamic cinematic world modeling, multi-agent video generation, state-driven shot planning, cross-shot state propagation, closed-loop visual verification</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>将小说转化为电影是生成式人工智能面临的一项重大挑战，因为它要求把抽象的文学散文转换成长篇、多场景的视觉叙事。当前视频生成模型虽然擅长在狭窄时空语境中生成短小的单场景片段，但小说到电影生成处于更复杂的设定中：它要求跨越多种场景生成长时内容，同时维护动态演化的实体状态。为解决这一问题，我们将小说到电影生成形式化为动态电影世界建模，并将其分解为两个阶段：第一是构建，将抽象且描述不充分的文学叙事落地为具体、有状态且持久的世界实体；第二是演化，规定这些实体如何随情节推进而动态更新，以维持跨场景的因果一致性。我们提出 FilmWorld，一个端到端 Agent 系统，由两组专门化 Agent 协作实现这两个阶段。构建侧 Agent 执行叙事结构化翻译、带视觉锚定的世界实体状态建模，以及状态驱动的镜头规划，逐步将文学语言投射为电影蓝图。演化侧 Agent 执行状态锚定的视觉生成、跨镜头动态状态传播和闭环状态验证，以保持因果一致性和视觉连贯性。为弥补长篇生成的评估缺口，我们提出 FilmEval，一个系统性评估框架：它把由 15 部代表性小说组成、按难度分级的基准，与覆盖三个维度的 9 项客观指标自动评估协议相结合；这三个维度分别是电影化呈现、影片一致性和原著忠实度。实验表明，FilmWorld 持续优于最先进的视频生成 Agent 系统，在叙事忠实度和跨场景一致性方面的提升尤其明显。</p>
+</details>
+<hr>
+<h3 id="two-level-meta-rubrics-for-evaluating-open-ended-generation-gamut-a-benchmark-for-factual-completeness"><a class="link" href="https://arxiv.org/abs/2607.19322"  target="_blank" rel="noopener"
+    >Two-Level Meta-Rubrics for Evaluating Open-Ended Generation: GAMUT, a Benchmark for Factual Completeness</a>
+</h3>
+    <blockquote>
+        <p>用两级元量表评估长回答是否“该说的都说了”，补上事实性评测长期偏重正确率、忽略完整性的缺口。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xilun Chen, Zhaleh Feizollahi, Ross Goodwin, Seungwhan Moon, Scott Yih, Pinar Donmez, Babak Damavandi, Luna Dong</li>
+<li><strong>来源</strong>: HuggingFace Papers（8 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.19322"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.19322.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 提出两级元量表框架：上层结构化元量表表达必需内容的组织方式和重要性，再机械编译成可由 LLM Judge 稳定评分的二元检查清单。实例化的 GAMUT 基准包含 1,813 个基于真实可穿戴设备图像的问题，覆盖 10 个领域，每题均配有专家核验、证据支持的量表，并提供纯文本版本。</li>
+<li><strong>实验结果</strong>: 在 14 个前沿及开放权重模型中，最佳的 Gemini 3.1 Pro 也仅得 58.7%；基准具有较强区分度，并且对 Judge 的选择较稳健。</li>
+<li><strong>精评</strong>: 从“逐条查错”转向“枚举应该覆盖的内容”是关键变化，特别适合深度研究报告、医疗记录总结和多模态事件回顾。两级表示也兼顾了人类可读结构与机器可评分性；风险在于元量表本身的遗漏会形成评测盲区，而不同领域的“完整答案”边界可能存在争议。</li>
+<li><strong>相关技术</strong>: factual completeness, two-level meta-rubrics, machine-gradable binary checklists, LLM-as-a-Judge, wearable-image grounding</li>
+<li><strong>代码/权重</strong>: 数据集含多模态与纯文本版本；代码/权重未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>长篇生成的事实性评估过去主要聚焦精确率，即衡量模型提出的主张是否正确。主流的“分解—搜索—验证”流程很擅长捕捉错误主张，却很少说明回答是否包含它应该包含的全部信息。衡量事实完整性——事实性的另一半——更加困难：它要求枚举一个完整答案应包含的全部事实，而这些事实很少构成简单的扁平列表。它们经常涉及以覆盖范围为重点的开放集合、有序过程，以及事实之间的关系；独立布尔检查项组成的列表无法捕捉这些结构。我们提出一个用于评估开放式生成的两级元量表框架，并将其实例化为 Gamut（Grounded Assessment of Multimodal Factuality，基于证据的多模态事实性评估），一个面向长篇生成事实完整性的基准。该框架建立在两级量表表示之上：结构化元量表捕捉必需内容的组织方式和重要性，然后通过机械方式编译成扁平的二元、机器可评分检查清单，由 LLM Judge 可靠打分。我们构建了 1,813 个基于真实可穿戴设备图像的问题，覆盖 10 个不同领域；每个问题均配有由专家人工标注者核验、以证据为支撑的量表。由于该框架与模态无关，我们还发布了纯文本版本。对 14 个前沿模型和开放权重模型的评估表明，该基准确实具有挑战性——最佳结果为 Gemini 3.1 Pro 的 58.7%——同时具有很强的区分度，并且对 Judge 的选择较为稳健。</p>
+</details>
+<hr>
+<h3 id="financecomplexqa-benchmarking-agentic-reasoning-on-industrial-grade-financial-documents"><a class="link" href="https://arxiv.org/abs/2607.19238"  target="_blank" rel="noopener"
+    >FinanceComplexQA: Benchmarking Agentic Reasoning on Industrial-grade Financial Documents</a>
+</h3>
+    <blockquote>
+        <p>面向工业级金融文档的开放式 Agent 基准，重点覆盖复杂版式、深度研究、数值计算和多跳推理。</p>
+
+    </blockquote>
+<ul>
+<li><strong>作者</strong>: Xianfu Cheng, Shiwei Zhang, Jiyu Zhao, Jian Yang, Xinyuan Wang, Ming Zhou, Weixiao Zhou, Xiangyuan Guan, Xiang Li, Zhenhe Wu</li>
+<li><strong>来源</strong>: HuggingFace Papers（5 upvotes）</li>
+<li><strong>链接</strong>: <a class="link" href="https://arxiv.org/abs/2607.19238"  target="_blank" rel="noopener"
+    >arXiv</a> | <a class="link" href="https://arxiv.org/pdf/2607.19238.pdf"  target="_blank" rel="noopener"
+    >PDF</a></li>
+<li><strong>关键贡献</strong>: 设计 Finance-LaTeX SKILL，以专家知识合成复杂版式金融文档，并通过 Agent 工作流生成 2,000 份专业文档和 6,000 组高质量问答。进一步提出 FinanceComplexQA，包含面向 1,009 份金融文档的 2,026 个深度研究任务，支持双语并覆盖六类主流场景和七类任务。</li>
+<li><strong>实验结果</strong>: 作者综合评测了主流 RAG 系统和 Agent 推理工具，并通过失败案例分析其在数值计算、多跳推理、内容总结和行业分析上的能力边界；摘要未披露具体排行榜分数。</li>
+<li><strong>精评</strong>: 复杂版式和数值关系是金融文档 Agent 真正容易失败的地方，这个基准比纯文本切块问答更贴近生产环境。合成文档能稳定构造难例和永久参考答案，但也可能与真实公司的写作噪声、扫描质量和非标准披露存在分布差异。</li>
+<li><strong>相关技术</strong>: financial document synthesis, complex-layout reasoning, deep-research QA, agent-as-a-judge, numerical multi-hop reasoning</li>
+<li><strong>代码/权重</strong>: 未提及</li>
+</ul>
+<details>
+<summary>📄 Abstract 中文翻译</summary>
+<p>Agentic Reasoning（智能体式推理）能够整合大规模信息并生成可靠、准确的内容，因而已经成为金融分析中的变革性力量。然而，在处理复杂真实问题时，不同 Agent 的表现仍存在显著差异。在本工作中，我们设计了 Finance-LaTeX SKILL，这是一项基于专家知识合成复杂版式金融文档的技能。利用建立在该技能之上的 Agent 工作流，我们生成了 2,000 份专业金融文档以及 6,000 组高质量问答。为评估 Agent 的综合能力，我们提出 FinanceComplexQA，一个面向金融文档、贴近真实场景的综合性开放式生成基准。它包含针对 1,009 份金融文档的 2,026 个深度研究任务。FinanceComplexQA 具有 8 项关键特征，包括：支持双语；覆盖六种主流场景和七类任务；专家级文档推理问题；针对复杂版式的深度研究；相对稳定且持久的参考答案；以及通过 Agent-as-a-Judge（智能体作为评审）和多项评估指标进行精确评估。利用 FinanceComplexQA，我们对领先的 RAG 系统和 Agent 推理工具在金融文档问答上的表现进行了综合评测。通过识别并分析失败案例，我们深入研究了它们在数值计算、多跳推理、内容总结和行业分析方面的能力。</p>
+</details>
+<h2 id="-其他值得关注">📌 其他值得关注
+</h2><p>今日无未报道的新论文。</p>
+<hr>
+<p><em>Generated on 2026-07-26 08:00 CST | Sources: arXiv, HuggingFace</em></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-25/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-25</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-22/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-22</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-21/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-21</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-20/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-07-19/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-07-19</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
