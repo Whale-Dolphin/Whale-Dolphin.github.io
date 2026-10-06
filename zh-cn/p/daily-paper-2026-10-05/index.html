@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重（737 篇原始候选中 15 篇已在窗口内报道、34 篇昨日已评估，688 篇未报道）。 来源：arXiv 公告页直抓（cs.CL/cs.LG/cs.AI/cs.SD/eess.AS/cs.CV 周五 10-02 公告共 737 篇 → 去重后 688 篇 → 音频初筛 53 篇 → 报道 16 篇；arXiv API 本次 429 限流、HF 周末无新榜、周一公告抓取时尚未发布，降级为公告页直抓模式）。 主题分布：音频/语音方向 15 篇（精评 9、简报 6）、推理效率 1 篇。 今日关键词：全双工语音模型的&quot;时机&quot;问题——LateIntent-Bench 测意图迟到时的抢答（PRR），DuplexSpeechBench 测语音 agent 文档 grounding 的多轮衰减；encoder-free Speech-LLM 靠元数据监督预训练补课；非洲语音 codec 基准戳破 NISQA/UTMOS 的下游有效性；另有扩散 LLM serving 成本曲面（DWS）一条效率线。 精评 1. MSP：Encoder-free Speech-LLM 的元数据监督预训练——不装 encoder 也能听出&quot;谁在说&quot; 2610.01695\n">
+<title>AI Paper Daily | 2026-10-05</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-05/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-05">
+<meta property='og:description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重（737 篇原始候选中 15 篇已在窗口内报道、34 篇昨日已评估，688 篇未报道）。 来源：arXiv 公告页直抓（cs.CL/cs.LG/cs.AI/cs.SD/eess.AS/cs.CV 周五 10-02 公告共 737 篇 → 去重后 688 篇 → 音频初筛 53 篇 → 报道 16 篇；arXiv API 本次 429 限流、HF 周末无新榜、周一公告抓取时尚未发布，降级为公告页直抓模式）。 主题分布：音频/语音方向 15 篇（精评 9、简报 6）、推理效率 1 篇。 今日关键词：全双工语音模型的&quot;时机&quot;问题——LateIntent-Bench 测意图迟到时的抢答（PRR），DuplexSpeechBench 测语音 agent 文档 grounding 的多轮衰减；encoder-free Speech-LLM 靠元数据监督预训练补课；非洲语音 codec 基准戳破 NISQA/UTMOS 的下游有效性；另有扩散 LLM serving 成本曲面（DWS）一条效率线。 精评 1. MSP：Encoder-free Speech-LLM 的元数据监督预训练——不装 encoder 也能听出&quot;谁在说&quot; 2610.01695\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-05/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-05T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-05T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-05">
+<meta name="twitter:description" content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重（737 篇原始候选中 15 篇已在窗口内报道、34 篇昨日已评估，688 篇未报道）。 来源：arXiv 公告页直抓（cs.CL/cs.LG/cs.AI/cs.SD/eess.AS/cs.CV 周五 10-02 公告共 737 篇 → 去重后 688 篇 → 音频初筛 53 篇 → 报道 16 篇；arXiv API 本次 429 限流、HF 周末无新榜、周一公告抓取时尚未发布，降级为公告页直抓模式）。 主题分布：音频/语音方向 15 篇（精评 9、简报 6）、推理效率 1 篇。 今日关键词：全双工语音模型的&quot;时机&quot;问题——LateIntent-Bench 测意图迟到时的抢答（PRR），DuplexSpeechBench 测语音 agent 文档 grounding 的多轮衰减；encoder-free Speech-LLM 靠元数据监督预训练补课；非洲语音 codec 基准戳破 NISQA/UTMOS 的下游有效性；另有扩散 LLM serving 成本曲面（DWS）一条效率线。 精评 1. MSP：Encoder-free Speech-LLM 的元数据监督预训练——不装 encoder 也能听出&quot;谁在说&quot; 2610.01695\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥺</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Place</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-05/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-mspencoder-free-speech-llm-的元数据监督预训练不装-encoder-也能听出谁在说">1. MSP：Encoder-free Speech-LLM 的元数据监督预训练——不装 encoder 也能听出&quot;谁在说&quot;</a></li>
+        <li><a href="#2-lateintent-bench全双工语音模型抢答实测意图还没说完它先动手了">2. LateIntent-Bench：全双工语音模型&quot;抢答&quot;实测——意图还没说完，它先动手了</a></li>
+        <li><a href="#3-duplexspeechbench-document-grounding语音-agent-的开卷考试文档越长轮次越多越记不住">3. DuplexSpeechBench-Document Grounding：语音 agent 的&quot;开卷考试&rdquo;——文档越长、轮次越多，越记不住</a></li>
+        <li><a href="#4-非洲语音-codec-基准nisqautmos-在下游任务面前失灵了">4. 非洲语音 codec 基准：NISQA/UTMOS 在下游任务面前&quot;失灵&quot;了</a></li>
+        <li><a href="#5-articulatory-source-filter-tts给-tts-装一个声道想怎么捏就怎么捏">5. Articulatory Source-Filter TTS：给 TTS 装一个&quot;声道&rdquo;，想怎么捏就怎么捏</a></li>
+        <li><a href="#6-audiojev音频问答的选项顺序也会骗模型直接对概率做顺序校准">6. AudioJev：音频问答的&quot;选项顺序&quot;也会骗模型——直接对概率做顺序校准</a></li>
+        <li><a href="#7-balalaika-longform俄语长语音-tts-语料1200-词连续生成短窗微调的-wer-是-999">7. Balalaika-Longform：俄语长语音 TTS 语料——1,200 词连续生成，短窗微调的 WER 是 99.9%</a></li>
+        <li><a href="#8-multi-party-backchannel-prediction双人对话的嗯嗯模型放到多人会议里直接归零">8. Multi-Party Backchannel Prediction：双人对话的&quot;嗯嗯&quot;模型，放到多人会议里直接归零</a></li>
+        <li><a href="#9-proxymos不花一分钱人工标注用-5-个公开-mos-模型蒸出一个更强的">9. ProxyMOS：不花一分钱人工标注，用 5 个公开 MOS 模型蒸出一个更强的</a></li>
+        <li><a href="#10-denoising-surface扩散-llm-上线-serving成本预估得按二维算">10. Denoising Surface：扩散 LLM 上线 serving，成本预估得按&quot;二维&quot;算</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-paracalib抑郁检测里同样的声音在不同语义下意思不一样">11. ParaCalib：抑郁检测里，同样的声音在不同语义下意思不一样</a></li>
+        <li><a href="#12-silence-the-mimic防-voice-cloning-的对抗扰动加速-453-倍">12. Silence-the-Mimic：防 voice cloning 的对抗扰动，加速 45.3 倍</a></li>
+        <li><a href="#13-statevc免训练-voice-conversionwavlm-空间里按共享状态做局部搬运">13. StateVC：免训练 voice conversion，WavLM 空间里按&quot;共享状态&quot;做局部搬运</a></li>
+        <li><a href="#14-watch-your-speech看默片配音文本条件一加上口型同步-sota-了">14. Watch Your Speech：看默片配音，文本条件一加上，口型同步 SOTA 了</a></li>
+        <li><a href="#15-语音里的阿尔茨海默检测加个噪声预测就变了干预式鲁棒性测试该成标配">15. 语音里的阿尔茨海默检测：加个噪声，预测就变了——干预式鲁棒性测试该成标配</a></li>
+        <li><a href="#16-rms-aqa具身助手在家里听声答题先定位声源再时空推理">16. RMS-AQA：具身助手在家里听声答题——先定位声源，再时空推理</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-05/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-05" height="861" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-05/cover.jpg" srcset="/zh-cn/p/daily-paper-2026-10-05/cover_hu_2d63ef3334cf268b.jpg 800w, /zh-cn/p/daily-paper-2026-10-05/cover.jpg 1465w" width="1465">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-05/">AI Paper Daily | 2026-10-05</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-05T00:00:00Z'>Oct 05, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-mspencoder-free-speech-llm-的元数据监督预训练不装-encoder-也能听出谁在说">1. MSP：Encoder-free Speech-LLM 的元数据监督预训练——不装 encoder 也能听出&quot;谁在说&quot;</a></li>
+        <li><a href="#2-lateintent-bench全双工语音模型抢答实测意图还没说完它先动手了">2. LateIntent-Bench：全双工语音模型&quot;抢答&quot;实测——意图还没说完，它先动手了</a></li>
+        <li><a href="#3-duplexspeechbench-document-grounding语音-agent-的开卷考试文档越长轮次越多越记不住">3. DuplexSpeechBench-Document Grounding：语音 agent 的&quot;开卷考试&rdquo;——文档越长、轮次越多，越记不住</a></li>
+        <li><a href="#4-非洲语音-codec-基准nisqautmos-在下游任务面前失灵了">4. 非洲语音 codec 基准：NISQA/UTMOS 在下游任务面前&quot;失灵&quot;了</a></li>
+        <li><a href="#5-articulatory-source-filter-tts给-tts-装一个声道想怎么捏就怎么捏">5. Articulatory Source-Filter TTS：给 TTS 装一个&quot;声道&rdquo;，想怎么捏就怎么捏</a></li>
+        <li><a href="#6-audiojev音频问答的选项顺序也会骗模型直接对概率做顺序校准">6. AudioJev：音频问答的&quot;选项顺序&quot;也会骗模型——直接对概率做顺序校准</a></li>
+        <li><a href="#7-balalaika-longform俄语长语音-tts-语料1200-词连续生成短窗微调的-wer-是-999">7. Balalaika-Longform：俄语长语音 TTS 语料——1,200 词连续生成，短窗微调的 WER 是 99.9%</a></li>
+        <li><a href="#8-multi-party-backchannel-prediction双人对话的嗯嗯模型放到多人会议里直接归零">8. Multi-Party Backchannel Prediction：双人对话的&quot;嗯嗯&quot;模型，放到多人会议里直接归零</a></li>
+        <li><a href="#9-proxymos不花一分钱人工标注用-5-个公开-mos-模型蒸出一个更强的">9. ProxyMOS：不花一分钱人工标注，用 5 个公开 MOS 模型蒸出一个更强的</a></li>
+        <li><a href="#10-denoising-surface扩散-llm-上线-serving成本预估得按二维算">10. Denoising Surface：扩散 LLM 上线 serving，成本预估得按&quot;二维&quot;算</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-paracalib抑郁检测里同样的声音在不同语义下意思不一样">11. ParaCalib：抑郁检测里，同样的声音在不同语义下意思不一样</a></li>
+        <li><a href="#12-silence-the-mimic防-voice-cloning-的对抗扰动加速-453-倍">12. Silence-the-Mimic：防 voice cloning 的对抗扰动，加速 45.3 倍</a></li>
+        <li><a href="#13-statevc免训练-voice-conversionwavlm-空间里按共享状态做局部搬运">13. StateVC：免训练 voice conversion，WavLM 空间里按&quot;共享状态&quot;做局部搬运</a></li>
+        <li><a href="#14-watch-your-speech看默片配音文本条件一加上口型同步-sota-了">14. Watch Your Speech：看默片配音，文本条件一加上，口型同步 SOTA 了</a></li>
+        <li><a href="#15-语音里的阿尔茨海默检测加个噪声预测就变了干预式鲁棒性测试该成标配">15. 语音里的阿尔茨海默检测：加个噪声，预测就变了——干预式鲁棒性测试该成标配</a></li>
+        <li><a href="#16-rms-aqa具身助手在家里听声答题先定位声源再时空推理">16. RMS-AQA：具身助手在家里听声答题——先定位声源，再时空推理</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>10 篇精评 + 6 篇简报</strong>，共 16 篇，已对 7 天滚动窗口去重（737 篇原始候选中 15 篇已在窗口内报道、34 篇昨日已评估，688 篇未报道）。</li>
+<li>来源：arXiv 公告页直抓（cs.CL/cs.LG/cs.AI/cs.SD/eess.AS/cs.CV 周五 10-02 公告共 737 篇 → 去重后 688 篇 → 音频初筛 53 篇 → 报道 16 篇；arXiv API 本次 429 限流、HF 周末无新榜、周一公告抓取时尚未发布，降级为公告页直抓模式）。</li>
+<li>主题分布：音频/语音方向 15 篇（精评 9、简报 6）、推理效率 1 篇。</li>
+<li>今日关键词：<strong>全双工语音模型的&quot;时机&quot;问题</strong>——LateIntent-Bench 测意图迟到时的抢答（PRR），DuplexSpeechBench 测语音 agent 文档 grounding 的多轮衰减；encoder-free Speech-LLM 靠元数据监督预训练补课；非洲语音 codec 基准戳破 NISQA/UTMOS 的下游有效性；另有扩散 LLM serving 成本曲面（DWS）一条效率线。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-mspencoder-free-speech-llm-的元数据监督预训练不装-encoder-也能听出谁在说">1. MSP：Encoder-free Speech-LLM 的元数据监督预训练——不装 encoder 也能听出&quot;谁在说&quot;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.01695"  target="_blank" rel="noopener"
+    >2610.01695</a></p>
+<p><strong>一句话</strong>：encoder-free 的 Speech-LLM 把 Mel 谱直接喂进 LLM，缺的是系统性预训练——MSP 用说话人/情感等元数据做监督，数据量不大也能打。</p>
+<p><strong>贡献/机制</strong>：encoder-based Speech-LLM 依赖预训练语音 encoder（重语言内容、丢说话人/副语言细节）；encoder-free 把 Mel 谱经轻量 embedding 层直映射进 LLM 输入空间。本文提出 metadata-supervised pretraining（MSP）：用说话人身份、情感等语音属性做监督信号，培养说话人区分与副语言能力；另提 speaker-aware utterance composition（SAUC）强化说话人区分，加 random span masking 正则。主要在多人对话的联合 ASR+说话人日志上评测，辅以副语言理解任务。</p>
+<p><strong>数值结果</strong>：同等训练数据下，encoder-free 模型超过随机初始化的 encoder-based 对照；用有限的元数据标注数据，即可与&quot;在数量级更大语料上预训练 encoder&quot;的模型打得有来有回，若干设置下反超。</p>
+<p><strong>批判性分析</strong>：encoder-free 是原生多模态 LLM 的正路（少挂一个外挂 encoder），MSP 把&quot;元数据&quot;这顿免费午餐吃透了；但&quot;有限元数据&quot;具体是多少、与 Whisper-encoder 系 SOTA 的绝对差距，摘要没给硬数字。做 Speech-LLM 预训练的人必读。</p>
+<p><strong>摘要译文</strong>：基于 encoder 的语音大语言模型通常用预训练语音 encoder，重语言内容但可能丢掉说话人区分与副语言理解所需的细粒度声学线索。Encoder-free 的 Speech-LLM 把 Mel 谱经轻量 embedding 层直映射进 LLM 输入空间，让 LLM 从底层声学特征学习；但其系统性预训练策略尚未被充分探索，限制了它弥补&quot;没有大规模预训练语音 encoder&quot;的能力。我们提出元数据监督预训练（MSP），利用说话人身份、情感等语音属性发展说话人区分与副语言能力；并引入说话人感知的 utterance 组合（SAUC）强化说话人区分，用随机 span masking 正则预训练。主要在多人对话的联合 ASR 与说话人日志上评测，辅以副语言理解实验。同等训练数据下，我们的 encoder-free 模型超过随机初始化的 encoder-based 对照；用有限的元数据标注数据，它与使用大得多的语料预训练 encoder 的模型相当，并在若干设置下超过它们。这证明了 encoder-free 架构在构建原生多模态 LLM 上的潜力。</p>
+<hr>
+<h3 id="2-lateintent-bench全双工语音模型抢答实测意图还没说完它先动手了">2. LateIntent-Bench：全双工语音模型&quot;抢答&quot;实测——意图还没说完，它先动手了
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.00272"  target="_blank" rel="noopener"
+    >2610.00272</a></p>
+<p><strong>一句话</strong>：native 全双工模型不等用户说完就响应——LateIntent-Bench 用 3,136 组&quot;共享歧义前缀+良性/有害分叉&quot;测它是否在意图揭晓前就开火。</p>
+<p><strong>贡献/机制</strong>：现有 benchmark 主要测轮流发言机制，安全评测又默认&quot;看到完整请求才生成&quot;。本文引入 matched-pair 的延迟意图揭晓基准：共享歧义前缀后接良性或有害延续，用受控停顿延迟两分支可区分的时机；定义 Premature Response Rate（PRR）度量响应起点是否早于意图揭晓；联合评估有害/良性两分支的参与度，把&quot;安全选择性变化&quot;与&quot;整体响应性下降&quot;区分开。</p>
+<p><strong>数值结果</strong>：3,136 个 session、4 个 native 全双工模型呈现出不同的响应时序模式；3 个在保持良性响应性的同时有害参与度上升，1 个两分支参与度都掉；在意图揭晓后插入 1.5s 静音，PRR 接近无停顿基线，且有害参与度的变化大幅下降。</p>
+<p><strong>批判性分析</strong>：与昨天的 VGBench/VoxParity 是同一条&quot;语音 agent 行动门控&quot;线，但切的是时间维——&ldquo;何时动&quot;比&quot;动不动&quot;更刁钻；&ldquo;意图揭晓后静音 1.5s&quot;这个缓解简单但治标。做全双工语音安全的人必读。</p>
+<p><strong>摘要译文</strong>：原生全双工语音模型可以在用户说完之前响应，使模型行为同时取决于最终话语和意图定义信息到达的时机。现有 benchmark 主要评估轮流发言机制，而安全评测通常假设在响应生成前已观测到完整请求。我们引入 LateIntent-Bench，一个延迟意图揭晓的 matched-pair 基准：共享歧义前缀后接良性或有害延续，用受控停顿延迟两分支可区分的时机。我们定义 Premature Response Rate（PRR）度量响应起点是否先于意图揭晓；对有害与良性参与度的联合评估，把安全选择性的变化与响应性的普遍损失区分开。在 3,136 个 session 上，四个原生全双工模型呈现出不同的响应时序模式：三个在保持良性响应性的同时有害参与度上升，一个对两分支的参与度都下降。在意图揭晓后插入 1.5s 静音，PRR 接近无停顿基线，并大幅降低有害参与度的变化。这些结果表明，只评估完全指定的请求捕捉不到新出现的时序模式，评估延迟意图揭晓势在必行。代码将公开发布。</p>
+<hr>
+<h3 id="3-duplexspeechbench-document-grounding语音-agent-的开卷考试文档越长轮次越多越记不住">3. DuplexSpeechBench-Document Grounding：语音 agent 的&quot;开卷考试&rdquo;——文档越长、轮次越多，越记不住
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.00316"  target="_blank" rel="noopener"
+    >2610.00316</a></p>
+<p><strong>一句话</strong>：语音 agent 接外部文档答题，grounding 能力随文档变长、多轮对话衰减——1,636 个对抗验证 QA 对、50 篇文档、5 个专业领域。</p>
+<p><strong>贡献/机制</strong>：DSB-DG 测语音 agent 文档 grounding 的三种失败模式：Context Saturation（文档变长时的 grounding）、Grounding Decay（多轮对话中的文档事实保持）、Proactive Grounding（上下文重注入能否缓解对话漂移）；支持对 grounding 准确率、幻觉与响应延迟的全自动评估。</p>
+<p><strong>数值结果</strong>：横跨级联式、专有全双工/实时、开源 speech2speech 架构评测；级联管线（ASR-LLM-TTS）grounding 准确率最高，Gemini-Live 与 GPT-Realtime 紧随其后；开源系统有独特失败模式，最突出的是&quot;上下文容量断崖式坍塌&quot;与多轮 grounding 衰减；总体上 grounding 保真度随上下文与对话负载下降，失败多表现为无依据生成而非拒绝回答。</p>
+<p><strong>批判性分析</strong>：这是 RAG 在语音侧的翻版，但&quot;实时+语音&quot;的约束让问题更难；1,636 QA 的规模够用，&ldquo;断崖式坍塌&quot;这个发现对开源 speech2speech 是当头棒喝。做语音 agent 评测的人可以直接拿去用。</p>
+<p><strong>摘要译文</strong>：语音 agent 支持低延迟自然交互，但它忠实 grounding 外部文档回答的能力尚未被充分探索。我们引入 DuplexSpeechBench-Document Grounding（DSB-DG），一个覆盖五个专业领域的语音 agent 文档 grounding 基准。DSB-DG 针对三种失败模式：Context Saturation，测文档变长下的 grounding；Grounding Decay，测多轮对话中的文档事实保持；Proactive Grounding，评估上下文重注入能否缓解对话漂移。该基准含 1,636 个对抗验证的 QA 对，来自五个专业领域的 50 篇文档，支持对 grounding 准确率、幻觉与响应延迟的全自动评估。在横跨级联式、专有全双工与实时、开源 speech2speech 架构的系统上，我们发现有效 grounding 容量存在显著差异：级联管线（ASR-LLM-TTS）grounding 准确率最高，Gemini-Live 与 GPT-Realtime 紧随其后；开源系统呈现出独特的失败模式，最突出的是上下文容量的 abrupt 坍塌与多轮 grounding 衰减。更广地看，grounding 保真度随上下文与对话负载下降，失败常表现为无依据生成而非拒绝回答。我们证明，上下文 grounding 是可靠全双工语音 agent 尚未解决的关键挑战。</p>
+<hr>
+<h3 id="4-非洲语音-codec-基准nisqautmos-在下游任务面前失灵了">4. 非洲语音 codec 基准：NISQA/UTMOS 在下游任务面前&quot;失灵&quot;了
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.00154"  target="_blank" rel="noopener"
+    >2610.00154</a></p>
+<p><strong>一句话</strong>：7 个开源神经音频 codec × 3 个非洲语音数据集——信号级指标里 ViSQOL/STOI/F0-RMSE 能预测 ASR/ASV 下游退化，NISQA/UTMOS 不行。</p>
+<p><strong>贡献/机制</strong>：benchmark DAC、EnCodec、FocalCodec、LanguageCodec、SemantiCodec、UniCodec、WavTokenizer 七个开源神经 codec，在 afrinames、afrispeech dialog、afrispeech multilingual 三个非洲语音数据集上；同时报告信号级质量（NISQA、UTMOS、ViSQOL、STOI、F0-RMSE）与两个下游任务（ASR、ASV）。</p>
+<p><strong>数值结果</strong>：四个发现——(1) 参考型结构/可懂度指标（ViSQOL、STOI）与韵律误差（F0-RMSE）比神经 MOS 预测器（NISQA、UTMOS）更可靠地跟踪 ASR/ASV 退化；(2) 可懂度与说话人身份保持在不同架构间 sharply 分化，且身份排名本身依赖 ASV 后端；(3) 退化域依赖性强，对话场景最大；(4) 部分可恢复：约 35 小时非洲语音上对 codec 做 LoRA（约 1–3% 参数）可缩小压缩引入的 WER gap，向无压缩基线恢复（配套工作展开）。</p>
+<p><strong>批判性分析</strong>：做 codec 的人长期用 MOS 类指标自嗨，这篇把&quot;指标的下游有效性&quot;本身拿出来验了——结论对 inclusive deployment 很重要；但三个数据集的代表性、LoRA 恢复的具体数值，摘要语焉不详。做语音 tokenizer 的人必读。</p>
+<p><strong>摘要译文</strong>：神经音频 codec 支持低码率语音压缩与 tokenization，但其在口音化与多语言语音上的鲁棒性尚未被充分评估。我们在三个非洲语音数据集（afrinames、afrispeech dialog、afrispeech multilingual）上 benchmark 七个开源神经 codec（DAC、EnCodec、FocalCodec、LanguageCodec、SemantiCodec、UniCodec、WavTokenizer），同时报告信号级质量（NISQA、UTMOS、ViSQOL、STOI、F0-RMSE）与两个下游任务：自动语音识别（ASR）与说话人验证（ASV）。分析得出四个发现：第一，信号指标的下游有效性差异显著——参考型结构/可懂度指标（ViSQOL、STOI）与韵律误差（F0-RMSE）比神经平均意见分预测器（NISQA、UTMOS）更可靠地跟踪 ASR 与 ASV 退化；第二，可懂度与说话人身份保持在不同架构间 sharply 分化，且表观身份排名本身依赖 ASV 后端；第三，退化 strongly 域依赖，对话场景最大；第四，退化部分可恢复：在约 35 小时非洲语音上对 codec 做参数高效（LoRA，约 1–3% 参数）适配，可缩小压缩引入的词错率 gap，向无压缩基线恢复（在配套工作中展开）。这些结果说明，任务感知、域代表性、适配感知的语音 codec 评估是包容性部署的前提。</p>
+<hr>
+<h3 id="5-articulatory-source-filter-tts给-tts-装一个声道想怎么捏就怎么捏">5. Articulatory Source-Filter TTS：给 TTS 装一个&quot;声道&rdquo;，想怎么捏就怎么捏
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.00735"  target="_blank" rel="noopener"
+    >2610.00735</a></p>
+<p><strong>一句话</strong>：现代神经 TTS 保真度高但黑盒——这篇用发音器官运动学生成声道滤波器，声源（基频/能量）与滤波器独立预测，OT-CFM 精修声源。</p>
+<p><strong>贡献/机制</strong>：AAI（acoustic-to-articulatory inversion）模型在大规模预训练表征增强下，为大 TTS 语料生成运动学伪轨迹，条件化滤波器响应；预测的 pitch/energy 轮廓参数化声门源；声源与滤波器独立预测，声源经 Optimal Transport Conditional Flow Matching（OT-CFM）精修后与滤波器重组为最终频谱。</p>
+<p><strong>数值结果</strong>：可懂度与自然度与同尺寸基线相当，只付出&quot;适度的频谱保真代价&quot;换显式控制；评估显示清晰的源-滤波器解耦：稳定的韵律缩放、跨说话人源/滤波器重组（F0 跟声源说话人、声道特征跟滤波器说话人）；直接操纵发音轨迹可做口音修改等细粒度控制。</p>
+<p><strong>批判性分析</strong>：&ldquo;可解释控制&quot;是 TTS 里喊了很久但没人做好的方向，这篇把 source-filter 这尊老古董用现代 flow matching 重新供起来了，cross-speaker 重组很漂亮；但&quot;适度代价&quot;到底是多少、AAI 伪轨迹的误差传播，摘要没展开。做可控语音合成的人值得细读。</p>
+<p><strong>摘要译文</strong>：现代神经 TTS 系统声学保真度出色，但如黑盒，对声道滤波器几乎没有可解释控制。我们提出一种基于发音运动学的可控 source-filter TTS 架构。经大规模预训练表征增强的 Acoustic-to-Articulatory Inversion（AAI）模型，为大 TTS 语料生成运动学伪轨迹；这些轨迹条件化滤波器响应，而预测的 pitch 与能量轮廓参数化声门源。声源与滤波器独立预测，声源经 Optimal Transport Conditional Flow Matching（OT-CFM）模块精修后与滤波器重组为最终频谱。我们的模型可懂度与自然度与同尺寸基线相当，只以适度的频谱保真代价换取显式控制。评估显示清晰的源-滤波器解耦，支持稳定的韵律缩放与跨说话人源/滤波器重组——F0 跟声源说话人、声道特征跟滤波器说话人。最后，直接操纵发音轨迹可做口音修改等细粒度控制，为可解释语音合成指了新方向。音频样例见项目页。</p>
+<hr>
+<h3 id="6-audiojev音频问答的选项顺序也会骗模型直接对概率做顺序校准">6. AudioJev：音频问答的&quot;选项顺序&quot;也会骗模型——直接对概率做顺序校准
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.01293"  target="_blank" rel="noopener"
+    >2610.01293</a></p>
+<p><strong>一句话</strong>：音频问答里答案选项换个顺序，模型的概率估计就变了——AudioJev 用 random-derangement SKL 训练，让同一题的两种选项排列输出一致的分布。</p>
+<p><strong>贡献/机制</strong>：音频决策常依赖 transcript 不保留的证据，而概率估计又依赖选项顺序。AudioJev 把 waveform+问题+候选项经一个共享全参数模型直接映射为候选分布；定义 order calibration：选项做保义重排后答案概率不变；random-derangement SKL 训练把每题配一个&quot;每个选项都换位&quot;的重排视图，两边都监督再对分布做对称 KL 惩罚；推理只有一次候选打分前向，无校准头、无顺序集成。</p>
+<p><strong>数值结果</strong>：3 个训练种子下，完整 MMAU/MMAR 上平均准确率 68.88%/55.33%；相对单视图消融，随机顺序 SKL 降低 43.8%/60.5%；同一模型还处理意图、环境声、音符属性、语音活动、对话转场。</p>
+<p><strong>批判性分析</strong>：LLM 的选项顺序偏置是老问题，这篇把它搬到音频问答并给了&quot;校准作用于候选语义而非呈现位置&quot;的干净形式化；但 MMAU/MMAR 55–68% 的绝对准确率说明音频推理本身还很弱。做音频 QA 评测的人应该把 order calibration 收进检查单。</p>
+<p><strong>摘要译文</strong>：音频决策常依赖 transcript 不保留的证据，而其概率估计又可能依赖答案选项的顺序。AudioJev 把 waveform、问题与给定选项经一个共享全参数模型直接映射为候选分布。我们把 order calibration 定义为：在保义的选项重排下保持答案概率不变。Random-derangement SKL 训练把每个问题配一个重排视图（每个选项都换位），对两边都监督，再施加对称 KL 惩罚前先对齐两个分布。推理保留单次候选打分前向，无校准头、无顺序集成。在三个训练种子上，AudioJev 在完整 MMAU/MMAR 上达到 68.88%/55.33% 平均准确率，相对单视图消融的随机顺序 SKL 降低 43.8%/60.5%。同一模型处理意图、环境声、音符属性、语音活动与对话转场。配对消融与多顺序评估同时度量预测准确率与概率稳定性，建立了一个校准目标作用于候选语义而非呈现位置的直接音频接口。推理代码与模型权重已发布。</p>
+<hr>
+<h3 id="7-balalaika-longform俄语长语音-tts-语料1200-词连续生成短窗微调的-wer-是-999">7. Balalaika-Longform：俄语长语音 TTS 语料——1,200 词连续生成，短窗微调的 WER 是 99.9%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.00658"  target="_blank" rel="noopener"
+    >2610.00658</a></p>
+<p><strong>一句话</strong>：长语音 TTS 的句子级训练/评测掩盖了&quot;丢词、早停&rdquo;——189 小时俄语连续语料（30 秒–15 分钟单元），50 组文本-音色对测 75/300/1,200 词连续合成。</p>
+<p><strong>贡献/机制</strong>：长单元+匹配短窗支持&quot;同一录音源、不同窗口&quot;的微调对照；评测保留每一次合成尝试；在 CosyVoice3、Qwen3-TTS、VoxCPM2、F5-TTS 上做对照实验，测试约 75、300、1,200 词的连续合成（微调未见过的音色）。</p>
+<p><strong>数值结果</strong>：1,200 词时，CosyVoice3 短窗微调 WER 99.9%，长目标微调降到 47.3%，再加标点/格式匹配的 transcript 降到 16.6%；配对区间比较中，长目标在 Qwen3-TTS 和 VoxCPM2 上占优，F5-TTS 上小幅占优但其绝对 WER 仍在 90% 以上。</p>
+<p><strong>批判性分析</strong>：把&quot;训练序列长度&quot;这个变量在固定连续生成协议下孤立出来了，结论干净——长音频 TTS 的评测范式得改；但这只是俄语单语料，&ldquo;16.6%&ldquo;离可用还远。做长音频/播客生成的人必读。</p>
+<p><strong>摘要译文</strong>：长语音 TTS 必须在长生成中保留请求的词，但句子级训练与评估会掩盖丢词与早停。我们引入 Balalaika-Longform，一个 189 小时的开放俄语语料，连续单元 30 秒到 15 分钟。长单元与匹配短窗支持在同一源录音上的微调对照，配套评估保留每一次合成尝试。我们在两种视角下微调 CosyVoice3、Qwen3-TTS、VoxCPM2 与 F5-TTS，在 50 组文本-音色对（音色未在微调中出现）上测试约 75、300、1,200 词的连续合成。1,200 词时，CosyVoice3 短窗微调后 WER 为 99.9%，长目标微调降到 47.3%，再加标点、格式匹配的 transcript 降到 16.6%；配对区间比较中长目标在 Qwen3-TTS 和 VoxCPM2 上占优，在 F5-TTS 上小幅占优（其绝对 WER 仍在 90% 以上）。结果在固定的连续生成协议下孤立了训练序列长度的效应。</p>
+<hr>
+<h3 id="8-multi-party-backchannel-prediction双人对话的嗯嗯模型放到多人会议里直接归零">8. Multi-Party Backchannel Prediction：双人对话的&quot;嗯嗯&quot;模型，放到多人会议里直接归零
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.01488"  target="_blank" rel="noopener"
+    >2610.01488</a></p>
+<p><strong>一句话</strong>：backchannel 预测几乎只在双人场景做过——这篇基于 AMI 建了多人基准：SOTA 双人模型零样本直接掉到 chance（AUROC 0.499）。</p>
+<p><strong>贡献/机制</strong>：682 个 masked-listener 视角、171 场会议、190 说话人、18,697 个 backchannel 事件，person-disjoint 的 held-out 划分；SOTA 双人模型零样本用于会议音频只有 0.499，但其冻结声学特征仍有信息量：线性探针 0.704，重训预测器 0.751；listener conditioning 只对训练见过的听者有效，未见听者救不回来（容量缩减、listener 对抗训练、per-listener 自适应、oracle 词汇条件都试过）。</p>
+<p><strong>数值结果</strong>：零样本 AUROC 0.499（chance）；线性探针 0.704；重训 0.751；backchannel 在帧级只占约 1%，帧级 F1 受基率影响大，故 AUROC 与 listener-active 区域上的 event-F1 双报。</p>
+<p><strong>批判性分析</strong>：昨天的 ThyVoice 在做跨会议说话人归因，这篇在做多人对话的倾听者建模——&ldquo;身份与有用线索纠缠&quot;这个诊断很诚实；但 0.751 的绝对值说明这条线才刚起步。做会议语音理解的人可以把 benchmark 收了。</p>
+<p><strong>摘要译文</strong>：backchannel 预测几乎只在双人对话中研究过。我们基于 AMI 语料引入一个多人基准：682 个 masked-listener 视角，来自 171 场会议、190 个说话人、18,697 个 backchannel 事件，held-out 划分 person-disjoint。SOTA 双人模型零样本用于会议音频只有 chance 水平（AUROC 0.499）；但其冻结声学特征仍有信息量：线性探针达到 0.704，重训预测器到 0.751。重训暴露了第二个局限：listener conditioning 只改善训练见过的听者，对未见听者无效；在容量缩减、listener 对抗训练、per-listener 自适应、oracle 词汇条件下 gap 都在。对抗训练只能去掉部分说话人身份信息，去得更狠则伤害预测，说明身份与对 backchannel 有用的线索纠缠在一起。同一特征与数据划分下的 within-model 对照解释了这一模式：turn-onset 预测能迁移到未见听者，backchannel 预测不能；backchannel 率在个体间的差异约为 turn-onset 率的两倍。backchannel 在帧级只占约 1%，帧级 F1 受基率影响大，因此我们在 AUROC 之外还报告 listener-active 区域上的 event-F1。benchmark 与评估工具已发布。</p>
+<hr>
+<h3 id="9-proxymos不花一分钱人工标注用-5-个公开-mos-模型蒸出一个更强的">9. ProxyMOS：不花一分钱人工标注，用 5 个公开 MOS 模型蒸出一个更强的
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.00419"  target="_blank" rel="noopener"
+    >2610.00419</a></p>
+<p><strong>一句话</strong>：人工 MOS 太贵、非侵入式 MOS predictor 出域就崩——ProxyMOS 把 8 个公开 MOS predictor 挑出 5 个做自适应路由集成，标 807k 无标注 utterance 蒸给 wav2vec 2.0 学生。</p>
+<p><strong>贡献/机制</strong>：8 个 predictor 对人类打分做 benchmark，5 个进子集搜索（uniform、correlation-weighted、error-weighted、MSE-optimised、adaptive per-utterance routing）；最优的 4 模型路由集成标 807k 无标注 utterance，训练 wav2vec 2.0 学生；同步发布俄语 TTS 新基准 mos260（4,600 utterances、38 合成条件）；模型、ONNX 导出与 mos260 已发布。</p>
+<p><strong>数值结果</strong>：URGENT 上学生 Spearman ρ=0.802，超最佳 teacher（0.773）；mos260 上 utterance 级 0.636 对 0.613、condition 级 0.95，一次前向打平自己的路由集成；自适应路由是唯一&quot;加弱 predictor 不掉点&quot;的规则。</p>
+<p><strong>批判性分析</strong>：&ldquo;用模型标数据再蒸馏&quot;是老套路，但&quot;自适应 per-utterance 路由选 teacher&quot;这步做扎实了，且 student 一次前向打平集成很实用；不过 mos260 是俄语自建基准，跨语言泛化没验。做 TTS 质检的人可以直接拿模型用。</p>
+<p><strong>摘要译文</strong>：人工平均意见分（MOS）采集昂贵，非侵入式 MOS 预测器在训练域外 sharply 退化。ProxyMOS 把一池公开 MOS 预测器变成一个更强的单一模型，不用新的人工标注。8 个预测器对人类打分做 benchmark；最有信息量的 5 个进入子集搜索（uniform、correlation 加权、error 加权、MSE 优化与自适应 per-utterance 路由）；最优的路由 4 模型集成标注 807k 无标注 utterance，训练一个 wav2vec 2.0 学生。在 URGENT 上学生达到 Spearman ρ=0.802，超最佳 teacher 的 0.773。在 mos260（一个新的俄语 TTS 基准，38 种合成条件下 4,600 条 utterance）上达到 utterance 级 ρ=0.636（对 0.613）、condition 级 0.95，一次前向打平自己的路由集成。自适应路由是唯一在加入弱预测器时不掉点的规则。模型、ONNX 导出与 mos260 已发布。</p>
+<hr>
+<h3 id="10-denoising-surface扩散-llm-上线-serving成本预估得按二维算">10. Denoising Surface：扩散 LLM 上线 serving，成本预估得按&quot;二维&quot;算
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.00499"  target="_blank" rel="noopener"
+    >2610.00499</a></p>
+<p><strong>一句话</strong>：dLLM 的推理成本估不准——输出长度和去噪步数这两个常用代理都塌成标量，丢了&quot;block×步&quot;的二维执行结构；DWS 把它保留成概率曲面。</p>
+<p><strong>贡献/机制</strong>：block-autoregressive 生成机制诱导出&quot;输出 block × block 内去噪步&quot;的二维执行结构，常用代理（输出长度、去噪步数）把它塌成标量。Denoising Workload Surface（DWS）把该二维结构保留为概率曲面，给异构单步成本加权；coarse-to-fine 训一个轻量 prompt-only 预测器，单 CPU 核可跑，不跟 serving 模型抢 GPU；DWS 把&quot;请求相关的执行行为&quot;与&quot;部署相关的成本因子&quot;解耦，换硬件不重训。</p>
+<p><strong>数值结果</strong>：真实 serving 实验里，DWS 相对标量 predictor 成本预测误差最高降 2.50×；DWS 指导的 shortest-job-first 调度让在线 chatbot 端到端延迟最高降 1.92×。</p>
+<p><strong>批判性分析</strong>：跟昨天的 Galahad（KV 记忆 serving）是同一条&quot;推理效率&quot;线，但切的是 dLLM 这个新物种——&ldquo;二维结构不能塌成标量&quot;这个洞察抓得准；不过实验只在自家 serving 环境，&ldquo;跨硬件不重训&quot;的泛化证据单薄。做 dLLM serving 的人值得一看。</p>
+<p><strong>摘要译文</strong>：扩散大语言模型（dLLM）越来越强，正从研究走向真实 serving；请求管理（调度、资源分配）依赖对单请求推理成本的准确估计。但常用成本代理对 dLLM 不够用：输出长度忽略了一次前向可解码多个 token，去噪步数忽略了异构的单步成本。我们观察到 block-autoregressive 生成机制诱导出输出 block 与 block 内去噪步的二维执行结构，而这些代理把它塌成标量，丢掉了刻画成本的关键信息。受此启发，我们提出 Denoising Workload Surface（DWS），把该二维 block-step 结构保留为概率曲面，给异构单步成本加权；并设计 coarse-to-fine 训练，让轻量 prompt-only 预测器准确预测复杂的 DWS。该预测器在单 CPU 核上高效运行，不跟 serving 模型抢 GPU；DWS 把请求相关的执行行为与部署相关的成本因子解耦，预测器换硬件配置不重训即迁移。在真实 serving 实验中，DWS 相对标量 predictor 成本预测误差最高降 2.50×，DWS 指导的 shortest-job-first 调度让在线 chatbot 端到端延迟最高降 1.92×。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="11-paracalib抑郁检测里同样的声音在不同语义下意思不一样">11. ParaCalib：抑郁检测里，同样的声音在不同语义下意思不一样
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.01103"  target="_blank" rel="noopener"
+    >2610.01103</a></p>
+<p>用 ALM 生成上下文相关的声音描述，再用 LLM 抽成结构化的语义校准副语言表征（SC-Para）；DAIC-WOZ 上 Macro-F1 71.9%、MODMA 上 90.5%，均为所评方法最高。对照实验证明了 PSE 阶段的语义校准效应：固定声学描述、只换语义上下文，推出的抑郁相关证据会变。点评：把&quot;说什么&quot;从&quot;怎么说&quot;里解耦出来，是副语言建模该有的样子；但抑郁检测的临床落地门槛远高于 benchmark 数字。</p>
+<h3 id="12-silence-the-mimic防-voice-cloning-的对抗扰动加速-453-倍">12. Silence-the-Mimic：防 voice cloning 的对抗扰动，加速 45.3 倍
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.00662"  target="_blank" rel="noopener"
+    >2610.00662</a></p>
+<p>在频域按心理声学掩蔽约束生成不可感知扰动，训练时硬约束可感知边界，不用迭代调 quality-control loss；多个 SOTA VC/TTS 模型上保护性能持平或更优，相对白盒基线加速最高 45.3 倍。点评：把&quot;不可感知&quot;从软损失变成硬约束，工程上干净利落；但白盒假设下的数字，黑盒迁移没说。</p>
+<h3 id="13-statevc免训练-voice-conversionwavlm-空间里按共享状态做局部搬运">13. StateVC：免训练 voice conversion，WavLM 空间里按&quot;共享状态&quot;做局部搬运
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.01952"  target="_blank" rel="noopener"
+    >2610.01952</a></p>
+<p>源/参考内容不同、帧级对齐不可靠——StateVC 把两边 WavLM 表征池化后拟合一个 pair-specific GMM 得&quot;共享状态&rdquo;，每状态内估计源→参考的均值漂移，按后验概率组合；LibriSpeech one-shot 协议 WER 8.01%/CER 3.22% 最低，SIM 0.9512，主观说话人相似度最高。点评：&ldquo;不硬对齐、按状态搬运&quot;的思路巧；但 one-shot 协议的数字，跨域还没验。</p>
+<h3 id="14-watch-your-speech看默片配音文本条件一加上口型同步-sota-了">14. Watch Your Speech：看默片配音，文本条件一加上，口型同步 SOTA 了
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.01012"  target="_blank" rel="noopener"
+    >2610.01012</a></p>
+<p>video-to-speech 的一对多映射（光看嘴猜不出说了啥）——WYS 加文本条件做显式语言线索，attention 融合+条件 flow matching；LRS2/LRS3 上音画同步（LSE-C/D）新 SOTA，WER 也有竞争力，主观自然度近人类。点评：&ldquo;视觉不够、文本来凑&quot;是实用主义的好答案；但依赖文本输入，纯视觉唇读场景用不上。</p>
+<h3 id="15-语音里的阿尔茨海默检测加个噪声预测就变了干预式鲁棒性测试该成标配">15. 语音里的阿尔茨海默检测：加个噪声，预测就变了——干预式鲁棒性测试该成标配
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.01846"  target="_blank" rel="noopener"
+    >2610.01846</a></p>
+<p>对 ADReSSo 上三个 SSL backbone 做受控噪声/混响干预：声学干预系统性地改变 AD 预测，且效应沿分类器决策方向结构化、held-out 可复现、反转干预方向则效应反转；原数据里噪声本无诊断组间差异。点评：&ldquo;高准确率≠鲁棒&quot;的实证很硬；临床部署前，这套干预测试确实该成标配。</p>
+<h3 id="16-rms-aqa具身助手在家里听声答题先定位声源再时空推理">16. RMS-AQA：具身助手在家里听声答题——先定位声源，再时空推理
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.00935"  target="_blank" rel="noopener"
+    >2610.00935</a></p>
+<p>真实一阶 Ambisonics 录音+RIR 合成数据的空间音频问答基准，两阶段：先 grounding 可听声事件，再做复杂时空推理；还给了个轻量空间插件，把 FOA 数据注入冻结的 audio-language backbone。主要难点：并发声源、远距离、RIR 合成到真实录音的 sim-to-real gap。点评：空间音频 QA 的基准来得正是时候（具身智能的前置）；但 sim-to-real gap 的量化还停留在&quot;揭示问题&quot;阶段。</p>
+<hr>
+<p><em>今日 16 篇：10 篇精评 + 6 篇简报，音频/语音 15 篇打头，全双工&quot;时机&quot;问题（LateIntent 抢答、DSB grounding 衰减）是今日音频主线；encoder-free 预训练、codec 基准、dLLM serving 三线并进。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/159147"  target="_blank" rel="noopener"
+    >FormX</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-06/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-06" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-06/cover_hu_6d55d0a470d4089.png" srcset="/zh-cn/p/daily-paper-2026-10-06/cover_hu_6d55d0a470d4089.png 1x, /zh-cn/p/daily-paper-2026-10-06/cover_hu_bc3c05bccfa4c17a.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #53515280 0%, #e2e0dfC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-06</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-04/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-04" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-04/cover_hu_6d92b81eb104ce03.jpg" srcset="/zh-cn/p/daily-paper-2026-10-04/cover_hu_6d92b81eb104ce03.jpg 1x, /zh-cn/p/daily-paper-2026-10-04/cover_hu_c52156c2eaecdbb0.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #54aadd80 0%, #0861b8C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-04</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-10-03/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-10-03</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-10-02/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-10-02</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/zh-cn/p/daily-paper-2026-10-01/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI Paper Daily | 2026-10-01</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
