@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重（468 篇原始候选中音频初筛 34 篇，全部未在窗口内报道 → 报道 16 篇）。 来源：arXiv API 直抓（cs.CL/cs.LG/cs.AI/cs.SD/eess.AS/cs.CV，2026-10-05 起发布 468 篇去重 → 音频初筛 34 篇 → 报道 16 篇；抓取初期曾被限流，冷却 5 分钟后恢复，无降级）。 主题分布：TTS 与语音合成 3 篇、语音增强与隐私 2 篇、语音理解与表征 4 篇、音频生成 2 篇、实时交互与评测 3 篇、方法论与扩展 2 篇。 今日关键词：生成式音频的&quot;最后一公里&quot;——AuraSE 治生成式增强的幻觉、AudioGAR 补 codec 解码器的训推失配、Paradee 揪出蒸馏 student&rsquo;s 相位毛刺，各家都在修生成管线的最后一环；另一条线是&quot;别被评测骗了&quot;：抑郁检测的层选择偏差、口音表征的跨风格崩塌。 精评 1. Paradee：Kokoro-82M 蒸馏成 8M 单音色 TTS，相位毛刺用无参滤波修掉 2610.06817\n">
+<title>AI Paper Daily | 2026-10-07</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-07/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-07">
+<meta property='og:description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重（468 篇原始候选中音频初筛 34 篇，全部未在窗口内报道 → 报道 16 篇）。 来源：arXiv API 直抓（cs.CL/cs.LG/cs.AI/cs.SD/eess.AS/cs.CV，2026-10-05 起发布 468 篇去重 → 音频初筛 34 篇 → 报道 16 篇；抓取初期曾被限流，冷却 5 分钟后恢复，无降级）。 主题分布：TTS 与语音合成 3 篇、语音增强与隐私 2 篇、语音理解与表征 4 篇、音频生成 2 篇、实时交互与评测 3 篇、方法论与扩展 2 篇。 今日关键词：生成式音频的&quot;最后一公里&quot;——AuraSE 治生成式增强的幻觉、AudioGAR 补 codec 解码器的训推失配、Paradee 揪出蒸馏 student&rsquo;s 相位毛刺，各家都在修生成管线的最后一环；另一条线是&quot;别被评测骗了&quot;：抑郁检测的层选择偏差、口音表征的跨风格崩塌。 精评 1. Paradee：Kokoro-82M 蒸馏成 8M 单音色 TTS，相位毛刺用无参滤波修掉 2610.06817\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-07/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-07T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-07T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-07">
+<meta name="twitter:description" content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重（468 篇原始候选中音频初筛 34 篇，全部未在窗口内报道 → 报道 16 篇）。 来源：arXiv API 直抓（cs.CL/cs.LG/cs.AI/cs.SD/eess.AS/cs.CV，2026-10-05 起发布 468 篇去重 → 音频初筛 34 篇 → 报道 16 篇；抓取初期曾被限流，冷却 5 分钟后恢复，无降级）。 主题分布：TTS 与语音合成 3 篇、语音增强与隐私 2 篇、语音理解与表征 4 篇、音频生成 2 篇、实时交互与评测 3 篇、方法论与扩展 2 篇。 今日关键词：生成式音频的&quot;最后一公里&quot;——AuraSE 治生成式增强的幻觉、AudioGAR 补 codec 解码器的训推失配、Paradee 揪出蒸馏 student&rsquo;s 相位毛刺，各家都在修生成管线的最后一环；另一条线是&quot;别被评测骗了&quot;：抑郁检测的层选择偏差、口音表征的跨风格崩塌。 精评 1. Paradee：Kokoro-82M 蒸馏成 8M 单音色 TTS，相位毛刺用无参滤波修掉 2610.06817\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-07/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-paradeekokoro-82m-蒸馏成-8m-单音色-tts相位毛刺用无参滤波修掉">1. Paradee：Kokoro-82M 蒸馏成 8M 单音色 TTS，相位毛刺用无参滤波修掉</a></li>
+        <li><a href="#2-aurase生成式语音增强的幻觉用推理策略优化在线治">2. AuraSE：生成式语音增强的幻觉，用推理策略优化在线治</a></li>
+        <li><a href="#3-audiogarlatent-音频生成的解码器训推失配只微调解码器就补上">3. AudioGAR：latent 音频生成的&quot;解码器训推失配&rdquo;，只微调解码器就补上</a></li>
+        <li><a href="#4-ultradub视觉引导的配音统一框架唇形做节奏锚">4. UltraDub：视觉引导的配音统一框架，唇形做&quot;节奏锚&rdquo;</a></li>
+        <li><a href="#5-语音匿名化的先手防御给参考语音加对抗扰动重识别-eer-从-14-干到-45">5. 语音匿名化的&quot;先手防御&rdquo;：给参考语音加对抗扰动，重识别 EER 从 14% 干到 45%</a></li>
+        <li><a href="#6-方法论纠错语音抑郁检测里挑最好的一层auc-能虚高-009">6. 方法论纠错：语音抑郁检测里&quot;挑最好的一层&rdquo;，AUC 能虚高 0.09</a></li>
+        <li><a href="#7-lyric把谱滤波搬进声学结构里语音识别前端功耗砍-986">7. Lyric：把谱滤波搬进声学结构里，语音识别前端功耗砍 98.6%</a></li>
+        <li><a href="#8-口音表征跨不过朗读自发whisper-域内-0489-uar跨风格掉到-011">8. 口音表征跨不过&quot;朗读→自发&rdquo;：Whisper 域内 0.489 UAR，跨风格掉到 0.11</a></li>
+        <li><a href="#9-leavjepa极简音画自监督一个早融合-vit-吃掉所有模态">9. LeAVJEPA：极简音画自监督，一个早融合 ViT 吃掉所有模态</a></li>
+        <li><a href="#10-aether生理波形基础模型的扩展定律10-倍算力模型-12-倍数据-82-倍">10. Aether：生理波形基础模型的扩展定律，10 倍算力→模型 1.2 倍、数据 8.2 倍</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-vmf-似然做无标签说话人-embedding-增强难失配集上增益更清楚">11. vMF 似然做无标签说话人 embedding 增强，难失配集上增益更清楚</a></li>
+        <li><a href="#12-cavabench英国口音的金融语音助手wer-与工具调用准确率-r-093">12. CavaBench：英国口音的金融语音助手，WER 与工具调用准确率 r=-0.93</a></li>
+        <li><a href="#13-土耳其语-tts-大横评18-个客观指标chatterboxcosyvoiceomnivoicevoxcpm2-对打">13. 土耳其语 TTS 大横评：18 个客观指标，Chatterbox/CosyVoice/OmniVoice/VoxCPM2 对打</a></li>
+        <li><a href="#14-kyarabench角色身份--说话人身份85-个配音角色的人审-benchmark">14. KyaraBench：角色身份 ≠ 说话人身份，85 个配音角色的人审 benchmark</a></li>
+        <li><a href="#15-构音障碍语音重建改发音瓶颈而非语言表征保住音色与韵律">15. 构音障碍语音重建：改发音瓶颈而非语言表征，保住音色与韵律</a></li>
+        <li><a href="#16-interactionbench流式视频助手该说就说不该说闭嘴的实时交互-benchmark">16. InteractionBench：流式视频助手&quot;该说就说、不该说闭嘴&quot;的实时交互 benchmark</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-07/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-07" height="3655" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-07/cover.png" srcset="/zh-cn/p/daily-paper-2026-10-07/cover_hu_dba31a2100265cb6.png 800w, /zh-cn/p/daily-paper-2026-10-07/cover_hu_9c2f40cde8ebd54.png 1600w, /zh-cn/p/daily-paper-2026-10-07/cover_hu_cb3fd2f135bf38ae.png 2400w, /zh-cn/p/daily-paper-2026-10-07/cover.png 4640w" width="4640">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-07/">AI Paper Daily | 2026-10-07</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-07T00:00:00Z'>Oct 07, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-paradeekokoro-82m-蒸馏成-8m-单音色-tts相位毛刺用无参滤波修掉">1. Paradee：Kokoro-82M 蒸馏成 8M 单音色 TTS，相位毛刺用无参滤波修掉</a></li>
+        <li><a href="#2-aurase生成式语音增强的幻觉用推理策略优化在线治">2. AuraSE：生成式语音增强的幻觉，用推理策略优化在线治</a></li>
+        <li><a href="#3-audiogarlatent-音频生成的解码器训推失配只微调解码器就补上">3. AudioGAR：latent 音频生成的&quot;解码器训推失配&rdquo;，只微调解码器就补上</a></li>
+        <li><a href="#4-ultradub视觉引导的配音统一框架唇形做节奏锚">4. UltraDub：视觉引导的配音统一框架，唇形做&quot;节奏锚&rdquo;</a></li>
+        <li><a href="#5-语音匿名化的先手防御给参考语音加对抗扰动重识别-eer-从-14-干到-45">5. 语音匿名化的&quot;先手防御&rdquo;：给参考语音加对抗扰动，重识别 EER 从 14% 干到 45%</a></li>
+        <li><a href="#6-方法论纠错语音抑郁检测里挑最好的一层auc-能虚高-009">6. 方法论纠错：语音抑郁检测里&quot;挑最好的一层&rdquo;，AUC 能虚高 0.09</a></li>
+        <li><a href="#7-lyric把谱滤波搬进声学结构里语音识别前端功耗砍-986">7. Lyric：把谱滤波搬进声学结构里，语音识别前端功耗砍 98.6%</a></li>
+        <li><a href="#8-口音表征跨不过朗读自发whisper-域内-0489-uar跨风格掉到-011">8. 口音表征跨不过&quot;朗读→自发&rdquo;：Whisper 域内 0.489 UAR，跨风格掉到 0.11</a></li>
+        <li><a href="#9-leavjepa极简音画自监督一个早融合-vit-吃掉所有模态">9. LeAVJEPA：极简音画自监督，一个早融合 ViT 吃掉所有模态</a></li>
+        <li><a href="#10-aether生理波形基础模型的扩展定律10-倍算力模型-12-倍数据-82-倍">10. Aether：生理波形基础模型的扩展定律，10 倍算力→模型 1.2 倍、数据 8.2 倍</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-vmf-似然做无标签说话人-embedding-增强难失配集上增益更清楚">11. vMF 似然做无标签说话人 embedding 增强，难失配集上增益更清楚</a></li>
+        <li><a href="#12-cavabench英国口音的金融语音助手wer-与工具调用准确率-r-093">12. CavaBench：英国口音的金融语音助手，WER 与工具调用准确率 r=-0.93</a></li>
+        <li><a href="#13-土耳其语-tts-大横评18-个客观指标chatterboxcosyvoiceomnivoicevoxcpm2-对打">13. 土耳其语 TTS 大横评：18 个客观指标，Chatterbox/CosyVoice/OmniVoice/VoxCPM2 对打</a></li>
+        <li><a href="#14-kyarabench角色身份--说话人身份85-个配音角色的人审-benchmark">14. KyaraBench：角色身份 ≠ 说话人身份，85 个配音角色的人审 benchmark</a></li>
+        <li><a href="#15-构音障碍语音重建改发音瓶颈而非语言表征保住音色与韵律">15. 构音障碍语音重建：改发音瓶颈而非语言表征，保住音色与韵律</a></li>
+        <li><a href="#16-interactionbench流式视频助手该说就说不该说闭嘴的实时交互-benchmark">16. InteractionBench：流式视频助手&quot;该说就说、不该说闭嘴&quot;的实时交互 benchmark</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>10 篇精评 + 6 篇简报</strong>，共 16 篇，已对 7 天滚动窗口去重（468 篇原始候选中音频初筛 34 篇，全部未在窗口内报道 → 报道 16 篇）。</li>
+<li>来源：arXiv API 直抓（cs.CL/cs.LG/cs.AI/cs.SD/eess.AS/cs.CV，2026-10-05 起发布 468 篇去重 → 音频初筛 34 篇 → 报道 16 篇；抓取初期曾被限流，冷却 5 分钟后恢复，无降级）。</li>
+<li>主题分布：TTS 与语音合成 3 篇、语音增强与隐私 2 篇、语音理解与表征 4 篇、音频生成 2 篇、实时交互与评测 3 篇、方法论与扩展 2 篇。</li>
+<li>今日关键词：<strong>生成式音频的&quot;最后一公里&quot;</strong>——AuraSE 治生成式增强的幻觉、AudioGAR 补 codec 解码器的训推失配、Paradee 揪出蒸馏 student&rsquo;s 相位毛刺，各家都在修生成管线的最后一环；另一条线是&quot;别被评测骗了&quot;：抑郁检测的层选择偏差、口音表征的跨风格崩塌。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-paradeekokoro-82m-蒸馏成-8m-单音色-tts相位毛刺用无参滤波修掉">1. Paradee：Kokoro-82M 蒸馏成 8M 单音色 TTS，相位毛刺用无参滤波修掉
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06817"  target="_blank" rel="noopener"
+    >2610.06817</a></p>
+<p><strong>一句话</strong>：82M 的 Kokoro 蒸馏成 8M 单音色模型，int8 只有 8.5MB、单 CPU 线程 25 倍实时，UTMOS 只掉 0.11。</p>
+<p><strong>贡献/机制</strong>：保留 Kokoro 架构但大幅收窄层宽；两半分开训——文本侧预测 teacher 合成语料的 duration/pitch/energy/phoneme，解码侧把 teacher 存好的这些值还原成 teacher 音频（先谱损失、再对抗）；最后拼接 + int8 量化；无需 alignment 学习、无需联合训练。诊断发现 student 的轻微&quot;嗡嗡声&quot;来自 2–8kHz 浊音段的相位问题，用一个训练-free、无参数的锁相滤波在合成后修掉。</p>
+<p><strong>数值结果</strong>：参数 10× 更少、算力 15× 更少；int8 8.5MB，单 CPU 线程 25× 实时；UTMOS 4.41 对 teacher 4.52。代码、模型、音频样例已发布。</p>
+<p><strong>批判性分析</strong>：&ldquo;窄架构 + 分半蒸馏 + 后处理修相位&quot;是把蒸馏链条拆到最简，端侧 TTS 落地可直接抄；但只做了单音色，Kokoro 的 54 音色多说话人能力蒸馏后怎么保留没说。做端侧/高效 TTS 的人必读。</p>
+<p><strong>摘要译文</strong>：我们把广泛使用的开源 TTS 模型 Kokoro-82M（54 个音色）蒸馏成 Paradee——一个 8.07M 参数、只说其中一个音色的模型。Paradee 保留 Kokoro 架构但层宽大减，两半分别对 frozen teacher 训练。参数少 10 倍、算力少 15 倍。我们先用 teacher 合成语料并保留其 duration、pitch、energy 与音素特征；再训一个小文本侧预测这些值、一个小解码器把 teacher 存好的值还原成 teacher 音频，先用谱损失再对抗训练。最后连接两半并把权重 quantize 到 int8。不需要 alignment 学习与联合训练，一台笔记本就能跑。int8 存储 8.5MB，单 CPU 线程 25 倍实时，UTMOS 4.41 对 teacher 的 4.52。student 初期有轻微嗡嗡声，我们追溯到 2–8kHz 浊音段的相位；合成后加一个锁相滤波基本消除，无需训练、无额外参数。代码、模型文件与音频样例已发布。</p>
+<hr>
+<h3 id="2-aurase生成式语音增强的幻觉用推理策略优化在线治">2. AuraSE：生成式语音增强的幻觉，用推理策略优化在线治
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06615"  target="_blank" rel="noopener"
+    >2610.06615</a></p>
+<p><strong>一句话</strong>：生成式语音增强会&quot;脑补&quot;改内容、换音色——AuraSE 用多模态流匹配 + 在线推理策略优化治幻觉，真实 DNS 盲测拿下最高分。</p>
+<p><strong>贡献/机制</strong>：双流转单流多模态 DiT（MMDiT），transcript 与声学表征交互的同时给 degraded 输入保留专用通路；发现最优解码配置（guidance scale、采样温度、步数）随 utterance 大幅变化，于是提出 Inference Policy Optimization（IPO）：在线 on-policy，用当前模型在不同推理配置下生成多个候选，以多目标 reward 排序、从相对偏好中学习。部署时固定 10 步 ODE、无 CFG、无逐句配置搜索。</p>
+<p><strong>数值结果</strong>：合成测试集 12 个指标 11 个第一；真实 DNS 盲测集 DNSMOS 与盲听得分参评最高。</p>
+<p><strong>批判性分析</strong>：&ldquo;推理配置也是一种可学习的策略&quot;是漂亮的角度，把 test-time 的超参搜索内化成偏好优化；但在线 IPO 的训练开销摘要没展开。做生成式语音增强的人必读。</p>
+<p><strong>摘要译文</strong>：生成式语音增强比判别式方法更干净自然，但可能幻觉——即使有 transcript 条件也会改内容或换说话人身份。我们提出 AuraSE，一个流匹配框架，从互补的模态与推理设计两处治幻觉。第一，双流转单流多模态 Diffusion Transformer 让 transcript 与声学表征交互，同时为 degraded 输入保留专用通路。第二，我们发现由 guidance scale、采样温度、步数决定的最优解码配置在 utterance 间差异很大；这引出 Inference Policy Optimization（IPO），一个在线 on-policy 偏好优化方法：用当前模型在不同推理配置下生成多个候选，以多目标 reward 排序，从相对偏好中学习。AuraSE-IPO 在合成测试集 12 个指标中 11 个第一，在真实 DNS 盲测集上 DNSMOS 与盲听得分参评最高。部署时用固定的 10 步 ODE 解码器，无 classifier-free guidance、无逐句配置搜索。</p>
+<hr>
+<h3 id="3-audiogarlatent-音频生成的解码器训推失配只微调解码器就补上">3. AudioGAR：latent 音频生成的&quot;解码器训推失配&rdquo;，只微调解码器就补上
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06632"  target="_blank" rel="noopener"
+    >2610.06632</a></p>
+<p><strong>一句话</strong>：latent 音频生成是两段式——codec 解码器训在 encoder 来的 latent 上、推理却吃生成器产的 latent，AudioGAR 只微调解码器补上这道 gap。</p>
+<p><strong>贡献/机制</strong>：先实证：在多个数据集与 latent 生成模型上，FD/FAD 下的重建-生成 gap 清晰存在，重建好 ≠ 生成好。直接 remedy 是在生成 latent 上 adapt 解码器，但生成 latent 与源音频无对应、做不了配对监督。AudioGAR 把 encoder latent 加噪、再经 frozen latent diffusion 模型去噪，构造从重建走向生成的中间 latent 轨迹——低噪 latent 保留源对应、可做配对微调。只微调 codec 解码器，encoder 与 latent 生成模型 frozen。</p>
+<p><strong>数值结果</strong>：用在 AudioX 上生成性能大幅提升；只用原训练音频小时数的 1.5%、原训练代价的 0.26%。</p>
+<p><strong>批判性分析</strong>：&ldquo;用扩散轨迹造配对数据&quot;是四两拨千斤的 trick，代价低到离谱；但结论目前只在 AudioX 上验证。做音频生成/神经 codec 的人必读。</p>
+<p><strong>摘要译文</strong>：Latent 音频生成模型通常两阶段训练：先学音频 codec，再学 latent 生成模型。这种分解带来解码器训-生成失配：codec 解码器训在 encoder 诱导的 latent 上，推理时却吃生成器产的 latent。在多个数据集与 latent 生成模型上，我们在 FD 与 FAD 下都观察到清晰的重建-生成 gap：强重建质量不必然转成强端到端生成质量。自然的 remedy 是在生成 latent 上 adapt 解码器，但生成 latent 与源音频无对应、无法直接做配对监督。我们提出 AudioGAR：把 encoder latent 扰动、再经 frozen latent 扩散模型去噪，构造中间 latent；这些 latent 形成从重建走向生成的轨迹，低噪 latent 保留源对应、支持配对解码器微调。我们只在这些 latent 上微调 codec 解码器，codec encoder 与 latent 生成模型保持 frozen。用在 AudioX 上，AudioGAR 大幅提升生成性能，只需原训练音频小时数的 1.5% 与原训练代价的 0.26%。</p>
+<hr>
+<h3 id="4-ultradub视觉引导的配音统一框架唇形做节奏锚">4. UltraDub：视觉引导的配音统一框架，唇形做&quot;节奏锚&rdquo;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.05932"  target="_blank" rel="noopener"
+    >2610.05932</a></p>
+<p><strong>一句话</strong>：visual voice cloning 里视觉条件常打乱已建好的时序与音色线索——UltraDub 让唇动同时做语义检索与节奏校准，四数据集 SOTA。</p>
+<p><strong>贡献/机制</strong>：视觉两用：连续唇动做多模态上下文聚合（Motion-guided Dual-context Retrieving，MDR——经共享唇动 query 残差持续重校准语言与说话人风格检索，独立时序门控调节贡献），结构节奏做轨迹校准（Rhythm-anchored Trajectory Guidance，RTG——training-free，在视觉预测中点评估分层多模态修正，强化语义条件的同时保住时序对齐）。另建 DiverseDub 野外多场景配音 benchmark。</p>
+<p><strong>数值结果</strong>：四个数据集上均为 SOTA。</p>
+<p><strong>批判性分析</strong>：&ldquo;一个模态、两种用法&quot;的设计干净，RTG training-free 即插；但 SOTA 的具体指标摘要没展开。做配音/唇同步语音克隆的人必读。</p>
+<p><strong>摘要译文</strong>：Visual voice cloning 要求可懂、音色一致且与可见发音同步的语音。但串行的多模态条件会打乱已建立的时序与说话人线索，不平衡的推理 guidance 则以唇同步为代价换语言准确率。本文提出 UltraDub，一个统一视觉引导流学习与轨迹制导的配音框架，视觉两用：连续运动做多模态上下文聚合，结构节奏做轨迹校准。具体地，我们引入 Motion-guided Dual-context Retrieving（MDR）模块，经共享唇动 query 残差持续重校准语言与说话人风格检索，用独立的时序条件门控调节各自贡献。进一步提出 Rhythm-anchored Trajectory Guidance（RTG），一个 training-free 机制，在视觉预测中点评估分层多模态修正，安全地强化语义条件并更好保留时序对齐。最后构建 DiverseDub 多场景 benchmark 评测野外视频配音。大量实验证明 UltraDub 在四个数据集上达到 SOTA。</p>
+<hr>
+<h3 id="5-语音匿名化的先手防御给参考语音加对抗扰动重识别-eer-从-14-干到-45">5. 语音匿名化的&quot;先手防御&rdquo;：给参考语音加对抗扰动，重识别 EER 从 14% 干到 45%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06074"  target="_blank" rel="noopener"
+    >2610.06074</a></p>
+<p><strong>一句话</strong>：语音匿名化一直只保护待测语音——本文把对抗噪声加到攻击者的参考语音上，ASV 等错率从 14% 提到 45%，接近完美隐私。</p>
+<p><strong>贡献/机制</strong>：现有范式：defender 只匿名化 test utterance，attacker 拿同样匿名化的 reference utterance 做 ASV 比对。新范式 preemptive：在 reference 端也加保护——用对抗扰动降 reference 的身份推断能力；不降参考语音的主观质量；与具体 ASV 系统无关。双侧保护叠加。</p>
+<p><strong>数值结果</strong>：ASV 等错率从 14% 提到 45%（近完美隐私）。</p>
+<p><strong>批判性分析</strong>：把攻防视角从单侧翻成双侧，思路一转数字直接翻三倍；但对抗扰动在重压缩/转码后的鲁棒性没说。做语音隐私/匿名化的人必读。</p>
+<p><strong>摘要译文</strong>：语音匿名化（VA）用于隐藏语音数据中的说话人身份。性能通常以自动说话人验证（ASV）为代理评估攻击者重识别能力：defender 匿名化测试语音，attacker 把它们与同样匿名化的参考语音比对推断身份，ASV 性能越差说明匿名化越成功。因此 defender 的保护是单侧的、只作用于测试语音。此前没人探索过：保护参考语音也能增强匿名化。我们提出新的先手 VA 范式：用对抗噪声保护参考语音，削弱其身份推断能力。先手保护不降参考语音的主观质量，且与用于身份推断的具体 ASV 系统无关。叠加先手保护与常规测试侧 VA，ASV 等错率可从 14% 提到 45%（接近完美隐私）。</p>
+<hr>
+<h3 id="6-方法论纠错语音抑郁检测里挑最好的一层auc-能虚高-009">6. 方法论纠错：语音抑郁检测里&quot;挑最好的一层&rdquo;，AUC 能虚高 0.09
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06465"  target="_blank" rel="noopener"
+    >2610.06465</a></p>
+<p><strong>一句话</strong>：在小临床语音集上&quot;25 层里挑最好的一层再报数&quot;，AUC 能虚高 0.09——打乱标签都还能&quot;检出&quot;0.59，选的是噪声不是信号。</p>
+<p><strong>贡献/机制</strong>：在 DAIC-WOZ 上对五个 deep encoder 家族做重复嵌套交叉验证：naive best-of-25 层 probing 把 AUC 抬高至多 0.09；打乱标签后 naive 选择仍有 AUC 0.59（嵌套选择下 0.50），且偏差随 probing 层数增加、样本减小而变大——锁定&quot;选择&quot;而非&quot;信号&quot;是病因。在第二个临床语料+语言（Androids，意大利语）上复现。无泄漏选择下，一个紧凑的任务对齐 affect-prosody 模型与大得多的 SSL/深度/audio-LLM/codec 方法打平，下游可训参数少约 1000 倍。</p>
+<p><strong>数值结果</strong>：AUC 膨胀至多 0.09；打乱标签 naive 选择 AUC 0.59 vs 嵌套 0.50；PHQ-8 单症状层面同样存在。</p>
+<p><strong>批判性分析</strong>：一次教科书级的&quot;评测卫生&quot;纠错，结论直接外推到一切小样本 probing 研究；顺带证明小而对齐的模型不输大模型。做语音健康/小样本 probing 的人必读。</p>
+<p><strong>摘要译文</strong>：预训练语音表征越来越多用于抑郁检测，但在同一份数据上选&quot;最好&quot;的 encoder 层再评测，会系统性抬高报告性能。在 DAIC-WOZ 上，对五个 deep encoder 家族做重复嵌套交叉验证，naive 的 best-of-25 层 probing 把 AUC 抬高至多 0.09。在打乱标签的真实 latent 表征上，naive best-of-25 仍达 AUC 0.59（嵌套选择下 0.50），且该偏差随 probing 层数增加、样本减小而变大，锁定选择而非信号是病因。该效应在第二个临床语料与语言（Androids，意大利语）上复现。无泄漏选择下，跨表征家族的公平比较发现：一个紧凑的任务对齐 affect-prosody 模型与大得多的 SSL、深度学习、audio-LLM、codec 方法打平，下游可训参数少约 1000 倍。把分析延伸到 PHQ-8 单个症状，同样存在选择偏差。我们主张：在小临床语音数据集上 probing encoder 层表征时，嵌套模型选择应成为标准。</p>
+<hr>
+<h3 id="7-lyric把谱滤波搬进声学结构里语音识别前端功耗砍-986">7. Lyric：把谱滤波搬进声学结构里，语音识别前端功耗砍 98.6%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06433"  target="_blank" rel="noopener"
+    >2610.06433</a></p>
+<p><strong>一句话</strong>：语音识别前端不用数字滤波了——被动声学谐振器在波域直接分频，采样数砍 32 倍，树莓派上延迟+能耗降 98.6%。</p>
+<p><strong>贡献/机制</strong>：wave-domain computing：被动声学谐振器按频率分离语音，把缓变包络送进紧凑时序神经网络；谱滤波搬进声学结构，数字化之前就做完。在 AudioMNIST 说话人无关切分、九个分类器家族上评测。</p>
+<p><strong>数值结果</strong>：比 16kHz 波形少 32 倍标量采样；Raspberry Pi 4 上 EdgeSpeechNet-A 对比，预处理+推理延迟与单次推理能耗降 98.6%，准确率只掉 3.58 个点到 95.70%。</p>
+<p><strong>批判性分析</strong>：&ldquo;用物理结构代替数字计算&quot;的路线够野，边缘语音的功耗账算得漂亮；但目前只做到 spoken-digit，连续语音/噪声下的表现没说。做超低功耗语音的人值得一看。</p>
+<p><strong>摘要译文</strong>：低功耗语音识别要同时砍音频采集、特征处理与神经推理的成本。我们提出 Lyric，一个用波域计算提取特征、数字化之前就完成的语音识别前端。系统用被动声学谐振器按频率分离语音，把缓变包络送进紧凑时序神经网络。这把谱滤波搬进声学结构，减少识别所需的数据与处理。我们做了原型，在说话人无关的 AudioMNIST 切分、九个分类器家族上评测口语数字识别。前端采集的标量采样比 16kHz 波形少 32 倍。在 Raspberry Pi 4 的 EdgeSpeechNet-A 对比中，预处理+推理延迟与单次推理估计处理器能耗降 98.6%，准确率降 3.58 个点到 95.70%。</p>
+<hr>
+<h3 id="8-口音表征跨不过朗读自发whisper-域内-0489-uar跨风格掉到-011">8. 口音表征跨不过&quot;朗读→自发&rdquo;：Whisper 域内 0.489 UAR，跨风格掉到 0.11
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06430"  target="_blank" rel="noopener"
+    >2610.06430</a></p>
+<p><strong>一句话</strong>：500 德语人、九个地区的口音分类，Whisper 域内九分类 UAR 0.489、地理定位中位误差 148km；一跨到自发语音就崩到 0.11/363km。</p>
+<p><strong>贡献/机制</strong>：RVG1 数据集（500 说话人、九地区），十种语音表征，对比匹配条件 vs 说话人无关的朗读-自发迁移；分类 + 连续地理定位双任务。发现：Whisper 匹配条件最好（0.489 九分类 UAR、148km 中位误差），但跨迁移掉到 0.11/0.18 UAR、363km；SSL 模型同样崩；说话人 embedding 域内弱但跨迁移更稳。跨表征看，鲁棒性与&quot;表征在风格间漂移多小&quot;相关（style-invariance），跨风格说话人检索是可解释代理。年龄/性别/句子重叠/时长控制都解释不了这个 gap，信道有贡献。</p>
+<p><strong>数值结果</strong>：Whisper 匹配 0.489 UAR / 148km → 跨风格 0.11–0.18 UAR / 363km。</p>
+<p><strong>批判性分析</strong>：&ldquo;匹配条件下强 ≠ 口音信息鲁棒&quot;是给口音自适应泼的冷水，style-invariance 作为鲁棒性代理指标值得借鉴；但结论限德语九地区。做口音鲁棒 ASR/说话人表征的人必读。</p>
+<p><strong>摘要译文</strong>：匹配条件下能抓到地域口音线索，但这些线索在朗读与自发语音之间是否保留尚不清楚。我们研究 RVG1（500 德语说话人、九地区），对比十种语音表征在匹配条件与说话人无关的朗读-自发迁移下的地域分类与连续地理定位。Whisper 匹配条件最好，九分类 UAR 0.489、地理定位中位误差 148km，但跨迁移两个方向掉到 0.11/0.18 UAR、363km 地理误差。自监督模型同样退化，而说话人 embedding 域内判别力弱但跨迁移更稳；分类与定位双任务一致。跨表征看，鲁棒性与表征在风格间漂移多小相关（style-invariance），跨风格说话人检索是可解释代理。年龄、性别、句子重叠、时长控制都解释不了这个 gap，信道特性有贡献。这些结果表明：匹配条件下的强性能不代表鲁棒的地域信息。</p>
+<hr>
+<h3 id="9-leavjepa极简音画自监督一个早融合-vit-吃掉所有模态">9. LeAVJEPA：极简音画自监督，一个早融合 ViT 吃掉所有模态
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06226"  target="_blank" rel="noopener"
+    >2610.06226</a></p>
+<p><strong>一句话</strong>：音画自监督不需要 EMA、预测头、重构解码器、对比损失——单个早融合 ViT + LeJEPA 无崩溃目标，AudioSet-20K frozen 36.0 mAP。</p>
+<p><strong>贡献/机制</strong>：LeJEPA 无崩溃目标下训练的第一个音画 encoder；单个早融合 ViT 处理音频、视频、联合输入；modality dropout 把缺失模态当成同一事件的另一个 view，对齐隐含在目标里；全局 embedding 与模态内局部 embedding 对齐，SIGReg 防崩溃。消融锁定 modality dropout 是对齐的关键机制。</p>
+<p><strong>数值结果</strong>：frozen 下 AudioSet-20K 36.0 mAP、ESC-50 91.3%；微调后 VGGSound 61.1%；embedding 支持 zero-shot 音画检索。</p>
+<p><strong>批判性分析</strong>：&ldquo;减法做到极致&quot;的表征工作，modality dropout 当 view 的视角干净；但 36.0 mAP 的绝对值与 SOTA 线的对比摘要没展开。做音画表征的人值得一看。</p>
+<p><strong>摘要译文</strong>：此前的音画自监督方法依赖 EMA target encoder、预测头、重构解码器、对比损失等机制。我们提出 LeAVJEPA，第一个在 LeJEPA 无崩溃目标下训练的音画 encoder。单个早融合 Vision Transformer 处理音频、视频与联合音画输入。Modality dropout 把缺失模态当成同一事件的另一个 view，使跨模态对齐隐含在目标里。模型对齐全局 embedding 与模态内局部 embedding，SIGReg 防止表征崩溃。受控消融认定 modality dropout 是音画对齐的关键机制。架构极简，LeAVJEPA 在 frozen 评测下 AudioSet-20K 达 36.0 mAP、ESC-50 达 91.3% 准确率；微调后 VGGSound 达 61.1%，其 embedding 支持 zero-shot 音画检索。</p>
+<hr>
+<h3 id="10-aether生理波形基础模型的扩展定律10-倍算力模型-12-倍数据-82-倍">10. Aether：生理波形基础模型的扩展定律，10 倍算力→模型 1.2 倍、数据 8.2 倍
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.05649"  target="_blank" rel="noopener"
+    >2610.05649</a></p>
+<p><strong>一句话</strong>：训了 100+ 个生理波形基础模型（20M–2.1B，36.3M 小时），拟合出扩展定律：算力涨 10 倍，最优配比是模型 1.2 倍、数据 8.2 倍。</p>
+<p><strong>贡献/机制</strong>：Aether 家族 100+ 个 FM（20M–2.1B 参数，至多 36.3M 小时生理波形）；MIMIC-III 构建八个临床预测任务做 linear probing；拟合&quot;模型尺寸–预训练小时数–标注病人数 → 下游 ranking error（1-AUROC）&ldquo;的扩展定律，held-out 资源规模下预测 MAE 0.5%、外推到 2.1B 时 0.9%。三发现：(1) 计算最优训练同时放大模型与数据，10 倍 FLOPs → 模型 1.2×、数据 8.2×；(2) 大模型用波形数据更高效，模型翻倍则达到同性能所需的预训练小时数降 51.8%；(3) 预训练与临床监督互相放大：720M 模型预训练从 120K 拉到 36.3M 小时，同目标下所需标注病人数降 61%。</p>
+<p><strong>数值结果</strong>：720M FM 八个任务全超现有基线 FM；扩展定律预测 MAE 0.5%（held-out）/0.9%（外推 2.1B）。</p>
+<p><strong>批判性分析</strong>：波形模态的 Chinchilla 式工作，100+ 模型的实验量级扎实，&ldquo;数据 8.2× vs 模型 1.2×&ldquo;的配比结论对生理信号训练有直接指导；但结论限生理波形，往语音/音频迁要小心。做生物信号/波形基础模型的人必读。</p>
+<p><strong>摘要译文</strong>：我们研究生理波形基础模型（FM）的扩展定律与计算最优训练。我们训了 Aether 家族 100+ 个 FM（20M 到 2.1B 参数，至多 36.3M 小时生理波形），从 MIMIC-III 构建八个临床预测任务做 linear probing。720M FM 在八个任务上全超现有基线 FM。模型尺寸、预训练小时数、标注病人数预测下游 ranking error（1-AUROC）的扩展定律拟合有效，held-out 资源规模下预测 MAE 0.5%、外推到 2.1B 参数时 0.9%。三个发现：(1) 计算最优训练同时放大 FM 尺寸与预训练小时数；拟合定律下算力 FLOPs 涨 10 倍，模型尺寸放大 1.2 倍、预训练小时数放大 8.2 倍。(2) 大 FM 用波形数据更高效，预训练暴露越多、模型放大的收益越大；从 25M 参数、4.8M 预训练小时起，FM 尺寸翻倍则达到同性能所需的预测小时数降 51.8%。(3) 预训练与临床监督互相强化：标注病人数越多，预训练的回报越大；而大 FM 与长预训练降低标注需求；以 720M FM 为例，预训练从 120K 拉到 36.3M 小时，目标 ranking error 下预测所需病人数降 61%。这些发现给出定量训练 recipe，为生理波形建模与下游临床预测指出一条可观且持久的扩展路径。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="11-vmf-似然做无标签说话人-embedding-增强难失配集上增益更清楚">11. vMF 似然做无标签说话人 embedding 增强，难失配集上增益更清楚
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06691"  target="_blank" rel="noopener"
+    >2610.06691</a></p>
+<p>干净目标训练时直接可观测，embedding 增强在单位超球面上就是个匹配问题：用 von Mises-Fisher 似然建模干净目标，profile 掉逐样本 concentration 参数，得到带自适应加权的简单闭式目标。VoxCeleb1、VoxSRC23、CN-Celeb、VOiCES、VC-Mix 上基本保住基线、难失配集增益更清楚；单视角 recipe 下稳定，同期 diffusion 基线在对照里反而不可靠。点评：跟昨天的 correlation 蒸馏纠错呼应——&ldquo;简单闭式目标打败复杂结构&rdquo;；但只在固定 backbone 下验证。</p>
+<h3 id="12-cavabench英国口音的金融语音助手wer-与工具调用准确率-r-093">12. CavaBench：英国口音的金融语音助手，WER 与工具调用准确率 r=-0.93
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06587"  target="_blank" rel="noopener"
+    >2610.06587</a></p>
+<p>首个口语金融查询 benchmark（内部采集），覆盖苏格兰、爱尔兰、威尔士等自报英国口音，评测一众 ASR 模型及其 ASR-LLM 端到端管线。WER 强预测下游工具调用准确率（r=-0.93），但 WER 有时反映不出任务级性能，口音相关失败在不同模型与声学条件下差异大。点评：跟精评 8 同一主题的另一面——部署视角的口音账；但 benchmark 未公开，复现性打折。</p>
+<h3 id="13-土耳其语-tts-大横评18-个客观指标chatterboxcosyvoiceomnivoicevoxcpm2-对打">13. 土耳其语 TTS 大横评：18 个客观指标，Chatterbox/CosyVoice/OmniVoice/VoxCPM2 对打
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06057"  target="_blank" rel="noopener"
+    >2610.06057</a></p>
+<p>四个当代系统（Chatterbox、CosyVoice、OmniVoice、VoxCPM2）× 微调/zero-shot，对 VITS 基线、锚定自然语音；18 个互补客观指标（UTMOS v2、DNSMOS-Pro、SCOREQ、WhisQA、AudioBox-PQ、NatScore、SpeechLMScore、SQUIM PESQ/SI-SDR/STOI、Brouhaha、说话人相似度、TTSDS、低层声学描述子），另分析 utterance 长度效应与长 chunk 的音色/自然度漂移；评测代码已发布。点评：低资源形态丰富语言的 TTS 横评模板，指标栈可直接抄；但全是客观指标、无主观听感。</p>
+<h3 id="14-kyarabench角色身份--说话人身份85-个配音角色的人审-benchmark">14. KyaraBench：角色身份 ≠ 说话人身份，85 个配音角色的人审 benchmark
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.06013"  target="_blank" rel="noopener"
+    >2610.06013</a></p>
+<p>配音角色换演员仍是同一角色——角色身份与说话人身份是同一录音的两种属性，speaker verification 只测后者。KyaraBench 用 85 个人审角色身份建 benchmark：固定角色换演员、固定演员换角色两种难例；78 人听辨提供人类参照；SV 基线在这两种条件下误差上升。KyaraEmbed（多语言角色监督 + 同演员负例 + 语言对齐项的小 encoder）全条件最好，benchmark/协议/encoder 已发布。点评：给语音克隆/角色语音评测补了块缺的板；但数据限配音动画场景。</p>
+<h3 id="15-构音障碍语音重建改发音瓶颈而非语言表征保住音色与韵律">15. 构音障碍语音重建：改发音瓶颈而非语言表征，保住音色与韵律
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.05944"  target="_blank" rel="noopener"
+    >2610.05944</a></p>
+<p>Dysarthric speech reconstruction 通常从受损语音抽语言/音素表征再合成；本文反其道：在神经分析-合成框架里加 residual mapper，改发音对齐的 latent 空间、保留说话人与韵律信息；mapper 先在平行合成健康/人工构音障碍语音上预训练，再用音素引导+对抗目标适配真实构音障碍语音；另与维度匹配的无监督表征对照，验证显式发音监督的增益。点评：&ldquo;动发音、不动语言&quot;的干预视角新颖；但摘要没给硬数字，效果待正文验证。</p>
+<h3 id="16-interactionbench流式视频助手该说就说不该说闭嘴的实时交互-benchmark">16. InteractionBench：流式视频助手&quot;该说就说、不该说闭嘴&quot;的实时交互 benchmark
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.05775"  target="_blank" rel="noopener"
+    >2610.05775</a></p>
+<p>视频助手必须在指令需要时说话、不需要时沉默——benchmark 评模型+记忆+响应控制器的完整系统：1060 次交互/812 视频，69 条负向流、53 组&quot;计数事件配长得很像的干扰项&rdquo;；按视频时钟打分内容准确率、时机准确率、沉默遵守率。Polled Qwen3-VL-8B 时机 77.8 但沉默遵守仅 10.9；原生实时系统沉默遵守 29.2/时机 66.8，却在 89.9% 的负向流上开口；无开源系统通过三分之一的干扰套件。点评：把&quot;克制&quot;量化成指标，&ldquo;及时说话要拿沉默来换&quot;的 tradeoff 很实在；但评测限视频助手，纯音频 agent 的迁移待验。</p>
+<hr>
+<p><em>今日 16 篇：10 篇精评 + 6 篇简报，TTS 蒸馏（Paradee）、生成式增强幻觉（AuraSE）、音频生成解码器失配（AudioGAR）三线并进，&ldquo;修生成管线的最后一公里&quot;是今日主线；抑郁检测层选择偏差、口音跨风格崩塌两篇方法论纠错值得细读。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/316910"  target="_blank" rel="noopener"
+    >otaku_emmy</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-06/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-06" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-06/cover_hu_6d55d0a470d4089.png" srcset="/zh-cn/p/daily-paper-2026-10-06/cover_hu_6d55d0a470d4089.png 1x, /zh-cn/p/daily-paper-2026-10-06/cover_hu_bc3c05bccfa4c17a.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #53515280 0%, #e2e0dfC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-06</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-05/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-05" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-05/cover_hu_43355353effe0cd6.jpg" srcset="/zh-cn/p/daily-paper-2026-10-05/cover_hu_43355353effe0cd6.jpg 1x, /zh-cn/p/daily-paper-2026-10-05/cover_hu_1fee8486f20a460e.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #3f305080 0%, #d6cfcbC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-05</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-04/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-04" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-04/cover_hu_6d92b81eb104ce03.jpg" srcset="/zh-cn/p/daily-paper-2026-10-04/cover_hu_6d92b81eb104ce03.jpg 1x, /zh-cn/p/daily-paper-2026-10-04/cover_hu_c52156c2eaecdbb0.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #54aadd80 0%, #0861b8C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-04</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-03/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-03" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-03/cover_hu_576b3b0a7ea046a2.jpg" srcset="/zh-cn/p/daily-paper-2026-10-03/cover_hu_576b3b0a7ea046a2.jpg 1x, /zh-cn/p/daily-paper-2026-10-03/cover_hu_d087b33c0dec4109.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #2d343780 0%, #c5dee2C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-03</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-02/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-02" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-02/cover_hu_1eb9a34b4ae69d9b.jpg" srcset="/zh-cn/p/daily-paper-2026-10-02/cover_hu_1eb9a34b4ae69d9b.jpg 1x, /zh-cn/p/daily-paper-2026-10-02/cover_hu_2dc55eb3327ef513.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #44464980 0%, #f4eeebC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-02</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
