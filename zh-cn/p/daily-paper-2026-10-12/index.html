@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重（596 篇原始候选 → 579 篇未报道 → 音频初筛 33 篇命中 → 报道 16 篇）。 来源：arXiv API 六分类（cs.CL / cs.LG / cs.AI / cs.SD / eess.AS / cs.CV，近 1 日窗口，共 596 篇，全部 published 2026-10-08）；HuggingFace Papers 周末无更新（0 篇，降级模式）。注：arXiv 官方公告今日（美国联邦假日）无新论文发布，下一次公告为 10-13（周二）20:00 ET——今日无新公告可抓，本报按 thin-day 流程报道 10-08 候选池中的未报道论文。 主题分布：TTS 音色编辑与指令控制 1 篇、空间感知音频语言模型 1 篇、普通话多人对话语料 1 篇、音乐多音频推理 1 篇、临床语音检测 1 篇、区域语音提取 1 篇、歌唱音高校正 1 篇、跨语言说话人验证 1 篇、人工耳蜗语音情感 1 篇、生成音乐评测 1 篇；简报覆盖 AMT 合成数据、说话人日志与标记、实时 talking head、临床行为编码、环境声学。 今日关键词：&ldquo;空间&rdquo;——MiDashengLM-Spatial 把空间感知塞进统一音频语言模型，连续半径语音提取按&quot;距离&quot;圈定目标说话人，连日本庭院的水琴窟都被做了声学指纹：音频研究正在把&quot;声音在哪里&quot;变成一等公民。 精评 1. EDICT：TTS 的音色编辑，终于不用在&quot;换脸&quot;和&quot;整容&quot;之间二选一 2610.11437\n">
+<title>AI Paper Daily | 2026-10-12</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-12/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-12">
+<meta property='og:description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重（596 篇原始候选 → 579 篇未报道 → 音频初筛 33 篇命中 → 报道 16 篇）。 来源：arXiv API 六分类（cs.CL / cs.LG / cs.AI / cs.SD / eess.AS / cs.CV，近 1 日窗口，共 596 篇，全部 published 2026-10-08）；HuggingFace Papers 周末无更新（0 篇，降级模式）。注：arXiv 官方公告今日（美国联邦假日）无新论文发布，下一次公告为 10-13（周二）20:00 ET——今日无新公告可抓，本报按 thin-day 流程报道 10-08 候选池中的未报道论文。 主题分布：TTS 音色编辑与指令控制 1 篇、空间感知音频语言模型 1 篇、普通话多人对话语料 1 篇、音乐多音频推理 1 篇、临床语音检测 1 篇、区域语音提取 1 篇、歌唱音高校正 1 篇、跨语言说话人验证 1 篇、人工耳蜗语音情感 1 篇、生成音乐评测 1 篇；简报覆盖 AMT 合成数据、说话人日志与标记、实时 talking head、临床行为编码、环境声学。 今日关键词：&ldquo;空间&rdquo;——MiDashengLM-Spatial 把空间感知塞进统一音频语言模型，连续半径语音提取按&quot;距离&quot;圈定目标说话人，连日本庭院的水琴窟都被做了声学指纹：音频研究正在把&quot;声音在哪里&quot;变成一等公民。 精评 1. EDICT：TTS 的音色编辑，终于不用在&quot;换脸&quot;和&quot;整容&quot;之间二选一 2610.11437\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-12/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-12T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-12">
+<meta name="twitter:description" content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重（596 篇原始候选 → 579 篇未报道 → 音频初筛 33 篇命中 → 报道 16 篇）。 来源：arXiv API 六分类（cs.CL / cs.LG / cs.AI / cs.SD / eess.AS / cs.CV，近 1 日窗口，共 596 篇，全部 published 2026-10-08）；HuggingFace Papers 周末无更新（0 篇，降级模式）。注：arXiv 官方公告今日（美国联邦假日）无新论文发布，下一次公告为 10-13（周二）20:00 ET——今日无新公告可抓，本报按 thin-day 流程报道 10-08 候选池中的未报道论文。 主题分布：TTS 音色编辑与指令控制 1 篇、空间感知音频语言模型 1 篇、普通话多人对话语料 1 篇、音乐多音频推理 1 篇、临床语音检测 1 篇、区域语音提取 1 篇、歌唱音高校正 1 篇、跨语言说话人验证 1 篇、人工耳蜗语音情感 1 篇、生成音乐评测 1 篇；简报覆盖 AMT 合成数据、说话人日志与标记、实时 talking head、临床行为编码、环境声学。 今日关键词：&ldquo;空间&rdquo;——MiDashengLM-Spatial 把空间感知塞进统一音频语言模型，连续半径语音提取按&quot;距离&quot;圈定目标说话人，连日本庭院的水琴窟都被做了声学指纹：音频研究正在把&quot;声音在哪里&quot;变成一等公民。 精评 1. EDICT：TTS 的音色编辑，终于不用在&quot;换脸&quot;和&quot;整容&quot;之间二选一 2610.11437\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-12/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-edicttts-的音色编辑终于不用在换脸和整容之间二选一">1. EDICT：TTS 的音色编辑，终于不用在&quot;换脸&quot;和&quot;整容&quot;之间二选一</a></li>
+        <li><a href="#2-midashenglm-spatial第一个又懂声音又知道声音在哪的开源音频大模型">2. MiDashengLM-Spatial：第一个&quot;又懂声音、又知道声音在哪&quot;的开源音频大模型</a></li>
+        <li><a href="#3-smoothconv--duplexconv2100-小时普通话多人对话带逐人独立音轨">3. SmoothConv / DuplexConv：2100 小时普通话多人对话，带逐人独立音轨</a></li>
+        <li><a href="#4-stemma音乐问答别再单曲循环了整张专辑的血缘关系才是考题">4. STEMMA：音乐问答别再&quot;单曲循环&quot;了，整张专辑的血缘关系才是考题</a></li>
+        <li><a href="#5-唤醒开颅术中的构音障碍检测表征比分类器重要得多">5. 唤醒开颅术中的构音障碍检测：表征比分类器重要得多</a></li>
+        <li><a href="#6-连续半径语音提取按距离圈出目标说话人一个模型全覆盖">6. 连续半径语音提取：按&quot;距离&quot;圈出目标说话人，一个模型全覆盖</a></li>
+        <li><a href="#7-无参考歌唱音高校正没有目标旋律照样知道哪个音跑调了">7. 无参考歌唱音高校正：没有目标旋律，照样知道哪个音跑调了</a></li>
+        <li><a href="#8-跨语言说话人验证自监督预训练模型当前端语言失配不再是硬伤">8. 跨语言说话人验证：自监督预训练模型当前端，语言失配不再是硬伤</a></li>
+        <li><a href="#9-seer人工耳蜗用户听不出情绪检索一段更给力的参考来帮忙">9. SEER：人工耳蜗用户听不出情绪？检索一段&quot;更给力&quot;的参考来帮忙</a></li>
+        <li><a href="#10-cloudear给-ai-生成的音乐当评委得同时看好听和切题">10. CloudEar：给 AI 生成的音乐当评委，得同时看&quot;好听&quot;和&quot;切题&quot;</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-amt-合成数据音色覆盖比乐谱写得真更重要">11. AMT 合成数据：音色覆盖比&quot;乐谱写得真&quot;更重要</a></li>
+        <li><a href="#12-在线说话人日志别再只看-der-了说话人数都能数错-63">12. 在线说话人日志：别再只看 DER 了，说话人数都能数错 63%</a></li>
+        <li><a href="#13-目标说话人标记enrollment-不能当-calibration-的-cohort-用">13. 目标说话人标记：enrollment 不能当 calibration 的 cohort 用</a></li>
+        <li><a href="#14-facegan实时-talking-head-不需要扩散模型单遍-gan-就够了">14. FaceGAN：实时 talking head 不需要扩散模型，单遍 GAN 就够了</a></li>
+        <li><a href="#15-用-llm-自动给自闭症儿童做行为编码会聊天但看不懂异常">15. 用 LLM 自动给自闭症儿童做行为编码：会聊天，但看不懂&quot;异常&quot;</a></li>
+        <li><a href="#16-水琴窟给日本庭院的水琴做声学指纹九个寺院各不相同">16. 水琴窟：给日本庭院的&quot;水琴&quot;做声学指纹，九个寺院各不相同</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-12/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-12" height="850" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-12/cover.jpg" srcset="/zh-cn/p/daily-paper-2026-10-12/cover_hu_97c7082ae0227c68.jpg 800w, /zh-cn/p/daily-paper-2026-10-12/cover.jpg 1512w" width="1512">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-12/">AI Paper Daily | 2026-10-12</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-12T00:00:00Z'>Oct 12, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-edicttts-的音色编辑终于不用在换脸和整容之间二选一">1. EDICT：TTS 的音色编辑，终于不用在&quot;换脸&quot;和&quot;整容&quot;之间二选一</a></li>
+        <li><a href="#2-midashenglm-spatial第一个又懂声音又知道声音在哪的开源音频大模型">2. MiDashengLM-Spatial：第一个&quot;又懂声音、又知道声音在哪&quot;的开源音频大模型</a></li>
+        <li><a href="#3-smoothconv--duplexconv2100-小时普通话多人对话带逐人独立音轨">3. SmoothConv / DuplexConv：2100 小时普通话多人对话，带逐人独立音轨</a></li>
+        <li><a href="#4-stemma音乐问答别再单曲循环了整张专辑的血缘关系才是考题">4. STEMMA：音乐问答别再&quot;单曲循环&quot;了，整张专辑的血缘关系才是考题</a></li>
+        <li><a href="#5-唤醒开颅术中的构音障碍检测表征比分类器重要得多">5. 唤醒开颅术中的构音障碍检测：表征比分类器重要得多</a></li>
+        <li><a href="#6-连续半径语音提取按距离圈出目标说话人一个模型全覆盖">6. 连续半径语音提取：按&quot;距离&quot;圈出目标说话人，一个模型全覆盖</a></li>
+        <li><a href="#7-无参考歌唱音高校正没有目标旋律照样知道哪个音跑调了">7. 无参考歌唱音高校正：没有目标旋律，照样知道哪个音跑调了</a></li>
+        <li><a href="#8-跨语言说话人验证自监督预训练模型当前端语言失配不再是硬伤">8. 跨语言说话人验证：自监督预训练模型当前端，语言失配不再是硬伤</a></li>
+        <li><a href="#9-seer人工耳蜗用户听不出情绪检索一段更给力的参考来帮忙">9. SEER：人工耳蜗用户听不出情绪？检索一段&quot;更给力&quot;的参考来帮忙</a></li>
+        <li><a href="#10-cloudear给-ai-生成的音乐当评委得同时看好听和切题">10. CloudEar：给 AI 生成的音乐当评委，得同时看&quot;好听&quot;和&quot;切题&quot;</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-amt-合成数据音色覆盖比乐谱写得真更重要">11. AMT 合成数据：音色覆盖比&quot;乐谱写得真&quot;更重要</a></li>
+        <li><a href="#12-在线说话人日志别再只看-der-了说话人数都能数错-63">12. 在线说话人日志：别再只看 DER 了，说话人数都能数错 63%</a></li>
+        <li><a href="#13-目标说话人标记enrollment-不能当-calibration-的-cohort-用">13. 目标说话人标记：enrollment 不能当 calibration 的 cohort 用</a></li>
+        <li><a href="#14-facegan实时-talking-head-不需要扩散模型单遍-gan-就够了">14. FaceGAN：实时 talking head 不需要扩散模型，单遍 GAN 就够了</a></li>
+        <li><a href="#15-用-llm-自动给自闭症儿童做行为编码会聊天但看不懂异常">15. 用 LLM 自动给自闭症儿童做行为编码：会聊天，但看不懂&quot;异常&quot;</a></li>
+        <li><a href="#16-水琴窟给日本庭院的水琴做声学指纹九个寺院各不相同">16. 水琴窟：给日本庭院的&quot;水琴&quot;做声学指纹，九个寺院各不相同</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>10 篇精评 + 6 篇简报</strong>，共 16 篇，已对 7 天滚动窗口去重（596 篇原始候选 → 579 篇未报道 → 音频初筛 33 篇命中 → 报道 16 篇）。</li>
+<li>来源：arXiv API 六分类（cs.CL / cs.LG / cs.AI / cs.SD / eess.AS / cs.CV，近 1 日窗口，共 596 篇，全部 published 2026-10-08）；HuggingFace Papers 周末无更新（0 篇，降级模式）。注：arXiv 官方公告今日（美国联邦假日）无新论文发布，下一次公告为 10-13（周二）20:00 ET——今日无新公告可抓，本报按 thin-day 流程报道 10-08 候选池中的未报道论文。</li>
+<li>主题分布：TTS 音色编辑与指令控制 1 篇、空间感知音频语言模型 1 篇、普通话多人对话语料 1 篇、音乐多音频推理 1 篇、临床语音检测 1 篇、区域语音提取 1 篇、歌唱音高校正 1 篇、跨语言说话人验证 1 篇、人工耳蜗语音情感 1 篇、生成音乐评测 1 篇；简报覆盖 AMT 合成数据、说话人日志与标记、实时 talking head、临床行为编码、环境声学。</li>
+<li>今日关键词：<strong>&ldquo;空间&rdquo;</strong>——MiDashengLM-Spatial 把空间感知塞进统一音频语言模型，连续半径语音提取按&quot;距离&quot;圈定目标说话人，连日本庭院的水琴窟都被做了声学指纹：音频研究正在把&quot;声音在哪里&quot;变成一等公民。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-edicttts-的音色编辑终于不用在换脸和整容之间二选一">1. EDICT：TTS 的音色编辑，终于不用在&quot;换脸&quot;和&quot;整容&quot;之间二选一
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11437"  target="_blank" rel="noopener"
+    >2610.11437</a></p>
+<p><strong>一句话</strong>：指令式 TTS 要么克隆参考音色、要么按文字描述造新音色，但&quot;把给定音色改一改再说话&quot;这个最实用的需求没人做——EDICT 用&quot;编辑后的声学参考&quot;做跨 segment 的音色锚点，把全局音色编辑和局部表达控制统一在一个框架里。</p>
+<p><strong>贡献/机制</strong>：核心技巧是&quot;编辑参考&quot;：参考音频 + 结构化音色编辑指令 → 在 codec-token 空间生成编辑后的参考，作为冻结 TTS backbone 的共享音色锚；每段文本配各自的自然语言表达指令。segment 边界处重建 KV cache——刷新指令条件、保留前面已生成语音的有界声学上下文，兼顾指令切换与连贯性。</p>
+<p><strong>数值结果</strong>：在自建的 TimbreEdit-Bench 与 IntraTTS-Bench 上，音色编辑效果提升，局部指令遵循、说话人一致性、过渡质量三者平衡更好（摘要未给绝对数值）；提供音频 demo。</p>
+<p><strong>批判性分析</strong>：两个评测集都是自建的，自卖自夸风险高，缺第三方 benchmark；摘要没提人类听感 MOS，全是自家指标；每 segment 重建 KV cache 的延迟代价没讨论，实时对话场景可能吃不消。做可控 TTS 与音色编辑的人值得听 demo 再下判断。</p>
+<p><strong>摘要译文</strong>：基于指令的文本转语音（TTS）通过声音克隆、基于文本的声音设计等接口实现对音色与表达的控制。声音克隆复现参考音色，文本声音设计则从自然语言描述创造音色，但两种接口都不能直接修改给定参考的音色再用修改后的声音合成；同时，话语级的表达指令让各文本片段内的变化欠定义。我们提出 EDICT，用编辑后的声学参考锚定各片段的音色身份，统一全局音色编辑与局部表达控制。为用指令编辑过的音色合成，EDICT 把参考音频与结构化音色编辑结合，在 codec-token 空间生成编辑参考，作为冻结 TTS 主干的共享音色锚，让各片段的自然语言指令引导表达。为容纳指令变化并保持声学连续，EDICT 在每个片段边界重建 KV 缓存，刷新指令条件，同时保留之前生成语音的有界声学上下文。在我们提出的 TimbreEdit-Bench 与 IntraTTS-Bench 上的评测显示，音色编辑效果提升，并在局部指令遵循、说话人一致性与过渡质量之间取得良好平衡。音频 demo 见正文链接。</p>
+<hr>
+<h3 id="2-midashenglm-spatial第一个又懂声音又知道声音在哪的开源音频大模型">2. MiDashengLM-Spatial：第一个&quot;又懂声音、又知道声音在哪&quot;的开源音频大模型
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11156"  target="_blank" rel="noopener"
+    >2610.11156</a></p>
+<p><strong>一句话</strong>：现有大音频语言模型要么只听单声道（丢了空间线索）、要么只做空间任务（丢了通用理解）——MiDashengLM-Spatial 是首个开源的端到端统一架构：通用音频理解和空间感知一个模型全要。</p>
+<p><strong>贡献/机制</strong>：在 MiDashengLM 上加空间音频编码器 Spatial-Dasheng，通过&quot;层级语义到空间条件&quot;模块把中间层语义表征注入空间分支的多个深度，同时保留原语义通路。为解决空间音频语言监督稀缺，自建数据合成管线渲染多样化空间声学场景，配场景级空间描述与问答对。</p>
+<p><strong>数值结果</strong>：Spatial-Dasheng 在真实场景的声音事件定位与检测上表现强劲；MiDashengLM-Spatial 在空间理解与推理 benchmark 上大幅超过现有 LALM，同时在多种单声道 benchmark 上与 8B 级 SOTA LALM 持平——空间感知没有以牺牲通用理解为代价。代码与权重已开源（github.com/xiaomi-research/midashenglm-spatial，huggingface.co/mispeech/midashenglm-spatial）。</p>
+<p><strong>批判性分析</strong>：空间监督主要来自合成数据，sim-to-real 的 gap 只在定位/检测上部分验证；&ldquo;首个&quot;之说要看统计口径；单声道&quot;持平&quot;是哪些 benchmark、差多少，摘要语焉不详。做空间音频与多模态理解的人可以直接拉权重试。</p>
+<p><strong>摘要译文</strong>：大音频语言模型（LALM）在通用音频理解上已很强，但多数只为单声道输入设计，丢弃了空间感知必需的通道间线索；而现有空间音频语言模型专为空间任务打造，无法利用单声道 LALM 的通用理解能力。我们提出 MiDashengLM-Spatial，据我们所知是首个开源的端到端统一音频语言模型，在单一架构内同时支持通用音频理解与空间感知。它在 MiDashengLM 上扩展了空间音频编码器 Spatial-Dasheng，通过层级语义到空间条件模块把中间语义表征注入空间分支的多个深度，同时保留原始语义通路。为大规模提供空间音频语言监督，我们开发了数据合成管线，渲染多样化空间声学场景并配场景级空间描述与问答对。实验显示 Spatial-Dasheng 在真实场景的声音事件定位与检测上表现强劲，MiDashengLM-Spatial 在空间理解与推理基准上大幅超过现有 LALM，同时在多种单声道基准上与 8B 级 SOTA LALM 相当，证明空间感知可以在不损害通用音频理解的前提下获得。源代码与模型权重见正文链接。</p>
+<hr>
+<h3 id="3-smoothconv--duplexconv2100-小时普通话多人对话带逐人独立音轨">3. SmoothConv / DuplexConv：2100 小时普通话多人对话，带逐人独立音轨
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11150"  target="_blank" rel="noopener"
+    >2610.11150</a></p>
+<p><strong>一句话</strong>：语音交互系统要处理抢话、重叠、轮次交接，得有多人对话数据——但现有普通话语料缺&quot;每人一条同步音轨 + 细粒度标注&rdquo;；这篇一次放出两个互补语料共 2100 小时，人工校验版做评测、自动标注版做训练。</p>
+<p><strong>贡献/机制</strong>：SmoothConv：人工校验的多人对话，用于可靠分析与评测；DuplexConv：可扩展自动标注管线产出的大规模语料，用于训练。两者都提供同步的参与者级语音轨与多维度细粒度标注，另发布 SmoothConv Benchmark。</p>
+<p><strong>数值结果</strong>：在语音分离、多说话人 ASR（MSASR）、轮次检测三类任务上验证了资源的有效性（摘要未列绝对数值）；数据集、benchmark 与相关资源已公开。</p>
+<p><strong>批判性分析</strong>：DuplexConv 的自动标注质量与规模之间的 trade-off 没量化；2100 小时全是普通话，跨语言泛化指望不上；三类下游任务的基线细节摘要未展开。做中文语音对话与多人交互建模的人可以直接拿来用。</p>
+<p><strong>摘要译文</strong>：大音频语言模型的进展推动了自然智能语音交互系统的发展。这类系统需要建模复杂的对话行为，包括轮次交接、重叠语音与说话人协调。多人对话为研究这些行为提供了真实场景，但现有普通话对话语料往往缺乏同步的参与者级语音轨与全面标注。我们提出 SmoothConv 与 DuplexConv，两个互补的普通话多人对话语音语料，共 2100 小时。SmoothConv 提供人工校验的对话，用于可靠分析与评测；DuplexConv 通过可扩展管线提供大规模自动标注对话，用于模型训练。两个语料都提供同步的参与者级语音轨与多维度细粒度标注。我们进一步发布 SmoothConv Benchmark，并在语音分离、多说话人自动语音识别（MSASR）与轮次检测任务上评测这些资源。实验结果证明了所提资源对多人语音交互建模的价值。数据集、benchmark 与相关资源已公开。</p>
+<hr>
+<h3 id="4-stemma音乐问答别再单曲循环了整张专辑的血缘关系才是考题">4. STEMMA：音乐问答别再&quot;单曲循环&quot;了，整张专辑的血缘关系才是考题
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11884"  target="_blank" rel="noopener"
+    >2610.11884</a></p>
+<p><strong>一句话</strong>：现有音乐 LALM 一次只听一首歌，但真懂音乐得比较&quot;这段是不是那首歌的副歌变体&quot;——STEMMA 做了个多音频音乐问答框架，考题围绕制作血缘：片段是否同轨、stem 属于哪个混音。</p>
+<p><strong>贡献/机制</strong>：关键方法是&quot;关系优先&quot;的数据构建：先指定目标关系，再去曲库里找满足/不满足的片段与 hard negative；标签直接来自曲库的制作元数据，而非 LLM 看 metadata 编故事。配套 STEMMA-Bench 评测集与曲目不相交的训练集 STEMMA-Instruct。</p>
+<p><strong>数值结果</strong>：在 STEMMA-Instruct 上微调两个 LALM，多音频推理提升，在由曲库直接决定的结构关系上增益最大，同时单音频音乐理解保持不降。</p>
+<p><strong>批判性分析</strong>：标签继承曲库元数据的偏见，独立厂牌/小众曲风覆盖存疑；只微调了两个 LALM，结论的普适性有限；音乐专用，迁移到通用多音频推理（如会议、播客）未经验证。做音乐理解与多音频推理的人值得看数据构建方法。</p>
+<p><strong>摘要译文</strong>：音乐理解常常需要比较片段、推理歌曲、段落与 stem 之间的关系。但现有大音频语言模型（LALM）与音乐问答数据集通常只处理单录音，或比较无已知制作关系的独立采样音轨。我们提出 STEMMA，一个围绕制作血缘的多音频音乐问答框架：片段是否来自同一音轨或段落、哪些 stem 属于哪些混音。由于这类关系在常规&quot;音频优先&quot;采样下很稀疏，STEMMA 采用关系优先的构建策略：先指定目标关系，再在曲库中查询满足该关系的片段与不满足的 hard negative。标签直接由曲库血缘决定，而非由语言模型根据元数据生成。我们构建了评测集 STEMMA-Bench 与曲目不相交的训练集 STEMMA-Instruct。在 STEMMA-Instruct 上微调两个 LALM 提升了多音频推理，在由曲库直接决定的结构关系上增益最大，同时保留了单音频音乐理解能力。</p>
+<hr>
+<h3 id="5-唤醒开颅术中的构音障碍检测表征比分类器重要得多">5. 唤醒开颅术中的构音障碍检测：表征比分类器重要得多
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11825"  target="_blank" rel="noopener"
+    >2610.11825</a></p>
+<p><strong>一句话</strong>：开颅手术中要实时监测病人语言功能，但手术室录音噪声大、跨病人差异大——这篇在 DATABRASE 语料上做了严格的留一说话人交叉验证，结论很干脆：换表征带来的提升（AUC +18~26%），比换分类器（AUC 差 ≤4.7%）大一个量级。</p>
+<p><strong>贡献/机制</strong>：管线四件套：说话人日志分离病人语音 → 手工声学特征 + 多层 wav2vec 2.0 的多视角表征 → 说话人条件归一化 + 基于可迁移性的特征选择 → 梯度提升 + 神经网络的级联分类器。组件级消融量化了每部分的贡献。</p>
+<p><strong>数值结果</strong>：三个分类器的 AUC 相差不超过 4.7%，而把传统声学描述子换成多层自监督表征，AUC 提升 18.2%–26.1%；日志条件特征提取与级联分类器带来额外一致增益。</p>
+<p><strong>批判性分析</strong>：队列小且异质，留一法在小样本上方差大；多视角表征对日志质量的依赖没量化——日志错了后面全错；离临床落地还很远。做低资源语音与临床语音的人，&ldquo;表征 &gt; 分类器&quot;这个结论值得记住。</p>
+<p><strong>摘要译文</strong>：在唤醒开颅术中检测术中言语损伤对保护语言功能至关重要。但自动检测仍具挑战：手术室录音声学干扰大、临床相关的言语事件稀少、可用队列小且跨说话人异质。本研究在 DATABRASE 唤醒开颅语料上，对区分构音障碍与正常言语的管线做了系统的组件级评测。管线包括：说话人日志分离病人语音；手工声学描述子与多层 wav2vec 2.0 嵌入的多视角表征；说话人条件归一化与基于可迁移性的特征选择以提升跨说话人鲁棒性；梯度提升一阶段 + 神经网络二阶段的级联分类器。评测在严格的说话人无关条件下做留一说话人交叉验证。结果显示，跨说话人性能受语音表征的影响远大于分类器选择：三个分类器的 AUC 相差不超过 4.7%，而把传统声学描述子换成多层自监督表征带来 18.2%–26.1% 的 AUC 提升。日志条件特征提取与所提分类器级联带来额外的一致增益。这些发现表明，在低资源术中场景下，可靠的病人特异语音分离与强预训练表征比增加分类器复杂度更重要；也量化了病人特异术前校准可能带来的性能增益。</p>
+<hr>
+<h3 id="6-连续半径语音提取按距离圈出目标说话人一个模型全覆盖">6. 连续半径语音提取：按&quot;距离&quot;圈出目标说话人，一个模型全覆盖
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11507"  target="_blank" rel="noopener"
+    >2610.11507</a></p>
+<p><strong>一句话</strong>：按声源到麦克风的距离做说话人无关提取，以往只能切几个固定档——这篇把查询半径编码成连续标量塞进时频提取网络，一个模型覆盖任意半径，还利用&quot;半径嵌套&quot;的结构做跨半径一致性学习。</p>
+<p><strong>贡献/机制</strong>：查询半径作为连续标量注入时频网络，实现连续区域控制；利用不同查询半径下目标说话人集合的嵌套结构，提出跨半径一致性学习，稳定相邻半径（共享相同非空目标集）的预测。</p>
+<p><strong>数值结果</strong>：在实测 RIR 上，连续半径条件优于离散条件；达到 29.25 dB SI-SDR、4.40 dB SI-SDRi、62.01 dB 衰减、0.46% RCE，超过固定阈值与局部范围基线；说话人增多与加噪下依然有效。</p>
+<p><strong>批判性分析</strong>：只在实测 RIR 上验证，真实房间混响与移动声源的泛化存疑；查询半径假设已知，实际中距离估计本身就有误差；RCE 指标定义不明，0.46% 不好横向比较。做目标说话人提取与智能会议设备的人值得跟进。</p>
+<p><strong>摘要译文</strong>：声源到麦克风的距离让无预注册的说话人无关语音提取成为可能。我们提出单声道连续半径区域语音提取方法，直接建模查询半径内的累积语音目标。为实现连续区域控制，查询半径被编码为连续标量并注入时频提取网络，使单个模型能在训练范围内处理任意半径。利用不同查询半径下目标说话人集合的嵌套结构，我们引入跨半径一致性学习，以稳定共享相同非空目标说话人集合的相邻半径的预测。在实测房间脉冲响应上的实验表明，连续半径条件优于离散条件。所提方法达到约 29.25 dB SI-SDR、约 4.40 dB SI-SDRi、约 62.01 dB 衰减与 0.46% RCE，超过固定阈值与局部范围基线；在更多说话人与加性噪声下依然有效。</p>
+<hr>
+<h3 id="7-无参考歌唱音高校正没有目标旋律照样知道哪个音跑调了">7. 无参考歌唱音高校正：没有目标旋律，照样知道哪个音跑调了
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11524"  target="_blank" rel="noopener"
+    >2610.11524</a></p>
+<p><strong>一句话</strong>：现有歌唱音高校正都要目标旋律或伴奏，真没谱的时候就抓瞎——这篇把它做成&quot;音乐约束的序列编辑&rdquo;：只听演唱本身，判断每个音要不要修、修多少。</p>
+<p><strong>贡献/机制</strong>：预训练符号音乐编码器 + 轻量歌唱域适配器，对演唱 MIDI 生成上下文表征；两个轻量修正头联合建模&quot;要不要修&quot;与&quot;带符号的音高偏移&quot;（因子化音高编辑分布）；再用从估计调性分布导出的输入相关调性先验重排候选偏移，不用目标旋律也不用真实调性标注。</p>
+<p><strong>数值结果</strong>：在真实的业余/专业配对歌唱录音上，音符级音高准确率从 73.25 提升到 83.43，超 context 基线 3.99 个百分点，同时平衡了纠错与保留唱对的音。</p>
+<p><strong>批判性分析</strong>：数据集规模摘要未披露，配对录音的采集方式影响结论外推；符号音乐编码器需要&quot;演唱 MIDI&quot;——MIDI 从哪来本身就是个问题（鸡生蛋）；调性估计错了会连带拖累修正。做歌唱合成与音乐信息检索的人可看。</p>
+<p><strong>摘要译文</strong>：现有歌唱音高校正方法依赖目标旋律或伴奏音轨，实践中可能不可得。我们把无参考歌唱音高校正形式化为音乐约束的序列编辑任务：仅从输入演唱判断每个音符是否需要修正及如何修正。预训练符号音乐编码器加轻量歌唱域适配器生成演唱 MIDI 的上下文表征；基于这些表征，两个轻量修正头通过因子化音高编辑分布联合建模修正必要性与带符号音高偏移；再用从估计调性分布导出的输入相关调性先验重排候选偏移，在无目标旋律、无真实调性标注下偏好调性兼容的修正。在真实业余与专业配对歌唱录音上的实验表明，该方法把音符级音高准确率从 73.25 提升到 83.43，超过 context 基线 3.99 个百分点，同时平衡了纠错与保留正确演唱。</p>
+<hr>
+<h3 id="8-跨语言说话人验证自监督预训练模型当前端语言失配不再是硬伤">8. 跨语言说话人验证：自监督预训练模型当前端，语言失配不再是硬伤
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11099"  target="_blank" rel="noopener"
+    >2610.11099</a></p>
+<p><strong>一句话</strong>：说话人验证一换语言就掉点，因为说话人身份和语言声学线索缠在一起——这篇用大规模自监督预训练模型做前端提特征，学语言无关的说话人表征，在 TidyVoice2026 上把 EER 干到 2~3%。</p>
+<p><strong>贡献/机制</strong>：路线很直接：PTM 做鲁棒前端（利用其从海量多样音频学到的声学+语言知识），后面接说话人嵌入网络，把说话人身份从语言特异线索中解耦出来。</p>
+<p><strong>数值结果</strong>：在 TidyVoice2026 基准（team T02）上，tv26_eval-A 等错误率 2.21%，tv26_eval-U 上 2.99%。</p>
+<p><strong>批判性分析</strong>：摘要只给了两个 EER 数字，无置信区间、无基线对比细节；TidyVoice2026 是新基准，外部有效性待检验；PTM 前端的算力成本只字未提。做说话人识别的人可以等 benchmark 报告全文再评估。</p>
+<p><strong>摘要译文</strong>：说话人验证（SV）在语言失配下性能下降，原因是说话人身份与语言特异声学线索纠缠。为解决该问题，我们利用大规模自监督预训练模型（PTM）学习语言无关的说话人表征。我们把 PTM 用作鲁棒的前端特征提取器，利用其从海量多样音频数据学到的丰富声学与语言知识；再用这些泛化特征训练下游说话人嵌入网络，有效把说话人身份从语言特异特征中解耦。我们在 TidyVoice2026 基准（评测语言失配下的 SV）上验证方法，所提系统（team T02）在 tv26_eval-A 与 tv26_eval-U 上分别达到 2.21% 与 2.99% 的等错误率（EER）。</p>
+<hr>
+<h3 id="9-seer人工耳蜗用户听不出情绪检索一段更给力的参考来帮忙">9. SEER：人工耳蜗用户听不出情绪？检索一段&quot;更给力&quot;的参考来帮忙
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11131"  target="_blank" rel="noopener"
+    >2610.11131</a></p>
+<p><strong>一句话</strong>：人工耳蜗恢复了言语可懂度，却丢了情绪线索——SEER 不搞并行录音那套笨办法，用检索给每个输入找一段&quot;同情绪、经耳蜗处理后依然可辨&quot;的参考，语音情感识别直接涨 7~11 个点。</p>
+<p><strong>贡献/机制</strong>：源条件检索器从采样的情感语音转换结果中学习&quot;哪段参考对当前输入最有用&quot;（CI 感知的效用），不确定性引导的探索避免穷举配对；不需要并行正常/耳蜗录音，也不需要强度标签。</p>
+<p><strong>数值结果</strong>：RAVDESS 上 Source macro-F1（N8）+7.30，ESD 上 +11.66；ESD 在 N4/N8/N16 下增益均显著；16 人听音实验在 RAVDESS 全条件下显著。附带发现：更强的参考总体有帮助，但性别/内容匹配与否影响不大。</p>
+<p><strong>批判性分析</strong>：16 个听音人样本太小；RAVDESS/ESD 都是表演性情绪，真实现实耳蜗用户的自发语音差异大；检索在推理时的延迟没提。做助听与语音情感的人值得细读检索器设计。</p>
+<p><strong>摘要译文</strong>：人工耳蜗（CI）恢复了言语可及性，但削弱了声音情绪识别所需的线索。以往面向 CI 的增强需要并行的正常/CI 录音与强度标签。我们提出 SEER，一个基于检索的框架，学习哪段同情绪参考能让每个源在 CI 处理后保持可辨。源条件检索器从采样的情感语音转换结果中学习 CI 感知的效用，不确定性引导的探索避免穷举配对；既不需要并行录音，也不需要强度标签。SEER 在 RAVDESS 上把 Source macro-F1（N8）提升 7.30 点，在 ESD 上提升 11.66 点，ESD 在 N4/N8/N16 下增益均显著；16 人听音实验在 RAVDESS 全条件下增益显著。穷举分析发现，更强的参考总体有益，但性别或内容匹配影响很小。</p>
+<hr>
+<h3 id="10-cloudear给-ai-生成的音乐当评委得同时看好听和切题">10. CloudEar：给 AI 生成的音乐当评委，得同时看&quot;好听&quot;和&quot;切题&quot;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11672"  target="_blank" rel="noopener"
+    >2610.11672</a></p>
+<p><strong>一句话</strong>：评测生成的音乐不能只看一个总分——CloudEar 搞了个 pairwise 框架，三个专家各管一摊：感知专家管好不好听，诊断专家管信号级毛病，跨模态专家管歌词/提示词对没对上。</p>
+<p><strong>贡献/机制</strong>：感知专家做歌曲质量评估；诊断专家结合学习式与信号级分析抓音频缺陷；跨模态专家基于音乐属性做提示词-歌曲对齐。pairwise 比较避免了压缩总分的失真。</p>
+<p><strong>数值结果</strong>：在 pairwise 偏好准确率与分数相关性上超过所对比的基线（摘要未给具体数值与基线名单）。</p>
+<p><strong>批判性分析</strong>：摘要信息偏少：基线是谁、赢了多少都没说；只有两位作者，实验规模可能有限；诊断专家的&quot;信号级分析&quot;具体指什么不清楚。做音乐生成评测的人可以等全文，但&quot;感知/诊断/对齐三分&quot;的框架设计本身值得借鉴。</p>
+<p><strong>摘要译文</strong>：评测生成的音乐需要建模感知质量、技术音频质量与提示词对齐。现有方法常忽视信号级缺陷，给出压缩的质量分数，并遗漏文本提示中的细粒度音乐属性。我们提出 CloudEar，一个评测音乐性与提示词对齐的 pairwise 框架，包含三个组件：i）感知专家，评估歌曲质量；ii）诊断专家，做学习式与信号级的质量分析；iii）跨模态专家，基于音乐属性做提示词-歌曲对齐。实验显示 CloudEar 在 pairwise 偏好准确率与分数相关性上超过所对比的基线。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="11-amt-合成数据音色覆盖比乐谱写得真更重要">11. AMT 合成数据：音色覆盖比&quot;乐谱写得真&quot;更重要
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11197"  target="_blank" rel="noopener"
+    >2610.11197</a></p>
+<p>自动音乐转录缺带精准标注的录音，合成数据是出路，但&quot;乐谱结构逼真&quot;和&quot;音色覆盖广&quot;哪个更关键？在线采样-渲染管线的控制实验给出不对称结论：适度打乱音符事件分布不损害迁移、甚至有帮助；而渲染端更广的音色支持在固定音符分布下持续提升域外泛化。合成 AMT 数据该优先覆盖音符级属性及其音色实现，而非联合乐谱结构的真实感。</p>
+<h3 id="12-在线说话人日志别再只看-der-了说话人数都能数错-63">12. 在线说话人日志：别再只看 DER 了，说话人数都能数错 63%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11278"  target="_blank" rel="noopener"
+    >2610.11278</a></p>
+<p>在线说话人日志维护一个不断增长的说话人清单，但固定容量会合并说话人、无界跟踪又会把噪声拆成&quot;新人&quot;——在 VoxSRC-23 上，前者少报 44-46% 的说话人，后者 DER 最低却多报 63%，而 DER 对此毫无反映。这篇只改&quot;何时注册&quot;：候选池攒够互相兼容的 embedding 才注册，提交门控让输出等确认。九个数据集上宏观说话人计数误差从 225% 降到 21%，DER 从 17.59% 降到 15.95%，平均只加 0.109s 延迟。</p>
+<h3 id="13-目标说话人标记enrollment-不能当-calibration-的-cohort-用">13. 目标说话人标记：enrollment 不能当 calibration 的 cohort 用
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11272"  target="_blank" rel="noopener"
+    >2610.11272</a></p>
+<p>目标说话人标记里，拿其他注册人的 enrollment 当 score normalization 的 cohort 看似省事，实则 enrollment 按录音 session 聚类，归一化会把整个说话人拒掉。这篇提出 gallery affinity verification：无 cohort、仿射不变的两项（分数离散度 + enrollment 轮廓偏离），在合成 benchmark 与内部会议语料上，无论是否叠加传统归一化都有提升。做说话人系统的校准环节值得一看。</p>
+<h3 id="14-facegan实时-talking-head-不需要扩散模型单遍-gan-就够了">14. FaceGAN：实时 talking head 不需要扩散模型，单遍 GAN 就够了
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11070"  target="_blank" rel="noopener"
+    >2610.11070</a></p>
+<p>音频驱动的表情动画必须在线、逐帧输出，扩散模型每采样要跑几十次网络，天然不适合流式。这篇论证瓶颈不在容量而在随机结构：因果时不变生成器压不住输出频谱；解法是&quot;非因果噪声整形&quot;——驱动噪声是合成的，它的未来现在就能采样，所以音频到表情的路径保持因果。每帧单次前向输出表情与头部位姿，质量持平或超过 SOTA，且可无限生成不漂移。</p>
+<h3 id="15-用-llm-自动给自闭症儿童做行为编码会聊天但看不懂异常">15. 用 LLM 自动给自闭症儿童做行为编码：会聊天，但看不懂&quot;异常&quot;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11106"  target="_blank" rel="noopener"
+    >2610.11106</a></p>
+<p>BOSCC（简短社交沟通变化观察）是自闭症干预的疗效指标，但人工编码贵且慢。这篇在 163 段录音上对比了纯文本、带说话人日志的文本、定向音频三种输入：LLM 评估言语交流还行，识别非典型言语模式明显拉胯；各项打分决策差异大，无统一规律。结论偏负面但诚实：套用编码标准、解读模糊语音证据，仍是 LLM 的短板。</p>
+<h3 id="16-水琴窟给日本庭院的水琴做声学指纹九个寺院各不相同">16. 水琴窟：给日本庭院的&quot;水琴&quot;做声学指纹，九个寺院各不相同
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.11219"  target="_blank" rel="noopener"
+    >2610.11219</a></p>
+<p>水琴窟是日本庭院石水钵旁半埋的声学装置，水滴声在地下空洞共鸣。这篇用 FFT/MFCC/RMS/频谱质心等特征对关西 9 处水琴窟做计算声学刻画：整体音色相似，但每处都有可测量的独特声学轮廓。数字遗产保护方向的有趣工作，也是今日最&quot;闲情逸致&quot;的一篇。</p>
+<hr>
+<p><em>今日 16 篇：10 篇精评 + 6 篇简报。arXiv 因美国联邦假日推迟公告（下一次为 10-13 周二 20:00 ET），今日无新公告，本报按 thin-day 流程取 10-08 候选池中未报道论文；cs.SD、eess.AS 时隔多日恢复抓取，音频核心分类回归。主线是&quot;空间音频&quot;（MiDashengLM-Spatial 首个开源统一空间 LALM、连续半径语音提取 29.25 dB SI-SDR）与&quot;可控语音&quot;（EDICT 全局音色编辑+局部指令控制、无参考歌唱音高校正 73.25→83.43）。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/196413"  target="_blank" rel="noopener"
+    >Flandre93</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-11/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-11" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-11/cover_hu_d6b3a8b7c50fec57.png" srcset="/zh-cn/p/daily-paper-2026-10-11/cover_hu_d6b3a8b7c50fec57.png 1x, /zh-cn/p/daily-paper-2026-10-11/cover_hu_61e018b9c53b7fba.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #cab24f80 0%, #e6e5b0C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-11</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-10/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-10" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-10/cover_hu_16482d9ec3f4ec83.png" srcset="/zh-cn/p/daily-paper-2026-10-10/cover_hu_16482d9ec3f4ec83.png 1x, /zh-cn/p/daily-paper-2026-10-10/cover_hu_b4a97e8e4e29a5b3.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #28615980 0%, #4269caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-10</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-09/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-09" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-09/cover_hu_ab66df21f4042b8.jpg" srcset="/zh-cn/p/daily-paper-2026-10-09/cover_hu_ab66df21f4042b8.jpg 1x, /zh-cn/p/daily-paper-2026-10-09/cover_hu_55951bbc2d0883c5.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #e8d0c280 0%, #6f564fC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-09</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-08/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-08" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-08/cover_hu_7945fbb8ce73efe1.jpg" srcset="/zh-cn/p/daily-paper-2026-10-08/cover_hu_7945fbb8ce73efe1.jpg 1x, /zh-cn/p/daily-paper-2026-10-08/cover_hu_87abf6bbf224547f.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #2d282e80 0%, #56e8efC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-08</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-07/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-07" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-07/cover_hu_cda915dc89007255.png" srcset="/zh-cn/p/daily-paper-2026-10-07/cover_hu_cda915dc89007255.png 1x, /zh-cn/p/daily-paper-2026-10-07/cover_hu_a266f89e8e073286.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #ffa06b80 0%, #e5d5ceC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-07</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
