@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 5 篇精评 + 2 篇简报，共 7 篇，已对 7 天滚动窗口去重（候选池 276 篇 → 近期未报道 188 篇 → 音频方向初筛与标题全扫后报道 7 篇）。 来源：HuggingFace Daily Papers（270 篇，10-12 至 10-15 四期列表，其中搜索接口补充 6 篇）；arXiv API（0 篇，本次首个请求即返回 429 限流，按硬停规则未重试，降级模式）；Semantic Scholar（0 篇，未授权池同样返回 429，降级模式）。HF 当日（10-16）列表抓取时尚未发布。 主题分布：TTS 与语音生成 2 篇、说话人分割 1 篇、含音频理解的多模态模型 2 篇、空间音频驱动生成 1 篇、音频条件预测的评测方法学 1 篇。 今日关键词：&ldquo;量出来的可信度&rdquo;——Audio8-TTS 专门训了个&quot;真实感评论家&quot;去逼近人耳判断，Anuvani 发现标注规范本身就能值 1.9–4.1 个 DER 点，CIViC 与 Omni-Modal 则都在追问同一件事：模型到底有没有在用音频、又能不能把听到的说出来。 精评 1. Audio8-TTS：0.6B 小模型冲 TTS 第一梯队，靠的是一个&quot;真实感评论家&quot; 2610.14776\n">
+<title>AI Paper Daily | 2026-10-16</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-16/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-16">
+<meta property='og:description' content="概览 5 篇精评 + 2 篇简报，共 7 篇，已对 7 天滚动窗口去重（候选池 276 篇 → 近期未报道 188 篇 → 音频方向初筛与标题全扫后报道 7 篇）。 来源：HuggingFace Daily Papers（270 篇，10-12 至 10-15 四期列表，其中搜索接口补充 6 篇）；arXiv API（0 篇，本次首个请求即返回 429 限流，按硬停规则未重试，降级模式）；Semantic Scholar（0 篇，未授权池同样返回 429，降级模式）。HF 当日（10-16）列表抓取时尚未发布。 主题分布：TTS 与语音生成 2 篇、说话人分割 1 篇、含音频理解的多模态模型 2 篇、空间音频驱动生成 1 篇、音频条件预测的评测方法学 1 篇。 今日关键词：&ldquo;量出来的可信度&rdquo;——Audio8-TTS 专门训了个&quot;真实感评论家&quot;去逼近人耳判断，Anuvani 发现标注规范本身就能值 1.9–4.1 个 DER 点，CIViC 与 Omni-Modal 则都在追问同一件事：模型到底有没有在用音频、又能不能把听到的说出来。 精评 1. Audio8-TTS：0.6B 小模型冲 TTS 第一梯队，靠的是一个&quot;真实感评论家&quot; 2610.14776\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-16/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-16T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-16">
+<meta name="twitter:description" content="概览 5 篇精评 + 2 篇简报，共 7 篇，已对 7 天滚动窗口去重（候选池 276 篇 → 近期未报道 188 篇 → 音频方向初筛与标题全扫后报道 7 篇）。 来源：HuggingFace Daily Papers（270 篇，10-12 至 10-15 四期列表，其中搜索接口补充 6 篇）；arXiv API（0 篇，本次首个请求即返回 429 限流，按硬停规则未重试，降级模式）；Semantic Scholar（0 篇，未授权池同样返回 429，降级模式）。HF 当日（10-16）列表抓取时尚未发布。 主题分布：TTS 与语音生成 2 篇、说话人分割 1 篇、含音频理解的多模态模型 2 篇、空间音频驱动生成 1 篇、音频条件预测的评测方法学 1 篇。 今日关键词：&ldquo;量出来的可信度&rdquo;——Audio8-TTS 专门训了个&quot;真实感评论家&quot;去逼近人耳判断，Anuvani 发现标注规范本身就能值 1.9–4.1 个 DER 点，CIViC 与 Omni-Modal 则都在追问同一件事：模型到底有没有在用音频、又能不能把听到的说出来。 精评 1. Audio8-TTS：0.6B 小模型冲 TTS 第一梯队，靠的是一个&quot;真实感评论家&quot; 2610.14776\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-16/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-audio8-tts06b-小模型冲-tts-第一梯队靠的是一个真实感评论家">1. Audio8-TTS：0.6B 小模型冲 TTS 第一梯队，靠的是一个&quot;真实感评论家&quot;</a></li>
+        <li><a href="#2-anuvani-diarization22-种印度语言零样本分割夺冠顺带揭了标注规范的暗账">2. Anuvani-Diarization：22 种印度语言零样本分割夺冠，顺带揭了标注规范的&quot;暗账&rdquo;</a></li>
+        <li><a href="#3-apertus-15全开放模型家族补上音频理解262k-上下文权重数据配方全公开">3. Apertus 1.5：全开放模型家族补上音频理解，262K 上下文、权重数据配方全公开</a></li>
+        <li><a href="#4-aphavoice不治失语症先扮演失语症给临床培训造语音病人">4. AphaVoice：不治失语症，先&quot;扮演&quot;失语症——给临床培训造语音病人</a></li>
+        <li><a href="#5-sonic-amg让人形反应边听边动首个流式空间音频驱动动作生成">5. Sonic-AMG：让人形反应&quot;边听边动&quot;——首个流式空间音频驱动动作生成</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#6-civic摘掉音频输出变了不等于模型用了音频四道证据门拆穿代理任务">6. CIViC：摘掉音频输出变了，不等于模型用了音频——四道证据门拆穿代理任务</a></li>
+        <li><a href="#7-omni-modal-llms-know-more-than-they-say全模态模型知道但说不出补一段自生成文本就-729">7. Omni-Modal LLMs Know More Than They Say：全模态模型&quot;知道但说不出&rdquo;，补一段自生成文本就 +7.29%</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-16/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-16" height="1080" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-16/cover.png" srcset="/zh-cn/p/daily-paper-2026-10-16/cover_hu_c069b754be36f5d4.png 800w, /zh-cn/p/daily-paper-2026-10-16/cover_hu_22c3e08c6e3a1400.png 1600w, /zh-cn/p/daily-paper-2026-10-16/cover.png 1920w" width="1920">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-16/">AI Paper Daily | 2026-10-16</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-16T00:00:00Z'>Oct 16, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-audio8-tts06b-小模型冲-tts-第一梯队靠的是一个真实感评论家">1. Audio8-TTS：0.6B 小模型冲 TTS 第一梯队，靠的是一个&quot;真实感评论家&quot;</a></li>
+        <li><a href="#2-anuvani-diarization22-种印度语言零样本分割夺冠顺带揭了标注规范的暗账">2. Anuvani-Diarization：22 种印度语言零样本分割夺冠，顺带揭了标注规范的&quot;暗账&rdquo;</a></li>
+        <li><a href="#3-apertus-15全开放模型家族补上音频理解262k-上下文权重数据配方全公开">3. Apertus 1.5：全开放模型家族补上音频理解，262K 上下文、权重数据配方全公开</a></li>
+        <li><a href="#4-aphavoice不治失语症先扮演失语症给临床培训造语音病人">4. AphaVoice：不治失语症，先&quot;扮演&quot;失语症——给临床培训造语音病人</a></li>
+        <li><a href="#5-sonic-amg让人形反应边听边动首个流式空间音频驱动动作生成">5. Sonic-AMG：让人形反应&quot;边听边动&quot;——首个流式空间音频驱动动作生成</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#6-civic摘掉音频输出变了不等于模型用了音频四道证据门拆穿代理任务">6. CIViC：摘掉音频输出变了，不等于模型用了音频——四道证据门拆穿代理任务</a></li>
+        <li><a href="#7-omni-modal-llms-know-more-than-they-say全模态模型知道但说不出补一段自生成文本就-729">7. Omni-Modal LLMs Know More Than They Say：全模态模型&quot;知道但说不出&rdquo;，补一段自生成文本就 +7.29%</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>5 篇精评 + 2 篇简报</strong>，共 7 篇，已对 7 天滚动窗口去重（候选池 276 篇 → 近期未报道 188 篇 → 音频方向初筛与标题全扫后报道 7 篇）。</li>
+<li>来源：HuggingFace Daily Papers（270 篇，10-12 至 10-15 四期列表，其中搜索接口补充 6 篇）；arXiv API（0 篇，本次首个请求即返回 429 限流，按硬停规则未重试，降级模式）；Semantic Scholar（0 篇，未授权池同样返回 429，降级模式）。HF 当日（10-16）列表抓取时尚未发布。</li>
+<li>主题分布：TTS 与语音生成 2 篇、说话人分割 1 篇、含音频理解的多模态模型 2 篇、空间音频驱动生成 1 篇、音频条件预测的评测方法学 1 篇。</li>
+<li>今日关键词：<strong>&ldquo;量出来的可信度&rdquo;</strong>——Audio8-TTS 专门训了个&quot;真实感评论家&quot;去逼近人耳判断，Anuvani 发现标注规范本身就能值 1.9–4.1 个 DER 点，CIViC 与 Omni-Modal 则都在追问同一件事：模型到底有没有在用音频、又能不能把听到的说出来。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-audio8-tts06b-小模型冲-tts-第一梯队靠的是一个真实感评论家">1. Audio8-TTS：0.6B 小模型冲 TTS 第一梯队，靠的是一个&quot;真实感评论家&quot;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.14776"  target="_blank" rel="noopener"
+    >2610.14776</a></p>
+<p><strong>一句话</strong>：可懂度和说话人相似度都刷不出&quot;像真人&quot;——这篇先用开源 TTS 搭一条质量阶梯、训一个真实感评论家，再让它当 GRPO 的奖励，0.6B 参数的零样本克隆模型在自然度上打到了 SOTA 级别。</p>
+<p><strong>贡献/机制</strong>：三阶段训练：多语种监督微调；以 WER 与说话人相似度（SIM）为奖励的 GRPO；最后由真实感评论家引导的 GRPO。评论家用&quot;同一句话的人类录音 vs 生成语音&quot;配对学习判断真实感，并加身份擦除目标，防止它靠识别生成器指纹作弊。</p>
+<p><strong>数值结果</strong>：零样本声音克隆在可懂度与说话人相似度上达到 SOTA、感知自然度尤其强，第三阶段在保住 WER 的同时进一步提升自然度与 SIM（摘要未给 WER/SIM 的绝对数值与评测集明细）。</p>
+<p><strong>批判性分析</strong>：核心卖点是&quot;真实感&quot;这个新目标，但摘要里没有任何一个绝对数字，SOTA 主张目前无法核验；评论家本身由开源 TTS 的输出阶梯训出，其品味上限与对闭源系统风格的泛化都是问号；身份擦除是否真堵住了指纹捷径，要看正文的消融。做 TTS 后训练的人，&ldquo;把感知真实感做成可优化奖励&quot;这条路线值得盯。</p>
+<p><strong>摘要译文</strong>：文本转语音（TTS）系统通常以可懂度与说话人相似度为优化目标，但这两者都刻画不了区分人类表演与合成语音的韵律细节，由此留下的真实感鸿沟靠更大的模型与更高质量的数据只能缩小、无法弥合。在缺乏直接针对这一鸿沟的目标时，真实感始终是 TTS 的顽固挑战。我们提出 Audio8-TTS，一个紧凑的 0.6B 参数零样本声音克隆模型，在可懂度与说话人相似度上达到最先进性能，感知自然度方面表现尤为突出。为使训练信号对齐人类感知而非信号层保真度，我们从广泛使用的开源 TTS 系统构建了一条质量阶梯，并训练一个真实感评论家，将生成语音与同句的匹配人类录音对照评估；身份擦除目标则抑制评论家依赖生成器指纹。我们分三阶段训练模型：多语种监督微调；以词错误率（WER）与说话人相似度（SIM）为奖励的组相对策略优化（GRPO）；以及由真实感评论家引导的 GRPO。最后阶段在保持 WER 表现的同时，提升了感知到的韵律自然度与说话人相似度。</p>
+<hr>
+<h3 id="2-anuvani-diarization22-种印度语言零样本分割夺冠顺带揭了标注规范的暗账">2. Anuvani-Diarization：22 种印度语言零样本分割夺冠，顺带揭了标注规范的&quot;暗账&rdquo;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.20327"  target="_blank" rel="noopener"
+    >2610.20327</a></p>
+<p><strong>一句话</strong>：印度 22 种法定语言的对话动不动一句话里混两种语言、还互相重叠——Anuvani 用不确定性感知的银标监督适配自监督分割模型，在 1,164 条录音上拿到 16.78% 的时长加权 DER；更值钱的发现是：基准的话语级标注规范本身就值 1.9–4.1 个 DER 点。</p>
+<p><strong>贡献/机制</strong>：在 IndicDiarBench 上系统评测 22 种语言的说话人分割；Anuvani-Diarization 以自监督端到端分割模型为底，用不确定性感知的银标监督适配印度式对话（混语、重叠、电话/会议/媒体场景）；并把&quot;标注规范&quot;作为隐藏变量单独量化。</p>
+<p><strong>数值结果</strong>：全部 1,164 条录音上时长加权 DER 16.78%，为作者实测九个近期系统中的最低，仅次于已发表最佳结果 16.0%；在 22 种语言中的 14 种上领先三个最强对手；在六个国际基准上与基底模型持平。从其他印度转写数据学到的标注规范无法迁移。</p>
+<p><strong>批判性分析</strong>：16.78% 与 16.0% 的差距小于规范差异（1.9–4.1 点），说明跨论文比 DER 先要对齐标注规范——这正是本文最有外溢价值的结论；但银标监督的质量上限、混语比例与重叠率的分层结果未在摘要展开；&ldquo;零样本&quot;指对目标语言零样本，适配数据仍来自印度对话，跨到其他语系的泛化未测。做多语种语音基础设施的人，这篇的基准与规范分析比模型本身更耐用。</p>
+<p><strong>摘要译文</strong>：印度的 22 种法定语言由十亿多人使用，其对话常在同一轮次内混合语言、自由重叠，并发生在电话、会议与媒体场景中。知道&quot;谁在何时说话&quot;的说话人分割，是这类对话语音应用的基础：与多人同时对话的语音智能体、带说话人归属的会议与通话转写、联络中心分析与媒体监测。我们在 IndicDiarBench 上对全部 22 种语言的说话人分割做了系统研究，并提出 Anuvani-Diarization：它以不确定性感知的银标监督，把一个自监督端到端分割模型适配到印度式对话。在零样本设定下与九个近期分割系统同台评测，它在全部 1,164 条录音上达到 16.78% 的时长加权分割错误率（DER），为我们实测系统中的最低，仅次于已发表的最佳结果（16.0%），并在 22 种语言中的 14 种上领先三个最强对手；它在六个国际基准上与基底模型持平。我们还表明，该基准的话语级标注规范是一个隐藏变量，依系统不同价值 1.9 至 4.1 个 DER 点，且从其他印度转写数据学到的规范并不能迁移。</p>
+<hr>
+<h3 id="3-apertus-15全开放模型家族补上音频理解262k-上下文权重数据配方全公开">3. Apertus 1.5：全开放模型家族补上音频理解，262K 上下文、权重数据配方全公开
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.15542"  target="_blank" rel="noopener"
+    >2610.15542</a></p>
+<p><strong>一句话</strong>：瑞士 Apertus 家族从纯文本进化为多模态推理者：8B 再吃 4T token、70B 再吃 2T，多模态从 tokenizer 层进入、语言模型头仍只出文本；音频理解首次加入，在长音频与低资源语音识别上最强。</p>
+<p><strong>贡献/机制</strong>：在 Apertus 1.0 上继续预训练并加入图像与音频理解，上下文窗口扩大四倍至 262,144；后续依次做监督微调、长上下文微调、可验证奖励的强化学习与偏好对齐。&ldquo;思考&quot;做成聊天模板的一个开关而非单独模型。训练只用公开可得数据、回溯性尊重爬虫退出，并排除限制性许可材料；权重、数据制备、训练配方与评测套件全部以宽松许可发布。</p>
+<p><strong>数值结果</strong>：思考开关让 8B 的数学推理最多提升 20 个点（摘要口径）；8B 在同类全开放模型中领跑知识、指令跟随与文化类基准，指令跟随超过所有对照模型（含开放权重模型）；音频方面与全开放多模态模型可比，长音频与低资源语音识别最强，但高资源语言的感知与转写仍逊于专用音视频模型。</p>
+<p><strong>批判性分析</strong>：这篇的主线是&quot;开放即基础设施&rdquo;，音频只是新增模态之一，摘要没有给任何音频基准的绝对分数，想评估其语音能力要等完整评测表；多模态只从 tokenizer 进入、输出仍纯文本，决定了它做不了语音生成与全双工——定位是&quot;听得懂的全开放底座&rdquo;，不是语音模型。对需要可审计、可商用底座的团队，价值在全栈开放与许可干净，而非单项性能。</p>
+<p><strong>摘要译文</strong>：语言模型正在成为基础设施，而由公共机构在开放环境下、用有文档记录的数据构建的基础设施，是摆脱对少数供应商依赖的替代方案；Apertus 证明了这条路在大规模上可行。Apertus 1.5 把全开放的 Apertus 家族从文本扩展到多模态推理：在 Apertus 1.0 模型上继续预训练（8B 追加 4T token、70B 追加 2T），加入图像与音频理解，并把上下文窗口扩大四倍至 262,144；多模态经由 tokenizer 进入，语言模型头仍限于文本，架构本身不变。监督微调、长上下文微调、可验证奖励的强化学习与偏好对齐共同构成发布的模型。&ldquo;思考&quot;是聊天模板的一个标志而非单独模型，可让 8B 的数学推理最多提升 20 个点。发布的模型在几乎所有基准上都优于前代；在同类全开放模型中，8B 在知识、指令跟随与文化类基准上领先，其指令跟随超过所有对照模型，包括开放权重模型。在首次加入的图像与音频理解上，模型与全开放多模态模型可比，在文档理解、长音频与低资源语音识别上最强，而专用视觉与音频模型在高资源语言的感知与转写上仍占优势。与 Apertus 1.0 一样，我们只用公开可得的数据训练，回溯性尊重爬虫退出并排除限制性许可材料；我们以宽松许可发布模型权重、数据制备与训练配方以及评测套件，开放性还延伸到价值观层面，与模型一同发布的 Apertus 章程指导对齐阶段。</p>
+<hr>
+<h3 id="4-aphavoice不治失语症先扮演失语症给临床培训造语音病人">4. AphaVoice：不治失语症，先&quot;扮演&quot;失语症——给临床培训造语音病人
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.14479"  target="_blank" rel="noopener"
+    >2610.14479</a></p>
+<p><strong>一句话</strong>：中风后失语症的主要疗法是语言治疗，但临床资源稀缺、医护缺真实感的练习对象——AphaVoice 反着用 TTS：专门合成带不流利特征的失语语音，在时序指标上超过现有 SOTA TTS，还保住了说话人身份。</p>
+<p><strong>贡献/机制</strong>：面向失语患者模拟的 TTS 框架，目标是复现失语语音的临床不流利特征而非&quot;读得标准&rdquo;；潜空间平移（latent space shifting）支持多说话人生成，且不牺牲语音的音位真实感。</p>
+<p><strong>数值结果</strong>：与 SOTA TTS 系统对比，AphaVoice 在刻画不流利特征上更强、在时序指标上胜出，并一致地保持说话人身份（摘要未给指标名称与绝对数值）。</p>
+<p><strong>批判性分析</strong>：应用角度新颖、需求真实，但摘要通篇没有一个具体数字：用了哪些时序指标、对比哪几个系统、临床专家是否参与过真实感评判，全都要等正文；合成失语语音还涉及伦理与临床有效性问题——训练出来的医护技能能否迁移到真实患者，需要临床侧验证而非仅靠声学指标。语音生成往垂直医疗模拟走，是个值得注意的方向信号。</p>
+<p><strong>摘要译文</strong>：语言治疗是中风后失语症的主要疗法，但临床资源有限，常常限制患者获得适当治疗的机会。弥合这一缺口需要可靠的、供医疗专业人员使用的训练模拟。然而当前 AI 工作几乎只聚焦于语音处理，语音生成大体仍未被探索。本研究提出 AphaVoice，一个专门为合成高度逼真的失语语音而设计的新型文本转语音（TTS）框架。与最先进的 TTS 系统相比，AphaVoice 展现出更强的捕捉不流利这一临床特征的能力，在时序指标上优于现有模型，并一致地保持说话人身份。借助潜空间平移，该模型还支持多说话人生成，且不牺牲音位真实感。最终，AphaVoice 为失语症相关的医疗培训与临床模拟提供了一个可扩展、高保真的工具。</p>
+<hr>
+<h3 id="5-sonic-amg让人形反应边听边动首个流式空间音频驱动动作生成">5. Sonic-AMG：让人形反应&quot;边听边动&quot;——首个流式空间音频驱动动作生成
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.13300"  target="_blank" rel="noopener"
+    >2610.13300</a></p>
+<p><strong>一句话</strong>：以前的&quot;听声而动&quot;都是拿完整音频离线生成动作的；人不是这样反应的——Sonic-AMG 第一次把这件事做成流式：声学内容与声源相对身体的几何分开编码，因果 Transformer 实时吐出动作。</p>
+<p><strong>贡献/机制</strong>：声学内容与身体相对声源几何编码为两组独立 token；带 flow 头的因果 Transformer 生成连续动作潜变量，因果解码器重建动作片段。针对&quot;训练时历史来自真值、推理时历史来自自生成&quot;的错位提出排练训练（全序列教师强制 + 短自回归自展开监督混合），并用空间反馈在排练与推理时都从生成的根部位姿重算声源相对位置，保持空间条件一致。</p>
+<p><strong>数值结果</strong>：在 SAM 基准上取得 SOTA 的 FID 与 R-precision，并支持跨声事件与声源位置的实时在线生成（摘要未给 FID/R-precision 绝对值）。</p>
+<p><strong>批判性分析</strong>：新任务定义 + 针对流式错位的两个具体解法，问题意识扎实；但评测只有一个 SAM 基准、且无绝对数值，&ldquo;实时&quot;的帧率与延迟未在摘要交代；动作自然度高度依赖主观感知，FID 类指标说服力有限。对语音/音频方向的读者，它的价值在&quot;空间音频作为具身智能的输入通道&quot;这个信号，以及训练-推理错位的处理范式。</p>
+<p><strong>摘要译文</strong>：建模人类对空间音频的反应，需要同时理解听到了什么以及声音从何而来。此前的工作从完整的声学与空间输入序列离线生成动作；但人类是在不知道接下来会听到什么的情况下对声音做出反应的。我们提出 Sonic-AMG，据我们所知是首个从空间音频流式生成人类动作的框架。该模型将声学内容与身体相对的声源几何编码为独立的 token；以这些 token 为条件，一个带 flow 头的因果 Transformer 生成连续动作潜变量，再由因果解码器重建动作片段。标准的教师强制训练从真值动作导出动作历史与身体相对声源位置，而流式推理两者都依赖生成的动作，由此产生训练-推理错位。为减小这一历史差异，我们引入排练训练：将全序列教师强制监督与沿短自回归自展开的监督预测结合。为使空间条件与生成的动作保持一致，我们提出空间反馈：在排练训练与推理过程中，都从生成的根部位姿重算身体相对的声源位置。在 SAM 上，Sonic-AMG 取得了最先进的 FID 与 R-precision，并进一步支持跨声事件与声源位置的实时在线生成连贯反应。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="6-civic摘掉音频输出变了不等于模型用了音频四道证据门拆穿代理任务">6. CIViC：摘掉音频输出变了，不等于模型用了音频——四道证据门拆穿代理任务
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.15327"  target="_blank" rel="noopener"
+    >2610.15327</a></p>
+<p>给&quot;音频条件视觉预测&quot;立了一套四门检验协议（CIViC）：把解释与干预、留出任务对照或端点控制绑定。在三个代理任务上结论颇冷：合成混合任务中条件增强拟合的 1000 步 RMSE（0.1807）反高于纯音频拟合（0.1707）；SpeakerVid 代理中把五个低层音频特征清零的拟合，整帧灰度 RMSE 反而低于对齐音频，而对齐音频只在片段漂移误差上占优。做多模态可解释性的人，这套&quot;输出激活 ≠ 用了信息&quot;的拆法值得借。</p>
+<h3 id="7-omni-modal-llms-know-more-than-they-say全模态模型知道但说不出补一段自生成文本就-729">7. Omni-Modal LLMs Know More Than They Say：全模态模型&quot;知道但说不出&rdquo;，补一段自生成文本就 +7.29%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.16135"  target="_blank" rel="noopener"
+    >2610.16135</a></p>
+<p>全模态 LLM（含视觉、音频、IMU）常感知对了却表达不出来，作者称之为 knows-but-cannot-say：提出的 token 级模态对齐（TMA）显示非文本表征与回复 token 对齐更弱、获得的注意力更少。解法 OmniCatalyst 简单得意外——先让模型把模态输入自生成成文本再推理，在七个 Omni-LLM 上一致提升 +7.29% 并均衡了模态偏好。代码已开源。做 AudioLLM 的人，这个诊断解释了不少&quot;听对了却答错&quot;的现场。</p>
+<hr>
+<p><em>本日 7 篇（5 精评 + 2 简报）全部来自降级模式候选池：arXiv API 与 Semantic Scholar 均因 429 限流零贡献，HuggingFace Daily Papers（10-12 至 10-15）与 HF 搜索补充构成全部候选；当日 arXiv 全量新投稿未能覆盖，宁缺毋滥不凑数。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/229155"  target="_blank" rel="noopener"
+    >gnarf1975</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-15/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-15" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-15/cover_hu_2190797d2d920686.jpg" srcset="/zh-cn/p/daily-paper-2026-10-15/cover_hu_2190797d2d920686.jpg 1x, /zh-cn/p/daily-paper-2026-10-15/cover_hu_3db5ca8d32e3c12b.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #dfba6a80 0%, #f0f5caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-15</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-14/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-14" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-14/cover_hu_284c3d0a76472ccb.jpg" srcset="/zh-cn/p/daily-paper-2026-10-14/cover_hu_284c3d0a76472ccb.jpg 1x, /zh-cn/p/daily-paper-2026-10-14/cover_hu_50346ab4d0ea65cb.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #351c2280 0%, #e1d7c7C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-14</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-12/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-12" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-12/cover_hu_2c5dfd44d6a4b525.jpg" srcset="/zh-cn/p/daily-paper-2026-10-12/cover_hu_2c5dfd44d6a4b525.jpg 1x, /zh-cn/p/daily-paper-2026-10-12/cover_hu_667980c4b4511ab4.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #99634880 0%, #4f372cC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-12</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-11/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-11" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-11/cover_hu_d6b3a8b7c50fec57.png" srcset="/zh-cn/p/daily-paper-2026-10-11/cover_hu_d6b3a8b7c50fec57.png 1x, /zh-cn/p/daily-paper-2026-10-11/cover_hu_61e018b9c53b7fba.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #cab24f80 0%, #e6e5b0C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-11</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-10/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-10" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-10/cover_hu_16482d9ec3f4ec83.png" srcset="/zh-cn/p/daily-paper-2026-10-10/cover_hu_16482d9ec3f4ec83.png 1x, /zh-cn/p/daily-paper-2026-10-10/cover_hu_b4a97e8e4e29a5b3.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #28615980 0%, #4269caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-10</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
