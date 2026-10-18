@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 3 篇精评 + 0 篇简报，共 3 篇，已对 7 天滚动窗口去重（候选池 233 篇 → 已报道去重 5 篇 → 近期未报道 228 篇 → 音频方向初筛与标题全扫后报道 3 篇）。 来源：HuggingFace Daily Papers（150 篇，10-14 至 10-16 三期列表；10-17 列表为空、周末无新一期）；arXiv API（100 篇，为 10-15 提交批次的首批返回；后续分类目查询返回 “Rate exceeded” 限流，按硬停规则未再重试，当日该查询口径共 519 篇仅覆盖首批，降级模式）；HuggingFace 论文搜索（补充 0 篇新鲜未报道论文）。 主题分布：音视频一致性评测与奖励模型 1 篇、音频物理理解与跨模态蒸馏 1 篇、神经音频水印 1 篇。 今日关键词：&ldquo;声音里藏着别处没有的证据&rdquo;——AVC-Reward 要把音视频一致性拆到事件级才肯打分，阻尼探测发现敲击声里的物理信息量碾压单帧画面，音频水印则在补版本迭代留下的兼容窟窿；周末新投稿稀薄，今天只有 3 篇，宁缺毋滥。 精评 1. AVC-Reward：音视频一致性别再整段打分——拆到事件级，还能当 RL 奖励 2610.22321\n">
+<title>AI Paper Daily | 2026-10-18</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-18/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-18">
+<meta property='og:description' content="概览 3 篇精评 + 0 篇简报，共 3 篇，已对 7 天滚动窗口去重（候选池 233 篇 → 已报道去重 5 篇 → 近期未报道 228 篇 → 音频方向初筛与标题全扫后报道 3 篇）。 来源：HuggingFace Daily Papers（150 篇，10-14 至 10-16 三期列表；10-17 列表为空、周末无新一期）；arXiv API（100 篇，为 10-15 提交批次的首批返回；后续分类目查询返回 “Rate exceeded” 限流，按硬停规则未再重试，当日该查询口径共 519 篇仅覆盖首批，降级模式）；HuggingFace 论文搜索（补充 0 篇新鲜未报道论文）。 主题分布：音视频一致性评测与奖励模型 1 篇、音频物理理解与跨模态蒸馏 1 篇、神经音频水印 1 篇。 今日关键词：&ldquo;声音里藏着别处没有的证据&rdquo;——AVC-Reward 要把音视频一致性拆到事件级才肯打分，阻尼探测发现敲击声里的物理信息量碾压单帧画面，音频水印则在补版本迭代留下的兼容窟窿；周末新投稿稀薄，今天只有 3 篇，宁缺毋滥。 精评 1. AVC-Reward：音视频一致性别再整段打分——拆到事件级，还能当 RL 奖励 2610.22321\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-18/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-18T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-18">
+<meta name="twitter:description" content="概览 3 篇精评 + 0 篇简报，共 3 篇，已对 7 天滚动窗口去重（候选池 233 篇 → 已报道去重 5 篇 → 近期未报道 228 篇 → 音频方向初筛与标题全扫后报道 3 篇）。 来源：HuggingFace Daily Papers（150 篇，10-14 至 10-16 三期列表；10-17 列表为空、周末无新一期）；arXiv API（100 篇，为 10-15 提交批次的首批返回；后续分类目查询返回 “Rate exceeded” 限流，按硬停规则未再重试，当日该查询口径共 519 篇仅覆盖首批，降级模式）；HuggingFace 论文搜索（补充 0 篇新鲜未报道论文）。 主题分布：音视频一致性评测与奖励模型 1 篇、音频物理理解与跨模态蒸馏 1 篇、神经音频水印 1 篇。 今日关键词：&ldquo;声音里藏着别处没有的证据&rdquo;——AVC-Reward 要把音视频一致性拆到事件级才肯打分，阻尼探测发现敲击声里的物理信息量碾压单帧画面，音频水印则在补版本迭代留下的兼容窟窿；周末新投稿稀薄，今天只有 3 篇，宁缺毋滥。 精评 1. AVC-Reward：音视频一致性别再整段打分——拆到事件级，还能当 RL 奖励 2610.22321\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-18/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-avc-reward音视频一致性别再整段打分拆到事件级还能当-rl-奖励">1. AVC-Reward：音视频一致性别再整段打分——拆到事件级，还能当 RL 奖励</a></li>
+        <li><a href="#2-声音里的物理敲击声编码的阻尼信息碾压单帧视觉蒸馏能让-clip-补回一部分">2. 声音里的物理：敲击声编码的阻尼信息碾压单帧视觉，蒸馏能让 CLIP 补回一部分</a></li>
+        <li><a href="#3-音频水印的向后兼容新检测器得认旧嵌入器还不能把别家的误认成自家的">3. 音频水印的向后兼容：新检测器得认旧嵌入器，还不能把别家的误认成自家的</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-18/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-18" height="930" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-18/cover.jpg" srcset="/zh-cn/p/daily-paper-2026-10-18/cover_hu_1cd1024987b6a0b.jpg 800w, /zh-cn/p/daily-paper-2026-10-18/cover.jpg 1500w" width="1500">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-18/">AI Paper Daily | 2026-10-18</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-18T00:00:00Z'>Oct 18, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-avc-reward音视频一致性别再整段打分拆到事件级还能当-rl-奖励">1. AVC-Reward：音视频一致性别再整段打分——拆到事件级，还能当 RL 奖励</a></li>
+        <li><a href="#2-声音里的物理敲击声编码的阻尼信息碾压单帧视觉蒸馏能让-clip-补回一部分">2. 声音里的物理：敲击声编码的阻尼信息碾压单帧视觉，蒸馏能让 CLIP 补回一部分</a></li>
+        <li><a href="#3-音频水印的向后兼容新检测器得认旧嵌入器还不能把别家的误认成自家的">3. 音频水印的向后兼容：新检测器得认旧嵌入器，还不能把别家的误认成自家的</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>3 篇精评 + 0 篇简报</strong>，共 3 篇，已对 7 天滚动窗口去重（候选池 233 篇 → 已报道去重 5 篇 → 近期未报道 228 篇 → 音频方向初筛与标题全扫后报道 3 篇）。</li>
+<li>来源：HuggingFace Daily Papers（150 篇，10-14 至 10-16 三期列表；10-17 列表为空、周末无新一期）；arXiv API（100 篇，为 10-15 提交批次的首批返回；后续分类目查询返回 “Rate exceeded” 限流，按硬停规则未再重试，当日该查询口径共 519 篇仅覆盖首批，降级模式）；HuggingFace 论文搜索（补充 0 篇新鲜未报道论文）。</li>
+<li>主题分布：音视频一致性评测与奖励模型 1 篇、音频物理理解与跨模态蒸馏 1 篇、神经音频水印 1 篇。</li>
+<li>今日关键词：<strong>&ldquo;声音里藏着别处没有的证据&rdquo;</strong>——AVC-Reward 要把音视频一致性拆到事件级才肯打分，阻尼探测发现敲击声里的物理信息量碾压单帧画面，音频水印则在补版本迭代留下的兼容窟窿；周末新投稿稀薄，今天只有 3 篇，宁缺毋滥。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-avc-reward音视频一致性别再整段打分拆到事件级还能当-rl-奖励">1. AVC-Reward：音视频一致性别再整段打分——拆到事件级，还能当 RL 奖励
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.22321"  target="_blank" rel="noopener"
+    >2610.22321</a></p>
+<p><strong>一句话</strong>：联合音视频生成越来越复杂（多事件、多层混音、跨模态关系不对称），整段式的旧评测指标已经量不准了——AVC-Reward 把音视频事件拆开逐个分析、跨模态交叉验证，再汇成粗到细的三级一致性指标，做成可训练的奖励模型，与人类判断的对齐在自动方法里达到 SOTA。</p>
+<p><strong>贡献/机制</strong>：事件中心评测框架：在事件级把音频事件与视觉事件解耦、逐个独立分析、跨模态交叉验证关系，最后聚合为三级一致性指标——全局叙事和谐、事件级时间同步、细粒度属性对齐。用该指标实例化出可训练的奖励模型 AVC-Reward；配套构建 AVC-Benchmark，主要由多类音视频生成模型产出的多样正负样本组成，用于检验自动判断与人类感知的一致性。项目页：https://tsuki0512.github.io/AVC-Reward.github.io/</p>
+<p><strong>数值结果</strong>：摘要称 AVC-Reward 在自动方法中与人类判断的对齐达到 SOTA，并能给出定位失败原因的可解释理由；用作在线 RL 信号时能提升一个联合生成模型的音视频一致性。但摘要未给任何具体数值：与人类判断的相关系数、对齐准确率、RL 前后的一致性提升幅度均未交代。</p>
+<p><strong>批判性分析</strong>：问题抓得准：音视频生成的失败越来越多是&quot;某个事件对不上&quot;，整段平均分类指标天然会把这类失败抹平，事件级拆分加三级聚合是合理的评测结构。但它目前更像一个有说服力的框架声明：核心主张（SOTA 对齐、RL 有效）全无数字支撑，要等正文表格才能核验；AVC-Benchmark 主要由生成模型的正负样本构成，样本分布由生成器决定，对真实拍摄场景与分布外失败的覆盖存疑；&ldquo;三类复杂性&quot;也是作者自定的划分，是否穷尽实际失败模式尚待社区检验。对做音视频生成的人，这篇的事件级评测拆法值得借，引用其效果主张时则应标注&quot;摘要未给数值&rdquo;。</p>
+<p><strong>摘要译文</strong>：随着联合音视频生成模型能力增强，它们能生成呈现三类复杂性的音视频场景：多事件组合、多层音频混合与不对称跨模态关系。然而，当前评测大多沿用早期简单、单向任务的指标。它们通常把音视频片段作为整体评测、依赖简单的预定义关系，因而并不适合这些日益复杂的场景。我们提出一个事件中心的评测框架：在事件级解耦音频与视觉事件，独立分析每个事件，跨模态交叉验证关系，并把判断聚合为一个由粗到细的三级一致性指标。该指标评测全局叙事和谐、事件级时间同步与细粒度属性对齐，为多样的生成设定与跨模态关系下的音视频一致性评测提供了一个通用形式。我们把该指标实例化为 AVC-Reward，一个可训练的音视频奖励模型。为评测自动判断与人类感知在不同生成范式与关系复杂度下的一致程度，我们构建了 AVC-Benchmark，其主要由多类音视频生成模型生成的不同正负样本组成。AVC-Reward 在自动方法中与人类判断的对齐程度达到了最先进水平，能给出定位失败的可解释理由，并能在用作在线强化学习信号时提升联合生成模型的音视频一致性。</p>
+<hr>
+<h3 id="2-声音里的物理敲击声编码的阻尼信息碾压单帧视觉蒸馏能让-clip-补回一部分">2. 声音里的物理：敲击声编码的阻尼信息碾压单帧视觉，蒸馏能让 CLIP 补回一部分
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.22221"  target="_blank" rel="noopener"
+    >2610.22221</a></p>
+<p><strong>一句话</strong>：材料被敲击后&quot;响多久&quot;直接写在声音里、却几乎写不在画面上——这篇探测发现冻结音频编码对阻尼品质因数 Q 的排序相关 ρ=0.73，而冲击瞬间单帧 CLIP 只有 0.28；再把音频教师蒸馏进冻结 CLIP，留一材料协议下四帧输入能把相关从 0.234 抬到 0.338。</p>
+<p><strong>贡献/机制</strong>：先定位信号：用 Spearman 秩相关 ρ 探测各冻结编码器对品质因数 Q（物体完成多少次振荡后鸣声才衰减殆尽的无量纲量）的排序能力，音频嵌入 ρ=0.73 且在训练未见材料上保住大部分优势，冲击瞬间单帧（CLIP 编码）只有 ρ=0.28。再做回收实验：把冻结音频教师蒸馏进冻结 CLIP 骨干、只训一个投影头。因该任务的合并相关在实践中会被类别身份主导，作者另设留一材料协议——被留出的材料同时不进入投影头与探针的训练。</p>
+<p><strong>数值结果</strong>：音频嵌入 ρ=0.73 对单帧视觉 ρ=0.28。留一材料协议下，四帧输入蒸馏把相关从 0.234 提高到 0.338（相对匹配的四帧基线 +0.053，17 种材料中 14 种获益）；仅把视觉输入放宽到跨越冲击的四帧、无需任何声学成本，就能供给其中一半的提升，说明单帧所缺的一部分本就是可见的动力学。</p>
+<p><strong>批判性分析</strong>：实验设计干净：先证明信息在音频里、再问视觉能回收多少，且留一材料协议堵住了&quot;靠类别身份刷相关&quot;这条捷径，四帧基线的对照也把&quot;时间信息&quot;与&quot;声学信息&quot;的贡献分开了。但也要看清上限：蒸馏后 0.338 离音频的 0.73 还很远，视觉能回收的只是&quot;有用的一部分&quot;；ρ=0.73 是探测相关，说明信息可线性读出，不等于任何现成视觉/多模态模型在用它；结论建立在单一物理量（阻尼 Q）与冲击声这一狭窄设定上，能否推广到摩擦、硬度等更广的物理理解，摘要没有证据。对做多模态表征的人，这篇给了一个可复用的问法：跨模态差距先量化、再谈蒸馏回收率。</p>
+<p><strong>摘要译文</strong>：物理理解对决策至关重要，但视觉模型难以推断诸如阻尼这类支配材料行为的属性。音频直接编码了这类属性，因为物体受冲击时的声学响应会通过可测量的衰减揭示其阻尼。我们探测冻结编码器中的品质因数 Q——一个无量纲量，度量物体在鸣声消失前完成多少次振荡——并以 Spearman 秩相关 ρ 报告每个嵌入按 Q 对冲击排序的好坏，其中 ρ=1 为完美排序、ρ=0 为毫无关系。音频嵌入达到 ρ=0.73，并在训练中扣留的材料上保住了大部分优势，而由 CLIP 编码的、冲击瞬间的一帧视频画面仅支持 ρ=0.28。在确立信号所在之后，我们追问视觉能回收这一差距中的多少。我们通过一个训练好的投影头，把冻结的音频教师蒸馏进冻结的 CLIP 骨干，发现这能回收音频优势中可观的一部分。由于该任务上的合并相关在实践中由类别身份主导，我们还在留一材料协议下评测：被扣留的材料同时不进入投影头与探针。在那里，四帧输入的蒸馏把相关从 0.234 提高到 0.338（相对匹配的四帧基线 +0.053，17 种材料中的 14 种），这一增益是任何类别级策略都产生不了的。把视觉输入放宽到跨越冲击的四帧，在不付出任何声学成本的情况下就供给了该提升的一半，这表明单帧所漏掉的一部分本就是可见的动力学。</p>
+<hr>
+<h3 id="3-音频水印的向后兼容新检测器得认旧嵌入器还不能把别家的误认成自家的">3. 音频水印的向后兼容：新检测器得认旧嵌入器，还不能把别家的误认成自家的
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.22296"  target="_blank" rel="noopener"
+    >2610.22296</a></p>
+<p><strong>一句话</strong>：神经音频水印的嵌入器与检测器总在升级，可旧版本嵌进去的水印不能就此作废——这篇形式化了零比特水印的&quot;向后兼容&quot;问题，让新检测器陪着一串冻结的旧嵌入器训练，并用角度多样性损失治掉随之而来的&quot;嵌入器坍缩&quot;，把对链外嵌入器的真负率恢复到近乎完美。</p>
+<p><strong>贡献/机制</strong>：训练框架把新检测器与一列冻结的遗留嵌入器（遗留链）配对，用性能加权采样让检测器在所有旧版本上保持精度。但这种为兼容而做的耦合会诱发&quot;嵌入器坍缩&quot;效应，灾难性地拉低对链外嵌入器（检测器本就不应认领的那些）的真负率（TNR）。为此提出角度多样性损失（ADL），显式迫使每个新嵌入器占据输出空间中互不相同的区域；组合方案恢复了近乎完美的 TNR。</p>
+<p><strong>数值结果</strong>：摘要只给定性结论：组合方案&quot;恢复近乎完美的真负率，且对检测精度与感知音频质量无可测量的代价&quot;。真负率的具体数值、检测精度、感知质量指标、遗留链的长度与所用系统，摘要均未给出。</p>
+<p><strong>批判性分析</strong>：这篇的价值在问题定义而不在数字：水印系统是长期部署的基础设施，&ldquo;升级后旧内容还能不能验、会不会误认别人家的水印&quot;本就是上线前必须回答的问题，把它形式化并指出兼容训练会系统性伤害链外 TNR，是一个真实且容易被忽视的失效模式。但短板同样明显：摘要零数值，&ldquo;近乎完美&quot;&ldquo;无可测量代价&quot;都无法核验；角度多样性损失与坍缩的因果链（为什么强迫输出空间分离就能修好 TNR）需要正文的机制分析与消融支撑；结论限定在零比特设定，能否推广到多比特载荷水印未提。对做音频水印与内容溯源的人，这是部署 checklist 上该加的一项检查，引用效果时则须等正文数据。</p>
+<p><strong>摘要译文</strong>：神经水印系统通常被训练为紧耦合的嵌入器-检测器对，并隐含地假定静态部署。但在真实部署中，嵌入器与检测器出于安全与版本管理目的经常被更新并有选择地解耦，这可能使先前嵌入内容的检测失效，更严重的是，会提高某个检测器对它本就不打算识别的嵌入器的假阳性率。本文形式化了零比特音频水印中的向后兼容概念。所提出的训练框架把一个新检测器与一列冻结的遗留嵌入器（其遗留链）配对，使用性能加权的采样策略，使检测器在所有更早版本上保持精度。论文表明，这种为向后兼容所必需的耦合会诱发一种嵌入器坍缩效应，灾难性地降低对链外嵌入器的真负率（TNR）。为对抗这一点，论文引入角度多样性损失（ADL），显式迫使每个新嵌入器占据输出空间中一个互不相同的区域。组合方法恢复了近乎完美的 TNR，且对检测精度或感知音频质量没有可测量的代价。</p>
+<hr>
+<p><em>本日 3 篇（3 精评 + 0 简报）来自降级模式候选池：周末无 HuggingFace 新一期列表、arXiv 后续查询触发限流仅覆盖 10-15 提交批次首批 100 篇，音频方向新鲜候选仅此 3 篇，未报道的通用论文不属本日报音频口径，宁缺毋滥不凑数。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/116351"  target="_blank" rel="noopener"
+    >HawthorneKitty</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-17/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-17" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-17/cover_hu_f4e2f4c32b12f697.jpg" srcset="/zh-cn/p/daily-paper-2026-10-17/cover_hu_f4e2f4c32b12f697.jpg 1x, /zh-cn/p/daily-paper-2026-10-17/cover_hu_7feb69185f5a366c.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #60546880 0%, #ede4e6C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-17</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-16/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-16" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-16/cover_hu_9e348d60672d24c4.png" srcset="/zh-cn/p/daily-paper-2026-10-16/cover_hu_9e348d60672d24c4.png 1x, /zh-cn/p/daily-paper-2026-10-16/cover_hu_e74a0b7dda7bb4f4.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #cad15d80 0%, #393036C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-16</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-15/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-15" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-15/cover_hu_2190797d2d920686.jpg" srcset="/zh-cn/p/daily-paper-2026-10-15/cover_hu_2190797d2d920686.jpg 1x, /zh-cn/p/daily-paper-2026-10-15/cover_hu_3db5ca8d32e3c12b.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #dfba6a80 0%, #f0f5caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-15</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-14/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-14" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-14/cover_hu_284c3d0a76472ccb.jpg" srcset="/zh-cn/p/daily-paper-2026-10-14/cover_hu_284c3d0a76472ccb.jpg 1x, /zh-cn/p/daily-paper-2026-10-14/cover_hu_50346ab4d0ea65cb.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #351c2280 0%, #e1d7c7C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-14</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-12/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-12" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-12/cover_hu_2c5dfd44d6a4b525.jpg" srcset="/zh-cn/p/daily-paper-2026-10-12/cover_hu_2c5dfd44d6a4b525.jpg 1x, /zh-cn/p/daily-paper-2026-10-12/cover_hu_667980c4b4511ab4.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #99634880 0%, #4f372cC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-12</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
