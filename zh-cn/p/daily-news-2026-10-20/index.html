@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本期共 9 条（5 条精评 + 4 条简报）。候选来自 ai0.news（10 月 19 日刊）、The Diary of AI（10 月 19 日刊）、AIToolsRecap（10 月 19 日刊）与 AI News Brief（10 月 19 日刊）。Anthropic 用工数据、网站封堵 AI agent、DeepSeek V4.1 Flash 本体与其 Search API、Character.AI 破产、Modal D 轮与 FTC 对 OpenAI 与 Anthropic 的调查要求均已于此前报道，本期剔除。部分数字为厂商、研究方或策展方自报口径，已在文中标注。\n">
+<title>AI News Daily | 2026-10-20</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-10-20/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI News Daily | 2026-10-20">
+<meta property='og:description' content="本期共 9 条（5 条精评 + 4 条简报）。候选来自 ai0.news（10 月 19 日刊）、The Diary of AI（10 月 19 日刊）、AIToolsRecap（10 月 19 日刊）与 AI News Brief（10 月 19 日刊）。Anthropic 用工数据、网站封堵 AI agent、DeepSeek V4.1 Flash 本体与其 Search API、Character.AI 破产、Modal D 轮与 FTC 对 OpenAI 与 Anthropic 的调查要求均已于此前报道，本期剔除。部分数字为厂商、研究方或策展方自报口径，已在文中标注。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-10-20/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-20T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI News Daily | 2026-10-20">
+<meta name="twitter:description" content="本期共 9 条（5 条精评 + 4 条简报）。候选来自 ai0.news（10 月 19 日刊）、The Diary of AI（10 月 19 日刊）、AIToolsRecap（10 月 19 日刊）与 AI News Brief（10 月 19 日刊）。Anthropic 用工数据、网站封堵 AI agent、DeepSeek V4.1 Flash 本体与其 Search API、Character.AI 破产、Modal D 轮与 FTC 对 OpenAI 与 Anthropic 的调查要求均已于此前报道，本期剔除。部分数字为厂商、研究方或策展方自报口径，已在文中标注。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-10-20/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-anthropic-承诺拿出-5-股权设立-public-benefit-fundipo-前先回答红利归谁">1. Anthropic 承诺拿出 5% 股权设立 Public Benefit Fund，IPO 前先回答「红利归谁」</a></li>
+        <li><a href="#2-美国国土安全部公开命令deepseek-及其实现全面退出联邦文职机构">2. 美国国土安全部公开命令：DeepSeek 及其「实现」全面退出联邦文职机构</a></li>
+        <li><a href="#3-minimax-发布-m31-flash把-agent-单任务成本再砍一半正面贴着-deepseek-打">3. MiniMax 发布 M3.1 Flash：把 agent 单任务成本再砍一半，正面贴着 DeepSeek 打</a></li>
+        <li><a href="#4-amazon-发布-torchneuron让-pytorch-代码原样跑上-trainium动的是-cuda-的软件护城河">4. Amazon 发布 TorchNeuron：让 PyTorch 代码原样跑上 Trainium，动的是 CUDA 的软件护城河</a></li>
+        <li><a href="#5-visual-studio-与-ssms-的-copilot-被一个尾随点绕过cvss-88-的远程代码执行根源是-ai-之前的老-bug">5. Visual Studio 与 SSMS 的 Copilot 被一个尾随点绕过：CVSS 8.8 的远程代码执行，根源是 AI 之前的老 bug</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#6-bernstein-称美国已宣布数据中心管线仅约-35-可信能源部同时以-442-亿美元贷款重启三座核电站">6. Bernstein 称美国已宣布数据中心管线仅约 35% 可信，能源部同时以 44.2 亿美元贷款重启三座核电站</a></li>
+        <li><a href="#7-韩国-158-家团体发起no-books-no-ai呼吁要求-ai-公司公开可核查的训练数据记录">7. 韩国 158 家团体发起「No Books, No AI」呼吁，要求 AI 公司公开可核查的训练数据记录</a></li>
+        <li><a href="#8-欧盟公布-en-18286ai-法案首个协调标准落在高风险系统的质量管理上">8. 欧盟公布 EN 18286：《AI 法案》首个协调标准，落在高风险系统的质量管理上</a></li>
+        <li><a href="#9-tenstorrent-融资-15-亿美元估值-62-亿美元jim-keller-选择独立做开放权重推理芯片">9. Tenstorrent 融资 15 亿美元、估值 62 亿美元，Jim Keller 选择独立做开放权重推理芯片</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-news-2026-10-20/">
+            <img alt="Featured image of post AI News Daily | 2026-10-20" height="608" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-news-2026-10-20/cover.jpg" srcset="/zh-cn/p/daily-news-2026-10-20/cover_hu_d740e4400b89a1c.jpg 800w, /zh-cn/p/daily-news-2026-10-20/cover.jpg 1080w" width="1080">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/news/" style="background-color: hsl(182, 60%, 84%); color: hsl(182, 60%, 15%);">
+                News
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-10-20/">AI News Daily | 2026-10-20</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-20T00:00:00Z'>Oct 20, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-anthropic-承诺拿出-5-股权设立-public-benefit-fundipo-前先回答红利归谁">1. Anthropic 承诺拿出 5% 股权设立 Public Benefit Fund，IPO 前先回答「红利归谁」</a></li>
+        <li><a href="#2-美国国土安全部公开命令deepseek-及其实现全面退出联邦文职机构">2. 美国国土安全部公开命令：DeepSeek 及其「实现」全面退出联邦文职机构</a></li>
+        <li><a href="#3-minimax-发布-m31-flash把-agent-单任务成本再砍一半正面贴着-deepseek-打">3. MiniMax 发布 M3.1 Flash：把 agent 单任务成本再砍一半，正面贴着 DeepSeek 打</a></li>
+        <li><a href="#4-amazon-发布-torchneuron让-pytorch-代码原样跑上-trainium动的是-cuda-的软件护城河">4. Amazon 发布 TorchNeuron：让 PyTorch 代码原样跑上 Trainium，动的是 CUDA 的软件护城河</a></li>
+        <li><a href="#5-visual-studio-与-ssms-的-copilot-被一个尾随点绕过cvss-88-的远程代码执行根源是-ai-之前的老-bug">5. Visual Studio 与 SSMS 的 Copilot 被一个尾随点绕过：CVSS 8.8 的远程代码执行，根源是 AI 之前的老 bug</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#6-bernstein-称美国已宣布数据中心管线仅约-35-可信能源部同时以-442-亿美元贷款重启三座核电站">6. Bernstein 称美国已宣布数据中心管线仅约 35% 可信，能源部同时以 44.2 亿美元贷款重启三座核电站</a></li>
+        <li><a href="#7-韩国-158-家团体发起no-books-no-ai呼吁要求-ai-公司公开可核查的训练数据记录">7. 韩国 158 家团体发起「No Books, No AI」呼吁，要求 AI 公司公开可核查的训练数据记录</a></li>
+        <li><a href="#8-欧盟公布-en-18286ai-法案首个协调标准落在高风险系统的质量管理上">8. 欧盟公布 EN 18286：《AI 法案》首个协调标准，落在高风险系统的质量管理上</a></li>
+        <li><a href="#9-tenstorrent-融资-15-亿美元估值-62-亿美元jim-keller-选择独立做开放权重推理芯片">9. Tenstorrent 融资 15 亿美元、估值 62 亿美元，Jim Keller 选择独立做开放权重推理芯片</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>本期共 9 条（5 条精评 + 4 条简报）。候选来自 ai0.news（10 月 19 日刊）、The Diary of AI（10 月 19 日刊）、AIToolsRecap（10 月 19 日刊）与 AI News Brief（10 月 19 日刊）。Anthropic 用工数据、网站封堵 AI agent、DeepSeek V4.1 Flash 本体与其 Search API、Character.AI 破产、Modal D 轮与 FTC 对 OpenAI 与 Anthropic 的调查要求均已于此前报道，本期剔除。部分数字为厂商、研究方或策展方自报口径，已在文中标注。</p>
+<h2 id="精评">精评
+</h2><h3 id="1-anthropic-承诺拿出-5-股权设立-public-benefit-fundipo-前先回答红利归谁">1. Anthropic 承诺拿出 5% 股权设立 Public Benefit Fund，IPO 前先回答「红利归谁」
+</h3><ul>
+<li>发生了什么：据 ai0.news 与 AI News Brief 汇总，Anthropic 于 10 月 18 日宣布设立全资实体 Public Benefit Fund，将公司 5% 的股份注入其中，用于非营利捐赠、直接向人群分发以及应对 AI 对劳动力市场的冲击；此后公司估值每上涨 50%，董事会可再追加 2%。AI News Brief 称，连同此前的承诺，公益性股权安排合计已超过 20%。该基金不得用于游说或政治捐赠，安排尚待股东批准。</li>
+<li>为什么重要：这是前沿实验室第一次把「AI 红利如何分配」写成股权结构，而不是慈善预算：用股权而非现金承诺，意味着它随公司估值自动放大、且直接稀释现有股东，这正是它需要股东投票的原因。时机同样关键——此举正值 Anthropic 筹备 IPO、且其 CEO 公开谈论行业「信任危机」之际，一个可见的财富转移机制，就是它给监管者与公众的回答模板，其他实验室会不会跟进比金额本身更值得看。</li>
+<li>关键细节：估值基线、首批受益方与治理结构均未披露；追加的 2% 由董事会酌情决定，并非自动触发。基金的具体投向（非营利捐赠、人群直分、劳动力冲击应对）已列明，但三者比例未定。</li>
+<li>不确定性：全部结构细节来自公司宣布与策展转述，股东批准结果、估值基线口径与第一笔实际支出都要等后续披露；在披露之前，它仍是一项承诺而非已发生的转移。</li>
+<li>来源：<a class="link" href="https://ai0.news/posts/2026-10-19-daily-digest/"  target="_blank" rel="noopener"
+    >ai0.news 报道</a></li>
+</ul>
+<h3 id="2-美国国土安全部公开命令deepseek-及其实现全面退出联邦文职机构">2. 美国国土安全部公开命令：DeepSeek 及其「实现」全面退出联邦文职机构
+</h3><ul>
+<li>发生了什么：据 The Diary of AI 对联邦公报文件的整理，美国国土安全部（DHS）10 月 19 日提交公开查阅的通知，正式公开其依据 2018 年《联邦采购供应链安全法》发出的第 2026-01 号排除与移除令：联邦文职机构须立即停止采购 DeepSeek 及其关联实体的产品，并移除已在用的产品；移除范围明确包括「使用 DeepSeek 实现开发的第三方产品与服务」。命令签署日期为 2026 年 7 月 24 日，正式刊登定于 10 月 20 日。</li>
+<li>为什么重要：这不是「政府设备禁用某个 App」的老故事：覆盖面从 DeepSeek 自家产品扩到了任何基于其模型构建的第三方软件，等于要求每一家卖软件给联邦文职机构的供应商自查自己的模型供应链。对使用 DeepSeek 开放权重做自托管或二次开发的厂商来说，「实现」一词如何解释，直接决定其政府业务是否合规——这是美国对华 AI 限制从出口管制走向采购与部署端清退的一步。</li>
+<li>关键细节：命令不适用于国家安全系统与敏感隔离信息系统，国防与情报系统由各自部门另行发令；机构可向 DHS 申请例外，由 CISA 书面批准；移除完成前须加强流量监控与日志。DHS 列出的风险包括服务器位于中国、账号注册收集个人信息与设备指纹、提示词可能把敏感数据送往中国，以及模型本身可能含恶意代码；依据包括 DeepSeek 自家隐私政策、众议院中共问题特设委员会 2025 年 4 月报告与安全公司 NowSecure 2025 年 2 月对 iOS 应用的发现，命令未描述任何一起涉及联邦机构的实际事件。</li>
+<li>不确定性：三大悬而未决：自托管的 DeepSeek 开放权重是否算「DeepSeek 实现」；7 月签署的命令为何拖到 10 月才公开；以签发日计的 60 天例外申请窗口在公开时是否已经过期。DeepSeek 是否回应或挑战该命令亦未定。</li>
+<li>来源：<a class="link" href="https://thediaryofai.com/policy-safety/dhs-deepseek-ban-federal-agencies/"  target="_blank" rel="noopener"
+    >The Diary of AI 报道</a></li>
+</ul>
+<h3 id="3-minimax-发布-m31-flash把-agent-单任务成本再砍一半正面贴着-deepseek-打">3. MiniMax 发布 M3.1 Flash：把 agent 单任务成本再砍一半，正面贴着 DeepSeek 打
+</h3><ul>
+<li>发生了什么：据 The Diary of AI 整理，MiniMax 于 10 月 19 日发布面向 agent、编程、计算机操作与网络安全任务的 M3.1 Flash，经自家 API、M Plan 订阅与 MiniMax Code 应用提供，定价为每百万输入 token 0.15 美元、输出 0.60 美元、缓存输入 0.015 美元，约为其 M3 在 OpenRouter 标价的一半。公司称其在线推理速度接近前代 3 倍、agent 任务使用成本低 70%，早期匿名版本 Space Bunny 在发布前已处理超过 200 万亿 token；权重「稍后发布」，The Decoder 称开放权重定于 10 月 23 日。</li>
+<li>为什么重要：这是继 DeepSeek V4.1 Flash 1017 之后一周内第二个贴着「单任务成本」打的低价 agent 模型：MiniMax 在自家成本图上逐项与 DeepSeek 对照——Automation-Bench 以不到 0.05 美元/任务拿到 62.8%，高于 DeepSeek 的 60.5%（约 0.09 美元）；但 DeepSWE 上形势反转，M3.1 Flash 的 73.7% 约需 0.30 美元，DeepSeek 的 77.0% 只需约 0.20 美元。低价 Flash 层的竞争已经细到「每个基准各自算账」，而不是一个总价标签。</li>
+<li>关键细节：厂商自报的 15 项基准表中，M3.1 Flash 仅 3 项居首，在与 DeepSeek V4.1 Flash 1017 共有分数的 6 项中输了 5 项。独立口径相对克制：Artificial Analysis 给其智能指数 42 分（M3 为 29 分），实测输出速度 120.1 token/秒，低于公司宣称的 170 以上中位数；The Decoder 还指出其在 AA-Omniscience 上幻觉率达 93%，主因是极少拒答。两家厂商的对照表在共有行上互相矛盾，如 Agents&rsquo; Last Exam 中 Claude Opus 5 被分别记为 32.2 与 28.6 分。</li>
+<li>不确定性：速度与成本降幅为 MiniMax 自报；参数量与架构细节未公布；权重是否在 10 月 23 日如期开放、采用何种许可证，以及预告中的 Pro 版本时间表，均待确认。</li>
+<li>来源：<a class="link" href="https://thediaryofai.com/models-releases/minimax-m3-1-flash/"  target="_blank" rel="noopener"
+    >The Diary of AI 报道</a></li>
+</ul>
+<h3 id="4-amazon-发布-torchneuron让-pytorch-代码原样跑上-trainium动的是-cuda-的软件护城河">4. Amazon 发布 TorchNeuron：让 PyTorch 代码原样跑上 Trainium，动的是 CUDA 的软件护城河
+</h3><ul>
+<li>发生了什么：据 The Diary of AI 整理，Amazon 于 10 月 19 日宣布开源后端 TorchNeuron，10 月 20 日开启公测（Apache 2.0），支持 Trainium2 与 Trainium3。它通过 PyTorch 自家的自定义设备扩展点把 Trainium 注册为标准设备，模型只需改一行 <code>.to('neuron')</code>，训练循环其余部分不变；eager 模式与 torch.compile 均可工作，FSDP2、张量并行与流水线并行等分布式工具按原样运行。此前在 Trainium 上跑 PyTorch 必须走专属接口，该后端自 2025 年末已在 30 多家公司与亚马逊内部团队私测。</li>
+<li>为什么重要：Nvidia 的护城河从来不只是芯片，而是围着 CUDA 长出来的软件习惯。TorchNeuron 的打法是让迁移成本趋近于零：Hugging Face 已建议用户直接用标准 Transformers、Diffusers 与 TRL，不再经旧的 Optimum Neuron 路径，前 100 个文本生成架构中开箱可跑的比例从 46% 升到 89%。Google 在 TPU 上做 TorchTPU 走的是同一条路——当主流加速器都变成「PyTorch 的一个设备」，选芯片就从改代码的工程问题变回比价格与供给的采购问题。</li>
+<li>关键细节：覆盖率好看但不完整：AWS 对约 10 万个 Hugging Face 模型的缩减配置扫描中，eager 通过率 95.6%、torch.compile 通过率 96.6%；但在 PyTorch 上游测试套件中，约 15.4 万个测试结果跳过了约 6.9 万个，其中约 3.9 万个是 Neuron 主动跳过、最大一组是约 2.2 万个尚不能原生运行的算子。首版不支持动态形状、稀疏张量、NestedTensor 与前向模式自动微分，FP8 与 TorchAO 量化仍在私测。客户数字为厂商口径：语音公司 Deepgram 称 Trainium 每美元处理的输入音频秒数比其现有 GPU 基线高约 60%，已上生产。</li>
+<li>不确定性：尚无与 Nvidia GPU 在同模型上的独立性能对照；动态形状等缺失特性的补齐时间未定；公测是否伴随实例价格或供给变化亦未公布。</li>
+<li>来源：<a class="link" href="https://thediaryofai.com/chips-infrastructure/aws-torchneuron-pytorch-trainium/"  target="_blank" rel="noopener"
+    >The Diary of AI 报道</a></li>
+</ul>
+<h3 id="5-visual-studio-与-ssms-的-copilot-被一个尾随点绕过cvss-88-的远程代码执行根源是-ai-之前的老-bug">5. Visual Studio 与 SSMS 的 Copilot 被一个尾随点绕过：CVSS 8.8 的远程代码执行，根源是 AI 之前的老 bug
+</h3><ul>
+<li>发生了什么：据安全研究者 Johann Rehberger 的原始披露（经 AI News Brief 列为本周首要信号），Visual Studio 与 SQL Server Management Studio 内置的 Copilot 存在路径校验绕过：校验逻辑用字符串比对拦截对受保护配置文件的写入，但 Windows 在落盘时会静默去掉文件名末尾的点，于是 <code>.mcp.json.</code> 能通过检查、实际却写中 <code>.mcp.json</code>。借此可改写 MCP 与编辑器设置、植入恶意 MCP 服务器或劫持搜索工具路径，最终实现任意命令执行；该路径还能经间接提示注入由第三方内容触发。漏洞编号 CVE-2026-103572，微软定级 Important、CVSS 8.8，研究者 8 月 4 日报告、微软 9 月 16 日确认、10 月 13 日随补丁星期二发布修复，奖金为 0 美元。</li>
+<li>为什么重要：AI News Brief 的判断值得直接引用其大意：头部开发工具的 agent 防护栏，栽的不是什么新型 AI 攻击，而是规范化处理这种前 AI 时代的经典 bug 类——检查时看到的名字和落盘时写入的名字不是同一个，防护就形同虚设。同一共享组件同时影响 Visual Studio（含 2022 等旧版本）与 SSMS，说明给 agent 划权限边界时，边界代码本身的审计强度远没有跟上 agent 获得的执行权限。</li>
+<li>关键细节：披露还包括另外几处同源问题：从受信任的扩展目录出发用 <code>..\</code> 路径穿越读取本不应读的文件、安装标识可被读出以拼出设置文件完整路径。修复方式是在校验前调用 GetFullPath 做规范化，同时堵住尾随点与部分路径穿越变体。</li>
+<li>不确定性：实际野外利用情况未见报道；同类规范化绕过在其他 IDE 与 agent 工具中是否普遍存在，尚无系统排查——这正是披露者呼吁的方向。</li>
+<li>来源：<a class="link" href="https://embracethered.com/blog/posts/2026/visual-studio-copilot-remote-code-execution/"  target="_blank" rel="noopener"
+    >Rehberger 原始披露</a></li>
+</ul>
+<h2 id="简报">简报
+</h2><h3 id="6-bernstein-称美国已宣布数据中心管线仅约-35-可信能源部同时以-442-亿美元贷款重启三座核电站">6. Bernstein 称美国已宣布数据中心管线仅约 35% 可信，能源部同时以 44.2 亿美元贷款重启三座核电站
+</h3><p>据 AIToolsRecap 汇总，Bernstein 经《金融时报》给出的判断是：美国已宣布的数据中心管线中只有约 35% 真正可信，RegLayer 则统计 2026 年已有 47 个以上大型项目被延迟、撤回或叫停，并网与审批是主因——这与昨日微软因电力退出 Loughton 的逻辑同源。同页的另一面是补电：美国能源部已放出合计 44.2 亿美元贷款，用于重启 Palisades（800MW）、Crane 清洁能源中心（原三哩岛 1 号机组，835MW）与 Duane Arnold（615MW）三座核电站，合计 2.25GW，主要供 AI 数据中心。一边是宣布的管线大半落不了地，一边是政府借钱把退役核电拉回来，电力账正在同时从两头收紧。（来源：<a class="link" href="https://aitoolsrecap.com/Blog/ai-news-19-october-2026"  target="_blank" rel="noopener"
+    >AIToolsRecap 报道</a>）</p>
+<h3 id="7-韩国-158-家团体发起no-books-no-ai呼吁要求-ai-公司公开可核查的训练数据记录">7. 韩国 158 家团体发起「No Books, No AI」呼吁，要求 AI 公司公开可核查的训练数据记录
+</h3><p>据 AIToolsRecap 报道，韩国出版人协会起草的全国呼吁截至 10 月 16 日已有 158 家机构与 321 名个人联署，将递交韩国政府、国会与 AI 公司。其要求很具体：AI 公司应记录训练用了哪些作品、来源为何、法律依据为何，且权利人应能核查该记录；权利人沉默不等于同意；小出版社与个人创作者应能以公平条件谈判而非被迫接受标准报价；政府不应以产业增长为名削减创作者权利。呼吁的背景标尺是 Bartz 诉 Anthropic 案 15 亿美元和解（2026 年 7 月 20 日获最终批准，覆盖约 48.2 万部作品、每部约 3,000 美元），训练数据争议正在从美国的诉讼和解，扩散成其他法域要求事前披露的立法压力。（来源：<a class="link" href="https://aitoolsrecap.com/Blog/korean-publishers-no-books-no-ai-anthropic-2026"  target="_blank" rel="noopener"
+    >AIToolsRecap 报道</a>）</p>
+<h3 id="8-欧盟公布-en-18286ai-法案首个协调标准落在高风险系统的质量管理上">8. 欧盟公布 EN 18286：《AI 法案》首个协调标准，落在高风险系统的质量管理上
+</h3><p>据 The Diary of AI 当日要点，欧盟已公布 EN 18286，这是《AI 法案》框架下的第一个协调标准，内容是高风险 AI 提供者的质量管理要求。协调标准的意义在于合规路径：符合协调标准通常意味着推定符合法案相应条款，于是抽象的法定义务第一次被翻译成可审计的质量管理体系要求——对要把高风险系统卖进欧盟的厂商来说，从现在起要准备的不再只是模型文档，而是整套留痕的生产流程。后续配套标准如何覆盖风险管理与数据治理，将决定这套推定合规的实际门槛。（来源：<a class="link" href="https://thediaryofai.com/ai-news-20261019/"  target="_blank" rel="noopener"
+    >The Diary of AI 报道</a>）</p>
+<h3 id="9-tenstorrent-融资-15-亿美元估值-62-亿美元jim-keller-选择独立做开放权重推理芯片">9. Tenstorrent 融资 15 亿美元、估值 62 亿美元，Jim Keller 选择独立做开放权重推理芯片
+</h3><p>据 TechCrunch 10 月 19 日报道，推理芯片公司 Tenstorrent 完成 15 亿美元融资，估值 62 亿美元，较 2024 年末的 26 亿美元翻倍有余；本轮由 Trace Capital 与 Innovation X 领投，Fidelity、T. Rowe Price 等参投。值得注意的背景是，五个月前曾传出 Intel 与 Qualcomm 有意以最高约 50 亿美元估值收购该公司；CEO Jim Keller 对 Bloomberg 表示，在其 Galaxy 服务器跑通 DeepSeek 模型之后，公司决定保持独立并继续融资。新资金将用于扩产面向开放权重模型推理与视频生成的芯片——开放权重生态越繁荣，这类「非 Nvidia 推理路线」的估值锚就越实。（来源：<a class="link" href="https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/"  target="_blank" rel="noopener"
+    >TechCrunch 报道</a>）</p>
+<p>值得继续跟踪：Anthropic 公益基金的估值基线与首批受益方披露、DHS 命令中「DeepSeek 实现」的解释口径与例外审批、MiniMax 是否在 10 月 23 日如期开放 M3.1 Flash 权重及许可证、TorchNeuron 公测后的独立性能对照、EN 18286 的后续配套标准。
+今日值得继续跟踪</p>
+<hr>
+
+    <blockquote>
+        <p>Photo by <a class="link" href="https://unsplash.com/photos/concentric-circles-with-ai-logo-in-center-bUybBtjhqEg"  target="_blank" rel="noopener"
+    >Zach M</a> on <a class="link" href="https://unsplash.com"  target="_blank" rel="noopener"
+    >Unsplash</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-18/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-18" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-18/cover_hu_20530708cca7f0a1.jpg" srcset="/zh-cn/p/daily-news-2026-10-18/cover_hu_20530708cca7f0a1.jpg 1x, /zh-cn/p/daily-news-2026-10-18/cover_hu_bf839aab9c123cbb.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #241c3b80 0%, #c5b9dbC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-18</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-17/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-17" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-17/cover_hu_d98cf4bcc7b1969c.jpg" srcset="/zh-cn/p/daily-news-2026-10-17/cover_hu_d98cf4bcc7b1969c.jpg 1x, /zh-cn/p/daily-news-2026-10-17/cover_hu_9f7174293fb3ccfe.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #aab3ba80 0%, #141415C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-17</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-16/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-16" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-16/cover_hu_5718a6cce2694875.jpg" srcset="/zh-cn/p/daily-news-2026-10-16/cover_hu_5718a6cce2694875.jpg 1x, /zh-cn/p/daily-news-2026-10-16/cover_hu_d34aa0a3b767f40a.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #0342a280 0%, #001353C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-16</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-15/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-15" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-15/cover_hu_ff5704b63aae6d49.jpg" srcset="/zh-cn/p/daily-news-2026-10-15/cover_hu_ff5704b63aae6d49.jpg 1x, /zh-cn/p/daily-news-2026-10-15/cover_hu_8539075b719520b0.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #6b90bd80 0%, #b1a5beC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-15</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-14/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-14" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-14/cover_hu_80829f25cb2045c7.jpg" srcset="/zh-cn/p/daily-news-2026-10-14/cover_hu_80829f25cb2045c7.jpg 1x, /zh-cn/p/daily-news-2026-10-14/cover_hu_fe4c6526108570c1.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #a8b2bf80 0%, #393a41C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-14</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
