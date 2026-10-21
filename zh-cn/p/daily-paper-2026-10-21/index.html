@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 8 篇精评 + 8 篇简报，共 16 篇，已对 7 天滚动窗口去重（候选池 967 篇 → 新鲜池 533 篇 → 音频方向初筛 22 篇 → 报道 16 篇；新鲜池与已报道集合无交集）。 来源：HuggingFace Daily Papers（10-19 期 66 篇 + 10-20 期 75 篇，去重后 141 篇；10-21 期在抓取时尚未发布，接口最大日期为 2026-10-20）；arXiv API（cs.CL / cs.LG / cs.AI / cs.SD / eess.AS / cs.CV 六类目按提交时间抓取，去重后新增 826 篇，本次未触发限流）。新鲜池定义为 HF 10-20 期收录或 arXiv 2026-10-19 提交的论文。 主题分布：大音频模型 2 篇、ASR 与语音数据 3 篇、音乐生成与结构分析 2 篇、实时语音 Agent 1 篇；简报覆盖语音对话生成、TTS、说话人验证、情感识别、音视频生成等 8 篇。 今日关键词：&ldquo;音频到底有没有被听见&rdquo;——AudioScorer 按问题给音频 token 打分、只留最有用的 10%；电路追踪却发现六个音频 LLM 平均 78% 的时候只听文本、不听声音；Heartbeat Thinking 则反过来利用&quot;正在听&quot;的这段时间提前推理和调工具。 精评 1. AudioScorer：长音频先按问题剪 token，只留 10% 也能答得最好 2610.26258\n">
+<title>AI Paper Daily | 2026-10-21</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-21/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-21">
+<meta property='og:description' content="概览 8 篇精评 + 8 篇简报，共 16 篇，已对 7 天滚动窗口去重（候选池 967 篇 → 新鲜池 533 篇 → 音频方向初筛 22 篇 → 报道 16 篇；新鲜池与已报道集合无交集）。 来源：HuggingFace Daily Papers（10-19 期 66 篇 + 10-20 期 75 篇，去重后 141 篇；10-21 期在抓取时尚未发布，接口最大日期为 2026-10-20）；arXiv API（cs.CL / cs.LG / cs.AI / cs.SD / eess.AS / cs.CV 六类目按提交时间抓取，去重后新增 826 篇，本次未触发限流）。新鲜池定义为 HF 10-20 期收录或 arXiv 2026-10-19 提交的论文。 主题分布：大音频模型 2 篇、ASR 与语音数据 3 篇、音乐生成与结构分析 2 篇、实时语音 Agent 1 篇；简报覆盖语音对话生成、TTS、说话人验证、情感识别、音视频生成等 8 篇。 今日关键词：&ldquo;音频到底有没有被听见&rdquo;——AudioScorer 按问题给音频 token 打分、只留最有用的 10%；电路追踪却发现六个音频 LLM 平均 78% 的时候只听文本、不听声音；Heartbeat Thinking 则反过来利用&quot;正在听&quot;的这段时间提前推理和调工具。 精评 1. AudioScorer：长音频先按问题剪 token，只留 10% 也能答得最好 2610.26258\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-21/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-21T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-21">
+<meta name="twitter:description" content="概览 8 篇精评 + 8 篇简报，共 16 篇，已对 7 天滚动窗口去重（候选池 967 篇 → 新鲜池 533 篇 → 音频方向初筛 22 篇 → 报道 16 篇；新鲜池与已报道集合无交集）。 来源：HuggingFace Daily Papers（10-19 期 66 篇 + 10-20 期 75 篇，去重后 141 篇；10-21 期在抓取时尚未发布，接口最大日期为 2026-10-20）；arXiv API（cs.CL / cs.LG / cs.AI / cs.SD / eess.AS / cs.CV 六类目按提交时间抓取，去重后新增 826 篇，本次未触发限流）。新鲜池定义为 HF 10-20 期收录或 arXiv 2026-10-19 提交的论文。 主题分布：大音频模型 2 篇、ASR 与语音数据 3 篇、音乐生成与结构分析 2 篇、实时语音 Agent 1 篇；简报覆盖语音对话生成、TTS、说话人验证、情感识别、音视频生成等 8 篇。 今日关键词：&ldquo;音频到底有没有被听见&rdquo;——AudioScorer 按问题给音频 token 打分、只留最有用的 10%；电路追踪却发现六个音频 LLM 平均 78% 的时候只听文本、不听声音；Heartbeat Thinking 则反过来利用&quot;正在听&quot;的这段时间提前推理和调工具。 精评 1. AudioScorer：长音频先按问题剪 token，只留 10% 也能答得最好 2610.26258\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-21/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-audioscorer长音频先按问题剪-token只留-10-也能答得最好">1. AudioScorer：长音频先按问题剪 token，只留 10% 也能答得最好</a></li>
+        <li><a href="#2-text-dominance音频-llm-在副语言冲突时平均-78-只信文本问题不在没听见">2. Text Dominance：音频 LLM 在副语言冲突时平均 78% 只信文本，问题不在&quot;没听见&quot;</a></li>
+        <li><a href="#3-mulacover翻唱生成别对齐波形拿一份可编辑的符号乐谱当控制面">3. MuLaCover：翻唱生成别对齐波形，拿一份可编辑的符号乐谱当控制面</a></li>
+        <li><a href="#4-proncftllm-asr-念错生词不是没听清是没学会先对发音再落字">4. PronCFT：LLM-ASR 念错生词不是没听清，是没学会&quot;先对发音再落字&rdquo;</a></li>
+        <li><a href="#5-monsoon低资源-asr-缺的不是模型是自发语音本身50-种语言的采集流水线">5. Monsoon：低资源 ASR 缺的不是模型，是&quot;自发语音&quot;本身——50 种语言的采集流水线</a></li>
+        <li><a href="#6-heartbeat-thinking语音-agent-别等用户说完听的期间就分批想分批调工具">6. Heartbeat Thinking：语音 Agent 别等用户说完——听的期间就分批想、分批调工具</a></li>
+        <li><a href="#7-ms-bench多人-asr-别再只报一个总数按重叠相似度间隔音质分层才看得见失败">7. MS-Bench：多人 ASR 别再只报一个总数——按重叠、相似度、间隔、音质分层才看得见失败</a></li>
+        <li><a href="#8-scale--sheetsage-msa音乐结构分析别只听音频歌词的复现本身就是副歌的证据">8. SCALE / SheetSage-MSA：音乐结构分析别只听音频，歌词的复现本身就是副歌的证据</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-speech-llms-that-breathe会呼吸的语音对话把非言语发声当一等公民建模">1. Speech LLMs That Breathe：会&quot;呼吸&quot;的语音对话——把非言语发声当一等公民建模</a></li>
+        <li><a href="#2-mcra--fala说话人验证的残差通路也能拿来做参数高效适配">2. MCRA + FALA：说话人验证的残差通路也能拿来做参数高效适配</a></li>
+        <li><a href="#3-seam低资源-tts-扩词表不用先录音从已知子词token算出新词嵌入">3. SEAM：低资源 TTS 扩词表不用先录音——从已知子词token&quot;算&quot;出新词嵌入</a></li>
+        <li><a href="#4-teleasr-amharic电话信道能把最好的-asr-模型-wer-从-023-打到-079">4. TeleASR-Amharic：电话信道能把最好的 ASR 模型 WER 从 0.23 打到 0.79</a></li>
+        <li><a href="#5-uniavc音视频创作合成一副权重先各学单模态再学跨模态还得错开噪声时刻表">5. UniAVC：音视频创作合成一副权重——先各学单模态，再学跨模态，还得错开噪声时刻表</a></li>
+        <li><a href="#6-sparc只发转录文本也会泄密llm-光看词就能认出这是同一个人说的">6. SPARC：只发转录文本也会泄密——LLM 光看词就能认出&quot;这是同一个人说的&rdquo;</a></li>
+        <li><a href="#7-ser-标签权威之争表演出来的情绪听众听到的情绪本就不是同一个真值">7. SER 标签权威之争：表演出来的情绪、听众听到的情绪，本就不是同一个真值</a></li>
+        <li><a href="#8-speech-bci-的-logit-平均训练时把多次试验的-logit-先平均音素分类-sota-直接-174-个点">8. Speech BCI 的 logit 平均：训练时把多次试验的 logit 先平均，音素分类 SOTA 直接 +17.4 个点</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-21/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-21" height="1200" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-21/cover.png" srcset="/zh-cn/p/daily-paper-2026-10-21/cover_hu_8d579f733519ba4.png 800w, /zh-cn/p/daily-paper-2026-10-21/cover.png 1600w" width="1600">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-21/">AI Paper Daily | 2026-10-21</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-21T00:00:00Z'>Oct 21, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-audioscorer长音频先按问题剪-token只留-10-也能答得最好">1. AudioScorer：长音频先按问题剪 token，只留 10% 也能答得最好</a></li>
+        <li><a href="#2-text-dominance音频-llm-在副语言冲突时平均-78-只信文本问题不在没听见">2. Text Dominance：音频 LLM 在副语言冲突时平均 78% 只信文本，问题不在&quot;没听见&quot;</a></li>
+        <li><a href="#3-mulacover翻唱生成别对齐波形拿一份可编辑的符号乐谱当控制面">3. MuLaCover：翻唱生成别对齐波形，拿一份可编辑的符号乐谱当控制面</a></li>
+        <li><a href="#4-proncftllm-asr-念错生词不是没听清是没学会先对发音再落字">4. PronCFT：LLM-ASR 念错生词不是没听清，是没学会&quot;先对发音再落字&rdquo;</a></li>
+        <li><a href="#5-monsoon低资源-asr-缺的不是模型是自发语音本身50-种语言的采集流水线">5. Monsoon：低资源 ASR 缺的不是模型，是&quot;自发语音&quot;本身——50 种语言的采集流水线</a></li>
+        <li><a href="#6-heartbeat-thinking语音-agent-别等用户说完听的期间就分批想分批调工具">6. Heartbeat Thinking：语音 Agent 别等用户说完——听的期间就分批想、分批调工具</a></li>
+        <li><a href="#7-ms-bench多人-asr-别再只报一个总数按重叠相似度间隔音质分层才看得见失败">7. MS-Bench：多人 ASR 别再只报一个总数——按重叠、相似度、间隔、音质分层才看得见失败</a></li>
+        <li><a href="#8-scale--sheetsage-msa音乐结构分析别只听音频歌词的复现本身就是副歌的证据">8. SCALE / SheetSage-MSA：音乐结构分析别只听音频，歌词的复现本身就是副歌的证据</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-speech-llms-that-breathe会呼吸的语音对话把非言语发声当一等公民建模">1. Speech LLMs That Breathe：会&quot;呼吸&quot;的语音对话——把非言语发声当一等公民建模</a></li>
+        <li><a href="#2-mcra--fala说话人验证的残差通路也能拿来做参数高效适配">2. MCRA + FALA：说话人验证的残差通路也能拿来做参数高效适配</a></li>
+        <li><a href="#3-seam低资源-tts-扩词表不用先录音从已知子词token算出新词嵌入">3. SEAM：低资源 TTS 扩词表不用先录音——从已知子词token&quot;算&quot;出新词嵌入</a></li>
+        <li><a href="#4-teleasr-amharic电话信道能把最好的-asr-模型-wer-从-023-打到-079">4. TeleASR-Amharic：电话信道能把最好的 ASR 模型 WER 从 0.23 打到 0.79</a></li>
+        <li><a href="#5-uniavc音视频创作合成一副权重先各学单模态再学跨模态还得错开噪声时刻表">5. UniAVC：音视频创作合成一副权重——先各学单模态，再学跨模态，还得错开噪声时刻表</a></li>
+        <li><a href="#6-sparc只发转录文本也会泄密llm-光看词就能认出这是同一个人说的">6. SPARC：只发转录文本也会泄密——LLM 光看词就能认出&quot;这是同一个人说的&rdquo;</a></li>
+        <li><a href="#7-ser-标签权威之争表演出来的情绪听众听到的情绪本就不是同一个真值">7. SER 标签权威之争：表演出来的情绪、听众听到的情绪，本就不是同一个真值</a></li>
+        <li><a href="#8-speech-bci-的-logit-平均训练时把多次试验的-logit-先平均音素分类-sota-直接-174-个点">8. Speech BCI 的 logit 平均：训练时把多次试验的 logit 先平均，音素分类 SOTA 直接 +17.4 个点</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>8 篇精评 + 8 篇简报</strong>，共 16 篇，已对 7 天滚动窗口去重（候选池 967 篇 → 新鲜池 533 篇 → 音频方向初筛 22 篇 → 报道 16 篇；新鲜池与已报道集合无交集）。</li>
+<li>来源：HuggingFace Daily Papers（10-19 期 66 篇 + 10-20 期 75 篇，去重后 141 篇；10-21 期在抓取时尚未发布，接口最大日期为 2026-10-20）；arXiv API（cs.CL / cs.LG / cs.AI / cs.SD / eess.AS / cs.CV 六类目按提交时间抓取，去重后新增 826 篇，本次未触发限流）。新鲜池定义为 HF 10-20 期收录或 arXiv 2026-10-19 提交的论文。</li>
+<li>主题分布：大音频模型 2 篇、ASR 与语音数据 3 篇、音乐生成与结构分析 2 篇、实时语音 Agent 1 篇；简报覆盖语音对话生成、TTS、说话人验证、情感识别、音视频生成等 8 篇。</li>
+<li>今日关键词：<strong>&ldquo;音频到底有没有被听见&rdquo;</strong>——AudioScorer 按问题给音频 token 打分、只留最有用的 10%；电路追踪却发现六个音频 LLM 平均 78% 的时候只听文本、不听声音；Heartbeat Thinking 则反过来利用&quot;正在听&quot;的这段时间提前推理和调工具。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-audioscorer长音频先按问题剪-token只留-10-也能答得最好">1. AudioScorer：长音频先按问题剪 token，只留 10% 也能答得最好
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26258"  target="_blank" rel="noopener"
+    >2610.26258</a></p>
+<p><strong>一句话</strong>：大音频模型的编码器吐出又密又长的 token 序列，长音频处理成本高得离谱——AudioScorer 用一个轻量打分器按用户问题给每个音频 token 评相关性，只保留 10% 时在 10 项语义与声学任务中的 7 项上拿到最好或并列最好。</p>
+<p><strong>贡献/机制</strong>：问题感知（question-aware）的音频 token 剪枝：轻量打分模型学习预测每个音频 token 对当前问题的有用程度。训练信号有两路——蒸馏冻结的大音频模型在答案梯度下的 token 显著性排名，以及下游答案监督本身。这与既有剪枝（靠注意力、表征相似度或时间采样等启发式，不显式学习&quot;对这个问题哪个 token 有用&quot;）形成对照。作者：Marwan Farag、Bin Yang。</p>
+<p><strong>数值结果</strong>：在 10% token 保留率下，AudioScorer 在 10 项任务中的 7 项取得最好或并列最好，任务覆盖语音识别、情感识别与音频场景分类。摘要未给出各任务的具体分数、被对比的剪枝方法名单，也未报告打分器本身的额外开销。</p>
+<p><strong>批判性分析</strong>：把剪枝目标从&quot;保信息&quot;改成&quot;保对这个问题有用的信息&quot;，是长音频推理里对的一步——同一段音频面对不同问题，该留的 token 本来就不同；用答案梯度显著性做蒸馏目标也避免了另造标注。但证据还薄：只有相对排名（7/10 最好或并列），没有绝对精度与延迟数字，10% 保留率下其余 3 项任务输给了谁、输多少都没说；梯度显著性来自被剪枝的那个冻结模型本身，打分器学到的是&quot;这个模型觉得什么重要&quot;，换模型是否可迁移未验证。对做 LALM 推理优化的人，这是比启发式采样更值得试的剪枝范式，但引用时应注明摘要未给绝对数值。</p>
+<p><strong>摘要译文</strong>：大音频语言模型（LALM）对语音、环境声、音乐和其他声学信息进行推理。然而，它们的音频编码器产生密集的 token 序列，使长音频的处理成本高昂。现有的音频剪枝方法使用注意力、表征相似度或时间采样等启发式来降低这一成本，但并不显式学习哪些 token 对给定问题最有用。我们提出 AudioScorer，一个轻量模型，按用户问题为音频 token 打分。它通过蒸馏冻结的 LALM 在答案梯度下的音频 token 排名、并结合下游答案监督来训练。与其他剪枝方法相比，AudioScorer 在 10% token 保留率下，在 10 项语义与声学任务中的 7 项上取得了最好或并列最好的结果，包括语音识别、情感识别和音频场景分类。</p>
+<hr>
+<h3 id="2-text-dominance音频-llm-在副语言冲突时平均-78-只信文本问题不在没听见">2. Text Dominance：音频 LLM 在副语言冲突时平均 78% 只信文本，问题不在&quot;没听见&quot;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.25599"  target="_blank" rel="noopener"
+    >2610.25599</a></p>
+<p><strong>一句话</strong>：当文字内容与声音里的情感、身份、讽刺互相矛盾时，六个音频 LLM 平均 78% 的时候跟着文本走——而且探针证明说话人身份在语言模型输入处仍可线性解码到天花板，失败不是感知不到，而是信息在生成途中被文本主张&quot;接力&quot;压过去了。</p>
+<p><strong>贡献/机制</strong>：在 LISTEN 式冲突条件下（转录文本与副语言线索故意不一致）测六个音频 LLM 的文本主导率，并做机制追踪：线性探针检查声学信息在 LM 输入处是否还在；back-patching（回补丁，此前用于修复词汇级文本主导）在此复现；注意力敲除（attention knockout）分别阻断主张经中间 token 的传播与答案位置到冲突主张的直连，定位影响的传播路径。代码与数据已公开：https://github.com/AdvayRoongta/audio-llm-mech-interp 。作者：Ankur Banerjee、Vishnu Guntakala、Danity Pike、Advay Roongta、Kevin Yang、Ruizhe Li。</p>
+<p><strong>数值结果</strong>：六个模型在文本与音频不一致样本上的平均文本主导率为 0.78（剔除讽刺后为 0.86）。被筛出的最文本主导模型中，说话人身份在 LM 输入处线性探针达天花板水平。Back-patching 在本设定无可测效果，且在其原始任务的复现中同样失败（n=300），作者明确把这一零结果视为&quot;无信息量&quot;而非不迁移的证据。注意力敲除若阻断主张经中间 token 的传播，可部分恢复音频依据的输出；阻断答案位置的直连则无效。该效应只出现在自由生成中，封闭式多选题里不出现。</p>
+<p><strong>批判性分析</strong>：这是今天方法论最诚实的一篇：发现干预无效时先复现原任务、发现原任务也失败就明说零结果不作数，避免了一个漂亮的错误结论。&ldquo;感知还在、生成不用&quot;的定位也把问题从编码器甩到了推理路径上，对评测的警告更实际——多选题基准可能系统性地看不见这类失败，凡是用音频 LLM 做热线、客服类自由生成评测的都该补冲突测试。局限在于：主导率是六个模型的平均，逐模型差异与模型名单在摘要里没展开；注意力敲除只是&quot;部分恢复&rdquo;，离可用的修复还远；冲突样本是构造出来的，真实场景中文本与副语言冲突的频率和形态未必如此。结论的适用范围应限定在&quot;构造冲突 + 自由生成&quot;这一设定内。</p>
+<p><strong>摘要译文</strong>：部署在危机热线、客户支持等场景的音频 LLM，只有当它们使用声学线索而不只是转录文本时，才比语音转文字流水线更有用。我们测试它们是否优先采用转录内容而非副语言线索（情感、说话人身份、讽刺），并在它们这样做时追踪其机制。在 LISTEN 式冲突条件下，六个音频 LLM 在文本与音频不一致的样本上的平均文本主导率为 0.78（剔除讽刺后为 0.86）。在筛出的最文本主导的模型中，探针显示说话人身份在语言模型的输入处仍可线性解码到天花板水平，因此失败不是感知性的。据报告能修复词汇级文本主导的 back-patching 在这里没有可测量的效果；但它在我们对其原始任务的复现中同样失败（n=300），因此我们将这一零结果视为无信息量，而不是不迁移的证据。注意力敲除通过阻断主张在开放式生成中经中间 token 的传播，部分恢复了以音频为依据的输出，而阻断答案位置与冲突主张的直接连接则没有效果。因此，主张的影响是通过一个中间接力传播的，而不是一条可切断的单一边。这一效应只出现在自由形式生成中、不出现在封闭集多项选择中，表明依赖该格式的基准可能系统性地对这类干预视而不见。代码和数据可在 <a class="link" href="https://github.com/AdvayRoongta/audio-llm-mech-interp"  target="_blank" rel="noopener"
+    >https://github.com/AdvayRoongta/audio-llm-mech-interp</a> 公开获取。</p>
+<hr>
+<h3 id="3-mulacover翻唱生成别对齐波形拿一份可编辑的符号乐谱当控制面">3. MuLaCover：翻唱生成别对齐波形，拿一份可编辑的符号乐谱当控制面
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26684"  target="_blank" rel="noopener"
+    >2610.26684</a></p>
+<p><strong>一句话</strong>：翻唱要保的是旋律与和弦、要改的是音色风格与结构——MuLaCover 把原曲抽成一份可编辑的符号 lead sheet 喂给预训练的文生歌基础模型，无需帧级对齐就能保住调性特征，还能自由变速、重排结构、分段生成，号称开源系统 SOTA、与 Suno-v5.5 有竞争力。</p>
+<p><strong>贡献/机制</strong>：以符号主旋律谱（lead sheet）为条件：生成被显式约束在调性内容（旋律 + 和弦进行）上，歌词与风格由文本指定。与既有方法用帧级特征做条件（把生成紧耦合到参考的时序与结构上，变速、结构重排、部分条件都做不了）相对，这里的条件是&quot;无对齐&quot;的。训练上另加一套课程：使用部分错配的音频-符号配对，提高多样性与鲁棒性。评测除客观指标与标准主观评分外，还做了深度专家访谈做细粒度诊断。音频样本与代码见项目页 <a class="link" href="https://mulalabs.ai/mulacover/"  target="_blank" rel="noopener"
+    >https://mulalabs.ai/mulacover/</a> 。作者：Lynn Yi、Zihan Xiong、Junjie Cao 等 20 人。</p>
+<p><strong>数值结果</strong>：摘要未给出任何具体数值：客观指标、主观评分的量表与得分、与 Suno-v5.5 的对比方式均未交代，只给&quot;开源系统中达到 SOTA、与领先商业模型 Suno-v5.5 有竞争力&quot;的定性结论。</p>
+<p><strong>批判性分析</strong>：控制面的选择是对的：翻唱的本质变量就是&quot;调性内容保真 vs 其他属性可变&quot;，把条件从帧级特征换成符号乐谱，等于把这一分解写进架构，变速与结构重排这类真实翻唱需求才有可能；部分错配配对的课程也是冲着&quot;条件不能被模型当成必须逐帧服从的模板&quot;去的。但整篇摘要零数字，&ldquo;与 Suno-v5.5 有竞争力&quot;在缺少盲评规模、评分维度与统计口径时只能当宣传语看；lead sheet 本身由原曲抽取，抽取错误会直接传导到生成，这条流水线的误差分析摘要未提；专家访谈是诊断工具，不是效果证据。对做音乐生成的人，符号条件这个接口值得借，效果主张等正文与试听再下判断。</p>
+<p><strong>摘要译文</strong>：翻唱是对既有作品的再演绎，最常见的做法是保留其调性内容——旋律与和弦进行——同时重塑其他音乐属性。这提示了一个用预训练音乐语言模型做生成式翻唱合成的自然形式：显式控制调性内容，同时通过文本指定歌词与风格。现有方法以帧级特征为条件，将生成紧耦合到参考的时序与结构上，限制了诸如速度变化、结构重排或部分条件等灵活性。为此，我们提出 MuLaCover，一个以可编辑的符号主旋律谱为条件、基于预训练文生歌基础模型的翻唱生成模型。我们的设计实现了无对齐控制：生成的输出保留源作品的调性特征而无需帧级对齐，允许灵活的时序、结构和分段级生成。我们进一步引入了一套使用部分错配的音频-符号配对的训练课程，提高了多样性和鲁棒性。我们用客观指标、标准主观评分以及提供细粒度诊断洞见的深度专家访谈对 MuLaCover 进行评测。实验表明，MuLaCover 在开源系统中取得了最先进的性能，并与 Suno-v5.5 等领先商业模型具有竞争力。音频样本和代码可在我们的项目页面 <a class="link" href="https://mulalabs.ai/mulacover/"  target="_blank" rel="noopener"
+    >https://mulalabs.ai/mulacover/</a> 获取。</p>
+<hr>
+<h3 id="4-proncftllm-asr-念错生词不是没听清是没学会先对发音再落字">4. PronCFT：LLM-ASR 念错生词不是没听清，是没学会&quot;先对发音再落字&rdquo;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.25766"  target="_blank" rel="noopener"
+    >2610.25766</a></p>
+<p><strong>一句话</strong>：LLM 式 ASR 总把没见过的生词替换成听起来像的熟词——PronCFT 训练模型先把语音转成音素、再拿音素去匹配上下文候选、最后输出匹配到的拼写，生词召回率从 59.89% 拉到 83.57%（+23.68 个百分点）。</p>
+<p><strong>贡献/机制</strong>：先拆病因：模型既没学过生词&quot;声音→拼写&quot;的映射，又有偏向熟词的&quot;先验压制&quot;；而单纯把候选发音给它，它可能只把音素标注当成抬高候选概率的标记、并不真的核对发音。PronCFT 用固定音素序列训练三步流程——转录音素、与上下文候选匹配、输出匹配拼写；训练时改动候选拼写而保持发音不变，迫使模型不能凭熟悉度选词。再用课程逐步撤掉中间输出，降低解码延迟并防止音素转录错误污染最终文本。作者：Yifan Xu、Kaixun Huang、Mengzhe Geng、Mingyu Cui、Shen Huang、Shidong Shang、Xunying Liu。</p>
+<p><strong>数值结果</strong>：在从开源基准过滤出的 OOV 测试集上，最终模型 PronCFT-C 把召回率从 59.89% 显著提高到 83.57%（+23.68 个百分点）。错误音素与拼写干扰测试表明，增益来自音素内容本身，而不是标注的存在。</p>
+<p><strong>批判性分析</strong>：这篇把&quot;上下文偏置&quot;（contextual biasing）里一个含糊的失败拆成了两个可分别验证的机制，还专门设计了&quot;换拼写不换发音&quot;的反事实训练来堵捷径，干扰测试也证明增益确实走发音通道——证据链比多数偏置工作完整。需要打折的地方：测试集是&quot;从开源基准过滤出的 OOV 集&quot;，过滤口径决定难度，83.57% 不能直接与通用 ASR 的 WER 数字比较；摘要只报召回，偏置方法的常见代价是误触发（把正常词错改成候选词），精确率与整体 WER 的变化未交代；最终模型撤掉了中间音素输出，&ldquo;能力已内化&quot;的结论主要由保留的发音线索使用能力间接支持。对做语音识别偏置与热词的人，这是今天最可直接借用的一套训练配方。</p>
+<p><strong>摘要译文</strong>：基于 LLM 的 ASR 系统经常把罕见词和未登录词（OOV）替换成听起来相似的熟悉词。造成这一错误的有两个因素：模型没有学过未见词的声音如何映射到其拼写，并且它可能偏好熟悉词而非实际所说的词，我们称这种失败为先验压制。仅提供候选发音可能没有帮助：模型可能把音素标注当作一个提高候选输出概率的标记，而不拿它的发音与语音核对。我们提出 PronCFT，它使用固定的音素序列，训练模型把语音转录成音素、将音素与上下文候选匹配、并输出匹配到的拼写。在训练期间，我们在保持发音不变的同时改变候选拼写，以抑制模型在不核对候选发音的情况下选择熟悉的拼写。随后一套课程逐步移除中间输出，以降低解码延迟并防止音素转录错误影响最终文本。模型保留下来的使用发音线索的能力表明，这种能力可以被内化。在从开源基准过滤出的 OOV 测试集上，最终模型 PronCFT-C 把召回率从 59.89% 显著提高到 83.57%（+23.68 个百分点）。错误音素和拼写干扰测试表明，这一增益取决于音素内容，而不是标注的存在。</p>
+<hr>
+<h3 id="5-monsoon低资源-asr-缺的不是模型是自发语音本身50-种语言的采集流水线">5. Monsoon：低资源 ASR 缺的不是模型，是&quot;自发语音&quot;本身——50 种语言的采集流水线
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26776"  target="_blank" rel="noopener"
+    >2610.26776</a></p>
+<p><strong>一句话</strong>：多数语言的 ASR 卡在没有准确转录的自发语音——Monsoon 用双人非脚本对话采集、自动分类筛查、五级人工复核与覆盖度选段做成可扩展框架，已采 50 种语言，同等数据量下语义 WER 比传统协议低 10–39%。</p>
+<p><strong>贡献/机制</strong>：数据采集框架而非模型：让成对贡献者进行无脚本对话，用自动分类器筛查录音，经五级人工复核修正转录，再按词汇与声学覆盖度挑选片段。已在 50 种语言上采集语音，论文分析了其中七个各 3,500 小时的语料。框架本身、质量控制模型与微调后的模型均发布。作者：Shobhit Banga、Manas Dhir、Aaditya Pareek 等 11 人。</p>
+<p><strong>数值结果</strong>：等量对比下，其质量分级流程把语义 WER 相对传统协议降低 10–39%。用 Monsoon 数据微调的 Whisper 与用公开语料训练的同架构基线相比：在基线自己的测试集上表现相当，在对话类基准上语义 WER 降低 20–44 个点。增益可迁移到第二种架构，且随数据量增长。</p>
+<p><strong>批判性分析</strong>：立论朴素但成立：低资源 ASR 的瓶颈排序里，数据质量与&quot;自发性&quot;确实排在架构前面，而朗读式语料与真实对话的分布差是公开语料的老问题。评测设计也克制——特意在&quot;基线自己的测试集&quot;上只求相当、在对话基准上才报大胜，说明作者清楚增益来自分布匹配而非全面碾压。要问的是成本与口径：五级人工复核的单位小时成本、50 种语言各自的实际规模与质检强度摘要都没给，&ldquo;可扩展&quot;最终取决于这条流水线的人力经济学；语义 WER 是相对温和的指标，逐词 WER 的差距未报。对做多语言语音数据的人，框架与质控模型开源是实打实的资产，引用增益时应注明是对对话分布而言。</p>
+<p><strong>摘要译文</strong>：对大多数语言来说，自动语音识别（ASR）受限的与其说是模型架构，不如说是缺乏准确转录的自发语音。我们提出 Monsoon，一个大规模采集此类数据的框架。它引出成对贡献者之间的无脚本对话，用自动分类器筛查录音，通过五级人工复核修正转录，并挑选片段以实现词汇和声学覆盖。它已在 50 种语言中采集了语音；我们分析了其中七个 3,500 小时的语料。在同等体量下，其质量阶段把语义词错误率（WER）相对传统协议降低了 10–39%。与用公开语料训练的同架构基线相比，在 Monsoon 上微调的 Whisper 在基线自己的测试集上表现相当，并在对话基准上把语义 WER 降低了 20–44 个点。这些增益可迁移到第二种架构，并随数据量增长。我们发布该框架、其质量控制模型以及微调后的模型。</p>
+<hr>
+<h3 id="6-heartbeat-thinking语音-agent-别等用户说完听的期间就分批想分批调工具">6. Heartbeat Thinking：语音 Agent 别等用户说完——听的期间就分批想、分批调工具
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26233"  target="_blank" rel="noopener"
+    >2610.26233</a></p>
+<p><strong>一句话</strong>：用户还没说完，请求里可行动的信息往往已经到了——Heartbeat Thinking 用周期性的&quot;心跳&quot;调用读取最新部分转录、让已在跑的推理与工具调用跑完而不是被新输入打断，在 FDBench v3 上工具覆盖率 +16 个百分点、最终响应延迟降 36.4%。</p>
+<p><strong>贡献/机制</strong>：针对既有投机式做法的缺陷：按块（chunk）切分或&quot;一更新就中断重来&quot;会把工具调用在参数还没凑齐时截断，把计算时间与语音更新耦合死。Heartbeat 的做法是：输入更新时发起新的 Thinker 调用，但允许正在进行的调用与已派发的工具执行完毕；周期性调用读取最新部分转录与一份共享的已完成推理/工具结果记录，用这些结果补齐缺失参数、发起依赖调用，使准备工作跨越多次语音更新持续推进。作者：Zhenyu Zhang、Kewei Fu、Yongqi Tong、Chenzhi Zheng、Wei Wu、Jiang-Ming Yang、Jianshe Li。</p>
+<p><strong>数值结果</strong>：在 SpeechFCEval、FDBench v3 与 AudioCRAG 上，Heartbeat 相对 SHANKS 式窗口基线提高了聚合投机工具覆盖率或检索复用率，对最终任务质量的影响则因基准而异。FDBench v3 上工具覆盖率提高 16 个百分点，平均最终响应延迟降低 36.4%。</p>
+<p><strong>批判性分析</strong>：抓住的真问题是&quot;投机计算的作废方式&rdquo;：语音流式输入下，早期推理被推翻不等于该作废——参数已完整的工具调用、已拿到的检索结果都是可复用资产，&ldquo;不中断 + 共享记录&quot;是对这一点的直接回应，延迟收益也给得具体。但账要算全：心跳调用本身是重复计算，token/算力成本涨了多少摘要没报，延迟降 36.4% 是否以数倍的推理支出换来未知；&ldquo;对最终任务质量的影响因基准而异&quot;意味着至少有些设定下质量是受损或持平的，投机准备也可能把错误参数固化进后续调用。三个基准均为作者选定的语音工具类基准，真实电话级噪声与打断场景未覆盖。对做实时语音 Agent 的人，这是比&quot;边听边生成&quot;更务实的范式，落地前先测自己的成本-延迟曲线。</p>
+<p><strong>摘要译文</strong>：使用工具的语音 Agent 经常让用户在语音结束后还要等待，即使可行动的信息在请求更早的时候就已经到达。投机式方法在语音期间就开始工作，但按块切分或一更新就中断的生成，可能在工具调用的参数完整之前就将其截断。这把计算时间与语音更新耦合起来，限制了能提前完成的有用工作。我们提出 Heartbeat Thinking，它通过新的 Thinker 调用处理更新后的输入，同时允许正在进行的调用和已派发的工具执行完毕。周期性调用读取最新的部分转录，以及一份已完成的推理和工具结果的共享记录。这些结果有助于补齐缺失的参数并发起依赖调用，使准备工作能在语音更新之间持续推进。在 SpeechFCEval、FDBench v3 和 AudioCRAG 上，Heartbeat 相对 SHANKS 式窗口基线提高了聚合投机工具覆盖率或检索复用率，对最终任务质量的影响则因基准而异。在 FDBench v3 上，它把工具覆盖率提高了 16 个百分点，并把平均最终响应延迟降低了 36.4%。结果表明，在语音期间保留正在进行的计算的心跳式思考范式，可以把聆听时间转化为可复用的准备，从而实现更快、更有能力的语音 Agent 响应。</p>
+<hr>
+<h3 id="7-ms-bench多人-asr-别再只报一个总数按重叠相似度间隔音质分层才看得见失败">7. MS-Bench：多人 ASR 别再只报一个总数——按重叠、相似度、间隔、音质分层才看得见失败
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.25824"  target="_blank" rel="noopener"
+    >2610.25824</a></p>
+<p><strong>一句话</strong>：多说话人 ASR 被端到端语音大模型推进得很快，但旧基准覆盖的条件太窄——MS-Bench 把每条录音按说话人数、重叠比例、说话人相似度、轮次间隔与声学质量五个维度分层，评测发现重叠同时伤词识别与说话人归属，其余因素则各伤一处，总分会把这些全抹平。</p>
+<p><strong>贡献/机制</strong>：条件分层（condition-stratified）基准：整合公开与内部基准，沿五个维度刻画每条录音并划出条件区间，覆盖多种场景、语言与录音设备；在此之上评测有代表性的商业系统、开源系统与级联系统，分别看词识别、说话人归属与时间预测三类错误如何随条件变化。演示页：https://aslp-lab.github.io/MS-Bench/ 。作者：Chunjiang He、Zheng Zi、Bingshen Mu、Yurun Li、Jingyi Wang、Zhonghua Fu、Lei Xie（西北工业大学 ASLP 实验室）。</p>
+<p><strong>数值结果</strong>：摘要以定性发现为主：重叠（overlap）同时影响词识别与说话人归属；其他因素对识别、归属或时间预测表现出更任务特异的影响。摘要未给出各系统的具体 WER/归属错误率数值与排名。</p>
+<p><strong>批判性分析</strong>：评测方法论的价值在&quot;分层&quot;本身：多人场景的失败本来就是条件依赖的——安静会议室里的分数对嘈杂多人重叠毫无预测力，分层报告是把基准从排行榜改回诊断工具。短板是摘要层面信息不足：整合了哪些公开基准、内部数据占比多少、&ldquo;广泛覆盖&quot;的语言与设备清单都没列，基准的可复现性取决于内部数据是否开放；结论&quot;总分会掩盖失败模式&quot;方向上几乎必然成立，真正的信息量在分层后的具体数字里，而摘要一个都没给。对做多人 ASR 与会议转录的人，选型时应直接查它的分层表，而不是引用这篇的定性结论。</p>
+<p><strong>摘要译文</strong>：多说话人自动语音识别（MSASR）随着端到端语音大语言模型的发展迅速进步。然而，现有基准覆盖的特定多说话人条件和场景范围有限，难以在多样的条件和场景下揭示系统局限。我们提出 MS-Bench，一个用于细粒度 MSASR 评测的条件分层基准。MS-Bench 整合了公开和内部基准，并沿五个维度刻画每条录音：说话人数量、重叠比例、说话人相似度、说话人轮次间隔和声学质量。我们将这些维度划分为条件区间，构建了覆盖广泛条件、场景、语言和录音设备的 MS-Bench。通过评测有代表性的商业、开源和级联系统，我们发现重叠既影响词汇识别也影响说话人归属，而其他因素对识别、归属或时间预测表现出更任务特异性的影响。这些结果表明，仅看聚合指标会掩盖重要的 MSASR 失败模式，并凸显了条件分层评测的价值。MS-Bench 旨在揭示当前 MSASR 系统在特定条件下的局限，并指导未来的改进。</p>
+<hr>
+<h3 id="8-scale--sheetsage-msa音乐结构分析别只听音频歌词的复现本身就是副歌的证据">8. SCALE / SheetSage-MSA：音乐结构分析别只听音频，歌词的复现本身就是副歌的证据
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26253"  target="_blank" rel="noopener"
+    >2610.26253</a></p>
+<p><strong>一句话</strong>：段落边界与功能标签需要的信息并不一样，歌词的重复出现更是现成的结构线索——SCALE 给边界检测与功能标注各设一条音频通路、再引入带时间戳的歌词复现来修正副歌预测，在 HarmonixSet 上 HR.5F 与 HR3F 分别比 SOTA 的 SongFormer 高 3.5 与 4.2 个百分点。</p>
+<p><strong>贡献/机制</strong>：两部分。一是数据：从 SheetSage 派生构建 SheetSage-MSA，含来自 9,010 首歌曲的 13,880 条清洗后的片段标注、约 82.5 小时标注音频，缓解细粒度 MSA 标注稀缺。二是模型 SCALE：为边界检测与功能标注设分离的任务专用音频通路（分别建模局部转换与长程结构上下文），并纳入带时间戳的歌词及其复现来细化副歌预测。演示页（含代码）：https://multimodal-music-research-lab.github.io/SCALE/ 。作者：Hongbing Li、Yaolong Ju。</p>
+<p><strong>数值结果</strong>：在 HarmonixSet 基准上，SCALE 的 HR.5F 与 HR3F 分别超过现有 SOTA SongFormer 3.5 与 4.2 个百分点，准确率（ACC）提高 0.9 个百分点。</p>
+<p><strong>批判性分析</strong>：两个设计点都对着任务结构：边界是局部事件、功能是全局判断，共用一个编码器本就是妥协；歌词复现与副歌的对应关系是音乐学常识，把它做成显式证据比指望音频模型自己悟出来更可靠，数据资产也可复用。需要留意：主结果只在一个基准（HarmonixSet）上报告，MSA 领域基准间迁移性历来一般；歌词证据依赖带时间戳歌词的可用性，对无歌词、歌词不对齐或器乐曲目，方法的退化情况摘要未说；13,880 条片段来自 9,010 首歌，片段级划分若与歌曲级划分混用会有泄漏风险，需查正文划分方式。对做音乐信息检索的人，歌词复现这条线索值得直接借到自己的结构分析管线里。</p>
+<p><strong>摘要译文</strong>：音乐结构分析（MSA）旨在识别音乐中的功能标签及其边界。尽管最近取得了进展，仍存在三个挑战。第一，MSA 的细粒度标注稀缺。第二，现有系统常在边界检测和功能标注之间共享一个编码器，尽管两者所需的信息不同。第三，大多数端到端系统只使用音频，忽略了来自歌词的结构线索。为解决这些问题，我们构建了 SheetSage-MSA，一个源自 SheetSage 的 MSA 数据集，包含来自 9,010 首歌曲的 13,880 条清洗后的片段标注和约 82.5 小时标注音频。我们进一步提出 SCALE（来自音频与歌词证据的结构上下文），它使用分离的任务专用音频通路来建模局部转换和长程结构上下文，并纳入带时间戳的歌词和歌词复现来细化副歌预测。在 HarmonixSet 基准上，SCALE 的 HR.5F 和 HR3F 分别比现有的最先进方法 SongFormer 高出 3.5 和 4.2 个百分点，同时 ACC 提高了 0.9 个百分点。包含源代码的交互式演示页面也可在 <a class="link" href="https://multimodal-music-research-lab.github.io/SCALE/"  target="_blank" rel="noopener"
+    >https://multimodal-music-research-lab.github.io/SCALE/</a> 获取。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="1-speech-llms-that-breathe会呼吸的语音对话把非言语发声当一等公民建模">1. Speech LLMs That Breathe：会&quot;呼吸&quot;的语音对话——把非言语发声当一等公民建模
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.25942"  target="_blank" rel="noopener"
+    >2610.25942</a></p>
+<p>覆盖 13 类非言语发声（NVV：呼吸、情感、话语功能等），用自动化合成流水线构建符合人类对话规范的自然对话数据集，再以多阶段微调加 NVV 感知的 GRPO 强化两种不同范式的语音交互模型（VocalNet 与 VITA-Qinyu）在共情互动与角色扮演对话中的表现力。方向对——当前语音模型的&quot;不自然&quot;很大一部分正是缺了这些声音事件——但摘要只说&quot;大幅提升&rdquo;、未给任何数值与评测口径，效果待正文核验。</p>
+<h3 id="2-mcra--fala说话人验证的残差通路也能拿来做参数高效适配">2. MCRA + FALA：说话人验证的残差通路也能拿来做参数高效适配
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.25892"  target="_blank" rel="noopener"
+    >2610.25892</a></p>
+<p>给自监督语音模型做说话人验证适配时，不只插适配器改输出，还动残差通路与跨层特征选择：流形约束残差适配器（MCRA）用 Sinkhorn 归一化小矩阵在分组隐藏维度间交换信息，帧自适应层聚合（FALA）则逐帧计算层权重。相对冻结 WavLM + 固定层加权和基线，VoxCeleb1-O 上 EER 相对降低 22.4%、CN-Celeb 上 2.9%，可训练参数仅为 WavLM-Large 的 0.0009% 与 0.0016%。两个数据集增益差距悬殊，CN-Celeb 上 2.9% 接近噪声量级，引用时应分开报。</p>
+<h3 id="3-seam低资源-tts-扩词表不用先录音从已知子词token算出新词嵌入">3. SEAM：低资源 TTS 扩词表不用先录音——从已知子词token&quot;算&quot;出新词嵌入
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26252"  target="_blank" rel="noopener"
+    >2610.26252</a></p>
+<p>零音频初始化方法：为未见 token 从已知子 token 构造嵌入，用谱滤波保留时间上的音素顺序，再以闭式岭回归把新嵌入对齐到预训练条件流形。在三种语言、两种 TTS 架构上，SEAM 用最多四分之一的训练数据即接近或达到基线表现，相对随机初始化与均值池化把样本复杂度降低 75%。解决的是低资源/跨语言 TTS 扩词表的冷启动问题，方法轻量且可复现；但&quot;接近基线&quot;是在其选定语言与架构上的结论，外推到声学条件差异更大的语言需再验证。</p>
+<h3 id="4-teleasr-amharic电话信道能把最好的-asr-模型-wer-从-023-打到-079">4. TeleASR-Amharic：电话信道能把最好的 ASR 模型 WER 从 0.23 打到 0.79
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26448"  target="_blank" rel="noopener"
+    >2610.26448</a></p>
+<p>面向阿姆哈拉语的电信条件 ASR 基准：分析真实电信录音中的主要退化，构建覆盖多类信道条件、环境扰动与电信领域变化的评测。结果触目：严重电信退化下最佳模型 WER 从 0.23 升至 0.79（相对 +243%）；扩大训练数据并做电信感知增强后，最佳配置在极端噪声下取得 23.6% 的相对 WER 降低。配套发布电信领域数据。提醒很实际：干净录音室里刷出的分数，在电话网络上可能直接不可用。</p>
+<h3 id="5-uniavc音视频创作合成一副权重先各学单模态再学跨模态还得错开噪声时刻表">5. UniAVC：音视频创作合成一副权重——先各学单模态，再学跨模态，还得错开噪声时刻表
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.24791"  target="_blank" rel="noopener"
+    >2610.24791</a></p>
+<p>统一音视频创作模型：先在单模态数据上把生成与编辑能力学满，再把稀缺的配对数据专门用于跨模态对应；同时给音视频两条分支设解耦的噪声调度（视频信息密度高、需要更久的高噪声组织结构，音频更稀疏可更早落定），并用单模态干净的条件任务监督非对称工作流，得到&quot;保住一模态、拿它约束另一模态&quot;的意图感知编辑与单分支自我修正。来自 HF 10-20 期（upvotes 7），代码：https://github.com/HKUST-LongGroup/UniAVC 。摘要未给量化结果，任务覆盖的广度是其主要卖点。</p>
+<h3 id="6-sparc只发转录文本也会泄密llm-光看词就能认出这是同一个人说的">6. SPARC：只发转录文本也会泄密——LLM 光看词就能认出&quot;这是同一个人说的&rdquo;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.25265"  target="_blank" rel="noopener"
+    >2610.25265</a></p>
+<p>语音匿名化一直盯着声学信号，这篇问的是转录文本本身还剩多少说话人信息。SPARC 基准由两个播客语料构建，含 12,500+ 名说话人、150 万条质检后话语，附性别、年龄、口音标签；评测五个归因模型与三个 LLM 做身份与属性验证：LLM 对手仅凭文本就能区分同说话人配对，性别与口音标签验证也高于随机。缓解线索是：只发布短探针文本（50 词）对最强对手的削弱最大。来自 HF 10-20 期（upvotes 2）。对做语音数据发布与隐私评估的人，这是脱敏清单上要补的一项。</p>
+<h3 id="7-ser-标签权威之争表演出来的情绪听众听到的情绪本就不是同一个真值">7. SER 标签权威之争：表演出来的情绪、听众听到的情绪，本就不是同一个真值
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26446"  target="_blank" rel="noopener"
+    >2610.26446</a></p>
+<p>用意大利语表演语料 Emozionalmente（每条录音同时有诱发表演标签与五位听众判断）对比三种&quot;标签权威&rdquo;：表达条件、听众多数票、用完整投票分布训练。冻结的 XLS-R、HuBERT、WavLM 表征加匹配探针显示：恢复表达条件比预测听众多数票更容易，但两者本是不同问题；听众一致性越弱，多数票作为硬目标越脆。用完整投票分布训练不改变模型的硬决策类别，却让其概率分配更贴近听众的备选判断，尤其在模糊片段上。结论是评测必须声明自己在预测哪种权威——对情绪识别数据集的标注与报告规范有直接参考价值。</p>
+<h3 id="8-speech-bci-的-logit-平均训练时把多次试验的-logit-先平均音素分类-sota-直接-174-个点">8. Speech BCI 的 logit 平均：训练时把多次试验的 logit 先平均，音素分类 SOTA 直接 +17.4 个点
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26347"  target="_blank" rel="noopener"
+    >2610.26347</a></p>
+<p>非侵入式脑机接口受信噪比所限，常用同一刺激的多次试验聚合，但聚合放在输入端还是输出端一直各行其是。这篇系统比较六种聚合范式（包含训练时 logit 平均与三种新提出的注意力变体），横跨三个数据集、四项任务、两种组大小：最简单的训练时 logit 平均在 7 个设定中的 6 个胜出，并在 2025 PNPL 竞赛的音素分类设定上以平衡准确率超出原冠军 17.4 个绝对百分点刷新 SOTA。作者还指出它与联合集成训练的理论联系对既有解释构成挑战。虽属神经解码而非音频建模本身，但&quot;聚合位置是架构选择&quot;这一结论对语音多试验/多通道融合有迁移价值。</p>
+<hr>
+<p><em>本日 16 篇（8 精评 + 8 简报）来自 HF Daily Papers 10-20 期与 arXiv 2026-10-19 提交批次的新鲜候选池：两源本次均正常返回（arXiv 未限流、HF 10-21 期尚未发布），音频方向初筛 22 篇中精选 16 篇，其余因主题重复或证据偏薄未收录。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/20208"  target="_blank" rel="noopener"
+    >Oyashiro-sama</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-20/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-20" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-20/cover_hu_b7b2e3b86351d00c.jpg" srcset="/zh-cn/p/daily-paper-2026-10-20/cover_hu_b7b2e3b86351d00c.jpg 1x, /zh-cn/p/daily-paper-2026-10-20/cover_hu_7bd40f44e1460497.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #49334180 0%, #e8d0d8C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-18/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-18" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-18/cover_hu_2cc337b87b93e57.jpg" srcset="/zh-cn/p/daily-paper-2026-10-18/cover_hu_2cc337b87b93e57.jpg 1x, /zh-cn/p/daily-paper-2026-10-18/cover_hu_4ac198be026f2969.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #473d5580 0%, #dad6caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-18</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-17/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-17" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-17/cover_hu_f4e2f4c32b12f697.jpg" srcset="/zh-cn/p/daily-paper-2026-10-17/cover_hu_f4e2f4c32b12f697.jpg 1x, /zh-cn/p/daily-paper-2026-10-17/cover_hu_7feb69185f5a366c.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #60546880 0%, #ede4e6C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-17</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-16/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-16" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-16/cover_hu_9e348d60672d24c4.png" srcset="/zh-cn/p/daily-paper-2026-10-16/cover_hu_9e348d60672d24c4.png 1x, /zh-cn/p/daily-paper-2026-10-16/cover_hu_e74a0b7dda7bb4f4.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #cad15d80 0%, #393036C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-16</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-15/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-15" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-15/cover_hu_2190797d2d920686.jpg" srcset="/zh-cn/p/daily-paper-2026-10-15/cover_hu_2190797d2d920686.jpg 1x, /zh-cn/p/daily-paper-2026-10-15/cover_hu_3db5ca8d32e3c12b.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #dfba6a80 0%, #f0f5caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-15</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本期共 10 条（5 条精评 + 5 条简报）。候选来自 The Diary of AI（10 月 20 日刊）、AI News Brief（10 月 20 日刊）、AI Weekly（10 月 20 日刊）、The Neuron（10 月 20 日刊）、SiliconNoon（10 月 20 日刊）与 AIToolsRecap（10 月 20 日刊）。Tenstorrent 融资、MiniMax M3.1 Flash、TorchNeuron 本体、DHS 的 DeepSeek 移除令本体、Anthropic 初级招聘数据与 Anthropic 公益基金均已于此前报道，本期剔除；DeepSeek V4.1 Flash 模型本体此前亦已报道，本期只报其新开源的推理引擎。部分数字为厂商、研究方或策展方自报口径，已在文中标注。\n">
+<title>AI News Daily | 2026-10-21</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-10-21/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI News Daily | 2026-10-21">
+<meta property='og:description' content="本期共 10 条（5 条精评 + 5 条简报）。候选来自 The Diary of AI（10 月 20 日刊）、AI News Brief（10 月 20 日刊）、AI Weekly（10 月 20 日刊）、The Neuron（10 月 20 日刊）、SiliconNoon（10 月 20 日刊）与 AIToolsRecap（10 月 20 日刊）。Tenstorrent 融资、MiniMax M3.1 Flash、TorchNeuron 本体、DHS 的 DeepSeek 移除令本体、Anthropic 初级招聘数据与 Anthropic 公益基金均已于此前报道，本期剔除；DeepSeek V4.1 Flash 模型本体此前亦已报道，本期只报其新开源的推理引擎。部分数字为厂商、研究方或策展方自报口径，已在文中标注。\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-news-2026-10-21/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-21T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI News Daily | 2026-10-21">
+<meta name="twitter:description" content="本期共 10 条（5 条精评 + 5 条简报）。候选来自 The Diary of AI（10 月 20 日刊）、AI News Brief（10 月 20 日刊）、AI Weekly（10 月 20 日刊）、The Neuron（10 月 20 日刊）、SiliconNoon（10 月 20 日刊）与 AIToolsRecap（10 月 20 日刊）。Tenstorrent 融资、MiniMax M3.1 Flash、TorchNeuron 本体、DHS 的 DeepSeek 移除令本体、Anthropic 初级招聘数据与 Anthropic 公益基金均已于此前报道，本期剔除；DeepSeek V4.1 Flash 模型本体此前亦已报道，本期只报其新开源的推理引擎。部分数字为厂商、研究方或策展方自报口径，已在文中标注。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-news-2026-10-21/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-deepseek-开源-deepinfer把跑-v41-flash-的生产推理引擎也交出来了">1. DeepSeek 开源 DeepInfer：把跑 V4.1 Flash 的生产推理引擎也交出来了</a></li>
+        <li><a href="#2-google-与-meta-发布-torchtpupytorch-改一个设备名就能上-tpu与亚马逊只隔一天">2. Google 与 Meta 发布 TorchTPU：PyTorch 改一个设备名就能上 TPU，与亚马逊只隔一天</a></li>
+        <li><a href="#3-anthropic-草版-s-1-泄露半年营收-163-亿美元与-807-亿美元的会计亏损要一起读">3. Anthropic 草版 S-1 泄露：半年营收 163 亿美元，与 807 亿美元的「会计亏损」要一起读</a></li>
+        <li><a href="#4-微软称前沿模型不可信任转而卖监控别人家-agent-的守卫">4. 微软称前沿模型「不可信任」，转而卖监控别人家 agent 的守卫</a></li>
+        <li><a href="#5-mistral-发布-voxtral-3语音竞争从转写准确率转向整套-agent-栈与可打断性">5. Mistral 发布 Voxtral 3：语音竞争从转写准确率转向整套 agent 栈与可打断性</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#6-一名黑客用-ai-agent-攻破-100-多家公司网站全程只花了几千美元">6. 一名黑客用 AI agent 攻破 100 多家公司网站，全程只花了几千美元</a></li>
+        <li><a href="#7-inception-发布-mercury-3扩散语言模型自报-1068-token秒数字好看但全是自家考卷">7. Inception 发布 Mercury 3：扩散语言模型自报 1,068 token/秒，数字好看但全是自家考卷</a></li>
+        <li><a href="#8-openai-收购-orchestra-biorosalind-从帮科学家想问题伸到替药企盯项目">8. OpenAI 收购 Orchestra Bio：Rosalind 从「帮科学家想问题」伸到「替药企盯项目」</a></li>
+        <li><a href="#9-swe-bench-pro-v2-大修基准731-道题修掉或退役-480-道先堵上两个最便宜的作弊口子">9. SWE-Bench Pro V2 大修基准：731 道题修掉或退役 480 道，先堵上两个最便宜的作弊口子</a></li>
+        <li><a href="#10-meta-暂停-muse-分享功能6800-多段共享对话因链接可猜而躺在公开-dns-记录里">10. Meta 暂停 Muse 分享功能：6,800 多段共享对话因链接可猜而躺在公开 DNS 记录里</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-news-2026-10-21/">
+            <img alt="Featured image of post AI News Daily | 2026-10-21" height="720" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-news-2026-10-21/cover.jpg" srcset="/zh-cn/p/daily-news-2026-10-21/cover_hu_1d4712fca4d1b75f.jpg 800w, /zh-cn/p/daily-news-2026-10-21/cover.jpg 1080w" width="1080">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/news/" style="background-color: hsl(182, 60%, 84%); color: hsl(182, 60%, 15%);">
+                News
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-news-2026-10-21/">AI News Daily | 2026-10-21</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-21T00:00:00Z'>Oct 21, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-deepseek-开源-deepinfer把跑-v41-flash-的生产推理引擎也交出来了">1. DeepSeek 开源 DeepInfer：把跑 V4.1 Flash 的生产推理引擎也交出来了</a></li>
+        <li><a href="#2-google-与-meta-发布-torchtpupytorch-改一个设备名就能上-tpu与亚马逊只隔一天">2. Google 与 Meta 发布 TorchTPU：PyTorch 改一个设备名就能上 TPU，与亚马逊只隔一天</a></li>
+        <li><a href="#3-anthropic-草版-s-1-泄露半年营收-163-亿美元与-807-亿美元的会计亏损要一起读">3. Anthropic 草版 S-1 泄露：半年营收 163 亿美元，与 807 亿美元的「会计亏损」要一起读</a></li>
+        <li><a href="#4-微软称前沿模型不可信任转而卖监控别人家-agent-的守卫">4. 微软称前沿模型「不可信任」，转而卖监控别人家 agent 的守卫</a></li>
+        <li><a href="#5-mistral-发布-voxtral-3语音竞争从转写准确率转向整套-agent-栈与可打断性">5. Mistral 发布 Voxtral 3：语音竞争从转写准确率转向整套 agent 栈与可打断性</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#6-一名黑客用-ai-agent-攻破-100-多家公司网站全程只花了几千美元">6. 一名黑客用 AI agent 攻破 100 多家公司网站，全程只花了几千美元</a></li>
+        <li><a href="#7-inception-发布-mercury-3扩散语言模型自报-1068-token秒数字好看但全是自家考卷">7. Inception 发布 Mercury 3：扩散语言模型自报 1,068 token/秒，数字好看但全是自家考卷</a></li>
+        <li><a href="#8-openai-收购-orchestra-biorosalind-从帮科学家想问题伸到替药企盯项目">8. OpenAI 收购 Orchestra Bio：Rosalind 从「帮科学家想问题」伸到「替药企盯项目」</a></li>
+        <li><a href="#9-swe-bench-pro-v2-大修基准731-道题修掉或退役-480-道先堵上两个最便宜的作弊口子">9. SWE-Bench Pro V2 大修基准：731 道题修掉或退役 480 道，先堵上两个最便宜的作弊口子</a></li>
+        <li><a href="#10-meta-暂停-muse-分享功能6800-多段共享对话因链接可猜而躺在公开-dns-记录里">10. Meta 暂停 Muse 分享功能：6,800 多段共享对话因链接可猜而躺在公开 DNS 记录里</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>本期共 10 条（5 条精评 + 5 条简报）。候选来自 The Diary of AI（10 月 20 日刊）、AI News Brief（10 月 20 日刊）、AI Weekly（10 月 20 日刊）、The Neuron（10 月 20 日刊）、SiliconNoon（10 月 20 日刊）与 AIToolsRecap（10 月 20 日刊）。Tenstorrent 融资、MiniMax M3.1 Flash、TorchNeuron 本体、DHS 的 DeepSeek 移除令本体、Anthropic 初级招聘数据与 Anthropic 公益基金均已于此前报道，本期剔除；DeepSeek V4.1 Flash 模型本体此前亦已报道，本期只报其新开源的推理引擎。部分数字为厂商、研究方或策展方自报口径，已在文中标注。</p>
+<h2 id="精评">精评
+</h2><h3 id="1-deepseek-开源-deepinfer把跑-v41-flash-的生产推理引擎也交出来了">1. DeepSeek 开源 DeepInfer：把跑 V4.1 Flash 的生产推理引擎也交出来了
+</h3><ul>
+<li>发生了什么：据 The Diary of AI 与 AI Weekly 整理，DeepSeek 于 10 月 20 日以 Apache 2.0 开源 DeepInfer，即其自称支撑 V4.1 Flash 大规模生产服务的推理框架，目前仅支持 V4.1 Flash 的离线推理，可跑 Nvidia SM100 GPU 与华为 Ascend 950 NPU。框架主要构建于 vLLM 之上、吸收 SGLang 与 TensorRT-LLM 的做法，包含 FlashMLA、DeepGEMM、DeepEP 等自研内核、MoE 专家并行、名为 DSpark 的投机解码、结构化输出，以及 Nvidia 硬件上的确定性采样与 batch 不变推理；另附 deepseek-recipe 工具，使自托管部署的提示格式与官方 API 对齐。</li>
+<li>为什么重要：开放权重解决的是「能不能拿到模型」，推理引擎解决的是「能不能便宜地跑起来」——后者才是 DeepSeek 此前真正的成本护城河。这次它把生产栈的主体交出来，等于把自托管方的起点抬到接近官方服务的水平；同时首版即写入 Ascend 支持，与其被曝计划在华为芯片上做预训练的方向一致，推理栈正在成为中美两条硬件路线各自的标准件。</li>
+<li>关键细节：开源并不完整：KV cache 系统、prefill/decode 分离的 disaggregated serving 与跨副本负载均衡三部分未随本次发布，官方 Q&amp;A 称其与内部基础设施耦合过紧、「尚未完全开源」，这与官方 X 帖文「now fully open source」的措辞有出入。公开版 FlashMLA 缺一项手工优化、解码内核慢 5%–10%，端到端差距至多 5%（DeepSeek 自述）。高效部署的起步规模不小：官方口径为 prefill 64 卡 + decode 64 卡；其单集群自报每天服务 155 万亿 token、非高峰价下收入约 38 美元/GPU·小时，KV 缓存存储约 100PB SSD，agent 流量保留 3 天、聊天流量 7 天。性能图为厂商自测：decode 约 26,000 token/秒/GPU（每用户约 100 token/秒时），低负载下单用户可超 300 token/秒。</li>
+<li>不确定性：尚无与 vLLM、SGLang 在同模型同硬件上的独立对照；KV cache 与负载均衡代码是否、何时补齐未定；主要云厂商是否采用 DeepInfer 托管 DeepSeek 端点亦未定。</li>
+<li>来源：<a class="link" href="https://thediaryofai.com/open-source/deepseek-deepinfer-inference-engine/"  target="_blank" rel="noopener"
+    >The Diary of AI 报道</a></li>
+</ul>
+<h3 id="2-google-与-meta-发布-torchtpupytorch-改一个设备名就能上-tpu与亚马逊只隔一天">2. Google 与 Meta 发布 TorchTPU：PyTorch 改一个设备名就能上 TPU，与亚马逊只隔一天
+</h3><ul>
+<li>发生了什么：据 The Diary of AI 整理，Google 于 10 月 20 日与 Meta 的 PyTorch 团队联合开源 TorchTPU，把 TPU 注册为标准 PyTorch 设备，迁移方式是把 <code>model.to(&quot;cuda&quot;)</code> 改成 <code>model.to(&quot;tpu&quot;)</code>；同日共发布四个仓库，包括基于 TorchTPU 的 vLLM 与 SGLang 推理引擎（已在预览客户与 Meta 生产环境运行）以及 TorchTitan 的 TPU 支持。后端覆盖约 450 个 PyTorch 核心算子，支持 eager、<code>torch.compile</code> 与可比 eager 快 50% 以上的 DeferAndFuse 模式，以及 DDP、FSDP、DTensor 等分布式工具；旧的 PyTorch/XLA 路线需要改代码、编译慢且无 eager 模式。Hugging Face 表示 Transformers 与 Diffusers 已可直接以 <code>device_map=&quot;tpu&quot;</code> 加载，不再需要 Optimum TPU。</li>
+<li>为什么重要：这与昨日报道的亚马逊 TorchNeuron 是同一打法、只隔一天发布：两家都在把自家芯片变成「PyTorch 的一个设备」，让选芯片从改代码的工程问题变回比价格与供给的采购问题。Meta 的位置尤其微妙：它既是 PyTorch 的出品方、又已在生产中跑 Google 的 TPU 推理引擎——框架中立层正在被云厂商与框架方合谋做实，CUDA 的软件锁定又薄了一层。</li>
+<li>关键细节：覆盖数字均为 Google 自测，且口径与 TorchNeuron 不可直接比：TorchTPU 称 4,917 个 Hugging Face 模型中 4,821 个（98%）可无崩溃运行、657 个代表性架构中 638 个（97%）与 GPU 结果在精度阈值内一致；TorchNeuron 的 89% 数的是架构而非单个模型。训练对照：Qwen3 235B MoE 在 64 张 TPU v7 上以 TorchTitan 跑出 1,828 token/秒，约为 JAX/MaxText 1,937 的 94%；从 1,024 扩到 8,192 张芯片时 MFU 保持在 26.9%–28.8%。成本口径：TPU v7 配 vLLM 引擎在 SemiAnalysis 的 InferenceX 8K/1K 基准上降至 2.01 美分/百万 token（9 月首秀时为 3.6 美分）。</li>
+<li>不确定性：动态形状默认未开启、FlexAttention 尚不支持，集合通信默认模式可拖慢端到端 30%–40%；与 Nvidia GPU 在同模型上的独立性能对照仍缺失；TPU 价格与供给是否随之调整未公布。</li>
+<li>来源：<a class="link" href="https://thediaryofai.com/chips-infrastructure/google-torchtpu-pytorch-tpu/"  target="_blank" rel="noopener"
+    >The Diary of AI 报道</a></li>
+</ul>
+<h3 id="3-anthropic-草版-s-1-泄露半年营收-163-亿美元与-807-亿美元的会计亏损要一起读">3. Anthropic 草版 S-1 泄露：半年营收 163 亿美元，与 807 亿美元的「会计亏损」要一起读
+</h3><ul>
+<li>发生了什么：据 SiliconNoon 转述《华尔街日报》审阅的 Anthropic 草版 S-1 招股书，Anthropic 2026 年上半年营收 163 亿美元，上年同期为 11 亿美元（AI News Brief 称约为 14.8 倍），其中约 20% 来自两个客户；同期净亏损 807 亿美元，主要由与估值上升挂钩的可转换工具会计费用构成、而非现金流出。上半年算力与基础设施支出约 90 亿美元（上年同期 23 亿美元），文件列出的未来算力义务达数千亿美元量级、路径可至 7,500 亿美元。AI News Brief 当晚更新称，高盛与摩根士丹利正牵头承销、目标 2026 年 11 月上市。</li>
+<li>为什么重要：这是前沿实验室经济学第一次有硬数字：经营层面接近打平的生意，被十年期的产能承诺绑住——风险形态既不是烧钱创业公司、也不是已盈利巨头，而是「用未来的算力合同对赌需求」。约 20% 营收来自两个客户的集中度、以及义务规模相对营收的倍数，是读这份文件时最该记住的两个数；同日 Anthropic 还被曝与 Nscale 洽谈第二笔约 450 亿美元算力交易（仅洽谈），正是义务清单变成现实订单的样子。</li>
+<li>关键细节：807 亿美元亏损以非现金会计费用为主，不能与现金消耗混读；163 亿美元营收与 90 亿美元半年算力支出并置，才是单位经济的真实图景。承销与 11 月时间表来自 AI News Brief 对报道的更新，尚未见 Anthropic 官方确认。</li>
+<li>不确定性：泄露的是草版文件，正式申报时数字与义务口径都可能变化；在公开申报出现前，全部数字应按「据 WSJ 审阅的草稿」理解。</li>
+<li>来源：<a class="link" href="https://siliconnoon.com/today-in-ai-october-20-2026/"  target="_blank" rel="noopener"
+    >SiliconNoon 报道</a></li>
+</ul>
+<h3 id="4-微软称前沿模型不可信任转而卖监控别人家-agent-的守卫">4. 微软称前沿模型「不可信任」，转而卖监控别人家 agent 的守卫
+</h3><ul>
+<li>发生了什么：据 AI News Brief 整理，微软安全负责人 Hayete Gallot 于 10 月 19 日公开写道：「前沿模型，无论出自谁家，都不可信任。」微软随之发布 Guardian Agents 与一项 Defender 功能，可识别 60 多种 agent 类型——包括竞品的 Claude Code 与 Codex——并加入英伟达牵头的跨厂商 Open Agent Safety Platform（AI News Brief 称参与公司逾百家）。The Neuron 的版本给出了企业侧形态：相关控制进入 Microsoft 365 E7 与 Project Perception，可按单个 agent 评估风险，管理员能限制其变更权限、要求人工批准或直接关停。</li>
+<li>为什么重要：一年前企业用 agent，主要靠实验室自家内置的护栏——权限弹窗、沙箱、安全评测都由做模型的人自己出题自己判。微软这次是头部平台方公开拒绝这套自评逻辑，并把「管 agent」做成由不做模型的一方出售的生意。如果这个判断被企业采购接受，agent 的权限边界将由第三方守卫而非模型厂商定义，实验室的产品话语权会被切走一块。</li>
+<li>关键细节：被纳入监控的名单点名了 Claude Code 与 Codex 等竞品 agent，而非只管微软自家 Copilot，这是它作为「跨厂商警察」定位的关键；Open Agent Safety Platform 的跨厂商属性也强化了这一叙事。</li>
+<li>不确定性：Guardian Agents 的识别准确率、误报与绕过情况尚无独立测试；定价与具体可用范围未明；各实验室是否配合这类第三方监控亦未定。</li>
+<li>来源：<a class="link" href="https://ai-news-brief.com/"  target="_blank" rel="noopener"
+    >AI News Brief 报道</a></li>
+</ul>
+<h3 id="5-mistral-发布-voxtral-3语音竞争从转写准确率转向整套-agent-栈与可打断性">5. Mistral 发布 Voxtral 3：语音竞争从转写准确率转向整套 agent 栈与可打断性
+</h3><ul>
+<li>发生了什么：据 Mistral 官方发布（经 SiliconNoon 汇总），Voxtral 3 是一套三件套：转写模型 Voxtral Small Transcribe 3 覆盖 50 多种语言，带说话人分离、领域词表偏置与轮次结束检测，实时版在 35 多种语言上延迟低于 500ms；语音合成 Voxtral Speech 3 覆盖 35 多种语言、50 多种方言，可按指令调整情绪、语速与重音，定价 13 美元/百万字符，Pro Voice 可用 30 分钟音频做专业级声音复刻；外加基于 LiveKit 的语音 agent SDK，把监听、推理、工具调用与说话串成一条流式管线，单轮在一秒内完成、支持随时打断，可走 SIP 与 WebRTC 接入电话系统。全栈语音 agent 以 Mistral Small 4 做推理时定价 4 美分/分钟，可经欧盟托管 API 使用或自托管部署。ElevenLabs 同日下午亦发布两款面向实时对话的 speech-to-speech 模型（据 SiliconNoon）。</li>
+<li>为什么重要：两家语音厂商同日发「全栈」而非单点模型，说明语音赛道的胜负手已经从 WER 转向轮次延迟与可打断性：用户体感里「像不像真人」主要由这两项决定。Mistral 的差异化不在分数而在部署：欧盟托管或自带权重自托管的主权叙事，正对着美国 API 厂商最难跟的一块市场。</li>
+<li>关键细节：转写基准为 Mistral 自报口径：其称在 FLEURS 45 语言宏平均上领先 Whisper、Scribe v2 与 Gemini 3.5 Transcribe；Mini 转写版为 4B 参数、0.0035 美元/分钟。多项 TTS 内部评测的裁判为 Gemini 3.8 Flash，属厂商自办评测，横向比较时需打折。</li>
+<li>不确定性：独立第三方复测尚未出现；agent SDK 的真实通话延迟与打断表现在运营商网络与噪声环境下如何，仍待生产数据验证。</li>
+<li>来源：<a class="link" href="https://mistral.ai/news/voxtral-3/"  target="_blank" rel="noopener"
+    >Mistral 官方发布</a></li>
+</ul>
+<h2 id="简报">简报
+</h2><h3 id="6-一名黑客用-ai-agent-攻破-100-多家公司网站全程只花了几千美元">6. 一名黑客用 AI agent 攻破 100 多家公司网站，全程只花了几千美元
+</h3><p>据 The Neuron 转述路透社报道，一名讲中文的黑客把入侵中复杂的技术步骤大量交给 AI agent 执行、本人只做有限介入，攻破了 100 多家公司的网站（AI News in 5 Minutes 点名包括 John Deere 与 SharkNinja），整场行动据报只花了几千美元。意义不在单次入侵手法，而在成本结构：当攻击者可以给系统一个目标、让 agent 自行推进攻击链时，单人可尝试的入侵数量级变了，防御方必须按「攻击规模自动化」重新算账——这与本期微软推 agent 守卫恰好是同一枚硬币的两面。（来源：<a class="link" href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-october-20-2026/"  target="_blank" rel="noopener"
+    >The Neuron 报道</a>）</p>
+<h3 id="7-inception-发布-mercury-3扩散语言模型自报-1068-token秒数字好看但全是自家考卷">7. Inception 发布 Mercury 3：扩散语言模型自报 1,068 token/秒，数字好看但全是自家考卷
+</h3><p>据 Unite.AI 整理，Inception 于 10 月 19 日发布扩散式语言模型 Mercury 3，并行起草并多轮修正 token 而非逐个生成，公司称在 Nvidia GPU 上达 1,068 token/秒、上下文从 Mercury 2.5 的 26 万扩到 100 万 token，标价每百万输入 0.20 美元、输出 0.70 美元（首发五折）。其自报基准表在 12 项中 8 项领先 GPT-6 Luna 与 Claude Haiku 5.5（据 MarkTechPost 整理），但测速所用 GPU 型号未披露、自家不同页面对加速倍数的说法在 5 倍与 4–8 倍之间不一致，第三方复测的样本也很小（如 50 道网页任务完成 25 道）。扩散路线能否规模化仍是开放问题，这版的正确读法是「值得盯」，不是「已证明」。（来源：<a class="link" href="https://www.unite.ai/inception-releases-mercury-3-its-flagship-diffusion-llm/"  target="_blank" rel="noopener"
+    >Unite.AI 报道</a>）</p>
+<h3 id="8-openai-收购-orchestra-biorosalind-从帮科学家想问题伸到替药企盯项目">8. OpenAI 收购 Orchestra Bio：Rosalind 从「帮科学家想问题」伸到「替药企盯项目」
+</h3><p>据 The Diary of AI 整理，OpenAI 于 10 月 20 日宣布收购 Orchestra Bio，后者的平台让 AI agent 监控与协调药物开发项目——如某批生产失败会顺延临床试验时，自动找出受影响的活动与时间线并比对应对方案，由人做最终决定——团队与技术并入 OpenAI 的生命科学套件 Rosalind（GPT-Rosalind 模型 + Rosalind Workbench）。交易金额未披露（Axios 最先报道）。与 Anthropic 今年 4 月约 4 亿美元股票收购 Coefficient Bio（做药物发现）对照，两家买的是管线两端：Anthropic 买「发现」，OpenAI 这次买「已立项项目的推进管理」，实验室向垂直行业下沉的打法正在分化。（来源：<a class="link" href="https://thediaryofai.com/business-funding/openai-orchestra-bio-acquisition/"  target="_blank" rel="noopener"
+    >The Diary of AI 报道</a>）</p>
+<h3 id="9-swe-bench-pro-v2-大修基准731-道题修掉或退役-480-道先堵上两个最便宜的作弊口子">9. SWE-Bench Pro V2 大修基准：731 道题修掉或退役 480 道，先堵上两个最便宜的作弊口子
+</h3><p>据 SiliconNoon 转述的 arXiv 论文（2610.24206），SWE-Bench Pro V2 由 23 名签约工程师耗时 404 小时、以 agentic 审计、专家裁定与盲态重做的方式修复或退役了原 731 道题中的 480 道，每道改后的题面都由第二名工程师仅凭文字独立解出验证；硬化后的评测协议把网络访问限制在模型端点、并在干净容器中重新判分，堵住「直接去上游取修复补丁」与「把 diff 之外的改动算成功绩」两个口子。在存活的 642 道题上，前沿 agent 最高解出 99.4%，另设 51 道 Hard 子集把各系统拉开到 52.9%–98.0%。这篇论文真正的主题不是分数，而是 agent 基准腐烂的速度与维护成本。（来源：<a class="link" href="https://arxiv.org/abs/2610.24206"  target="_blank" rel="noopener"
+    >arXiv 论文</a>）</p>
+<h3 id="10-meta-暂停-muse-分享功能6800-多段共享对话因链接可猜而躺在公开-dns-记录里">10. Meta 暂停 Muse 分享功能：6,800 多段共享对话因链接可猜而躺在公开 DNS 记录里
+</h3><p>据 SiliconNoon 报道，安全机构 Claroc 的研究者发现 6,800 多段 Meta Muse 的共享对话出现在公开 DNS 记录中：分享链接由标题加随机 ID 构成，仅凭主机名即可重建完整 URL，被暴露的内容包括一家营销公司的营收复盘、一份贷款申请与某职场全年的员工日历；Meta 发言人向 Ars Technica 表示已暂停分享功能、复查链接可发现性。背景是 Muse 应用自 9 月发布以来下载量达 1,090 万（Sensor Tower 口径，其中美国 1,020 万）——增长越快，这类「分享即公开」的设计缺陷波及面越大；The Diary of AI 当日亦以「安全公司发现共享 Muse 对话含商业细节」列入要点。各家实验室的分享功能几乎都踩过一次同类坑，这次轮到 Meta。（来源：<a class="link" href="https://thediaryofai.com/ai-news-20261020/"  target="_blank" rel="noopener"
+    >The Diary of AI 当日刊</a>）</p>
+<p>值得继续跟踪：DeepSeek 是否补齐 DeepInfer 的 KV cache 与负载均衡代码、Anthropic 正式 S-1 申报与 11 月上市时间表、Anthropic 与 Nscale 第二笔约 450 亿美元算力交易是否落定、OpenCode 被盗密钥盗刷的后续规模与退款进展、Mercury 3 的独立复测、MiniMax M3.1 Flash 权重与英伟达 Bolt E4B 在 10 月 23 日是否如期发布。
+今日值得继续跟踪</p>
+<hr>
+
+    <blockquote>
+        <p>Photo by <a class="link" href="https://unsplash.com/photos/data-word-formed-by-binary-digits-oCITZDtlSZQ"  target="_blank" rel="noopener"
+    >Brecht Corbeel</a> on <a class="link" href="https://unsplash.com"  target="_blank" rel="noopener"
+    >Unsplash</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-20/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-20" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-20/cover_hu_5be94abed0b8f3e4.jpg" srcset="/zh-cn/p/daily-news-2026-10-20/cover_hu_5be94abed0b8f3e4.jpg 1x, /zh-cn/p/daily-news-2026-10-20/cover_hu_b2f3066b03218619.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #272b3080 0%, #272b30C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-18/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-18" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-18/cover_hu_20530708cca7f0a1.jpg" srcset="/zh-cn/p/daily-news-2026-10-18/cover_hu_20530708cca7f0a1.jpg 1x, /zh-cn/p/daily-news-2026-10-18/cover_hu_bf839aab9c123cbb.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #241c3b80 0%, #c5b9dbC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-18</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-17/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-17" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-17/cover_hu_d98cf4bcc7b1969c.jpg" srcset="/zh-cn/p/daily-news-2026-10-17/cover_hu_d98cf4bcc7b1969c.jpg 1x, /zh-cn/p/daily-news-2026-10-17/cover_hu_9f7174293fb3ccfe.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #aab3ba80 0%, #141415C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-17</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-16/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-16" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-16/cover_hu_5718a6cce2694875.jpg" srcset="/zh-cn/p/daily-news-2026-10-16/cover_hu_5718a6cce2694875.jpg 1x, /zh-cn/p/daily-news-2026-10-16/cover_hu_d34aa0a3b767f40a.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #0342a280 0%, #001353C0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-16</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-news-2026-10-15/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI News Daily | 2026-10-15" height="150" loading="lazy" src="/zh-cn/p/daily-news-2026-10-15/cover_hu_ff5704b63aae6d49.jpg" srcset="/zh-cn/p/daily-news-2026-10-15/cover_hu_ff5704b63aae6d49.jpg 1x, /zh-cn/p/daily-news-2026-10-15/cover_hu_8539075b719520b0.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #6b90bd80 0%, #b1a5beC0 100%);">
+            <h2 class="article-title">AI News Daily | 2026-10-15</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
