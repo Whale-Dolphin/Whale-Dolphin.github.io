@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 6 篇精评 + 4 篇简报，共 10 篇，已对 7 天滚动窗口去重（候选池 602 篇 → 去重后新鲜池 599 篇 → 音频方向初筛 63 篇 → 报道 10 篇；被去重的 3 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-21 期 64 篇 + 10-22 期 57 篇，去重后 120 篇）；arXiv API 482 篇（cs.CL / cs.LG / cs.AI 各按提交时间取最新 200 篇、cs.SD 28 篇、eess.AS 22 篇，跨类目去重后计入）；arXiv cs.CV 类目本次请求未返回数据（0 篇，降级模式），HF 10-23 期在抓取时尚未发布（0 篇）。报道集构成：HF 收录 3 篇、arXiv 直接提交 7 篇；其中 8 篇来自 arXiv 2026-10-21 提交批次或 HF 10-22 期新鲜收录，另 2 篇（LoCA、SKAD）为 arXiv 2026-10-20 提交、此前已进入候选但未报道的论文。 主题分布：ASR 与音频理解旗舰模型 1 篇、LALM 时间信息探针 1 篇、长音频多说话人 ASR 基准 1 篇、语音编解码 1 篇、TTS 说话人/口音控制 2 篇；简报覆盖 TTS 强化学习、普通话字级韵律控制、流式语音风格转换、LALM 对比解码 4 篇。 今日关键词：&ldquo;能测出来 ≠ 能控制住&rdquo;——连续潜空间 TTS 里说话人信息线性可解码性高达 0.970，沿解码方向编辑却 0/60 命中目标；LALM 里音乐时刻的时间信息同样是&quot;验证得出来、说不出来&quot;。两篇都在提醒：探针分数和提示分数会系统性地骗人。 精评 1. Qwen-Audio-3.1-ASR：ASR 旗舰往&quot;带说话人的结构化转录 + 通用音频理解&quot;扩了一圈 2610.28711\n">
+<title>AI Paper Daily | 2026-10-23</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-23/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-23">
+<meta property='og:description' content="概览 6 篇精评 + 4 篇简报，共 10 篇，已对 7 天滚动窗口去重（候选池 602 篇 → 去重后新鲜池 599 篇 → 音频方向初筛 63 篇 → 报道 10 篇；被去重的 3 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-21 期 64 篇 + 10-22 期 57 篇，去重后 120 篇）；arXiv API 482 篇（cs.CL / cs.LG / cs.AI 各按提交时间取最新 200 篇、cs.SD 28 篇、eess.AS 22 篇，跨类目去重后计入）；arXiv cs.CV 类目本次请求未返回数据（0 篇，降级模式），HF 10-23 期在抓取时尚未发布（0 篇）。报道集构成：HF 收录 3 篇、arXiv 直接提交 7 篇；其中 8 篇来自 arXiv 2026-10-21 提交批次或 HF 10-22 期新鲜收录，另 2 篇（LoCA、SKAD）为 arXiv 2026-10-20 提交、此前已进入候选但未报道的论文。 主题分布：ASR 与音频理解旗舰模型 1 篇、LALM 时间信息探针 1 篇、长音频多说话人 ASR 基准 1 篇、语音编解码 1 篇、TTS 说话人/口音控制 2 篇；简报覆盖 TTS 强化学习、普通话字级韵律控制、流式语音风格转换、LALM 对比解码 4 篇。 今日关键词：&ldquo;能测出来 ≠ 能控制住&rdquo;——连续潜空间 TTS 里说话人信息线性可解码性高达 0.970，沿解码方向编辑却 0/60 命中目标；LALM 里音乐时刻的时间信息同样是&quot;验证得出来、说不出来&quot;。两篇都在提醒：探针分数和提示分数会系统性地骗人。 精评 1. Qwen-Audio-3.1-ASR：ASR 旗舰往&quot;带说话人的结构化转录 + 通用音频理解&quot;扩了一圈 2610.28711\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-23/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-23T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-23">
+<meta name="twitter:description" content="概览 6 篇精评 + 4 篇简报，共 10 篇，已对 7 天滚动窗口去重（候选池 602 篇 → 去重后新鲜池 599 篇 → 音频方向初筛 63 篇 → 报道 10 篇；被去重的 3 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-21 期 64 篇 + 10-22 期 57 篇，去重后 120 篇）；arXiv API 482 篇（cs.CL / cs.LG / cs.AI 各按提交时间取最新 200 篇、cs.SD 28 篇、eess.AS 22 篇，跨类目去重后计入）；arXiv cs.CV 类目本次请求未返回数据（0 篇，降级模式），HF 10-23 期在抓取时尚未发布（0 篇）。报道集构成：HF 收录 3 篇、arXiv 直接提交 7 篇；其中 8 篇来自 arXiv 2026-10-21 提交批次或 HF 10-22 期新鲜收录，另 2 篇（LoCA、SKAD）为 arXiv 2026-10-20 提交、此前已进入候选但未报道的论文。 主题分布：ASR 与音频理解旗舰模型 1 篇、LALM 时间信息探针 1 篇、长音频多说话人 ASR 基准 1 篇、语音编解码 1 篇、TTS 说话人/口音控制 2 篇；简报覆盖 TTS 强化学习、普通话字级韵律控制、流式语音风格转换、LALM 对比解码 4 篇。 今日关键词：&ldquo;能测出来 ≠ 能控制住&rdquo;——连续潜空间 TTS 里说话人信息线性可解码性高达 0.970，沿解码方向编辑却 0/60 命中目标；LALM 里音乐时刻的时间信息同样是&quot;验证得出来、说不出来&quot;。两篇都在提醒：探针分数和提示分数会系统性地骗人。 精评 1. Qwen-Audio-3.1-ASR：ASR 旗舰往&quot;带说话人的结构化转录 + 通用音频理解&quot;扩了一圈 2610.28711\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-23/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-qwen-audio-31-asrasr-旗舰往带说话人的结构化转录--通用音频理解扩了一圈">1. Qwen-Audio-3.1-ASR：ASR 旗舰往&quot;带说话人的结构化转录 + 通用音频理解&quot;扩了一圈</a></li>
+        <li><a href="#2-heard-but-not-saidlalm-不是没有时间信息是提示问不出来">2. Heard But Not Said：LALM 不是没有时间信息，是提示问不出来</a></li>
+        <li><a href="#3-omnilingual-msasr长音频多说话人-asr-的能力上限测试全模态模型的-tcpwer-经常超过-100">3. Omnilingual-MsASR：长音频多说话人 ASR 的能力上限测试，全模态模型的 tcpWER 经常超过 100%</a></li>
+        <li><a href="#4-rubatocodec给变帧率语音编解码装上整句事件预算序列长度终于可控">4. RubatoCodec：给变帧率语音编解码装上&quot;整句事件预算&quot;，序列长度终于可控</a></li>
+        <li><a href="#5-decodability-is-not-controllability探针能解码说话人不等于顺着探针方向就能换嗓音">5. Decodability Is Not Controllability：探针能解码说话人，不等于顺着探针方向就能换嗓音</a></li>
+        <li><a href="#6-跨语言克隆别把口音一起克隆双参考闭环引导把法语口音残留压掉-73">6. 跨语言克隆别把口音一起克隆：双参考闭环引导把法语口音残留压掉 73%</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-loca句子级奖励分不清哪一帧错了用-asr-对齐把信用分到帧上">1. LoCA：句子级奖励分不清哪一帧错了——用 ASR 对齐把信用分到帧上</a></li>
+        <li><a href="#2-普通话字级韵律控制把韵律标记塞进文本流不动-tts-架构">2. 普通话字级韵律控制：把韵律标记塞进文本流，不动 TTS 架构</a></li>
+        <li><a href="#3-stylestream-20流式语音风格转换延迟砍到-520ms还能用文字改嗓音">3. StyleStream 2.0：流式语音风格转换延迟砍到 520ms，还能用文字改嗓音</a></li>
+        <li><a href="#4-skad先画一张声学证据草图再做对比解码治-lalm-推理时越说越不听音频">4. SKAD：先画一张声学证据草图，再做对比解码——治 LALM 推理时&quot;越说越不听音频&rdquo;</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-23/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-23" height="1461" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-23/cover.png" srcset="/zh-cn/p/daily-paper-2026-10-23/cover_hu_9284639f1b638404.png 800w, /zh-cn/p/daily-paper-2026-10-23/cover_hu_b81ef9e15e161429.png 1600w, /zh-cn/p/daily-paper-2026-10-23/cover.png 2000w" width="2000">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-23/">AI Paper Daily | 2026-10-23</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-23T00:00:00Z'>Oct 23, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-qwen-audio-31-asrasr-旗舰往带说话人的结构化转录--通用音频理解扩了一圈">1. Qwen-Audio-3.1-ASR：ASR 旗舰往&quot;带说话人的结构化转录 + 通用音频理解&quot;扩了一圈</a></li>
+        <li><a href="#2-heard-but-not-saidlalm-不是没有时间信息是提示问不出来">2. Heard But Not Said：LALM 不是没有时间信息，是提示问不出来</a></li>
+        <li><a href="#3-omnilingual-msasr长音频多说话人-asr-的能力上限测试全模态模型的-tcpwer-经常超过-100">3. Omnilingual-MsASR：长音频多说话人 ASR 的能力上限测试，全模态模型的 tcpWER 经常超过 100%</a></li>
+        <li><a href="#4-rubatocodec给变帧率语音编解码装上整句事件预算序列长度终于可控">4. RubatoCodec：给变帧率语音编解码装上&quot;整句事件预算&quot;，序列长度终于可控</a></li>
+        <li><a href="#5-decodability-is-not-controllability探针能解码说话人不等于顺着探针方向就能换嗓音">5. Decodability Is Not Controllability：探针能解码说话人，不等于顺着探针方向就能换嗓音</a></li>
+        <li><a href="#6-跨语言克隆别把口音一起克隆双参考闭环引导把法语口音残留压掉-73">6. 跨语言克隆别把口音一起克隆：双参考闭环引导把法语口音残留压掉 73%</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-loca句子级奖励分不清哪一帧错了用-asr-对齐把信用分到帧上">1. LoCA：句子级奖励分不清哪一帧错了——用 ASR 对齐把信用分到帧上</a></li>
+        <li><a href="#2-普通话字级韵律控制把韵律标记塞进文本流不动-tts-架构">2. 普通话字级韵律控制：把韵律标记塞进文本流，不动 TTS 架构</a></li>
+        <li><a href="#3-stylestream-20流式语音风格转换延迟砍到-520ms还能用文字改嗓音">3. StyleStream 2.0：流式语音风格转换延迟砍到 520ms，还能用文字改嗓音</a></li>
+        <li><a href="#4-skad先画一张声学证据草图再做对比解码治-lalm-推理时越说越不听音频">4. SKAD：先画一张声学证据草图，再做对比解码——治 LALM 推理时&quot;越说越不听音频&rdquo;</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>6 篇精评 + 4 篇简报</strong>，共 10 篇，已对 7 天滚动窗口去重（候选池 602 篇 → 去重后新鲜池 599 篇 → 音频方向初筛 63 篇 → 报道 10 篇；被去重的 3 篇均为窗口内已报道论文）。</li>
+<li>来源：HuggingFace Daily Papers（10-21 期 64 篇 + 10-22 期 57 篇，去重后 120 篇）；arXiv API 482 篇（cs.CL / cs.LG / cs.AI 各按提交时间取最新 200 篇、cs.SD 28 篇、eess.AS 22 篇，跨类目去重后计入）；arXiv cs.CV 类目本次请求未返回数据（0 篇，降级模式），HF 10-23 期在抓取时尚未发布（0 篇）。报道集构成：HF 收录 3 篇、arXiv 直接提交 7 篇；其中 8 篇来自 arXiv 2026-10-21 提交批次或 HF 10-22 期新鲜收录，另 2 篇（LoCA、SKAD）为 arXiv 2026-10-20 提交、此前已进入候选但未报道的论文。</li>
+<li>主题分布：ASR 与音频理解旗舰模型 1 篇、LALM 时间信息探针 1 篇、长音频多说话人 ASR 基准 1 篇、语音编解码 1 篇、TTS 说话人/口音控制 2 篇；简报覆盖 TTS 强化学习、普通话字级韵律控制、流式语音风格转换、LALM 对比解码 4 篇。</li>
+<li>今日关键词：<strong>&ldquo;能测出来 ≠ 能控制住&rdquo;</strong>——连续潜空间 TTS 里说话人信息线性可解码性高达 0.970，沿解码方向编辑却 0/60 命中目标；LALM 里音乐时刻的时间信息同样是&quot;验证得出来、说不出来&quot;。两篇都在提醒：探针分数和提示分数会系统性地骗人。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-qwen-audio-31-asrasr-旗舰往带说话人的结构化转录--通用音频理解扩了一圈">1. Qwen-Audio-3.1-ASR：ASR 旗舰往&quot;带说话人的结构化转录 + 通用音频理解&quot;扩了一圈
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.28711"  target="_blank" rel="noopener"
+    >2610.28711</a></p>
+<p><strong>一句话</strong>：Qwen-Audio-3.0-ASR 的迭代版：保留 30 种语言、16 种中文方言与指令控制（历史上下文条件、分层热词定制、原生转录润色），新增说话人日志式转录（说话人标签 + 时间戳 + 文本、跨轮次标签一致、重叠语音可表示），并把通用音频理解（音频/语音/音乐描述、时间定位、声音事件检测、音频问答与选择推理）纳入同一模型家族，按异步文件转录、低延迟流式、交互语音输入、非流式识别四种部署形态出变体。</p>
+<p><strong>贡献/机制</strong>：这是一份技术报告，核心增量在任务形态而非新架构披露：说话人分离从&quot;后处理步骤&quot;变成模型原生输出的结构化字段，重叠语音在一份转录里直接表示；指令控制三件套（历史上下文、分层热词、转录润色）延续 3.0 的可控转录路线；音频理解任务面从&quot;认词&quot;扩到&quot;解释说话人、声学事件及其时间关系&quot;。作者：Chuanmeng Bian、Daren Chen、Peixin Chen 等（Qwen 团队，共 63 人）。</p>
+<p><strong>数值结果</strong>：摘要未给出任何基准数值：没有常规 ASR、多语言/方言、说话人日志转录与音频理解各项的 WER 或准确率，也没有各变体的延迟数据。全部效果表述停留在&quot;评测覆盖了……展示了能力&quot;的定性层面，具体数字需查正文表格。</p>
+<p><strong>批判性分析</strong>：产品形态上的信号是清楚的：头部 ASR 模型的竞争点正在从 WER 转向&quot;转录即结构化记录&quot;——谁说了什么、何时说的、重叠段怎么记，再叠上事件检测与时间定位，一份输出同时喂会议纪要、客服质检与多模态检索。分层热词与历史上下文条件也是真实部署里最被要的两类控制。但作为技术报告，摘要零数字使得它暂时只能当&quot;发布公告&quot;读：3.1 相对 3.0 在哪些语言/方言上实际进步、日志转录的 diarization 错误率、流式变体的延迟-精度取舍，都要等正文（及后续第三方复现）才能判断。对做语音产品的人，先记形态变化，引用效果时等正文数值落地再说。</p>
+<p><strong>摘要译文</strong>：我们提出 Qwen-Audio-3.1-ASR，一个音频语言模型家族，它在前代 Qwen-Audio-3.0-ASR 的基础上改进了语音识别，并扩展了说话人日志式转录与通用音频理解能力。该家族保留对 30 种语言和 16 种中文方言的支持，以及包括历史上下文条件、分层热词定制和原生转录润色在内的指令控制能力。说话人日志式 ASR 产生包含说话人标签、时间戳和识别文本的结构化输出，在各轮次间保持一致的说话人标签，并能表示重叠语音。通用音频理解能力涵盖音频、语音和音乐描述，时间定位与声音事件检测，以及音频问答和多项选择推理。这些任务将应用范围从识别所说词语扩展到解释说话人、声学事件及其时间关系。为适应不同的部署要求，该家族包含面向异步文件转录、低延迟流式传输、交互式语音输入和非流式识别的变体，其中某些变体提供说话人日志式转录和通用音频理解。评测涵盖常规 ASR、多语言和方言语音、说话人日志式转录以及通用音频理解，展示了 Qwen-Audio-3.1-ASR 家族在转录和更广泛的音频分析任务上的能力。</p>
+<hr>
+<h3 id="2-heard-but-not-saidlalm-不是没有时间信息是提示问不出来">2. Heard But Not Said：LALM 不是没有时间信息，是提示问不出来
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.29256"  target="_blank" rel="noopener"
+    >2610.29256</a></p>
+<p><strong>一句话</strong>：冻结的大音频语言模型定位不了音乐中被描述的时刻，到底是时间信息根本不在表征里，还是提取方式不对——用同一音频片段上的成对查询（状态查询 vs 变化查询）加三种提取方式（整轨提示、窗口化是否打分、注意力）对照后结论是：提示与注意力几乎暴露不出这些信息，但窗口化验证能测出来，提示的失败系统性低估了模型&quot;能验证&quot;的能力（尽管不低估其&quot;能定位&quot;的能力）。</p>
+<p><strong>贡献/机制</strong>：探针由 Slakh2100 的分轨激活构造：给同一时间跨度同时挂一个状态查询（如&quot;只有钢琴和贝斯在演奏&quot;）和一个变化查询（如&quot;吉他退出，只剩钢琴和贝斯&quot;），并改变模型能看到的前置音频长度。三种提取方式分别对应三个不同问题：整轨提示问&quot;能不能说出何时&quot;、窗口化是否打分问&quot;把片段递到手边时能不能验证、以及需不需要前文&quot;、注意力问&quot;能不能自己找到该时刻&quot;。作者：Eunsik Shin。</p>
+<p><strong>数值结果</strong>：摘要以定性对照为主，未给具体分数：状态查询在无上下文时即高于基线；变化查询在多数短片段模型上随前置上下文增加而改善；30 秒填充（padded）编码器没有出现可比的恢复。提示与注意力&quot;几乎没有&quot;暴露上述信息。</p>
+<p><strong>批判性分析</strong>：这篇与前两天的跨模态神经元、Text Dominance 是同一条线：LALM 的瓶颈越来越多地被定位在&quot;表征里有、生成/回答时取不出&quot;。它把结论收窄得很诚实——提示低估的是&quot;验证&quot;而非&quot;定位&quot;，也就是说换成窗口化打分的评测协议能测出更多能力，但产品里用户问&quot;这段在第几秒&quot;时模型仍然答不出，能力在不等于可用。方法上的保留：结论建立在 Slakh2100 合成分轨这一可控但人工的设定上，真实音乐（混音、无干净分轨、描述更模糊）里窗口化验证的优势还在不在未知；且&quot;短片段模型 vs 30s 填充编码器&quot;的对照暗示编码器的时间处理方式才是关键变量，正文需看模型清单。对做音频理解评测的人：先把自己基准的提问方式当作一个变量审一遍，再下&quot;模型不行&quot;的结论。</p>
+<p><strong>摘要译文</strong>：大音频语言模型（LALM）能理解音乐，却难以定位被描述的时刻在何时。我们追问：这反映的是时间信息缺失，还是时间跨度的提取方式存在瓶颈。我们使用一个由 Slakh2100 分轨激活构造的成对查询探针：给同一跨度同时附加一个状态查询（例如&quot;只有钢琴和贝斯在演奏&quot;）和一个变化查询（例如&quot;吉他退出，留下钢琴和贝斯&quot;），并改变向模型展示的前置音频量。在冻结的 LALM 上，三种提取该跨度的方式问的是不同的问题：整轨提示问模型能否说出何时；窗口化的是/否打分问模型在被递给该片段时能否验证该时刻、以及它是否需要之前的内容；注意力问模型能否自行找到该时刻。状态查询在没有上下文时得分即高于基线，而变化查询在大多数短片段模型中随着前置上下文增加而改善；30 秒填充的编码器没有显示出可比的恢复。提示和注意力几乎没有暴露出这些信息。因此，提示的失败低估了 LALM 能够验证的东西——但并不低估它们能够定位的东西——低估的程度由查询类型和编码器决定。</p>
+<hr>
+<h3 id="3-omnilingual-msasr长音频多说话人-asr-的能力上限测试全模态模型的-tcpwer-经常超过-100">3. Omnilingual-MsASR：长音频多说话人 ASR 的能力上限测试，全模态模型的 tcpWER 经常超过 100%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.29455"  target="_blank" rel="noopener"
+    >2610.29455</a></p>
+<p><strong>一句话</strong>：面向全模态 LLM 的长格式多说话人 ASR 基准：6 种语言、最长 30 分钟录音、最多 20 名说话人，同时给音频与视频输入以测跨模态一致性与互补线索利用——主流全模态 LLM 评测下来瓶颈显著，tcpWER 频繁超过 100%，细粒度时间定位、说话人消歧与跨模态协同是三大短板。</p>
+<p><strong>贡献/机制</strong>：Omnilingual-MsASR 把&quot;谁在何时说什么&quot;做成可量化的基准任务：平行音视频输入让评测能区分&quot;模型是真用了视觉线索（如口型、画面中的说话人）还是只靠音频硬猜&quot;，并检验音视频两路给出一致答案的程度。评测对象为一批主流全模态 LLM。代码与数据：https://github.com/QwenLM/Omnilingua-Bench/tree/main/Omnilingua-MSpeaker 。作者：Yuan Ge、Pei Zhang、Xize Cheng、Lingzhou Mu、Mingyang Wang、Jin Xu、Baosong Yang、Shengxiang Gao、Jingbo Zhu、Zhengtao Yu、Tong Xiao。</p>
+<p><strong>数值结果</strong>：摘要给出的唯一量化锚点是：领先全模态 LLM 的 tcpWER（时间约束的说话人级 WER 口径）频繁超过 100%——即错误数超过参考词数，说明在长格式、多说话人条件下输出经常整体失控（错人、错位、幻觉式续写）。逐模型分数摘要未给。</p>
+<p><strong>批判性分析</strong>：tcpWER 超过 100% 这个数字本身就是结论：短音频基准上看起来&quot;ASR 已解决&quot;的全模态模型，一到 30 分钟、20 个说话人的真实会议形态就崩了——这与昨天 Qwen-Audio-3.1 主打的&quot;说话人日志式转录&quot;正好形成供需对照，专用 ASR 模型与通用全模态模型在这条线上的差距会被这类基准持续放大。需要留意的口径问题：tcpWER 对时间定位与说话人归属同时扣分，与普通 WER 不可直接横比，引用时要带口径；基准出自 QwenLM 组织仓库、评测对象又包括自家路线之外的模型，数据构造与评分实现建议等第三方复跑后再当定论。对做长音频与会议理解的人，这是目前指向最明确的一块短板标尺。</p>
+<p><strong>摘要译文</strong>：全模态大语言模型（LLM）在音频和视频理解方面取得了显著进展。然而，现有模型在处理长格式、多说话人视频时仍然吃力，尤其是在理解整个视频以及识别谁在何时说了什么方面。为了刻画当前全模态 LLM 的能力上限并指导未来的模型开发，我们提出 Omnilingual-MsASR：一个面向长格式多说话人自动语音识别（MsASR）的多语言、多模态基准，涵盖六种语言、最长 30 分钟的录音，以及最多有 20 名说话人的场景。Omnilingual-MsASR 提供平行的音频和视频输入，以评估模型的跨模态一致性以及它们利用跨模态互补线索的能力。对领先的全模态 LLM 的广泛评测揭示了显著的性能瓶颈，它们的 tcpWER 频繁超过 100%。这些发现凸显了细粒度时间定位、说话人消歧和跨模态协同是未来全模态基础模型的关键挑战。我们的工作见：https://github.com/QwenLM/Omnilingua-Bench/tree/main/Omnilingua-MSpeaker 。</p>
+<hr>
+<h3 id="4-rubatocodec给变帧率语音编解码装上整句事件预算序列长度终于可控">4. RubatoCodec：给变帧率语音编解码装上&quot;整句事件预算&quot;，序列长度终于可控
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.29434"  target="_blank" rel="noopener"
+    >2610.29434</a></p>
+<p><strong>一句话</strong>：变帧率编解码按内容分配 token，代价是同一设置下不同句子的 token 数飘忽不定、生成器要产多长没谱——RubatoCodec 在 X-Codec-2 基础上给出整句级精确事件预算与流式解码：用编解码特征与波形频谱的变化切分变长事件（无学习的边界预测器）、每事件用离散码 + 显式时长表示，低事件率下重建保真度与可懂度优于定帧率，配套 TTS 对比里 WER 更低、UTMOS 更高。</p>
+<p><strong>贡献/机制</strong>：Adaptive Firing 机制按信号变化把语音切成变时长事件，事件数由整句预算精确约束，于是&quot;生成器预测一个事件、解码一个事件&quot;的流式范式成立，且生成时不需要额外的帧率约束——生成器能从训练中学会遵守编解码的事件预算。在大规模多语言语音上训练的模型在英语、日语、普通话上重建质量有竞争力，在可比码率下所评英语与日语基准上可懂度保持最佳。代码与权重：https://github.com/third-intelligence/RubatoCodec 与 <a class="link" href="https://huggingface.co/third-intelligence/RubatoCodec"  target="_blank" rel="noopener"
+    >https://huggingface.co/third-intelligence/RubatoCodec</a> 。作者：Chihiro Arata、Shohei Taniguchi、Gouki Minegishi、Kan Hatakeyama-Sato。</p>
+<p><strong>数值结果</strong>：摘要以相对结论为主、未给绝对数值表：自适应分配在低事件率下重建保真度与可懂度优于定帧率编码；同条件 TTS 对比中自适应表示取得更低的 WER 与更高的 UTMOS、UTMOSv2，说话人相似度相当；多语言重建&quot;有竞争力&quot;，英语/日语可懂度在所比编解码中最佳。具体码率点与分差需查正文。</p>
+<p><strong>批判性分析</strong>：变帧率是语音 token 化的正确方向（静音与稳态段不该和爆破音段花一样多的 token），但&quot;长度不可控&quot;一直是它进生成流水线的实际障碍——预算约束把这个障碍变成了接口：上层生成器按预算规划、下层编解码按预算切分，这对流式 TTS 的延迟与显存规划都是实打实的好处。不用学习型边界预测器也降低了切分模块自身成为误差源的风险。要打折的：全部关键结论（优于定帧率、可懂度最佳、TTS 收益）都没有在摘要给出数值与码率点，&ldquo;低事件率&quot;具体低到什么程度决定了结论的含金量；事件切分依赖特征/频谱变化启发式，对噪声、混响、多说话人重叠段的切分稳定性未在摘要提及。对做语音编解码与流式生成的人，这是今天最可直接上手复现的一篇（代码权重齐全），复现时先盯低码率点的绝对数。</p>
+<p><strong>摘要译文</strong>：神经语音编解码为语音生成提供离散 token。较低的帧率缩短 token 序列，但每个 token 随后必须携带更多的语言和声学信息。变帧率编解码通过根据语音内容调整 token 分配来解决这一权衡，但基于阈值的分配让内容决定 token 数量，因此在固定设置下，语音生成器必须产生的序列长度在不同话语和数据集之间会变化。我们提出 RubatoCodec，一种基于 X-Codec-2 构建的变帧率语音编解码，具有精确的话语级事件预算和流式解码。它的自适应触发（Adaptive Firing）机制利用编解码特征和波形频谱的变化将语音划分为变时长事件，无需学习的边界预测器。离散码和显式的时长表示每个事件，使语音生成器能够逐个事件地预测和解码。受控实验表明，在低事件率下，自适应分配在重建保真度和可懂度方面优于定帧率编码。一个在大规模多语言语音上训练的模型在英语、日语和普通话上取得了有竞争力的重建质量，并在可比码率下、在所评估的英语和日语基准上取得了所比较编解码中最佳的可懂度保持。在匹配的文本转语音对比中，自适应表示产生了更低的 WER 以及更高的 UTMOS 和 UTMOSv2，同时说话人相似度相当。语音生成器还学会了编解码的话语级事件预算，无需在生成时施加显式的帧率约束。这些结果表明，有预算的自适应语音表示同时支持高质量重建和流式文本转语音生成。代码和权重见 <a class="link" href="https://github.com/third-intelligence/RubatoCodec"  target="_blank" rel="noopener"
+    >https://github.com/third-intelligence/RubatoCodec</a> 和 <a class="link" href="https://huggingface.co/third-intelligence/RubatoCodec"  target="_blank" rel="noopener"
+    >https://huggingface.co/third-intelligence/RubatoCodec</a> 。</p>
+<hr>
+<h3 id="5-decodability-is-not-controllability探针能解码说话人不等于顺着探针方向就能换嗓音">5. Decodability Is Not Controllability：探针能解码说话人，不等于顺着探针方向就能换嗓音
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.29345"  target="_blank" rel="noopener"
+    >2610.29345</a></p>
+<p><strong>一句话</strong>：连续潜空间 TTS 里，&ldquo;说话人信息可被线性探针高精度解码&quot;被默认等同于&quot;沿该方向编辑就能控制说话人&rdquo;——在 VoxCPM2 上 30 名说话人、60 个有向说话人对的位置匹配探针与等范数干预把这两件事彻底分开：最终层参考音频状态的探针准确率 0.970，沿对齐方向编辑却 0/60 达到目标主导；改在早期参考位置编辑则 60/60 命中，目标相似度 +0.326。</p>
+<p><strong>贡献/机制</strong>：干预实验设计是全文的骨架：同一组说话人对，在不同层、不同参考位置做等范数（equal-norm）编辑，并与任意等范数方向/位置对照比较，分离&quot;方向对不对&quot;与&quot;位置对不对&quot;两个变量；再用独立说话人编码器、留出说话人原型检索与双盲听评三路验证&quot;听到的确实是目标说话人&rdquo;。跨架构部分在 dots.tts 上复现了区分：骨干编辑只能把源说话人推开、无目标吸引；x-vector 消融把源相似度从 0.849 打到 0.006。由此提炼免训练说话人控制的两条要求：几何特异性，以及一条能把目标说话人条件真正送进声学合成的计算通路。作者：Yuanzhong Zheng、Wei Huang、Ming Ma、Kailun Jin、Youhai Jiang。</p>
+<p><strong>数值结果</strong>：VoxCPM2 最终残差声学语言模型层（RALM L7）的参考音频状态保留 0.970 的探针准确率，但对齐编辑产生 0/60 个目标主导的说话人对；在 L0 做成对对齐更新则目标相似度提高 0.326、60/60 全部目标主导，而任何等范数方向或位置对照至多 1/60。dots.tts 上 x-vector 消融使源相似度从 0.849 降至 0.006。</p>
+<p><strong>批判性分析</strong>：这是今天方法论上最干净的一篇：它证伪的是整个可解释性/控制领域最常见的推理捷径——&ldquo;探针读得出 → 方向推得动&rdquo;。0.970 对 0/60 的对照足够醒目，且等范数对照排除了&quot;只是扰动幅度问题&quot;的解释，早期位置全命中又给出了正面处方（控制点要选在条件注入的通路上，而非信息最显眼的层）。与第 2 篇 Heard But Not Said 恰好互文：一篇说表征里有但提示取不出，一篇说探针读得出但编辑推不动——&ldquo;可测&quot;与&quot;可控&quot;之间的缝隙正在成为音频模型分析的主战场。局限：免训练控制的结论建立在两个连续潜空间系统上，离散 token 型 TTS 是否有同样的层/位置结构未覆盖；60 个说话人对的规模对&quot;全命中&quot;这类强结论还偏小。对做 TTS 说话人控制与模型可解释性的人，这篇的两条要求（几何特异性 + 计算通路）可以直接当设计检查表用。</p>
+<p><strong>摘要译文</strong>：在连续潜空间的文本转语音（TTS）中，高线性可解码性并不蕴含因果可控性。在 VoxCPM2 中，跨 30 名说话人和 60 个有向说话人对的位置匹配探针与等范数干预揭示了这种分离：最终残差声学语言模型层（RALM L7）处的参考音频状态保留了 0.970 的探针准确率，然而对齐编辑产生了 0/60 个目标主导的说话人对。在早期参考音频位置的编辑产生相反的模式。在 L0 处，成对对齐的更新将目标相似度提高了 0.326，并在全部 60 个说话人对中实现目标主导，而在任何等范数方向或位置对照下至多为 1/60。独立的说话人编码器、针对留出说话人原型的检索以及双盲听评证实，被移动后的嗓音确实被听成预期的目标。在 dots.tts 中的跨架构干预区分了骨干杠杆作用与直接声学控制：骨干编辑使源说话人移位但没有目标吸引，而 x-vector 消融将源相似度从 0.849 降低到 0.006。这些发现确定了免训练说话人控制的两个要求：几何特异性，以及一条将预期的说话人条件带入声学合成的计算通路。</p>
+<hr>
+<h3 id="6-跨语言克隆别把口音一起克隆双参考闭环引导把法语口音残留压掉-73">6. 跨语言克隆别把口音一起克隆：双参考闭环引导把法语口音残留压掉 73%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.29351"  target="_blank" rel="noopener"
+    >2610.29351</a></p>
+<p><strong>一句话</strong>：零样本跨语言语音克隆会把参考说话人的口音带进目标语言——这篇用&quot;原始参考 + 语音转换构造的母语锚点&quot;双参考闭环引导：两份参考初始化各自的语言模型状态、共同引导一条共享声学轨迹，每生成一个片段就同步更新两个状态；冻结的 TTS、无需逐句做语音转换，在 20 名留出法语说话人上把残留法语语种判别质量压低 73%，相似度只损失 0.042。</p>
+<p><strong>贡献/机制</strong>：关键设计有二：母语锚点每个说话人只构造一次、可复用，在线合成不再需要逐句 VC 级联；双状态闭环让两份参考的生成历史始终与已发出的语音对齐，避免开环引导在长句中漂移。固定设置 λ*=0.33 跨说话人通用，同一设置无重调地迁到西班牙语、残留压低 56%。作者：Yuanzhong Zheng、Wei Huang、Ming Ma、Kailun Jin、Youhai Jiang（与第 5 篇同一团队）。</p>
+<p><strong>数值结果</strong>：在 20 名留出的法语说话人上，固定设置 λ*=0.33 相对直接克隆将残留法语 LID（语种判别）质量降低 73%，ECAPA 相似度代价仅 0.042，且相对仅用锚点的克隆恢复了 0.155；在留出测试各臂中取得最低的平均 WER（0.009）和最高的平均 GOP（4.750）。盲听偏好中，母语为英语的听众在发音自然度上更偏好它胜过直接克隆，在说话人身份上更偏好它胜过仅锚点克隆与 TTS→VC 级联。在线 RTF 约比级联低 26%（0.59 对 0.80）；同一设置将西班牙语 LID 质量降低 56%，无需重新调参。</p>
+<p><strong>批判性分析</strong>：问题定位准：跨语言克隆的&quot;口音泄漏&quot;与&quot;音色保持&quot;是一对矛盾，单参考只能二选一，双参考把&quot;像这个人&quot;与&quot;像母语者&quot;拆成两个可分别加权的条件源，再用闭环解决长句漂移——工程上比&quot;TTO→VC 级联&quot;少一次完整合成、RTF 还低 26%，是能进流水线的设计。需要打折的：评测规模是 20 名法语说话人 + 一个西班牙语迁移点，语言对都还属于欧洲语言之间，声调语言或语音系统距离更远的组合（如中→英）未测；LID 质量、GOP 都是自动指标，&ldquo;口音压低 73%&ldquo;与母语者主观口音感知的对应关系只有发音自然度一项盲听支撑。对做多语言 TTS 与声音克隆的人，这篇的双参考加权是可直接借鉴的配方，但先在自己的语言对上复测再谈幅度。</p>
+<p><strong>摘要译文</strong>：零样本跨语言语音克隆常常把参考说话人的口音带入目标语言。我们提出闭环双参考引导，它将原始参考与一个通过语音转换（VC）构造的可复用的母语锚点配对。这两份参考初始化各自独立的语言模型（LM）状态，引导一条共享的声学轨迹；每个完成的片段随后更新两个状态，使它们生成的历史与已发出的语音保持对齐。锚点构造对每个说话人只运行一次，在线合成使用冻结的 TTS 模型，无需逐话语的 VC。在 20 名留出的法语说话人上，固定设置 λ*=0.33 相对直接克隆将残留的法语 LID 质量降低了 73%，ECAPA 相似度的代价仅为 0.042；相对仅用锚点的克隆，它恢复了 0.155。该方法在留出测试各臂中取得了最低的平均 WER（0.009）和最高的平均 GOP（4.750）。在盲听偏好测试中，母语为英语的听众在发音自然度上更偏好它胜过直接克隆，在说话人身份上更偏好它胜过仅用锚点的克隆和一个 TTS→VC 级联。在线 RTF 大约比级联低 26%（0.59 对 0.80），并且同一设置在无需重新调参的情况下将西班牙语 LID 质量降低了 56%。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="1-loca句子级奖励分不清哪一帧错了用-asr-对齐把信用分到帧上">1. LoCA：句子级奖励分不清哪一帧错了——用 ASR 对齐把信用分到帧上
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.28035"  target="_blank" rel="noopener"
+    >2610.28035</a></p>
+<p>面向自回归流匹配 TTS 的强化学习信用分配：用 ASR 文本对齐定位生成语音中的内容错误，把句子级优势（advantage）按帧重新分配，并以参考相对的正负阈值限制过度拟合与过度排斥。在 VoxCPM2 上，多语言 CV3 评测子集的样本加权内容错误相对预训练骨干降低 20.5%、相对 GROW 降低 14.3%，同时说话人相似度提升；在 Seed-TTS-Eval 困难子集上内容准确性也有改善。&ldquo;奖励太粗&quot;是语音生成 RL 的通病，这套&quot;先定位错误、再分配信用&quot;的做法可迁移到其他带可对齐内容的生成任务；局限是证据集中在一个骨干（VoxCPM2）与内容错误这一类奖励上，韵律、音质类奖励的帧级分配怎么做未覆盖。</p>
+<h3 id="2-普通话字级韵律控制把韵律标记塞进文本流不动-tts-架构">2. 普通话字级韵律控制：把韵律标记塞进文本流，不动 TTS 架构
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.29123"  target="_blank" rel="noopener"
+    >2610.29123</a></p>
+<p>为 LLM 式 TTS 做字级（而非整句级）韵律控制：从原始音频大规模自动抽取细粒度韵律标记（音高、时长、能量、停顿），以词表外 Unicode 符号嵌入文本流，微调现有 TTS 的 LLM 去解读这些标记，架构保持不变；可选的文本 LLM 前端可把自然语言指令翻译成标记序列。在 215 万条普通话话语（5,858 小时）上以 CosyVoice2 为骨干，实现了对字级时长、音高、停顿时长与全局语速的可靠控制，感知质量基本保持。附带发现值得单独记：骨干那个为 ASR 优化的分词器相对重建导向的分词器会削弱韵律变化——作者明确标注为&quot;假设生成级&quot;证据。对做配音、有声书这类逐字抠韵律的场景，这是低侵入的落地方案。</p>
+<h3 id="3-stylestream-20流式语音风格转换延迟砍到-520ms还能用文字改嗓音">3. StyleStream 2.0：流式语音风格转换延迟砍到 520ms，还能用文字改嗓音
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.28940"  target="_blank" rel="noopener"
+    >2610.28940</a></p>
+<p>StyleStream 1.0 的续作，修两个短板：延迟与可控性。用少步像素 MeanFlow 模型并借 Self Forcing 思想做自回归反馈微调，把消费级 GPU 上的端到端延迟从约 1 秒降到约 520 毫秒（2 倍加速）且保持转换质量；去掉梅尔频谱上下文、改走紧凑风格嵌入，在同一嵌入空间训练统一的文本条件流匹配模型，同时支持&quot;用自然语言提示设计目标嗓音&quot;与&quot;按指令只改一个属性、其余保持&quot;的语音编辑。实验称在语音风格转换、语音设计、语音编辑三项上目标风格保真度最强，可懂度与未编辑属性保持有竞争力。摘要未给具体指标数值，幅度需查正文；但&quot;流式变声 + 文字可编辑&quot;这个形态对实时语音 Agent 与内容创作都是对的方向。</p>
+<h3 id="4-skad先画一张声学证据草图再做对比解码治-lalm-推理时越说越不听音频">4. SKAD：先画一张声学证据草图，再做对比解码——治 LALM 推理时&quot;越说越不听音频&rdquo;
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.28146"  target="_blank" rel="noopener"
+    >2610.28146</a></p>
+<p>免训练的推理期方法，针对 LALM 长链推理中逐渐从声学证据漂向语言续写模式的问题。直接对普通思维链做音频掩码对比解码往往无效，因为掩码分支缺音频上下文、参考不稳定；SKAD 先构造一份概括问题相关听觉信息的&quot;声学证据草图&rdquo;，再在音频条件推理分支与仅草图分支之间做对比解码，草图充当共享语义脚手架，使对比信号可靠。在 Qwen2.5-Omni-7B 与 Step-Audio-R1 上、MMAR / MMAU / MMSU 三个基准上平均准确率一致提升，消融显示去掉草图的直接对比解码收益有限甚至为负。摘要未给提升的具体点数；但&quot;对比解码需要一个像样的对照分支&quot;这一方法论提醒，对所有想用对比解码救幻觉的人都成立。</p>
+<hr>
+<p><em>本日 10 篇（6 精评 + 4 简报）来自 HF Daily Papers 10-22 期与 arXiv 2026-10-20 至 10-21 提交批次的新鲜候选池：arXiv cs.CV 类目本次未返回数据（降级模式），HF 10-23 期尚未发布；音频方向初筛 63 篇中精选 10 篇报道。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/305767"  target="_blank" rel="noopener"
+    >BattlequeenYume</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-22/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-22" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-22/cover_hu_54c8eef8a4cbbdb.jpg" srcset="/zh-cn/p/daily-paper-2026-10-22/cover_hu_54c8eef8a4cbbdb.jpg 1x, /zh-cn/p/daily-paper-2026-10-22/cover_hu_98f193ea18e7a700.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #50a9f080 0%, #ddd9d4C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-22</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-21/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-21" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-21/cover_hu_54fe2ed158c53866.png" srcset="/zh-cn/p/daily-paper-2026-10-21/cover_hu_54fe2ed158c53866.png 1x, /zh-cn/p/daily-paper-2026-10-21/cover_hu_4eea4f244754e860.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #a1abaa80 0%, #212222C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-21</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-20/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-20" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-20/cover_hu_b7b2e3b86351d00c.jpg" srcset="/zh-cn/p/daily-paper-2026-10-20/cover_hu_b7b2e3b86351d00c.jpg 1x, /zh-cn/p/daily-paper-2026-10-20/cover_hu_7bd40f44e1460497.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #49334180 0%, #e8d0d8C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-18/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-18" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-18/cover_hu_2cc337b87b93e57.jpg" srcset="/zh-cn/p/daily-paper-2026-10-18/cover_hu_2cc337b87b93e57.jpg 1x, /zh-cn/p/daily-paper-2026-10-18/cover_hu_4ac198be026f2969.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #473d5580 0%, #dad6caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-18</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-17/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-17" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-17/cover_hu_f4e2f4c32b12f697.jpg" srcset="/zh-cn/p/daily-paper-2026-10-17/cover_hu_f4e2f4c32b12f697.jpg 1x, /zh-cn/p/daily-paper-2026-10-17/cover_hu_7feb69185f5a366c.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #60546880 0%, #ede4e6C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-17</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
