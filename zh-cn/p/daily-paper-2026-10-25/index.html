@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 6 篇精评 + 6 篇简报，共 12 篇，已对 7 天滚动窗口去重（候选池 99 篇 → 去重后新鲜池 83 篇 → 兴趣方向初筛 30 篇 → 报道 12 篇；被去重的 16 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-22 期 50 篇 + 10-23 期 49 篇，去重后 99 篇；10-24 期在抓取时尚未发布，0 篇）；arXiv API（0 篇，本次分类查询触发 429 限流，未返回数据，降级模式）。报道集构成：全部 12 篇均为 HF 收录，其中 10-22 期 8 篇、10-23 期 4 篇。 主题分布：持续预训练扩展律 1 篇、Agent 后训练与环境合成 2 篇、扩散语言模型 4 篇、LLM 路由与信用分配 1 篇、验证器与自改进 2 篇；简报另覆盖推理痕迹蒸馏与 &ldquo;wait&rdquo; 溯源 2 篇。音频与语音方向今日在 HF 两期候选池中无新论文，arXiv 语音分类又被限流，本期音频版块空缺，不凑数。 今日关键词：&ldquo;扩散语言模型的中间状态是资源&rdquo;——Hidden Messages 把去噪状态当 Agent 间的通信通道，DiffResearch 把中间去噪状态当提前拆解子查询的信号，T2Quant 按去噪步分配量化精度，解码速度分析则发现扩散模型花多少步取决于&quot;有多少是新写的&quot;，慢本身还能当置信信号。四篇都在说同一件事：dLLM 的价值不只在生成方式，更在那些自回归模型根本不存在的中间状态上。 精评 1. Scaling in Games：虚拟世界里做持续预训练，数据管饱、多样性管迁移、个头大反而更挑食 2610.28698\n">
+<title>AI Paper Daily | 2026-10-25</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-25/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-25">
+<meta property='og:description' content="概览 6 篇精评 + 6 篇简报，共 12 篇，已对 7 天滚动窗口去重（候选池 99 篇 → 去重后新鲜池 83 篇 → 兴趣方向初筛 30 篇 → 报道 12 篇；被去重的 16 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-22 期 50 篇 + 10-23 期 49 篇，去重后 99 篇；10-24 期在抓取时尚未发布，0 篇）；arXiv API（0 篇，本次分类查询触发 429 限流，未返回数据，降级模式）。报道集构成：全部 12 篇均为 HF 收录，其中 10-22 期 8 篇、10-23 期 4 篇。 主题分布：持续预训练扩展律 1 篇、Agent 后训练与环境合成 2 篇、扩散语言模型 4 篇、LLM 路由与信用分配 1 篇、验证器与自改进 2 篇；简报另覆盖推理痕迹蒸馏与 &ldquo;wait&rdquo; 溯源 2 篇。音频与语音方向今日在 HF 两期候选池中无新论文，arXiv 语音分类又被限流，本期音频版块空缺，不凑数。 今日关键词：&ldquo;扩散语言模型的中间状态是资源&rdquo;——Hidden Messages 把去噪状态当 Agent 间的通信通道，DiffResearch 把中间去噪状态当提前拆解子查询的信号，T2Quant 按去噪步分配量化精度，解码速度分析则发现扩散模型花多少步取决于&quot;有多少是新写的&quot;，慢本身还能当置信信号。四篇都在说同一件事：dLLM 的价值不只在生成方式，更在那些自回归模型根本不存在的中间状态上。 精评 1. Scaling in Games：虚拟世界里做持续预训练，数据管饱、多样性管迁移、个头大反而更挑食 2610.28698\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-25/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-25T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-25">
+<meta name="twitter:description" content="概览 6 篇精评 + 6 篇简报，共 12 篇，已对 7 天滚动窗口去重（候选池 99 篇 → 去重后新鲜池 83 篇 → 兴趣方向初筛 30 篇 → 报道 12 篇；被去重的 16 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-22 期 50 篇 + 10-23 期 49 篇，去重后 99 篇；10-24 期在抓取时尚未发布，0 篇）；arXiv API（0 篇，本次分类查询触发 429 限流，未返回数据，降级模式）。报道集构成：全部 12 篇均为 HF 收录，其中 10-22 期 8 篇、10-23 期 4 篇。 主题分布：持续预训练扩展律 1 篇、Agent 后训练与环境合成 2 篇、扩散语言模型 4 篇、LLM 路由与信用分配 1 篇、验证器与自改进 2 篇；简报另覆盖推理痕迹蒸馏与 &ldquo;wait&rdquo; 溯源 2 篇。音频与语音方向今日在 HF 两期候选池中无新论文，arXiv 语音分类又被限流，本期音频版块空缺，不凑数。 今日关键词：&ldquo;扩散语言模型的中间状态是资源&rdquo;——Hidden Messages 把去噪状态当 Agent 间的通信通道，DiffResearch 把中间去噪状态当提前拆解子查询的信号，T2Quant 按去噪步分配量化精度，解码速度分析则发现扩散模型花多少步取决于&quot;有多少是新写的&quot;，慢本身还能当置信信号。四篇都在说同一件事：dLLM 的价值不只在生成方式，更在那些自回归模型根本不存在的中间状态上。 精评 1. Scaling in Games：虚拟世界里做持续预训练，数据管饱、多样性管迁移、个头大反而更挑食 2610.28698\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-25/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-scaling-in-games虚拟世界里做持续预训练数据管饱多样性管迁移个头大反而更挑食">1. Scaling in Games：虚拟世界里做持续预训练，数据管饱、多样性管迁移、个头大反而更挑食</a></li>
+        <li><a href="#2-agenticroborl把编程-agent-的后训练配方原样搬给机器人规划器9b-模型从-181-冲到-710">2. AgenticRoboRL：把编程 Agent 的后训练配方原样搬给机器人规划器，9B 模型从 18.1% 冲到 71.0%</a></li>
+        <li><a href="#3-hidden-messages扩散语言模型的-agent-之间能传暗语而且传一次比来回四次还管用">3. Hidden Messages：扩散语言模型的 Agent 之间能传&quot;暗语&quot;，而且传一次比来回四次还管用</a></li>
+        <li><a href="#4-routeweaverllm-路由别先定执行范式先学会每种模式怎么跑再学什么时候用哪种">4. RouteWeaver：LLM 路由别先定执行范式，先学会每种模式怎么跑，再学什么时候用哪种</a></li>
+        <li><a href="#5-verifierbench让-agent-自己写验证器它最可靠的本事是把对的答案也拒掉">5. VerifierBench：让 Agent 自己写验证器，它最可靠的本事是把对的答案也拒掉</a></li>
+        <li><a href="#6-diffresearch深度研究全流程换上扩散骨干端到端快约-6-倍中间状态还能提前拆子查询">6. DiffResearch：深度研究全流程换上扩散骨干，端到端快约 6 倍，中间状态还能提前拆子查询</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-t2quant扩散语言模型的量化敏感度随任务和去噪步变无标签信号就能把精度分对">1. T2Quant：扩散语言模型的量化敏感度随任务和去噪步变，无标签信号就能把精度分对</a></li>
+        <li><a href="#2-wildawm纯开源模型合成-341-个长程电脑操作环境前沿模型也只解出-60">2. WildAWM：纯开源模型合成 341 个长程电脑操作环境，前沿模型也只解出 60%</a></li>
+        <li><a href="#3-lm2lm真实实验反馈太贵就训一个研究世界模型当奖励模型">3. LM2LM：真实实验反馈太贵，就训一个&quot;研究世界模型&quot;当奖励模型</a></li>
+        <li><a href="#4-traceforge拿不到老师的思维链就让学生照着答案用自己的风格把推理写出来">4. TraceForge：拿不到老师的思维链，就让学生照着答案用自己的风格把推理写出来</a></li>
+        <li><a href="#5-wait出身考推理模型爱说-wait-不是-rl-教的是训练数据带来的">5. &ldquo;wait&quot;出身考：推理模型爱说 wait 不是 RL 教的，是训练数据带来的</a></li>
+        <li><a href="#6-扩散模型的解码速度随任务与语言变写得慢本身还能当投票信号">6. 扩散模型的解码速度随任务与语言变，&ldquo;写得慢&quot;本身还能当投票信号</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-25/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-25" height="1131" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-25/cover.jpg" srcset="/zh-cn/p/daily-paper-2026-10-25/cover_hu_3832ed153c17ccd.jpg 800w, /zh-cn/p/daily-paper-2026-10-25/cover.jpg 1414w" width="1414">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-25/">AI Paper Daily | 2026-10-25</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-25T00:00:00Z'>Oct 25, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-scaling-in-games虚拟世界里做持续预训练数据管饱多样性管迁移个头大反而更挑食">1. Scaling in Games：虚拟世界里做持续预训练，数据管饱、多样性管迁移、个头大反而更挑食</a></li>
+        <li><a href="#2-agenticroborl把编程-agent-的后训练配方原样搬给机器人规划器9b-模型从-181-冲到-710">2. AgenticRoboRL：把编程 Agent 的后训练配方原样搬给机器人规划器，9B 模型从 18.1% 冲到 71.0%</a></li>
+        <li><a href="#3-hidden-messages扩散语言模型的-agent-之间能传暗语而且传一次比来回四次还管用">3. Hidden Messages：扩散语言模型的 Agent 之间能传&quot;暗语&quot;，而且传一次比来回四次还管用</a></li>
+        <li><a href="#4-routeweaverllm-路由别先定执行范式先学会每种模式怎么跑再学什么时候用哪种">4. RouteWeaver：LLM 路由别先定执行范式，先学会每种模式怎么跑，再学什么时候用哪种</a></li>
+        <li><a href="#5-verifierbench让-agent-自己写验证器它最可靠的本事是把对的答案也拒掉">5. VerifierBench：让 Agent 自己写验证器，它最可靠的本事是把对的答案也拒掉</a></li>
+        <li><a href="#6-diffresearch深度研究全流程换上扩散骨干端到端快约-6-倍中间状态还能提前拆子查询">6. DiffResearch：深度研究全流程换上扩散骨干，端到端快约 6 倍，中间状态还能提前拆子查询</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-t2quant扩散语言模型的量化敏感度随任务和去噪步变无标签信号就能把精度分对">1. T2Quant：扩散语言模型的量化敏感度随任务和去噪步变，无标签信号就能把精度分对</a></li>
+        <li><a href="#2-wildawm纯开源模型合成-341-个长程电脑操作环境前沿模型也只解出-60">2. WildAWM：纯开源模型合成 341 个长程电脑操作环境，前沿模型也只解出 60%</a></li>
+        <li><a href="#3-lm2lm真实实验反馈太贵就训一个研究世界模型当奖励模型">3. LM2LM：真实实验反馈太贵，就训一个&quot;研究世界模型&quot;当奖励模型</a></li>
+        <li><a href="#4-traceforge拿不到老师的思维链就让学生照着答案用自己的风格把推理写出来">4. TraceForge：拿不到老师的思维链，就让学生照着答案用自己的风格把推理写出来</a></li>
+        <li><a href="#5-wait出身考推理模型爱说-wait-不是-rl-教的是训练数据带来的">5. &ldquo;wait&quot;出身考：推理模型爱说 wait 不是 RL 教的，是训练数据带来的</a></li>
+        <li><a href="#6-扩散模型的解码速度随任务与语言变写得慢本身还能当投票信号">6. 扩散模型的解码速度随任务与语言变，&ldquo;写得慢&quot;本身还能当投票信号</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>6 篇精评 + 6 篇简报</strong>，共 12 篇，已对 7 天滚动窗口去重（候选池 99 篇 → 去重后新鲜池 83 篇 → 兴趣方向初筛 30 篇 → 报道 12 篇；被去重的 16 篇均为窗口内已报道论文）。</li>
+<li>来源：HuggingFace Daily Papers（10-22 期 50 篇 + 10-23 期 49 篇，去重后 99 篇；10-24 期在抓取时尚未发布，0 篇）；arXiv API（0 篇，本次分类查询触发 429 限流，未返回数据，降级模式）。报道集构成：全部 12 篇均为 HF 收录，其中 10-22 期 8 篇、10-23 期 4 篇。</li>
+<li>主题分布：持续预训练扩展律 1 篇、Agent 后训练与环境合成 2 篇、扩散语言模型 4 篇、LLM 路由与信用分配 1 篇、验证器与自改进 2 篇；简报另覆盖推理痕迹蒸馏与 &ldquo;wait&rdquo; 溯源 2 篇。<strong>音频与语音方向今日在 HF 两期候选池中无新论文，arXiv 语音分类又被限流，本期音频版块空缺，不凑数。</strong></li>
+<li>今日关键词：<strong>&ldquo;扩散语言模型的中间状态是资源&rdquo;</strong>——Hidden Messages 把去噪状态当 Agent 间的通信通道，DiffResearch 把中间去噪状态当提前拆解子查询的信号，T2Quant 按去噪步分配量化精度，解码速度分析则发现扩散模型花多少步取决于&quot;有多少是新写的&quot;，慢本身还能当置信信号。四篇都在说同一件事：dLLM 的价值不只在生成方式，更在那些自回归模型根本不存在的中间状态上。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-scaling-in-games虚拟世界里做持续预训练数据管饱多样性管迁移个头大反而更挑食">1. Scaling in Games：虚拟世界里做持续预训练，数据管饱、多样性管迁移、个头大反而更挑食
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.28698"  target="_blank" rel="noopener"
+    >2610.28698</a></p>
+<p><strong>一句话</strong>：在虚拟游戏世界里系统测持续预训练（CPT）的三个扩展轴：120 种配置、0.8B–27B 四个模型尺寸、50–1600 小时五种数据配比，结论是数据量管域内成绩、多样性管向相近世界的迁移，而模型越大在单一世界训练时向遥远世界的泛化反而越差，并拟合出一条把验证损失与数据量、多样性、模型尺寸关联起来的经验扩展律。</p>
+<p><strong>贡献/机制</strong>：受控实验设计是这篇的本体：用三级验证损失（域内、相近世界、未见世界）与游戏玩法基准分开量&quot;学会了&quot;和&quot;迁移了&quot;，再区分训练早期的&quot;界面期&quot;（跨世界收益普遍）与后期的&quot;世界期&quot;（收益收窄到域内与相近世界）。作者：Kuan Zhang、Yukun Chen、Zhihao Yang、Yue Su、Xiangnan Wu、Zirong Chen、Run Luo、Jinkun Hou、Tao Tan、Yinhe Zheng、Yiming Li。代码：https://github.com/THUSI-Lab/GameScaling 。</p>
+<p><strong>数值结果</strong>：摘要给的是定性结论与实验规模，未给具体损失数值：120 种训练配置、数据预算 50–1600 小时、配比从纯 Minecraft 到多世界混合共五档；训出的模型在 3D 世界中与 Minecraft 专家模型及前沿模型可比，实时设定下表现最好。各配置的损失与扩展律系数需查正文。</p>
+<p><strong>批判性分析</strong>：做持续预训练的人最该看的是&quot;界面期/世界期&quot;这个切分：它意味着 CPT 早段学到的是跨世界的通用动作界面，继续训下去收益会越来越域内化——何时停、用多少比例的多样数据，不再是玄学而是有曲线可依。&ldquo;大模型在单世界训练下向遥远世界泛化更差&quot;也值得注意，它与&quot;大模型数据效率更高&quot;同时成立，说明容量在单一分布上花得越充分，分布外的包袱越重。保留意见：全部证据来自游戏世界，物理规律是各世界共享的（这正是作者的前提），结论能否外推到物理规律本身都不同的真实机器人数据，摘要的&quot;遥远世界仍有持续差距&quot;已经先打了预防针；模仿学习的上限也被作者自己点明——CPT 之外还需要更丰富的训练阶段。</p>
+<p><strong>摘要译文</strong>：扩展数据、多样性和模型容量已改善了物理环境中的具身学习，在那里多样的经验扎根于共享的物理规律。这些收益能否延伸到视觉风格、动力学、控制方式和目标各不相同的虚拟世界，仍不清楚。我们通过一项持续预训练（CPT）的受控研究调查这一问题，覆盖三个轴：数据量、多样性和模型尺寸。我们的 120 种训练配置涵盖从 0.8B 到 27B 的四个模型尺寸、从 50 到 1600 小时的六种数据预算，以及从仅 Minecraft 数据到多样多世界语料的五种混合配比。我们用三级验证损失和从语料内世界到未见世界的游戏玩法基准评估表现与泛化。结果表明：（1）更多数据改善语料内表现，多样性改善向相近世界的迁移但对遥远世界收益有限，模型尺寸提高数据效率、但在单一世界训练下向遥远世界泛化更差；（2）我们观察到一个早期&quot;界面期&rdquo;（跨世界收益广泛）和一个后期&quot;世界期&quot;（收益收窄到语料内与相近世界），并拟合了一条把验证损失与数据量、多样性和模型尺寸关联的经验扩展律；（3）我们的模型在 3D 世界中与 Minecraft 专家模型和前沿模型具有竞争力，在实时设定中表现最佳。然而，模仿的局限和遥远世界中持续存在的差距表明，构建通用具身 Agent 需要持续预训练之外更丰富的训练阶段。</p>
+<hr>
+<h3 id="2-agenticroborl把编程-agent-的后训练配方原样搬给机器人规划器9b-模型从-181-冲到-710">2. AgenticRoboRL：把编程 Agent 的后训练配方原样搬给机器人规划器，9B 模型从 18.1% 冲到 71.0%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.28589"  target="_blank" rel="noopener"
+    >2610.28589</a></p>
+<p><strong>一句话</strong>：机器人系统过去只改 Harness 和外部记忆、规划器本身一直靠闭源大模型；这篇把编程 Agent 那套&quot;SFT + 多轮 RL&quot;的后训练配方搬到机器人规划器上，用 Harness 专属适配器把不同执行机制（VLA 技能调用、控制代码生成）的交互记录接进同一条 RL 流水线，9B 规划器在 LIBERO-PRO 上从 18.1% 涨到 71.0%，逼近带外部记忆的 Codex（GPT-5.5）的 72.1%——而且它自己不用外部记忆。</p>
+<p><strong>贡献/机制</strong>：关键设计是适配器层：执行组件保持冻结，适配器负责把规划器的交互轨迹与任务结果对齐成可训练的信号，使同一套后训练配方能跨不同 Harness 复用。这与昨天精评的 Harness Scaling 正好互为表里：一个说训练环境要多样，一个说模型本身要跨 Harness 可训。作者：Xinxin Liu、Bingxin Xu、Wenrui Bao、Ming Li、Wentao Bao、Chen Chen、Yuzhang Shang。代码：https://github.com/xinxinliu-ai/AgenticRoboRL 。</p>
+<p><strong>数值结果</strong>：LIBERO-PRO 上 9B 规划器成功率 18.1% → 71.0%（无外部记忆），对照为 Codex（GPT-5.5）加外部记忆的 72.1%。摘要未给 SFT 与 RL 各自的贡献拆分，也未给其他基准的数字。</p>
+<p><strong>批判性分析</strong>：命题本身比数字重要：具身方向长期默认&quot;规划器用最强的闭源模型现成调&quot;，这篇证明规划能力是可以被后训练专门塑造的，且塑造方式与 Harness 解耦——团队换执行栈时不用重训规划器。但要打的折扣也很清楚：证据只有一个基准（LIBERO-PRO，仿真操作任务），71.0% 与 72.1% 的对照里 Codex 那侧带着外部记忆、这边不带，比较口径并不完全对称；&ldquo;逼近前沿闭源模型&quot;更准确的说法是&quot;在这个基准、这个对照设定下打平&rdquo;。SFT 数据从哪来、RL 的奖励如何定义（任务成功信号在真实机器人上并不便宜）是决定这套配方能否出仿真的关键，摘要没有交代，查正文时先看这两处。</p>
+<p><strong>摘要译文</strong>：具身机器人系统把规划器与机器人 Harness 结合起来执行复杂操作任务。近期工作通过更好的 Harness 和外部记忆改进这些系统，但依赖强大的闭源模型作规划器，并不改进规划器自身的能力。相比之下，编程 Agent 通过对模型本身做后训练取得了显著进步。因此我们研究后训练能否同样改进机器人规划器。然而，把它应用到不同机器人 Harness 上需要适配不同的执行机制，包括 VLA 技能调用和控制代码生成。为此，我们提出 AgenticRoboRL，一个跨不同 Harness 对机器人规划器做后训练的框架。其训练配方结合了监督微调与多轮强化学习。为适配不同执行机制，Harness 专属适配器把记录下来的规划器交互与任务结果连接起来，使一条通用的 RL 训练流水线得以成立，同时保持执行组件不变。在 LIBERO-PRO 上，AgenticRoboRL 在不使用外部记忆的情况下把一个 9B 参数规划器的成功率从 18.1% 提高到 71.0%，接近 Codex（GPT-5.5）使用外部记忆时达到的 72.1%。这些结果表明，后训练是改进机器人规划器的有效途径。我们将发布该框架和训练好的规划器检查点。</p>
+<hr>
+<h3 id="3-hidden-messages扩散语言模型的-agent-之间能传暗语而且传一次比来回四次还管用">3. Hidden Messages：扩散语言模型的 Agent 之间能传&quot;暗语&quot;，而且传一次比来回四次还管用
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.28905"  target="_blank" rel="noopener"
+    >2610.28905</a></p>
+<p><strong>一句话</strong>：多 Agent 系统默认只能用解码后的文本通信，扩散语言模型在去噪过程中那些可修订的连续状态全被扔掉了——这篇让发送方把去噪状态压成四个带符号的稠密向量传给接收方，并用因果干预（删掉消息、换成别题的消息）证明接收方真的在用消息的&quot;含义&quot;：在 QASC 上匹配通信达 80.8%，换成错题消息掉到 46.8%，内容效应 +34.0 分；更反直觉的是，一次晚期传输达 87.8%，比四次往复交换还高 7.0 分。</p>
+<p><strong>贡献/机制</strong>：实验设计是这篇的说服力来源：derangement（错位替换）同时检验&quot;通道是否存在&quot;与&quot;内容是否被用&quot;，定向替换还能把接收方&quot;带偏&quot;到被替换的事实上去，说明传的不是噪声而是语义。发送与接收双方保持各自的上下文、画布与轨迹，消息只是四向量宽的窄通道。作者：Alan-Barsag Gazzaev、Alexey Gavrilov、Sergey Muravyov、Ilya Makarov。代码：https://github.com/alanrbtx/hidden-messages-diffusion-agents 。</p>
+<p><strong>数值结果</strong>：Tiny-A2D 上错位移除掉 +63.6 分的优势，Dream-7B 上移除掉 +100.0 分；QASC（两条支撑事实分置于两个 Agent）匹配通信 80.8%、错题消息 46.8%；单次晚期传输 87.8%，超四次往复交换 7.0 分。</p>
+<p><strong>批判性分析</strong>：这是本周第二篇把&quot;扩散中间状态&quot;当一等公民的论文（另一篇是今天的 DiffResearch），合起来看，dLLM 的多 Agent 玩法可能与自回归有本质区别：文本通信是窄带、离散、不可修订的，隐状态通信是宽带、连续、可塑的，而&quot;晚传一次胜过多轮往复&quot;提示通信时机比通信量更重要——早期状态还没形成值得传的内容。需要冷静的地方：任务都是受控小任务（Tiny-A2D、QASC 这类），+100 分这种满格数字说明任务本身在无通信时接近不可解，通道的边际价值被任务设计放大了；四向量通道在真实长程任务里能装多少信息、跨模型家族是否可移植（发送与接收须共享表示空间），摘要都没有回答。对做多 Agent 的人，这篇的因果检验方法（删、换、定向带偏）比结论本身更值得借走：以后任何&quot;隐通信有效&quot;的主张都该过这一关。</p>
+<p><strong>摘要译文</strong>：扩散语言模型通过一系列可修订的连续状态形成答案，但多 Agent 系统通常丢弃这些状态、让 Agent 只在解码出文本之后才通信。我们问：一条独立的扩散轨迹能否把一条紧凑的隐藏消息传入另一条轨迹，以及关键地，接收方是否会使用这条消息的含义。在 Hidden Messages 中，发送方把其去噪状态压缩成四个带符号的稠密向量；接收方在保留自身上下文、画布和轨迹的同时消费这些向量。移除一条消息检验通道是否重要；把它替换成另一个例子的消息检验其内容是否重要。在受控任务上，错位移除了 Tiny-A2D 上 +63.6 分的优势和 Dream-7B 上 +100.0 分的优势，而定向替换会把接收方引向被替换的事实。在支撑事实分置于两个 Agent 的 QASC 上，匹配通信达到 80.8%，但错例消息把准确率降到 46.8%，内容效应为 +34.0 分。令人惊讶的结果在时间维度上：一次晚期传输达到 87.8%，超过四次往复交换 +7.0 分。这些实验为扩散语言模型 Agent 之间的连续隐藏通信提供了因果证据，并表明信息何时传输可能比 Agent 交换多少次更重要。</p>
+<hr>
+<h3 id="4-routeweaverllm-路由别先定执行范式先学会每种模式怎么跑再学什么时候用哪种">4. RouteWeaver：LLM 路由别先定执行范式，先学会每种模式怎么跑，再学什么时候用哪种
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.19705"  target="_blank" rel="noopener"
+    >2610.19705</a></p>
+<p><strong>一句话</strong>：现有 LLM 路由都先把执行范式钉死（单轮、多轮或 Agentic 三选一），再在范式内选模型；RouteWeaver 把模式选择与模式内执行放进同一个策略联合学习，用 COMET-GRPO 把轨迹级优势拆成模式层与执行层两个信用信号，再用渐进探索让路由器先学&quot;怎么执行每种模式&quot;、后学&quot;何时用哪种&quot;——没有这一步，策略会整体塌缩到只用单轮执行。最终在数学、代码、知识、逻辑、事实回忆五域平均 61.4%，相对最强基线 +11.03%，且五域全胜。</p>
+<p><strong>贡献/机制</strong>：两个设计互相咬合：COMET-GRPO 解决的是分层决策的信用分配（一次失败到底怪模式选错还是模型选错），渐进探索解决的是训练顺序（先会做、再会选），后者缺失时塌缩到单轮这个消融结果，本身就是对&quot;联合学习分层策略&quot;的最有力论证。作者：Xiaohan Wang、Haozhen Zhang、Qingyuan Liu、Tao Feng、Wenya Wang。代码：https://github.com/LaughKing/RouteWeaver 。</p>
+<p><strong>数值结果</strong>：五域平均准确率 61.4%，相对最强基线相对提升 11.03%，五个域逐一全胜；消融显示 COMET-GRPO 与渐进探索都重要，去掉渐进探索则路由策略完全塌缩为单轮执行。摘要未给各基线名单与逐域分数。</p>
+<p><strong>批判性分析</strong>：对正在做 Agentic RL 的人，这篇的价值在把&quot;信用分配要按决策层级拆&quot;做成了一个干净实例，与 GRPO 系方法里常见的整轨迹优势形成对照；塌缩消融也提醒：分层策略联合训练时，简单模式因为早期回报更稳会系统性赢过复杂模式，课程顺序不是调参细节而是成败项。保留意见：路由的评测全是问答型任务（数学/代码/知识/逻辑/事实），模式间差异主要是&quot;调用几次模型&quot;，与真实 Agentic 路由里工具、上下文、成本结构的差异还有距离；61.4% 的成本侧（平均调用次数、延迟）摘要未报，路由论文只报准确率等于只报了一半账。</p>
+<p><strong>摘要译文</strong>：LLM 路由在多样的任务上动态选择并协调异构语言模型。然而，现有方法大多建立在预定义的执行范式之上，如单轮、多轮或 Agentic 路由，这固定了模型调用的组织方式，限制了对不同查询需求的适应。我们提出 RouteWeaver，一个统一的路由框架，把这些路由模式整合进单个 LLM 策略，联合学习使用哪种模式以及在该模式内如何选择模型。为联合优化模式选择与模式内执行，我们开发了 COMET-GRPO（协调模式-执行训练），它把轨迹级优势解耦为模式选择与模式内执行两个独立信号，使每个决策层级获得更有针对性的信用分配。我们还引入渐进探索，逐步把训练从外部指派模式转向自主选择，使路由器先学会如何执行每种模式、再决定何时使用它。我们在数学、编码、知识、逻辑推理和事实回忆上评估 RouteWeaver。RouteWeaver 取得 61.4% 的平均准确率，相对最强基线相对提升 11.03%，并在五个域中的每一个都超过所有对照基线。消融表明 COMET-GRPO 与渐进探索对自适应路由都重要；没有渐进探索，路由策略会完全塌缩到单轮执行。</p>
+<hr>
+<h3 id="5-verifierbench让-agent-自己写验证器它最可靠的本事是把对的答案也拒掉">5. VerifierBench：让 Agent 自己写验证器，它最可靠的本事是把对的答案也拒掉
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.28679"  target="_blank" rel="noopener"
+    >2610.28679</a></p>
+<p><strong>一句话</strong>：Agent 需要验证器来验收自己的输出、筛合成训练数据，但&quot;写验证器&quot;本身没人测过——VerifierBench 用来自六个 Agent 基准的 222 个任务、4,993 个隐藏测试用例（含替代合法解与攻击样本）专测这件事，19 个模型在同一 Harness 下的归一化平衡准确率只有 10.6–62.1，且生成的验证器拒错比纳对可靠得多：多数误拒来自&quot;一个测试解都不接受&quot;的验证器，它们在自测时还活得很好，因为 Agent 只拿与验证器共享同一错误假设的解去测它。</p>
+<p><strong>贡献/机制</strong>：基准之外还有一道前置审计 V4V（Verifier4Verifier）：六项检查先筛源验证器与测试套件本身的质量，避免拿坏尺子量人。失败模式的归因是这篇最有用的部分：验证器对解的格式、工具使用、代码改动做了任务并未要求的假设，而自测试用同源解、或压根不验证&quot;至少有一个正确解能通过&quot;，于是过度限制一路绿灯。作者：Jianing Yin、Ziyi Chen、Hao Wang、Yiyou Sun、Zijian Jin、Dawn Song、Daoan Zhang。代码：https://github.com/DwanZhang-AI/verifier-suite 。</p>
+<p><strong>数值结果</strong>：222 个任务（工具调用、状态型、代码验证三类）、4,993 个隐藏用例；19 个模型归一化平衡准确率区间 10.6–62.1。摘要未给逐模型分数与三类任务的拆分。</p>
+<p><strong>批判性分析</strong>：这篇直接戳中 Agentic RL 与自训练流水线的一个隐含假设：奖励/验收环节被当成可信的，但如果验证器是模型现写的，它的系统性偏向是&quot;宁可错杀&quot;——用这种验证器筛训练数据，筛掉的恰是格式不合假设的正确解，等于给数据分布偷偷加了一个保守过滤器，且越自测越自信。62.1 的上限也说明这不是某个弱模型的问题。对自己搭验证环节的人，最低成本的改进就在摘要里：验收测试必须同时包含&quot;已知正确解必须通过&quot;与&quot;任务允许的其他解也应通过&quot;两类用例。局限是基准的任务来自既有 Agent 基准的改造，验证器生成在真实开放任务（需求本身模糊）中的表现不在覆盖范围内。</p>
+<p><strong>摘要译文</strong>：Agent 需要可靠的方法来验证其输出，无论是完成任务时还是筛选合成训练数据时。我们研究验证器生成：从求解任务时可用的指令与环境出发，一个 Agent 编写一个可执行验证器，它必须接受每个合法解、拒绝非法解。我们提出 VerifierBench，一个包含来自六个 Agent 基准的 222 个任务的基准，涵盖工具调用、状态型和代码验证，配有 4,993 个隐藏测试用例，其中包括替代合法解和攻击；Verifier4Verifier（V4V），一个六项检查的审计，会筛查其源验证器和测试套件。在一个通用 Agent Harness 中评测的 19 个模型里，归一化平衡准确率从 10.6 到 62.1 不等，生成的验证器拒绝非法解始终比接受合法解更可靠。这种表面的强项可能掩盖过度限制的验证：所分析记录中的多数误拒来自对某个任务不接受任何受测解的验证器。案例研究揭示了对解格式、工具使用和代码改动的无依据假设，这些假设排除了合法解。这些错误能在自测试中存活，是因为 Agent 测试的解与验证器共享同样的错误假设，或者提交验证器时根本没有确认任何正确解能通过。这些发现提示，应同时测试验证器是否接受一个正确解，以及是否接受任务允许的其他解。项目页面与数据集已公开。</p>
+<hr>
+<h3 id="6-diffresearch深度研究全流程换上扩散骨干端到端快约-6-倍中间状态还能提前拆子查询">6. DiffResearch：深度研究全流程换上扩散骨干，端到端快约 6 倍，中间状态还能提前拆子查询
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.28909"  target="_blank" rel="noopener"
+    >2610.28909</a></p>
+<p><strong>一句话</strong>：深度研究系统要在规划、取证、综合、修订之间来回迭代，端到端延迟是交互使用的瓶颈，而生产系统清一色建在自回归模型上、继承了从左到右的解码方式；DiffResearch 把每个阶段的核心都换成扩散语言模型，在脚手架、检索代码、提示词与评测全部固定的对照下，100 个 Deep Research Bench 任务上扩散骨干端到端约快 6 倍（规划与写作环节是数量级下降），其 dFast 模式还能读取去噪中间状态、在生成完成前就抽出子查询，单独给拆解环节带来 1.99 倍中位加速且不损报告质量，并在 RACE 量表上拿到三种配置中的最佳总分。</p>
+<p><strong>贡献/机制</strong>：方法论上最干净的是&quot;只换骨干&quot;的控制变量：同一套 Agentic 脚手架跑两种骨干，延迟与质量差异才能归因于生成范式本身。dFast 是只有扩散范式才做得出的设计——自回归没有&quot;未完成的中间状态&quot;可读，扩散的去噪轨迹里子查询意图先于成稿浮现，提前抽取等于把串行流水线改成部分并行。作者：Alan-Barsag Gazzaev、Alexey Gavrilov、Mikhail Mozikov、Sergey Muravyov。代码：https://github.com/alanrbtx/DiffResearch（Apache-2.0）。</p>
+<p><strong>数值结果</strong>：100 个 Deep Research Bench 任务上扩散骨干端到端约快 6 倍；dFast 对拆解环节单独带来 1.99 倍中位加速、无报告质量损失，且 RACE 总分在三种配置中最佳；基于更强扩散模型的一个实例在公开系统级排行榜快照中排在若干商业系统之上。摘要未给 RACE 的具体分数与 AR 对照的绝对延迟。</p>
+<p><strong>批判性分析</strong>：与今天的 Hidden Messages 合看，扩散语言模型的卖点正在从&quot;并行解码更快&quot;升级为&quot;中间状态可编程&quot;：能提前读、能跨 Agent 传、能按步调精度。对深度研究这种&quot;规划与写作占时长大头、且容忍并行草稿&quot;的场景，这个优势是结构性的。但 6 倍这个数要小心归因：深度研究的端到端时间里检索与工具等待占多少、骨干生成占多少，决定了 6 倍里有多少是范式功劳；作者说加速主要由规划与写作的数量级下降驱动，言下之意取证环节并未受益。另外&quot;排行榜快照排在商业系统之上&quot;是最弱的一类证据（快照时点、提交构成都不可控），引用时建议只引受控对照的那组数。质量维度只靠 RACE 量表（自动评审）也偏单薄，长报告的人类偏好对照缺席。</p>
+<p><strong>摘要译文</strong>：深度研究系统迭代地规划、收集证据、综合并修订，使端到端延迟成为交互使用的关键瓶颈。几乎所有生产系统都建在自回归（AR）语言模型之上，继承了其在规划和长篇写作中的从左到右解码方式。我们提出 DiffResearch，一个开放的多 Agent 深度研究框架，把扩散语言模型（dLLM）放在每个阶段的核心，并测量扩散骨干如何改变延迟与报告质量。在保持 Agentic 脚手架、检索代码、提示词和评测不变的情况下，我们在开放扩散模型与可比的 AR 模型之间替换骨干。在 100 个 Deep Research Bench 任务上，扩散骨干端到端大约快 6 倍，其驱动力是规划与写作环节数量级的下降。我们进一步提出 dFast，一种分解模式，它读取中间去噪状态、在生成完成前抽取子查询，为单独的拆解环节提供 1.99 倍的中位加速且无报告质量损失。在该基准的 RACE 量表上，dFast 在三种配置中取得最佳总分。最后，在一份公开的系统级排行榜快照中，一个建立在更强扩散模型之上的实例排在若干商业系统之上。我们以 Apache-2.0 许可证发布 DiffResearch。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="1-t2quant扩散语言模型的量化敏感度随任务和去噪步变无标签信号就能把精度分对">1. T2Quant：扩散语言模型的量化敏感度随任务和去噪步变，无标签信号就能把精度分对
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31198"  target="_blank" rel="noopener"
+    >2610.31198</a></p>
+<p>扩散语言模型反复去噪，量化敏感度同时随下游任务和去噪时间步变化，且这种模式无需真实标签或任务指标就能预测。T2Quant 用这个无标签敏感信号在固定比特预算下跨去噪步分配激活精度，在 3 个 DLM、6 个基准上一致改进现有量化方法，同等预算下最高 +6.7 个百分点。对要部署 dLLM 的人，这是&quot;扩散模型量化不能照搬 LLM 的一刀切精度&quot;的直接证据。代码：https://github.com/OfekAvivi/T2Quant 。</p>
+<h3 id="2-wildawm纯开源模型合成-341-个长程电脑操作环境前沿模型也只解出-60">2. WildAWM：纯开源模型合成 341 个长程电脑操作环境，前沿模型也只解出 60%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.26828"  target="_blank" rel="noopener"
+    >2610.26828</a></p>
+<p>直接在真实电脑系统里训 Agent 又贵又危险，WildAWM 用全开源模型合成同时支持 GUI、MCP 服务与命令行的可执行环境，用异构 Agent 试跑、跨评委一致性与反事实探针三道执行型质量门把关任务的可解性、难度与验证器可靠性，产出 341 个可需 100+ 步的环境-任务对，GPT-6-Astra 也只解出 60%。仅在这些合成世界里训出的两个 Qwen 模型，在 8 个分布外基准（网页、claw、电脑操作）中的多数上取得显著提升——合成环境这条线开始有&quot;训完能迁移&quot;的成套证据了。代码：https://github.com/MSR-Orchard/WildAWM 。</p>
+<h3 id="3-lm2lm真实实验反馈太贵就训一个研究世界模型当奖励模型">3. LM2LM：真实实验反馈太贵，就训一个&quot;研究世界模型&quot;当奖励模型
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.23344"  target="_blank" rel="noopener"
+    >2610.23344</a></p>
+<p>让模型学会&quot;提出有效的模型改进方案&quot;需要 RL，但每条提案的真实验证都可能是一次完整训练（十 GPU 小时起），反馈收集动辄数十万 GPU 小时。LM2LM 用一个冻结的 LLM 作研究世界模型（RWM）、从上下文中的真实实验记录预测提案收益来当奖励，并周期性地真实执行 RWM 高估的当前策略提案、把实测结果补回上下文，防止优化钻&quot;高估提案&quot;的空子。在 8 个自回归与扩散 LM 开发环境上，LM2LM 让 Qwen3.8-27B 在留出任务的真实执行评测中超过 GPT-6-sol（哪怕后者也给了 300 条真实实验记录作上下文），数据生成成本还低 33%。代理奖励会漂移、要用真实执行定期锚定——这个配方对所有&quot;用模型评模型&quot;的自改进流水线都成立。</p>
+<h3 id="4-traceforge拿不到老师的思维链就让学生照着答案用自己的风格把推理写出来">4. TraceForge：拿不到老师的思维链，就让学生照着答案用自己的风格把推理写出来
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.29680"  target="_blank" rel="noopener"
+    >2610.29680</a></p>
+<p>部分前沿团队不再返回详细推理痕迹，蒸馏链条断在数据上。TraceForge 的替代路线：以上下文与老师的答案为输入，用学生模型同家族的风格重新生成推理痕迹，训练分监督与对抗两阶段（生成器学重建本家族的真实痕迹、评论器学辨别痕迹真伪）。独立评委给生成痕迹的&quot;像真&quot;评分平均 0.68、真实痕迹 0.66；五个基准上通用任务各语料大致相当，代码任务上生成的推理超过教师自身的思维内容——同 5,000 题、同教师答案下 HumanEval+ +3.7 分、MBPP+ +7.1 分且每个检查点都领先。作者的解释是&quot;用学生家族自己的风格写的推理更容易被它学会&quot;。注意 0.68 这类是真实性评分而非正确率，风格对齐与推理正确性是两笔账。</p>
+<h3 id="5-wait出身考推理模型爱说-wait-不是-rl-教的是训练数据带来的">5. &ldquo;wait&quot;出身考：推理模型爱说 wait 不是 RL 教的，是训练数据带来的
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.30882"  target="_blank" rel="noopener"
+    >2610.30882</a></p>
+<p>流行叙事说 RL 教会了推理模型说 &ldquo;wait&rdquo; 再回头检查，这篇沿开放模型的训练史追踪这个词：基座里没有这个词时，RL 能大幅提高 MATH-500 准确率而 wait 依然几乎不出现；它随训练数据而来——OLMo-3 是在中期训练阶段、多数模型是在推理痕迹微调时装上的。基座已有时，两个已发布的 RL-Zero 配方（OLMo-3、MiMo）会放大它，同一基座的无 KL GRPO 则不会。结论有两层：wait 的频率本身不能作为&quot;RL 诱发推理&quot;的证据，且用 LLM 评委量&quot;修订行为&quot;可能把人类标注的趋势测反。做 RL 归因分析的人，这篇是方法论提醒：先查继承，再谈发现。</p>
+<h3 id="6-扩散模型的解码速度随任务与语言变写得慢本身还能当投票信号">6. 扩散模型的解码速度随任务与语言变，&ldquo;写得慢&quot;本身还能当投票信号
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.25835"  target="_blank" rel="noopener"
+    >2610.25835</a></p>
+<p>扩散语言模型每个 token 花几次前向由它自己在生成中决定，同长度输出的成本可以差很多。这篇在 2 个扩散模型、10 个任务上拆解成本来源：照抄或轻改输入的文本便宜、开放写作贵（DiffusionGemma 故事写作每 token 的前向次数是语法纠正的 3 倍多），差距主要由&quot;输出相对输入的新增比例&quot;与&quot;词的稀有度&quot;解释；高分词语言每 token 还要更多步。最实用的一条：同一道数学题上，错误答案比正确答案花更多步，用解码速度给候选答案加权投票比多数投票最高多 4.2 分、且零额外成本。扩散的算力优势取决于&quot;输出有多少已被决定&rdquo;，这句话对估推理成本和设计采样策略都适用。</p>
+<hr>
+<p><em>本日 12 篇（6 精评 + 6 简报）来自 HF Daily Papers 10-22 与 10-23 期候选池：arXiv API 本次因 429 限流未返回数据（降级模式），音频方向本期在候选池中无新论文、版块空缺，其余为持续预训练、Agent 后训练与扩散语言模型方向精选。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/127326"  target="_blank" rel="noopener"
+    >Wiresetc</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-24/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-24" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-24/cover_hu_79b638e89b93b670.jpg" srcset="/zh-cn/p/daily-paper-2026-10-24/cover_hu_79b638e89b93b670.jpg 1x, /zh-cn/p/daily-paper-2026-10-24/cover_hu_2778a783a67c3021.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #341f2080 0%, #fbf0e6C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-24</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-23/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-23" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-23/cover_hu_70cd49107a588ae8.png" srcset="/zh-cn/p/daily-paper-2026-10-23/cover_hu_70cd49107a588ae8.png 1x, /zh-cn/p/daily-paper-2026-10-23/cover_hu_df88b0c372e5bf96.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #403d3e80 0%, #e5d3caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-23</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-22/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-22" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-22/cover_hu_54c8eef8a4cbbdb.jpg" srcset="/zh-cn/p/daily-paper-2026-10-22/cover_hu_54c8eef8a4cbbdb.jpg 1x, /zh-cn/p/daily-paper-2026-10-22/cover_hu_98f193ea18e7a700.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #50a9f080 0%, #ddd9d4C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-22</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-21/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-21" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-21/cover_hu_54fe2ed158c53866.png" srcset="/zh-cn/p/daily-paper-2026-10-21/cover_hu_54fe2ed158c53866.png 1x, /zh-cn/p/daily-paper-2026-10-21/cover_hu_4eea4f244754e860.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #a1abaa80 0%, #212222C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-21</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-20/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-20" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-20/cover_hu_b7b2e3b86351d00c.jpg" srcset="/zh-cn/p/daily-paper-2026-10-20/cover_hu_b7b2e3b86351d00c.jpg 1x, /zh-cn/p/daily-paper-2026-10-20/cover_hu_7bd40f44e1460497.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #49334180 0%, #e8d0d8C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-20</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
