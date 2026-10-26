@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 6 篇精评 + 6 篇简报，共 12 篇，已对 7 天滚动窗口去重（候选池 105 篇 → 去重后新鲜池 96 篇 → 兴趣方向初筛 30 篇 → 报道 12 篇；被去重的 9 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-23 期 49 篇；10-24、10-25 适逢周末无新期，0 篇）；arXiv API（cs.CL 返回 60 篇、与 HF 合并去重后净增 56 篇；cs.LG / cs.AI / cs.SD / eess.AS / cs.CV 五个分类查询触发 429 限流未返回数据，部分降级模式——音频论文多与 cs.CL 交叉列表，本期音频候选已由 cs.CL 通道捕获）。报道集构成：HF 收录 5 篇、arXiv 直采 7 篇，全部发表于 2026-10-20 至 10-22。 主题分布：音频与语音 4 篇（TTS 评测、语码转换 ASR、音乐情感、ASR 搜索）、对话用户模拟 1 篇、Agent 记忆与删除审计 2 篇、MoE 架构 1 篇、扩散语言模型解码 1 篇；简报另覆盖视觉感知、Agent 视觉理解与视频深度研究基准 3 篇。 今日关键词：&ldquo;评测工具本身有地板，删除动作本身不删信息&rdquo;——TTS 的 WER 里有三分之一到三分之二是评测 ASR 自己听错的，Agent 把记忆条目删掉之后三分之二的秘密还能被一条查询问出来，记忆用得好不好则要由用户本人的偏好说了算。三篇都在提醒同一件事：管线里那些被默认可信的环节（评测器、删除、记忆收益），每一个都得单独验。 精评 1. Verifier&rsquo;s Floor：TTS 评测里的&quot;生僻词错误&quot;，有 33–67% 是评测 ASR 自己听错的 2610.31470\n">
+<title>AI Paper Daily | 2026-10-26</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-26/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-26">
+<meta property='og:description' content="概览 6 篇精评 + 6 篇简报，共 12 篇，已对 7 天滚动窗口去重（候选池 105 篇 → 去重后新鲜池 96 篇 → 兴趣方向初筛 30 篇 → 报道 12 篇；被去重的 9 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-23 期 49 篇；10-24、10-25 适逢周末无新期，0 篇）；arXiv API（cs.CL 返回 60 篇、与 HF 合并去重后净增 56 篇；cs.LG / cs.AI / cs.SD / eess.AS / cs.CV 五个分类查询触发 429 限流未返回数据，部分降级模式——音频论文多与 cs.CL 交叉列表，本期音频候选已由 cs.CL 通道捕获）。报道集构成：HF 收录 5 篇、arXiv 直采 7 篇，全部发表于 2026-10-20 至 10-22。 主题分布：音频与语音 4 篇（TTS 评测、语码转换 ASR、音乐情感、ASR 搜索）、对话用户模拟 1 篇、Agent 记忆与删除审计 2 篇、MoE 架构 1 篇、扩散语言模型解码 1 篇；简报另覆盖视觉感知、Agent 视觉理解与视频深度研究基准 3 篇。 今日关键词：&ldquo;评测工具本身有地板，删除动作本身不删信息&rdquo;——TTS 的 WER 里有三分之一到三分之二是评测 ASR 自己听错的，Agent 把记忆条目删掉之后三分之二的秘密还能被一条查询问出来，记忆用得好不好则要由用户本人的偏好说了算。三篇都在提醒同一件事：管线里那些被默认可信的环节（评测器、删除、记忆收益），每一个都得单独验。 精评 1. Verifier&rsquo;s Floor：TTS 评测里的&quot;生僻词错误&quot;，有 33–67% 是评测 ASR 自己听错的 2610.31470\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-26/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-26T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-26">
+<meta name="twitter:description" content="概览 6 篇精评 + 6 篇简报，共 12 篇，已对 7 天滚动窗口去重（候选池 105 篇 → 去重后新鲜池 96 篇 → 兴趣方向初筛 30 篇 → 报道 12 篇；被去重的 9 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-23 期 49 篇；10-24、10-25 适逢周末无新期，0 篇）；arXiv API（cs.CL 返回 60 篇、与 HF 合并去重后净增 56 篇；cs.LG / cs.AI / cs.SD / eess.AS / cs.CV 五个分类查询触发 429 限流未返回数据，部分降级模式——音频论文多与 cs.CL 交叉列表，本期音频候选已由 cs.CL 通道捕获）。报道集构成：HF 收录 5 篇、arXiv 直采 7 篇，全部发表于 2026-10-20 至 10-22。 主题分布：音频与语音 4 篇（TTS 评测、语码转换 ASR、音乐情感、ASR 搜索）、对话用户模拟 1 篇、Agent 记忆与删除审计 2 篇、MoE 架构 1 篇、扩散语言模型解码 1 篇；简报另覆盖视觉感知、Agent 视觉理解与视频深度研究基准 3 篇。 今日关键词：&ldquo;评测工具本身有地板，删除动作本身不删信息&rdquo;——TTS 的 WER 里有三分之一到三分之二是评测 ASR 自己听错的，Agent 把记忆条目删掉之后三分之二的秘密还能被一条查询问出来，记忆用得好不好则要由用户本人的偏好说了算。三篇都在提醒同一件事：管线里那些被默认可信的环节（评测器、删除、记忆收益），每一个都得单独验。 精评 1. Verifier&rsquo;s Floor：TTS 评测里的&quot;生僻词错误&quot;，有 33–67% 是评测 ASR 自己听错的 2610.31470\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-26/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-verifiers-floortts-评测里的生僻词错误有-3367-是评测-asr-自己听错的">1. Verifier&rsquo;s Floor：TTS 评测里的&quot;生僻词错误&quot;，有 33–67% 是评测 ASR 自己听错的</a></li>
+        <li><a href="#2-syra-cs合成语码转换语音的正确用法不是混着训而是先元学习一个好适应的起点">2. SyRA-CS：合成语码转换语音的正确用法不是混着训，而是先元学习一个&quot;好适应&quot;的起点</a></li>
+        <li><a href="#3-音乐情感预测效价难测不是音频的问题用-llm-上下文学习修正小模型r-从-0110-涨到-0427">3. 音乐情感预测：效价难测不是音频的问题，用 LLM 上下文学习修正小模型，R² 从 0.110 涨到 0.427</a></li>
+        <li><a href="#4-afterdeletebenchagent-的记忆条目删掉了三分之二的秘密一条查询就能问回来">4. AfterDeleteBench：Agent 的记忆条目删掉了，三分之二的秘密一条查询就能问回来</a></li>
+        <li><a href="#5-userlm-20用户模拟器既要守任务又要像真人用-rl-同时奖励这两件事有效对话率翻了三倍多">5. UserLM-2.0：用户模拟器既要守任务又要像真人，用 RL 同时奖励这两件事，有效对话率翻了三倍多</a></li>
+        <li><a href="#6-meta-expertmoe-的专家不必每层各存一份跨层共享只用-7080-的专家数就打平原版">6. Meta Expert：MoE 的专家不必每层各存一份，跨层共享只用 70–80% 的专家数就打平原版</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-asr-搜索空间解剖端到端模型平时梁很小不确定时假设数暴涨按分数剪枝比固定梁更省时">1. ASR 搜索空间解剖：端到端模型平时梁很小、不确定时假设数暴涨，按分数剪枝比固定梁更省时</a></li>
+        <li><a href="#2-扩散语言模型的解掩码策略标签太宽松是低步数下的主要坑轨迹收缩目标给出最好的速度-精度前沿">2. 扩散语言模型的解掩码策略：标签太宽松是低步数下的主要坑，轨迹收缩目标给出最好的速度-精度前沿</a></li>
+        <li><a href="#3-wevisone-vl微信的统一视觉感知模型用一个-obj-词元把检测分割抠图全塞进自回归生成upvotes-243">3. WeVisOne-VL：微信的统一视觉感知模型，用一个 OBJ 词元把检测、分割、抠图全塞进自回归生成（upvotes 243）</a></li>
+        <li><a href="#4-agentvqa把在线-agent-评测离线化22-个模型最好的也只有-585错不在理解任务而在跟不住视觉状态">4. AgentVQA：把在线 Agent 评测离线化，22 个模型最好的也只有 58.5%，错不在理解任务而在跟不住视觉状态</a></li>
+        <li><a href="#5-记忆感知奖励模型用了记忆的回答并不更受用户欢迎自动评测却系统性偏爱它们">5. 记忆感知奖励模型：用了记忆的回答并不更受用户欢迎，自动评测却系统性偏爱它们</a></li>
+        <li><a href="#6-omnidr-bench以视频为中心的深度研究评测最好的系统-633-分短板在引用支撑与跨模态因果分析">6. OmniDR-Bench：以视频为中心的深度研究评测，最好的系统 63.3 分，短板在引用支撑与跨模态因果分析</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-26/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-26" height="3031" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-26/cover.png" srcset="/zh-cn/p/daily-paper-2026-10-26/cover_hu_91664e592ad3d921.png 800w, /zh-cn/p/daily-paper-2026-10-26/cover_hu_5e4f493e513b71c9.png 1600w, /zh-cn/p/daily-paper-2026-10-26/cover_hu_ed27eb1900b22365.png 2400w, /zh-cn/p/daily-paper-2026-10-26/cover.png 4823w" width="4823">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-26/">AI Paper Daily | 2026-10-26</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-26T00:00:00Z'>Oct 26, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-verifiers-floortts-评测里的生僻词错误有-3367-是评测-asr-自己听错的">1. Verifier&rsquo;s Floor：TTS 评测里的&quot;生僻词错误&quot;，有 33–67% 是评测 ASR 自己听错的</a></li>
+        <li><a href="#2-syra-cs合成语码转换语音的正确用法不是混着训而是先元学习一个好适应的起点">2. SyRA-CS：合成语码转换语音的正确用法不是混着训，而是先元学习一个&quot;好适应&quot;的起点</a></li>
+        <li><a href="#3-音乐情感预测效价难测不是音频的问题用-llm-上下文学习修正小模型r-从-0110-涨到-0427">3. 音乐情感预测：效价难测不是音频的问题，用 LLM 上下文学习修正小模型，R² 从 0.110 涨到 0.427</a></li>
+        <li><a href="#4-afterdeletebenchagent-的记忆条目删掉了三分之二的秘密一条查询就能问回来">4. AfterDeleteBench：Agent 的记忆条目删掉了，三分之二的秘密一条查询就能问回来</a></li>
+        <li><a href="#5-userlm-20用户模拟器既要守任务又要像真人用-rl-同时奖励这两件事有效对话率翻了三倍多">5. UserLM-2.0：用户模拟器既要守任务又要像真人，用 RL 同时奖励这两件事，有效对话率翻了三倍多</a></li>
+        <li><a href="#6-meta-expertmoe-的专家不必每层各存一份跨层共享只用-7080-的专家数就打平原版">6. Meta Expert：MoE 的专家不必每层各存一份，跨层共享只用 70–80% 的专家数就打平原版</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-asr-搜索空间解剖端到端模型平时梁很小不确定时假设数暴涨按分数剪枝比固定梁更省时">1. ASR 搜索空间解剖：端到端模型平时梁很小、不确定时假设数暴涨，按分数剪枝比固定梁更省时</a></li>
+        <li><a href="#2-扩散语言模型的解掩码策略标签太宽松是低步数下的主要坑轨迹收缩目标给出最好的速度-精度前沿">2. 扩散语言模型的解掩码策略：标签太宽松是低步数下的主要坑，轨迹收缩目标给出最好的速度-精度前沿</a></li>
+        <li><a href="#3-wevisone-vl微信的统一视觉感知模型用一个-obj-词元把检测分割抠图全塞进自回归生成upvotes-243">3. WeVisOne-VL：微信的统一视觉感知模型，用一个 OBJ 词元把检测、分割、抠图全塞进自回归生成（upvotes 243）</a></li>
+        <li><a href="#4-agentvqa把在线-agent-评测离线化22-个模型最好的也只有-585错不在理解任务而在跟不住视觉状态">4. AgentVQA：把在线 Agent 评测离线化，22 个模型最好的也只有 58.5%，错不在理解任务而在跟不住视觉状态</a></li>
+        <li><a href="#5-记忆感知奖励模型用了记忆的回答并不更受用户欢迎自动评测却系统性偏爱它们">5. 记忆感知奖励模型：用了记忆的回答并不更受用户欢迎，自动评测却系统性偏爱它们</a></li>
+        <li><a href="#6-omnidr-bench以视频为中心的深度研究评测最好的系统-633-分短板在引用支撑与跨模态因果分析">6. OmniDR-Bench：以视频为中心的深度研究评测，最好的系统 63.3 分，短板在引用支撑与跨模态因果分析</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>6 篇精评 + 6 篇简报</strong>，共 12 篇，已对 7 天滚动窗口去重（候选池 105 篇 → 去重后新鲜池 96 篇 → 兴趣方向初筛 30 篇 → 报道 12 篇；被去重的 9 篇均为窗口内已报道论文）。</li>
+<li>来源：HuggingFace Daily Papers（10-23 期 49 篇；10-24、10-25 适逢周末无新期，0 篇）；arXiv API（cs.CL 返回 60 篇、与 HF 合并去重后净增 56 篇；cs.LG / cs.AI / cs.SD / eess.AS / cs.CV 五个分类查询触发 429 限流未返回数据，部分降级模式——音频论文多与 cs.CL 交叉列表，本期音频候选已由 cs.CL 通道捕获）。报道集构成：HF 收录 5 篇、arXiv 直采 7 篇，全部发表于 2026-10-20 至 10-22。</li>
+<li>主题分布：音频与语音 4 篇（TTS 评测、语码转换 ASR、音乐情感、ASR 搜索）、对话用户模拟 1 篇、Agent 记忆与删除审计 2 篇、MoE 架构 1 篇、扩散语言模型解码 1 篇；简报另覆盖视觉感知、Agent 视觉理解与视频深度研究基准 3 篇。</li>
+<li>今日关键词：<strong>&ldquo;评测工具本身有地板，删除动作本身不删信息&rdquo;</strong>——TTS 的 WER 里有三分之一到三分之二是评测 ASR 自己听错的，Agent 把记忆条目删掉之后三分之二的秘密还能被一条查询问出来，记忆用得好不好则要由用户本人的偏好说了算。三篇都在提醒同一件事：管线里那些被默认可信的环节（评测器、删除、记忆收益），每一个都得单独验。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-verifiers-floortts-评测里的生僻词错误有-3367-是评测-asr-自己听错的">1. Verifier&rsquo;s Floor：TTS 评测里的&quot;生僻词错误&quot;，有 33–67% 是评测 ASR 自己听错的
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31470"  target="_blank" rel="noopener"
+    >2610.31470</a></p>
+<p><strong>一句话</strong>：TTS 通常用 ASR 转写输出再算 WER，于是识别器的错误被记在合成语音头上；这篇在真人录音上量了这层&quot;验证器地板&quot;：在 LibriSpeech 与 FLEURS 上，评测识别器对极生僻词在真人语音上就漏掉 33–67%，三个识别器同时漏掉的也有 22–42%；再拿另外两个识别器家族逐词复核后，&ldquo;至少一个识别器能听对&quot;的词上表观 TTS 错误下降 2–3 倍（LibriSpeech 极生僻词从 10–13% 降到 3–5%），而简单地把&quot;识别器在真人语音上听错的词&quot;屏蔽掉又会引入偏差。</p>
+<p><strong>贡献/机制</strong>：方法本体是测量协议而非模型：先在真人录音上测评测器的漏检率，得到地板；再用多识别器家族裁决每个词；最后专门检验&quot;屏蔽地板词&quot;这种看似合理的修正为什么有偏——被屏蔽的词恰恰是 TTS 真出错率更高的词（其他识别器在这些词上找到 TTS 错误的比例 4–6%，而保留词上只有 0.2–0.3%），且屏蔽规则保留下来的错误里约一半会被复核推翻。作者：Kirill Borodin、Vasilii Kudryavtsev、Nikita Vasiliev、Grach Mkrtchian。摘要未提供代码链接。</p>
+<p><strong>数值结果</strong>：评测识别器对极生僻词的真人语音漏检率 33–67%，三识别器共同漏检 22–42%；多识别器复核使可裁决词上的表观 TTS 错误下降 2–3 倍（极生僻 LibriSpeech 词 10–13% → 3–5%）；被屏蔽词上 TTS 错误率 4–6% 对保留词 0.2–0.3%；剩余裁决错误中可能多达一半只是拼写变体。</p>
+<p><strong>批判性分析</strong>：做 TTS 评测的人应该立刻自查：排行榜上生僻词 WER 的差距，很可能测的是评测 ASR 的词表覆盖而不是合成质量，模型在生僻词上&quot;变差&quot;可能只是它把词读得更清楚、反而暴露了识别器的短板。这篇与昨天的 VerifierBench 恰好构成一对：一个说 Agent 写的验证器系统性错杀，一个说语音评测的验证器有硬地板——验证环节不是免费的。这篇自身的保留点也明确：多识别器裁决后剩下的错误里约一半可能只是拼写变体，作者自己结论是需要听音测试收尾；且证据只来自 LibriSpeech 与 FLEURS 两个朗读语料，开放域、带口音与自发语音上的地板高度未测。</p>
+<p><strong>摘要译文</strong>：文本转语音（TTS）通常通过用自动语音识别（ASR）系统转写其输出来评测，因此词错误率也把识别器的错误计入其中。我们在测试句子的真人录音上测量了这些错误。在 LibriSpeech 和 FLEURS 上，评测识别器即使面对真人语音也会漏掉 33–67% 的极生僻词，三个识别器全部漏掉的占 22–42%。再用另外两个识别器家族逐词检查后，在至少一个识别器能听对的词上，表观 TTS 错误下降了二至三倍（LibriSpeech 极生僻词从 10–13% 降到 3–5%），但极生僻词仍然最难。忽略识别器在真人语音中漏掉的词是有偏的：其他识别器在这些词上发现 TTS 错误的频率要高得多（4–6% 对 0.2–0.3%），并推翻了这种屏蔽所保留错误中的约一半。由于剩余裁决错误中可能多达一半是拼写变体，还需要一次听音测试。</p>
+<hr>
+<h3 id="2-syra-cs合成语码转换语音的正确用法不是混着训而是先元学习一个好适应的起点">2. SyRA-CS：合成语码转换语音的正确用法不是混着训，而是先元学习一个&quot;好适应&quot;的起点
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31415"  target="_blank" rel="noopener"
+    >2610.31415</a></p>
+<p><strong>一句话</strong>：语码转换（CS）ASR 缺真实数据、合成数据又与真实分布有差距，这篇问的是合成数据该怎么用：SyRA-CS 用 Reptile 元学习在每个语言对的合成 CS-FLEURS 子集上元训练出一个易适应的初始化，再用仅 1 小时标注真实语音适配，在 4 种架构 × 4 个语言对的 16 组对比中 WER 全部胜过持续微调（XLS-R 宏平均相对下降 17.7%，其余三种模型 5.3–5.8%），CER 也赢了 16 组中的 15 组。</p>
+<p><strong>贡献/机制</strong>：关键对照是&quot;同一批合成数据、两种用法&rdquo;：普通持续微调把合成数据当训练语料消耗掉，元学习则把合成数据当任务分布、学的是&quot;从这个起点出发用少量真实数据就能快速适配&quot;。框架按语言对与预训练模型分别元训练，评测覆盖 Encoder-CTC、FastConformer-RNN-T、AED 与 Speech-LLM 四种架构设置，语言对为阿拉伯语、法语、德语、印地语与英语的混合，对照组包括仅合成迁移、仅真实微调与持续微调。作者：Fadel Thior、Ahmer Tabassum、Haania Siddiqui、Hanan Aldarmaki、Thamar Solorio。摘要未提供代码链接。</p>
+<p><strong>数值结果</strong>：16 组模型-语言对对比中 WER 全部优于持续微调、CER 15/16 占优；宏平均相对 WER 降幅：XLS-R 17.7%，其余三种模型 5.3–5.8%；适配仅用 1 小时标注真实目标语音。摘要未给各语言对的绝对 WER。</p>
+<p><strong>批判性分析</strong>：这篇对低资源语音的实际意义在预算分配：真实标注只有 1 小时这种量级时，合成数据的边际价值取决于用法，把它烧在持续微调里不如拿来塑造初始化——这与&quot;合成数据越多越好&quot;的直觉相反，合成与真实的分布差在微调里是噪声，在元学习里被任务化地吸收了。保留意见：增益幅度随架构差异很大（17.7% 对 5.3–5.8%），说明收益与预训练模型的先验强相关，XLS-R 这类多语预训练模型本来就更&quot;可适配&quot;；语言对只测了四个高资源语言与英语的组合，真正的低资源对低资源语码转换（如方言间转换）不在覆盖内；合成数据来自 CS-FLEURS，其合成方式本身的真实性上限也会封顶结论。</p>
+<p><strong>摘要译文</strong>：语码转换（CS）自动语音识别仍然困难，因为真实 CS 语音稀缺且合成语音与之并不完全匹配。我们研究合成 CS 语音是更适合用来学习一个便于适应的初始化，还是只适合普通的持续微调。我们提出 SyRA-CS，一个基于 Reptile 元学习的、按语言对定制的合成到真实适配框架。对每个语言对和预训练模型，我们在相应的合成 CS-FLEURS 子集上进行元训练，然后用一小时带标注的真实目标语音进行适配。我们评估了四种架构设置：Encoder-CTC、FastConformer-RNN-T、注意力编码器-解码器（AED）和 Speech-LLM。实验覆盖阿拉伯语、法语、德语和印地语与英语的语码转换，对照包括仅合成迁移、仅真实微调和持续微调。SyRA-CS 在全部 16 组模型-语言对比较中在 WER 上改进了持续微调，在 CER 上 16 组中赢了 15 组，XLS-R 的宏平均相对 WER 降幅为 17.7%，其他三种模型为 5.3–5.8%。增益在受测模型上普遍成立，但幅度随架构、语言对和指标而异。</p>
+<hr>
+<h3 id="3-音乐情感预测效价难测不是音频的问题用-llm-上下文学习修正小模型r-从-0110-涨到-0427">3. 音乐情感预测：效价难测不是音频的问题，用 LLM 上下文学习修正小模型，R² 从 0.110 涨到 0.427
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31202"  target="_blank" rel="noopener"
+    >2610.31202</a></p>
+<p><strong>一句话</strong>：音乐情感里唤醒度（arousal）从音频就能测准，效价（valence）却因主观与上下文依赖一直难测；这篇不直接让 LLM 打分，而是让它当修正器：小的基础模型先给初始预测，再用辅助数据集的示例做上下文学习（ICL）来精修——纯文本变体（歌词 + 生成的音频描述）用 80 个示例把效价 R² 从 0.110 提到 0.427，多模态变体（带原始音频信号）只用 10 个示例就达到 0.346，整个 MER60 数据集被严格留作测试集。</p>
+<p><strong>贡献/机制</strong>：框架的定位值得注意：LLM 不替代任务模型，而是利用 ICL 的&quot;看例子校准&quot;能力修正一个小模型的系统性偏差，效价这种主观连续量的偏差恰恰主要来自标注口味与上下文，而示例正好能传递口味。两个变体构成对照：文本变体靠歌词与音频描述这类符号信息，多模态变体直接吃音频信号，后者样本效率高得多（10 例对 80 例）。作者：Chi-En Dai、Chih-Pin Tan、Yi-Hsuan Yang。摘要未提供代码链接。</p>
+<p><strong>数值结果</strong>：文本 ICL 在 80 个演示示例下效价 R² 0.110 → 0.427；多模态变体 10 个示例达到 0.346；测试集为完整 MER60 且严格留出。摘要未给唤醒度的对应数字与基础模型的具体构成。</p>
+<p><strong>批判性分析</strong>：对音频理解方向，这篇的信号是&quot;连续情感量可以不靠再训练、靠推理时校准来涨&quot;，且多模态 ICL 的样本效率明显更高，说明 LLM 确实在用音频里的信息而不只是文本先验。需要打折的地方：效价 R² 0.427 仍意味着大半方差未解释，效价的主观性上限就在那里；80-shot 的文本变体在部署时上下文成本不低，0.427 与 0.346 之差也要结合示例数看，不能简单说文本优于多模态；辅助数据集与 MER60 之间的标注口径是否一致、示例选择策略对结果的敏感度，摘要都没有交代，而 ICL 类工作恰恰对这两点最敏感。</p>
+<p><strong>摘要译文</strong>：虽然唤醒度可以从音乐音频中可靠预测，情感效价由于其主观性和上下文依赖性仍然难以建模。在这项工作中，我们研究用大语言模型做上下文学习（ICL）来推进连续效价与唤醒度预测的潜力。我们的框架不是直接预测情感分数，而是利用来自一个辅助数据集的上下文演示，来精修一个小的、任务专用的基础模型给出的初始预测。我们系统地评估了一个使用歌词和生成的音频描述的文本版 ICL 变体，以及一个纳入原始音频信号的多模态变体。我们把整个 MER60 数据集严格用作留出测试集，实验显示出显著的性能增益，尤其是对效价。文本版 ICL 用 80 个演示示例把效价 R² 从 0.110 提高到 0.427，多模态变体仅用 10 个示例就达到 0.346。这些发现表明，无需训练的 ICL 为当前语言模型预测连续音乐情感提供了一种有效的推理时策略。</p>
+<hr>
+<h3 id="4-afterdeletebenchagent-的记忆条目删掉了三分之二的秘密一条查询就能问回来">4. AfterDeleteBench：Agent 的记忆条目删掉了，三分之二的秘密一条查询就能问回来
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31366"  target="_blank" rel="noopener"
+    >2610.31366</a></p>
+<p><strong>一句话</strong>：带持久记忆的 Agent 会从原始记录派生出摘要等下游状态，删掉原始条目并不清除这些&quot;后代&quot;携带的信息；AfterDeleteBench 用&quot;曾暴露后删除&quot;与&quot;从未暴露&quot;的配对 Agent 做受控行为审计：在主设定下，单条查询就能从 Qwen2.5-7B-Instruct 恢复出约三分之二的已删秘密（从未暴露的对照组恢复率为零），且恢复不需要任何逐字副本残留——秘密的组成部分分开存放、再按公开规则组合，Qwen、Mistral、Phi-3 上的精确重构成功率也有 62–99%。</p>
+<p><strong>贡献/机制</strong>：审计设计是这篇的本体：配对对照把&quot;删除后还能恢复&quot;干净地归因于原始暴露，排除了模型先验猜测；把秘密拆成组件分存再组合的实验，则证明泄漏的载体是语义而非字符串，逐字过滤式的防御在原理上就不够。防御侧的结论同样具体：溯源感知闭包（provenance-aware closure，连同后代一起删）能在受测正基线设定下消除观察到的恢复，而写入侧的逐字过滤只能阻止重新写入、擦不掉已存信息。作者还指出响应接口本身是测量系统的一部分：格式与解析器不对齐时，带秘密的回复会被判成失败。作者：Ehsan Saleh、Roozbeh Nahavandi、Sama Salarian、Raef Bassily、Andrew Perrault。摘要未提供代码链接。</p>
+<p><strong>数值结果</strong>：主设定单查询恢复率约三分之二（Qwen2.5-7B-Instruct），从未暴露对照为 0；无逐字副本时组件重构成功率 62–99%（Qwen、Mistral、Phi-3）；溯源感知闭包在受测设定下消除恢复。摘要未给秘密总数与查询预算的细节。</p>
+<p><strong>批判性分析</strong>：这篇对所有做 Agent 记忆与&quot;被遗忘权&quot;合规的人都是直接警告：删除是存储层操作，合规要求的是行为层结果，两者之间隔着摘要、缓存、派生状态一整条链；只删原文就宣布&quot;已删除&quot;，在审计口径下站不住。62–99% 的组件重构尤其关键，它说明哪怕派生状态里没有任何敏感字符串，信息照样活着。局限：秘密是合成的、结构规整（有公开组合规则），真实用户数据的纠缠方式更杂，重构率未必同量级；防御结论&quot;闭包消除恢复&quot;也只在正基线设定下验证，闭包删除的成本（误删多少有用状态）没有给账。对自家系统做删除审计的人，这篇的配对对照设计可以直接借走。</p>
+<p><strong>摘要译文</strong>：许多 LLM Agent 维护外部持久记忆，并从过往交互派生出额外的状态，例如摘要。因此，删除一条原始记忆记录未必能移除其后代所携带的信息。我们提出 AfterDeleteBench，一个针对固定权重 LLM Agent 中这一失败模式的受控行为审计。对每个合成秘密，我们比较一个&quot;曾暴露后删除&quot;的 Agent 与一个在其他方面完全匹配、从未暴露于该秘密的 Agent，从而把删除后的恢复归因于原始暴露。在我们的主设定中，一条查询就能从 Qwen2.5-7B-Instruct 中恢复约三分之二的已删秘密，而匹配的从未暴露对照组的恢复率为零。关键地，恢复并不需要逐字副本残留：当完整秘密字符串不存在、只有按公开组合规则分开存储的组件时，Qwen、Mistral 和 Phi-3 上的精确重构成功率仍达 62–99%。我们还表明，响应接口是测量系统的一部分：当请求的格式与解析器不对齐时，携带目标内容的回复可能被记为失败。最后，我们把重构与写回、全新会话回忆分开。溯源感知闭包在受测的正基线设定中消除了观察到的恢复，而精确字面写入过滤能阻止重新插入、却无法擦除已存在的信息。总之，这些结果表明，源头删除应当在 Agent 及其记忆系统的层面上以行为方式评估，而不仅仅是作为一种存储操作。</p>
+<hr>
+<h3 id="5-userlm-20用户模拟器既要守任务又要像真人用-rl-同时奖励这两件事有效对话率翻了三倍多">5. UserLM-2.0：用户模拟器既要守任务又要像真人，用 RL 同时奖励这两件事，有效对话率翻了三倍多
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31512"  target="_blank" rel="noopener"
+    >2610.31512</a></p>
+<p><strong>一句话</strong>：评测与改进长对话助手需要用户模拟器，但现有方法二选一：提示出来的助手能守复杂意图却不像真人，专用模拟器像真人却守不住意图；这篇用 RL 同时奖励意图遵循与行为自然度，并把&quot;自然度&quot;操作化为一个与模拟器交替对抗训练的轻量判别器，最终 UserLM-2.0 产出同时满足任务忠实与自然度标准的有效模拟对话的比例达 46.2%，是此前最强用户模拟器 14.1% 的三倍多。</p>
+<p><strong>贡献/机制</strong>：核心难点在自然度没有现成标尺：作者用对抗判别器把它变成可训练信号，判别器与模拟器交替更新，避免模拟器把某个静态判别器的偏好刷穿。RL 配方则负责把&quot;守意图&quot;与&quot;像真人&quot;放进同一个奖励，而不是事后拼接两个模型。它与语音对话的关联也很直接：语音用户模拟同样需要既完成任务脚本、又保留真人说话的犹豫、改口与节奏，这类自然度信号的构造方式可以迁移。作者：Mustafa Omer Gul、Philippe Laban、Tanya Goyal、Jennifer Neville。摘要未提供代码链接，但称已发布该模型。</p>
+<p><strong>数值结果</strong>：有效模拟对话率 46.2%，对照此前最强用户模拟器 14.1%（三倍多）。摘要未给任务集规模、基线名单与自然度的人类评测对照。</p>
+<p><strong>批判性分析</strong>：46.2% 这个绝对值要两面看：一面是相对进步确实大（14.1% 说明此前模拟器九成对话都至少有一头不合格），另一面是过半对话仍然不合格，用 UserLM-2.0 做评测时结论的可信度仍要按这个噪声水平打折。对抗判别器定义自然度也有老风险：判别器学到的可能是某个语料的表面风格而非&quot;真人感&quot;，模拟器与判别器共谋出的&quot;自然&quot;未必经得起人类评测，摘要没有给人类对照是明显的缺口。对做对话系统评测的人，这篇的正确读法是：用户模拟已从&quot;提示词工程&quot;进入&quot;可训练组件&quot;阶段，但用它产出的评测结论仍需抽样人工核验。</p>
+<p><strong>摘要译文</strong>：用户越来越多地依赖 AI 系统完成长时间、多轮的任务，但有证据表明，基于 LLM 的系统性能会随着交互延长而下降。为了在这种设定下评估和改进 AI 助手，我们需要能忠实遵循复杂用户意图、同时展现真实对话行为的用户模拟器。现有方法呈现一种权衡：提示出来的助手能遵循复杂用户意图，却缺乏行为真实度；专用用户模拟器能更好地近似对话行为，却难以忠于复杂意图。在本文中，我们提出一个强化学习（RL）配方，联合奖励任务意图遵循与行为自然度。该方法的一个关键贡献是把自然度操作化：用一个轻量判别器与用户模拟器交替进行对抗式训练。我们发布由此得到的模型 UserLM-2.0，它产出有效模拟对话（即同时满足任务忠实与自然度标准）的比例为 46.2%，是此前最强用户模拟器的三倍多（14.1%）。</p>
+<hr>
+<h3 id="6-meta-expertmoe-的专家不必每层各存一份跨层共享只用-7080-的专家数就打平原版">6. Meta Expert：MoE 的专家不必每层各存一份，跨层共享只用 70–80% 的专家数就打平原版
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.27598"  target="_blank" rel="noopener"
+    >2610.27598</a></p>
+<p><strong>一句话</strong>：主流 MoE 每层的专家拓扑独立，但存的内容跨层高度相似、冗余严重；这篇提出跨层共享的 Meta Expert 并做了多维实证对比：共享专家参数冗余更低、交叉熵损失更低、下游准确率更高，在激活量与专家粒度不变时只用原版 70–80% 的专家数就能匹配 Vanilla MoE 的表现，理论分析还显示共享专家给隐藏状态提供了更灵活的残差通路、检索效率更好。</p>
+<p><strong>贡献/机制</strong>：命题的前提是先证明&quot;层间专家确实冗余&quot;这个观察，再把架构改动（Local Expert → 跨层共享的 Meta Expert）与之对应。收益分两笔账：存储账——专家去重直接省参数与显存；检索账——共享专家让隐藏状态跨层复用同一知识载体，残差通路更灵活。对正在做 MoE 训练的人，这与&quot;专家数决定容量&quot;的常规叙事形成对照：有效容量可能一直被层间重复存储虚报了。作者：Ermo Hua、Xiangyu Hong、Baiting Wu、Che Jiang、Haozheng Hou、Yicheng Gu、Hanjing Wang、Qirui Zeng、Ming Zhang、Ning Ding、Qipeng Guo、Youbang Sun、Biqing Qi、Bowen Zhou。摘要未提供代码链接。</p>
+<p><strong>数值结果</strong>：激活量与专家粒度固定时，70–80% 的专家数匹配 Vanilla MoE 表现；参数冗余、交叉熵与下游准确率三项均占优。摘要未给模型规模、训练算力与逐任务分数，量级信息需查正文。</p>
+<p><strong>批判性分析</strong>：这篇对 MoE 扩展的实际含义在成本侧：若七到八成专家就够，同等存储预算可以换更大的激活容量或更长的训练，服务侧的权重加载与专家检索开销也随之下降。保留意见集中在证据粒度：摘要没有交代实验的模型规模与数据规模，&ldquo;跨层相似&quot;在中小模型上成立、在大规模训练后期专家分化加深时是否仍成立，是决定结论能否外推的关键；共享专家同时也可能成为跨层干扰的通道（某层的更新污染其他层），负迁移有没有被单独测过，摘要未提。引用时建议只引&quot;同设置下 70–80% 专家打平&quot;这一受控结论，不外推到任意规模。</p>
+<p><strong>摘要译文</strong>：随着模型参数规模扩大，稀疏激活的混合专家（MoE）方法已成为模型扩展的关键。然而，当前主流模型采用分层架构，不同层的专家虽然拓扑上独立，所存储的内容却表现出显著的相似性和冗余。与现有主流模型中按层布置的局部专家（Local Expert）相比，我们假设跨层共享的元专家（Meta Expert）具有更大的潜力。为此，我们对 Local 与 Meta Expert 做了多维度的实证比较，发现采用 Meta Expert 的模型参数冗余更低，同时交叉熵损失更低、下游任务准确率更高。在激活数量和专家粒度保持不变的情况下，我们的模型仅使用 70–80% 的专家就能匹配 Vanilla MoE 的表现，显著提升了模型的扩展潜力。除了去除专家间的跨层冗余、提高信息存储效率之外，我们的理论分析还进一步表明，与 Local Expert 相比，Meta Expert 为隐藏状态提供了更灵活的残差通路，从而提高了信息检索效率。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="1-asr-搜索空间解剖端到端模型平时梁很小不确定时假设数暴涨按分数剪枝比固定梁更省时">1. ASR 搜索空间解剖：端到端模型平时梁很小、不确定时假设数暴涨，按分数剪枝比固定梁更省时
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31259"  target="_blank" rel="noopener"
+    >2610.31259</a></p>
+<p>端到端 ASR 的解码搜索在文献里常被简化成小固定梁加不用外部 LM，但这篇对 CTC 与神经换能器在不同剪枝策略与 LM 配置下做了系统对比：这些模型大多数时候搜索空间很小，却在不确定时段出现假设数量的巨大临时峰值；基于分数的剪枝能按模型不确定性动态调整搜索，实时率（RTF）显著更低。对做流式 ASR 部署的人，这是一份现成的剪枝策略指南：固定小梁在峰值时段既慢又容易剪掉正确路径。</p>
+<h3 id="2-扩散语言模型的解掩码策略标签太宽松是低步数下的主要坑轨迹收缩目标给出最好的速度-精度前沿">2. 扩散语言模型的解掩码策略：标签太宽松是低步数下的主要坑，轨迹收缩目标给出最好的速度-精度前沿
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31576"  target="_blank" rel="noopener"
+    >2610.31576</a></p>
+<p>掩码扩散语言模型的效率取决于每步提交哪些预测，学习型解掩码策略的配方互不相同、无法比较。这篇把策略拆成教师标签、模仿状态、观测输入与开销四项分别受控研究：把&quot;与最终输出一致&quot;当可提交标签在低函数评估次数（NFE）下过于宽松，隐藏状态单独弱但能补置信度；策略开销只需约 10% 的 NFE 降幅即可抵偿（适用于 750 万参数以内的策略）。改用只接受&quot;留在参考轨迹上&quot;的轨迹收缩目标训练后，85.6 万参数的策略在 LLaDA-8B-Instruct 上取得 GSM8K 最佳精度-NFE 前沿与最高吞吐，并大体可迁移到 Dream-7B-Instruct。接昨天四篇 dLLM 精评看，解码策略正在成为扩散模型落地的独立研究面。</p>
+<h3 id="3-wevisone-vl微信的统一视觉感知模型用一个-obj-词元把检测分割抠图全塞进自回归生成upvotes-243">3. WeVisOne-VL：微信的统一视觉感知模型，用一个 OBJ 词元把检测、分割、抠图全塞进自回归生成（upvotes 243）
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31329"  target="_blank" rel="noopener"
+    >2610.31329</a></p>
+<p>现有 VLM 在细粒度视觉感知上不可靠，WeVisOne-VL 用结构化下一词元预测统一对象级与像素级感知：经一个特殊的 OBJ 词元把轻量像素解码器接入 VLM，生成实例级像素输出，支持检测、指代定位、计数、OCR、分割与抠图，并能对不存在的对象做稳健拒答。训练为三阶段课程 SFT 加混合任务 RL，在 30 多个基准上对象级与像素级任务均领先。代码：https://github.com/Tencent/WeVisOne-VL 。这是本期 HF 热度最高的论文（upvotes 243），读法上按技术报告看：统一接口的设计比单项分数更值得借。</p>
+<h3 id="4-agentvqa把在线-agent-评测离线化22-个模型最好的也只有-585错不在理解任务而在跟不住视觉状态">4. AgentVQA：把在线 Agent 评测离线化，22 个模型最好的也只有 58.5%，错不在理解任务而在跟不住视觉状态
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31494"  target="_blank" rel="noopener"
+    >2610.31494</a></p>
+<p>在线模拟器评测贵且难扩展，AgentVQA 从 23 个源数据集中人工挑选 1,000 个真实 Agent 场景，覆盖网页、机器人、第一人称视频、游戏与空间规划五域，做成离线 VQA 基准，且其模型排名与对应在线评测一致。22 个模型中最好 58.5%；跨域分析显示错误主要来自定位与维持视觉状态表征失败（找不到 UI 元素、理解不了运动、跟不住状态变化、推不出 3D 关系），而非任务理解或逻辑推理。代码：https://github.com/zlab-princeton/AgentVQA 。</p>
+<h3 id="5-记忆感知奖励模型用了记忆的回答并不更受用户欢迎自动评测却系统性偏爱它们">5. 记忆感知奖励模型：用了记忆的回答并不更受用户欢迎，自动评测却系统性偏爱它们
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31272"  target="_blank" rel="noopener"
+    >2610.31272</a></p>
+<p>记忆让助手跨会话保持连续性，但&quot;知道得多&quot;不等于&quot;答得更受欢迎&rdquo;。这篇收集了 87 名参与者用自己的 ChatGPT 查询与个人记忆给出的约 1,000 条成对判断：带记忆的回答并未被一致偏好，有时无记忆版本反而被强烈偏好；自动评测者与用户一致性有限，且偏爱带记忆回答的程度远超用户。作者据此训练的记忆感知奖励模型达到 72.8% 的偏好预测准确率、超过现有基线。与今天精评的 AfterDeleteBench 合看，Agent 记忆的两端都被标了价：删不干净是一头，用不对是另一头。</p>
+<h3 id="6-omnidr-bench以视频为中心的深度研究评测最好的系统-633-分短板在引用支撑与跨模态因果分析">6. OmniDR-Bench：以视频为中心的深度研究评测，最好的系统 63.3 分，短板在引用支撑与跨模态因果分析
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.31158"  target="_blank" rel="noopener"
+    >2610.31158</a></p>
+<p>深度研究 Agent 会综合网络证据写长报告，但没人测过&quot;以一段源视频为中心&quot;的研究：给定视频与请求，Agent 要提出研究问题、检索外部多模态证据并产出与视频时刻关联的交互式报告。OmniDR-Bench 含 50 个中英任务、19 个真实子类与 6,414 条原子二元标准（Omni-ART  rubric 树，覆盖视听 grounding、多模态证据使用与交互呈现三维），18 种 Agent 配置中最佳 63.3/100。代码：https://github.com/marinero4972/OmniDR-Bench 。</p>
+<hr>
+<p><em>本日 12 篇（6 精评 + 6 简报）来自 HF Daily Papers 10-23 期与 arXiv cs.CL 候选池：arXiv 其余五个分类本次因 429 限流未返回数据（部分降级模式），音频方向由 cs.CL 交叉列表论文补齐，其余为 Agent 记忆、MoE 与多模态方向精选。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/388791"  target="_blank" rel="noopener"
+    >BattlequeenYume</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-25/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-25" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-25/cover_hu_90136eb6a74b27dd.jpg" srcset="/zh-cn/p/daily-paper-2026-10-25/cover_hu_90136eb6a74b27dd.jpg 1x, /zh-cn/p/daily-paper-2026-10-25/cover_hu_646d62ee289ea38a.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #edc2cb80 0%, #401213C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-25</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-24/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-24" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-24/cover_hu_79b638e89b93b670.jpg" srcset="/zh-cn/p/daily-paper-2026-10-24/cover_hu_79b638e89b93b670.jpg 1x, /zh-cn/p/daily-paper-2026-10-24/cover_hu_2778a783a67c3021.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #341f2080 0%, #fbf0e6C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-24</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-23/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-23" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-23/cover_hu_70cd49107a588ae8.png" srcset="/zh-cn/p/daily-paper-2026-10-23/cover_hu_70cd49107a588ae8.png 1x, /zh-cn/p/daily-paper-2026-10-23/cover_hu_df88b0c372e5bf96.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #403d3e80 0%, #e5d3caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-23</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-22/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-22" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-22/cover_hu_54c8eef8a4cbbdb.jpg" srcset="/zh-cn/p/daily-paper-2026-10-22/cover_hu_54c8eef8a4cbbdb.jpg 1x, /zh-cn/p/daily-paper-2026-10-22/cover_hu_98f193ea18e7a700.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #50a9f080 0%, #ddd9d4C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-22</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-21/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-21" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-21/cover_hu_54fe2ed158c53866.png" srcset="/zh-cn/p/daily-paper-2026-10-21/cover_hu_54fe2ed158c53866.png 1x, /zh-cn/p/daily-paper-2026-10-21/cover_hu_4eea4f244754e860.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #a1abaa80 0%, #212222C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-21</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
