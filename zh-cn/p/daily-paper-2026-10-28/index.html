@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 7 篇精评 + 6 篇简报，共 13 篇，已对 7 天滚动窗口去重（候选池 96 篇 → 去重后新鲜池 94 篇 → 报道 13 篇；被去重的 2 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-26 期 45 篇、10-27 期 50 篇，合并去重 95 篇）；arXiv API 本次六个分类查询均返回 429 限流、未返回数据（降级模式，0 篇）；另经 Semantic Scholar 检索线索发现 Audio-R1 一篇，其摘要已通过 HuggingFace Papers API 核验后纳入。报道集全部发表于 2026-10-19 至 10-26。 主题分布：音频与语音 4 篇（空间音频生成与编辑、音频推理 RL、音视频长视频取证、Omni 模型幻觉纠正）、LLM 后训练 3 篇（轨迹监督、Rubric 奖励、Actor-Critic）、Agent 系统 6 篇（Harness 可靠性、多智能体编排、主动视频 Agent、交互式助手、长程经验学习、Agentic RL 信用分配）。 今日关键词：“别只看成功的结果，要看决策在当时能不能被学到”——工具 Agent 的成功轨迹未必是可学监督，Harness 在任务成功的同时仍有 31.1% 的运行违反了至少一项可靠性准则，Rubric 奖励只算覆盖率会把模型训得更啰嗦、更敢编。三篇都在提醒同一件事：后训练与 Agent 评估里，净指标下面藏着的“不可学”“不合规”“不必要”部分，才是真正决定系统能不能上线的部分。 精评 1. 空间音频生成与编辑：AMBIT 用可执行 ScenePlan 把“改什么、留什么”写进一张图里 2610.34415\n">
+<title>AI Paper Daily | 2026-10-28</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-28/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-10-28">
+<meta property='og:description' content="概览 7 篇精评 + 6 篇简报，共 13 篇，已对 7 天滚动窗口去重（候选池 96 篇 → 去重后新鲜池 94 篇 → 报道 13 篇；被去重的 2 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-26 期 45 篇、10-27 期 50 篇，合并去重 95 篇）；arXiv API 本次六个分类查询均返回 429 限流、未返回数据（降级模式，0 篇）；另经 Semantic Scholar 检索线索发现 Audio-R1 一篇，其摘要已通过 HuggingFace Papers API 核验后纳入。报道集全部发表于 2026-10-19 至 10-26。 主题分布：音频与语音 4 篇（空间音频生成与编辑、音频推理 RL、音视频长视频取证、Omni 模型幻觉纠正）、LLM 后训练 3 篇（轨迹监督、Rubric 奖励、Actor-Critic）、Agent 系统 6 篇（Harness 可靠性、多智能体编排、主动视频 Agent、交互式助手、长程经验学习、Agentic RL 信用分配）。 今日关键词：“别只看成功的结果，要看决策在当时能不能被学到”——工具 Agent 的成功轨迹未必是可学监督，Harness 在任务成功的同时仍有 31.1% 的运行违反了至少一项可靠性准则，Rubric 奖励只算覆盖率会把模型训得更啰嗦、更敢编。三篇都在提醒同一件事：后训练与 Agent 评估里，净指标下面藏着的“不可学”“不合规”“不必要”部分，才是真正决定系统能不能上线的部分。 精评 1. 空间音频生成与编辑：AMBIT 用可执行 ScenePlan 把“改什么、留什么”写进一张图里 2610.34415\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-10-28/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-10-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-10-28T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-10-28">
+<meta name="twitter:description" content="概览 7 篇精评 + 6 篇简报，共 13 篇，已对 7 天滚动窗口去重（候选池 96 篇 → 去重后新鲜池 94 篇 → 报道 13 篇；被去重的 2 篇均为窗口内已报道论文）。 来源：HuggingFace Daily Papers（10-26 期 45 篇、10-27 期 50 篇，合并去重 95 篇）；arXiv API 本次六个分类查询均返回 429 限流、未返回数据（降级模式，0 篇）；另经 Semantic Scholar 检索线索发现 Audio-R1 一篇，其摘要已通过 HuggingFace Papers API 核验后纳入。报道集全部发表于 2026-10-19 至 10-26。 主题分布：音频与语音 4 篇（空间音频生成与编辑、音频推理 RL、音视频长视频取证、Omni 模型幻觉纠正）、LLM 后训练 3 篇（轨迹监督、Rubric 奖励、Actor-Critic）、Agent 系统 6 篇（Harness 可靠性、多智能体编排、主动视频 Agent、交互式助手、长程经验学习、Agentic RL 信用分配）。 今日关键词：“别只看成功的结果，要看决策在当时能不能被学到”——工具 Agent 的成功轨迹未必是可学监督，Harness 在任务成功的同时仍有 31.1% 的运行违反了至少一项可靠性准则，Rubric 奖励只算覆盖率会把模型训得更啰嗦、更敢编。三篇都在提醒同一件事：后训练与 Agent 评估里，净指标下面藏着的“不可学”“不合规”“不必要”部分，才是真正决定系统能不能上线的部分。 精评 1. 空间音频生成与编辑：AMBIT 用可执行 ScenePlan 把“改什么、留什么”写进一张图里 2610.34415\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-10-28/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-空间音频生成与编辑ambit-用可执行-sceneplan-把改什么留什么写进一张图里">1. 空间音频生成与编辑：AMBIT 用可执行 ScenePlan 把“改什么、留什么”写进一张图里</a></li>
+        <li><a href="#2-audio-r1不用人工答案用自监督音频任务的可验证奖励做音频推理-rl">2. Audio-R1：不用人工答案，用自监督音频任务的可验证奖励做音频推理 RL</a></li>
+        <li><a href="#3-trajectory2gym成功的工具轨迹未必是好监督可学的轨迹要先把当时看不见的信息筛掉">3. Trajectory2Gym：成功的工具轨迹未必是好监督，可学的轨迹要先把“当时看不见的信息”筛掉</a></li>
+        <li><a href="#4-tracetrial-benchagent-任务成功了harness-未必合格311-的成功运行至少违反一项可靠性准则">4. TraceTrial-Bench：Agent 任务成功了，Harness 未必合格——31.1% 的成功运行至少违反一项可靠性准则</a></li>
+        <li><a href="#5-forkrubric-奖励只算覆盖率会把模型训得更啰嗦更敢编加一个精确度目标后胜率从-106-涨到-680">5. FORK：Rubric 奖励只算覆盖率会把模型训得更啰嗦、更敢编，加一个“精确度”目标后胜率从 10.6% 涨到 68.0%</a></li>
+        <li><a href="#6-av-fable长视频里的篡改只占一小段音视频大模型零样本检测近乎随机冻住的特征里其实有信号">6. AV-FABLE：长视频里的篡改只占一小段，音视频大模型零样本检测近乎随机，冻住的特征里其实有信号</a></li>
+        <li><a href="#7-s3ac长-cot-的-critic-难训不是因为-critic-没用而是轨迹覆盖与价值头冷启动没处理好">7. S3AC：长 CoT 的 Critic 难训不是因为 Critic 没用，而是轨迹覆盖与价值头冷启动没处理好</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-omni-woodpeckeromni-模型的跨模态幻觉不在输出层而在融合表征里先验与证据的纠缠">1. Omni-Woodpecker：Omni 模型的跨模态幻觉不在输出层，而在融合表征里先验与证据的纠缠</a></li>
+        <li><a href="#2-streamvibe主动视频-agent-的难点不是答什么而是何时答意图变了怎么办">2. StreamVibe：主动视频 Agent 的难点不是“答什么”，而是“何时答、意图变了怎么办”</a></li>
+        <li><a href="#3-dynaflow多智能体编排不必预设结构主-agent-自己决定何时协作生成什么工作流">3. DynaFlow：多智能体编排不必预设结构，主 Agent 自己决定何时协作、生成什么工作流</a></li>
+        <li><a href="#4-interactiveworld可穿戴助手到底能不能帮人干活第一次有了不用真人也能闭环验证的考场">4. InteractiveWorld：可穿戴助手到底能不能帮人干活，第一次有了不用真人也能闭环验证的考场</a></li>
+        <li><a href="#5-proasgrpo-把整条轨迹的优势平均分给每个动作会把不合理动作也一起奖励">5. ProAS：GRPO 把整条轨迹的优势平均分给每个动作，会把不合理动作也一起奖励</a></li>
+        <li><a href="#6-continual-learning-exam经验能不能累积要看-600-关的阶梯能不能一级一级爬上去">6. Continual Learning Exam：经验能不能累积，要看 600 关的阶梯能不能一级一级爬上去</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-10-28/">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-28" height="794" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-10-28/cover.png" srcset="/zh-cn/p/daily-paper-2026-10-28/cover_hu_c10b8d9ed57789c1.png 800w, /zh-cn/p/daily-paper-2026-10-28/cover.png 1500w" width="1500">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-10-28/">AI Paper Daily | 2026-10-28</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-28T00:00:00Z'>Oct 28, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-空间音频生成与编辑ambit-用可执行-sceneplan-把改什么留什么写进一张图里">1. 空间音频生成与编辑：AMBIT 用可执行 ScenePlan 把“改什么、留什么”写进一张图里</a></li>
+        <li><a href="#2-audio-r1不用人工答案用自监督音频任务的可验证奖励做音频推理-rl">2. Audio-R1：不用人工答案，用自监督音频任务的可验证奖励做音频推理 RL</a></li>
+        <li><a href="#3-trajectory2gym成功的工具轨迹未必是好监督可学的轨迹要先把当时看不见的信息筛掉">3. Trajectory2Gym：成功的工具轨迹未必是好监督，可学的轨迹要先把“当时看不见的信息”筛掉</a></li>
+        <li><a href="#4-tracetrial-benchagent-任务成功了harness-未必合格311-的成功运行至少违反一项可靠性准则">4. TraceTrial-Bench：Agent 任务成功了，Harness 未必合格——31.1% 的成功运行至少违反一项可靠性准则</a></li>
+        <li><a href="#5-forkrubric-奖励只算覆盖率会把模型训得更啰嗦更敢编加一个精确度目标后胜率从-106-涨到-680">5. FORK：Rubric 奖励只算覆盖率会把模型训得更啰嗦、更敢编，加一个“精确度”目标后胜率从 10.6% 涨到 68.0%</a></li>
+        <li><a href="#6-av-fable长视频里的篡改只占一小段音视频大模型零样本检测近乎随机冻住的特征里其实有信号">6. AV-FABLE：长视频里的篡改只占一小段，音视频大模型零样本检测近乎随机，冻住的特征里其实有信号</a></li>
+        <li><a href="#7-s3ac长-cot-的-critic-难训不是因为-critic-没用而是轨迹覆盖与价值头冷启动没处理好">7. S3AC：长 CoT 的 Critic 难训不是因为 Critic 没用，而是轨迹覆盖与价值头冷启动没处理好</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#1-omni-woodpeckeromni-模型的跨模态幻觉不在输出层而在融合表征里先验与证据的纠缠">1. Omni-Woodpecker：Omni 模型的跨模态幻觉不在输出层，而在融合表征里先验与证据的纠缠</a></li>
+        <li><a href="#2-streamvibe主动视频-agent-的难点不是答什么而是何时答意图变了怎么办">2. StreamVibe：主动视频 Agent 的难点不是“答什么”，而是“何时答、意图变了怎么办”</a></li>
+        <li><a href="#3-dynaflow多智能体编排不必预设结构主-agent-自己决定何时协作生成什么工作流">3. DynaFlow：多智能体编排不必预设结构，主 Agent 自己决定何时协作、生成什么工作流</a></li>
+        <li><a href="#4-interactiveworld可穿戴助手到底能不能帮人干活第一次有了不用真人也能闭环验证的考场">4. InteractiveWorld：可穿戴助手到底能不能帮人干活，第一次有了不用真人也能闭环验证的考场</a></li>
+        <li><a href="#5-proasgrpo-把整条轨迹的优势平均分给每个动作会把不合理动作也一起奖励">5. ProAS：GRPO 把整条轨迹的优势平均分给每个动作，会把不合理动作也一起奖励</a></li>
+        <li><a href="#6-continual-learning-exam经验能不能累积要看-600-关的阶梯能不能一级一级爬上去">6. Continual Learning Exam：经验能不能累积，要看 600 关的阶梯能不能一级一级爬上去</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>7 篇精评 + 6 篇简报</strong>，共 13 篇，已对 7 天滚动窗口去重（候选池 96 篇 → 去重后新鲜池 94 篇 → 报道 13 篇；被去重的 2 篇均为窗口内已报道论文）。</li>
+<li>来源：HuggingFace Daily Papers（10-26 期 45 篇、10-27 期 50 篇，合并去重 95 篇）；arXiv API 本次六个分类查询均返回 429 限流、未返回数据（降级模式，0 篇）；另经 Semantic Scholar 检索线索发现 Audio-R1 一篇，其摘要已通过 HuggingFace Papers API 核验后纳入。报道集全部发表于 2026-10-19 至 10-26。</li>
+<li>主题分布：音频与语音 4 篇（空间音频生成与编辑、音频推理 RL、音视频长视频取证、Omni 模型幻觉纠正）、LLM 后训练 3 篇（轨迹监督、Rubric 奖励、Actor-Critic）、Agent 系统 6 篇（Harness 可靠性、多智能体编排、主动视频 Agent、交互式助手、长程经验学习、Agentic RL 信用分配）。</li>
+<li>今日关键词：<strong>“别只看成功的结果，要看决策在当时能不能被学到”</strong>——工具 Agent 的成功轨迹未必是可学监督，Harness 在任务成功的同时仍有 31.1% 的运行违反了至少一项可靠性准则，Rubric 奖励只算覆盖率会把模型训得更啰嗦、更敢编。三篇都在提醒同一件事：后训练与 Agent 评估里，净指标下面藏着的“不可学”“不合规”“不必要”部分，才是真正决定系统能不能上线的部分。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-空间音频生成与编辑ambit-用可执行-sceneplan-把改什么留什么写进一张图里">1. 空间音频生成与编辑：AMBIT 用可执行 ScenePlan 把“改什么、留什么”写进一张图里
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.34415"  target="_blank" rel="noopener"
+    >2610.34415</a></p>
+<p><strong>一句话</strong>：空间音频创作要同时定声源内容与三维声场，编辑时更要分清改动与保留；AMBIT 用一个共享 Transfusion 骨干把自回归规划与整流流渲染耦合起来，以可执行的 ScenePlan（声源内容、活跃度、三维轨迹）统一生成与编辑，并用 FOA 感知的连续 VAE 与联合在线自蒸馏保证空间结构与未编辑声源的保留，在语音、音乐与声音三类内容上都优于对比基线。</p>
+<p><strong>贡献/机制</strong>：贡献分三层：规划层，ScenePlan 是可执行的中间表示，编辑时计划描述的是完整目标场景（含保留声源），而不是只写改动差分，这让“保留什么”有了显式载体；表示层，FOA 感知连续 VAE 用共享解码器的全向恢复、不对称分组 KL 与空间协方差匹配，同时保内容与通道间结构；训练层，联合 Transfusion 在线策略自蒸馏（OPSD）在学生自己生成的前缀与采样状态上精修规划与渲染，目标条件教师同时监督两种模式，缓解了训练与推理分布不一致。作者：Kam Man Wu、Yu Zhang、Pengjun Fang、Mingfei Chen、Weijia Chen、Zeyue Tian、Qifeng Chen。代码与项目页：https://github.com/WJM-George/AMBIT 。</p>
+<p><strong>数值结果</strong>：摘要未给逐项分数，只给出方向性结论：在语音、音乐与声音上生成内容与空间质量提升，指令引导编辑的声学保真度与未编辑声源保留优于基线。FOA 声场的具体指标（如空间定位误差、通道一致性分数）需查正文，引用时不要把“优于基线”读成已量化的幅度。</p>
+<p><strong>批判性分析</strong>：对做空间音频、沉浸式内容的人，这篇的参照价值在“规划—渲染”分工本身：把编辑写成完整目标场景的计划，天然解决了局部编辑最容易翻车的“改一处、动全身”问题；OPSD 把自蒸馏同时用在规划与渲染两端，也比只蒸馏生成器更完整。保留意见：评估结论全部是定性口径，基线名单与各内容类型的分项结果都在正文；FOA 是一阶 Ambisonics，空间分辨率上限本身有限，结论不宜外推到高阶 Ambisonics 或个性化 HRTF 渲染；编辑保真度在“保留声源”与“改动声源”之间的权衡曲线，摘要未展开，实际选型要看消融。</p>
+<p><strong>摘要译文</strong>：空间音频创作需要协调声源决策与声场合成。对于编辑，计划要说明改什么、留什么，而参考音频则提供进一步的声学细节。我们提出 AMBIT，一个用于原生一阶 Ambisonics（FOA）生成与编辑的统一框架，包含三个相互关联的贡献。第一，一个共享的 Transfusion 骨干通过可执行的 ScenePlan 把自回归规划与整流流渲染耦合起来，ScenePlan 规定声源内容、活跃度与三维轨迹。对于编辑，该计划描述完整目标场景，包括保留的声源；对比特征锚定请求的改动，而完整的参考隐变量为保留提供残余声学细节。第二，一个 FOA 感知的连续 VAE 结合共享解码器的全向恢复、不对称分组 KL 与空间协方差匹配，以保留内容与通道间结构。第三，联合 Transfusion 在线策略自蒸馏（OPSD）在学生生成的前缀上精修规划、在学生计划下到达的采样状态上精修渲染，目标条件教师同时监督共享学生的两种模式。在语音、音乐与声音上的评估显示，相比对比基线，生成内容与空间质量、指令引导编辑中的声学保真度以及未编辑声源的保留均有提升。</p>
+<hr>
+<h3 id="2-audio-r1不用人工答案用自监督音频任务的可验证奖励做音频推理-rl">2. Audio-R1：不用人工答案，用自监督音频任务的可验证奖励做音频推理 RL
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.34609"  target="_blank" rel="noopener"
+    >2610.34609</a></p>
+<p><strong>一句话</strong>：大音频语言模型的推理能力远不如文本与视觉模型，且缺乏可验证奖励；Audio-R1 把音频自监督学习重新用作奖励来源——任务构造时自动确定的答案直接验证模型回答、计算奖励，在多个大音频语言模型与多类音频基准上都带来一致提升，且只做 SFT 只能提升自监督任务本身，Audio-R1 还能迁移到训练任务之外的下游任务。</p>
+<p><strong>贡献/机制</strong>：关键设计是把“自监督任务的构造过程”本身变成奖励函数：答案在构造时就已确定，不需要人工标注或外部教师，奖励天然可验证；消融证明每个自监督任务都有独立收益，联合训练还有额外增益。对比 SFT 的对照尤其值得注意：SFT 与 Audio-R1 都能提升自监督任务准确率，但只有 RL 带来了下游迁移与推理轨迹质量的提升，这说明奖励信号在教模型“怎么推理”，而不只是“记住任务格式”。作者：Jihoon Jeong、Mirco Ravanelli、Zhepei Wang、Cem Subakan。摘要未提供代码链接。</p>
+<p><strong>数值结果</strong>：摘要未给逐基准分数，只给出方向性结论：跨多个大音频语言模型与多类音频基准一致提升，消融支持各任务收益与联合训练增益，SFT 对照下 RL 的下游迁移成立。具体到哪个基准提升多少、推理轨迹质量如何度量，需查正文表格，引用时不要编造幅度。</p>
+<p><strong>批判性分析</strong>：对做音频 RL 的人，这篇把“可验证奖励从哪来”这个最贵的环节降到了构造自监督任务的成本：不需要人工问答对，也不需要更强的教师模型，奖励来源可规模化。保留意见也正在这里：自监督任务的答案分布与真实推理任务的答案分布未必一致，奖励可验证不等于奖励与目标对齐，迁移收益的边界（哪些下游任务受益、哪些不受益）摘要未展开；另外“多个模型、多类基准”未点名，复现前要先看正文的模型与基准清单。尽管如此，在音频推理 RL 几乎没有现成奖励管线的当下，这是一条值得先跑通的路线。</p>
+<p><strong>摘要译文</strong>：推理对大音频语言模型（LALM）越来越重要，但相比纯文本与视觉语言模型，仍相对未被充分探索。我们引入 Audio-R1，一个强化学习（RL）后训练框架，它把音频自监督学习重新作为可验证奖励的来源，以提升音频理解与推理任务表现。Audio-R1 利用自监督任务构造过程中自动确定的答案来验证模型回答并计算奖励。在多个 LALM 与多类音频基准上的实验显示出一致的性能提升，消融证明了每个自监督任务的收益以及联合训练的额外增益。虽然监督微调与 Audio-R1 都能提升自监督任务准确率，但 Audio-R1 还能进一步提升与训练任务不同的下游任务表现。这些结果突显了用自监督音频任务做 RL 后训练以提升下游表现与推理轨迹质量的潜力。</p>
+<hr>
+<h3 id="3-trajectory2gym成功的工具轨迹未必是好监督可学的轨迹要先把当时看不见的信息筛掉">3. Trajectory2Gym：成功的工具轨迹未必是好监督，可学的轨迹要先把“当时看不见的信息”筛掉
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.33568"  target="_blank" rel="noopener"
+    >2610.33568</a></p>
+<p><strong>一句话</strong>：工具 Agent 的成功轨迹常被直接当作监督，但成功不等于可学——有些动作依赖学习者当时看不见的信息，有些多步依赖在数据里根本没被覆盖；Trajectory2Gym 围绕“组合覆盖”与“决策 grounded”两个要求，主动构造可执行交互、只从 grounded 决策派生监督，在五个 Qwen3 规模上把 Tau1、Tau2 与 BFCL 三个基准的等权均值提升了 16.9–29.8 个百分点，且增益在状态依赖的多轮交互中最强。</p>
+<p><strong>贡献/机制</strong>：方法本体是把轨迹生成从“收集成功轨迹”改成“构造可学习交互经验”：先围绕欠支持的组合结构构造可执行交互，再只从已实现执行中的 grounded 决策派生监督；结构支持选择分配经验，父级归一化 SFT 把语义交互作为训练权重单位而非单条样本。这两个要求是耦合的——只讲覆盖会混入不可学动作，只讲 grounded 会漏掉关键依赖组合。作者：Yihao Hu、Zhihao Wen、Yitong Lin、Siyuan Lu、Pan Wang、Wei Wu、Jiang-Ming Yang、Tao Lin。代码：https://github.com/yihaohu0118/Trajectory2Gym 。</p>
+<p><strong>数值结果</strong>：五个 Qwen3 规模上，Tau1、Tau2、BFCL 三基准等权均值提升 16.9–29.8 个百分点；增益在状态化与多轮交互中最强，后续决策依赖早期观测与反馈的场景受益最大。摘要未给各规模、各基准的逐项分数，引用具体规模的数字需查正文。</p>
+<p><strong>批判性分析</strong>：对做 Agent 后训练的人，这篇把一个常被忽略的监督质量问题形式化了：SFT 的有效样本不是“结果对了”，而是“在学习者可见历史下，动作可被推出”。与单纯扩大成功轨迹量相比，这个视角更接近 RL 里“on-policy、可学习”的直觉，也解释了为什么有些轨迹数据越训越不稳。保留意见：构造式交互的成本与覆盖策略本身需要人工设计组合结构，可扩展性取决于结构枚举是否完备；评估集中在 Qwen3 家族与三个工具基准，结论外推到其他模型家族与真实工具生态时要谨慎。</p>
+<p><strong>摘要译文</strong>：成功的工具使用轨迹未必是有用的监督。即使成功的交互也可能低估多步依赖，或包含在决策时学习者可见信息无法支持的动作。我们指出有效轨迹监督的两个耦合要求：组合覆盖，即重要的观测—动作依赖要被表示；决策 grounded，即每个被监督的动作都要得到学习者可见交互历史的支持。我们引入 Trajectory2Gym，它围绕欠支持的组合结构构造可执行交互，并只从已实现执行中的 grounded 决策派生监督。结构支持选择分配由此产生的经验，而父级归一化监督微调把语义交互作为训练权重的单位。这把轨迹生成重新定义为有意构造可学习交互经验，而非收集成功轨迹。在五个 Qwen3 规模上，Trajectory2Gym 在每个受测规模上都提升了 Tau1、Tau2 与 BFCL，使三个基准的等权均值提高了 16.9–29.8 个百分点。增益在状态化与多轮交互中最强，即后续决策依赖早期观测与反馈的场景。我们的结果表明，扩展工具 Agent 不仅取决于收集更多成功轨迹，还取决于构造依赖关系被表示、决策可从 Agent 可见历史中学习的交互。</p>
+<hr>
+<h3 id="4-tracetrial-benchagent-任务成功了harness-未必合格311-的成功运行至少违反一项可靠性准则">4. TraceTrial-Bench：Agent 任务成功了，Harness 未必合格——31.1% 的成功运行至少违反一项可靠性准则
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.32285"  target="_blank" rel="noopener"
+    >2610.32285</a></p>
+<p><strong>一句话</strong>：Agent 评测长期只看模型能力与最终任务成败，几乎不评支撑 Agent 运行的 Harness 本身；TraceTrial-Bench 把 Harness 可靠性拆成上下文、执行、治理、生命周期、可观测性、工具与验证七个组件，用 95 个专家级机制导向任务、轨迹追踪与双层评估框架，在 4 个 Harness、9 个模型、3420 次运行中发现 Harness 宏观均分只有 59.8%–72.0%，且 31.1% 的运行虽然任务成功，却至少违反一项 Harness 准则。</p>
+<p><strong>贡献/机制</strong>：贡献分三层：拆分层，七组件把“ Harness 好不好”从笼统印象拆成可分别打分、可归因的维度；任务层，95 个专家级机制导向任务带可执行或基于状态的真值，支持语义等价比较同时保留各 Harness 的原生行为；评估层，轨迹追踪（TT）捕获执行轨迹，多源证据获取（MEA）从 Agent 上下文、Harness 与执行环境三处取证，失败归因（FA）用显式机制链做到运行级归因，双层框架把“任务表现”与“ Harness 可靠性”分开打分，避免成功掩盖违规。作者：Zhiyong Cao、Hengjie Zhu、Yongxin Wang、Xuchen Li、Jintao Li、Shuxia Liu、Dunqiang Liu、Bo Wang、Kairan Zhang、Cong Lin、JiangDi Yu、Siyuan Liu、Sijia Yao、Yi-Liang Wei、Lingxu Ma、Aijia Wang、Anxin Chen、Zixian Wei、Xiang Ruan、Ruizhi Xu、Ruqian Shi、Baihua Xiao、Sicheng Zhou。代码：https://github.com/TraceLite-AI/TraceTrial-Bench 。</p>
+<p><strong>数值结果</strong>：4 个 Harness、9 个模型、95 个任务、3420 次运行；Harness 宏观均分 59.8%–72.0%；31.1% 的运行任务成功但至少违反一项 Harness 准则。摘要未给各 Harness 的分项分数与各组件的短板分布，选型时要看正文的组件对照表。</p>
+<p><strong>批判性分析</strong>：对搭 Agent 系统的人，这篇的 31.1% 是最值得带走的数字：只看任务成功率选 Harness，会系统性地漏掉治理、观测与验证层面的违规——这些违规在演示里看不见，在生产里会变成不可复现、不可审计、不可追责。双层评估的思路也值得借鉴到内部评测：先把“做对了没有”和“过程合规没有”分开，再谈综合分。保留意见：95 个任务的专家级机制导向设计本身带有作者对“好 Harness”的定义，分数的可迁移性取决于这套定义是否被社区接受；LLM 参与评估的部分（MEA/FA）也需要人类一致性对照，摘要未给。</p>
+<p><strong>摘要译文</strong>：LLM Agent 越来越多地用于解决现实问题，其效果既取决于底层模型，也取决于支撑其运行的 Harness。然而，大多数现有基准只关注模型能力与 Agent 整体表现，对 Agent Harness 的评估关注有限。为填补这一空白，我们引入 TraceTrial-Bench，它把 Harness 可靠性组织为涵盖上下文、执行、治理、生命周期、可观测性、工具与验证的七个组件。我们构建了 95 个专家级、机制导向的任务，配有可执行或基于状态的真值，以支持语义等价比较，同时保留每个 Harness 的原生行为。我们设计了轨迹追踪（TT）模块来捕获 Agent 执行轨迹，并引入双层评估框架，分别评估 Agent 表现与 Harness 可靠性。此外，我们设计了多源证据获取（MEA）模块，从 Agent 上下文、Harness 与执行环境提供证据以供基于 LLM 的评估，并开发了失败归因（FA）模块，用显式机制链支持运行级归因。在 4 个 Harness、9 个模型、95 个任务上，我们的评估共 3420 次运行，Harness 宏观均分在 59.8% 至 72.0% 之间，而 31.1% 的运行虽然任务成功，却至少违反一项 Harness 准则。TraceTrial-Bench 为比较 Agent Harness、诊断其失败以及研究 Harness 设计如何与模型行为相互作用，提供了可审计、可复现的基础。</p>
+<hr>
+<h3 id="5-forkrubric-奖励只算覆盖率会把模型训得更啰嗦更敢编加一个精确度目标后胜率从-106-涨到-680">5. FORK：Rubric 奖励只算覆盖率会把模型训得更啰嗦、更敢编，加一个“精确度”目标后胜率从 10.6% 涨到 68.0%
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.33512"  target="_blank" rel="noopener"
+    >2610.33512</a></p>
+<p><strong>一句话</strong>：Rubric 奖励让不可验证任务也能做 RL，但按 Rubric 覆盖率加权本质上是召回目标，模型会越答越全、越答越长、越敢编，反而在人类偏好上输给基座模型；FORK 奖励同时优化召回与一个新的精确度目标——回答的每个单元既要必要、又要事实正确，召回覆盖不变的情况下大幅提升精确度、缩短回答，RubricHub-Medical 上的胜率从 10.6% 提升到 68.0%，HealthBench 上从 22.1% 提升到 74.1%。</p>
+<p><strong>贡献/机制</strong>：方法本体是把奖励从单维召回拆成召回与精确度的双目标：必要性用 Rubric 驱动的必要性信用度量，事实正确性用事实正确性评分器度量，两者缺一不可——只必要不正确的单元与只正确不必要的单元都不能拿满分。这个拆分直接对应“啰嗦与编造”两种失败模式：前者是必要性问题，后者是事实性问题，单维覆盖率奖励同时奖励了这两种行为。作者：Hyun Ryu、Jong-Heon Kim、Yiqing Xie、Seungone Kim、Carolyn Rose、Eunho Yang。代码：https://github.com/JHKim631/FORK 。</p>
+<p><strong>数值结果</strong>：相比原始召回奖励，FORK 在保持相似 Rubric 覆盖的同时大幅提升精确度、缩短回答长度；相对基座策略的胜率在 RubricHub-Medical 上从 10.6% 提升到 68.0%，在 HealthBench 上从 22.1% 提升到 74.1%。摘要称其达到 Pareto 最优的覆盖—质量平衡，但未给精确度与长度的具体数值，引用幅度时以胜率为准。</p>
+<p><strong>批判性分析</strong>：对做不可验证任务 RL 的人，这篇是直接可用的检查清单：上线 Rubric 奖励前，先看回答长度与事实错误率有没有跟着覆盖率一起涨——如果涨了，奖励函数本身就是问题，不是模型问题。FORK 的双目标设计也比事后加长度惩罚更干净，因为它在奖励层面就区分了“多余”与“错误”。保留意见：必要性信用与事实评分器本身都是模型打分，奖励信号的质量取决于这两个评分器的可靠性，存在“评分器被 hack”的二阶风险；评估集中在医疗类 Rubric 任务，结论外推到开放式写作、代码等任务时要先验证评分器口径。</p>
+<p><strong>摘要译文</strong>：基于 Rubric 的奖励使对不可验证任务的强化学习成为可能。然而，由于这些奖励通常定义为 Rubric 覆盖率的加权度量，模型主要被训练去最大化一个召回目标。结果是，经 RL 训练的模型回答更完整，但也更啰嗦、包含更多不必要或事实不正确的内容，导致在偏好上不如基座模型。为解决这一问题，我们提出 FORK 奖励，它联合优化召回与一个新的精确度目标，该目标要求回答的每个单元既必要又事实正确，分别由 Rubric 驱动的必要性信用与事实正确性评分器度量。实验结果显示，FORK 优于现有的基于 Rubric 的 RL 方法，达到了平衡 Rubric 覆盖与整体回答质量的 Pareto 最优表现。相比原始召回奖励，FORK 在保持相似 Rubric 覆盖的同时大幅提升精确度并缩短回答长度，从而显著提高相对基座策略的胜率（例如在 RubricHub-Medical 上从 10.6% 提升到 68.0%，在 HealthBench 上从 22.1% 提升到 74.1%）。</p>
+<hr>
+<h3 id="6-av-fable长视频里的篡改只占一小段音视频大模型零样本检测近乎随机冻住的特征里其实有信号">6. AV-FABLE：长视频里的篡改只占一小段，音视频大模型零样本检测近乎随机，冻住的特征里其实有信号
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.33413"  target="_blank" rel="noopener"
+    >2610.33413</a></p>
+<p><strong>一句话</strong>：现有音视频 Deepfake 基准多是短 talking-head 片段，长视频里局部篡改的取证仍以视觉为主；AV-FABLE 用 16650 对原始—篡改孪生样本（998 小时、27 种编辑配置）搭了双时间线基准，音频与视觉时间线分开打分，暴露了联合时间线评估藏起的错误；零样本提示音视频大模型检测近乎随机、定位很差，但冻住的感知特征经监督读出后能恢复强取证信号，据此提出的 NFSR 在域内与三个分布外设定上都取得最佳音视频定位表现。</p>
+<p><strong>贡献/机制</strong>：贡献分三层：基准层，双时间线设计是关键——音频与视觉篡改位置不必重合，分开评估才能暴露“一种模态对了、另一种错了却被平均掉”的问题；诊断层，零样本语言输出近乎随机、而冻结特征监督读出却有强信号，这个反差说明取证证据已编码在表征里，只是语言输出通道没把它暴露出来；方法层，NFSR 用分离的音频与视觉时间解码器读冻结 AV-LLM 特征，不重训感知骨干，定位收益来自读出方式而非新表征。作者：Yuesheng Huang、Hoi Fan Au、Jiaqi Hou、Ruicheng Zhang、Jiarui He、Haocheng Yang、Bin Hu、Kewei Zhang、Weijian Deng、Jun Zhou、Xiu Li。摘要称 AV-FABLE、代码与模型权重将公开发布。</p>
+<p><strong>数值结果</strong>：基准规模 16650 对孪生样本、998 小时、27 种编辑配置；零样本 AV-LLM 检测近乎随机、时间定位差；NFSR 在域内与全部三个分布外设定上取得最佳音视频定位表现，并迁移到外部长视频取证基准的留出视频。摘要未给检测 AUC、定位 mAP 等逐项分数，引用时以方向性结论为准。</p>
+<p><strong>批判性分析</strong>：对做音视频取证与内容安全的人，这篇的诊断比方法更值得注意：不要因为大模型“说不出来”就断定它“看不出来”——语言输出通道的瓶颈会系统性低估感知表征里的信号，取证系统应该直接读特征、而不是只问模型。双时间线评估也值得借鉴到任何多模态定位任务：联合分数好看，可能是单模态错误被平均掩盖了。保留意见：27 种编辑配置的覆盖仍由作者定义，真实篡改手段的分布漂移会压缩基准的预测力；NFSR 的分布外迁移只在三个设定上验证，跨平台、跨编解码器的鲁棒性仍需实测。</p>
+<p><strong>摘要译文</strong>：长视频中局部的 AI 篡改往往只影响真实内容中的短暂事件，因此视频级分类不足以支撑取证分析。现有的音视频 Deepfake 基准大多聚焦短 talking-head 片段，而长视频时间取证仍主要以视觉为主。我们引入 AV-FABLE，一个用于开放场景长视频中稀疏篡改的双时间线基准。AV-FABLE 包含 16650 对原始—篡改孪生样本（998 小时），由 27 种编辑配置生成，音频与视觉时间线相互分离，从而支持模态特定的时间定位，并暴露联合时间线评估隐藏的错误。在 AV-FABLE 上，音视频大模型（AV-LLM）的零样本提示检测近乎随机，时间定位也很差。相比之下，对其冻结感知特征的监督读出恢复了强取证信号，表明篡改证据已编码在这些表征中，但未能通过语言输出有效暴露。受此观察启发，我们提出 NFSR（基于分离读出的原生取证），用分离的音频与视觉时间解码器读取冻结的 AV-LLM 特征。NFSR 在域内与全部三个分布外设定上都取得了最佳音视频定位表现，包括迁移到外部长视频取证基准的留出视频。AV-FABLE、代码与模型权重将公开发布。</p>
+<hr>
+<h3 id="7-s3ac长-cot-的-critic-难训不是因为-critic-没用而是轨迹覆盖与价值头冷启动没处理好">7. S3AC：长 CoT 的 Critic 难训不是因为 Critic 没用，而是轨迹覆盖与价值头冷启动没处理好
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.35518"  target="_blank" rel="noopener"
+    >2610.35518</a></p>
+<p><strong>一句话</strong>：无 Critic 方法在可验证奖励 RL 里流行，是因为长 CoT 的 Critic 训练本身很难——不同长度轨迹覆盖不足、新初始化的价值头早期梯度占主导；S3AC 给出一套可落地的 Critic 训练配方，让 Critic 提供 token 级优势与 prompt 级基线，并用难度感知提示采样减少 rollout 浪费，在 1.5B 到 397B 的稠密与 MoE 模型上都优于现代 GRPO 变体（GRPO-X），35B 规模上单 rollout 训练仍能维持，而无 Critic 基线在初期收益后恶化。</p>
+<p><strong>贡献/机制</strong>：配方分三层：稳定化，处理长 CoT 轨迹长度多样性的覆盖问题与价值头冷启动的早期梯度问题；选择性，Critic 估计的 prompt 级难度结合结果历史，在生成前选提示（DAPS），不依赖离线难度初始化就减少 rollout 浪费；可扩展性，同一配方从 1.5B 稠密模型覆盖到 397B MoE，说明 Critic 路线不是只在小规模上成立。token 级优势是 Critic 相对分组基线的根本优势：分组方法只能给整条轨迹一个基线，Critic 能给每个 token 不同的信用。作者：Shuo Shen、Guangran Cheng、Chengqi Lyu、Xiangsen Wang、Yanan Sun、Wenwei Zhang。代码：https://github.com/InternLM/xtuner 。</p>
+<p><strong>数值结果</strong>：模型范围 1.5B 至 397B（稠密与 MoE）；在各规模上组 rollout 表现优于 GRPO-X；35B 规模上 S3AC 维持单 rollout 训练，而受测无 Critic 基线在初期收益后恶化。摘要未给各规模、各基准的逐项分数，引用具体提升幅度需查正文。</p>
+<p><strong>批判性分析</strong>：对做长 CoT RL 的人，这篇的价值在于把“Critic 难训”从信仰问题变成了配方问题：覆盖与冷启动是可工程化解决的两点，而不是 Critic 路线的固有缺陷。DAPS 的“生成前选提示”也值得注意——它把难度估计从离线初始化改成在线估计，省掉了昂贵的预标注。保留意见：Critic 训练的额外算力与调参成本摘要未给账，配方在 397B 上的“优于 GRPO-X”未给幅度，是否值得为 Critic 付出额外成本，要看正文的性价比对照；另外价值头冷启动的解法细节在正文，复现前要先读配方章节。</p>
+<p><strong>摘要译文</strong>：无 Critic 方法在可验证奖励强化学习（RLVR）中被广泛用于长思维链（CoT）推理，因为它避免了困难且昂贵的 Critic 训练。常见的替代方法缺乏 token 级信用分配，通常依赖分组 rollout 来估计 prompt 特定的基线。Critic 可以解决这两个局限，但长 CoT 的 Critic 训练受到不同长度轨迹覆盖不足以及新初始化价值头主导早期梯度的阻碍。我们引入 S3AC（稳定化、选择性、可扩展的 Actor-Critic），用于 LLM 推理，围绕一套实用的 Critic 训练配方构建。训练好的 Critic 提供 token 特定的优势与 prompt 特定的基线。利用 prompt 级基线估计难度，我们提出难度感知提示采样（DAPS）。DAPS 把这一估计与结果历史结合，在生成前选择提示，无需离线难度初始化即可减少 rollout 浪费。S3AC 在 1.5B 到 397B 参数的稠密与混合专家模型上提升了组 rollout 表现，优于现代 GRPO 变体（GRPO-X）。在 35B 规模上，它维持单 rollout 训练，而受测的无 Critic 基线在初期收益后恶化。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="1-omni-woodpeckeromni-模型的跨模态幻觉不在输出层而在融合表征里先验与证据的纠缠">1. Omni-Woodpecker：Omni 模型的跨模态幻觉不在输出层，而在融合表征里先验与证据的纠缠
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.27103"  target="_blank" rel="noopener"
+    >2610.27103</a></p>
+<p>用互补的单模态视角先找出跨模态冲突，再用正交分解把融合隐状态里的 grounding 证据与竞争先验分开，最后按冲突自适应地压制误导先验、恢复被忽略的证据——全程免训练。以 Qwen2.5-Omni-7B 为骨干，在 CMM 上提升 12.9 分、AVHBench 上提升 8.6 分，四个通用 Omni 推理基准上提升 0.67–2.25 分；迁移到 VideoLLaMA2-AV 上，在同一对基准上提升 4.6 与 3.9 分。代码：https://github.com/ZiiJianLiu/Omni-Woodpecker 。</p>
+<h3 id="2-streamvibe主动视频-agent-的难点不是答什么而是何时答意图变了怎么办">2. StreamVibe：主动视频 Agent 的难点不是“答什么”，而是“何时答、意图变了怎么办”
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.34662"  target="_blank" rel="noopener"
+    >2610.34662</a></p>
+<p>StreamVibe-Bench 覆盖显式、隐式与动态三类意图，4100 个评估样本、85000 个训练样本；StreamVibe-VL 从连续观测中推断隐式意图并随意图演变调整交互，相比基线在响应时机与回答质量上提升 10.7%，同时保持通用视频理解；StreamVibe-Harness 用分层记忆把用户意图作为带生命周期的持久状态维护，在持续交互中再带来 12.3% 的主动交互增益。现有主动模型在隐式与动态意图下的意图理解与响应时机决策上仍有限。</p>
+<h3 id="3-dynaflow多智能体编排不必预设结构主-agent-自己决定何时协作生成什么工作流">3. DynaFlow：多智能体编排不必预设结构，主 Agent 自己决定何时协作、生成什么工作流
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.34467"  target="_blank" rel="noopener"
+    >2610.34467</a></p>
+<p>主 Agent 把自由形式的可执行工作流合成放进动作空间，自行决定协作时机、生成串并行协调子 Agent 的任务程序，并用执行结果与轨迹调整后续协作；只训练主 Agent（蒸馏轨迹 SFT + 针对无支持前提、有偏验证与信息流缺陷过滤后的精修），子 Agent 全部固定。在六个数学、科学问答与多跳检索基准上，强制模式总体准确率 88.08%，用同一 Qwen3.5-27B 骨干比最强基线高 10.90 个百分点；训练后对上游输出的显式使用、验证与精修明显增加。代码：https://github.com/amiya-special/Dynaflow 。</p>
+<h3 id="4-interactiveworld可穿戴助手到底能不能帮人干活第一次有了不用真人也能闭环验证的考场">4. InteractiveWorld：可穿戴助手到底能不能帮人干活，第一次有了不用真人也能闭环验证的考场
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.33966"  target="_blank" rel="noopener"
+    >2610.33966</a></p>
+<p>助手指导、人类行动、环境执行并更新所见——InteractiveWorld 让助手与人类 Agent 闭环交互，InteractiveBench 含 120 个多轮任务、六类场景，全部用可验证的基于状态的奖励打分。12 个前沿多模态大模型受测，最强的 Claude Fable 5.1 在长程引导任务上至多 20%、规划任务上至多 25%，离“可靠助手”还很远。代码：https://github.com/facebookresearch/InteractiveWorld 。</p>
+<h3 id="5-proasgrpo-把整条轨迹的优势平均分给每个动作会把不合理动作也一起奖励">5. ProAS：GRPO 把整条轨迹的优势平均分给每个动作，会把不合理动作也一起奖励
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.18683"  target="_blank" rel="noopener"
+    >2610.18683</a></p>
+<p>ProAS 用动态演化的 Agentic 参考图（ARG）做细粒度信用分配：屏蔽不合理激励（MUI）与不对称惩罚再分配（APR），不引入 Critic 开销。在 Qwen2.5-1.5B 与 7B 上，ALFWorld 峰值成功率分别为 91.9% 与 94.3%，WebShop 上分别为 66.7% 与 70.8%，训练收敛加速最高 2.44 倍，且对不完美或蒸馏得到的 ARG 仍稳健。代码：https://github.com/LINs-lab/ProAS 。</p>
+<h3 id="6-continual-learning-exam经验能不能累积要看-600-关的阶梯能不能一级一级爬上去">6. Continual Learning Exam：经验能不能累积，要看 600 关的阶梯能不能一级一级爬上去
+</h3><p><a class="link" href="https://arxiv.org/abs/2610.33956"  target="_blank" rel="noopener"
+    >2610.33956</a></p>
+<p>CLE 由 50 多位领域专家构建，120 个人工任务、每任务五级阶梯、共 600 关，覆盖 89 个职业角色、12 个职业领域，后一级建立在前一级积累的经验之上。17 个 Harness—模型配置受测，失败后给诊断反馈并允许一次修改，中位完成率提升 5.3 个百分点；但最强系统也只通过 47.7% 的关卡、仅在 23.3% 的任务上通关全部五级。代码：https://github.com/haoyu-zhao/Continual-Learning-Exam 。</p>
+<hr>
+<p><em>本日 13 篇（7 精评 + 6 简报）来自 HF Daily Papers 10-26/10-27 两期候选池：arXiv API 本次 429 限流未返回数据（降级模式），音频与语音方向精选 4 篇，另含后训练与 Agent 系统方向 9 篇。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/193994"  target="_blank" rel="noopener"
+    >Flandre93</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-27/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-27" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-27/cover_hu_cbe5b4a3a58964e7.jpg" srcset="/zh-cn/p/daily-paper-2026-10-27/cover_hu_cbe5b4a3a58964e7.jpg 1x, /zh-cn/p/daily-paper-2026-10-27/cover_hu_5bf74d48e068013c.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #20152580 0%, #fcf8f6C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-27</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-26/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-26" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-26/cover_hu_2c167b12987eaac4.png" srcset="/zh-cn/p/daily-paper-2026-10-26/cover_hu_2c167b12987eaac4.png 1x, /zh-cn/p/daily-paper-2026-10-26/cover_hu_861fde59a267bd60.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #ddc9d680 0%, #322b45C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-26</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-25/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-25" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-25/cover_hu_90136eb6a74b27dd.jpg" srcset="/zh-cn/p/daily-paper-2026-10-25/cover_hu_90136eb6a74b27dd.jpg 1x, /zh-cn/p/daily-paper-2026-10-25/cover_hu_646d62ee289ea38a.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #edc2cb80 0%, #401213C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-25</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-24/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-24" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-24/cover_hu_79b638e89b93b670.jpg" srcset="/zh-cn/p/daily-paper-2026-10-24/cover_hu_79b638e89b93b670.jpg 1x, /zh-cn/p/daily-paper-2026-10-24/cover_hu_2778a783a67c3021.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #341f2080 0%, #fbf0e6C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-24</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-10-23/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-10-23" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-10-23/cover_hu_70cd49107a588ae8.png" srcset="/zh-cn/p/daily-paper-2026-10-23/cover_hu_70cd49107a588ae8.png 1x, /zh-cn/p/daily-paper-2026-10-23/cover_hu_df88b0c372e5bf96.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #403d3e80 0%, #e5d3caC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-10-23</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
