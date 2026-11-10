@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重。截至发稿（约 00:20 UTC），arXiv 各分类最新提交仍为 11-06（周五）公告批次，未见周一（11-09）批次；arXiv 导出接口本次请求遇 429 限流与超时、未返回数据，本期以降级模式单源抓取：HuggingFace 趋势论文 100 篇。预筛选 30 篇中有 3 篇已报道、27 篇未见，本期从其中取 12 篇（10 篇精评、2 篇简报），另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。 来源构成：HuggingFace 16 篇（精评 10、简报 6）；arXiv API（0 篇，本次请求未返回数据，降级模式）。报道集均为 11-04 至 11-06 提交的论文（arXiv ID 均为 2611.*）。 主题分布：具身与 VLA 3 篇（NEO-VLA、Open-HumanScale、VFlash）、Agent 与 RL 5 篇（多轮 RL、SwarmEvolve、Agent 演化、Signed but Not Safe、EnvOpt）、决策与推理效率 3 篇（Drex、CPU-ARC、权重空间编程）、架构与生成 3 篇（WeLM-Image、Muir、AutoCompress）、评测与诚实性 2 篇（FrontierPhysics、FinDendro）。 音频方向本期无新论文：候选池内的音频论文（Confucius4-R2T2、Decode Before You Hear、LiveFoley、VoxCanvas-41M、LibriSpeech-Real-QA）均已在近 7 天内报道过。 今日关键词：“Agent 的效率账”——CPU-ARC 把推理缓存做到便宜 16–291 倍、EnvOpt 只改环境就把 Haiku 4.5 的成本砍掉 72.7%、SwarmEvolve 用 3–8 分钟追平别人 60 分钟的成绩、Drex 183 毫秒出一个带概率的判断、VFlash 把视觉规划提速约 25 倍；本期多篇都在算同一笔账：同样的能力，能不能更便宜、更快地拿到。 精评 1. 统一图像生成：理解与生成共用一条序列，1536 分辨率开源第一，Turbo 单卡 H20 上 4.98 秒出一张图 2611.07392\n">
+<title>AI Paper Daily | 2026-11-10</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-11-10/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-11-10">
+<meta property='og:description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重。截至发稿（约 00:20 UTC），arXiv 各分类最新提交仍为 11-06（周五）公告批次，未见周一（11-09）批次；arXiv 导出接口本次请求遇 429 限流与超时、未返回数据，本期以降级模式单源抓取：HuggingFace 趋势论文 100 篇。预筛选 30 篇中有 3 篇已报道、27 篇未见，本期从其中取 12 篇（10 篇精评、2 篇简报），另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。 来源构成：HuggingFace 16 篇（精评 10、简报 6）；arXiv API（0 篇，本次请求未返回数据，降级模式）。报道集均为 11-04 至 11-06 提交的论文（arXiv ID 均为 2611.*）。 主题分布：具身与 VLA 3 篇（NEO-VLA、Open-HumanScale、VFlash）、Agent 与 RL 5 篇（多轮 RL、SwarmEvolve、Agent 演化、Signed but Not Safe、EnvOpt）、决策与推理效率 3 篇（Drex、CPU-ARC、权重空间编程）、架构与生成 3 篇（WeLM-Image、Muir、AutoCompress）、评测与诚实性 2 篇（FrontierPhysics、FinDendro）。 音频方向本期无新论文：候选池内的音频论文（Confucius4-R2T2、Decode Before You Hear、LiveFoley、VoxCanvas-41M、LibriSpeech-Real-QA）均已在近 7 天内报道过。 今日关键词：“Agent 的效率账”——CPU-ARC 把推理缓存做到便宜 16–291 倍、EnvOpt 只改环境就把 Haiku 4.5 的成本砍掉 72.7%、SwarmEvolve 用 3–8 分钟追平别人 60 分钟的成绩、Drex 183 毫秒出一个带概率的判断、VFlash 把视觉规划提速约 25 倍；本期多篇都在算同一笔账：同样的能力，能不能更便宜、更快地拿到。 精评 1. 统一图像生成：理解与生成共用一条序列，1536 分辨率开源第一，Turbo 单卡 H20 上 4.98 秒出一张图 2611.07392\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-11-10/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-11-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-11-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-11-10">
+<meta name="twitter:description" content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重。截至发稿（约 00:20 UTC），arXiv 各分类最新提交仍为 11-06（周五）公告批次，未见周一（11-09）批次；arXiv 导出接口本次请求遇 429 限流与超时、未返回数据，本期以降级模式单源抓取：HuggingFace 趋势论文 100 篇。预筛选 30 篇中有 3 篇已报道、27 篇未见，本期从其中取 12 篇（10 篇精评、2 篇简报），另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。 来源构成：HuggingFace 16 篇（精评 10、简报 6）；arXiv API（0 篇，本次请求未返回数据，降级模式）。报道集均为 11-04 至 11-06 提交的论文（arXiv ID 均为 2611.*）。 主题分布：具身与 VLA 3 篇（NEO-VLA、Open-HumanScale、VFlash）、Agent 与 RL 5 篇（多轮 RL、SwarmEvolve、Agent 演化、Signed but Not Safe、EnvOpt）、决策与推理效率 3 篇（Drex、CPU-ARC、权重空间编程）、架构与生成 3 篇（WeLM-Image、Muir、AutoCompress）、评测与诚实性 2 篇（FrontierPhysics、FinDendro）。 音频方向本期无新论文：候选池内的音频论文（Confucius4-R2T2、Decode Before You Hear、LiveFoley、VoxCanvas-41M、LibriSpeech-Real-QA）均已在近 7 天内报道过。 今日关键词：“Agent 的效率账”——CPU-ARC 把推理缓存做到便宜 16–291 倍、EnvOpt 只改环境就把 Haiku 4.5 的成本砍掉 72.7%、SwarmEvolve 用 3–8 分钟追平别人 60 分钟的成绩、Drex 183 毫秒出一个带概率的判断、VFlash 把视觉规划提速约 25 倍；本期多篇都在算同一笔账：同样的能力，能不能更便宜、更快地拿到。 精评 1. 统一图像生成：理解与生成共用一条序列，1536 分辨率开源第一，Turbo 单卡 H20 上 4.98 秒出一张图 2611.07392\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-11-10/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-统一图像生成理解与生成共用一条序列1536-分辨率开源第一turbo-单卡-h20-上-498-秒出一张图">1. 统一图像生成：理解与生成共用一条序列，1536 分辨率开源第一，Turbo 单卡 H20 上 4.98 秒出一张图</a></li>
+        <li><a href="#2-不要视觉编码器了动作信号在浅层就见顶无编码器-vla-更稳">2. 不要视觉编码器了：动作信号在浅层就见顶，无编码器 VLA 更稳</a></li>
+        <li><a href="#3-不自回归也能做决策183-毫秒出一个带概率的判断准度追平-gpt-6-sol">3. 不自回归也能做决策：183 毫秒出一个带概率的判断，准度追平 GPT-6 Sol</a></li>
+        <li><a href="#4-物理研究的端到端大考56-个真人课题22-个模型没有一个通过超-46168-次">4. 物理研究的端到端大考：56 个真人课题，22 个模型没有一个通过超 46/168 次</a></li>
+        <li><a href="#5-五万小时第一人称视频训机器人对数线性扩展律robotwin-20-冲到-927">5. 五万小时第一人称视频训机器人：对数线性扩展律，RoboTwin 2.0 冲到 92.7%</a></li>
+        <li><a href="#6-多轮-rl-到底改进了什么预算一收紧优势就缩水错在恢复力不在单步决策">6. 多轮 RL 到底改进了什么：预算一收紧优势就缩水，错在恢复力不在单步决策</a></li>
+        <li><a href="#7-让智能体在潜空间里进化kv-缓存当信息通道38-分钟追平-60-分钟的成绩">7. 让智能体在潜空间里进化：KV 缓存当信息通道，3–8 分钟追平 60 分钟的成绩</a></li>
+        <li><a href="#8-agent-进化不是只涨不跌16-个进化体全都一边学会新任务一边丢掉旧任务">8. Agent 进化不是只涨不跌：16 个进化体全都一边学会新任务一边丢掉旧任务</a></li>
+        <li><a href="#9-只改-1023-个参数math-500-涨-2945-分权重空间编程的定位干预">9. 只改 1023 个参数，MATH-500 涨 29.45 分：权重空间编程的定位干预</a></li>
+        <li><a href="#10-推理过一次就别再算了cpu-可执行的推理缓存比源模型便宜-16291-倍">10. 推理过一次就别再算了：CPU 可执行的推理缓存，比源模型便宜 16–291 倍</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-线性注意力的门控再分配10m-token-外推不漂移32k-下训练比-transformer-快-27-倍">11. 线性注意力的门控再分配：10M token 外推不漂移，32K 下训练比 Transformer 快 2.7 倍</a></li>
+        <li><a href="#12-视觉规划不必逐-token-生成整条轨迹一次解码快约-25-倍">12. 视觉规划不必逐 token 生成：整条轨迹一次解码，快约 25 倍</a></li>
+        <li><a href="#13-多智能体交接要签名不安全提交从-694-压到-90但提取那一步仍是信任边界">13. 多智能体交接要签名：不安全提交从 69.4% 压到 9.0%，但提取那一步仍是信任边界</a></li>
+        <li><a href="#14-别只调模型和-harness优化环境本身haiku-45-成本降-727通过率涨-1434">14. 别只调模型和 harness：优化环境本身，Haiku 4.5 成本降 72.7%、通过率涨 14.34%</a></li>
+        <li><a href="#15-nemotron-35-super-从-120b-压到-74b单张-b200-跑-128k-上下文保留-95-分数">15. Nemotron 3.5 Super 从 120B 压到 74B：单张 B200 跑 128K 上下文，保留 95% 分数</a></li>
+        <li><a href="#16-模型自称不知道的事其实知道六成回测防泄漏不能信自报与-cutoff">16. 模型自称不知道的事，其实知道六成：回测防泄漏不能信自报与 cutoff</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-11-10/">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-10" height="2000" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-11-10/cover.jpg" srcset="/zh-cn/p/daily-paper-2026-11-10/cover_hu_a0c936be9d14dd5d.jpg 800w, /zh-cn/p/daily-paper-2026-11-10/cover_hu_bb4527d2c8154810.jpg 1600w, /zh-cn/p/daily-paper-2026-11-10/cover_hu_418e87be81e51cd.jpg 2400w, /zh-cn/p/daily-paper-2026-11-10/cover.jpg 4000w" width="4000">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-11-10/">AI Paper Daily | 2026-11-10</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-11-10T00:00:00Z'>Nov 10, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-统一图像生成理解与生成共用一条序列1536-分辨率开源第一turbo-单卡-h20-上-498-秒出一张图">1. 统一图像生成：理解与生成共用一条序列，1536 分辨率开源第一，Turbo 单卡 H20 上 4.98 秒出一张图</a></li>
+        <li><a href="#2-不要视觉编码器了动作信号在浅层就见顶无编码器-vla-更稳">2. 不要视觉编码器了：动作信号在浅层就见顶，无编码器 VLA 更稳</a></li>
+        <li><a href="#3-不自回归也能做决策183-毫秒出一个带概率的判断准度追平-gpt-6-sol">3. 不自回归也能做决策：183 毫秒出一个带概率的判断，准度追平 GPT-6 Sol</a></li>
+        <li><a href="#4-物理研究的端到端大考56-个真人课题22-个模型没有一个通过超-46168-次">4. 物理研究的端到端大考：56 个真人课题，22 个模型没有一个通过超 46/168 次</a></li>
+        <li><a href="#5-五万小时第一人称视频训机器人对数线性扩展律robotwin-20-冲到-927">5. 五万小时第一人称视频训机器人：对数线性扩展律，RoboTwin 2.0 冲到 92.7%</a></li>
+        <li><a href="#6-多轮-rl-到底改进了什么预算一收紧优势就缩水错在恢复力不在单步决策">6. 多轮 RL 到底改进了什么：预算一收紧优势就缩水，错在恢复力不在单步决策</a></li>
+        <li><a href="#7-让智能体在潜空间里进化kv-缓存当信息通道38-分钟追平-60-分钟的成绩">7. 让智能体在潜空间里进化：KV 缓存当信息通道，3–8 分钟追平 60 分钟的成绩</a></li>
+        <li><a href="#8-agent-进化不是只涨不跌16-个进化体全都一边学会新任务一边丢掉旧任务">8. Agent 进化不是只涨不跌：16 个进化体全都一边学会新任务一边丢掉旧任务</a></li>
+        <li><a href="#9-只改-1023-个参数math-500-涨-2945-分权重空间编程的定位干预">9. 只改 1023 个参数，MATH-500 涨 29.45 分：权重空间编程的定位干预</a></li>
+        <li><a href="#10-推理过一次就别再算了cpu-可执行的推理缓存比源模型便宜-16291-倍">10. 推理过一次就别再算了：CPU 可执行的推理缓存，比源模型便宜 16–291 倍</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-线性注意力的门控再分配10m-token-外推不漂移32k-下训练比-transformer-快-27-倍">11. 线性注意力的门控再分配：10M token 外推不漂移，32K 下训练比 Transformer 快 2.7 倍</a></li>
+        <li><a href="#12-视觉规划不必逐-token-生成整条轨迹一次解码快约-25-倍">12. 视觉规划不必逐 token 生成：整条轨迹一次解码，快约 25 倍</a></li>
+        <li><a href="#13-多智能体交接要签名不安全提交从-694-压到-90但提取那一步仍是信任边界">13. 多智能体交接要签名：不安全提交从 69.4% 压到 9.0%，但提取那一步仍是信任边界</a></li>
+        <li><a href="#14-别只调模型和-harness优化环境本身haiku-45-成本降-727通过率涨-1434">14. 别只调模型和 harness：优化环境本身，Haiku 4.5 成本降 72.7%、通过率涨 14.34%</a></li>
+        <li><a href="#15-nemotron-35-super-从-120b-压到-74b单张-b200-跑-128k-上下文保留-95-分数">15. Nemotron 3.5 Super 从 120B 压到 74B：单张 B200 跑 128K 上下文，保留 95% 分数</a></li>
+        <li><a href="#16-模型自称不知道的事其实知道六成回测防泄漏不能信自报与-cutoff">16. 模型自称不知道的事，其实知道六成：回测防泄漏不能信自报与 cutoff</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>10 篇精评 + 6 篇简报</strong>，共 16 篇，已对 7 天滚动窗口去重。截至发稿（约 00:20 UTC），arXiv 各分类最新提交仍为 11-06（周五）公告批次，未见周一（11-09）批次；arXiv 导出接口本次请求遇 429 限流与超时、未返回数据，本期以降级模式单源抓取：HuggingFace 趋势论文 100 篇。预筛选 30 篇中有 3 篇已报道、27 篇未见，本期从其中取 12 篇（10 篇精评、2 篇简报），另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。</li>
+<li>来源构成：HuggingFace 16 篇（精评 10、简报 6）；arXiv API（0 篇，本次请求未返回数据，降级模式）。报道集均为 11-04 至 11-06 提交的论文（arXiv ID 均为 2611.*）。</li>
+<li>主题分布：具身与 VLA 3 篇（NEO-VLA、Open-HumanScale、VFlash）、Agent 与 RL 5 篇（多轮 RL、SwarmEvolve、Agent 演化、Signed but Not Safe、EnvOpt）、决策与推理效率 3 篇（Drex、CPU-ARC、权重空间编程）、架构与生成 3 篇（WeLM-Image、Muir、AutoCompress）、评测与诚实性 2 篇（FrontierPhysics、FinDendro）。</li>
+<li>音频方向本期无新论文：候选池内的音频论文（Confucius4-R2T2、Decode Before You Hear、LiveFoley、VoxCanvas-41M、LibriSpeech-Real-QA）均已在近 7 天内报道过。</li>
+<li>今日关键词：<strong>“Agent 的效率账”</strong>——CPU-ARC 把推理缓存做到便宜 16–291 倍、EnvOpt 只改环境就把 Haiku 4.5 的成本砍掉 72.7%、SwarmEvolve 用 3–8 分钟追平别人 60 分钟的成绩、Drex 183 毫秒出一个带概率的判断、VFlash 把视觉规划提速约 25 倍；本期多篇都在算同一笔账：同样的能力，能不能更便宜、更快地拿到。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-统一图像生成理解与生成共用一条序列1536-分辨率开源第一turbo-单卡-h20-上-498-秒出一张图">1. 统一图像生成：理解与生成共用一条序列，1536 分辨率开源第一，Turbo 单卡 H20 上 4.98 秒出一张图
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.07392"  target="_blank" rel="noopener"
+    >2611.07392</a></p>
+<p><strong>一句话</strong>：WeLM-Image 把文本、参考图与目标隐变量排成一条交错序列，用共享注意力加独立参数的 Mixture-of-Transformers 同时做理解、文生图、指令编辑与多参考合成，1536 分辨率在三项开源榜单上排第一，蒸馏后的 Turbo 版在单张 H20 上 8 步 guidance-free 生成一张 1024×1024 图像只要 4.98 秒。</p>
+<p><strong>贡献/机制</strong>：统一图像基础模型要同时服务理解与生成，两条路径的优化目标容易互相干扰。WeLM-Image 用 Mixture-of-Transformers（MoT）主干：共享注意力、理解与生成各用独立参数，限制优化干扰；每条路径再配 Mixture-of-Experts 稀疏扩容，总存储参数 31.7B、每目标隐变量 token 激活约 5.4B 生成参数。数据一侧用知识驱动的视觉词表加大规模视觉聚类平衡语义覆盖与编辑任务，训练时评估指导数据迭代精炼；双语标注与经验证的编辑监督支撑渐进训练到原生 1.5K 分辨率。生成与编辑先分别用基于 rubric 与 checklist 的奖励优化，再经噪声感知的 on-policy 蒸馏合并成统一策略；MeanFlow 少步蒸馏得到 Turbo 版。作者：Canmiao Fu 等（16 人）。</p>
+<p><strong>数值结果</strong>：1536 分辨率模型在 PRISM-Bench、Qwen-Image-Bench 与 UnicBench 的整体比较中，在被评估的开源模型里均排第一；WeLM-Image-Turbo 在单张 NVIDIA H20 上用 8 个 guidance-free 步骤生成一张 1024×1024 图像耗时 4.98 秒。</p>
+<p><strong>批判性分析</strong>：这篇的工程完整度很高——统一架构、数据引擎、两阶段奖励优化再到少步蒸馏，是一条从研究到微信大规模消费级应用落地的完整链路；“理解与生成共享一条序列”这个设计也符合多模态统一模型的走向。但摘要没有给出与闭源模型（如 GPT 图像系列）的对照，只说“开源第一”；编辑质量的 rubric/checklist 奖励本身由谁打分、是否自举，也没有交代；31.7B 存储参数对“单卡部署”的实际显存占用（量化后多少）同样未说明，落地成本要打折扣看。</p>
+<p><strong>摘要译文</strong>：我们提出 WeLM-Image，一个统一图像基础模型，它把多模态理解融入文生图、指令引导编辑与多参考合成。模型为微信大规模消费级应用的单卡部署而设计，把文本、参考图像与目标隐变量处理为一条交错序列。Mixture-of-Transformers（MoT）主干结合共享注意力与独立的理解、生成参数，以限制优化干扰。每条路径配备 Mixture-of-Experts（MoE）模块提供稀疏容量，总存储参数 31.7B，每个目标隐变量 token 约激活 5.4B 生成参数。一个面向生成的数据引擎结合知识驱动的视觉词表与大规模视觉聚类，平衡语义覆盖与编辑任务，训练时评估指导数据的迭代精炼。双语标注与经验证的编辑监督支持渐进训练到原生 1.5K 分辨率。我们先用基于 rubric 与 checklist 的奖励分别优化生成与编辑，再通过噪声感知的 on-policy 蒸馏合并专门化策略。在报告的整体比较中，1536 分辨率模型在 PRISM-Bench、Qwen-Image-Bench 与 UnicBench 上在被评估的开源模型中排名第一。基于 MeanFlow 的少步蒸馏得到 WeLM-Image-Turbo，它在单张 NVIDIA H20 GPU 上用 8 个 guidance-free 步骤生成一张 1024×1024 图像耗时 4.98 秒。</p>
+<hr>
+<h3 id="2-不要视觉编码器了动作信号在浅层就见顶无编码器-vla-更稳">2. 不要视觉编码器了：动作信号在浅层就见顶，无编码器 VLA 更稳
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.06918"  target="_blank" rel="noopener"
+    >2611.06918</a></p>
+<p><strong>一句话</strong>：NEO-VLA 质疑 VLA 的默认结构——先由视觉编码器压缩感知、再开始动作推理，恰恰丢掉了操作最依赖的局部几何、边界与深度等信号；它改用轻量 patch 卷积直接 token 化图像、让视觉计算与语言在主干里共同演化，逐层探测显示动作关键信号往往在最终视觉表示之前就达到峰值。</p>
+<p><strong>贡献/机制</strong>：现有 VLA 默认“感知先压缩成固定视觉端点，动作推理再开始”，但操作依赖的信号（局部几何、边界、深度、细微状态变化）最容易在这种抽象中受损。这篇提出 NEO-VLA，一个结构上无编码器的视觉-语言-动作框架：图像经轻量 patch 卷积层 token 化后，与语言一起在主干中演化，流匹配动作专家可以从不同深度的、受指令调节的视觉表示中取信号。对照实验显示，原生架构一致优于基于编码器的对照组；全量微调能缩小差距但无法消除，单纯加规模也补不回来。逐层探测进一步表明，动作关键信号常常远在最终视觉表示之前就达到峰值。作者：Weichen Fan 等（17 人）。</p>
+<p><strong>数值结果</strong>：摘要未给出具体基准分数与提升幅度，只定性报告“在多样的操作设置与分布偏移下实现更强、更稳健的控制”；具体数值需看正文。</p>
+<p><strong>批判性分析</strong>：这个工作的提问方式很对——它不是在现有结构上加模块，而是问“视觉端点”这个默认假设本身对不对；“动作信号在浅层见顶”的探测结果如果成立，对 VLA 的结构设计有普遍意义。但摘要完全没有数字：没有基准名、没有成功率、没有与编码器基线的差距幅度，结论的可信度目前只能建立在方法论述上；“更强更稳健”到底强多少、代价是什么（无编码器是否意味着更长的 token 序列与更高的算力），都要等正文数据才能判断。</p>
+<p><strong>摘要译文</strong>：视觉-语言-动作模型通常建立在一个简单的前提上：感知先由视觉编码器压缩，动作推理随后才开始。然而操作常常恰恰依赖最容易在这种抽象中受损的视觉信号，例如局部几何、边界、深度与细微的状态变化。这引出一个根本问题：动作策略应该继承一个固定的视觉端点，还是直接访问不断演化的视觉计算？我们提出 NEO-VLA，一个结构上无编码器的视觉-语言-动作框架。图像由轻量 patch 卷积层 token 化，并与语言一起在主干中共同演化，使流匹配动作专家能从不同深度的、受指令调节的视觉表示中汲取信号。这个简单的改变揭示了一个一致的模式。在受控比较中，原生架构优于基于编码器的对照组；全量微调能缩小但无法消除差距，仅靠增加规模也无法弥补。更值得注意的是，逐层探测显示，动作关键信号常常远在最终视觉表示之前就达到峰值。在多样的操作设置与分布偏移下，NEO-VLA 因此实现了更强、更稳健的控制。这些结果共同表明，具身控制受益于对计算层级各处的视觉表示的访问，而非一个固定的编码器输出。</p>
+<hr>
+<h3 id="3-不自回归也能做决策183-毫秒出一个带概率的判断准度追平-gpt-6-sol">3. 不自回归也能做决策：183 毫秒出一个带概率的判断，准度追平 GPT-6 Sol
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.07854"  target="_blank" rel="noopener"
+    >2611.07854</a></p>
+<p><strong>一句话</strong>：Drex 把“决策”从“生成”里拆出来：给一个状态与一组选项，直接返回选项上的概率分布，不做自回归解码；最大的 27B 模型在 Decision Index 上刷新决策模型纪录，Decision Bench 上与 d3-turbo 和 GPT-6 Sol 统计持平，典型请求只要 183 毫秒，而 GPT-6 Sol 约 2.0 秒、Claude Opus 5.5 约 3.5 秒。</p>
+<p><strong>贡献/机制</strong>：长思维链的自回归 LLM 在生产里答案不稳定、要解析输出、又贵又慢。决策模型换一个问题形式：输入一个状态（文档、记录或智能体上下文，可选图像）与若干问题，每个问题要求在选项中选择、做 yes/no 判断，或在有序量表上打分，输出选项上的概率分布，无需自回归解码。Drex 是四个开源决策模型组成的家族：8B（DLM）、9B（v1.5）、35B 总参数 3B 激活（v2.0）、27B（Max）。训练结合监督微调与调整反馈的强化学习（RLAF），Max 另做视觉调优；消融显示 RLAF 提升准确率、一致性损失提升对选项顺序的稳健性。代码：https://github.com/nace-ai/drex-decision-models。作者：Nischay Dhankhar、Alisher Amantay、Zhanibek Datbayev、Darkhan Akhmetov、Yash Shah、Nurmukhamed Ubaidullayev、Raman Saparkhan、Dos Baha、Abulhair Saparov（9 人）。</p>
+<p><strong>数值结果</strong>：Decision Index 0.4.1 上 Max 以 67.52 分刷新所比较的决策模型纪录（Jev 1.14.0 为 60.70）；Decision Bench v4 上与 d3-turbo 和 GPT-6 Sol 统计持平，比 Claude Opus 5.5 低 1.6 分；在 DecideBench 上决策模型中准确率最高；典型请求耗时 183 毫秒，对 GPT-6 Sol 约 2.0 秒、Claude Opus 5.5 约 3.5 秒；输出在选项重排下稳定。</p>
+<p><strong>批判性分析</strong>：这篇的定位很清晰——不是要替代通用 LLM，而是把“判断”这个高频、低容错的生产环节抽出来做成便宜又快的专用模型；183 毫秒对 2 秒的延迟差在智能体循环里是质变，而且概率输出天然适合做校准与阈值控制。但要注意适用边界：决策模型只擅长“选项给定”的判断，开放式生成、长推理仍需自回归模型；Decision Bench 上落后 Opus 5.5 的 1.6 分说明天花板仍在通用大模型手里；RLAF 的“调整反馈”具体如何构造，摘要没有展开，复现要看正文。</p>
+<p><strong>摘要译文</strong>：采用大语言模型的自回归方法，例如长思维链推理，已成为新 AI 应用的默认选择，因为它们在广泛任务上达到更高准确率。然而在生产中，它们给出的答案不一致、需要解析输出，并增加成本与延迟。决策模型解决这一问题：给定一个问题与用户提供的一组选项，它们返回选项上的概率分布，无需自回归解码。我们提出 Drex，一个由四个开放决策模型组成的家族，参数量分别为 8B（DLM）、9B（v1.5）、35B 总参数 3B 激活（v2.0）与 27B（Max）。每个请求由一个状态（文档、记录或智能体上下文，可选图像）与关于它的若干问题组成，每个问题要求在选项中选择、做 yes/no 判断，或在有序量表上打分。训练结合监督微调与调整反馈的强化学习（RLAF），Max 另有视觉调优。消融表明，RLAF 提升准确率，一致性损失提升对选项顺序的稳健性。在 Decision Index 0.4.1 上，Max 在我们比较的决策模型中创下新的 state of the art（公开套件 67.52 分，对 Jev 1.14.0 的 60.70 分）。在 Decision Bench v4 上，它与 d3-turbo 和 GPT-6 Sol 统计持平，比 Claude Opus 5.5 低 1.6 分，并且在 DecideBench 上是决策模型中准确率最高的。Max 回答一个典型请求耗时 183 毫秒，而 GPT-6 Sol 约 2.0 秒、Claude Opus 5.5 约 3.5 秒，且其输出在选项重排下保持稳定。四个模型全部开源：https://github.com/nace-ai/drex-decision-models</p>
+<hr>
+<h3 id="4-物理研究的端到端大考56-个真人课题22-个模型没有一个通过超-46168-次">4. 物理研究的端到端大考：56 个真人课题，22 个模型没有一个通过超 46/168 次
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.06910"  target="_blank" rel="noopener"
+    >2611.06910</a></p>
+<p><strong>一句话</strong>：FrontierPhysics 不考固定习题、而是让智能体从头做物理研究：42 位物理学家按自己的研究出题，56 个任务横跨理论、计算与实验九个领域，要求查文献、定计划、做实验、写出结构化产出与科学手稿；22 个模型、26 种配置里，没有一种配置在 168 次 rollout 中通过超过 46 次。</p>
+<p><strong>贡献/机制</strong>：现有物理基准只评固定问题、孤立子任务，或在给定解法下复现论文，很少同时检查研究的正确性与质量。FrontierPhysics 是端到端基准：56 个任务由 42 位物理学家基于自己的研究制作，覆盖九个领域；每个任务要求智能体查阅文献、制定研究计划、开展研究与实验，并产出结构化输出与科学手稿。评估结合确定性验证器与专家撰写的 rubric，同时判断研究是否正确、是否达到可发表水平。作者进一步人工审阅智能体轨迹，发现前沿智能体的主要短板是推理不够严谨、专家直觉有限，而非物理知识或执行错误。作者：Bingran You 等（72 人）。</p>
+<p><strong>数值结果</strong>：22 个模型、26 种配置中，没有任何配置在 168 次 rollout 中通过超过 46 次；任务数为 56，覆盖 9 个领域、42 位出题物理学家。</p>
+<p><strong>批判性分析</strong>：这个基准的立意比分数本身更重要——它把“做研究”当作一个端到端任务来评，而不是把研究拆成选择题；“短板在严谨性与直觉而非知识”这个诊断也很可信，与编码智能体的现状类似。但要小心两点：一是 46/168 的通过率口径（单次 rollout 通过、还是任务级通过）摘要没有说清，跨基准比较时容易误读；二是 72 位作者、42 位出题人的规模意味着任务质量参差的可能，专家 rubric 的评分一致性也没有在摘要里报告；这个基准更适合当作“研究智能体”的诊断工具，而不是一个简单的排行榜。</p>
+<p><strong>摘要译文</strong>：AI 智能体在物理研究中正发挥越来越重要的作用。然而现有物理基准只评估固定问题、孤立子任务，或在给定解法下复现论文，很少同时检查研究质量与正确性。我们提出 FrontierPhysics，一个端到端基准，包含由 42 位物理学家基于自己的研究制作的 56 个任务，覆盖理论、计算与实验物理的九个领域。每个任务要求智能体查阅文献、制定研究计划、开展研究与实验，并产出结构化输出与科学手稿。结合确定性验证器与专家撰写的 rubric，FrontierPhysics 评估智能体的研究是否正确、可发表。在 22 个模型、26 种配置中，没有任何配置在 168 次 rollout 中通过超过 46 次。对智能体轨迹的人工审阅表明，前沿智能体的主要弱点是推理不够严谨、专家直觉有限，而非物理知识或执行错误上的差距。</p>
+<hr>
+<h3 id="5-五万小时第一人称视频训机器人对数线性扩展律robotwin-20-冲到-927">5. 五万小时第一人称视频训机器人：对数线性扩展律，RoboTwin 2.0 冲到 92.7%
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.06817"  target="_blank" rel="noopener"
+    >2611.06817</a></p>
+<p><strong>一句话</strong>：Open-HumanScale 证明人类的第一人称视频可以规模化地转化成机器人操作先验：5 万小时经严格筛选、带手部动作与自然语言密集标注的自我中心视频，训出一条预训练数据量对下游机器人成功率的经验对数线性扩展律；纯人类视频预训练的 HumanWAM-Vanilla 在 RoboTwin 2.0 上达 92.08%，再混入机器人数据的人机联合预训练 HumanWAM-Goal 冲到 92.70%，随机化场景下从 68.88% 跃升到 84.60%。</p>
+<p><strong>贡献/机制</strong>：自我中心人类视频是可规模化的操作先验来源，但把原始数据规模转化成可泛化的机器人策略，需要严格的数据筛选与训练配方。这篇给出第一个完全开源的配方：Open-HumanScale-50K——5 万小时经筛选的自我中心视频语料，密集标注手部动作与自然语言；并系统研究纯人类预训练，经闭环仿真评估发现预训练数据小时数与下游机器人成功率之间存在经验对数线性扩展律。基于此训出 HumanWAM-Vanilla（世界-动作模型，仅用 5 万小时人类视频预训练），机器人后训练后在 RoboTwin 2.0 Clean2Clean 上达 92.08%、Clean2Random 上 68.88%，RoboDojo 上平均成功率 14.17%、平均进度分 19.00。再进一步做人机联合预训练 HumanWAM-Goal（视觉目标条件世界-动作模型），混合数据规模解锁了仿真与真机上的广泛零样本泛化：RoboTwin 2.0 后训练性能达 Clean2Clean 92.70%、Clean2Random 84.60% 的新高；真机上 HumanWAM-Goal 还表现出涌现的具身上下文学习——无需参数更新即可按未见过的视觉目标动态调整操作行为。语料、筛选与预训练流程、预训练与后训练检查点、推理代码与仿真评估套件全部开源。作者：Juncheng Ma 等（33 人）。</p>
+<p><strong>数值结果</strong>：HumanWAM-Vanilla：RoboTwin 2.0 Clean2Clean 92.08%、Clean2Random 68.88%，RoboDojo 平均成功率 14.17%、平均进度分 19.00；HumanWAM-Goal：RoboTwin 2.0 Clean2Clean 92.70%、Clean2Random 84.60%；真机涌现具身上下文学习（无参数更新适应未见视觉目标）。</p>
+<p><strong>批判性分析</strong>：这篇最值钱的是两点：一是“人类视频小时数→机器人成功率”的对数线性扩展律，给具身预训练的规模化提供了一个可外推的定量关系；二是开源的完整配方（5 万小时语料 + 筛选流程 + 检查点），别人可以直接复现与接力。但要注意：扩展律是在闭环仿真评估上发现的，仿真到真机的差距没有量化；HumanWAM-Goal 的 84.60% 是在后训练之后，零样本泛化与后训练收益的边界摘要没有分开；“涌现的具身上下文学习”目前只是定性观察，没有对照实验说明它到底在多大程度上可靠。</p>
+<p><strong>摘要译文</strong>：自我中心人类视频为机器人学习提供了可规模化的操作先验来源，但把原始数据规模转化为可泛化的机器人策略，需要严格的数据筛选与训练配方。我们提出 Open-HumanScale，第一个完全开源的配方，用于把自我中心预训练扩展到 50,000 小时，其核心是 Open-HumanScale-50K——一个经筛选的自我中心视频语料，密集标注手部动作与自然语言。利用该语料，我们通过闭环仿真评估系统研究纯人类预训练，发现一条经验对数线性扩展律，把预训练数据小时数与下游机器人成功率联系起来。基于这些发现，我们开发了 HumanWAM-Vanilla，一个仅用 5 万小时自我中心人类视频预训练的世界-动作模型。经机器人后训练后，HumanWAM-Vanilla 在 RoboTwin 2.0 Clean2Clean 上达到 92.08% 成功率、Clean2Random 上 68.88%，在 RoboDojo 上平均成功率 14.17%、平均进度分 19.00。为进一步推进能力前沿，我们探索人机联合预训练，提出 HumanWAM-Goal，一个视觉目标条件的世界-动作模型。混合数据规模解锁了仿真与物理基准上广泛的零样本泛化，把后训练的 RoboTwin 2.0 性能推到新的 state of the art：Clean2Clean 92.70%，Clean2Random 大幅跃升至 84.60%。在物理机器人上，HumanWAM-Goal 进一步展现出涌现的具身上下文学习，无需参数更新即可按未见过的视觉目标动态调整操作行为。为支持具身 AI 中可复现的规模化研究，我们开源 Open-HumanScale-50K 语料、数据筛选与预训练流程，以及预训练与后训练的 HumanWAM 检查点、推理代码与仿真评估套件。</p>
+<hr>
+<h3 id="6-多轮-rl-到底改进了什么预算一收紧优势就缩水错在恢复力不在单步决策">6. 多轮 RL 到底改进了什么：预算一收紧优势就缩水，错在恢复力不在单步决策
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.06483"  target="_blank" rel="noopener"
+    >2611.06483</a></p>
+<p><strong>一句话</strong>：多轮智能体 RL 的收益没有看上去那么普适——用采样广度 K 与交互深度 T 的 Pass@(K,T) 度量时，轨迹级 RL 的优势高度依赖充足的轮次预算，预算一收紧就大幅缩水；它的强项集中在纠错与长程韧性上，而不是均匀提升每一步的决策质量；作者据此提出训练时混合不同交互预算的 BudgetMix RL。</p>
+<p><strong>贡献/机制</strong>：多轮智能体 RL 在长程任务上表现出色，但其性能增益对交互约束高度敏感。这篇用 Pass@(K,T)（采样广度 K、交互深度 T）系统评估：轨迹级 RL 的优势依赖充足的轮次预算，预算收紧时显著缩小；而且智能体 RL 并非均匀提升单步决策质量，其优势集中在错误恢复与长程韧性上。为缓解这种预算依赖带来的部署风险，作者初步讨论过程监督信号的收益与局限，并提出 BudgetMix RL——训练时变化交互预算。实验表明 BudgetMix RL 在多样的执行设定下表现稳健。项目页：https://rethinking-agentic-rl.github.io/。作者：Kejian Zhu、Zhuoran Jin、Shangqing Tu、Tianyi Men、Yupu Hao、Jiachun Li、Kang Liu、Jun Zhao（8 人）。</p>
+<p><strong>数值结果</strong>：摘要未给出 Pass@(K,T) 的具体数值与 BudgetMix RL 的量化收益，只定性报告“在多样的执行设定下表现稳健”；具体数字需看正文。</p>
+<p><strong>批判性分析</strong>：这篇的结论对正在排智能体 RL 训练计划的人是直接可用的提醒：评测时只报充足预算下的分数会高估部署收益，预算依赖本身就是要度量的量；“优势在纠错而不在单步决策”这个分解也很关键，它决定了过程监督应该补在哪里。但摘要没有给出任何数字——Pass@(K,T) 曲线长什么样、预算收紧时优势缩水多少、BudgetMix 到底稳健了多少，全都没有；这是一篇诊断价值大于方法价值的论文，方法部分（BudgetMix）目前更像一个初步方案而非验证充分的解法。</p>
+<p><strong>摘要译文</strong>：多轮智能体强化学习（RL）在长程任务上表现出色，但其性能增益对交互约束高度敏感。通过采样广度 K 与交互深度 T 的 Pass@(K,T) 进行评估，我们表明，轨迹级 RL 的优势依赖充足的轮次预算，预算收紧时显著缩小。此外，智能体 RL 并非均匀提升单步决策质量；相反，其优势集中在错误恢复与长程韧性上。为缓解这种预算依赖带来的部署风险，我们初步讨论过程监督信号的收益与局限，并提出 BudgetMix RL 作为替代方案，它在训练时变化交互预算。实验证明，BudgetMix RL 在多样的执行设定下表现稳健。项目页：https://rethinking-agentic-rl.github.io/</p>
+<hr>
+<h3 id="7-让智能体在潜空间里进化kv-缓存当信息通道38-分钟追平-60-分钟的成绩">7. 让智能体在潜空间里进化：KV 缓存当信息通道，3–8 分钟追平 60 分钟的成绩
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.08483"  target="_blank" rel="noopener"
+    >2611.08483</a></p>
+<p><strong>一句话</strong>：SwarmEvolve 把 LLM 引导的进化搜索搬进潜空间：每轮数百个低成本智能体组成蜂群、不解码成文本直接在隐状态里推理、靠传递 KV 缓存共享信息，21 个数学发现与科学计算问题上平均分最高，中位数只需 3–8 分钟就达到其他 SOTA 框架 60 分钟才达到的最佳分数。</p>
+<p><strong>贡献/机制</strong>：LLM 引导的进化搜索靠智能体迭代改进程序来解数学与计算问题，但过程很慢：每轮 LLM 都要生成一条长文本思维链，还要重复多次生成以维持种群多样性。SwarmEvolve 让每轮数百个低成本智能体组成蜂群，在潜空间中推理而不解码为文本，并通过传递 KV 缓存共享信息；每个蜂群从不同角度研究问题；新颖性过滤器直接度量智能体隐状态向量之间的距离，保留最独特的想法；想法交叉在潜空间中自然发生——一个汇总智能体接收所有蜂群成员合并后的 KV 缓存。在 21 个数学发现与科学计算问题上，SwarmEvolve 平均分最高；多个问题上，用 Qwen3 8B 的 SwarmEvolve 改进了 AlphaEvolve 最初用前沿 LLM 找到的解。作者：Qile Jiang、George Em Karniadakis（2 人）。</p>
+<p><strong>数值结果</strong>：21 个问题上平均分最高；达到其他 SOTA 框架最佳分数所需时间中位数仅 3–8 分钟，对方为 60 分钟；多个问题上 Qwen3 8B 的解超过 AlphaEvolve 用前沿 LLM 找到的解。</p>
+<p><strong>批判性分析</strong>：这个想法漂亮在把两个瓶颈一起拿掉——文本解码的慢与种群多样性的贵，KV 缓存当信息通道是个很“系统级”的解法；用 8B 小模型改进 AlphaEvolve 用前沿模型找到的解，也说明进化搜索的收益不完全取决于单模型能力。但要打折扣：21 个问题的规模与选择标准摘要没有展开，结论能否外推到开放式科学问题未知；“潜空间推理”的可解释性与可控性比文本链差，蜂群想法的质量难以审计；3–8 分钟对 60 分钟的比较口径（是否含同等算力）也没有交代。</p>
+<p><strong>摘要译文</strong>：LLM 引导的进化搜索使用 AI 智能体，通过迭代改进解法、组合高分方法，来改进数学与计算问题的程序。然而这个过程常常很慢，因为 LLM 每轮都要生成一条长文本思维链，还必须多次重复生成以维持种群多样性。我们提出 SwarmEvolve，一个框架，其中每轮数百个低成本智能体组成蜂群，在潜空间中推理而不解码为文本，并通过传递 KV 缓存共享信息。每个蜂群从不同角度研究问题。新颖性过滤器直接度量智能体隐状态向量之间的距离，保留最独特的想法。想法的交叉在潜空间中自然发生，因为一个汇总智能体接收所有蜂群成员合并后的 KV 缓存。在 21 个数学发现与科学计算问题上，SwarmEvolve 获得最高平均分，且中位数只需 3–8 分钟就达到其他 state-of-the-art 框架在 60 分钟内达到的最佳分数。在多个问题上，使用 Qwen3 8B 的 SwarmEvolve 改进了 AlphaEvolve 最初用前沿 LLM 找到的解。我们的工作表明，在潜空间中通信的智能体蜂群为科学问题的程序搜索提供了一种快速、低成本的方法。</p>
+<hr>
+<h3 id="8-agent-进化不是只涨不跌16-个进化体全都一边学会新任务一边丢掉旧任务">8. Agent 进化不是只涨不跌：16 个进化体全都一边学会新任务一边丢掉旧任务
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.07624"  target="_blank" rel="noopener"
+    >2611.07624</a></p>
+<p><strong>一句话</strong>：智能体 harness 进化（不更新模型权重、只进化 harness 的递归自我改进）被默认等同于“分数涨了就是变强了”，但这篇的对照实验显示：16 个进化智能体全部一边获得此前未覆盖的任务、一边丢失此前已覆盖的任务；有个通用任务案例里可靠性涨了 5.2 分，代价是丢掉 10 个此前能做的任务。</p>
+<p><strong>贡献/机制</strong>：智能体 harness 进化能在不更新模型权重的情况下实现递归自我改进（RSI），但更高的基准分数是否等于可靠、高效、可迁移的改进，一直没有检验。这篇评估四种方法在不同 harness、通用任务与编码任务上的表现：重复评估、受控的智能体扩展、组件干预与准入重放，揭示出反复出现的模式——16 个进化智能体全部获得此前未覆盖的任务，同时丢失此前已覆盖的任务；一个通用任务案例中，可靠性上升 5.2 分，但代价是丢失 10 个此前已覆盖的任务；多数可靠性收益同时增加部署成本；具体改动通常优于通用提醒，但组合后收益可能变化；得分最高的智能体在四个池子中的任何一个上都不是平均改进最大的；更严格的准入可能丢弃有用的替代方案。迁移上也有选择性：通用任务目标上跨两种 harness 类型与范式时覆盖率通常下降，而编码任务目标上、使用仅外层 harness 时覆盖率上升。作者据此提出“保真感知评估”、经检验的决策规则与明确的适用条件，并给出建设性后续 EvoAudit——把这些诊断转化为 select、analyze、mutate、gate 四步的修订，取得最佳表现。作者：Xiaobo Wang 等（16 人）。</p>
+<p><strong>数值结果</strong>：16 个进化智能体全部出现“获得新任务、丢失旧任务”；通用任务一例中可靠性 +5.2 分、丢失 10 个已覆盖任务；EvoAudit 取得最佳表现（具体数值见正文）。</p>
+<p><strong>批判性分析</strong>：这篇是对“进化 = 进步”这个默认叙事的必要纠偏——它把评估从单点分数拉回到“保真度”（学会新东西的同时保住旧东西）这个更诚实的维度上；“得分最高的智能体不是平均改进最大的”尤其值得所有做 RSI 的人记住。但摘要没有给出 EvoAudit 的具体数值与基线对比，建设性方案的说服力目前不足；实验只覆盖四种方法与两类任务，结论在更广的 harness 空间里是否成立仍待验证；“可靠性”的具体定义（多次运行的方差？）摘要也没有展开。</p>
+<p><strong>摘要译文</strong>：智能体 harness 进化使递归自我改进（RSI）无需更新模型权重即可实现。我们检验更高的基准分数是否带来可靠、高效、可迁移的改进。我们在不同 harness、通用任务与编码任务上评估四种方法。重复评估、受控的智能体扩展、组件干预与准入重放揭示出反复出现的模式。全部 16 个进化智能体都获得了此前未覆盖的任务，同时丢失了此前已覆盖的任务。在一个通用任务案例中，可靠性上升 5.2 分，尽管丢失了 10 个此前已覆盖的任务。多数可靠性收益也增加了部署成本。具体改动通常优于通用提醒，但其收益在组合后可能变化。得分最高的智能体在我们四个池子中的任何一个上都不是平均改进最大的，更严格的准入可能丢弃有用的替代方案。迁移有选择性地保留收益：在通用任务目标上，跨两种 harness 类型与范式时覆盖率通常下降，而在编码任务目标上、使用仅外层 harness 时覆盖率上升。这些发现促使我们采用保真感知评估、经检验的决策规则与明确的适用条件。作为建设性后续，EvoAudit 把这些诊断转化为 select、analyze、mutate 与 gate 的修订，取得了最佳表现。</p>
+<hr>
+<h3 id="9-只改-1023-个参数math-500-涨-2945-分权重空间编程的定位干预">9. 只改 1023 个参数，MATH-500 涨 29.45 分：权重空间编程的定位干预
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.09382"  target="_blank" rel="noopener"
+    >2611.09382</a></p>
+<p><strong>一句话</strong>：权重空间编程（WSP）让推理智能体直接检查与修改神经网络参数、替代基于梯度的模型适配；这篇系统检验它的能力边界：只改 1023 个参数，MATH-500 准确率就能涨 29.45 分，GPQA Diamond、IFEval、SciBench 上分别涨 4.42、36.72、17.11 分；但 16 条编辑轨迹里有 6 条因无法可靠验证改进而保留原始权重，效果并不稳定。</p>
+<p><strong>贡献/机制</strong>：权重空间编程（WSP）使推理智能体能直接检查与修改神经网络参数，提供基于梯度模型适配之外的另一种选择，但其能力、跨任务泛化与实际局限一直缺乏系统理解。这篇通过 16 条编辑轨迹、在 7 个基准与两个模型规模（Qwen3.5-0.8B 与 Qwen3.5-9B）上系统研究 WSP。三点发现：第一，WSP 能通过高度定位的干预实现显著的性能提升——完整 held-out 评估上，准确率在 MATH-500、GPQA Diamond、IFEval、SciBench 上分别最多提升 29.45、4.42、36.72、17.11 个百分点，其中只修改 1023 个参数就带来 29.45 分的提升；第二，WSP 表现出有前景但不均匀的跨任务泛化——数学编辑后的检查点无需进一步编辑，就把 GPQA Diamond、IFEval、SciBench 分别提升 3.03、12.18、20.10 分，而 SciCode 性能不变；第三，有效编辑仍然困难且不一致——结果在不同轨迹间差异很大，16 条轨迹中有 6 条因候选改进无法可靠验证而保留原始权重。主页：https://wsp-scope.github.io/，代码：https://github.com/WSP-Scope/WSP-Scope-Project。作者：Junru Hu、Cheng Tang、Wei Li、Hongze Zhu、Chun-Mei Feng、Qi Zhang、Yirong Chen、Ming Hu（8 人）。</p>
+<p><strong>数值结果</strong>：MATH-500 +29.45、GPQA Diamond +4.42、IFEval +36.72、SciBench +17.11（百分点，完整 held-out 评估）；1023 个参数带来 29.45 分提升；数学编辑检查点跨任务迁移：GPQA +3.03、IFEval +12.18、SciBench +20.10，SciCode 不变；16 条轨迹中 6 条保留原始权重。</p>
+<p><strong>批判性分析</strong>：1023 个参数换 29.45 分这个数字非常抓人——它说明大模型里确实存在少量“杠杆点”参数，定位编辑的上限很高；跨任务迁移（数学编辑顺带提升 IFEval 20 分）也暗示这些杠杆点可能对应更通用的能力维度。但这篇的诚实之处也恰恰是它的短板所在：6/16 的轨迹以“无法验证改进”告终，说明 WSP 目前更像一个有潜力的研究方向而非可靠工具；编辑的发现过程（智能体如何找到这 1023 个参数）成本未量化；实验只用了 Qwen3.5 两个规模，杠杆点的存在是否依赖模型家族未知。</p>
+<p><strong>摘要译文</strong>：权重空间编程（WSP）使推理智能体能直接检查与修改神经网络参数，提供基于梯度的模型适配之外的另一种选择。然而，其能力、跨任务泛化与实际局限仍未得到充分理解。我们通过 16 条编辑轨迹、在 7 个基准与两个模型规模（Qwen3.5-0.8B 与 Qwen3.5-9B）上系统研究 WSP。我们的发现揭示三个关键洞见。第一，WSP 能通过高度定位的干预实现显著的性能提升。在完整 held-out 评估上，准确率在 MATH-500、GPQA Diamond、IFEval 与 SciBench 上分别提升最多 29.45、4.42、36.72 与 17.11 个百分点。值得注意的是，仅修改 1,023 个参数就带来 29.45 分的提升。第二，WSP 表现出有前景但不均匀的跨任务泛化。一个经数学编辑的检查点在无需进一步编辑的情况下，把 GPQA Diamond、IFEval 与 SciBench 分别提升 3.03、12.18 与 20.10 分，同时 SciCode 性能保持不变。第三，有效编辑仍然困难且不一致。结果在不同轨迹间差异很大，16 条轨迹中有 6 条因候选改进无法可靠验证而保留原始权重。总之，这些结果突显 WSP 在高度定位的模型适配上的潜力，同时揭示了干预发现、可靠性与跨任务迁移方面的实际挑战。主页：https://wsp-scope.github.io/ GitHub：https://github.com/WSP-Scope/WSP-Scope-Project</p>
+<hr>
+<h3 id="10-推理过一次就别再算了cpu-可执行的推理缓存比源模型便宜-16291-倍">10. 推理过一次就别再算了：CPU 可执行的推理缓存，比源模型便宜 16–291 倍
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.09891"  target="_blank" rel="noopener"
+    >2611.09891</a></p>
+<p><strong>一句话</strong>：CPU-ARC 指出 LLM 总在重复造轮子——把任务求解与解法的执行混在一起，每个问题都从头解一遍；它从 LLM 推理轨迹里构造 CPU 上可执行的智能体推理缓存（ARC），在困难数学与科学任务上与前沿 LLM 表现相当，调用成本却便宜 16–291 倍，还完全可解释、可持续训练、对输入扰动稳健。</p>
+<p><strong>贡献/机制</strong>：大语言模型把任务求解与解法的执行混为一谈，迫使每个问题都从头解决。这篇表明，一旦一个任务被推理过，把它的解法应用到新问题实例上可以非常高效、几乎不需要语言模型参与。作者提出智能体推理缓存：从 LLM 推理轨迹中构造稳健的、CPU 可执行的智能体推理缓存（ARC）。ARC 在一系列困难数学与科学任务上与前沿 LLM 表现相当，完全可解释、可持续训练、对输入扰动稳健，调用成本比源模型便宜 16–291 倍。作者：Peter Belcak、Greg Heinrich、Saurav Muralidharan、Shizhe Diao、Pavlo Molchanov（5 人）。</p>
+<p><strong>数值结果</strong>：困难数学与科学任务上与前沿 LLM 表现相当；调用成本比源模型便宜 16–291 倍。</p>
+<p><strong>批判性分析</strong>：这个思路的吸引力在于它把“推理”与“执行”拆开——昂贵的推理只做一次，之后复用的是便宜、可解释、可审计的缓存，这对需要反复解同类问题的部署场景（客服、科学计算、代码生成）很有价值；“完全可解释”在需要合规的场景里也是加分项。但摘要没有给出具体的任务名、分数与基线对照，“表现相当”到底相当到什么程度无法判断；缓存的构建成本（需要多少条推理轨迹、覆盖率如何）也没有交代；16–291 倍这个区间跨度很大，下限与上限分别对应什么场景同样未知。</p>
+<p><strong>摘要译文</strong>：大语言模型一直在重复造轮子。它们把任务求解与解法的执行混为一谈，迫使它们从头解决每个问题。我们表明，一旦一个任务被推理过，把它的解法应用到一个新问题实例上可以非常高效，且几乎不需要语言模型参与。我们提出智能体推理缓存，一种从 LLM 推理轨迹中构造稳健的、CPU 可执行的智能体推理缓存（ARC）的方法。ARC 在一系列困难数学与科学任务上与前沿 LLM 表现相当，完全可解释、可持续训练、对输入扰动稳健，且调用成本比源模型便宜 16–291 倍。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="11-线性注意力的门控再分配10m-token-外推不漂移32k-下训练比-transformer-快-27-倍">11. 线性注意力的门控再分配：10M token 外推不漂移，32K 下训练比 Transformer 快 2.7 倍
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.08376"  target="_blank" rel="noopener"
+    >2611.08376</a></p>
+<p>线性注意力把上下文压缩进固定大小的键值状态，实现线性时间训练与常数内存推理，但门控 delta 规则模型的擦除与写入并不对称：作者证明状态更新对擦除的敏感度远低于写入——键激活与单位归一化把键能量集中到稀疏通道子集，而值写入缩放全部通道，因此擦除门可以用更低秩参数化；慢衰减的状态行累积的范数远大于快衰减行，主导无加权读出、迫使写入时更强擦除以抑制干扰。据此提出的 Muir 把全部门融合进敏感度分配的低秩投影，用匹配滤波读出门重加权状态行，并把省下的参数投回更宽的前馈网络。166M–1.34B 参数上，Muir 比 Gated DeltaNet-2 困惑度低 1.8–2.0%、比 Transformer 低 2.5–3.6%，常识准确率最多高 1.9 分；1.34B 模型在多跳与多针召回上超过两个基线，从 4K 训练长度外推 2560 倍到 10M token 流而困惑度不漂移，静态读出下 1M token 内 passkey 检索接近 100%；达到 100B token 验证损失比 GDN-2 快 1.2 倍，32K 下训练比 Transformer 快 2.7 倍。作者：Tushaar Gangavarapu、Gil Tabak、Clemens JS Schaefer（3 人）。</p>
+<h3 id="12-视觉规划不必逐-token-生成整条轨迹一次解码快约-25-倍">12. 视觉规划不必逐 token 生成：整条轨迹一次解码，快约 25 倍
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.08449"  target="_blank" rel="noopener"
+    >2611.08449</a></p>
+<p>物理 AI 任务（机器人、自动驾驶）可以用视觉规划（点、框、轨迹）表示空间目标与预测运动，但自回归视觉语言模型逐个坐标 token 生成规划，预测越丰富代价越高。VFlash 用 Flash Primitive Decoding：利用视觉基元的已知结构、通过轻量 drafter 一次前向生成整个基元，布局随基元类型、维度与长度自适应；且空间精度不需要复现自回归模型的精确 token 序列，因此直接在标注基元上训练、接受结构有效的预测。在 2D 与 3D 机器人轨迹任务上，VFlash 持续降低预测误差；初步单 rollout 测量显示 3D 点运动预测生成快约 25 倍；以 VFlash 规划为条件的世界动作模型在四个 MolmoSpaces 任务套件上平均成功率 70.2%，对基线 62.6%。作者：Yu-Cheng Chou 等（19 人）。</p>
+<h3 id="13-多智能体交接要签名不安全提交从-694-压到-90但提取那一步仍是信任边界">13. 多智能体交接要签名：不安全提交从 69.4% 压到 9.0%，但提取那一步仍是信任边界
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.07483"  target="_blank" rel="noopener"
+    >2611.07483</a></p>
+<p>企业 AI 智能体常把用户请求拆给子智能体再合并结果，每次交接都可能概括掉、篡改或忽略一条需求。这项预注册研究比较自由文本、结构化 JSON 与带签名的需求清单三种交接方式：编排器把每条需求抽成逐字引用加可检查谓词，用 HMAC-SHA256 给清单签名，确定性代码验证合并者的决策。Qwen3-8B 上 1,440 条轨迹、五种威胁下，带签名清单把受攻击时的不安全提交从 69.4% 压到 9.0%（60.4 个百分点，95% CI [51.4, 69.4]），合规提交净损失为零；签名专门防传输中篡改——无签名清单在变异运行中有 79% 提交违规，带签名的为零；同一轨迹上确定性验证器捕获 78.7% 的违规决策，对 LLM 检查器的 59.0%，误报 7% 对 50%。但预注册的签名前注入攻击确认了边界：一条对抗性文本让带签名清单的违规率从 14.6% 升到 37.5%（Qwen3-8B）、11.1% 升到 63.9%（gpt-oss-20b）、8.3% 升到 75.0%（GPT-5.6-luna）——签名保护的是传输中的需求，不是提取时的需求，提取步骤才是信任边界。作者：Xiaobo Chen、Genliang Zhu、Ziyuan Wang、Chu Wang（4 人）。</p>
+<h3 id="14-别只调模型和-harness优化环境本身haiku-45-成本降-727通过率涨-1434">14. 别只调模型和 harness：优化环境本身，Haiku 4.5 成本降 72.7%、通过率涨 14.34%
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.07372"  target="_blank" rel="noopener"
+    >2611.07372</a></p>
+<p>智能体的成本与成功率取决于模型、harness 与环境，但研究只盯着前两者调参。这篇提出第三个方向：优化静态环境——多任务共享的丰富环境，如公司的 Slack 工作区或文档、票据集合。EnvOpt 用真实或合成任务、无需评分器或参考答案，对任意模型与 harness 做静态环境的自动化端到端优化。AutomationBench 上，EnvOpt 把 Claude Haiku 4.5 的成本降低 72.7%、通过率提高 14.34%；同一环境迁移到 Opus 5 上，成本降低 68.1%、提升 1.34%；叠加在 Meta-Harness 已优化的 harness 之上，又降成本 83.4%、准确率再加 11.17%；五个基准上均显著降成本且保持或提升通过率，并可迁移到不同模型与 harness。作者：Mingxuan Li、Huanzhi Mao、Qiuyang Mang、Hanchen Li、Joseph E. Gonzalez、Alex Dimakis（6 人）。</p>
+<h3 id="15-nemotron-35-super-从-120b-压到-74b单张-b200-跑-128k-上下文保留-95-分数">15. Nemotron 3.5 Super 从 120B 压到 74B：单张 B200 跑 128K 上下文，保留 95% 分数
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.08290"  target="_blank" rel="noopener"
+    >2611.08290</a></p>
+<p>LLM 剪枝要保质量、同时满足延迟、吞吐与显存这些硬件与负载约束，但参数量本身预测不了这些指标。AutoCompress 把硬件约束直接放进可微架构搜索，联合优化全局与逐层结构、产出异构架构，以服务引擎成本模型指导搜索（经端到端延迟、吞吐与显存实测验证）。相比 SOTA 的 Minitron 剪枝框架，AutoCompress 在 RTX 5070、RTX 5080 与 H100 上八个基准平均准确率分别高 6.57、2.35 与 0.57 个百分点；并把 Nemotron 3.5 Super 从 120B 压缩到 74B 参数，在单张 B200 上以 BF16 跑 128K 上下文，保留 95% 的平均基准分数。作者：Sheldon Liang、Ali Taghibakhshi、Saurav Muralidharan、Sharath Turuvekere Sreenivas、Ashwath Aithal、Pavlo Molchanov、Nima Tajbakhsh（7 人）。</p>
+<h3 id="16-模型自称不知道的事其实知道六成回测防泄漏不能信自报与-cutoff">16. 模型自称不知道的事，其实知道六成：回测防泄漏不能信自报与 cutoff
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.06808"  target="_blank" rel="noopener"
+    >2611.06808</a></p>
+<p>LLM 金融回测只有在模型不知道待预测结果时才有意义，但业界靠厂商宣称的知识 cutoff、问模型自己知不知道、或指令模型按过去日期回答来防泄漏。FinDendro 基准用 2,226 条 1999–2026 年的美国 dated 事实（月度宏观序列、月末股价、美联储决议），每条事实生成四种提示，控制后随机准确率约 0.27。结果显示多数前沿模型的自报低估了知识：GPT-5 答对 76% 的受控事实、却只声称知道 38%，且在其声称不知道的事实里答对 61%；知识宣称可延续到实测知识边界之后长达七个季度，而声明日期能消除大部分事前知识宣称、却不改变准确率。因此模型训练窗口内的回测无法靠自报、指令或宣称的 cutoff 认证为无泄漏。作者：Lingfei Qian 等（15 人）。</p>
+<hr>
+<p><em>本日 16 篇（10 精评 + 6 简报），来自 HuggingFace 趋势论文 11-04 至 11-06 提交批次中此前未报道的部分：具身与 VLA 3 篇，Agent 与 RL 5 篇，决策与推理效率 3 篇，架构与生成 3 篇，评测与诚实性 2 篇；另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/370436"  target="_blank" rel="noopener"
+    >BattlequeenYume</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-09/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-09" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-09/cover_hu_26618efbb09c5c16.jpg" srcset="/zh-cn/p/daily-paper-2026-11-09/cover_hu_26618efbb09c5c16.jpg 1x, /zh-cn/p/daily-paper-2026-11-09/cover_hu_904baa054c42f7f2.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #413c3d80 0%, #fbf7e5C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-09</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-08/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-08" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-08/cover_hu_88d52203ef017ddc.png" srcset="/zh-cn/p/daily-paper-2026-11-08/cover_hu_88d52203ef017ddc.png 1x, /zh-cn/p/daily-paper-2026-11-08/cover_hu_32594c53ce657a70.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #b34d6280 0%, #fbfbfbC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-08</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-07/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-07" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-07/cover_hu_6458aa7a003ae12d.jpg" srcset="/zh-cn/p/daily-paper-2026-11-07/cover_hu_6458aa7a003ae12d.jpg 1x, /zh-cn/p/daily-paper-2026-11-07/cover_hu_127001b3b3150b4.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #351c4080 0%, #ccbacdC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-07</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-06/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-06" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-06/cover_hu_58a49537a60cad8e.jpg" srcset="/zh-cn/p/daily-paper-2026-11-06/cover_hu_58a49537a60cad8e.jpg 1x, /zh-cn/p/daily-paper-2026-11-06/cover_hu_cff81cddc4ac2002.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #a86e6c80 0%, #dbc8c9C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-06</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-05/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-05" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-05/cover_hu_38a39d9b00341a08.jpg" srcset="/zh-cn/p/daily-paper-2026-11-05/cover_hu_38a39d9b00341a08.jpg 1x, /zh-cn/p/daily-paper-2026-11-05/cover_hu_8ada965dab88ac1f.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #3e354780 0%, #f0cfafC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-05</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
