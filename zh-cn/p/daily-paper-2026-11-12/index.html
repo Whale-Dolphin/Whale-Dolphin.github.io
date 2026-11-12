@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重。预筛选 30 篇中有 10 篇已报道、20 篇未见，本期从其中取 12 篇（7 篇精评、5 篇简报），另从原始候选补充 4 篇未报道论文（3 篇精评、1 篇简报）。 来源构成：HuggingFace 趋势论文 13 篇（精评 8、简报 5）；arXiv API 3 篇（精评 2、简报 1），通过分类直查 eess.AS / cs.SD 补抓；抓取器通用 arXiv 查询与 cs.CL / cs.LG / cs.AI / cs.CV 分类查询遇 429 限流未返回数据。报道集均为 11-09 至 11-10 提交的论文（arXiv ID 均为 2611.*）。 主题分布：音频 4 篇（Emilia2、Earlybird、Walrus、ESDCodec）、Agent 与具身 5 篇（WikiTrace、LEASH、WICL、Infrathon、GTAGym）、训练与评测 4 篇（Tree-Ising、MMDM、EVAThink、ZoomGain）、世界模型与视觉 3 篇（APEX、dNaViT、How Many Exposures）。 今日关键词：“语音上新”——Emilia2 给长音频生成补了 229K 小时数据底座、Earlybird 让流式识别提前 90ms 说出单词、Walrus 一个 8B 模型包揽 20 多项语音音频任务；另一边 Tree-Ising 用比特级编辑修模型、MMDM 给决策模型出了一张 5,448 题的硬卷。 精评 1. 不用梯度修模型：比特级 Ising 编辑让 MATH-500 从 7.9% 到 54.6%，只要 4 次前向 2611.14210\n">
+<title>AI Paper Daily | 2026-11-12</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-11-12/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-11-12">
+<meta property='og:description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重。预筛选 30 篇中有 10 篇已报道、20 篇未见，本期从其中取 12 篇（7 篇精评、5 篇简报），另从原始候选补充 4 篇未报道论文（3 篇精评、1 篇简报）。 来源构成：HuggingFace 趋势论文 13 篇（精评 8、简报 5）；arXiv API 3 篇（精评 2、简报 1），通过分类直查 eess.AS / cs.SD 补抓；抓取器通用 arXiv 查询与 cs.CL / cs.LG / cs.AI / cs.CV 分类查询遇 429 限流未返回数据。报道集均为 11-09 至 11-10 提交的论文（arXiv ID 均为 2611.*）。 主题分布：音频 4 篇（Emilia2、Earlybird、Walrus、ESDCodec）、Agent 与具身 5 篇（WikiTrace、LEASH、WICL、Infrathon、GTAGym）、训练与评测 4 篇（Tree-Ising、MMDM、EVAThink、ZoomGain）、世界模型与视觉 3 篇（APEX、dNaViT、How Many Exposures）。 今日关键词：“语音上新”——Emilia2 给长音频生成补了 229K 小时数据底座、Earlybird 让流式识别提前 90ms 说出单词、Walrus 一个 8B 模型包揽 20 多项语音音频任务；另一边 Tree-Ising 用比特级编辑修模型、MMDM 给决策模型出了一张 5,448 题的硬卷。 精评 1. 不用梯度修模型：比特级 Ising 编辑让 MATH-500 从 7.9% 到 54.6%，只要 4 次前向 2611.14210\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-11-12/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-11-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-11-12T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-11-12">
+<meta name="twitter:description" content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重。预筛选 30 篇中有 10 篇已报道、20 篇未见，本期从其中取 12 篇（7 篇精评、5 篇简报），另从原始候选补充 4 篇未报道论文（3 篇精评、1 篇简报）。 来源构成：HuggingFace 趋势论文 13 篇（精评 8、简报 5）；arXiv API 3 篇（精评 2、简报 1），通过分类直查 eess.AS / cs.SD 补抓；抓取器通用 arXiv 查询与 cs.CL / cs.LG / cs.AI / cs.CV 分类查询遇 429 限流未返回数据。报道集均为 11-09 至 11-10 提交的论文（arXiv ID 均为 2611.*）。 主题分布：音频 4 篇（Emilia2、Earlybird、Walrus、ESDCodec）、Agent 与具身 5 篇（WikiTrace、LEASH、WICL、Infrathon、GTAGym）、训练与评测 4 篇（Tree-Ising、MMDM、EVAThink、ZoomGain）、世界模型与视觉 3 篇（APEX、dNaViT、How Many Exposures）。 今日关键词：“语音上新”——Emilia2 给长音频生成补了 229K 小时数据底座、Earlybird 让流式识别提前 90ms 说出单词、Walrus 一个 8B 模型包揽 20 多项语音音频任务；另一边 Tree-Ising 用比特级编辑修模型、MMDM 给决策模型出了一张 5,448 题的硬卷。 精评 1. 不用梯度修模型：比特级 Ising 编辑让 MATH-500 从 7.9% 到 54.6%，只要 4 次前向 2611.14210\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-11-12/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-不用梯度修模型比特级-ising-编辑让-math-500-从-79-到-546只要-4-次前向">1. 不用梯度修模型：比特级 Ising 编辑让 MATH-500 从 7.9% 到 54.6%，只要 4 次前向</a></li>
+        <li><a href="#2-记忆也会害智能体把每条经验钉回原始轨迹五个基准上都赢了">2. 记忆也会害智能体：把每条经验钉回原始轨迹，五个基准上都赢了</a></li>
+        <li><a href="#3-决策模型也需要一张硬卷5448-题选项最多-1024-个最好的多选准确率只有-3681">3. 决策模型也需要一张硬卷：5,448 题、选项最多 1,024 个，最好的多选准确率只有 36.81%</a></li>
+        <li><a href="#4-少步流式视频生成不用再养一个假分数网络条件偏移复用同一组参数">4. 少步流式视频生成不用再养一个假分数网络：条件偏移复用同一组参数</a></li>
+        <li><a href="#5-离散视觉-token-能走多远dnavit-一个码本打通理解生成与编辑">5. 离散视觉 token 能走多远：dNaViT 一个码本打通理解、生成与编辑</a></li>
+        <li><a href="#6-长音频生成的底座来了229k-小时五分钟以上的段落占一半06b-非自回归模型中文-cer-527">6. 长音频生成的底座来了：229K 小时、五分钟以上的段落占一半，0.6B 非自回归模型中文 CER 5.27%</a></li>
+        <li><a href="#7-流式识别不用等词说完29m-参数168mb69-的词在说完前就猜对了">7. 流式识别不用等词说完：29M 参数、16.8MB，69% 的词在说完前就猜对了</a></li>
+        <li><a href="#8-一个-8b-模型包揽-20-多项语音音频任务walrus-说数据工程才是多任务质量的第一驱动力">8. 一个 8B 模型包揽 20 多项语音音频任务：Walrus 说数据工程才是多任务质量的第一驱动力</a></li>
+        <li><a href="#9-基础模型开机器人伤害率有多高roborisk-测了-6-个前沿模型leash-用三道门拦住">9. 基础模型开机器人，伤害率有多高：RoboRisk 测了 6 个前沿模型，LEASH 用三道门拦住</a></li>
+        <li><a href="#10-不用梯度也能在新世界里学操作一个演示加仿真排练robotwin-20-上-834">10. 不用梯度也能在新世界里学操作：一个演示加仿真排练，RoboTwin 2.0 上 83.4%</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-长程基建优化要测够-24-小时150-次运行1-万-gpu-小时135-次在后半程还在变好">11. 长程基建优化要测够 24 小时：150 次运行、1 万 GPU 小时，135 次在后半程还在变好</a></li>
+        <li><a href="#12-世界模型学一个新机制要看几遍arc-agi-3-上一半机制约-80-次-exposure-就学会">12. 世界模型学一个新机制要看几遍：ARC-AGI-3 上一半机制约 80 次 exposure 就学会</a></li>
+        <li><a href="#13-085kbps-还要高保真esdcodec-用冻结随机码本加子带条件解码">13. 0.85kbps 还要高保真：ESDCodec 用冻结随机码本加子带条件解码</a></li>
+        <li><a href="#14-细粒度视觉监督可以从放大前后看图的差距里挖9k-样本就让-9b-模型超过几百-b-的模型">14. 细粒度视觉监督可以从“放大前后看图的差距”里挖：9K 样本就让 9B 模型超过几百 B 的模型</a></li>
+        <li><a href="#15-gta-v-当智能体考场103-个主线任务加-47-个射击任务最好的模型-709">15. GTA V 当智能体考场：103 个主线任务加 47 个射击任务，最好的模型 70.9%</a></li>
+        <li><a href="#16-视频理解该想还是该直接答先看证据够不够67k-样本训出自适应思考">16. 视频理解该想还是该直接答：先看证据够不够，6.7K 样本训出自适应思考</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-11-12/">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-12" height="2893" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-11-12/cover.png" srcset="/zh-cn/p/daily-paper-2026-11-12/cover_hu_e17139900e558029.png 800w, /zh-cn/p/daily-paper-2026-11-12/cover_hu_88b37adfcae787e3.png 1600w, /zh-cn/p/daily-paper-2026-11-12/cover_hu_10798fbaeb6233c3.png 2400w, /zh-cn/p/daily-paper-2026-11-12/cover.png 4092w" width="4092">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-11-12/">AI Paper Daily | 2026-11-12</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-11-12T00:00:00Z'>Nov 12, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-不用梯度修模型比特级-ising-编辑让-math-500-从-79-到-546只要-4-次前向">1. 不用梯度修模型：比特级 Ising 编辑让 MATH-500 从 7.9% 到 54.6%，只要 4 次前向</a></li>
+        <li><a href="#2-记忆也会害智能体把每条经验钉回原始轨迹五个基准上都赢了">2. 记忆也会害智能体：把每条经验钉回原始轨迹，五个基准上都赢了</a></li>
+        <li><a href="#3-决策模型也需要一张硬卷5448-题选项最多-1024-个最好的多选准确率只有-3681">3. 决策模型也需要一张硬卷：5,448 题、选项最多 1,024 个，最好的多选准确率只有 36.81%</a></li>
+        <li><a href="#4-少步流式视频生成不用再养一个假分数网络条件偏移复用同一组参数">4. 少步流式视频生成不用再养一个假分数网络：条件偏移复用同一组参数</a></li>
+        <li><a href="#5-离散视觉-token-能走多远dnavit-一个码本打通理解生成与编辑">5. 离散视觉 token 能走多远：dNaViT 一个码本打通理解、生成与编辑</a></li>
+        <li><a href="#6-长音频生成的底座来了229k-小时五分钟以上的段落占一半06b-非自回归模型中文-cer-527">6. 长音频生成的底座来了：229K 小时、五分钟以上的段落占一半，0.6B 非自回归模型中文 CER 5.27%</a></li>
+        <li><a href="#7-流式识别不用等词说完29m-参数168mb69-的词在说完前就猜对了">7. 流式识别不用等词说完：29M 参数、16.8MB，69% 的词在说完前就猜对了</a></li>
+        <li><a href="#8-一个-8b-模型包揽-20-多项语音音频任务walrus-说数据工程才是多任务质量的第一驱动力">8. 一个 8B 模型包揽 20 多项语音音频任务：Walrus 说数据工程才是多任务质量的第一驱动力</a></li>
+        <li><a href="#9-基础模型开机器人伤害率有多高roborisk-测了-6-个前沿模型leash-用三道门拦住">9. 基础模型开机器人，伤害率有多高：RoboRisk 测了 6 个前沿模型，LEASH 用三道门拦住</a></li>
+        <li><a href="#10-不用梯度也能在新世界里学操作一个演示加仿真排练robotwin-20-上-834">10. 不用梯度也能在新世界里学操作：一个演示加仿真排练，RoboTwin 2.0 上 83.4%</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-长程基建优化要测够-24-小时150-次运行1-万-gpu-小时135-次在后半程还在变好">11. 长程基建优化要测够 24 小时：150 次运行、1 万 GPU 小时，135 次在后半程还在变好</a></li>
+        <li><a href="#12-世界模型学一个新机制要看几遍arc-agi-3-上一半机制约-80-次-exposure-就学会">12. 世界模型学一个新机制要看几遍：ARC-AGI-3 上一半机制约 80 次 exposure 就学会</a></li>
+        <li><a href="#13-085kbps-还要高保真esdcodec-用冻结随机码本加子带条件解码">13. 0.85kbps 还要高保真：ESDCodec 用冻结随机码本加子带条件解码</a></li>
+        <li><a href="#14-细粒度视觉监督可以从放大前后看图的差距里挖9k-样本就让-9b-模型超过几百-b-的模型">14. 细粒度视觉监督可以从“放大前后看图的差距”里挖：9K 样本就让 9B 模型超过几百 B 的模型</a></li>
+        <li><a href="#15-gta-v-当智能体考场103-个主线任务加-47-个射击任务最好的模型-709">15. GTA V 当智能体考场：103 个主线任务加 47 个射击任务，最好的模型 70.9%</a></li>
+        <li><a href="#16-视频理解该想还是该直接答先看证据够不够67k-样本训出自适应思考">16. 视频理解该想还是该直接答：先看证据够不够，6.7K 样本训出自适应思考</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>10 篇精评 + 6 篇简报</strong>，共 16 篇，已对 7 天滚动窗口去重。预筛选 30 篇中有 10 篇已报道、20 篇未见，本期从其中取 12 篇（7 篇精评、5 篇简报），另从原始候选补充 4 篇未报道论文（3 篇精评、1 篇简报）。</li>
+<li>来源构成：HuggingFace 趋势论文 13 篇（精评 8、简报 5）；arXiv API 3 篇（精评 2、简报 1），通过分类直查 eess.AS / cs.SD 补抓；抓取器通用 arXiv 查询与 cs.CL / cs.LG / cs.AI / cs.CV 分类查询遇 429 限流未返回数据。报道集均为 11-09 至 11-10 提交的论文（arXiv ID 均为 2611.*）。</li>
+<li>主题分布：音频 4 篇（Emilia2、Earlybird、Walrus、ESDCodec）、Agent 与具身 5 篇（WikiTrace、LEASH、WICL、Infrathon、GTAGym）、训练与评测 4 篇（Tree-Ising、MMDM、EVAThink、ZoomGain）、世界模型与视觉 3 篇（APEX、dNaViT、How Many Exposures）。</li>
+<li>今日关键词：<strong>“语音上新”</strong>——Emilia2 给长音频生成补了 229K 小时数据底座、Earlybird 让流式识别提前 90ms 说出单词、Walrus 一个 8B 模型包揽 20 多项语音音频任务；另一边 Tree-Ising 用比特级编辑修模型、MMDM 给决策模型出了一张 5,448 题的硬卷。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-不用梯度修模型比特级-ising-编辑让-math-500-从-79-到-546只要-4-次前向">1. 不用梯度修模型：比特级 Ising 编辑让 MATH-500 从 7.9% 到 54.6%，只要 4 次前向
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.14210"  target="_blank" rel="noopener"
+    >2611.14210</a></p>
+<p><strong>一句话</strong>：Tree-Ising 把 MIT 权重空间编程里“智能体读权重写修复”的活儿，变成对模型自身 BF16 权重的稀疏离散优化——只做符号翻转与指数平移、用模拟退火或模拟分岔在 GPU 上解每行独立的 QUBO，在 Qwen3.5-0.8B 上 MATH-500 拿到 54.6%、超过智能体编辑的 51.7%，而基座模型只有 7.9%。</p>
+<p><strong>贡献/机制</strong>：近期的权重空间编程工作里，一个前沿 LLM 智能体（GPT-6 Astra）不用梯度、直接读网络权重写修复，用 158 轮智能体交互、8,970 万 token、50 次前向，把 Qwen3.5-0.8B 的推理环路修好了。Tree-Ising 把这个修复写成目标函数：削弱环路方向、加强收尾方向、同时保住该层在 productive token 上的输出；再把它精确分解为每输出行一个独立的 QUBO（Ising）问题，用模拟退火或量子启发的模拟分岔在 GPU 上求解。允许的编辑只有符号翻转与指数平移，且保持所有共享组指数与尾数不变；无损 BF16 存储只是这个状态树表示的一个特例。作者：Hadi Salloum、Ammar Ali（2 人）。</p>
+<p><strong>数值结果</strong>：智能体修过的两个层上，Tree-Ising 在 MATH-500 上 54.6%，对智能体编辑的 51.7%、基座模型的 7.9%（均为同一评估协议）；模拟分岔求解器得到统计上无差异的修复，55.1%；五个数学基准上两个求解器都超过智能体编辑，在 MATH-500 与 GSM8K 上多重比较校正后仍显著；修改的权重比智能体编辑少 13% 至 17%，BF16 比特翻转数少 2.2 至 2.3 倍；只需要 4 次前向请求、零 LLM token，退火配方约 0.90 美元 GPU 成本；在 Qwen3.5-2B 上，仅用基座模型选层与剂量，同一配方把贪心 GSM8K 准确率从 21.6% 提到 69.4%；概念验证上用 QAOA 在 IBM Heron 处理器上执行了一个八变量修复子问题。</p>
+<p><strong>批判性分析</strong>：这篇最有意思的不是 54.6% 这个数本身，而是它把“智能体修模型”这件事降维成了可解的优化问题：158 轮、近 9,000 万 token 的智能体修复，被 4 次前向加 0.90 美元 GPU 成本取代，而且修得更干净（更少的权重改动、更少的比特翻转）。但要冷静看两点：一是 51.7% 到 54.6% 的边际提升只有 2.9 个点，大头（7.9% 到 51.7%）是智能体编辑本身的功劳，Tree-Ising 是站在它的肩膀上做提纯；二是验证只在两个层、两个模型规模上，GSM8K 从 21.6% 到 69.4% 的跳变更像是“选对了层和剂量”的个案——这个配方换一个模型家族、换一种失效模式（不只是推理环路）是否还成立，摘要没有回答；QAOA 的八变量演示也只是概念验证，离实用还很远。</p>
+<p><strong>摘要译文</strong>：近期 MIT 的 Takehi 等人提出的权重空间编程，让一个前沿 LLM 智能体能读取网络权重并写出修复。他们的 GPT-6 Astra 智能体在不用梯度的情况下修正了 Qwen3.5-0.8B 的推理环路，用了 158 轮智能体交互、8,970 万 token 与 50 次前向请求。我们的方法 Tree-Ising 把这个修复写成模型自身 BF16 权重上的稀疏离散优化问题。前向统计量定义了一个目标函数：削弱环路方向、加强收尾方向、同时保持该层在 productive token 上的输出。在一个状态树表示中（无损 BF16 存储是其特例），允许的编辑是符号翻转与指数平移，且保持所有共享组指数与尾数不变。我们把这个目标精确分解为每输出行一个独立的 QUBO（Ising）问题，用模拟退火或量子启发的模拟分岔在 GPU 上求解。在智能体修过的两个层上，Tree-Ising 在 MATH-500 上达到 54.6%，超过同一评估协议下智能体编辑的 51.7%，而基座模型据报告为 7.9%。模拟分岔求解器得到统计上无差异的修复，55.1%。两个求解器在全部五个数学基准上都超过智能体编辑，在 MATH-500 与 GSM8K 上多重比较校正后仍显著。相比之下，我们的方法修改的权重少 13% 至 17%，BF16 比特翻转减少 2.2 至 2.3 倍。它只需要四次前向请求与零 LLM token，退火配方约 0.90 美元 GPU 成本。在 Qwen3.5-2B 上，仅用基座模型选择层与剂量，同一配方把贪心 GSM8K 准确率从 21.6% 提高到 69.4%。作为概念验证，我们用 QAOA 在 IBM Heron 处理器上执行了一个八变量修复子问题。</p>
+<hr>
+<h3 id="2-记忆也会害智能体把每条经验钉回原始轨迹五个基准上都赢了">2. 记忆也会害智能体：把每条经验钉回原始轨迹，五个基准上都赢了
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.14320"  target="_blank" rel="noopener"
+    >2611.14320</a></p>
+<p><strong>一句话</strong>：WikiTrace 指出 LLM 智能体的外部记忆有个反作用——从成败标签里提炼的“经验”可能是错的、被误用或误读，智能体却无从核查，于是把每条经验连上它来自的轨迹摘要与原始轨迹，行动前沿着链接下钻核对，在五个智能体基准上持续超过已有记忆方法与只给经验的基线，同时减少记忆诱导的退化。</p>
+<p><strong>贡献/机制</strong>：外部记忆让 LLM 智能体从过去任务的轨迹里提炼简洁经验、用到新任务上，但记忆也会造成“记忆诱导退化”：智能体在没有记忆时能解的任务、有了记忆反而解不出来——往往是因为它照着一条错误的经验走，或误用、误读了一条正确的经验。根源在于经验只是从以成败标记的轨迹里推断出来的，交给智能体时却不附带它来自的轨迹，没法核查。WikiTrace 是一个证据链接的记忆系统：每条经验以简洁洞察的形式存储，并链接到它那条轨迹成败原因的摘要与原始轨迹本身；新任务上智能体从全部洞察出发，一旦某条洞察缺少行动所需的细节、与其他洞察冲突、或来自失败任务，就用 terminal 工具沿着链接下钻，补全细节或在行动前修正洞察。代码：https://github.com/yukyeongleee/wikitrace。作者：Yukyeong Lee、Yumin Choi、Jinheon Baek、Sung Ju Hwang（4 人）。</p>
+<p><strong>数值结果</strong>：在五个智能体基准上验证，WikiTrace 持续超过已有记忆方法与只给相同洞察的基线，同时减少记忆诱导的退化。摘要未给出具体基准名、分数与退化减少的幅度。</p>
+<p><strong>批判性分析</strong>：这个工作的提问很准——记忆系统讨论的大多是“怎么存、怎么检”，很少有人追问“存进去的经验本身可能是错的怎么办”；把经验钉回原始轨迹、用工具下钻核对，是个符合直觉的修复，而且“行动前修正”这个设计把核查放在了代价最小的位置。但摘要没有给任何数字：五个基准是哪五个、赢了多少、记忆诱导退化从百分之几降到百分之几，全都看不到；更关键的是，下钻核对本身要多花多少 token 与工具调用、会不会把简单任务也拖慢，同样没交代——记忆系统的账不只算准确率，也算调用成本。</p>
+<p><strong>摘要译文</strong>：外部记忆让 LLM 智能体把过去任务的轨迹提炼成简洁经验、用于新任务，从而不断改进。然而记忆也会导致记忆诱导的退化：智能体在没有记忆时能解决的任务、有了记忆反而失败，往往是因为它遵循了一条错误的经验，或误用、误读了一条正确的经验。这是因为经验是从仅以任务成败标记的轨迹中推断出来的，交给智能体时通常不附带它来自的轨迹，智能体无从核查。为解决这一问题，我们提出 WikiTrace，一个证据链接的记忆系统，让智能体能把每条经验对照其原始轨迹核查。具体来说，基于“轨迹中往往仍保留着发现错误经验所需的证据”这一发现，WikiTrace 把每条经验存为一条简洁洞察，并链接到其轨迹成败原因的摘要与原始轨迹本身。然后在新任务上，智能体从全部洞察出发，一旦某条洞察缺少行动所需的细节、与其他洞察冲突、或来自失败任务，就用 terminal 工具沿着链接下钻，补全缺失细节或在行动前修正洞察。我们在五个智能体基准上验证 WikiTrace，显示它持续超过已有记忆方法与只给相同洞察的基线，同时减少记忆诱导的退化。代码见 <a class="link" href="https://github.com/yukyeongleee/wikitrace"  target="_blank" rel="noopener"
+    >https://github.com/yukyeongleee/wikitrace</a></p>
+<hr>
+<h3 id="3-决策模型也需要一张硬卷5448-题选项最多-1024-个最好的多选准确率只有-3681">3. 决策模型也需要一张硬卷：5,448 题、选项最多 1,024 个，最好的多选准确率只有 36.81%
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.14309"  target="_blank" rel="noopener"
+    >2611.14309</a></p>
+<p><strong>一句话</strong>：MMDM 是一个 5,448 题、16 类任务的大规模多任务决策基准，单次前向直接做结构化概率决策、覆盖智能体状态追踪、工具选择与 rubric 评分等真实场景，选项 2 到 1,024 个、输入最长 64,817 token，28 个决策模型的评测显示常识题上很强、但一到相互依赖的选项、受约束决策与多选题就掉下来。</p>
+<p><strong>贡献/机制</strong>：System-1 决策模型在单次前向里直接对查询指定的选项做结构化概率决策，不自回归生成推理轨迹或文本回复。已有评测覆盖的任务多样，但大多复用现有基准，测试材料可能已被模型见过，泛化结论会被污染；而且真实决策常常同时涉及长上下文、大选项空间与复杂的逻辑依赖，现有基准没有把这三者一起覆盖。MMDM 结合新构建任务与基于来源的重组改写，含 5,448 道高质量题目、16 个任务类别，覆盖单选、多选与软标签决策，场景包括智能体状态追踪、工具与技能选择、偏好判断与 rubric 评分，选项空间从 2 到 1,024，输入最长 64,817 token。用 MMDM 对 28 个决策模型做了全面定量评估。作者：Junhao Shen、Qing Zong、Yue Guo、Zhanqiu Zhang、Yiwen Guo、Hong Cheng（6 人）。</p>
+<p><strong>数值结果</strong>：Perplexity Decider-V1.2 在世界知识上的 Hard 单选准确率 78.75%，但选项逻辑上只有 53.95%、约束规划上 47.95%；全部模型中最好的 Hard 多选准确率是 36.81%。</p>
+<p><strong>批判性分析</strong>：这篇的价值在于把“决策”从聊天式评测里拎出来单独考：单次前向、结构化选项、不生成推理链——这正是智能体里工具选择、状态追踪这些环节真实的调用形态；5,448 题、16 类、选项上千、输入 6.4 万 token 的规模，也比现有决策评测更接近真实部署的压力。36.81% 这个多选天花板尤其值得注意：它说明“把所有正确选项找全”比“挑一个最对的”难得多，而这正是 rubric 评分与多工具选择每天都在做的事。但要注意两点：一是“Hard”子集的划分标准与 28 个模型的完整名单摘要没有展开，跨模型比较的口径要看正文；二是基准强调“新鲜上下文”以避免污染，但重组改写能在多大程度上真正做到未见过，仍需看数据构建细节。</p>
+<p><strong>摘要译文</strong>：System-1 决策模型在单次前向里直接对查询指定的选项做结构化概率决策，不自回归生成推理轨迹或文本回复。近期的评测覆盖了多样的任务，但往往依赖现有基准，先前接触测试材料可能掩盖泛化能力。而且真实世界的决策常常涉及长上下文、大选项空间与复杂的逻辑依赖，现有基准没有把这些挑战充分结合起来。因此我们提出 MMDM（Massive Multitask Decision Making），一个 5,448 道高质量题目的基准，横跨 16 个任务类别，结合新构建任务与基于来源的重组改写，覆盖新鲜上下文中的单选、多选与软标签决策。它覆盖智能体状态追踪、工具与技能选择、偏好判断、rubric 评分等真实场景，选项空间从 2 到 1,024，输入最长 64,817 token。用 MMDM，我们对 28 个决策模型做了全面定量评估，显示许多模型在常识上表现良好，但在相互依赖的选项、受约束决策与多选任务上吃力。例如 Perplexity Decider-V1.2 在世界知识上的 Hard 单选准确率达到 78.75%，但在选项逻辑上只有 53.95%、约束规划上 47.95%，而全部模型中最好的 Hard 多选准确率是 36.81%。这些结果表明联合推理、约束感知选择与完整的多选恢复是决策模型发展的关键重点，MMDM 为衡量这一进展提供了测试平台。</p>
+<hr>
+<h3 id="4-少步流式视频生成不用再养一个假分数网络条件偏移复用同一组参数">4. 少步流式视频生成不用再养一个假分数网络：条件偏移复用同一组参数
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.14033"  target="_blank" rel="noopener"
+    >2611.14033</a></p>
+<p><strong>一句话</strong>：APEX 把少步流式视频生成里的分布匹配蒸馏（DMD）改了——不再另养一个假分数网络去监督少步生成器，而是用条件偏移在生成器内部估计生成分布的速度场，原始文本条件管生成、偏移后的条件管假估计，同一组参数干两份活，在 180 秒视频上指令遵循与美学都超过 S2-Avatar，峰值显存还少 4.4%。</p>
+<p><strong>贡献/机制</strong>：少步采样能降低流式视频生成的成本。分布匹配蒸馏（DMD）用一个独立的假分数网络监督少步生成器，这增加了训练显存与计算，还要时刻跟上不断演化的生成器。这篇把 APEX 扩展到流式视频：用条件偏移在生成器内部估计生成分布的速度场——原始文本条件选择生成，偏移后的条件用同一组参数选择假估计，从而去掉独立的假网络，同时保留 S2-Avatar 的冻结参考教师、自回放强制（Self-Replay Forcing）与感知正则化。评估用每块三次主干评估加一步空间 Refiner，在 180 秒视频上做，另有 70 例人类研究与 320 例 StreamAV-Bench 对比。作者：Deyuan Liu、Jungang Li、Kaiwen Zheng、Kai Jiang、Jintao Chen、Yaole Wang（6 人）。</p>
+<p><strong>数值结果</strong>：相比 S2-Avatar，APEX 在 Progressive 赛道上视频指令完成度 3.856 对 3.831，两条赛道上视觉美学都更高（0.641898 对 0.632606）；人类评分者在指令遵循上最偏向 APEX，净偏好 +30.0%，一致性与视频质量各 +4.3%；运动质量偏向 S2-Avatar，音画同步大多打平，可用性不变；相同训练设置下，相比 DMD，每 GPU 峰值分配显存低 4.4%，平均迭代时间短 9.2%。</p>
+<p><strong>批判性分析</strong>：这个改动的工程味道很正——DMD 的假分数网络是个众所周知的累赘，又占显存又要跟踪生成器；用条件偏移让同一组参数既生成又估计，相当于把蒸馏的监督信号内化了，4.4% 显存与 9.2% 迭代时间的节省是实打实的。但数字也要打折扣看：3.856 对 3.831、0.641898 对 0.632606 的领先幅度都很小，70 例人类研究的样本量也不大，+30.0% 的净偏好主要集中在指令遵循这一项；运动质量反而输给 S2-Avatar，说明“去掉假网络”不是没有代价——少步生成在动态连贯性上可能仍需那个外部监督信号。</p>
+<p><strong>摘要译文</strong>：少步采样降低了流式视频生成的成本。分布匹配蒸馏（DMD）用一个独立的假分数网络监督少步生成器，这增加了训练显存与计算，还必须跟踪不断演化的生成器。我们用条件偏移把 APEX 扩展到流式视频，在生成器内部估计生成分布的速度场。原始文本条件选择生成，而偏移后的条件用同一组参数选择假估计。这去掉了独立的假网络，同时保留 S2-Avatar 的冻结参考教师、自回放强制与感知正则化。我们在 180 秒视频上评估 APEX，每块做三次主干评估加一步空间 Refiner，另有 70 例人类研究与 320 例 StreamAV-Bench 对比。相比 S2-Avatar，APEX 在 Progressive 赛道上取得更高的视频指令完成度（3.856 对 3.831），在两条赛道上视觉美学都更高（0.641898 对 0.632606）。人类评分者在指令遵循上最偏向 APEX，净偏好 +30.0%，其次是一致性与视频质量，各 +4.3%。运动质量偏向 S2-Avatar，音画同步大多打平，可用性不变。在匹配的训练设置下单独测量，相比 DMD，每 GPU 峰值分配显存低 4.4%，平均迭代时间短 9.2%。</p>
+<hr>
+<h3 id="5-离散视觉-token-能走多远dnavit-一个码本打通理解生成与编辑">5. 离散视觉 token 能走多远：dNaViT 一个码本打通理解、生成与编辑
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.12426"  target="_blank" rel="noopener"
+    >2611.12426</a></p>
+<p><strong>一句话</strong>：dNaViT 追问一个根本问题——有限的离散词表到底能承载多少视觉世界的丰富性，答案是一个基于冻结预训练编码器的离散原生分辨率 ViT，用分组乘积量化扩离散容量而不拉长空间序列长，在 12 个视觉理解基准、4 个生成基准与 1 个图像编辑基准上持平或超过任务专用基线。</p>
+<p><strong>贡献/机制</strong>：离散自回归建模（尤其是 next-token 预测）已成为现代语言模型的基石，把这个范式扩展到视觉，能让视觉与语言模型收敛到统一框架、共享方法与基建。这篇研究的核心问题是：有限的离散词表能在多大程度上表示视觉世界的丰富性。dNaViT 是一个离散原生分辨率视觉 Transformer，产出类似语言 token 的离散视觉基元：基于冻结的预训练编码器，用轻量残差调制加双分支目标把重建感知线索注入语义特征；分组乘积量化在不拉长空间序列长度的前提下扩大离散容量；均衡的训练配方同时保留语义与像素级信息。由此 dNaViT 成为一个通用的离散视觉分词器，支持跨下游任务的统一编码与高保真图像解码。作者：Xiaotong Li、Zhengrong Yue、Xu Huang、Jialv Zou、Minhao Jing、Wenhao Yan（6 人）。</p>
+<p><strong>数值结果</strong>：在 12 个视觉理解基准、4 个生成基准与 1 个图像编辑基准上的广泛评估显示，dNaViT 持平或超过任务专用基线。摘要未给出具体基准名与分数。</p>
+<p><strong>批判性分析</strong>：这篇的立意比数字更重要——如果离散视觉 token 真能成为“通用视觉货币”，视觉与语言就能共享同一套自回归基建，统一多模态方法论的最后一块拼图就补上了；“冻结编码器 + 轻量调制”的设计也很克制，没有为了离散化重训一个大模型。但摘要只给了定性结论：12 个理解基准是哪 12 个、生成质量与重建保真度之间如何取舍、分组乘积量化的码本到底多大，全都看不到；“持平或超过任务专用基线”这个表述也留了余地——持平的占多少、超过的幅度多大，要看正文的逐项数据才能判断离散化到底付出了多少代价。</p>
+<p><strong>摘要译文</strong>：离散自回归建模，尤其是 next-token 预测，已成为现代语言模型的基石。把这一范式扩展到视觉，能让视觉与语言模型收敛到统一框架，从而共享方法与基建。这项工作研究一个核心问题：有限的离散词表能在多大程度上表示视觉世界的丰富性？我们提出 dNaViT，一个离散原生分辨率视觉 Transformer，它产出类似语言 token 的离散视觉基元。基于冻结的预训练编码器，dNaViT 用轻量残差调制加双分支目标，把重建感知线索注入语义特征。通过分组乘积量化，它在不拉长空间序列长度的前提下扩大离散容量，同时用均衡的训练配方保持语义与像素级信息。由此 dNaViT 成为一个通用的离散视觉分词器，支持跨下游任务的统一编码与高保真图像解码。广泛评估显示，dNaViT 在 12 个视觉理解基准、4 个生成基准与 1 个图像编辑基准上持平或超过任务专用基线。这些发现表明，紧凑的离散词表可以作为通用视觉货币，释放完全统一的原生多模态方法论的全部潜力。</p>
+<hr>
+<h3 id="6-长音频生成的底座来了229k-小时五分钟以上的段落占一半06b-非自回归模型中文-cer-527">6. 长音频生成的底座来了：229K 小时、五分钟以上的段落占一半，0.6B 非自回归模型中文 CER 5.27%
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.13614"  target="_blank" rel="noopener"
+    >2611.13614</a></p>
+<p><strong>一句话</strong>：Emilia2 是一个 229K 小时的多语长音频数据集，专为可控长音频语音生成而建——短句、单人长音频、多人对话三类样本齐全，保留 transcript、说话人身份、停顿与声学过渡，超五分钟的段落占单人长音频时长的 50.0%、对话时长的 66.8%，还配了 477 万条自然语言控制指令与 93.3 万条非语言发声标签。</p>
+<p><strong>贡献/机制</strong>：生成长音频要求模型在时间跨度上保持内容、说话人身份、轮次与表现风格的一致，但多数开源训练语料只有几十秒的样本，开源长音频基准每段录音最多两个说话人。Emilia2 从野外数据构建：短句、单人长音频与多人对话三类，保留 transcript、说话人身份、停顿与声学过渡；为支持表现控制，提供 477 万条样本的自然语言指令与 93.3 万条样本的非语言发声标签；另发布 Emilia2-testset，23 小时双语录音、最长 30 分钟、最多四位说话人，每位说话人配参考音频。作者在 Emilia2 上训练了自回归（AR）与非自回归（NAR）模型。演示：https://charlesnii.github.io/Emilia2-demo/。作者：Qinke Ni、Dekun Chen、Junwen Qiu、Huan Liao、Xu Li、Xingwen Han（6 人）。</p>
+<p><strong>数值结果</strong>：0.6B 主干的 NAR 模型在 TTSD-Eval 上取得所比系统中最低的中文 CER 与英文 WER（5.27% / 9.93%）；AR 模型在 InstructTTSEval 上与 Qwen3-TTS-12Hz-VD 持平（中/英 76.2 / 78.3 对 77.1 / 77.9）。</p>
+<p><strong>批判性分析</strong>：长音频 TTS 最缺的不是模型、是数据——Emilia2 直接把这个短板补上了：229K 小时、五分钟以上占一半、多人对话、带控制指令与非语言标签，这个组合是此前开源语料里没有的；23 小时、四说话人、30 分钟的测试集也把评测拉到了真实长音频的尺度。0.6B 的 NAR 模型能在 TTSD-Eval 上拿到最低 CER/WER，说明数据本身的质量过关。但要注意两点：一是“野外数据”的来源构成与版权、去重、说话人隐私处理没有在摘要里展开，229K 小时的规模越大，这些问题的权重就越大；二是 AR 模型只做到“与 Qwen3-TTS-12Hz-VD 持平”，长音频上的真正考验——30 分钟跨度里说话人身份与风格漂移多少——要看测试集上的逐项分析。</p>
+<p><strong>摘要译文</strong>：生成长音频要求模型在时间上保持内容、说话人身份、轮次与表现风格的一致。然而多数开源训练语料只包含几十秒的样本，开源长音频基准每段录音最多覆盖两位说话人。我们提出 Emilia2，一个 229K 小时的多语数据集，用于可控长音频语音生成。Emilia2 从野外数据构建短句、单人长音频与多人对话，保留 transcript、说话人身份、停顿与声学过渡。超过五分钟的样本占单人长音频时长的 50.0%、对话时长的 66.8%。为支持表现控制，Emilia2 为 477 万条样本提供自然语言指令，为 93.3 万条样本提供非语言发声标签。我们还提出 Emilia2-testset，23 小时双语录音、最长 30 分钟、最多四位说话人，每位说话人配参考音频。我们在 Emilia2 上训练自回归（AR）与非自回归（NAR）模型。我们的 0.6B 主干 NAR 模型在 TTSD-Eval 上取得所比系统中最低的中文 CER 与英文 WER（5.27% / 9.93%），而 AR 模型在 InstructTTSEval 上与 Qwen3-TTS-12Hz-VD 持平（中/英：76.2 / 78.3 对 77.1 / 77.9）。这些结果验证了 Emilia2 作为长音频语音生成与分钟级表现控制的全面数据基础。演示：https://charlesnii.github.io/Emilia2-demo/。</p>
+<hr>
+<h3 id="7-流式识别不用等词说完29m-参数168mb69-的词在说完前就猜对了">7. 流式识别不用等词说完：29M 参数、16.8MB，69% 的词在说完前就猜对了
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.14421"  target="_blank" rel="noopener"
+    >2611.14421</a></p>
+<p><strong>一句话</strong>：Earlybird 是一个 29M 参数的流式语音识别器，训练时把音频在随机位置切断（甚至切在一个词中间），要求模型把到此为止应出的词完整预测出来、再猜接下来两个词，于是中位词能在说话人说完前 90ms 就被正确预测出来，而已发布的流式模型要等词说完后 90 到 400ms。</p>
+<p><strong>贡献/机制</strong>：流式语音识别器通常要等说话人把一个词说完才输出它，一般晚 90 到 400ms；对语音智能体来说每一毫秒都重要——词出得越早，智能体越早开始搜索或规划回复。Earlybird 只有 2,900 万参数（4 比特下 16.8MB）：训练时从随机位置切断音频（包括一个词说到一半），要求它预测截至当时应出的每个词的完整形式，再猜接下来两个词；原始 token 概率为每个词（包括正在说的那个）提供一个置信度。作者：Sahil Mahendrakar（1 人）。</p>
+<p><strong>数值结果</strong>：干净有声书语音（LibriSpeech test-clean）上，中位词在说话人说完前 90ms 被正确预测，而已发布的流式模型在词结束后 90 到 400ms 才得到；在六个计时测试集（有声书、TED 演讲、公开演讲、财报电话会、合成语音）上，Earlybird 全部最早；同一批有声书上 69% 的词在说完前被正确预测，对其他模型的 3% 至 25%；正在说的词的置信度经过校准，期望校准误差（ECE）为 3.7 至 5.5；在八个英文 Open ASR Leaderboard 测试集上，它在每个集上都比 Moonshine Tiny 更准确，与同等规模的 Whistle 大致持平。</p>
+<p><strong>批判性分析</strong>：这个工作的切入点很实在——流式 ASR 的延迟账不是算出来的，是“等词说完”这个机制本身带来的；把“预测未说完的词”写进训练目标，等于把识别从“转录”变成了“预测”，69% 对 3% 至 25% 的差距说明已发布模型根本没在这个维度上优化。ECE 3.7 至 5.5 的校准数字也很关键：提前猜词要是猜错了还自信满满，智能体 downstream 会更糟。但要注意两点：一是“提前 90ms”的中位数是在干净有声书上测的，噪声、口音、重叠语音下的提前量与准确率如何，摘要没有展开；二是“猜接下来两个词”在多大程度上依赖语言模型先验、会不会在开放域对话里系统性跑偏，同样要看正文的错误分析。</p>
+<p><strong>摘要译文</strong>：流式语音识别器通常在说话人说完一个词之后才输出它，一般晚 90 到 400ms。对语音智能体来说每一毫秒都重要：词输出得越早，智能体越早开始搜索或规划回复。我们提出 Earlybird，一个 2,900 万参数的流式识别器（4 比特下 16.8MB）。Earlybird 从随机位置切断的音频中学习，包括切在一个词中间，并被要求预测截至当时应出的每个词的完整形式，再猜接下来两个词。它的原始 token 概率为每个词（包括正在说的词）提供一个置信度。在干净有声书语音（LibriSpeech test-clean）上，中位词在说话人说完前 90ms 被正确预测，而已发布的流式模型在词结束后 90 到 400ms 才得到。Earlybird 在全部六个计时测试集上都是最早的，覆盖有声书、TED 演讲、公开演讲、财报电话会与合成语音。在同一批有声书上，69% 的词在说完前被正确预测，对其他模型的 3% 至 25%。对正在说的词，置信度经过校准，期望校准误差（ECE）为 3.7 至 5.5。在八个英文 Open ASR Leaderboard 测试集上，它在每个集上都比 Moonshine Tiny 更准确，与同等规模的 Whistle 大致持平。</p>
+<hr>
+<h3 id="8-一个-8b-模型包揽-20-多项语音音频任务walrus-说数据工程才是多任务质量的第一驱动力">8. 一个 8B 模型包揽 20 多项语音音频任务：Walrus 说数据工程才是多任务质量的第一驱动力
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.13689"  target="_blank" rel="noopener"
+    >2611.13689</a></p>
+<p><strong>一句话</strong>：Walrus 是一个统一的 8B 语音与音频基础模型，覆盖识别（含代码切换与多人说话）、语音到文本与语音到语音翻译、TTS、情感识别、音频描述与通用音频理解，亮点不在新架构——标准解码器 backbone 直接从 Gemma 4 初始化，全部增益都归因于数据：三阶段数据课程、任务与数据集感知的加权，在 600M+ 样本、20 多个任务、100 多种语言上训练。</p>
+<p><strong>贡献/机制</strong>：Walrus 处理语音识别（包括代码切换与多人说话）、语音到文本与语音到语音翻译、文本到语音、情感识别、音频描述与通用音频理解。主要贡献不是新架构而是数据中心训练配方：标准解码器 backbone 从 Gemma 4 初始化，让增益能追溯到数据本身；语音生成时预测低码率离散语音 token，再由轻量 token 到波形解码器转成高保真音频；配方是三阶段数据课程，从广泛的多语数据逐步过渡到多人、代码切换与领域专用数据，每阶段用任务感知与数据集感知的加权平衡 token 预算差异很大的任务、防止核心技能被遗忘。训练用超过 6 亿样本，覆盖 20 多个任务与 100 多种语言。作者：Alkis Koudounas、Osamu Take、Hayato Futami、Quentin Jodelet、Emiru Tsunoo（5 人）。</p>
+<p><strong>数值结果</strong>：在多数多语、多人说话与代码切换 ASR、语音翻译与音频理解基准上领先，超过同等规模的开源语音语言模型与专用任务模型；在多数基准上甚至达到或超过 4 倍大的 Qwen3-Omni 的性能。摘要未给出具体基准名与分数。</p>
+<p><strong>批判性分析</strong>：这篇的立场很鲜明——“主要贡献不是新架构而是数据”，在一个架构内卷的领域里，这种表态本身就有信息量；三阶段课程加任务/数据集感知加权，是多任务训练里最容易被低估、也最容易翻车的环节，能把它做成可复现的配方是有价值的。8B 模型在多数基准上追平 4 倍大的 Qwen3-Omni，如果属实，说明多任务语音音频建模里数据配比的收益可能比单纯放大模型更大。但摘要没有给出任何具体分数：领先的幅度、追平 Qwen3-Omni 是在哪些基准上、20 多个任务里有没有被牺牲掉的短板，全都看不到；“数据工程是质量的第一驱动力”这个结论，也要等正文的消融——到底是课程设计、加权策略还是单纯的数据量在起作用。</p>
+<p><strong>摘要译文</strong>：我们提出 Walrus，一个统一的 8B 语音与音频基础模型，处理语音识别（包括代码切换与多人说话）、语音到文本与语音到语音翻译、文本到语音、情感识别、音频描述与通用音频理解。我们的主要贡献不是新架构，而是一个数据中心训练配方；我们使用从 Gemma 4 初始化的标准解码器 backbone，让增益能追溯到数据本身。对语音生成，Walrus 预测低码率离散语音 token，再由一个轻量 token 到波形解码器转成高保真音频。该配方是三阶段数据课程，从广泛的多语数据逐步过渡到多人、代码切换与领域专用数据。在每阶段，任务感知与数据集感知的加权平衡 token 预算差异很大的任务，并保护核心技能不被遗忘。Walrus 在超过 6 亿样本、覆盖 20 多个任务与 100 多种语言的数据上训练，在多数多语、多人说话与代码切换 ASR、语音翻译与音频理解基准上领先，超过同等规模的开源语音语言模型与专用任务模型。在多数基准上，它甚至达到或超过 4 倍大的 Qwen3-Omni 的性能。结果表明，数据工程是多任务语音与音频建模质量的主要驱动力。</p>
+<hr>
+<h3 id="9-基础模型开机器人伤害率有多高roborisk-测了-6-个前沿模型leash-用三道门拦住">9. 基础模型开机器人，伤害率有多高：RoboRisk 测了 6 个前沿模型，LEASH 用三道门拦住
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.14115"  target="_blank" rel="noopener"
+    >2611.14115</a></p>
+<p><strong>一句话</strong>：LEASH 针对“基础模型直接控机器人”的安全缺口：先建 RoboRisk 基准——92 个仿真任务加 13 个真机任务，分任务级拒绝、计划修复、执行时危险、注入与序列记忆五类，六个前沿基础模型普遍伤害率偏高；再用 LEASH 安全 harness，以任务门、动作门与提交门三道关卡在视觉上下文里审查任务、每个动作与每项不可逆操作，六个模型上的伤害全面下降。</p>
+<p><strong>贡献/机制</strong>：GPT 与 Claude 这类基础模型在空间理解与具身智能上很强，让智能体机器人成为通向机器人通用智能的一条有前景的路；但用基础模型控制机器人有严重的安全风险，而全面的安全评估仍然缺失。RoboRisk 是一个评估智能体机器人安全的综合基准：92 个仿真任务与 13 个物理机器人任务，分五类——任务级拒绝（T）、计划修复（P）、执行时危险（E）、注入（I）与序列记忆（S）；已有基准最多覆盖其中两类、有的只评估文本输出，而 RoboRisk 五类全覆盖、每个任务都在闭环里执行。作者评估了六个最先进的基础模型：GPT-6 Astra、GPT-6.1 Sol、GPT-6 Luna、Claude Opus 5.5、Gemini 4 Argon 与 Grok 4.7，结果普遍伤害率偏高；还评估了两个机器人专用 API：Dream API 与 PokeBot 的 RoboAPI。LEASH（Lease-Enforced Agentic Safety Harness）提供可接入几乎任何智能体架构的基础安全设施：用一个决策模型（Jev 或 OpenAI 的 Decisions API）实现任务门、动作门与提交门，在视觉上下文里审查任务、每个动作与每项不可逆操作；规划器与三道门共享同一安全策略。作者：Qinfeng Zhu、Weiguang Zhao、Ke Sun、Xihao Guo、Yunxi Jiang、Rui Zhang（6 人）。</p>
+<p><strong>数值结果</strong>：仿真与真机上的实验显示，LEASH 有效降低全部六个基础模型的伤害，同时基本保持任务完成性能，只增加很少的时间与 token 开销。摘要未给出各模型的伤害率、LEASH 降低的幅度与开销的具体数字。</p>
+<p><strong>批判性分析</strong>：这篇补的是一个真实的空白——具身智能体的安全评测长期停留在“文本输出有没有害”，而机器人一旦动起来，伤害是物理的；RoboRisk 五类全覆盖加闭环执行的设计，比只看文本的基准更接近部署现实；三道门共享同一安全策略、且“可接入几乎任何智能体架构”的定位也很务实。但摘要没有给出任何数字：六个模型的伤害率到底多高、LEASH 把伤害降了多少、任务完成率“基本保持”是掉了 1 个点还是 5 个点、13 个真机任务的样本量下结论有多稳，全都看不到；决策模型本身的误判率（该拦的没拦、不该拦的拦了）同样是关键指标，要等正文数据。</p>
+<p><strong>摘要译文</strong>：GPT 与 Claude 等基础模型在空间理解与具身智能上表现出很强的能力。这些进展让智能体机器人成为通向机器人通用智能的一条有前景的路。然而我们发现，用基础模型控制机器人带来严重的安全风险，而全面的安全评估仍然缺失。我们提出 RoboRisk，一个评估智能体机器人安全的综合基准。它的 92 个仿真任务与 13 个物理机器人任务分属五类：任务级拒绝（T）、计划修复（P）、执行时危险（E）、注入（I）与序列记忆（S）。已有基准最多覆盖其中两类，有的只评估文本输出。相比之下，RoboRisk 覆盖全部五类，每个任务都在闭环中执行。我们在 RoboRisk 上评估六个最先进的基础模型：GPT-6 Astra、GPT-6.1 Sol、GPT-6 Luna、Claude Opus 5.5、Gemini 4 Argon 与 Grok 4.7。这些模型普遍表现出较高的伤害率。我们还评估了两个机器人专用 API：Dream API 与 PokeBot 的 RoboAPI。我们进一步提出 Lease-Enforced Agentic Safety Harness（LEASH），它为智能体机器人提供基础安全设施，可集成到几乎任何智能体架构中。LEASH 用一个决策模型（Jev 或 OpenAI 的 Decisions API）实现任务门、动作门与提交门，在视觉上下文里审查任务、每个动作与每项不可逆操作。规划器与三道门共享同一安全策略。仿真与物理机器人上的实验显示，LEASH 有效降低全部六个基础模型的伤害，同时基本保持任务完成性能，只增加很少的时间与 token 开销。</p>
+<hr>
+<h3 id="10-不用梯度也能在新世界里学操作一个演示加仿真排练robotwin-20-上-834">10. 不用梯度也能在新世界里学操作：一个演示加仿真排练，RoboTwin 2.0 上 83.4%
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.12885"  target="_blank" rel="noopener"
+    >2611.12885</a></p>
+<p><strong>一句话</strong>：World In-Context Learning（WICL）把上下文学习从“看演示”推进到“在世界里排练”：冻结模型从一个演示出发，在仿真器里排练任务、把世界的反馈写进上下文而不是权重，RoboScript 用这个范式在 RoboTwin 2.0 全部 50 个任务上平均成功率 83.4%、超过最强的已训练动作策略 20 多个点，全程零梯度更新。</p>
+<p><strong>贡献/机制</strong>：已训练的动作策略把操作技能写进网络权重，学到的东西就被绑在它所学的分布上；上下文学习（ICL）避免了这种耦合，但一直没追上已训练策略——因为另一个场景里录的演示，带不来机器人当前所处世界的反馈。这篇观察到，上下文里学到的东西是语义的——记录任务步骤与对象角色，而非视觉外观——于是在一个世界里收集的经验能迁移到另一个世界。基于此，作者提出 WICL：冻结模型从一个演示出发，在仿真器这样的世界里排练任务，把反馈写进上下文而非权重；并搭建 RoboScript，一个实现 WICL 的模块化基建：从单个演示出发，RoboScript 通过仿真排练学会每个任务，把学到的知识冻结为任务记忆（Task Memory），再以数据隔离的方式部署到新场景——保证每个部署输入在真机上都可获得。作者：Heng Fang、Zehui Guo、Yuehan Zhang、Mingyang Du、Dingkang Liang、Xiang Bai（6 人）。</p>
+<p><strong>数值结果</strong>：RoboTwin 2.0 全部 50 个任务上，RoboScript 在干净与随机设置下平均成功率 83.4%，每个任务一个演示、无梯度更新，超过最强已训练动作策略 20 多个点；方法能跨视觉分布泛化、通过反思改进、随基础模型扩展，并通过跨 embodiment 的记忆适配迁移到物理双臂机器人。代码：https://github.com/ArcheOne-AI/RoboScript</p>
+<p><strong>批判性分析</strong>：这篇的洞察很干净——“演示里学到的是语义而非外观”，于是仿真排练的反馈可以写进上下文、跨场景复用；83.4% 对已训练策略 20 多个点的领先，如果属实，说明在操作任务上“排练 + 记忆”可能比“把技能烧进权重”更划算，而且零梯度更新意味着部署成本极低。但要注意两个口径问题：一是“最强的已训练动作策略”具体是哪个、基线是否用了同等的演示量与仿真预算，摘要没有展开；二是仿真排练到真机的迁移只在一台物理双臂机器人上做了验证，跨 embodiment 记忆适配的普适性与仿真到真机的差距，仍需更大规模的真机数据。</p>
+<p><strong>摘要译文</strong>：已训练的动作策略把操作技能写进网络权重，使学到的东西与它所学的分布绑定。上下文学习（ICL）避免了这种耦合，但一直没追上已训练策略，因为在另一个场景里录制的演示带不来机器人当前所处世界的反馈。我们观察到，智能体在上下文里学到的是语义——记录任务步骤与对象角色，而非视觉外观，因此在一个世界里收集的经验能迁移到另一个世界。基于这一洞察，我们提出 World In-Context Learning（WICL），一个冻结模型从演示出发、在仿真器这样的世界里排练任务、把反馈写进上下文而非权重的范式。我们搭建 RoboScript，一个实现 WICL 的模块化基建。从单个演示出发，RoboScript 通过仿真排练学会每个任务，把学到的知识冻结为任务记忆，再以数据隔离的方式部署到新场景，保证每个部署输入在真机上都可获得。在 RoboTwin 2.0 的全部 50 个任务上，RoboScript 在干净与随机设置下达到 83.4% 的平均成功率，每个任务一个演示、无梯度更新，超过最强已训练动作策略 20 多个点。该方法能跨视觉分布泛化、通过反思改进、随基础模型扩展，并通过跨 embodiment 的记忆适配迁移到物理双臂机器人。有了世界在环路中，机器人能在上下文里学会操作任务，就像在权重里学会一样。全部代码见 <a class="link" href="https://github.com/ArcheOne-AI/RoboScript"  target="_blank" rel="noopener"
+    >https://github.com/ArcheOne-AI/RoboScript</a></p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="11-长程基建优化要测够-24-小时150-次运行1-万-gpu-小时135-次在后半程还在变好">11. 长程基建优化要测够 24 小时：150 次运行、1 万 GPU 小时，135 次在后半程还在变好
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.11995"  target="_blank" rel="noopener"
+    >2611.11995</a></p>
+<p>Infrathon 是一个多样化、长程 AI 基建优化任务基准，研究前沿智能体能否在长周期里持续改进真实世界的 AI 基建。作者评估六个模型、共 150 次运行、每次 24 小时预算，总计超过 10,000 GPU 小时。结果显示模型排名随评估时长变化，而 150 次运行中有 135 次在预算的后半程仍取得进一步改进——短评测既会漏掉优化收益，也会看错模型间的相对性能。智能体还能发现超过人类设计基线的方案：Claude Opus 5.5 把 KV-cache 压缩比均值从人类设计的 Quant-VideoGen 编解码器的 6.82% 提高到 19.86%。对智能体轨迹的分析发现，任务违规、不可靠的测试与过早完成是持续改进的障碍。作者：Zhengyu Hu 等（6 人）。</p>
+<h3 id="12-世界模型学一个新机制要看几遍arc-agi-3-上一半机制约-80-次-exposure-就学会">12. 世界模型学一个新机制要看几遍：ARC-AGI-3 上一半机制约 80 次 exposure 就学会
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.12324"  target="_blank" rel="noopener"
+    >2611.12324</a></p>
+<p>世界模型让智能体从想象的经验中规划与学习，但在陌生环境里它必须从有限交互中学会环境的机制——机制即动作或交互如何改变环境的局部规则，每观察到一次就是一次 exposure。这篇在 ARC-AGI-3（由程序定义的交互游戏基准）上问：世界模型需要多少次 exposure 才能预测新环境机制的效果。作者提出 MechEval，标注 20 个游戏中的 69 个 recurring 机制，按机制改变的格子逐 exposure 计分；并搭建 WARC，一个 35M 参数的视觉 Transformer，在其他游戏上预训练、每次 transition 后更新全部参数。在 held-out 游戏上，WARC 能以至少 80% 的准确率预测五分之四的机制（按其改变的格子计分），并保持到录像结束；其中一半在约 80 次 exposure 内、单局游戏里就达到该准确率，而没有更新时只有七分之一能做到。闭环游玩中，WARC-Agent（WARC 加固定图探索器）把探索器的官方效率分从 0.15 提高到 0.46，主要来自测试时训练；在 Kaggle 排行榜的隐藏游戏上，得分 0.20。作者：Ku Onoda 等（4 人）。</p>
+<h3 id="13-085kbps-还要高保真esdcodec-用冻结随机码本加子带条件解码">13. 0.85kbps 还要高保真：ESDCodec 用冻结随机码本加子带条件解码
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.14043"  target="_blank" rel="noopener"
+    >2611.14043</a></p>
+<p>神经语音编解码器在低码率下实现高保真重建仍是难题。ESDCodec 集成了一个彻底增强的语义量化器与一个条件解码网络：用随机初始化并冻结的码本加一个轻量投影器，在线性空间内完整编码语义细节，同时提高码本利用率；再设计一个条件网络，把先验子带知识显式注入上采样解码器——以解量化特征为输入预测子带信号，为波形重建提供细粒度指导。实验显示 ESDCodec 在 0.85kbps 的超低码率下取得更优的重建性能；在基于 LLM 的语音生成任务上，也持续超过已有编解码器模型。作者：Nan Xu 等（5 人）。</p>
+<h3 id="14-细粒度视觉监督可以从放大前后看图的差距里挖9k-样本就让-9b-模型超过几百-b-的模型">14. 细粒度视觉监督可以从“放大前后看图的差距”里挖：9K 样本就让 9B 模型超过几百 B 的模型
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.14076"  target="_blank" rel="noopener"
+    >2611.14076</a></p>
+<p>细粒度视觉感知要求视觉-语言模型（VLM）在复杂场景里定位并解读细微证据，但这类监督很难构建：问题必须有正确、无歧义的答案，且依赖真实的细粒度视觉细节而非粗线索或语言先验。ZoomGain 利用“全局到放大”的感知差距：同一模型在全图上看不清的细节、放大后往往能认出来，于是从“只有放大才能获得的视觉信息”出发构建关于全图的问题；每个答案都在放大视图上用多个模型验证、保证在全图上无歧义且无法从语言先验答出，并专门生成高质量的多选干扰项。由此建成 ZoomGainBench，一个 1,000 题的双语基准，28 个 VLM 里最好的也只有 61.08 分；失败分析显示模型答错时偏向某一类干扰项。只用 9K 条 ZoomGain 样本训练，4B/9B 模型在多项感知基准上超过几百 B 参数的模型；训练出的 9B 模型在 HR-Bench 4K 上达到 90.25 分等多个基准最优。作者：Haozhan Shen 等（6 人）。</p>
+<h3 id="15-gta-v-当智能体考场103-个主线任务加-47-个射击任务最好的模型-709">15. GTA V 当智能体考场：103 个主线任务加 47 个射击任务，最好的模型 70.9%
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.13028"  target="_blank" rel="noopener"
+    >2611.13028</a></p>
+<p>AAA 游戏是评估智能体感知、推理与控制的丰富试验场，但判断智能体能否完成 AAA 游戏任务往往依赖人工标注，因为任务结果难以自动验证，更难用于强化学习。GTAGym 是面向 GTA V 任务的评估与 RL 环境与框架：评测基准 GTAVBench 从 GTA V 主线任务重建，含 103 个在线任务（九个任务族）与 47 个基于 GTA V 图像的射击与狙击任务；Web 服务器提供在线环境与评估接口，通过截图与键鼠动作支持并行测试，用引擎状态自动判定结果。作者评估六个前沿 LLM：GTAVBench 上最佳配置在 GTAVBench-AGI 分支（指令只出现在首张截图，harness 自动压缩交互历史）取得 70.9% 的总准确率，但空中导航、躲避与拦截仍困难。GTAGym 还提供可扩展生成器，在固定模板下采样任务参数、批量生成 3D 与图像射击环境用于 RL，带自动奖励与终止信号；Qwen3.8-27B 的 LoRA RL 在生成的步行导航任务上提升域内性能并迁移到域外任务类别，GTA V 原生任务从 15% 提升到 23%。作者：Jiajun Chen 等（5 人）。</p>
+<h3 id="16-视频理解该想还是该直接答先看证据够不够67k-样本训出自适应思考">16. 视频理解该想还是该直接答：先看证据够不够，6.7K 样本训出自适应思考
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.13907"  target="_blank" rel="noopener"
+    >2611.13907</a></p>
+<p>固定帧预算下，视频理解成败取决于采样帧是否为问题提供了充分证据：证据充分时可直接回答，信息不足时则需要推理来串联已有线索。EVAThink 提出证据充分性引导的训练以实现自适应思考：先用可恢复证据缺口挖掘（Recoverable Evidence Gap Mining）构建证据密集与证据稀疏的视频视图——同一问题与答案、同一帧预算，保留“稀疏视图直接回答准确率低于密集视图、但显式推理能获益”的样本对，为回答模式选择提供监督；再用证据引导的两阶段强化学习，以阶段专属奖励引导基于证据的模式偏好训练、再精炼回答效率，并用首 token 优势正则化缓解模式坍缩。只用 6.7K 条精选样本训练，EVAThink 在 32 帧与 64 帧预算下的视频理解基准上持续超过基座模型，平均上超过强基线。作者：Changti Wu 等（5 人）。</p>
+<hr>
+<p><em>本日 16 篇（10 精评 + 6 简报），来自 HuggingFace 趋势论文 11-09 至 11-10 提交批次中此前未报道的部分：音频 4 篇，Agent 与具身 5 篇，训练与评测 4 篇，世界模型与视觉 3 篇；另从原始候选补充 4 篇未报道论文（3 篇精评、1 篇简报）。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/269667"  target="_blank" rel="noopener"
+    >BattlequeenYume</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-11/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-11" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-11/cover_hu_add58d0ea4257af4.jpg" srcset="/zh-cn/p/daily-paper-2026-11-11/cover_hu_add58d0ea4257af4.jpg 1x, /zh-cn/p/daily-paper-2026-11-11/cover_hu_34b8eb39af1cc7dd.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #ab583f80 0%, #382d26C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-11</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-10/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-10" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-10/cover_hu_f8a026d60be1c6c9.jpg" srcset="/zh-cn/p/daily-paper-2026-11-10/cover_hu_f8a026d60be1c6c9.jpg 1x, /zh-cn/p/daily-paper-2026-11-10/cover_hu_2fc1d9d407797427.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #3f385c80 0%, #b6c6e1C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-10</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-09/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-09" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-09/cover_hu_26618efbb09c5c16.jpg" srcset="/zh-cn/p/daily-paper-2026-11-09/cover_hu_26618efbb09c5c16.jpg 1x, /zh-cn/p/daily-paper-2026-11-09/cover_hu_904baa054c42f7f2.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #413c3d80 0%, #fbf7e5C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-09</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-08/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-08" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-08/cover_hu_88d52203ef017ddc.png" srcset="/zh-cn/p/daily-paper-2026-11-08/cover_hu_88d52203ef017ddc.png 1x, /zh-cn/p/daily-paper-2026-11-08/cover_hu_32594c53ce657a70.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #b34d6280 0%, #fbfbfbC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-08</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-07/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-07" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-07/cover_hu_6458aa7a003ae12d.jpg" srcset="/zh-cn/p/daily-paper-2026-11-07/cover_hu_6458aa7a003ae12d.jpg 1x, /zh-cn/p/daily-paper-2026-11-07/cover_hu_127001b3b3150b4.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #351c4080 0%, #ccbacdC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-07</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
