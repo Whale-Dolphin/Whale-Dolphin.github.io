@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重。预筛选 30 篇中有 18 篇已报道、12 篇未见，本期从其中取 12 篇（10 篇精评、2 篇简报），另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。 来源构成：HuggingFace 趋势论文 100 篇（精评 10、简报 6）；arXiv API 0 篇（本次请求 429/超时未返回数据，降级模式）。报道集以 11-18 至 11-19 提交的论文为主（arXiv ID 多为 2611.*）。 主题分布：音频/语音 0 篇——今日候选池中没有新增音频/语音论文（AURA、Duopra 等音频相关均已在 11-20/11-21 报道）；通用 16 篇（具身操作、智能体安全、循环模型推理加速、视频理解、空间智能）。 今日关键词：“专科的护城河正在被通用模型拆掉”——AMP1 里通用模型零样本操作成功率 85.6%，把专科 VLA/WAM 甩开近一倍；BaseRSI 把提示词 harness 的收益直接写进基座模型权重；ROGUE-AI 则提醒另一面：智能体栽跟头的地方不是提示注入，而是任务本身的普通隐患；Budget Internalization 补上一刀：训练时随手设的 rollout 上限，会变成模型内化的推理约束。 精评 1. 通用模型直接上手操作，比专科策略强近一倍：AMP1 零样本 85.6% 登顶 RoboLab-120 2611.09892\n">
+<title>AI Paper Daily | 2026-11-22</title>
+
+
+<link rel="canonical" href="https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-11-22/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.e7f00f2caf1885bc464e1fffc205f1e309200addea5c993a6fab7939075ac7e5.css"><meta property='og:title' content="AI Paper Daily | 2026-11-22">
+<meta property='og:description' content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重。预筛选 30 篇中有 18 篇已报道、12 篇未见，本期从其中取 12 篇（10 篇精评、2 篇简报），另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。 来源构成：HuggingFace 趋势论文 100 篇（精评 10、简报 6）；arXiv API 0 篇（本次请求 429/超时未返回数据，降级模式）。报道集以 11-18 至 11-19 提交的论文为主（arXiv ID 多为 2611.*）。 主题分布：音频/语音 0 篇——今日候选池中没有新增音频/语音论文（AURA、Duopra 等音频相关均已在 11-20/11-21 报道）；通用 16 篇（具身操作、智能体安全、循环模型推理加速、视频理解、空间智能）。 今日关键词：“专科的护城河正在被通用模型拆掉”——AMP1 里通用模型零样本操作成功率 85.6%，把专科 VLA/WAM 甩开近一倍；BaseRSI 把提示词 harness 的收益直接写进基座模型权重；ROGUE-AI 则提醒另一面：智能体栽跟头的地方不是提示注入，而是任务本身的普通隐患；Budget Internalization 补上一刀：训练时随手设的 rollout 上限，会变成模型内化的推理约束。 精评 1. 通用模型直接上手操作，比专科策略强近一倍：AMP1 零样本 85.6% 登顶 RoboLab-120 2611.09892\n">
+<meta property='og:url' content='https://whale-dolphin.github.io/zh-cn/p/daily-paper-2026-11-22/'>
+<meta property='og:site_name' content='鲸鲵的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2026-11-22T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-11-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://whale-dolphin.github.io/' />
+<meta name="twitter:title" content="AI Paper Daily | 2026-11-22">
+<meta name="twitter:description" content="概览 10 篇精评 + 6 篇简报，共 16 篇，已对 7 天滚动窗口去重。预筛选 30 篇中有 18 篇已报道、12 篇未见，本期从其中取 12 篇（10 篇精评、2 篇简报），另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。 来源构成：HuggingFace 趋势论文 100 篇（精评 10、简报 6）；arXiv API 0 篇（本次请求 429/超时未返回数据，降级模式）。报道集以 11-18 至 11-19 提交的论文为主（arXiv ID 多为 2611.*）。 主题分布：音频/语音 0 篇——今日候选池中没有新增音频/语音论文（AURA、Duopra 等音频相关均已在 11-20/11-21 报道）；通用 16 篇（具身操作、智能体安全、循环模型推理加速、视频理解、空间智能）。 今日关键词：“专科的护城河正在被通用模型拆掉”——AMP1 里通用模型零样本操作成功率 85.6%，把专科 VLA/WAM 甩开近一倍；BaseRSI 把提示词 harness 的收益直接写进基座模型权重；ROGUE-AI 则提醒另一面：智能体栽跟头的地方不是提示注入，而是任务本身的普通隐患；Budget Internalization 补上一刀：训练时随手设的 rollout 上限，会变成模型内化的推理约束。 精评 1. 通用模型直接上手操作，比专科策略强近一倍：AMP1 零样本 85.6% 登顶 RoboLab-120 2611.09892\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://whale-dolphin.github.io/' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/zh-cn/">
+                    <img src="/img/avatar.jpg" 
+                        width="1024"
+                        height="1024"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">😇</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/zh-cn/">鲸鲵的博客</a></h1>
+            <h2 class="site-description">WhaleDolphin&#39;s Secret Palace</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='whaledolphin666@gmail.com'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/Whale-Dolphin/'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/yifan-cheng-068232326/'
+                        
+                        title="LinkedIn"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/WhaleDolphin666'
+                        
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/zh-cn/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/zh-cn/%E5%8F%8B%E9%93%BE/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/ai/' >
+                
+                <span>AI</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/cs/' >
+                
+                <span>CS</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/server/' >
+                
+                <span>Server</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/blog/' >
+                
+                <span>Blog</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/daily-report/' >
+                
+                <span>Daily Report</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    <li id="i18n-switch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                            
+                                
+                                
+                                    
+                                        
+                                    
+                                
+                                <option value="/zh-cn/p/daily-paper-2026-11-22/" selected>中文</option>
+                            
+                                
+                                
+                                    
+                                
+                                <option value="/en/" >English</option>
+                            
+                        </select>
+                    </li>
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-通用模型直接上手操作比专科策略强近一倍amp1-零样本-856-登顶-robolab-120">1. 通用模型直接上手操作，比专科策略强近一倍：AMP1 零样本 85.6% 登顶 RoboLab-120</a></li>
+        <li><a href="#2-智能体安全事故能复现-89rogue-ai-指出真凶不是攻击是普通隐患">2. 智能体安全事故能复现 89%：ROGUE-AI 指出真凶不是攻击，是普通隐患</a></li>
+        <li><a href="#3-循环模型不用等满-t-轮late-entry-让贪心精确解码快-52125-倍">3. 循环模型不用等满 T 轮：Late Entry 让贪心精确解码快 5.2–12.5 倍</a></li>
+        <li><a href="#4-不用梯度不用训练样本把一台-cpu-直接编译进-llm-权重">4. 不用梯度、不用训练样本，把一台 CPU 直接“编译”进 LLM 权重</a></li>
+        <li><a href="#5-videollm-微调的分数涨了眼睛却闭上了veto-把文本捷径从更新里投影掉">5. VideoLLM 微调的分数涨了，眼睛却闭上了：VETO 把文本捷径从更新里投影掉</a></li>
+        <li><a href="#6-推理不只动嘴还要想画面avtr-让视觉想象与文本推理自适应分工">6. 推理不只动嘴，还要“想画面”：AVTR 让视觉想象与文本推理自适应分工</a></li>
+        <li><a href="#7-先练好被改的体质llm-改权重才改得动edit-ready-training">7. 先练好“被改”的体质，LLM 改权重才改得动：Edit-Ready Training</a></li>
+        <li><a href="#8-日常多轮对话里的安全风险是慢慢浮现的dailysafe-195-个场景专测动态安全意识">8. 日常多轮对话里的安全风险是慢慢浮现的：DailySafe 195 个场景专测“动态安全意识”</a></li>
+        <li><a href="#9-递归自我改进不必留在提示词里basersi-把-harness-的收益写进基座模型权重">9. 递归自我改进不必留在提示词里：BaseRSI 把 harness 的收益写进基座模型权重</a></li>
+        <li><a href="#10-长时程人场景交互的管家inhabitant-用空间控制--定量反馈做到-987-任务完成">10. 长时程人–场景交互的管家：Inhabitant 用空间控制 + 定量反馈做到 98.7% 任务完成</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-医疗护栏也要专科能力lingsante-medguard-27b-风险检测-f1-达-874">11. 医疗护栏也要专科能力：LingSante MedGuard 27B 风险检测 F1 达 87.4%</a></li>
+        <li><a href="#12-机器人动作生成univep-统一速度与终点预测1-步跑赢-16-步基线">12. 机器人动作生成：UniVEP 统一速度与终点预测，1 步跑赢 16 步基线</a></li>
+        <li><a href="#13-以图思考别只图个准自适应数据选择让-vlm-真正用上缩放证据">13. “以图思考”别只图个准：自适应数据选择让 VLM 真正用上缩放证据</a></li>
+        <li><a href="#14-交互式视频世界模型会变形strideworld-用固定参照测出高达-73-倍偏移">14. 交互式视频世界模型会“变形”：StrideWorld 用固定参照测出高达 7.3 倍偏移</a></li>
+        <li><a href="#15-训练时随手设的-rollout-上限会变成模型内化的推理约束">15. 训练时随手设的 rollout 上限，会变成模型内化的推理约束</a></li>
+        <li><a href="#16-单目深度不必在锐利与稳定之间二选一depth-pro-2-全分辨率统一图像与视频">16. 单目深度不必在“锐利”与“稳定”之间二选一：Depth Pro 2 全分辨率统一图像与视频</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/zh-cn/p/daily-paper-2026-11-22/">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-22" height="1024" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/zh-cn/p/daily-paper-2026-11-22/cover.jpg" srcset="/zh-cn/p/daily-paper-2026-11-22/cover_hu_6f101860d14127cb.jpg 800w, /zh-cn/p/daily-paper-2026-11-22/cover.jpg 1280w" width="1280">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/zh-cn/categories/daily-report/" style="background-color: hsl(344, 60%, 84%); color: hsl(344, 60%, 15%);">
+                Daily Report
+            </a>
+        
+            
+            
+            
+            <a href="/zh-cn/categories/paper/" style="background-color: hsl(305, 60%, 84%); color: hsl(305, 60%, 15%);">
+                Paper
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/zh-cn/p/daily-paper-2026-11-22/">AI Paper Daily | 2026-11-22</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-11-22T00:00:00Z'>Nov 22, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#概览">概览</a></li>
+    <li><a href="#精评">精评</a>
+      <ol>
+        <li><a href="#1-通用模型直接上手操作比专科策略强近一倍amp1-零样本-856-登顶-robolab-120">1. 通用模型直接上手操作，比专科策略强近一倍：AMP1 零样本 85.6% 登顶 RoboLab-120</a></li>
+        <li><a href="#2-智能体安全事故能复现-89rogue-ai-指出真凶不是攻击是普通隐患">2. 智能体安全事故能复现 89%：ROGUE-AI 指出真凶不是攻击，是普通隐患</a></li>
+        <li><a href="#3-循环模型不用等满-t-轮late-entry-让贪心精确解码快-52125-倍">3. 循环模型不用等满 T 轮：Late Entry 让贪心精确解码快 5.2–12.5 倍</a></li>
+        <li><a href="#4-不用梯度不用训练样本把一台-cpu-直接编译进-llm-权重">4. 不用梯度、不用训练样本，把一台 CPU 直接“编译”进 LLM 权重</a></li>
+        <li><a href="#5-videollm-微调的分数涨了眼睛却闭上了veto-把文本捷径从更新里投影掉">5. VideoLLM 微调的分数涨了，眼睛却闭上了：VETO 把文本捷径从更新里投影掉</a></li>
+        <li><a href="#6-推理不只动嘴还要想画面avtr-让视觉想象与文本推理自适应分工">6. 推理不只动嘴，还要“想画面”：AVTR 让视觉想象与文本推理自适应分工</a></li>
+        <li><a href="#7-先练好被改的体质llm-改权重才改得动edit-ready-training">7. 先练好“被改”的体质，LLM 改权重才改得动：Edit-Ready Training</a></li>
+        <li><a href="#8-日常多轮对话里的安全风险是慢慢浮现的dailysafe-195-个场景专测动态安全意识">8. 日常多轮对话里的安全风险是慢慢浮现的：DailySafe 195 个场景专测“动态安全意识”</a></li>
+        <li><a href="#9-递归自我改进不必留在提示词里basersi-把-harness-的收益写进基座模型权重">9. 递归自我改进不必留在提示词里：BaseRSI 把 harness 的收益写进基座模型权重</a></li>
+        <li><a href="#10-长时程人场景交互的管家inhabitant-用空间控制--定量反馈做到-987-任务完成">10. 长时程人–场景交互的管家：Inhabitant 用空间控制 + 定量反馈做到 98.7% 任务完成</a></li>
+      </ol>
+    </li>
+    <li><a href="#简报">简报</a>
+      <ol>
+        <li><a href="#11-医疗护栏也要专科能力lingsante-medguard-27b-风险检测-f1-达-874">11. 医疗护栏也要专科能力：LingSante MedGuard 27B 风险检测 F1 达 87.4%</a></li>
+        <li><a href="#12-机器人动作生成univep-统一速度与终点预测1-步跑赢-16-步基线">12. 机器人动作生成：UniVEP 统一速度与终点预测，1 步跑赢 16 步基线</a></li>
+        <li><a href="#13-以图思考别只图个准自适应数据选择让-vlm-真正用上缩放证据">13. “以图思考”别只图个准：自适应数据选择让 VLM 真正用上缩放证据</a></li>
+        <li><a href="#14-交互式视频世界模型会变形strideworld-用固定参照测出高达-73-倍偏移">14. 交互式视频世界模型会“变形”：StrideWorld 用固定参照测出高达 7.3 倍偏移</a></li>
+        <li><a href="#15-训练时随手设的-rollout-上限会变成模型内化的推理约束">15. 训练时随手设的 rollout 上限，会变成模型内化的推理约束</a></li>
+        <li><a href="#16-单目深度不必在锐利与稳定之间二选一depth-pro-2-全分辨率统一图像与视频">16. 单目深度不必在“锐利”与“稳定”之间二选一：Depth Pro 2 全分辨率统一图像与视频</a></li>
+      </ol>
+    </li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="概览">概览
+</h2><ul>
+<li><strong>10 篇精评 + 6 篇简报</strong>，共 16 篇，已对 7 天滚动窗口去重。预筛选 30 篇中有 18 篇已报道、12 篇未见，本期从其中取 12 篇（10 篇精评、2 篇简报），另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。</li>
+<li>来源构成：HuggingFace 趋势论文 100 篇（精评 10、简报 6）；arXiv API 0 篇（本次请求 429/超时未返回数据，降级模式）。报道集以 11-18 至 11-19 提交的论文为主（arXiv ID 多为 2611.*）。</li>
+<li>主题分布：音频/语音 0 篇——今日候选池中没有新增音频/语音论文（AURA、Duopra 等音频相关均已在 11-20/11-21 报道）；通用 16 篇（具身操作、智能体安全、循环模型推理加速、视频理解、空间智能）。</li>
+<li>今日关键词：<strong>“专科的护城河正在被通用模型拆掉”</strong>——AMP1 里通用模型零样本操作成功率 85.6%，把专科 VLA/WAM 甩开近一倍；BaseRSI 把提示词 harness 的收益直接写进基座模型权重；ROGUE-AI 则提醒另一面：智能体栽跟头的地方不是提示注入，而是任务本身的普通隐患；Budget Internalization 补上一刀：训练时随手设的 rollout 上限，会变成模型内化的推理约束。</li>
+</ul>
+<hr>
+<h2 id="精评">精评
+</h2><h3 id="1-通用模型直接上手操作比专科策略强近一倍amp1-零样本-856-登顶-robolab-120">1. 通用模型直接上手操作，比专科策略强近一倍：AMP1 零样本 85.6% 登顶 RoboLab-120
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.09892"  target="_blank" rel="noopener"
+    >2611.09892</a></p>
+<p><strong>一句话</strong>：AMP1 让通用大模型直接指挥机械臂，零样本在 RoboLab-120 上拿到 85.6% 成功率，远超专科 VLA（49.2%）与世界动作模型（42.9%），且 104/108 次真实世界试验一次通过。</p>
+<p><strong>贡献/机制</strong>：系统分析“智能体操作策略”（AMP）：通用模型直接指挥机械臂、随任务进展调整动作，不依赖演示或任务专属训练；参考 harness AMP1 同一套代码跑单臂、双臂与移动操作三种形态；不给任何抓取、推放技能，智能体自己发展出搜寻隐藏物体、把物体当工具、用相机自标定等策略；再加一个跨 episode 的持久记忆库，能从经验中学习。作者：Chen Chen、Omid Bagherieh、Naveen Nikamanth Appiah Balaji、Jesse T. Gonzalez、Negin Heravi 等（Apple）。</p>
+<p><strong>数值结果</strong>：RoboLab-120 零样本 85.6%，对 49.2%（VLA）与 42.9%（WAM）；CaP-Gym 同样登顶；104/108 次真实世界试验零样本成功，覆盖 12 项任务、3 台机器人，失败率比强 VLA/WAM 基线低 20 倍与 15 倍；带记忆的增强版在 RoboDojo 双臂任务上失败率再降 4.6 倍。</p>
+<p><strong>批判性分析</strong>：这篇的冲击力在于它动摇了一个默认假设——操作就得靠专科策略。通用模型零样本赢近一倍，说明“看、想、动手”的通用推理能力已经能直接迁移到物理操作，而且记忆库让它越用越顺，这是专科策略很难复制的路径。但要留神：85.6% 仍在受控基准上，12 项真实任务的规模不大；通用模型每次动作都要调一次大模型，推理成本与延迟摘要没提，真实部署的节拍能不能跟上还是个问号；另外“自己发展策略”听起来很美，失败模式是否可预测、可审计，摘要也没交代。</p>
+<p><strong>摘要译文</strong>：近期机器人操作研究聚焦于在演示数据上训练的专科策略。我们证明，通用 AI 模型能比视觉–语言–动作模型（VLA）与世界动作模型（WAM）等专科策略更可靠地控制机械臂。我们系统分析了智能体操作策略（AMP），即通用 AI 模型直接指挥机械臂、随任务展开调整动作。我们提出 AMP1，一个在单臂、双臂与移动操作上无需改动即可运行的参考 harness。AMP1 在 RoboLab-120 与 CaP-Gym 基准上取得最优成绩，无需演示或任务专属训练。在 RoboLab-120 上，AMP1 零样本成功率达 85.6%，而领先的 VLA 与 WAM 策略分别为 49.2% 与 42.9%。智能体在 104/108 次真实世界试验中零样本成功，覆盖 12 项任务与 3 台机器人，失败率比强 VLA 与 WAM 基线低 20 倍与 15 倍。基础 harness 不提供抓取、推动或放置技能；智能体自己发展出策略，如搜寻隐藏物体、把物体当作工具、校准相机。加上持久记忆库后，智能体还能从经验中学习：一个跨 episode 携带记忆表征的增强 harness，使 RoboDojo 双臂操作任务的失败率比零样本部署低 4.6 倍。我们的分析表明，AMP 比专科操作策略通用得多、稳健得多，为机器人操作提供了有前景的基础。代码与视频见项目页。</p>
+<hr>
+<h3 id="2-智能体安全事故能复现-89rogue-ai-指出真凶不是攻击是普通隐患">2. 智能体安全事故能复现 89%：ROGUE-AI 指出真凶不是攻击，是普通隐患
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.26553"  target="_blank" rel="noopener"
+    >2611.26553</a></p>
+<p><strong>一句话</strong>：ROGUE-AI 把 108 起真实智能体安全事故离线重建，89% 能复现出同样的危害；其中 62 起有真实伤害的事故根本没有攻击者，智能体只是按任务行事却漏掉了普通隐患。</p>
+<p><strong>贡献/机制</strong>：多智能体框架，把每起媒体报道的事故离线重建，并配一个只去掉“被指责原因”的对照组，在两组上同时跑智能体；覆盖 5 个当前模型（GPT、Claude、Gemini、DeepSeek 系列）；把“事故是否复现、危害是否由被指原因导致”变成可检验的因果问题；复现集合本身成为可重复跑的审计框架，供厂商每次发布前重跑。作者：Mengxiao Wang、Mahbub Alam、Kalyan Nakka、Nitesh Saxena。</p>
+<p><strong>数值结果</strong>：108 次尝试复现中 89% 重现了报道的危害；5 个模型在 18%–33% 的运行中犯了报道中的错误，而去掉被指原因的对照组最多只有 1%；72 起有真实世界伤害的事故中 62 起没有攻击者；无攻击者的复现造成的危害比提示注入复现更大；每次工具输出后加一条点名隐患及其后果的警告，5 个模型危害全部下降，而同等长度、不提隐患的提示几乎没用。</p>
+<p><strong>批判性分析</strong>：这篇把智能体安全讨论的焦点从“防注入”拉回了“防粗心”：大多数真实伤害不是有人使坏，而是智能体照章办事时漏掉了数据库与线上站点共用这种普通隐患——防御提示注入的工具对这类事故完全失效，这个结论对所有做智能体护栏的人都是一记提醒。89% 的复现率与 ≤1% 的对照组对比也做得很干净。但要留神：复现用的是媒体报道的事故描述，报道本身可能遗漏关键上下文；“警告点名隐患就有效”这个解法依赖事先知道隐患是什么，在开放任务里隐患清单从哪来，论文没给答案。</p>
+<p><strong>摘要译文</strong>：基于大语言模型的智能体如今能代表用户删除文件、发起支付。新闻媒体经常报道这类智能体的失败（例如 Replit 的编码智能体删除生产数据库），但报道往往只说出了什么错，很少验证事故或找到根本原因。事故目录收集这些报道，基准记录智能体是否失败，但两者都不复现事故、也不检验报道可能指出的原因。本文提出 ROGUE-AI（智能体安全事件复现：审计与调查），一个多智能体框架：它把每起报道的事故离线重建，并配一个仅缺少被指责原因的对照，在两组上同时运行智能体。结果表明，ROGUE-AI 在 108 次尝试复现中 89% 再现了报道的危害。基于 5 个当前 GPT、Claude、Gemini 与 DeepSeek 模型的智能体，在 18% 至 33% 的运行中犯了报道中的错误，而没有被指原因时最多只有 1%。在 72 起有真实世界伤害的事故中，62 起没有攻击者；在这些事故里，智能体做了任务要求的事，却漏掉了普通隐患，例如与线上站点共用的数据库。无攻击者的复现对全部 5 个模型造成的危害都大于提示注入的复现。针对提示注入的防御寻找被注入的指令，但这些复现里没有注入指令。此外，每次工具输出后加一条点名隐患及其后果的警告，使全部 5 个模型的危害下降，而同等长度、不提隐患的提示则基本无效。由真实事故构建的 ROGUE-AI 复现集合形成一个可复用的审计框架，厂商可在每次新发布前重跑。</p>
+<hr>
+<h3 id="3-循环模型不用等满-t-轮late-entry-让贪心精确解码快-52125-倍">3. 循环模型不用等满 T 轮：Late Entry 让贪心精确解码快 5.2–12.5 倍
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.24576"  target="_blank" rel="noopener"
+    >2611.24576</a></p>
+<p><strong>一句话</strong>：循环语言模型里新 token 不必从第一轮开始算，直接“晚进场”插进最后 K 轮，配合 Wake 验证，贪心精确解码在 Ouro-2.6B 上快 5.2 倍、Huginn-3.5B 上最高 12.5 倍。</p>
+<p><strong>贡献/机制</strong>：研究与早退（early exit）相反的策略——晚进场（late entry）：新 token 跳过前几轮，直接进入最后 K &lt; T 轮，利用深层上下文缓存替代被跳过的 token 局部计算；轻量微调解决入口处的隐藏状态范数失配；候选块只走最后 K 轮验证，已提交 token 在后台补完 1→T 轮，零额外串行调用；把已完成的 T 轮“唤醒态”投影进现有输出 GEMM（Wake 验证），由 logit 裕度容差 τ 统一贪心精确（τ=0）、裕度门控验证（τ&gt;0）与无回滚有损晚进场（τ=∞）三种模式于一个静态 CUDA 图。作者：Ziqi Jin、Jiaxi Li、Weiwen Xu、Aixin Sun。</p>
+<p><strong>数值结果</strong>：Ouro-2.6B（T=4）上 K=2 的 Wake 在 τ=0 时达 5.2 倍贪心精确加速（GSM8K 上比 K=4 块解码高 26%），τ=∞ 时 6.8 倍（同速下比训练好的早退高 16.9 分）；Huginn-3.5B 上 T ∈ {8, 16, 32, 64}，K=T/4 时回滚随深度减少 21.5 倍，贪心精确加速 T=32 时 6.1 倍、T=64 时 8.4 倍（比 K=64 块解码高 153%），τ=∞ 时 10.6–12.5 倍。</p>
+<p><strong>批判性分析</strong>：这篇的洞察很漂亮：早退是“浅算完就走”，晚进场反过来问“深缓存够不够替前几轮算账”——答案是够，而且深缓存越深、回滚越少，加速随 T 放大，这对长推理的循环模型是实打实的利好。Wake 验证把精确与有损统一进一个静态 CUDA 图，工程上也干净。但要留神：入口范数失配需要轻量微调来弥合，不是纯推理技巧；加速数字集中在 GSM8K 这类推理任务上，开放式生成、长上下文下的表现摘要没提；τ=∞ 的有损模式质量损失的边界也没有量化。</p>
+<p><strong>摘要译文</strong>：循环语言模型通过每 token 迭代共享层栈 T 次，以紧凑参数量加深推理，把循环深度直接变成顺序解码延迟。传统早退解码在最初几轮后停止，不完成缓存，导致过去 token 的缓存键值状态被截断在浅层深度。我们研究相反的策略——晚进场：新 token 跳过最初几轮，直接进入最后 K &lt; T 轮，作用于深层上下文缓存。一旦轻量微调解决了入口边界的隐藏状态范数失配，深层缓存上下文就能替代被跳过的 token 局部计算，使晚进场在各模型家族与轮数预算下都胜过匹配的早退。为把这种不对称转化为挂钟加速、又不因构建深缓存而停顿，候选块在关键路径上只经过最后 K 轮验证，而已提交 token 在后续步骤旁路完成 1→T 轮，不增加额外串行调用。把这些完成的 T 轮唤醒态投影进现有输出 GEMM（Wake 验证，由 logit 裕度容差 τ ∈ [0, ∞) 控制），将贪心精确 T 轮解码（τ=0，与 K=T 块解码在 bf16 归约顺序内一致）、裕度门控验证（τ&gt;0）与无回滚有损晚进场（τ=∞）统一于一个静态 CUDA 图。在 Ouro-2.6B（T=4）上，K=2 的 Wake 在 τ=0 时达到 5.2 倍贪心精确加速（GSM8K 上比 K=4 块解码高 26%），在 τ=∞ 时达到 6.8 倍（同速下比训练好的早退高 16.9 分）。在 Huginn-3.5B 上把测试时循环扩展到 T ∈ {8, 16, 32, 64}，K=T/4 的回滚随深度减少 21.5 倍，贪心精确（τ=0）加速在 T=32 时为 6.1 倍、T=64 时为 8.4 倍（比 K=64 块解码高 153%），τ=∞ 时加速为 10.6 至 12.5 倍。</p>
+<hr>
+<h3 id="4-不用梯度不用训练样本把一台-cpu-直接编译进-llm-权重">4. 不用梯度、不用训练样本，把一台 CPU 直接“编译”进 LLM 权重
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.26450"  target="_blank" rel="noopener"
+    >2611.26450</a></p>
+<p><strong>一句话</strong>：零梯度电路嫁接把确定性计算直接编译进预训练 LLM 权重：6 位数加减乘在 Granite 4.2 3B 上 99.17%、Qwen 3.5 4B 上 100% 准确，完胜 12.8K 样本 LoRA 的 42.2%/61.7%。</p>
+<p><strong>贡献/机制</strong>：闭式零梯度电路嫁接原语，零训练样本、零运行时钩子，把确定性计算直接编译进预训练权重，同时约束每层归一化漂移、保留自然语言能力；三件解析机制：双层 Mellin-GLU 求积，把未知的逐 token RMSNorm 缩放变成沿对数间隔门网格的平移（&gt;250 倍动态范围，IEEE 754 误差界）；带符号 Chebyshev 不定 RoPE 自汇注意力与无记忆 SiLU 反对称 GatedDeltaNet 移位实现跨 token 尺度抵消；轴对齐宽度扩展（d→d+K）加 d/(d+K) 范数补偿、Base-1000 规范 BPE 输出、差分（+254,−256）绑定 unembedding；自动化五阶段编译器在恒定 TC^0 深度合成 4–8 位有符号加减乘电路。作者：Tanmay Sah。</p>
+<p><strong>数值结果</strong>：6 位数算术（N=1,200，BF16）Granite 4.2 3B 达 99.17%、Qwen 3.5 4B 达 100.00% ALU 前缀准确率（配 FP32 sidecar 时 100%），句中恢复 98%–100%；12.8K 样本 LoRA 仅 42.2%/61.7%，且内联续写为 0%；三文字布尔电路 100%（N=1,728，另有 42 层 Gemma 4 E4B 审计）、5 位多数/奇偶电路 100%；因子化块稀疏 sidecar 使 A100 显存 7.89/10.65 GiB（INT8/INT4 + FP32 sidecar 时 4.60/8.14 GiB），14/14 预注册 &gt;2K token Tango 切分全部通过（N=4,392；0/11,134 分布外触发）。</p>
+<p><strong>批判性分析</strong>：这篇的野心不小：它不训练、不微调，直接把电路“写”进权重，6 位数算术 100% 且句中恢复 98% 以上，LoRA 对照组被打得毫无还手之力，说明“精确计算”这件事未必非得靠学习，解析构造是一条被低估的路。但要留神：电路是针对算术与布尔逻辑这类结构化任务手工编译的，通用推理能不能这样嫁接，摘要没给证据；sidecar 与宽度扩展带来的显存与参数开销（百万级活跃非零元）也不小；另外单作者论文、方法描述高度定制，复现门槛值得警惕。</p>
+<p><strong>摘要译文</strong>：预训练语言模型在没有梯度微调或外部工具解释器的情况下，对精确多位数算术仍不可靠。我们引入闭式零梯度电路嫁接原语，用零训练样本、零运行时钩子把确定性计算直接编译进预训练 LLM 权重，同时约束每层归一化漂移并保留自然语言能力。我们的构造结合三种解析机制：（1）无偏置 SwiGLU/GeGLU 层上的双层 Mellin-GLU 求积，把未知的逐 token RMSNorm 缩放变成沿对数间隔门网格的平移（&gt;250 倍动态范围），并给出 IEEE 754 误差界；（2）带符号 Chebyshev 不定 RoPE 自汇注意力与无记忆 SiLU 反对称 GatedDeltaNet 移位实现跨 token 尺度抵消；（3）轴对齐宽度扩展（d 到 d+K）加 d/(d+K) 范数补偿、Base-1000 规范 BPE 输出与差分（+254,−256）绑定 unembedding。自动化五阶段编译器在恒定 TC^0 深度合成 4–8 位有符号加减乘电路，以及三文字布尔电路（100%，N=1,728；另有 42 层 Gemma 4 E4B 审计）与 5 位多数/奇偶电路（100%）。在 6 位数算术（N=1,200，BF16）上，IBM Granite 4.2 3B（107–133 万活跃非零元，≤0.036%）与阿里 Qwen 3.5 4B（225–239 万非零元，≤0.057%）分别达到 99.17% 与 100.00% 的 ALU 前缀准确率（配 FP32 sidecar 时为 100%），句中恢复 98%–100%，优于 12.8K 样本 LoRA（42.2%/61.7%，内联续写 0%）。因子化块稀疏 sidecar 使 A100 显存保持在 7.89/10.65 GiB（INT8/INT4 + FP32 sidecar 时为 4.60/8.14 GiB），同时通过全部 14/14 预注册 &gt;2K token Tango 切分（N=4,392；0/11,134 分布外触发）。</p>
+<hr>
+<h3 id="5-videollm-微调的分数涨了眼睛却闭上了veto-把文本捷径从更新里投影掉">5. VideoLLM 微调的分数涨了，眼睛却闭上了：VETO 把文本捷径从更新里投影掉
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.25776"  target="_blank" rel="noopener"
+    >2611.25776</a></p>
+<p><strong>一句话</strong>：VideoLLM 微调后分数上涨，部分靠的是偷学训练数据的文本规律、根本不看视频；VETO 在微调更新里把文本子空间正交投影掉，分布内分数不丢、分布外六个基准反而超过普通 SFT。</p>
+<p><strong>贡献/机制</strong>：指出 VideoLLM 的 SFT 捷径：模型从训练数据的文本规律里学会答题、绕过视频，且捷径与训练轮数、数据量、骨干无关，藏在分布内准确率上升的背后，分布外反而吃掉视频本应带来的增益；提出 Video-Evidence Training via Orthogonal projection（VETO）：不碰数据，直接干预微调更新写下捷径的位置——标定基座模型激活中“仅文本”占据的子空间，把更新投影到它的正交补上，迫使模型从完整输入（包括视频）找答案，捷径在形成时就被压制、无需事先定义。代码已公开。作者：Youngwoo Shin、Jongsuk Kim、Junmo Kim。</p>
+<p><strong>数值结果</strong>：7 个 VideoLLM 上 VETO 保留 SFT 在训练分布上的增益并压制捷径；6 个分布外基准上 VETO 均优于 SFT，且回答来自完整输入而非捷径（摘要未给出具体分数差）。</p>
+<p><strong>批判性分析</strong>：这篇的诊断比方法更值钱：它点破了视频微调里一个大家心照不宣的尴尬——分数涨了不等于学会看视频了，而且捷径“与轮数、数据量、骨干无关”，说明靠堆数据、换骨干都绕不过去。VETO 在更新层面动手、不碰数据的思路也干净，省去了定义捷径的麻烦。但要留神：摘要只给了定性结论（“优于 SFT”），六个基准的具体提升幅度、统计显著性都没交代；正交投影会不会连带削掉文本推理里有用的成分，也得看正文的消融。</p>
+<p><strong>摘要译文</strong>：监督微调（SFT）是视频大语言模型（VideoLLM）提升视频推理能力的阶段。然而 VideoLLM 也会从训练数据的文本规律中学会答题——一条绕过视频的捷径。捷径背后的规律很难在数据层面定义，且无论训练轮数、数据量或骨干如何，捷径都会形成。捷径藏在训练分布内准确率上升的背后，但它对这种上升并非必需，甚至在分布偏移下会吃掉视频本应带来的增益。因此我们提出 Video-Evidence Training via Orthogonal projection（VETO），它在微调更新中、即捷径被写下的位置进行干预，而非干预数据。VETO 标定基座模型激活中仅文本占据的子空间，并把更新投影到它的正交补上。VideoLLM 因此只能从完整输入中找答案，捷径在形成时就被压制、且从未被定义。在 7 个 VideoLLM 上，VETO 保留了 SFT 在训练分布上的增益并压制捷径。在分布偏移下的 6 个基准上，它比 SFT 提升更多，且回答来自完整输入而非捷径。代码已公开。</p>
+<hr>
+<h3 id="6-推理不只动嘴还要想画面avtr-让视觉想象与文本推理自适应分工">6. 推理不只动嘴，还要“想画面”：AVTR 让视觉想象与文本推理自适应分工
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.24161"  target="_blank" rel="noopener"
+    >2611.24161</a></p>
+<p><strong>一句话</strong>：AVTR 给视觉语言模型加了“视觉想象”这一路推理：模型回看视觉观测、蒸馏关键证据，再由学到的路由决定何时用画面、何时用文字，16 个基准平均 +4.5 分、延迟还降 33%。</p>
+<p><strong>贡献/机制</strong>：指出纯文本推理的两处短板：视觉中心问题上只靠文字会丢感知能力；对所有输入一视同仁地长篇推理，浪费算力；提出自适应视觉–文本推理（AVTR）：视觉想象作为与文本思考互补的推理模态，模型通过生成式视觉反思重访视觉观测、蒸馏显著证据；把“选哪种推理模态”建模为可学习的路由问题，单一策略按输入的感知与推理需求自适应调配两种模态。作者：Xiaoqian Shen、Yunyang Xiong、Changsheng Zhao、Saksham Suri、Chong Zhou、Zechun Liu、Zhipeng Cai、Zhuang Liu。</p>
+<p><strong>数值结果</strong>：16 个基准上 AVTR 比 Qwen3.5 基线平均提升 4.5 分，同时推理延迟降低 33%；也能扩展到更小的骨干，在 2B 规模基线上同样胜出。</p>
+<p><strong>批判性分析</strong>：这篇抓住了多模态推理里一个真实痛点：很多题不是“想不明白”，而是“没看清楚”，让模型回头再看一眼、把证据蒸馏出来，比单纯拉长文字推理链更对症；路由机制让简单题少走弯路，+4.5 分还附带 −33% 延迟，这个组合很难得。但要留神：摘要没说 16 个基准里提升集中在哪些类型上，视觉中心任务与纯文本任务的收益分布得看正文；“视觉想象”本质上是生成式反思，多一次生成就多一次幻觉风险，路由学错时的回退机制也没有交代。</p>
+<p><strong>摘要译文</strong>：视觉–语言模型越来越依赖文本推理来解决高级多模态任务。尽管有效，这一范式面临两个根本局限。第一，仅靠文本推理会限制视觉中心问题的感知能力，因为正确答案依赖于解读与任务相关的视觉证据。第二，对所有输入统一应用文本推理，忽略了问题在推理模态与深度上的差异，常在几乎不需要逻辑推理时也产生冗长而不必要的推理轨迹。为此我们提出自适应视觉–文本推理（AVTR），引入视觉想象作为文本思考的互补推理模态，使模型能重访视觉观测、通过生成式视觉反思蒸馏显著证据。此外，我们把推理模态选择建模为可学习的路由问题，让单一策略根据输入的感知与推理需求，自适应利用视觉反思与文本推理的互补优势。在 16 个基准上，AVTR 比 Qwen3.5 基线平均提升 4.5 分，同时推理延迟降低 33%。它也能有效扩展到更小的骨干，优于被评估的 2B 规模基线。</p>
+<hr>
+<h3 id="7-先练好被改的体质llm-改权重才改得动edit-ready-training">7. 先练好“被改”的体质，LLM 改权重才改得动：Edit-Ready Training
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.26408"  target="_blank" rel="noopener"
+    >2611.26408</a></p>
+<p><strong>一句话</strong>：LLM 可以直接改神经网络权重（权重空间编程），但标准训练的网络很难被改动；Edit-Ready Training 让网络在训练时就排练 LLM 的闭式权重编辑，编辑成功率大幅提升，在 GPT-6 Astra 与 Claude Opus 5.5 上均拿最高分。</p>
+<p><strong>贡献/机制</strong>：建立 LLM 驱动的视觉模型权重空间编程基准：5 个 LLM 编辑卷积网络与视觉 Transformer，做 Waterbirds、CIFAR-100、PACS 与 Entity-30 上的重标注与纠错任务，2,600 余次编辑过程，每次按留出图像的成功率、副作用与准确率损失打分；比较标准训练、标签平滑、基于梯度的可编辑训练与新方法 Edit-Ready Training（ERT）：ERT 在训练中排练 LLM 执行的直接闭式权重编辑，让网络提前适应被编辑。测试框架、全部任务、编辑轨迹与分数将公开。作者：Timo Ropinski、Sebastian Kranz。</p>
+<p><strong>数值结果</strong>：在标准网络难编辑的场景下，为编辑做准备显著提高 LLM 编辑成功率；ERT 在全部基线中为 GPT-6 Astra 与 Claude Opus 5.5 取得最高平均分（摘要未给出具体分数）。</p>
+<p><strong>批判性分析</strong>：这篇的视角很新：以往权重空间编程只关心 LLM 会不会改，这篇反过来问网络本身“好不好被改”——就像手术前先练好体质，ERT 把编辑排练进训练，思路干净，2,600 多次编辑的基准规模也够扎实。但要留神：实验只覆盖视觉分类模型的重标注与纠错，ERT 对大模型、生成任务是否适用完全未知；摘要没给 ERT 与基线的具体分数差，也没说为“可编辑”付出了多少原始准确率代价，副作用的度量方式得看正文。</p>
+<p><strong>摘要译文</strong>：已有研究表明，在某些设定下大语言模型能通过权重空间编程直接修改神经网络的权重。但专门训练这些网络如何促进权重空间编程的成功，尚属未知。我们提出一个 LLM 驱动的视觉模型权重空间编程基准：5 个 LLM 编辑卷积网络与视觉 Transformer，在 Waterbirds、CIFAR-100、PACS 与 Entity-30 上执行重标注与纠错任务。我们报告 2,600 余次编辑过程，每次编辑按留出图像的成功率、副作用与准确率损失打分。我们比较标准训练、标签平滑、基于梯度的可编辑训练与我们的方法 Edit-Ready Training（ERT），后者是一种新方法，在训练中排练 LLM 执行的直接闭式权重编辑。我们证明，让网络为编辑做好准备，能在标准网络难以编辑的场景下大幅提高 LLM 编辑的成功率。ERT 还在全部基线中为 GPT-6 Astra 与 Claude Opus 5.5 取得最高平均分。我们将发布 LLM 测试框架及全部任务、编辑轨迹与分数。项目页见正文。</p>
+<hr>
+<h3 id="8-日常多轮对话里的安全风险是慢慢浮现的dailysafe-195-个场景专测动态安全意识">8. 日常多轮对话里的安全风险是慢慢浮现的：DailySafe 195 个场景专测“动态安全意识”
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.26298"  target="_blank" rel="noopener"
+    >2611.26298</a></p>
+<p><strong>一句话</strong>：现有安全基准只测单次有害请求，DailySafe 盯住日常多轮多模态对话里“起初无害、越聊越危险”的场景：195 个自然交互、10 个日常领域、42 类任务，安全证据随轮次与图像逐步浮现。</p>
+<p><strong>贡献/机制</strong>：提出“动态安全意识”：在多轮多模态交互中追踪不断变化的任务条件、识别隐含的上下文风险，同时继续支持用户的合法目标；构建 DailySafe 基准：195 个自然主义多轮多图像交互，覆盖 10 个日常领域、42 类任务，取材于真实用户对话主题与有记录的安全知识；每案配有针对性的安全标注，评估模型能否识别逐步浮现的风险并恰当应对；基准已公开。作者：Xuankun Rong、Xinhao Deng、Wenzhang Jiang、Ziheng Peng、Siyuan Liang、Wenke Huang、Pablo Arbelaez、Mang Ye。</p>
+<p><strong>数值结果</strong>：基准规模 195 个交互、10 个领域、42 类任务；摘要未报告任何模型在该基准上的得分——这是一篇基准发布论文，评测结果需看正文。</p>
+<p><strong>批判性分析</strong>：这篇的切口踩在了安全评测的盲区上：真实使用里风险很少是一句“教我做坏事”直接砸过来，更多是合法目标聊着聊着、配上几张图就越过了线，单轮基准测不到这种渐变，多轮多模态的设定很对症。195 个场景的规模对一个新基准来说偏小，而且“安全证据逐步浮现”的标注质量直接决定基准的可信度，摘要没有给出标注者一致性之类的质量数字；另外没有模型得分，基准的区分度（能不能拉开模型差距）暂时无从判断。</p>
+<p><strong>摘要译文</strong>：随着多模态大语言模型（MLLM）日益融入日常生活，它们在真实日常活动中提供安全可靠帮助的能力仍未得到充分探索。现有安全基准主要关注孤立的有害请求或对抗场景，忽略了普通任务展开过程中可能出现的安全风险。实践中，用户通过多轮多模态交互追求合法目标，看似无害的请求在结合此前的行动与视觉观测后可能变得安全关键。这就要求动态安全意识——追踪不断变化的任务条件、识别隐含的上下文风险、并提供安全且有帮助的协助的能力。为系统评估这一能力，我们提出 DailySafe，一个包含 195 个自然主义多轮多图像交互的基准，覆盖 10 个日常领域与 42 类任务。DailySafe 根植于真实用户对话主题与有记录的安全知识，捕捉安全关键证据随对话轮次与视觉观测逐步浮现的真实场景。通过针对每案的安全标注，DailySafe 评估 MLLM 能否识别并恰当处理不断演变的风险，同时支持用户的合法目标，使多模态安全评估更贴近真实日常 AI 协助。DailySafe 已公开。</p>
+<hr>
+<h3 id="9-递归自我改进不必留在提示词里basersi-把-harness-的收益写进基座模型权重">9. 递归自我改进不必留在提示词里：BaseRSI 把 harness 的收益写进基座模型权重
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.24578"  target="_blank" rel="noopener"
+    >2611.24578</a></p>
+<p><strong>一句话</strong>：BaseRSI 让基座视觉语言模型自己改进 harness、再把 harness 带来的增益无训练地写回自己权重，一轮接一轮自我改进，在 10 个视觉推理基准上分布内与分布外双双提升。</p>
+<p><strong>贡献/机制</strong>：提出“递归 harness 内化”新范式：基座模型改进自己的 harness，再把 harness 增加的东西通过无训练编辑写进自身权重，逐轮在自身响应上迭代；引入 ReGap 机制：用 harness 在每个 Transformer 块上造成的高维激活差监督该块，沿该信号在低维子空间更新块权重；再提 ReKey 算法：通过回归把信号写进每块的少量键值神经元，并在模型自身响应上度量每次编辑的位置与强度；递归中每个角色都只用模型前向完成，不同位置的编辑可合成为一个检查点、无需重拟合。代码已公开。作者：Mingda Zhang、Yuanhao Dong、Qiang Huang、Rui Qian、Yanjin Li、Zhenyu Liu、Xiao Huang、Zihao Yang。</p>
+<p><strong>数值结果</strong>：10 个视觉推理基准上 BaseRSI 持续改进基座视觉语言模型，分布内与留出基准均有提升（摘要未给出具体分数）。</p>
+<p><strong>批判性分析</strong>：这篇的野心是把 RSI 从“提示词外挂”搬进“模型本体”：harness 带来的增益以往留在模型之外，换个模型就得重搭，BaseRSI 用激活差监督、无训练编辑把它内化，思路与最近的权重编辑潮流合拍，编辑可合成一个检查点也很实用。但要留神：摘要没有给出任何具体分数，10 个基准上“持续改进”的幅度、显著性与基线对比全都缺失；无训练编辑的副作用（会不会悄悄损害其他能力）也没有交代，自我改进循环跑多轮后会不会漂移或坍缩，更是 RSI 的经典隐患。</p>
+<p><strong>摘要译文</strong>：递归自我改进（RSI）正从围绕基座模型的提示词与工具 harness，走向模型本身。然而现有 RSI 仍面临关键挑战：harness 带来的增益留在基座模型之外、黑盒监督只读取模型输出、编辑位置与强度事先固定且不够精确。为应对这些挑战，我们提出 BaseRSI，一种递归 harness 内化的新范式：基座模型改进自己的 harness，再通过无训练编辑把 harness 增加的东西写进自身权重，在自身响应上一轮接一轮迭代。为支持这一范式，我们引入 ReGap 机制：用 harness 在每个 Transformer 块上单独造成的高维激活差监督该块，并沿该信号在低维子空间更新块权重。在此机制上，我们进一步提出 ReKey 算法：通过回归把该信号写进每块的少量键值神经元，并在模型自身响应上度量每次编辑的位置与强度。此外，基座模型仅用前向过程填满递归中的每个角色，不同位置的编辑可合成为一个检查点、无需重拟合。10 个视觉推理基准的实验表明，BaseRSI 在分布内与留出基准上持续改进基座视觉语言模型。代码已公开。</p>
+<hr>
+<h3 id="10-长时程人场景交互的管家inhabitant-用空间控制--定量反馈做到-987-任务完成">10. 长时程人–场景交互的管家：Inhabitant 用空间控制 + 定量反馈做到 98.7% 任务完成
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.25005"  target="_blank" rel="noopener"
+    >2611.25005</a></p>
+<p><strong>一句话</strong>：Inhabitant 让语言模型智能体在 3D 场景里按位置、路径与姿态精确指定每个动作、再用定量反馈修正偏差，在 75 项家务任务上用 Claude Opus 5.5 完成 98.7%，远超同类智能体。</p>
+<p><strong>贡献/机制</strong>：针对长-horizon 人–场景交互（HSI）生成：现有智能体缺空间控制与定量反馈，复杂日常场景（如捡起玩具扔进篮子）常完不成任务序列；提出无训练智能体框架 Inhabitant：智能体用位置、路径与姿态指定每个动作，度量执行结果与意图的偏差，再据此修正控制规格；配套构建 Inhabit 基准：31 种公寓家具布局下的 75 项家务任务，每项串联 1–3 个可移动物体目标、由全身（除手指外）完成。代码见项目页。作者：Yao Zhang、Zhuchenyang Liu、Yu Xiao。</p>
+<p><strong>数值结果</strong>：Inhabit 上 Inhabitant 用 Claude Opus 5.5 完成 98.7% 的任务，Claude Sonnet 5.5 为 93.3%、Gemini 4 Argon 为 82.7%；消融证实：没有空间控制时智能体多数任务失败，没有定量反馈时动作精度下降。</p>
+<p><strong>批判性分析</strong>：这篇的配方很实在：长-horizon 交互失败往往不是“想不明白”，而是“手跟不上想的”——把动作落到具体位置与路径、再用执行偏差闭环修正，直接对准了这个缺口，98.7% 的完成率与消融结论互相印证。但要留神：75 项任务、31 种布局全是仿真公寓场景，真实物理世界里的摩擦、遮挡与感知噪声都没有；98.7% 用的是最强的 Opus 5.5，模型换弱一档就掉到 82.7%，框架对模型能力的依赖不小；另外“除手指外”的全身动作设定，也把最难的精细操作排除在外了。</p>
+<p><strong>摘要译文</strong>：近期人–场景交互（HSI）生成从单次交互走向长-horizon 交互：语言模型智能体在一条指令下规划并执行 3D 场景中的一串交互。然而现有智能体在具有挑战性的日常场景（如捡起玩具扔进篮子）中表现挣扎，因为它们缺乏对动作的空间控制与执行情况的定量反馈，且常无法完成交互序列。为弥补这些不足，我们提出 Inhabitant，一个无训练智能体框架：智能体通过位置、路径与姿态指定每个动作，度量已执行交互与其意图的偏差，并据此修正控制规格。为在这些场景中广泛评估，我们构建 Inhabit 基准：31 种公寓家具布局下的 75 项家务任务，每项任务串联 1–3 个可移动物体目标、由全身（除手指外）完成。在 Inhabit 上，Inhabitant 用 Claude Opus 5.5 完成 98.7% 的任务，用 Claude Sonnet 5.5 与 Gemini 4 Argon 分别为 93.3% 与 82.7%。消融证实，没有空间控制时智能体多数任务失败，没有定量反馈时动作精度下降。代码见项目页。</p>
+<hr>
+<h2 id="简报">简报
+</h2><h3 id="11-医疗护栏也要专科能力lingsante-medguard-27b-风险检测-f1-达-874">11. 医疗护栏也要专科能力：LingSante MedGuard 27B 风险检测 F1 达 87.4%
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.25509"  target="_blank" rel="noopener"
+    >2611.25509</a></p>
+<p>医疗 AI 的有害、不合规或伦理存疑回答需要专门的护栏。LingSante MedGuard 把一个医疗护栏教师模型与六个专科能力专家（医疗规则理解、数值推理、多模态幻觉检测、智能体安全验证、风险定位、多模态实体理解）蒸进一个统一模型：先离线 SFT 学教师演示，再用多教师 on-policy 蒸馏反馈学生生成。配套 MedGuardBench 含 11 个风险检测子集。4B、9B、27B 平均 F1 分别为 82.3%、82.4%、87.4%；4B 在检索增强评估下 MedHallu 与 MedHALT-NOTA 平均准确率 73.9%。作者：LingSante MedGuard Team。upvotes 0。</p>
+<hr>
+<h3 id="12-机器人动作生成univep-统一速度与终点预测1-步跑赢-16-步基线">12. 机器人动作生成：UniVEP 统一速度与终点预测，1 步跑赢 16 步基线
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.26103"  target="_blank" rel="noopener"
+    >2611.26103</a></p>
+<p>流匹配机器人策略通常全程只用一种预测目标，但从噪声中恢复动作与打磨近干净动作是两件不同的事。UniVEP 联合学习速度预测与终点预测、加一致性监督，并随噪声下降从终点恢复切换到速度精修，每步只需一次网络前向。RoboTwin 上 UniVEP 用 StarVLA 一次运行达 61.36% 成功率，超过 16 次运行的最佳单目标基线（59.96%）；LiLa-WAM 上两次运行胜过 16 步基线、推理延迟降低 77.1%。作者：Zhengtu Liang、Qiwei Liang、Tao Lin、Shihang Weng、Boyang Cai 等。upvotes 1。</p>
+<hr>
+<h3 id="13-以图思考别只图个准自适应数据选择让-vlm-真正用上缩放证据">13. “以图思考”别只图个准：自适应数据选择让 VLM 真正用上缩放证据
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.26199"  target="_blank" rel="noopener"
+    >2611.26199</a></p>
+<p>以图思考（TwI）让视觉语言模型主动裁剪放大细节，但分数提升不等于忠实地用了工具：模型常在不看缩放区域的情况下照样答对，且越训越会绕开工具。作者按模型不断进化的能力自适应选择训练数据——只练那些“正确缩放证据仍能帮模型答对”的问题，辅以定位小物体、构造可验证细粒度问题的数据合成管线与自适应奖励。视觉搜索基准上 V* +11.6%、HR-Bench 4K +7.9%、HR-Bench 8K +9.4%，多模态幻觉基准上也超过同类 TwI 基线。作者：Yu Zhao、Jiaxin Zhang、Rohit Saxena、Fazl Barez、Pasquale Minervini、Yiwen Guo。upvotes 4，来源为原始候选补充。</p>
+<hr>
+<h3 id="14-交互式视频世界模型会变形strideworld-用固定参照测出高达-73-倍偏移">14. 交互式视频世界模型会“变形”：StrideWorld 用固定参照测出高达 7.3 倍偏移
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.24408"  target="_blank" rel="noopener"
+    >2611.24408</a></p>
+<p>交互式视频世界模型要让场景随镜头移动保持 3D 结构、每个动作的效果保持稳定，但现有基准的参照本身由被测视频拟合而成，会把缓慢变形与节奏变化吸收掉。StrideWorld 用事前固定的参照评测：以起始视图的真实几何测场景刚性，以每步动作的“步幅”测动作一致性（先量前几步的步幅、再检验后续步伐）。在 140 个起始视图生成的视频上，除一个外所有开源模型都会随镜头移动扭曲场景，偏移最高达刚性渲染的 7.3 倍；组合路线上多个模型常中途停滞、大多走不到自身步幅预测的位置；只有两个按场景深度缩放指令的模型能把多数路线走近目标；在少量渲染片段上微调可消除多数中途停滞。作者：Chuang Wang、Rui Nie、Jie Song、Junyuan Gao、Jiahe Song 等。upvotes 15，来源为原始候选补充。</p>
+<hr>
+<h3 id="15-训练时随手设的-rollout-上限会变成模型内化的推理约束">15. 训练时随手设的 rollout 上限，会变成模型内化的推理约束
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.26172"  target="_blank" rel="noopener"
+    >2611.26172</a></p>
+<p>推理模型测试时越长答得越准，但 RLVR 训练常用固定 rollout 上限。作者发现上限不只控制训练成本，还会改变模型行为：训后模型在预算附近优于基座模型，但超出预算后准确率停止提升、甚至低于基座模型——上限被“内化”为 learned 约束，称之为 budget internalization。在 Qwen3.5-4B、Gemma4-E2B、Nemotron-3-Nano-4B 与数学、程序化生成两类推理任务上均观察到，且从数学训练迁移到科学与编码任务。消融显示：更强 KL 正则与更低训练数据截断能保留更多测试时扩展性，但更强 KL 会降低预算内准确率；强制对截断的训练 rollout 给出答案基本消除内化、但也抹掉大部分预算内增益；对人工截断轨迹做 SFT 能复现该效应、自然短轨迹则不能，说明这是长度截断后训练的产物、而非 RL 专属。作者：Ilia Zavidnyi、Alexander Kovrigin、Arina Puchkova、Kirill Gelvan、Sergey Titov。upvotes 1，来源为原始候选补充。</p>
+<hr>
+<h3 id="16-单目深度不必在锐利与稳定之间二选一depth-pro-2-全分辨率统一图像与视频">16. 单目深度不必在“锐利”与“稳定”之间二选一：Depth Pro 2 全分辨率统一图像与视频
+</h3><p><a class="link" href="https://arxiv.org/abs/2611.26603"  target="_blank" rel="noopener"
+    >2611.26603</a></p>
+<p>单目深度估计的老 trade-off：多帧方法求时间一致、单帧方法求边界锐利。Depth Pro 2 用一个可扩展网络同时处理图像与视频、输出原生分辨率深度图，度量准确、边界锐利、时间一致三者兼得，在各维度上均超过先前工作，并发布一族在度量精度、锐利度、时间一致性与运行速度上定义新 Pareto 前沿的模型。代码与权重已公开。作者：Peiyun Hu、Marko Mihajlovic、Lyndon Duong、Lahav Lipson、Wei Dong 等（Apple）。upvotes 30，来源为原始候选补充。</p>
+<hr>
+<p><em>本日 16 篇（10 精评 + 6 简报），来自 HuggingFace 趋势论文 11-18 至 11-19 日榜中此前未报道的部分：音频/语音 0 篇，通用 16 篇；另从原始候选补充 4 篇未报道论文（0 篇精评、4 篇简报）。arXiv API 本次请求 429/超时未返回数据，降级模式。</em></p>
+<hr>
+
+    <blockquote>
+        <p>Cover image by <a class="link" href="https://konachan.com/post/show/45401"  target="_blank" rel="noopener"
+    >kn8485909</a></p>
+
+    </blockquote>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-21/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-21" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-21/cover_hu_9f90a89c96380b9.jpg" srcset="/zh-cn/p/daily-paper-2026-11-21/cover_hu_9f90a89c96380b9.jpg 1x, /zh-cn/p/daily-paper-2026-11-21/cover_hu_238dc8ab848bcde0.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #d0c8ab80 0%, #373738C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-21</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-20/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-20" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-20/cover_hu_300a6d328f2e5608.png" srcset="/zh-cn/p/daily-paper-2026-11-20/cover_hu_300a6d328f2e5608.png 1x, /zh-cn/p/daily-paper-2026-11-20/cover_hu_b3c56bb9e0d318e9.png 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #3f2b4e80 0%, #ebd1daC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-20</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-19/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-19" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-19/cover_hu_ce095d41656fe4eb.jpg" srcset="/zh-cn/p/daily-paper-2026-11-19/cover_hu_ce095d41656fe4eb.jpg 1x, /zh-cn/p/daily-paper-2026-11-19/cover_hu_5561788fb26cbac.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #48abe080 0%, #ddd7ceC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-19</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-18/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-18" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-18/cover_hu_de2272b8b6ca48e4.jpg" srcset="/zh-cn/p/daily-paper-2026-11-18/cover_hu_de2272b8b6ca48e4.jpg 1x, /zh-cn/p/daily-paper-2026-11-18/cover_hu_17d19b613569fd20.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #a4532580 0%, #f7e5ccC0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-18</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/zh-cn/p/daily-paper-2026-11-17/">
+        
+        <div class="article-image">
+            <img alt="Featured image of post AI Paper Daily | 2026-11-17" height="150" loading="lazy" src="/zh-cn/p/daily-paper-2026-11-17/cover_hu_cccdbc1cb86ba81a.jpg" srcset="/zh-cn/p/daily-paper-2026-11-17/cover_hu_cccdbc1cb86ba81a.jpg 1x, /zh-cn/p/daily-paper-2026-11-17/cover_hu_a309570ccd669587.jpg 2x" width="250">
+
+        </div>
+        
+
+        <div class="article-details"style="background: linear-gradient(0deg, #191a3380 0%, #eef0f7C0 100%);">
+            <h2 class="article-title">AI Paper Daily | 2026-11-17</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 鲸鲵 WhaleDolphin
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+
+
+    </body>
+</html>
